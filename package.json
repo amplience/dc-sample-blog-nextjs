@@ -9,7 +9,7 @@
     "start": "next start",
     "precommit": "npm run lint",
     "commit": "npx git-cz",
-    "lint": "prettier \"**/*.ts\" \"**/*.json\" \"**/*.tsx\" --write"
+    "lint": "prettier \"**/*.ts\" \"**/*.json\" \"**/*.tsx\" --write --ignore-path .gitignore"
   },
   "repository": {
     "type": "git",
