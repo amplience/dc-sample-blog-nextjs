@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es6",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "typeRoots": ["./definitions", "./node_modules/@types"],
+    "lib": ["es2015", "es2017.object", "es2016.array.include"]
+  },
+  "exclude": ["node_modules"]
+}
