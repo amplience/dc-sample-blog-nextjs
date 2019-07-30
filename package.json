@@ -1,14 +1,16 @@
 {
   "name": "dc-static-site-nextjs",
   "version": "1.0.0",
-  "description": "DC Static Site with NextJS",
-  "main": "index.js",
+  "description": "Amplience Dynamic Content Static Site with NextJS",
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
+    "export": "npm run build && next export",
     "precommit": "npm run lint",
     "commit": "npx git-cz",
+    "test:jest": "jest",
+    "test": "run-s lint test:jest",
     "lint": "prettier \"**/*.ts\" \"**/*.json\" \"**/*.tsx\" --write --ignore-path .gitignore"
   },
   "repository": {
@@ -57,18 +59,30 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@types/enzyme": "^3.10.3",
+    "@types/jest": "^24.0.16",
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.5",
+    "@types/react-test-renderer": "^16.8.3",
+    "babel-jest": "^24.8.0",
     "commitizen": "^4.0.3",
     "cz-conventional-changelog": "^3.0.2",
+    "dotenv": "^8.0.0",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
     "eslint": "^6.1.0",
     "eslint-plugin-prettier": "^3.1.0",
     "husky": "^3.0.1",
+    "jest": "^24.8.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
+    "react-test-renderer": "^16.8.6",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "dc-delivery-sdk-js": "^0.3.0",
     "next": "^9.0.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
