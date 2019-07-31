@@ -11,11 +11,11 @@
     "commit": "npx git-cz",
     "test:jest": "jest",
     "test": "run-s lint test:jest",
-    "lint": "prettier \"**/*.ts\" \"**/*.json\" \"**/*.tsx\" --write --ignore-path .gitignore"
+    "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://c-bibby@github.com/amplience/dc-static-site-nextjs.git"
+    "url": "https://github.com/amplience/dc-static-site-nextjs.git"
   },
   "author": "Amplience",
   "license": "Apache-2.0",

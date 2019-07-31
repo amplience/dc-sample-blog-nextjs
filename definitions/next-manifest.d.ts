@@ -1,1 +1,1 @@
-declare module "next-manifest/manifest";
+declare module 'next-manifest/manifest';

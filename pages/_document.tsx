@@ -11,11 +11,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <Manifest/>
+          <Manifest />
         </Head>
         <body>
-          <Main/>
-          <NextScript/>
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );

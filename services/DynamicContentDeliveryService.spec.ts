@@ -3,22 +3,26 @@ import { ContentClient } from 'dc-delivery-sdk-js';
 
 const mockGetContentItem = jest.fn();
 
-jest.mock('dc-delivery-sdk-js', () => {
-  return {
-    ContentClient: jest.fn(() => {
-      return {
-        getContentItem: mockGetContentItem
-      };
-    })
-  };
-});
+jest.mock(
+  'dc-delivery-sdk-js',
+  (): Function => {
+    return {
+      ...jest.requireActual('dc-delivery-sdk-js'),
+      ContentClient: jest.fn((): { getContentItem: Function } => {
+        return {
+          getContentItem: mockGetContentItem
+        };
+      })
+    };
+  }
+);
 
-describe('DynamicContentDeliveryService', () => {
+describe('DynamicContentDeliveryService', (): void => {
   afterAll((): void => {
     jest.clearAllMocks();
   });
 
-  test('loads a new client', () => {
+  test('loads a new client', (): void => {
     const opts = {
       account: 'DELIVERY_SERVICE_ACCOUNT_ID'
     };
@@ -26,7 +30,14 @@ describe('DynamicContentDeliveryService', () => {
     expect(ContentClient).toBeCalledWith(opts);
   });
 
-  test('returns content item data when calling getContentItemById', async () => {
+  test('returns content item data when calling getContentItemById', async (): Promise<void> => {
+    interface MockContentItemResponse {
+      _meta: {
+        schema: string;
+        deliveryId: string;
+        name: string;
+      };
+    }
     const contentItemResponse = {
       _meta: {
         schema: 'http://example.com/schema.json',
@@ -34,7 +45,7 @@ describe('DynamicContentDeliveryService', () => {
         name: 'content-name'
       }
     };
-    mockGetContentItem.mockImplementation(() => contentItemResponse);
+    mockGetContentItem.mockImplementation((): MockContentItemResponse => contentItemResponse);
     const opts = {
       account: 'DELIVERY_SERVICE_ACCOUNT_ID'
     };
