@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Manifest from 'next-manifest/manifest';
 
-class MyDocument extends Document {
+export default class CustomDocument extends Document {
   static async getInitialProps(ctx: any) {
     const initialProps = await Document.getInitialProps(ctx);
     return { ...initialProps };
@@ -9,7 +9,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <Manifest />
         </Head>
@@ -21,5 +21,3 @@ class MyDocument extends Document {
     );
   }
 }
-
-export default MyDocument;

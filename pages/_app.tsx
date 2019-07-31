@@ -10,7 +10,7 @@ interface InitialPropsConfig {
   ctx: NextPageContext;
 }
 
-export default class MyApp extends App {
+export default class CustomApp extends App {
   static async getInitialProps({ Component, ctx }: InitialPropsConfig) {
     let pageProps = {};
     if (Component.getInitialProps) {
