@@ -20,8 +20,9 @@ const Index: NextPage<IndexProps> = (props: IndexProps) => {
   );
 };
 
-Index.getInitialProps = async ({ query }) => {
-  const { id, account } = query;
+Index.getInitialProps = async () => {
+  const id = process.env.DYNAMIC_CONTENT_REFERENCE_ID;
+  const account = process.env.DYNAMIC_CONTENT_ACCOUNT_NAME;
   const deliveryClient = new DynamicContentDeliveryService({ account } as ContentClientConfig);
   try {
     const content = (await deliveryClient.getContentItemById(id as string)).toJSON();

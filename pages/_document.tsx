@@ -12,6 +12,7 @@ export default class CustomDocument extends Document {
       <Html lang="en">
         <Head>
           <Manifest />
+          <link rel="icon" href="/static/favicon.ico"></link>
         </Head>
         <body>
           <Main />
