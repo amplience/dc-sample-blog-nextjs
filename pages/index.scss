@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500&subset=cyrillic-ext,latin-ext');
+
+body {
+  font-family: Roboto, Arial, sans-serif;
+
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+}
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}

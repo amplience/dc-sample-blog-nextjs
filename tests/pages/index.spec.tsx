@@ -1,10 +1,13 @@
 /* eslint-env jest */
-import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Index from '../../pages/index';
 
 const mockGetContentItem = jest.fn();
+
+jest.mock("../../pages/index.scss", () => {
+  return { };
+});
 
 jest.mock('dc-delivery-sdk-js', () => {
   return {
@@ -32,12 +35,12 @@ describe('Index', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
-  test('renders with h1', () => {
+  test('renders pre with prettified content', () => {
     const props = {
       content: {}
     };
     const component = shallow(<Index {...props} />);
-    expect(component.find('h1').text()).toEqual('dc-static-site-nextjs');
+    expect(component.find('pre').text()).toEqual(JSON.stringify(props.content, null, 2));
   });
 
   test('getInitialProps returns content', async () => {

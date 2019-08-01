@@ -3,6 +3,8 @@ import { NextPage } from 'next';
 import { DynamicContentDeliveryService } from '../services/DynamicContentDeliveryService';
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
 
+import './index.scss';
+
 interface IndexProps {
   content: {
     [key: string]: any;
@@ -12,9 +14,8 @@ interface IndexProps {
 const Index: NextPage<IndexProps> = (props: IndexProps) => {
   return (
     <>
-      <h1>dc-static-site-nextjs</h1>
-      <p>Content retrieved using Amplience Dynamic Content:</p>
-      <pre>{JSON.stringify(props.content)}</pre>
+      {/* In this example we are outputting the complete content response from the Dynamic Content Service, this is where you would use props.content to render your site. */}
+      <pre>{JSON.stringify(props.content, null, 2)}</pre>
     </>
   );
 };
