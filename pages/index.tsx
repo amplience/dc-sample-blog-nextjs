@@ -22,8 +22,11 @@ const Index: NextPage<IndexProps> = (props: IndexProps) => {
 
 Index.getInitialProps = async () => {
   const id = process.env.DYNAMIC_CONTENT_REFERENCE_ID;
-  const account = process.env.DYNAMIC_CONTENT_ACCOUNT_NAME;
-  const deliveryClient = new DynamicContentDeliveryService({ account } as ContentClientConfig);
+  const clientConfig = {
+    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
+    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
+  } as ContentClientConfig;
+  const deliveryClient = new DynamicContentDeliveryService(clientConfig);
   try {
     const content = (await deliveryClient.getContentItemById(id as string)).toJSON();
     return { content };

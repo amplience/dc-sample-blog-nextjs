@@ -34,6 +34,14 @@ DYNAMIC_CONTENT_REFERENCE_ID=<Content-Id>
 DYNAMIC_CONTENT_ACCOUNT_NAME=<Account-Name>
 ```
 
+### Using Staging/Other environments
+
+To use the staging/other environment, the base URL can be overridden to a different value.
+
+```
+DYNAMIC_CONTENT_BASE_URL=<Base-URL>
+```
+
 ## Build & Run  
 First build the application using
 ```
