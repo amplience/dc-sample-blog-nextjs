@@ -3,13 +3,15 @@
 # dc-static-site-nextjs
 
 ![License - Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
-![](https://img.shields.io/badge/node-v8%2B-blue.svg)
+![](https://img.shields.io/badge/node-v10%2B-blue.svg)
+![](https://img.shields.io/badge/nextjs-v9%2B-blue.svg)
+![](https://img.shields.io/badge/amplience%20delivery%20sdk-v0.3.0%2B-blue.svg)
 
-This is an example application using Amplience Dynamic Content and the NextJS framework.
+This is a skeleton application built using the Amplience Dynamic Content Service and the NextJS framework and can be used as a starting point for building a static site. 
 
 ## Installation
 
-Checkout this repo and install the dependencies via npm:
+Clone this repo and install the dependencies via npm:
 
 ```
 npm install
@@ -22,6 +24,46 @@ The below command will run unit tests for the project:
 ```
 npm run test
 ```
+
+## Setup
+
+To setup the application create a `.env` file within the root of the project containing the following - replacing `Content-Id` and `Account-Name` with your values.
+
+```
+DYNAMIC_CONTENT_REFERENCE_ID=<Content-Id>
+DYNAMIC_CONTENT_ACCOUNT_NAME=<Account-Name>
+```
+
+### Using Staging/Other environments
+
+To use the staging/other environment, the base URL can be overridden to a different value.
+
+```
+DYNAMIC_CONTENT_BASE_URL=<Base-URL>
+```
+
+## Build & Run  
+First build the application using
+```
+npm run build
+```
+The application can then be started with
+```
+npm run start
+```
+
+## Run with Developer Mode
+To start the application with Developer Mode use
+```
+npm run dev
+```
+
+## Export as Static Site
+To generate the static site files use
+```
+npm run export 
+```
+The files will be exported to the `out` directory, these can then be served as a static site.
 
 ## Built with
 
