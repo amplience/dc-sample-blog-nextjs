@@ -9,7 +9,7 @@ export default interface BlogPost {
   title: string;
   date: string;
   description: string;
-  author: Author;
+  authors: Author[];
   image: Image;
   urlSlug: string;
   tags: string[];
