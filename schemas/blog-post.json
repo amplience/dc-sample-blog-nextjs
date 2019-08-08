@@ -21,7 +21,7 @@
       "type": "string",
       "format": "date-time",
       "title": "Creation Date",
-      "description": "Creation date (YYYY-MM-DDTHH:mm:ssz)"
+      "description": "Creation date (YYYY-MM-DDTHH:mm:ssZ)"
     },
     "description": {
       "type": "string",
