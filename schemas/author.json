@@ -19,7 +19,7 @@
     },
     "avatar": {
       "title": "Avatar",
-      "description": "The authors avatar",
+      "description": "The author's avatar",
       "type": "object",
       "allOf": [
         {

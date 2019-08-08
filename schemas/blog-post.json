@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
-  "title": "Blog Post",
+  "title": "Blog post",
   "description": "A bloblog post",
   "allOf": [
     {
@@ -12,25 +12,26 @@
   "properties": {
     "title": {
       "title": "Title",
-      "description": "Title of the blog post",
+      "description": "Used for heading and SEO title tag",
       "type": "string",
       "minLength": 0,
       "maxLength": 150
     },
     "date": {
+      "title": "Creation date",
+      "description": "Creation date (YYYY-MM-DD)",
       "type": "string",
-      "format": "date-time",
-      "title": "Creation Date",
-      "description": "Creation date (YYYY-MM-DDTHH:mm:ssZ)"
+      "maxLength": 10
     },
     "description": {
+      "title": "Description",
+      "description": "Used for blog listing page and SEO description",
       "type": "string",
       "minLength": 0,
-      "maxLength": 200,
-      "title": "Description",
-      "description": "Used for blog listing page and SEO description"
+      "maxLength": 200
     },
     "image": {
+      "title": "Image",
       "allOf": [
         {
           "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
@@ -47,17 +48,17 @@
       ]
     },
     "urlSlug": {
+      "title": "Url slug",
+      "description": "Url friendly slug",
       "type": "string",
       "minLength": 0,
       "maxLength": 100,
-      "title": "Url Slug",
-      "description": "Url friendly slug",
       "pattern": "^[a-z0-9-]+$"
     },
     "tags": {
-      "type": "array",
       "title": "Tags",
       "description": "Blog tags",
+      "type": "array",
       "minItems": 0,
       "maxItems": 10,
       "items": {
@@ -69,13 +70,13 @@
       }
     },
     "readTime": {
-      "type": "integer",
-      "title": "Read Time",
+      "title": "Read time",
       "description": "The time it takes to read the blog"
+      "type": "integer",
     },
     "authors": {
       "title": "Blog author",
-      "description": "description",
+      "description": "Article author(s) - max 3",
       "type": "array",
       "min": 1,
       "max": 3,

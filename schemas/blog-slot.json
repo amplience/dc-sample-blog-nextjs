@@ -14,7 +14,7 @@
   "type": "object",
   "properties": {
     "blogList":{
-      "title": "Blog List",
+      "title": "Blog list",
       "description": "Blog list",
       "allOf": [
         { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
