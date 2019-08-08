@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json",
+  "title": "Text",
+  "description": "Text schema",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "text": {
+      "type": "string",
+      "format": "markdown",
+      "title": "Text",
+      "description": "",
+      "minLength": 0,
+      "maxLength": 6000
+    }
+  },
+  "propertyOrder": [
+    "text"
+  ]
+}

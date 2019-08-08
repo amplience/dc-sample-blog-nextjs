@@ -1,0 +1,137 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+  "title": "Blog Post",
+  "description": "A bloblog post",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "title": {
+      "title": "Title",
+      "description": "Title of the blog post",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 150
+    },
+    "date": {
+      "type": "string",
+      "format": "date-time",
+      "title": "Creation Date",
+      "description": "Creation date (YYYY-MM-DDTHH:mm:ssz)"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 200,
+      "title": "Description",
+      "description": "Used for blog listing page and SEO description"
+    },
+    "image": {
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        {
+          "properties": {
+            "contentType": {
+              "enum": [
+                "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "urlSlug": {
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100,
+      "title": "Url Slug",
+      "description": "Url friendly slug",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "tags": {
+      "type": "array",
+      "title": "Tags",
+      "description": "Blog tags",
+      "minItems": 0,
+      "maxItems": 10,
+      "items": {
+        "type": "string",
+        "minLength": 0,
+        "maxLength": 100,
+        "title": "Tag",
+        "description": ""
+      }
+    },
+    "readTime": {
+      "type": "integer",
+      "title": "Read Time",
+      "description": "The time it takes to read the blog"
+    },
+    "authors": {
+      "title": "Blog author",
+      "description": "description",
+      "type": "array",
+      "min": 1,
+      "max": 3,
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "enum": [
+                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "content": {
+      "title": "Content",
+      "description": "",
+      "type": "array",
+      "minItems": 0,
+      "maxItems": 20,
+      "items": {
+        "allOf": [
+          {
+            "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+          },
+          {
+            "properties": {
+              "contentType": {
+                "title": "Content",
+                "enum": [
+                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
+                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json",
+                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "propertyOrder": [
+    "title",
+    "authors",
+    "date",
+    "description",
+    "image",
+    "urlSlug",
+    "tags",
+    "readTime",
+    "content"
+  ]
+}

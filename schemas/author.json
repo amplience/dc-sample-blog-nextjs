@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json",
+  "title": "Author",
+  "description": "Author schema",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "name": {
+      "title": "Author name",
+      "description": "Name of the author",
+      "type": "string",
+      "minLength": 0,
+      "maxLength": 100
+    },
+    "avatar": {
+      "title": "Avatar",
+      "description": "The authors avatar",
+      "type": "object",
+      "allOf": [
+        {
+          "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
+        },
+        {
+          "properties": {
+            "contentType": {
+              "title": "image",
+              "enum": [
+                "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "propertyOrder": [
+    "name",
+    "avatar"
+  ]
+}

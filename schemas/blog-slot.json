@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json",
+
+  "title": "Blog Slot",
+  "description": "Slot for blog",
+
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+
+  "type": "object",
+  "properties": {
+    "blogList":{
+      "title": "Blog List",
+      "description": "Blog list",
+      "allOf": [
+        { "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link" },
+        {
+          "properties": {
+            "contentType": {
+              "enum": [
+                "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json"
+              ]
+            }
+          }
+        }
+      ]
+    }
+
+  },
+  "propertyOrder": ["blogList"]
+}
