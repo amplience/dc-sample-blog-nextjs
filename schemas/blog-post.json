@@ -71,7 +71,7 @@
     },
     "readTime": {
       "title": "Read time",
-      "description": "The time it takes to read the blog"
+      "description": "The time it takes to read the blog",
       "type": "integer",
     },
     "authors": {
