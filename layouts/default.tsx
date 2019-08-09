@@ -24,6 +24,11 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
         ::after {
           box-sizing: border-box;
         }
+
+        main {
+          margin: auto;
+          max-width: 1200px;
+        }
       `}</style>
     </>
   );
