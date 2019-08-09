@@ -3,7 +3,6 @@
 const flow = require('lodash.flow');
 const withManifest = require('next-manifest');
 const withOffline = require('next-offline');
-const withSass = require('@zeit/next-sass');
 require('dotenv').config();
 
 const exportPathMap = async function() {
@@ -75,7 +74,7 @@ const manifest = {
   splash_pages: null
 };
 
-const plugins = flow([withManifest, withOffline, withSass]);
+const plugins = flow([withManifest, withOffline]);
 
 module.exports = plugins({
   env,

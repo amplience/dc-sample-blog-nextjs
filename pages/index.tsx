@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
+import Layout from '../layouts/default';
 
 import { DynamicContentDeliveryService } from '../services/DynamicContentDeliveryService';
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
-
-import './index.scss';
 
 interface IndexProps {
   content: {
@@ -13,10 +12,10 @@ interface IndexProps {
 
 const Index: NextPage<IndexProps> = (props: IndexProps) => {
   return (
-    <>
+    <Layout title="some title" description="some description">
       {/* In this example we are outputting the complete content response from the Dynamic Content Service, this is where you would use props.content to render your site. */}
       <pre>{JSON.stringify(props.content, null, 2)}</pre>
-    </>
+    </Layout>
   );
 };
 

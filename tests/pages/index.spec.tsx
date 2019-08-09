@@ -5,10 +5,6 @@ import Index from '../../pages/index';
 
 const mockGetContentItem = jest.fn();
 
-jest.mock("../../pages/index.scss", () => {
-  return { };
-});
-
 jest.mock('dc-delivery-sdk-js', () => {
   return {
     ContentClient: jest.fn(() => {

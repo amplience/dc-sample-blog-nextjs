@@ -1,13 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index renders index with content 1`] = `
-<pre>
-  {
+<main
+  className="jsx-897698727"
+>
+  <pre>
+    {
   "_meta": {
     "schema": "http://example.com/schema.json",
     "deliveryId": "delivery-id",
     "name": "content-name"
   }
 }
-</pre>
+  </pre>
+</main>
 `;
