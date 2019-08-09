@@ -1,14 +1,4 @@
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-
-import './default.scss';
-
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: '#dd1a5b' },
-    secondary: { main: '#039be5' }
-  }
-});
+import { NextSeo } from 'next-seo';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
@@ -19,13 +9,22 @@ interface DefaultLayoutProps {
 export default ({ children, title, description }: DefaultLayoutProps) => {
   return (
     <>
-      <div>
-        <h1>{title}</h1>
-        <h2>{description}</h2>
-      </div>
-      <ThemeProvider theme={theme}>
-        <main>{children}</main>
-      </ThemeProvider>
+      <NextSeo title={title} description={description} />
+      <main>{children}</main>
+      <style jsx global>{`
+        body {
+          font-family: Roboto, Arial, sans-serif;
+          margin: 0;
+          max-width: 100%;
+          overflow-x: hidden;
+        }
+
+        *,
+        ::before,
+        ::after {
+          box-sizing: border-box;
+        }
+      `}</style>
     </>
   );
 };
