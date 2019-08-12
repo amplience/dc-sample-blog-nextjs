@@ -3,7 +3,7 @@ import { ContentClientConfig } from 'dc-delivery-sdk-js';
 
 const mockGetContentItemById = jest.fn();
 
-jest.mock('../../services/DynamicContentDeliveryService', () => {
+jest.mock('../../common/services/dynamic-content-delivery.service', () => {
   return {
     DynamicContentDeliveryService: jest.fn(() => {
       return {
@@ -12,8 +12,8 @@ jest.mock('../../services/DynamicContentDeliveryService', () => {
     })
   };
 });
-describe('getBlogReferenceList', () => {
-  test('should return content', async () => {
+describe('getBlogReferenceList', (): void => {
+  test('should return content', async (): Promise<void> => {
     const clientConfig: ContentClientConfig = {
       account: 'test-account',
       baseUrl: 'https://base-url-test'

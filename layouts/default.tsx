@@ -1,5 +1,5 @@
 import { NextSeo } from 'next-seo';
-import theme from '../styles/default/theme';
+import theme from '../common/styles/default/theme';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];

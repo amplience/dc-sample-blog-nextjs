@@ -1,4 +1,4 @@
-import theme from '../../styles/default/theme';
+import theme from '../../common/styles/default/theme';
 
 const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
