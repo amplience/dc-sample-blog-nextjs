@@ -5,8 +5,8 @@ import Index from '../../pages/index';
 
 const mockGetBlogReferenceList = jest.fn();
 
-jest.mock('../../pages/services/blog-reference-list.service', () => ({
-  ...jest.requireActual('../../pages/services/blog-reference-list.service'),
+jest.mock('../../common/services/blog-reference-list.service', () => ({
+  ...jest.requireActual('../../common/services/blog-reference-list.service'),
   getBlogReferenceList: () => mockGetBlogReferenceList()
 }));
 

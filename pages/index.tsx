@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Layout from '../layouts/default';
-import { BlogReferenceList } from './interfaces/blog-reference-list.interface';
-import { getBlogReferenceList } from './services/blog-reference-list.service';
+import { BlogReferenceList } from '../common/interfaces/blog-reference-list.interface';
+import { getBlogReferenceList } from '../common/services/blog-reference-list.service';
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
 import HeroBanner from '../components/hero-banner/hero-banner';
 
