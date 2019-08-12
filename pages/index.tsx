@@ -1,8 +1,7 @@
 import { NextPage } from 'next';
 import Layout from '../layouts/default';
 import { BlogReferenceList } from '../common/interfaces/blog-reference-list.interface';
-import { getBlogReferenceList } from '../common/services/blog-reference-list.service';
-import { ContentClientConfig } from 'dc-delivery-sdk-js';
+import getBlogReferenceList from '../common/services/get-blog-reference-list.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
 
 const Index: NextPage<BlogReferenceList> = ({ title, subTitle, blogPosts }) => {
@@ -16,13 +15,9 @@ const Index: NextPage<BlogReferenceList> = ({ title, subTitle, blogPosts }) => {
 
 Index.getInitialProps = async (): Promise<BlogReferenceList> => {
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
-  const clientConfig: ContentClientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
-  };
 
   try {
-    return getBlogReferenceList(id, clientConfig);
+    return await getBlogReferenceList(id);
   } catch (err) {
     throw err;
   }

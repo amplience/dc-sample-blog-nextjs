@@ -5,10 +5,9 @@ import Index from '../../pages/index';
 
 const mockGetBlogReferenceList = jest.fn();
 
-jest.mock('../../common/services/blog-reference-list.service', () => ({
-  ...jest.requireActual('../../common/services/blog-reference-list.service'),
-  getBlogReferenceList: () => mockGetBlogReferenceList()
-}));
+jest.mock('../../common/services/get-blog-reference-list.service', () => {
+  return () => mockGetBlogReferenceList();
+});
 
 describe('Index', () => {
   test('renders index with content', async () => {
