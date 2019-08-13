@@ -1,5 +1,5 @@
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
-import { DynamicContentDeliveryService } from '../../../services/DynamicContentDeliveryService';
+import { DynamicContentDeliveryService } from '../../../common/services/dynamic-content-delivery.service';
 import BlogPost from '../interfaces/blog-post.interface';
 
 export default async function getBlogPost(blogPostId: string): Promise<BlogPost> {
