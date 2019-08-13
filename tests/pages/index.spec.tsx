@@ -3,28 +3,27 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import Index from '../../pages/index';
 
-const mockGetContentItem = jest.fn();
+const mockGetBlogReferenceList = jest.fn();
 
-jest.mock('dc-delivery-sdk-js', () => {
-  return {
-    ContentClient: jest.fn(() => {
-      return {
-        getContentItem: mockGetContentItem
-      };
-    })
-  };
-});
+jest.mock('../../common/services/blog-reference-list.service', () => ({
+  ...jest.requireActual('../../common/services/blog-reference-list.service'),
+  getBlogReferenceList: () => mockGetBlogReferenceList()
+}));
 
 describe('Index', () => {
   test('renders index with content', async () => {
     const props = {
-      content: {
-        _meta: {
-          schema: 'http://example.com/schema.json',
-          deliveryId: 'delivery-id',
-          name: 'content-name'
+      title: 'blog-test-title',
+      subTitle: 'blog-test-sub-title',
+      blogPosts: [
+        {
+          id: '8d6943c7-6028-4fac-b45e-57fc63bd032a',
+          _meta: {
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+          },
+          contentType: 'https://schema.localhost.com/blog-post.json'
         }
-      }
+      ]
     };
 
     const component = await renderer.create(<Index {...props} />);
@@ -33,35 +32,48 @@ describe('Index', () => {
 
   test('renders pre with prettified content', () => {
     const props = {
-      content: {}
+      title: 'blog-test-title',
+      subTitle: 'blog-test-sub-title',
+      blogPosts: [
+        {
+          id: '8d6943c7-6028-4fac-b45e-57fc63bd032a',
+          _meta: {
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+          },
+          contentType: 'https://schema.localhost.com/blog-post.json'
+        }
+      ]
     };
     const component = shallow(<Index {...props} />);
-    expect(component.find('pre').text()).toEqual(JSON.stringify(props.content, null, 2));
+    expect(component.find('pre').text()).toEqual(JSON.stringify(props.blogPosts, null, 2));
   });
 
   test('getInitialProps returns content', async () => {
     const contentData = {
-      _meta: {
-        schema: 'http://example.com/schema.json',
-        deliveryId: 'delivery-id',
-        name: 'content-name'
-      }
+      title: 'blog-test-title',
+      subTitle: 'blog-test-sub-title',
+      blogPosts: [
+        {
+          id: '8d6943c7-6028-4fac-b45e-57fc63bd032a',
+          _meta: {
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+          },
+          contentType: 'https://schema.localhost.com/blog-post.json'
+        }
+      ]
     };
-    const contentItem = {
-      toJSON: () => contentData
-    };
-    mockGetContentItem.mockImplementation(() => contentItem);
+    mockGetBlogReferenceList.mockImplementation(() => contentData);
     const query = {
       id: 'test-id',
       account: 'test-acccount'
     };
     const result = await Index.getInitialProps({ query, pathname: '/' });
 
-    expect(result).toEqual({ content: contentData });
+    expect(result).toEqual({ ...contentData });
   });
 
   test('getInitialProps throws error when getContentItemById returns an error', async () => {
-    mockGetContentItem.mockImplementation(() => {
+    mockGetBlogReferenceList.mockImplementation(() => {
       throw new Error();
     });
     const query = {

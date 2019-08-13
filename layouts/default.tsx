@@ -1,4 +1,5 @@
 import { NextSeo } from 'next-seo';
+import theme from '../common/styles/default/theme';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
@@ -14,6 +15,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
       <style jsx global>{`
         body {
           font-family: Roboto, Arial, sans-serif;
+          font-size: ${theme.fonts.size.root};
           margin: 0;
           max-width: 100%;
           overflow-x: hidden;

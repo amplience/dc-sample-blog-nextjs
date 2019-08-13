@@ -1,4 +1,4 @@
-import { DynamicContentDeliveryService } from './DynamicContentDeliveryService';
+import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
 import { ContentClient } from 'dc-delivery-sdk-js';
 
 const mockGetContentItem = jest.fn();

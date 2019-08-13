@@ -1,35 +1,28 @@
 import { NextPage } from 'next';
 import Layout from '../layouts/default';
-
-import { DynamicContentDeliveryService } from '../services/DynamicContentDeliveryService';
+import { BlogReferenceList } from '../common/interfaces/blog-reference-list.interface';
+import { getBlogReferenceList } from '../common/services/blog-reference-list.service';
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
+import HeroBanner from '../components/hero-banner/hero-banner';
 
-interface IndexProps {
-  content: {
-    [key: string]: any;
-  };
-}
-
-const Index: NextPage<IndexProps> = (props: IndexProps) => {
+const Index: NextPage<BlogReferenceList> = ({ title, subTitle, blogPosts }) => {
   return (
-    <Layout title="some title" description="some description">
-      {/* In this example we are outputting the complete content response from the Dynamic Content Service, this is where you would use props.content to render your site. */}
-      <pre>{JSON.stringify(props.content, null, 2)}</pre>
+    <Layout title={title} description={subTitle}>
+      <HeroBanner title={title} subTitle={subTitle}></HeroBanner>
+      <pre>{JSON.stringify(blogPosts, null, 2)}</pre>
     </Layout>
   );
 };
 
-Index.getInitialProps = async () => {
-  const id = process.env.DYNAMIC_CONTENT_REFERENCE_ID;
-  const clientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
-  } as ContentClientConfig;
+Index.getInitialProps = async (): Promise<BlogReferenceList> => {
+  const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
+  const clientConfig: ContentClientConfig = {
+    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
+    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
+  };
 
   try {
-    const deliveryClient = new DynamicContentDeliveryService(clientConfig);
-    const content = (await deliveryClient.getContentItemById(id as string)).toJSON();
-    return { content };
+    return getBlogReferenceList(id, clientConfig);
   } catch (err) {
     throw err;
   }
