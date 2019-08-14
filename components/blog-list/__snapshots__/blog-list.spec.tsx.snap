@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogList renders blog list with a single blog 1`] = `
+<section
+  className="jsx-2576325162"
+>
+  <div
+    className="blog-card-mock"
+  />
+</section>
+`;

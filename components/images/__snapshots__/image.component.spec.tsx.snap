@@ -3,6 +3,7 @@
 exports[`ImageComponent should render an image 1`] = `
 <img
   alt="altText"
+  className="jsx-1016004996"
   src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
 />
 `;

@@ -5,7 +5,7 @@ exports[`VideoComponent should render an video 1`] = `
   controls={true}
 >
   <source
-    src="//i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb"
+    src="//i1-qa.adis.ws/i/bloblogltd/SampleVideo_1280x720_5mb"
   />
 </video>
 `;

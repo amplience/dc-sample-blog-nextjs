@@ -1,5 +1,7 @@
 import Image from '../images/image.component';
 import BlogPost from '../../pages/blogs/interfaces/blog-post.interface';
+import theme from '../../common/styles/default/theme';
+import BlogCardMeta from '../blog-card-meta/blog-card-meta';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -9,30 +11,46 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
   return (
     <>
       <article>
-        <Image {...blogPost.image} />
-        <h1>{blogPost.title}</h1>
-        <div>{blogPost.authors[0].name}</div>
-        <div>{blogPost.date}</div>
-        <div>{blogPost.description}</div>
+        <div className="blog-card-image">
+          <Image {...blogPost.image} />
+        </div>
+        <div className="blog-card-content">
+          <h1>{blogPost.title}</h1>
+          <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
+          <p>{blogPost.description}</p>
+        </div>
       </article>
       <style jsx>{`
         article {
           width: 31%;
           display: flex;
-          justify-content: space-between;
           flex-direction: column;
           margin-bottom: 36px;
-          padding: 10px;
-          box-shadow: -2px 8px 10px #efefef, 2px 8px 10px #efefef;
+          box-shadow: 0 6px 12px 2px ${theme.colors.shadowLight};
           background: white;
           cursor: pointer;
+          min-height: 326px;
         }
 
         article:hover {
-          box-shadow: -2px 8px 10px #969696, 2px 8px 10px #969696;
+          box-shadow: 0 6px 12px 2px ${theme.colors.shadowDark};
         }
 
-        @media (max-width: 800px) {
+        .blog-card-image :global(img) {
+          height: 120px;
+          max-height: 120px;
+          object-fit: cover;
+        }
+
+        .blog-card-content {
+          padding 0 20px 20px 20px;
+        }
+
+        h1 {
+          font-size: 1.1rem;
+        }
+
+        @media (max-width: ${theme.layout.blogListWidth}) {
           article {
             width: 100%;
           }

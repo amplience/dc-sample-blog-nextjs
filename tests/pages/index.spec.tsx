@@ -17,22 +17,22 @@ const indexPropsFixture = {
   subTitle: 'blog-test-sub-title',
   blogPosts: [
     {
-      title: 'string',
-      date: 'string',
-      description: 'string',
+      title: 'blog-post-test',
+      date: '2019-08-13',
+      description: 'blog-post-description',
       authors: [],
       image: {
         image: {
-          id: 'string',
-          name: 'string',
-          endpoint: 'string',
-          defaultHost: 'string',
+          id: 'image-id',
+          name: 'image-name',
+          endpoint: 'image-endpoint',
+          defaultHost: 'image-default-host',
           mediaType: MediaType.IMAGE
         },
         altText: ''
       },
-      urlSlug: 'string',
-      tags: ['string'],
+      urlSlug: 'url-slug',
+      tags: ['test-tag'],
       readTime: 15,
       content: []
     }

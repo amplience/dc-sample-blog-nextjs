@@ -1,5 +1,5 @@
 const layout = {
-  blogListWidth: '800px'
+  blogListWidth: '1000px'
 };
 
 export default layout;

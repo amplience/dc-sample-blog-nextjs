@@ -1,7 +1,7 @@
 const fonts = {
   size: {
-    root: '12px',
-    mobileRoot: '15px',
+    root: '14px',
+    mobileRoot: '18px',
     tiny: '0.6rem',
     small: '0.8rem',
     normal: '1rem',

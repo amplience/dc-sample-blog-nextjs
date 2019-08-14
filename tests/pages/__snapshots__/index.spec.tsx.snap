@@ -2,7 +2,7 @@
 
 exports[`Index renders index with content 1`] = `
 <main
-  className="jsx-983951839"
+  className="jsx-305888461"
 >
   <div
     className="hero-banner-mock"
