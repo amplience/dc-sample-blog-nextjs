@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from '../images/image.component';
-import BlogPost from '../../pages/blogs/interfaces/blog-post.interface';
+import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
 

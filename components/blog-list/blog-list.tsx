@@ -1,4 +1,4 @@
-import BlogPost from '../../pages/blogs/interfaces/blog-post.interface';
+import BlogPost from '../../common/interfaces/blog-post.interface';
 import BlogCard from '../blog-card/blog-card';
 import theme from '../../common/styles/default/theme';
 

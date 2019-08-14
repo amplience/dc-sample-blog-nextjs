@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import getBlogPost from './services/get-blog-post.service';
-import BlogPost from './interfaces/blog-post.interface';
+import getBlogPost from '../../common/services/get-blog-post.service';
+import BlogPost from '../../common/interfaces/blog-post.interface';
 import ImageComponent from '../../components/images/image.component';
 import VideoComponent from '../../components/videos/video.component';
 import Video from '../../common/interfaces/video.interface';
@@ -10,8 +10,8 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
 
   return (
     <>
-      <VideoComponent video={video.video}/>
-      <ImageComponent altText={props.image.altText} image={props.image.image}/>
+      <VideoComponent video={video.video} />
+      <ImageComponent altText={props.image.altText} image={props.image.image} />
       {/* In this example we are outputting the complete content response from the Dynamic Content Service, this is where you would use props.content to render your site. */}
       <pre>{JSON.stringify(props, null, 2)}</pre>
     </>

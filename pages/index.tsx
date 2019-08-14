@@ -2,8 +2,8 @@ import { NextPage } from 'next';
 import Layout from '../layouts/default';
 import getBlogReferenceList from '../common/services/get-blog-reference-list.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
-import getBlogPost from './blogs/services/get-blog-post.service';
-import BlogPost from './blogs/interfaces/blog-post.interface';
+import getBlogPost from '../common/services/get-blog-post.service';
+import BlogPost from '../common/interfaces/blog-post.interface';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
 

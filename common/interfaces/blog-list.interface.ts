@@ -1,4 +1,4 @@
-import BlogPost from '../../pages/blogs/interfaces/blog-post.interface';
+import BlogPost from './blog-post.interface';
 
 export interface BlogListData {
   title: string;

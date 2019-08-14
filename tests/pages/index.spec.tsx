@@ -2,47 +2,51 @@
 import renderer from 'react-test-renderer';
 import Index from '../../pages/index';
 import { MediaType } from '../../common/interfaces/media.interface';
+import { BlogListData } from '../../common/interfaces/blog-list.interface';
 
 const mockGetBlogReferenceList = jest.fn();
 const mockGetBlogPost = jest.fn();
 
 jest.mock('../../common/services/get-blog-reference-list.service', () => () => mockGetBlogReferenceList());
-jest.mock('../../pages/blogs/services/get-blog-post.service', () => () => mockGetBlogPost());
+jest.mock('../../common/services/get-blog-post.service', () => () => mockGetBlogPost());
 
 jest.mock('../../components/hero-banner/hero-banner', () => () => <div className="hero-banner-mock" />);
 jest.mock('../../components/blog-list/blog-list', () => () => <div className="blob-list-mock" />);
 
-const indexPropsFixture = {
-  title: 'blog-test-title',
-  subTitle: 'blog-test-sub-title',
-  blogPosts: [
-    {
-      title: 'blog-post-test',
-      date: '2019-08-13',
-      description: 'blog-post-description',
-      authors: [],
-      image: {
-        image: {
-          id: 'image-id',
-          name: 'image-name',
-          endpoint: 'image-endpoint',
-          defaultHost: 'image-default-host',
-          mediaType: MediaType.IMAGE
-        },
-        altText: ''
-      },
-      urlSlug: 'url-slug',
-      tags: ['test-tag'],
-      readTime: 15,
-      content: []
-    }
-  ]
-};
-
 describe('Index', () => {
+  let indexPropsFixture: BlogListData;
+
+  beforeEach(() => {
+    indexPropsFixture = {
+      title: 'blog-test-title',
+      subTitle: 'blog-test-sub-title',
+      blogPosts: [
+        {
+          id: 'blog-post-id',
+          title: 'blog-post-test',
+          date: '2019-08-13',
+          description: 'blog-post-description',
+          authors: [],
+          image: {
+            image: {
+              id: 'image-id',
+              name: 'image-name',
+              endpoint: 'image-endpoint',
+              defaultHost: 'image-default-host',
+              mediaType: MediaType.IMAGE
+            },
+            altText: ''
+          },
+          urlSlug: 'url-slug',
+          tags: ['test-tag'],
+          readTime: 15,
+          content: []
+        }
+      ]
+    };
+  });
   test('renders index with content', async () => {
-    const props = JSON.parse(JSON.stringify(indexPropsFixture));
-    const component = await renderer.create(<Index {...props} />);
+    const component = await renderer.create(<Index {...indexPropsFixture} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
@@ -60,15 +64,14 @@ describe('Index', () => {
         }
       ]
     };
-    const props = JSON.parse(JSON.stringify(indexPropsFixture));
     mockGetBlogReferenceList.mockImplementation(() => {
       return contentData;
     });
-    mockGetBlogPost.mockImplementation(() => props.blogPosts[0]);
+    mockGetBlogPost.mockImplementation(() => indexPropsFixture.blogPosts[0]);
     const query = {};
     const result = await Index.getInitialProps({ query, pathname: '/' });
 
-    expect(result).toEqual({ ...props });
+    expect(result).toEqual({ ...indexPropsFixture });
   });
 
   test('getInitialProps throws error when getContentItemById returns an error', async () => {
