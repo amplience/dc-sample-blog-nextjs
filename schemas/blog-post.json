@@ -73,7 +73,7 @@
     "readTime": {
       "title": "Read time",
       "description": "The time it takes to read the blog",
-      "type": "integer",
+      "type": "integer"
     },
     "authors": {
       "title": "Blog author",
