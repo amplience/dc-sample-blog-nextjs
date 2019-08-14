@@ -18,8 +18,8 @@
       "maxLength": 100
     },
     "subTitle": {
-      "title": "Sub Title",
-      "description": "Sub title for the blog list",
+      "title": "Subtitle",
+      "description": "Subtitle for the blog list",
       "type": "string",
       "minLength": 0,
       "maxLength": 300
