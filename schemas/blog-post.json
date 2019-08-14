@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
   "title": "Blog post",
-  "description": "A bloblog post",
+  "description": "A blog post",
   "allOf": [
     {
       "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
@@ -32,6 +32,7 @@
     },
     "image": {
       "title": "Image",
+      "description": "Used for the blog post's thumbnail and banner",
       "allOf": [
         {
           "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-link"
@@ -125,6 +126,17 @@
     }
   },
   "propertyOrder": [
+    "title",
+    "authors",
+    "date",
+    "description",
+    "image",
+    "urlSlug",
+    "tags",
+    "readTime",
+    "content"
+  ],
+  "required": [
     "title",
     "authors",
     "date",

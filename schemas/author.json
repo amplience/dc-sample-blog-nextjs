@@ -41,5 +41,9 @@
   "propertyOrder": [
     "name",
     "avatar"
+  ],
+  "required": [
+    "name",
+    "avatar"
   ]
 }
