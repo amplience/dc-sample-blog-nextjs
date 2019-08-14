@@ -6,13 +6,23 @@ interface BlogListProps {
   blogPosts: BlogPost[];
 }
 
-const BlogList = ({ blogPosts }: BlogListProps) => {
-  const blogs = blogPosts.map((blogPost: BlogPost, index: number) => {
-    return <BlogCard key={index} blogPost={blogPost} />;
-  });
+const BlogList = ({ blogPosts = [] }: BlogListProps) => {
+  const blogCards = blogPosts.map((blogPost: BlogPost, index: number) => <BlogCard key={index} blogPost={blogPost} />);
+  const noPublishedBlogs = (
+    <div className="no-published-blogs">
+      <p>No blogs published yet!</p>
+      <style jsx>{`
+        .no-blogs {
+          text-align: center;
+          width: 100%;
+        }
+      `}</style>
+    </div>
+  );
+
   return (
     <>
-      <section>{blogs}</section>
+      <section>{blogCards.length ? blogCards : noPublishedBlogs}</section>
       <style jsx>{`
         section {
           display: flex;

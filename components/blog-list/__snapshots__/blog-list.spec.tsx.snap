@@ -9,3 +9,35 @@ exports[`BlogList renders blog list with a single blog 1`] = `
   />
 </section>
 `;
+
+exports[`BlogList renders empty blog list when blog list is empty array 1`] = `
+<section
+  className="jsx-2576325162"
+>
+  <div
+    className="jsx-143652140 no-published-blogs"
+  >
+    <p
+      className="jsx-143652140"
+    >
+      No blogs published yet!
+    </p>
+  </div>
+</section>
+`;
+
+exports[`BlogList renders empty blog list when blog list is undefined 1`] = `
+<section
+  className="jsx-2576325162"
+>
+  <div
+    className="jsx-143652140 no-published-blogs"
+  >
+    <p
+      className="jsx-143652140"
+    >
+      No blogs published yet!
+    </p>
+  </div>
+</section>
+`;

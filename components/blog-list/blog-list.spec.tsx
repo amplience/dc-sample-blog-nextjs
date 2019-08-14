@@ -48,4 +48,20 @@ describe('BlogList', () => {
     const wrapper = shallow(<BlogList {...props} />);
     expect(wrapper.find(BlogCard).length).toEqual(10);
   });
+
+  test('renders empty blog list when blog list is empty array', async () => {
+    const props = {
+      blogPosts: []
+    };
+    const component = await renderer.create(<BlogList {...props} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('renders empty blog list when blog list is undefined', async () => {
+    const props = {
+      blogPosts: undefined
+    };
+    const component = await renderer.create(<BlogList {...props} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
