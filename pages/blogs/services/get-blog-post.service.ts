@@ -22,6 +22,7 @@ export default async function getBlogPost(blogPostId: string): Promise<BlogPost>
   } = (await deliveryClient.getContentItemById(blogPostId)).toJSON();
 
   return {
+    id: blogPostId,
     title,
     date,
     description,

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Image from '../images/image.component';
 import BlogPost from '../../pages/blogs/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
@@ -8,18 +9,21 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ blogPost }: BlogCardProps) => {
+  const blogLink = `/${blogPost.urlSlug}/${blogPost.id}`;
   return (
     <>
-      <article>
-        <div className="blog-card-image">
-          <Image {...blogPost.image} />
-        </div>
-        <div className="blog-card-content">
-          <h1>{blogPost.title}</h1>
-          <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
-          <p>{blogPost.description}</p>
-        </div>
-      </article>
+      <Link href={blogLink}>
+        <article>
+          <div className="blog-card-image">
+            <Image {...blogPost.image} />
+          </div>
+          <div className="blog-card-content">
+            <h1>{blogPost.title}</h1>
+            <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
+            <p>{blogPost.description}</p>
+          </div>
+        </article>
+      </Link>
       <style jsx>{`
         article {
           width: 31%;

@@ -9,7 +9,7 @@
     "export": "npm run build && next export",
     "precommit": "npm run lint",
     "commit": "npx git-cz",
-    "test:jest": "jest",
+    "test:jest": "jest --silent",
     "test": "run-s lint test:jest",
     "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\""
   },

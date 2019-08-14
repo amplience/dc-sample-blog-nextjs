@@ -3,6 +3,8 @@
 exports[`BlogCard renders full blog card 1`] = `
 <article
   className="jsx-719579068"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
 >
   <div
     className="jsx-719579068 blog-card-image"

@@ -23,7 +23,7 @@ Index.getInitialProps = async (): Promise<BlogListData> => {
     const { title, subTitle, blogPosts } = await getBlogReferenceList(id);
     const hydratedBlogPosts: BlogPost[] = await Promise.all(
       blogPosts.map(async (reference: any) => {
-        return await getBlogPost(reference.id);
+        return getBlogPost(reference.id);
       })
     );
 
