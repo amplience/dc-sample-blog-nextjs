@@ -1,4 +1,3 @@
-import marked from 'marked';
 import BlogPost from '../interfaces/blog-post.interface';
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
 import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
@@ -48,8 +47,6 @@ export async function parseContent(content: AmplienceContent[]): Promise<Amplien
     } else if ('video' in c) {
       c = assignMediaType(c) as AmplienceVideo;
       c.src = await getVideoUrl(c);
-    } else if ('text' in c) {
-      c.text = marked(c.text);
     }
 
     updatedContent.push(c);

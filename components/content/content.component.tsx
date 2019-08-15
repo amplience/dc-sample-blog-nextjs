@@ -1,9 +1,14 @@
 import Image from '../images/image.component';
 import Video from '../videos/video.component';
-import Text from '../text/text.component';
+import CodeBlock from '../code-block/code-block.component';
 import { AmplienceContent } from '../../common/interfaces/content.type';
+import ReactMarkdown from 'react-markdown';
 
-const Content = ({ content }: AmplienceContent[]) => {
+const MARKDOWN_RENDERERS = {
+  code: CodeBlock
+};
+
+const Content = ({ content }: { content: AmplienceContent[] }) => {
   return (
     <>
       {content.map((c: AmplienceContent) => {
@@ -20,7 +25,11 @@ const Content = ({ content }: AmplienceContent[]) => {
             </div>
           );
         } else if ('text' in c) {
-          return <Text text={c.text} />;
+          return (
+            <div>
+              <ReactMarkdown source={c.text} renderers={MARKDOWN_RENDERERS} />
+            </div>
+          );
         }
       })}
     </>
