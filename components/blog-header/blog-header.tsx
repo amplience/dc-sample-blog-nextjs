@@ -1,20 +1,13 @@
-const BlogHeader = ({title}: { title: string;}) => {
+const BlogHeader = ({ title }: { title: string }) => {
   return (
     <>
       <section>
-        <div className="header">
-          <img className="logo" src='/static/images/logo.png' alt="alt-tag"/>
-          <h1>{title}</h1>
-        </div>
+        <img className="logo" src="/static/images/logo.png" alt="alt-tag" />
+        <h1>{title}</h1>
       </section>
       <style jsx>{`
-        .header {
-          background: #F0F0F0;
-          overflow: hidden;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
+        section {
+          background: #f0f0f0;
           height: 65px;
           text-align: left;
           display: flex;
@@ -26,7 +19,7 @@ const BlogHeader = ({title}: { title: string;}) => {
         }
         h1 {
           font-size: 1.2rem;
-          font-weight: normal; 
+          font-weight: normal;
         }
       `}</style>
     </>

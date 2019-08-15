@@ -12,15 +12,24 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
   return (
     <>
       <NextSeo title={title} description={description} />
-      <BlogHeader title={title}/>
-      <main>{children}</main>
+      <div className="site-container">
+        <header>
+          <BlogHeader title={title}/>
+        </header>
+        <main>{children}</main>
+      </div>
       <style jsx global>{`
+        html,
+        body {
+          margin: 0;
+          height: 100%;
+          min-height: 100%;
+        }
+        
         body {
           font-family: Roboto, Arial, sans-serif;
           font-size: ${theme.fonts.size.root};
-          margin: 0;
           max-width: 100%;
-          overflow-x: hidden;
         }
 
         *,
@@ -29,9 +38,20 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           box-sizing: border-box;
         }
 
+        #__next,
+        .site-container {
+          height: 100%;
+        }
+        
         main {
-          margin: auto;
-          max-width: 1200px;
+          flex: auto;
+          overflow-y: auto;
+        }
+  
+        .site-container {
+          margin: 0;
+          display: flex;
+          flex-direction: column;
         }
 
         @media (max-width: ${theme.layout.blogListWidth}) {
