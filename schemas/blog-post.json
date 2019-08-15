@@ -73,14 +73,14 @@
     "readTime": {
       "title": "Read time",
       "description": "The time it takes to read the blog",
-      "type": "integer",
+      "type": "integer"
     },
     "authors": {
       "title": "Blog author",
       "description": "Article author(s) - max 3",
       "type": "array",
-      "min": 1,
-      "max": 3,
+      "minItems": 1,
+      "maxItems": 3,
       "items": {
         "allOf": [
           {

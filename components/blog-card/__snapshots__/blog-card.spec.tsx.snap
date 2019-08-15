@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogCard renders full blog card 1`] = `
+<article
+  className="jsx-719579068"
+  onClick={[Function]}
+  onMouseEnter={[Function]}
+>
+  <div
+    className="jsx-719579068 blog-card-image"
+  >
+    <div
+      className="image-mock"
+    />
+  </div>
+  <div
+    className="jsx-719579068 blog-card-content"
+  >
+    <h1
+      className="jsx-719579068"
+    >
+      blog-post-test
+    </h1>
+    <div
+      className="blog-card-meta-mock"
+    />
+    <p
+      className="jsx-719579068"
+    >
+      blog-post-description
+    </p>
+  </div>
+</article>
+`;

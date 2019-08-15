@@ -9,7 +9,7 @@
     "export": "npm run build && next export",
     "precommit": "npm run lint",
     "commit": "npx git-cz",
-    "test:jest": "jest",
+    "test:jest": "jest --silent",
     "test": "run-s lint test:jest",
     "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\""
   },
@@ -64,6 +64,7 @@
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.5",
+    "@types/react-syntax-highlighter": "^10.2.1",
     "@types/react-test-renderer": "^16.8.3",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
@@ -89,7 +90,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@types/react-syntax-highlighter": "^10.2.1",
+    "dayjs": "^1.8.15",
     "dc-delivery-sdk-js": "^0.3.0",
     "next": "^9.0.2",
     "react": "^16.8.6",

@@ -1,29 +1,35 @@
 import { NextPage } from 'next';
 import Layout from '../layouts/default';
-import { BlogReferenceList } from '../common/interfaces/blog-reference-list.interface';
-import { getBlogReferenceList } from '../common/services/blog-reference-list.service';
-import { ContentClientConfig } from 'dc-delivery-sdk-js';
+import getBlogReferenceList from '../common/services/get-blog-reference-list.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
+import BlogPost from '../common/interfaces/blog-post.interface';
+import { BlogListData } from '../common/interfaces/blog-list.interface';
+import BlogList from '../components/blog-list/blog-list';
+import getBlogPost from '../common/services/blog-post.service';
 
-const Index: NextPage<BlogReferenceList> = ({ title, subTitle, blogPosts }) => {
+const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   return (
     <Layout title={title} description={subTitle}>
       <HeroBanner title={title} subTitle={subTitle}></HeroBanner>
-      <pre>{JSON.stringify(blogPosts, null, 2)}</pre>
+      <BlogList blogPosts={blogPosts} />
     </Layout>
   );
 };
 
-Index.getInitialProps = async (): Promise<BlogReferenceList> => {
+Index.getInitialProps = async (): Promise<BlogListData> => {
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
-  const clientConfig: ContentClientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
-  };
 
   try {
-    return getBlogReferenceList(id, clientConfig);
+    const { title, subTitle, blogPosts } = await getBlogReferenceList(id);
+    const hydratedBlogPosts: BlogPost[] = await Promise.all(
+      blogPosts.map(async (reference: any) => {
+        return getBlogPost(reference.id);
+      })
+    );
+
+    return { title, subTitle, blogPosts: hydratedBlogPosts };
   } catch (err) {
+    console.error('Unable to get initial props for Index:', err);
     throw err;
   }
 };

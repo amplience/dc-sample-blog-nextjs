@@ -5,9 +5,8 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
   return (
     <>
       <p>
-        Posted by&nbsp;
         <Image altText={authors[0].avatar.altText} src={authors[0].avatar.src} />
-        &nbsp;{authors[0].name} | {date} | {readTime} mins read
+        <b>{authors[0].name}</b> {date} {readTime} mins read
       </p>
     </>
   );

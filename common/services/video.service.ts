@@ -14,9 +14,13 @@ export async function getVideoUrl(video: AmplienceVideo): Promise<string> {
 
   try {
     const res = await fetch(videoMetaUrl);
-    const videoProfile: VideoProfile = await res.json();
 
-    if (videoProfile.media.length < 1) {
+    if (res.status !== 200) {
+      throw new Error(`Unable to parse video meta data, API responded with a ${res.status}`);
+    }
+
+    const videoProfile: VideoProfile = await res.json();
+    if (!videoProfile.media || videoProfile.media.length < 1) {
       return '';
     }
 

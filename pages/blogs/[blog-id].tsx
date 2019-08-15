@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
 import Image from '../../components/images/image.component';
 import BlogPost from '../../common/interfaces/blog-post.interface';
-import getBlogPost, { parseContent } from '../../common/services/blog-post.service';
 import HeroBanner from '../../components/hero-banner/hero-banner';
 import BlogPostAuthor from '../../components/blog-post-author/blog-post-author.component';
 import Tags from '../../components/tags/tags.component';
 import Layout from '../../layouts/default';
 import Content from '../../components/content/content.component';
+import getBlogPost, { parseContent } from '../../common/services/blog-post.service';
 
 const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   return (
