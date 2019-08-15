@@ -1,28 +1,41 @@
 import { NextPage } from 'next';
-import getBlogPost from './services/get-blog-post.service';
-import BlogPost from './interfaces/blog-post.interface';
-import ImageComponent from '../../components/images/image.component';
-import VideoComponent from '../../components/videos/video.component';
-import Video from '../../common/interfaces/video.interface';
+import Image from '../../components/images/image.component';
+import BlogPost from '../../common/interfaces/blog-post.interface';
+import getBlogPost, { parseContent } from '../../common/services/blog-post.service';
+import HeroBanner from '../../components/hero-banner/hero-banner';
+import BlogPostAuthor from '../../components/blog-post-author/blog-post-author.component';
+import Tags from '../../components/tags/tags.component';
+import Layout from '../../layouts/default';
+import Content from '../../components/content/content.component';
 
 const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
-  const video = props.content[2] as Video;
-
   return (
-    <>
-      <VideoComponent video={video.video}/>
-      <ImageComponent altText={props.image.altText} image={props.image.image}/>
-      {/* In this example we are outputting the complete content response from the Dynamic Content Service, this is where you would use props.content to render your site. */}
-      <pre>{JSON.stringify(props, null, 2)}</pre>
-    </>
+    <Layout title={props.title} description={props.description}>
+      <div id={'top'}>
+        <HeroBanner title={props.title}/>
+      </div>
+      <div>
+        <BlogPostAuthor authors={props.authors} date={props.date} readTime={props.readTime}/>
+      </div>
+      <div>
+        <Image altText={props.image.altText} src={props.image.src}/>
+      </div>
+      <Content content={props.content}/>
+      <a href={'#top'}>Back to the top</a>
+      <div>
+        <Tags tags={props.tags}/>
+      </div>
+    </Layout>
   );
 };
 
 BlogPostPage.getInitialProps = async ({ query }) => {
   const blogPostId = query['blog-id'].toString();
+  const blogPost = await getBlogPost(blogPostId);
+  blogPost.content = await parseContent(blogPost.content);
 
   try {
-    return await getBlogPost(blogPostId);
+    return blogPost;
   } catch (err) {
     throw err;
   }

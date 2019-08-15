@@ -1,11 +1,11 @@
 import renderer from 'react-test-renderer';
 import ImageComponent from './image.component';
-import Image from '../../common/interfaces/image.interface';
+import AmplienceImage from '../../common/interfaces/image.interface';
 import { MediaType } from '../../common/interfaces/media.interface';
 
 describe('ImageComponent', (): void => {
   it('should render an image', (): void => {
-    const image: Image = {
+    const image: AmplienceImage = {
       altText: 'altText',
       image: {
         defaultHost: 'i1-qa.adis.ws',

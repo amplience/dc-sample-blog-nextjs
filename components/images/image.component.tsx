@@ -1,6 +1,3 @@
-import Image from '../../common/interfaces/image.interface';
-import buildMediaUrl from '../../common/services/media.service';
+const Image = (image: { altText: string; src: string }) => <img alt={image.altText} src={image.src} />;
 
-const ImageComponent = (image: Image) => <img alt={image.altText} src={buildMediaUrl(image.image)} />;
-
-export default ImageComponent;
+export default Image;

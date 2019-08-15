@@ -1,21 +1,22 @@
 import renderer from 'react-test-renderer';
-import VideoComponent from './video.component';
-import Video from '../../common/interfaces/video.interface';
+import Video from './video.component';
+import AmplienceVideo from '../../common/interfaces/video.interface';
 import { MediaType } from '../../common/interfaces/media.interface';
 
-describe('VideoComponent', (): void => {
+describe('Video', (): void => {
   it('should render an video', (): void => {
-    const video: Video = {
+    const video: AmplienceVideo = {
       video: {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'SampleVideo_1280x720_5mb',
         id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
         mediaType: MediaType.VIDEO
-      }
+      },
+      src: 'http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p'
     };
 
-    const wrapper = renderer.create(<VideoComponent video={video.video} />).toJSON();
+    const wrapper = renderer.create(<Video video={video.video} src={video.src} />).toJSON();
     expect(wrapper).toMatchSnapshot();
   });
 });

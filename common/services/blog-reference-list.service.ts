@@ -1,7 +1,7 @@
 import { ContentClientConfig } from 'dc-delivery-sdk-js';
 
-import { DynamicContentDeliveryService } from '../../common/services/dynamic-content-delivery.service';
 import { BlogReferenceList } from '../interfaces/blog-reference-list.interface';
+import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
 
 const getBlogReferenceList = async (id: string, clientConfig: ContentClientConfig): Promise<BlogReferenceList> => {
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
