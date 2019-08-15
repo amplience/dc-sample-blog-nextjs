@@ -2,16 +2,17 @@
 
 exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = `
 <p>
-  Posted by 
   <img
     alt="The dashing Sir Bloblog avatar"
+    className="jsx-1016004996"
     src="//i1-qa.adis.ws/i/bloblogltd/man-business-suit"
   />
-   
-  Sir Bloblog
-   | 
+  <b>
+    Sir Bloblog
+  </b>
+   
   2019-08-14
-   | 
+   
   15
    mins read
 </p>
