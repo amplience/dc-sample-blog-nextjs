@@ -2,32 +2,13 @@
 
 exports[`Index renders index with content 1`] = `
 <main
-  className="jsx-371768111"
+  className="jsx-305888461"
 >
-  <section
-    className="jsx-1433923063"
-  >
-    <h1
-      className="jsx-1433923063"
-    >
-      blog-test-title
-    </h1>
-    <h2
-      className="jsx-1433923063"
-    >
-      blog-test-sub-title
-    </h2>
-  </section>
-  <pre>
-    [
-  {
-    "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
-    "_meta": {
-      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference"
-    },
-    "contentType": "https://schema.localhost.com/blog-post.json"
-  }
-]
-  </pre>
+  <div
+    className="hero-banner-mock"
+  />
+  <div
+    className="blob-list-mock"
+  />
 </main>
 `;

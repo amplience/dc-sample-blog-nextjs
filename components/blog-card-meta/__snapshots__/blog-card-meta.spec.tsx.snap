@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogCardMeta renders full blog card meta 1`] = `
+<div
+  className="jsx-3052705674 card-meta"
+>
+  <span
+    className="jsx-3052705674"
+  >
+    by 
+    test-name
+  </span>
+  <span
+    className="jsx-3052705674 publish-date"
+  >
+    13 August, 2019
+  </span>
+</div>
+`;

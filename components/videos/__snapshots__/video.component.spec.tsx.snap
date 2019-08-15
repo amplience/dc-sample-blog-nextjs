@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VideoComponent should render an video 1`] = `
+<video
+  controls={true}
+>
+  <source
+    src="//i1-qa.adis.ws/i/bloblogltd/SampleVideo_1280x720_5mb"
+  />
+</video>
+`;

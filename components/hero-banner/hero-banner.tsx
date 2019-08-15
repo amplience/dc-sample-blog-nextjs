@@ -1,5 +1,3 @@
-import theme from '../../common/styles/default/theme';
-
 const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
     <>
@@ -17,13 +15,13 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           text-align: center;
         }
         h1 {
-          font-size: ${theme.fonts.size.xLarge};
-          font-weight: ${theme.fonts.weight.normal};
+          font-size: 2rem;
+          font-weight: normal;
           margin-bottom: 10px;
         }
         h2 {
-          font-size: ${theme.fonts.size.normal};
-          font-weight: ${theme.fonts.weight.light};
+          font-size: 1rem;
+          font-weight: 300;
         }
       `}</style>
     </>

@@ -1,5 +1,7 @@
 const colors = {
-  primary: '#ffffff'
+  primary: '#ffffff',
+  shadowLight: '#efefef',
+  shadowDark: '#d6d6d6'
 };
 
 export default colors;

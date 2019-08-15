@@ -31,6 +31,12 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           margin: auto;
           max-width: 1200px;
         }
+
+        @media (max-width: ${theme.layout.blogListWidth}) {
+          body {
+            font-size: ${theme.fonts.size.mobileRoot};
+          }
+        }
       `}</style>
     </>
   );

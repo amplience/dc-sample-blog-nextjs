@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import renderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
 import HeroBanner from './hero-banner';
 
 describe('HeroBanner', () => {
