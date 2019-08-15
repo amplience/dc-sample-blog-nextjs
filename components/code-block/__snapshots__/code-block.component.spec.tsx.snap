@@ -1,0 +1,138 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeBlock should render some code as a pre tag with syntax highlighting 1`] = `
+<pre
+  style={
+    Object {
+      "backgroundColor": "#fff",
+    }
+  }
+>
+  <code
+    style={
+      Object {
+        "float": "left",
+        "paddingRight": "10px",
+      }
+    }
+  >
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      1
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      2
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      3
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      4
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      5
+
+    </span>
+  </code>
+  <code>
+    <span
+      className="token template-string token string token template-string token string token template-string token string"
+      style={Object {}}
+    >
+      <span
+        className="token template-string token template-punctuation string"
+        style={Object {}}
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation string"
+        style={Object {}}
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation string"
+        style={Object {}}
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token string"
+        style={Object {}}
+      >
+        
+
+      </span>
+    </span>
+    <span
+      className="token template-string token string token template-string token string token template-string token string"
+      style={Object {}}
+    >
+      import { something } from 'somewhere';
+
+    </span>
+    <span
+      className="token template-string token string token template-string token string token template-string token string"
+      style={Object {}}
+    >
+      
+
+    </span>
+    <span
+      className="token template-string token string token template-string token string token template-string token string"
+      style={Object {}}
+    >
+      const someThing = something();
+
+    </span>
+    <span
+      className="token template-string token string token template-string token string token template-string token string"
+      style={Object {}}
+    >
+      <span
+        className="token template-string token string"
+        style={Object {}}
+      >
+        
+      </span>
+      <span
+        className="token template-string token template-punctuation string"
+        style={Object {}}
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation string"
+        style={Object {}}
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation string"
+        style={Object {}}
+      >
+        \`
+      </span>
+    </span>
+  </code>
+</pre>
+`;
