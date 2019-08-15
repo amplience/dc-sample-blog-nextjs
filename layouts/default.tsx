@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import theme from '../common/styles/default/theme';
+import BlogHeader from '../components/blog-header/blog-header';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
@@ -11,6 +12,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
   return (
     <>
       <NextSeo title={title} description={description} />
+      <BlogHeader title={title}/>
       <main>{children}</main>
       <style jsx global>{`
         body {

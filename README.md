@@ -1,13 +1,13 @@
 [![Amplience Dynamic Content](media/header.png)](https://amplience.com/dynamic-content)
 
-# dc-static-site-nextjs
+# dc-static-blog-nextjs
 
 ![License - Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![](https://img.shields.io/badge/node-v10%2B-blue.svg)
 ![](https://img.shields.io/badge/nextjs-v9%2B-blue.svg)
 ![](https://img.shields.io/badge/amplience%20delivery%20sdk-v0.3.0%2B-blue.svg)
 
-This is a skeleton application built using the Amplience Dynamic Content Service and the NextJS framework and can be used as a starting point for building a static site. 
+This is an application built using the Amplience Dynamic Content Service and the NextJS framework that generates a static blog website.
 
 ## Installation
 
