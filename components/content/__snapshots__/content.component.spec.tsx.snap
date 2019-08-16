@@ -1,15 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Content should render different types of content - text, image and video 1`] = `
-Array [
-  <div>
+<section
+  className="jsx-4266168860"
+>
+  <div
+    className="jsx-4266168860"
+  >
     <img
       alt="Casual crotch shot"
       className="jsx-1016004996"
       src="//i1-qa.adis.ws/i/bloblogltd/casual-wear"
     />
-  </div>,
-  <div>
+  </div>
+  <div
+    className="jsx-4266168860"
+  >
     <h1>
       This is my first Bloblog
     </h1>
@@ -22,8 +28,10 @@ Array [
     <p>
       This is some more sample text
     </p>
-  </div>,
-  <div>
+  </div>
+  <div
+    className="jsx-4266168860 blog-post-video"
+  >
     <video
       controls={true}
     >
@@ -31,6 +39,6 @@ Array [
         src="http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p"
       />
     </video>
-  </div>,
-]
+  </div>
+</section>
 `;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroBannerTitle renders hero banner title 1`] = `
+<h1>
+  Test title
+</h1>
+`;

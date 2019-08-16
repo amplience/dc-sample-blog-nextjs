@@ -1,14 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index renders index with content 1`] = `
-<main
-  className="jsx-305888461"
+<div
+  className="jsx-1259447969 site-container"
 >
-  <div
-    className="hero-banner-mock"
-  />
-  <div
-    className="blob-list-mock"
-  />
-</main>
+  <header
+    className="jsx-1259447969"
+  >
+    <section
+      className="jsx-775714430"
+    >
+      <img
+        alt="alt-tag"
+        className="jsx-775714430 logo"
+        src="/static/images/logo.png"
+      />
+      <h1
+        className="jsx-775714430"
+      >
+        blog-test-title
+      </h1>
+    </section>
+  </header>
+  <main
+    className="jsx-1259447969"
+  >
+    <div
+      className="hero-banner-mock"
+    />
+    <div
+      className="blob-list-mock"
+    />
+  </main>
+</div>
 `;

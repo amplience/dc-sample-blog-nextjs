@@ -1,10 +1,11 @@
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import dark from 'react-syntax-highlighter';
+// @ts-ignore
+import { darcula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
-const CodeBlock = (props: { language: string; value: string }) => {
+const CodeBlock = ({ language, value }: { language: string; value: string }) => {
   return (
-    <SyntaxHighlighter language={props.language} wrapLines={true} showLineNumbers={true} style={dark}>
-      {props.value}
+    <SyntaxHighlighter language={language} wrapLines={true} showLineNumbers={true} style={darcula}>
+      {value}
     </SyntaxHighlighter>
   );
 };

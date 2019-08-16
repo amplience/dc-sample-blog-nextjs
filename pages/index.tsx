@@ -1,8 +1,8 @@
 import { NextPage } from 'next';
+import allSettled from 'promise.allsettled';
 import Layout from '../layouts/default';
 import getBlogReferenceList from '../common/services/get-blog-reference-list.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
-import BlogPost from '../common/interfaces/blog-post.interface';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
 import getBlogPost from '../common/services/blog-post.service';
@@ -18,14 +18,17 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
 
 Index.getInitialProps = async (): Promise<BlogListData> => {
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
-
   try {
     const { title, subTitle, blogPosts } = await getBlogReferenceList(id);
-    const hydratedBlogPosts: BlogPost[] = await Promise.all(
-      blogPosts.map(async (reference: any) => {
-        return getBlogPost(reference.id);
-      })
-    );
+    const promises = blogPosts.map(async reference => {
+      return getBlogPost(reference.id);
+    });
+    const promiseResults = await allSettled(promises);
+    const rejectedPromises = promiseResults.filter(promise => promise.status === 'rejected');
+    rejectedPromises.forEach((rejectedBlog: any) => console.warn(`Warn: ${rejectedBlog.reason}`));
+    const hydratedBlogPosts = promiseResults
+      .filter(promise => promise.status === 'fulfilled')
+      .map((resolvedPromise: any) => resolvedPromise.value);
 
     return { title, subTitle, blogPosts: hydratedBlogPosts };
   } catch (err) {

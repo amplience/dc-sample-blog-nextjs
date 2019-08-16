@@ -82,4 +82,39 @@ describe('Index', () => {
 
     await expect(Index.getInitialProps({ query, pathname: '/' })).rejects.toThrowError(Error);
   });
+
+  test('getInitialProps only returns resolved blog posts', async () => {
+    const contentData = {
+      title: 'blog-test-title',
+      subTitle: 'blog-test-sub-title',
+      blogPosts: [
+        {
+          id: '8d6943c7-6028-4fac-b45e-57fc63bd032a',
+          _meta: {
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+          },
+          contentType: 'https://schema.localhost.com/blog-post.json'
+        },
+        {
+          id: '8d6943c7-6028-4fac-b45e-57fc63bd032b',
+          _meta: {
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+          },
+          contentType: 'https://schema.localhost.com/blog-post.json'
+        }
+      ]
+    };
+    mockGetBlogReferenceList.mockImplementation(() => {
+      return contentData;
+    });
+    mockGetBlogPost
+      .mockImplementationOnce(() => indexPropsFixture.blogPosts[0])
+      .mockImplementationOnce(() => {
+        throw new Error();
+      });
+    const query = {};
+    const result = await Index.getInitialProps({ query, pathname: '/' });
+
+    expect(result).toEqual({ ...indexPropsFixture });
+  });
 });
