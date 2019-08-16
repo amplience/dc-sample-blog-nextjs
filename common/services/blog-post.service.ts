@@ -62,21 +62,12 @@ export default async function getBlogPost(blogPostId: string): Promise<BlogPost>
   };
 
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
-  const {
-    id,
-    title,
-    date,
-    description,
-    authors,
-    readTime,
-    image,
-    urlSlug,
-    content,
-    tags
-  } = (await deliveryClient.getContentItemById(blogPostId)).toJSON();
+  const contentItem = (await deliveryClient.getContentItemById(blogPostId)).toJSON();
+  const { title, date, description, authors, readTime, image, urlSlug, content, tags } = contentItem;
+  const blogId = contentItem._meta.deliveryId;
 
   return {
-    id,
+    id: blogId,
     title,
     date,
     description,

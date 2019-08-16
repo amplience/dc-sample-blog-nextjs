@@ -12,26 +12,26 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   return (
     <Layout title={props.title} description={props.description}>
       <div className="content-wrapper">
-        <BlogPostAuthor authors={props.authors} date={props.date} readTime={props.readTime}/>
-        <BlogPostHeroBanner title={props.title} subTitle={props.description}/>
+        <BlogPostAuthor authors={props.authors} date={props.date} readTime={props.readTime} />
+        <BlogPostHeroBanner title={props.title} subTitle={props.description} />
       </div>
       <div className="blog-image">
-        <Image altText={props.image.altText} src={props.image.src}/>
+        <Image altText={props.image.altText} src={props.image.src} />
       </div>
       <div className="content-wrapper">
-        <Content content={props.content}/>
+        <Content content={props.content} />
       </div>
       <style jsx>{`
         .content-wrapper {
           margin: auto;
           max-width: 675px;
         }
-        
+
         .blog-image :global(img) {
           object-fit: cover;
-          max-height: 400px
+          max-height: 400px;
         }
-        
+
         @media (max-width: 675px) {
           .content-wrapper {
             display: block;
