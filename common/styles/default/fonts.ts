@@ -1,6 +1,6 @@
 const fonts = {
   size: {
-    root: '14px',
+    root: '16px',
     mobileRoot: '18px'
   }
 };

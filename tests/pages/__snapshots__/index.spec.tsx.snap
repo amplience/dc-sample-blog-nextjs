@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index renders index with content 1`] = `
+<div
+  className="jsx-2643823458 site-container"
+>
+  <header
+    className="jsx-3172073338"
+  >
+    <section
+      className="jsx-3172073338"
+    >
+      <img
+        alt="Amplience logo"
+        className="jsx-3172073338"
+        src="/static/images/logo-380w.png"
+        srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
+      />
+      <h1
+        className="jsx-3172073338"
+      >
+        blog-test-title
+      </h1>
+    </section>
+  </header>
+  <main
+    className="jsx-2643823458"
+  >
+    <div
+      className="hero-banner-mock"
+    />
+    <div
+      className="blob-list-mock"
+    />
+  </main>
+</div>
+`;

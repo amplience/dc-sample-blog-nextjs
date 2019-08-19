@@ -1,6 +1,6 @@
 import { NextSeo } from 'next-seo';
 import theme from '../common/styles/default/theme';
-import BlogHeader from '../components/blog-header/blog-header';
+import Header from '../components/header/header';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
@@ -13,9 +13,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
     <>
       <NextSeo title={title} description={description} />
       <div className="site-container">
-        <header>
-          <BlogHeader title={title}/>
-        </header>
+        <Header title={title} />
         <main>{children}</main>
       </div>
       <style jsx global>{`
@@ -25,7 +23,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           height: 100%;
           min-height: 100%;
         }
-        
+
         body {
           font-family: Roboto, Arial, sans-serif;
           font-size: ${theme.fonts.size.root};
@@ -42,12 +40,12 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
         .site-container {
           height: 100%;
         }
-        
+
         main {
           flex: auto;
           overflow-y: auto;
         }
-  
+
         .site-container {
           margin: 0;
           display: flex;

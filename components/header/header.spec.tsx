@@ -1,13 +1,13 @@
 /* eslint-env jest */
 import renderer from 'react-test-renderer';
-import BlogHeader from './blog-header';
+import Header from './header';
 
-describe('BlogHeader', () => {
+describe('Header', () => {
   test('renders blog header', async () => {
     const props = {
       title: 'Blog Title'
     };
-    const component = await renderer.create(<BlogHeader {...props} />);
+    const component = await renderer.create(<Header {...props} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });
