@@ -26,10 +26,8 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
       </Link>
       <style jsx>{`
         article {
-          width: 31.5%;
           display: flex;
           flex-direction: column;
-          margin-bottom: 55px;
           box-shadow: 0 20px 25px 0 ${theme.colors.black08};
           background: white;
           cursor: pointer;
@@ -87,6 +85,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         @media (max-width: ${theme.layout.widePageWidth}) {
           article {
             width: 100%;
+            margin-bottom: 55px;
           }
         }
       `}</style>
