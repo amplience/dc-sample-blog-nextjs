@@ -1,15 +1,17 @@
+import theme from '../../../common/styles/default/theme';
+
 const HeroBannerTitle = ({ title }: { title: string }) => {
   return (
     <>
-      <section>
-        <h1>{title}</h1>
-      </section>
+      <h1>{title}</h1>
       <style jsx>
         {`
           h1 {
-            font-size: 2rem;
-            font-weight: normal;
-            margin-bottom: 10px;
+            color: ${theme.colors.mineShaft};
+            font-size: 3rem;
+            font-weight: ${theme.fonts.weight.regular};
+            margin: 0;
+            line-height: 60px;
           }
         `}
       </style>

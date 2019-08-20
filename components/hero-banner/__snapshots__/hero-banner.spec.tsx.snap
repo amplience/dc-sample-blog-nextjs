@@ -2,46 +2,30 @@
 
 exports[`HeroBanner renders hero banner with title and subtitle 1`] = `
 <section
-  className="jsx-1537884512"
+  className="jsx-2607760675"
 >
-  <section
-    className="jsx-2086237504"
+  <h1
+    className="jsx-207160566"
   >
-    <h1
-      className="jsx-2086237504"
-    >
-      Test title
-    </h1>
-  </section>
-  <section
-    className="jsx-2470002511"
+    Test title
+  </h1>
+  <h2
+    className="jsx-1570548085"
   >
-    <h2
-      className="jsx-2470002511"
-    >
-      Test subtitle
-    </h2>
-  </section>
+    Test subtitle
+  </h2>
 </section>
 `;
 
 exports[`HeroBanner renders hero banner with title only 1`] = `
 <section
-  className="jsx-1537884512"
+  className="jsx-2607760675"
 >
-  <section
-    className="jsx-2086237504"
+  <h1
+    className="jsx-207160566"
   >
-    <h1
-      className="jsx-2086237504"
-    >
-      Test title
-    </h1>
-  </section>
-  <section
-    className="jsx-2470002511"
-  >
-    
-  </section>
+    Test title
+  </h1>
+  
 </section>
 `;

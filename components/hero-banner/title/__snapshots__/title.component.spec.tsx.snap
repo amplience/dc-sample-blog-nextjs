@@ -1,13 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`HeroBannerTitle renders hero banner title 1`] = `
-<section
-  className="jsx-2086237504"
+<h1
+  className="jsx-207160566"
 >
-  <h1
-    className="jsx-2086237504"
-  >
-    Test title
-  </h1>
-</section>
+  Test title
+</h1>
 `;

@@ -15,9 +15,12 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
           align-items: flex-start;
           justify-content: justified;
           flex-direction: column;
+          padding-bottom: 75px;
         }
-        section :global(h2) {
-          color: #666;
+
+        section :global(h1) {
+          margin-top: 40px;
+          margin-bottom: 15px;
         }
       `}</style>
     </>
