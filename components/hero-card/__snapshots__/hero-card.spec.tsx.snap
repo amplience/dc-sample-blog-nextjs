@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroCard renders full hero card 1`] = `
+<section
+  className="jsx-3011788505"
+>
+  <article
+    className="jsx-3011788505"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="jsx-3011788505 blog-card-image"
+    >
+      <div
+        className="image-mock"
+      />
+    </div>
+    <div
+      className="jsx-3011788505 blog-card-content"
+    >
+      <h1
+        className="jsx-3011788505"
+      >
+        blog-post-test
+      </h1>
+      <div
+        className="blog-card-meta-mock"
+      />
+      <p
+        className="jsx-3011788505"
+      >
+        blog-post-description
+      </p>
+    </div>
+  </article>
+</section>
+`;

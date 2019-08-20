@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogHeader renders blog header 1`] = `
+<section
+  className="jsx-775714430"
+>
+  <img
+    alt="alt-tag"
+    className="jsx-775714430 logo"
+    src="/static/images/logo.png"
+  />
+  <h1
+    className="jsx-775714430"
+  >
+    Blog Title
+  </h1>
+</section>
+`;

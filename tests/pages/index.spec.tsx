@@ -11,6 +11,7 @@ jest.mock('../../common/services/get-blog-reference-list.service', () => () => m
 jest.mock('../../common/services/get-blog-post.service', () => () => mockGetBlogPost());
 
 jest.mock('../../components/hero-banner/hero-banner', () => () => <div className="hero-banner-mock" />);
+jest.mock('../../components/hero-card/hero-card', () => () => <div className="hero-card-mock" />);
 jest.mock('../../components/blog-list/blog-list', () => () => <div className="blob-list-mock" />);
 
 describe('Index', () => {
