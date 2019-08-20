@@ -65,6 +65,7 @@
     "@types/promise.allsettled": "^1.0.1",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.5",
+    "@types/react-syntax-highlighter": "^10.2.1",
     "@types/react-test-renderer": "^16.8.3",
     "@typescript-eslint/eslint-plugin": "^1.13.0",
     "@typescript-eslint/parser": "^1.13.0",
@@ -95,6 +96,8 @@
     "next": "^9.0.2",
     "promise.allsettled": "^1.0.1",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-markdown": "^4.1.0",
+    "react-syntax-highlighter": "^11.0.2"
   }
 }

@@ -1,3 +1,3 @@
-export default interface Text {
+export default interface AmplienceText {
   text: string;
 }

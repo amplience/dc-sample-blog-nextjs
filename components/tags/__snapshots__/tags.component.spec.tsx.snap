@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tags renders a list of tags 1`] = `
+Array [
+  <span>
+    Tag 1
+  </span>,
+  <span>
+    Tag 2
+  </span>,
+  <span>
+    Tag 3
+  </span>,
+]
+`;

@@ -1,12 +1,11 @@
-import Video from '../../common/interfaces/video.interface';
-import buildMediaUrl from '../../common/services/media.service';
+import AmplienceVideo from '../../common/interfaces/video.interface';
 
-const VideoComponent = (video: Video) => {
+const Video = (video: AmplienceVideo) => {
   return (
     <video controls>
-      <source src={buildMediaUrl(video.video)} />
+      <source src={video.src} />
     </video>
   );
 };
 
-export default VideoComponent;
+export default Video;

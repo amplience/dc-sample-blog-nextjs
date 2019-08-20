@@ -1,5 +1,6 @@
 import Media from './media.interface';
 
-export default interface Video {
+export default interface AmplienceVideo {
   video: Media;
+  src?: string;
 }

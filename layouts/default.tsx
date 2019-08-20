@@ -14,7 +14,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
       <NextSeo title={title} description={description} />
       <div className="site-container">
         <header>
-          <BlogHeader title={title}/>
+          <BlogHeader title={title} />
         </header>
         <main>{children}</main>
       </div>
@@ -25,7 +25,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           height: 100%;
           min-height: 100%;
         }
-        
+
         body {
           font-family: Roboto, Arial, sans-serif;
           font-size: ${theme.fonts.size.root};
@@ -42,12 +42,12 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
         .site-container {
           height: 100%;
         }
-        
+
         main {
           flex: auto;
           overflow-y: auto;
         }
-  
+
         .site-container {
           margin: 0;
           display: flex;

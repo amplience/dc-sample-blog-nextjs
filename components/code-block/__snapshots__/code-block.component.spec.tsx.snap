@@ -1,0 +1,243 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CodeBlock should render some code as a pre tag with syntax highlighting 1`] = `
+<pre
+  style={
+    Object {
+      "MozHyphens": "none",
+      "MozTabSize": "4",
+      "OTabSize": "4",
+      "WebkitHyphens": "none",
+      "background": "#2b2b2b",
+      "color": "#a9b7c6",
+      "direction": "ltr",
+      "fontFamily": "Consolas, Monaco, 'Andale Mono', monospace",
+      "hyphens": "none",
+      "lineHeight": "1.5",
+      "margin": ".5em 0",
+      "msHyphens": "none",
+      "overflow": "auto",
+      "padding": "1em",
+      "tabSize": "4",
+      "textAlign": "left",
+      "whiteSpace": "pre",
+      "wordBreak": "normal",
+      "wordSpacing": "normal",
+    }
+  }
+>
+  <code
+    style={
+      Object {
+        "MozHyphens": "none",
+        "MozTabSize": "4",
+        "OTabSize": "4",
+        "WebkitHyphens": "none",
+        "color": "#a9b7c6",
+        "direction": "ltr",
+        "float": "left",
+        "fontFamily": "Consolas, Monaco, 'Andale Mono', monospace",
+        "hyphens": "none",
+        "lineHeight": "1.5",
+        "msHyphens": "none",
+        "paddingRight": "10px",
+        "tabSize": "4",
+        "textAlign": "left",
+        "whiteSpace": "pre",
+        "wordBreak": "normal",
+        "wordSpacing": "normal",
+      }
+    }
+  >
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      1
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      2
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      3
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      4
+
+    </span>
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      5
+
+    </span>
+  </code>
+  <code
+    style={
+      Object {
+        "MozHyphens": "none",
+        "MozTabSize": "4",
+        "OTabSize": "4",
+        "WebkitHyphens": "none",
+        "color": "#a9b7c6",
+        "direction": "ltr",
+        "fontFamily": "Consolas, Monaco, 'Andale Mono', monospace",
+        "hyphens": "none",
+        "lineHeight": "1.5",
+        "msHyphens": "none",
+        "tabSize": "4",
+        "textAlign": "left",
+        "whiteSpace": "pre",
+        "wordBreak": "normal",
+        "wordSpacing": "normal",
+      }
+    }
+  >
+    <span
+      className="token template-string token token template-string token token template-string token"
+      style={
+        Object {
+          "color": "#6a8759",
+        }
+      }
+    >
+      <span
+        className="token template-string token template-punctuation"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        
+
+      </span>
+    </span>
+    <span
+      className="token template-string token token template-string token token template-string token"
+      style={
+        Object {
+          "color": "#6a8759",
+        }
+      }
+    >
+      import { something } from 'somewhere';
+
+    </span>
+    <span
+      className="token template-string token token template-string token token template-string token"
+      style={
+        Object {
+          "color": "#6a8759",
+        }
+      }
+    >
+      
+
+    </span>
+    <span
+      className="token template-string token token template-string token token template-string token"
+      style={
+        Object {
+          "color": "#6a8759",
+        }
+      }
+    >
+      const someThing = something();
+
+    </span>
+    <span
+      className="token template-string token token template-string token token template-string token"
+      style={
+        Object {
+          "color": "#6a8759",
+        }
+      }
+    >
+      <span
+        className="token template-string token"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        
+      </span>
+      <span
+        className="token template-string token template-punctuation"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        \`
+      </span>
+      <span
+        className="token template-string token template-punctuation"
+        style={
+          Object {
+            "color": "#6a8759",
+          }
+        }
+      >
+        \`
+      </span>
+    </span>
+  </code>
+</pre>
+`;
