@@ -57,10 +57,13 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         }
 
         .blog-card-content {
-          padding 0 20px 20px 20px;
+          padding: 20px;
         }
 
-        article, h1, p, article :global(.card-meta) {
+        article,
+        h1,
+        p,
+        article :global(.card-meta) {
           transition-property: color, box-shadow;
           transition-duration: 0.3s;
         }
@@ -70,12 +73,15 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           font-size: 1.5rem;
           font-weight: ${theme.fonts.weight.medium};
           line-height: 1.875rem;
+          margin-top: 0;
+          margin-bottom: 12px;
         }
 
         p {
           color: ${theme.colors.doveGray};
           font-weight: ${theme.fonts.weight.regular};
           line-height: 1.5rem;
+          margin-bottom: 0;
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {

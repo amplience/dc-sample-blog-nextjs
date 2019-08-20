@@ -2,16 +2,16 @@
 
 exports[`BlogCardMeta renders full blog card meta 1`] = `
 <div
-  className="jsx-859669970 card-meta"
+  className="jsx-114744189 card-meta"
 >
   <span
-    className="jsx-859669970"
+    className="jsx-114744189"
   >
     by 
     test-name
   </span>
   <span
-    className="jsx-859669970 publish-date"
+    className="jsx-114744189 publish-date"
   >
     13 August, 2019
   </span>

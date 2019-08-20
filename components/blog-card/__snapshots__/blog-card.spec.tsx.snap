@@ -2,22 +2,22 @@
 
 exports[`BlogCard renders full blog card 1`] = `
 <article
-  className="jsx-3544285025"
+  className="jsx-2412657028"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
   <div
-    className="jsx-3544285025 blog-card-image"
+    className="jsx-2412657028 blog-card-image"
   >
     <div
       className="image-mock"
     />
   </div>
   <div
-    className="jsx-3544285025 blog-card-content"
+    className="jsx-2412657028 blog-card-content"
   >
     <h1
-      className="jsx-3544285025"
+      className="jsx-2412657028"
     >
       blog-post-test
     </h1>
@@ -25,7 +25,7 @@ exports[`BlogCard renders full blog card 1`] = `
       className="blog-card-meta-mock"
     />
     <p
-      className="jsx-3544285025"
+      className="jsx-2412657028"
     >
       blog-post-description
     </p>

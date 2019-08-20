@@ -20,7 +20,7 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
           display: flex;
           font-weight: ${theme.fonts.weight.medium};
           font-size: 0.875rem;
-          margin-bottom: 16px;
+          margin-bottom: 12px;
         }
 
         .publish-date {
