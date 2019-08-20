@@ -3,10 +3,10 @@ import allSettled from 'promise.allsettled';
 import Layout from '../layouts/default';
 import getBlogReferenceList from '../common/services/get-blog-reference-list.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
-import getBlogPost from '../common/services/get-blog-post.service';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
 import HeroCard from "../components/hero-card/hero-card";
+import getBlogPost from '../common/services/blog-post.service';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   return (

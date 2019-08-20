@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroBannerSubtitle renders hero banner subtitle 1`] = `
+<section
+  className="jsx-2470002511"
+>
+  <h2
+    className="jsx-2470002511"
+  >
+    Test subtitle
+  </h2>
+</section>
+`;
+
+exports[`HeroBannerSubtitle renders nothing when there is no subtitle 1`] = `
+<section
+  className="jsx-2470002511"
+>
+  
+</section>
+`;
