@@ -5,12 +5,12 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
   return (
     <>
       <section>
-        <div className={'avatar'}>
+        <div className="avatar">
           <Image altText={authors[0].avatar.altText} src={authors[0].avatar.src} />
         </div>
-        <div className={'name'}>{authors[0].name}</div>
-        <div className={'date'}>{date}</div>
-        <div className={'readTime'}>{readTime} mins read</div>
+        <div className="name">{authors[0].name}</div>
+        <div className="date">{date}</div>
+        <div className="readTime">{readTime} mins read</div>
       </section>
       <style jsx>{`
         section {

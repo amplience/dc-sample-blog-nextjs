@@ -17,15 +17,6 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           flex-direction: column;
           text-align: center;
         }
-        :global(h1) {
-          font-size: 2rem;
-          font-weight: normal;
-          margin-bottom: 10px;
-        }
-        :global(h2) {
-          font-size: 1rem;
-          font-weight: 300;
-        }
       `}</style>
     </>
   );

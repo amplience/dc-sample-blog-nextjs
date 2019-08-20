@@ -16,14 +16,7 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
           justify-content: justified;
           flex-direction: column;
         }
-        :global(h1) {
-          font-size: 2rem;
-          font-weight: normal;
-          margin-bottom: 10px;
-        }
-        :global(h2) {
-          font-size: 1rem;
-          font-weight: 300;
+        section :global(h2) {
           color: #666;
         }
       `}</style>
