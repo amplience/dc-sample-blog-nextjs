@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InlineCode should render some code as a code tag with styles 1`] = `
+<code
+  className="inline-code"
+>
+  import { something } from 'somewhere';
+</code>
+`;

@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeroBanner renders hero banner with title and subtitle 1`] = `
+exports[`BlogPostHeroBanner renders hero banner with title and subtitle 1`] = `
 <section
-  className="jsx-1537884512"
+  className="jsx-238976317"
 >
   <section
     className="jsx-2086237504"
@@ -25,9 +25,9 @@ exports[`HeroBanner renders hero banner with title and subtitle 1`] = `
 </section>
 `;
 
-exports[`HeroBanner renders hero banner with title only 1`] = `
+exports[`BlogPostHeroBanner renders hero banner with title only 1`] = `
 <section
-  className="jsx-1537884512"
+  className="jsx-238976317"
 >
   <section
     className="jsx-2086237504"

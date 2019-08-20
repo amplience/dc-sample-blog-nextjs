@@ -1,6 +1,6 @@
-import Image from './image.interface';
+import AmplienceImage from './image.interface';
 
 export default interface Author {
   name: string;
-  avatar: Image;
+  avatar: AmplienceImage;
 }

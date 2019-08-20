@@ -1,7 +1,6 @@
-import Image from './image.interface';
+import AmplienceImage from './image.interface';
 import Author from './author.interface';
-import Video from './video.interface';
-import Text from './text.interface';
+import { AmplienceContent } from './content.type';
 
 export default interface BlogPost {
   id: string;
@@ -9,9 +8,9 @@ export default interface BlogPost {
   date: string;
   description: string;
   authors: Author[];
-  image: Image;
+  image: AmplienceImage;
   urlSlug: string;
   tags: string[];
   readTime: number;
-  content: (Image | Text | Video)[];
+  content: AmplienceContent[];
 }

@@ -8,7 +8,7 @@ const mockGetBlogReferenceList = jest.fn();
 const mockGetBlogPost = jest.fn();
 
 jest.mock('../../common/services/get-blog-reference-list.service', () => () => mockGetBlogReferenceList());
-jest.mock('../../common/services/get-blog-post.service', () => () => mockGetBlogPost());
+jest.mock('../../common/services/blog-post.service', () => () => mockGetBlogPost());
 
 jest.mock('../../components/hero-banner/hero-banner', () => () => <div className="hero-banner-mock" />);
 jest.mock('../../components/blog-list/blog-list', () => () => <div className="blob-list-mock" />);
