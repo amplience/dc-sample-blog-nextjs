@@ -6,7 +6,7 @@ import ExternalLink from '../external-link/external-link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const footerLinkSections = footerLinks.map(linkSection => <FooterLinksList {...linkSection} />);
+  const footerLinkSections = footerLinks.map((linkSection, index) => <FooterLinksList key={index} {...linkSection} />);
   return (
     <>
       <footer>
