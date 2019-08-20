@@ -28,7 +28,7 @@ const BlogList = ({ blogPosts = [] }: BlogListProps) => {
           display: flex;
           flex-wrap: wrap;
           margin: auto;
-          margin-top: 40px;
+          margin-top: 55px;
           max-width: ${theme.layout.widePageWidth};
           justify-content: space-between;
         }

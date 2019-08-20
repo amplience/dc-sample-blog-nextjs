@@ -31,7 +31,7 @@ const Footer = () => {
 
       <style jsx>{`
         footer {
-          margin-top: 120px;
+          margin-top: 84px;
           padding-top: 50px;
           flex: auto;
           overflow-y: auto;

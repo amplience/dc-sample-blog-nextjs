@@ -1,5 +1,6 @@
 import Author from '../../common/interfaces/author.interface';
 import convertToBlogDate from '../../common/services/blog-date.service';
+import theme from '../../common/styles/default/theme';
 
 interface BlogCardMetaProps {
   authors: Author[];
@@ -15,9 +16,10 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
       </div>
       <style jsx>{`
         .card-meta {
+          color: ${theme.colors.doveGray};
           display: flex;
-          font-weight: bold;
-          font-size: 0.8rem;
+          font-weight: ${theme.fonts.weight.medium};
+          font-size: 0.875rem;
           margin-bottom: 16px;
         }
 
