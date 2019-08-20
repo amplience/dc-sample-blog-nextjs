@@ -15,6 +15,7 @@ exports[`Footer renders a footer component 1`] = `
       >
         <img
           alt="Amplience logo"
+          className="jsx-3098292655"
           src="/static/images/logo-380w.png"
           srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
         />

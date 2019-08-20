@@ -16,6 +16,7 @@ const Header = ({ title }: { title: string }) => {
           display: flex;
           justify-content: center;
           background-color: ${theme.colors.whiteLilac};
+          min-height: 75px;
         }
         section {
           height: 75px;

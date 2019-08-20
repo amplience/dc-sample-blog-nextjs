@@ -5,18 +5,19 @@ exports[`Index renders index with content 1`] = `
   className="jsx-1531491511 site-container"
 >
   <header
-    className="jsx-1124965052"
+    className="jsx-834740236"
   >
     <section
-      className="jsx-1124965052"
+      className="jsx-834740236"
     >
       <img
         alt="Amplience logo"
+        className="jsx-3098292655"
         src="/static/images/logo-380w.png"
         srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
       />
       <h1
-        className="jsx-1124965052"
+        className="jsx-834740236"
       >
         blog-test-title
       </h1>
@@ -49,6 +50,7 @@ exports[`Index renders index with content 1`] = `
           >
             <img
               alt="Amplience logo"
+              className="jsx-3098292655"
               src="/static/images/logo-380w.png"
               srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
             />
