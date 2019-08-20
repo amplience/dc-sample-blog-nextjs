@@ -22,6 +22,10 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
           margin-top: 40px;
           margin-bottom: 15px;
         }
+
+        section :global(h2) {
+          line-height: 2.25rem;
+        }
       `}</style>
     </>
   );

@@ -14,7 +14,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
   return (
     <>
       <section>
-        {content.map((c: AmplienceContent) => {
+        {content.map((c: AmplienceContent, index) => {
           if ('image' in c) {
             return (
               <div key={c.image.id}>
@@ -29,7 +29,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
             );
           } else if ('text' in c) {
             return (
-              <div>
+              <div key={index}>
                 <ReactMarkdown source={c.text} renderers={MARKDOWN_RENDERERS} />
               </div>
             );

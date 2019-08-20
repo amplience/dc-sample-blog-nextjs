@@ -1,5 +1,6 @@
 import Author from '../../common/interfaces/author.interface';
 import Image from '../../components/images/image.component';
+import theme from '../../common/styles/default/theme';
 
 const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: string; readTime: number }) => {
   return (
@@ -14,33 +15,37 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
       </section>
       <style jsx>{`
         section {
-          margin-top: 30px;
+          margin-top: 75px;
           display: flex;
           justify-content: flex-start;
           flex-direction: row;
           align-items: center;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #aaa;
+          padding-bottom: 25px;
+          border-bottom: 1px solid ${theme.colors.silver};
         }
 
         .name {
-          font-weight: 500;
-          color: #333;
+          color: ${theme.colors.mineShaft};
+          font-size: 1.125rem;
+          font-weight: ${theme.fonts.weight.medium};
         }
 
         .date,
         .readTime {
-          color: #666;
+          color: ${theme.colors.doveGray};
+          font-size: 1.125rem;
+          font-weight: ${theme.fonts.weight.regular};
         }
 
         section div {
-          margin-right: 20px;
+          margin-right: 12px;
         }
 
         .avatar :global(img) {
           object-fit: cover;
-          height: 32px;
-          width: 32px;
+          height: 52px;
+          width: 52px;
+          border-radius: 4px;
         }
       `}</style>
     </>
