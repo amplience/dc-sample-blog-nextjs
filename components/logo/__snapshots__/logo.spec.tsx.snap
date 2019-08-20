@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Logo renders logo 1`] = `
+<img
+  alt="Amplience logo"
+  src="/static/images/logo-380w.png"
+  srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
+/>
+`;

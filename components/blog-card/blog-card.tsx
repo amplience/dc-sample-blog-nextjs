@@ -54,7 +54,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           font-size: 1.1rem;
         }
 
-        @media (max-width: ${theme.layout.blogListWidth}) {
+        @media (max-width: ${theme.layout.widePageWidth}) {
           article {
             width: 100%;
           }

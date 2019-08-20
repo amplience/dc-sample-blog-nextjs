@@ -1,15 +1,12 @@
 import theme from '../../common/styles/default/theme';
+import Logo from '../logo/logo';
 
 const Header = ({ title }: { title: string }) => {
   return (
     <>
       <header>
         <section>
-          <img
-            src="/static/images/logo-380w.png"
-            srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
-            alt="Amplience logo"
-          />
+          <Logo />
           <h1>{title}</h1>
         </section>
       </header>
@@ -18,7 +15,7 @@ const Header = ({ title }: { title: string }) => {
         header {
           display: flex;
           justify-content: center;
-          background-color: #f7f7fc;
+          background-color: ${theme.colors.whiteLilac};
         }
         section {
           height: 75px;
@@ -28,10 +25,10 @@ const Header = ({ title }: { title: string }) => {
         }
         h1 {
           font-size: 1.125rem;
-          font-weight: normal;
+          font-weight: ${theme.fonts.weight.bold};
           text-transform: uppercase;
-          color: ${theme.colors.darkGray};
-          border-left: 1px solid ${theme.colors.midGray};
+          color: ${theme.colors.mineShaft};
+          border-left: 1px solid ${theme.colors.silver};
           margin-left: 18px;
           padding-left: 18px;
         }

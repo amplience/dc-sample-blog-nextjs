@@ -2,19 +2,18 @@
 
 exports[`Header renders blog header 1`] = `
 <header
-  className="jsx-3172073338"
+  className="jsx-1124965052"
 >
   <section
-    className="jsx-3172073338"
+    className="jsx-1124965052"
   >
     <img
       alt="Amplience logo"
-      className="jsx-3172073338"
       src="/static/images/logo-380w.png"
       srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
     />
     <h1
-      className="jsx-3172073338"
+      className="jsx-1124965052"
     >
       Blog Title
     </h1>
