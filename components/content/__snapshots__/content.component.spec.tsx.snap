@@ -2,10 +2,10 @@
 
 exports[`Content should render different types of content - text, image and video 1`] = `
 <section
-  className="jsx-2757655790"
+  className="jsx-2392637593"
 >
   <div
-    className="jsx-2757655790"
+    className="jsx-2392637593"
   >
     <img
       alt="Casual crotch shot"
@@ -14,15 +14,19 @@ exports[`Content should render different types of content - text, image and vide
     />
   </div>
   <div
-    className="jsx-2757655790"
+    className="jsx-2392637593"
   >
-    <h1>
+    <h1
+      className="jsx-1076320130"
+    >
       This is my first Bloblog
     </h1>
     <p>
       This is some sample text.
     </p>
-    <h2>
+    <h2
+      className="jsx-1076320130"
+    >
       Look-a-header
     </h2>
     <p>
@@ -30,7 +34,7 @@ exports[`Content should render different types of content - text, image and vide
     </p>
   </div>
   <div
-    className="jsx-2757655790 blog-post-video"
+    className="jsx-2392637593 blog-post-video"
   >
     <video
       controls={true}

@@ -4,10 +4,12 @@ import CodeBlock from '../code-block/code-block.component';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import ReactMarkdown from 'react-markdown';
 import InlineCode from '../inline-code/inline-code.component';
+import MarkdownHeading from '../markdown/markdown-heading';
 
 const MARKDOWN_RENDERERS = {
   code: CodeBlock,
-  inlineCode: InlineCode
+  inlineCode: InlineCode,
+  heading: MarkdownHeading
 };
 
 const Content = ({ content }: { content: AmplienceContent[] }) => {
@@ -44,7 +46,8 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           align-items: flex-start;
         }
 
-        section div {
+        section > div {
+          margin-top: 75px;
           width: 100%;
         }
 
