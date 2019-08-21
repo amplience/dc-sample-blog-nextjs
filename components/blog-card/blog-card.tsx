@@ -32,6 +32,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           background: white;
           cursor: pointer;
           min-height: 400px;
+          min-width: 324px;
         }
 
         article:hover,

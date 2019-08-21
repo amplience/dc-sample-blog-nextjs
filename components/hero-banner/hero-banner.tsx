@@ -16,12 +16,22 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           justify-content: center;
           flex-direction: column;
           text-align: center;
+          background-image: url('/static/images/blog-header_left.png'), url('/static/images/blog-header_right.png');
+          background-position: top left, top right;
+          background-repeat: no-repeat, no-repeat;
+          background-size: auto 100%, auto 100%;
         }
 
         section :global(h1) {
           padding-bottom: 10px;
           border-bottom: 2px solid ${theme.colors.dustyGray};
           font-weight: ${theme.fonts.weight.light};
+        }
+
+        @media (max-width: ${theme.layout.widePageWidth}) {
+          section {
+            background-image: unset;
+          }
         }
       `}</style>
     </>

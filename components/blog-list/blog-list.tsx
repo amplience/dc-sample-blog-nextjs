@@ -36,6 +36,13 @@ const BlogList = ({ blogPosts = [] }: BlogListProps) => {
 
         @media (max-width: ${theme.layout.widePageWidth}) {
           section {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 20px;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
             display: block;
             margin-bottom: 55px;
             padding: 0 20px;
