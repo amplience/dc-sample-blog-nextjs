@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer';
-import MarkdownHeading from './markdown-heading';
+import { MarkdownHeading } from './heading';
 
 describe('MarkdownHeading', (): void => {
   it('should render a h1 tag', (): void => {

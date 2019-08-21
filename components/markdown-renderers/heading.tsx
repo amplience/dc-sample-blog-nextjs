@@ -2,7 +2,12 @@ import theme from '../../common/styles/default/theme';
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
 
-const MarkdownHeading = ({ children, level }: any) => {
+interface MarkdownHeadingProps {
+  children: JSX.Element;
+  level: number;
+}
+
+export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
   const Tag = `h${level}` as HeadingTag;
   return (
     <>
@@ -61,5 +66,3 @@ const MarkdownHeading = ({ children, level }: any) => {
     </>
   );
 };
-
-export default MarkdownHeading;

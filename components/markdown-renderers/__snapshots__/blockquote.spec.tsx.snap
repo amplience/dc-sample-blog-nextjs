@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownBlockquote should render some code as a pre tag with syntax highlighting 1`] = `
+<blockquote
+  className="jsx-2003793396"
+>
+  test text
+</blockquote>
+`;

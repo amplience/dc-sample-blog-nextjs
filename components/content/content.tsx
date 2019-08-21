@@ -1,16 +1,11 @@
 import Image from '../images/image.component';
 import Video from '../videos/video.component';
-import CodeBlock from '../code-block/code-block.component';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import ReactMarkdown from 'react-markdown';
-import InlineCode from '../inline-code/inline-code.component';
-import MarkdownHeading from '../markdown/markdown-heading';
+import markdown from '../markdown-renderers/markdown';
+import theme from '../../common/styles/default/theme';
 
-const MARKDOWN_RENDERERS = {
-  code: CodeBlock,
-  inlineCode: InlineCode,
-  heading: MarkdownHeading
-};
+const MARKDOWN_RENDERERS = { ...markdown };
 
 const Content = ({ content }: { content: AmplienceContent[] }) => {
   return (
@@ -40,6 +35,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
       </section>
       <style jsx>{`
         section {
+          color: ${theme.colors.doveGray};
           display: flex;
           justify-content: flex-start;
           flex-direction: column;
@@ -51,38 +47,18 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           width: 100%;
         }
 
-        .blog-post-video :global(video) {
-          width: 100%;
-        }
-
-        .blog-post-code {
-          width: 100%;
-        }
-
-        section :global(blockquote) {
-          padding: 10px;
-          border-left: 10px solid #ccc;
-          font-size: 1rem;
-          font-style: italic;
-          font-weight: 300;
-          color: #666;
-        }
-
         section :global(table) {
           border-collapse: collapse;
         }
 
         section :global(th),
         section :global(td) {
-          border: 1px solid #666;
-          padding: 5px;
+          border: 1px solid ${theme.colors.silver};
+          padding: 12px;
         }
 
-        section :global(.inline-code) {
-          padding: 3px;
-          border: 1px solid pink;
-          border-radius: 5px;
-          background-color: #eee;
+        section :global(tr:nth-child(odd) td) {
+          background-color: ${theme.colors.whiteLilac};
         }
       `}</style>
     </>

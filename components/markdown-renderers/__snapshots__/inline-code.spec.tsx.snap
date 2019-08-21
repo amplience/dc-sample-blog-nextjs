@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownInlineCode should render some code as a code tag with styles 1`] = `
+<code
+  className="jsx-475412211"
+>
+  import { something } from 'somewhere';
+</code>
+`;

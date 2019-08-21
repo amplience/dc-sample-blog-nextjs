@@ -7,7 +7,8 @@ const colors = {
   silver: '#cccccc',
   whiteLilac: '#f7f7fc',
   doveGray: '#666666',
-  dustyGray: '#999999'
+  dustyGray: '#999999',
+  radicalRed: '#ff3366'
 };
 
 export default colors;
