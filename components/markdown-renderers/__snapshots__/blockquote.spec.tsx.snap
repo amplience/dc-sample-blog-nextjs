@@ -2,7 +2,7 @@
 
 exports[`MarkdownBlockquote should render as a blockquote 1`] = `
 <blockquote
-  className="jsx-2003793396"
+  className="jsx-6158228"
 >
   test text
 </blockquote>

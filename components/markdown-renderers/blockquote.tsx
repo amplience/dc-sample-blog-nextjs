@@ -13,6 +13,7 @@ export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps) => {
           color: ${theme.colors.mineShaft};
           padding: 10px;
           border-left: 2px solid ${theme.colors.radicalRed};
+          margin: 25px;
         }
 
         blockquote :global(p) {
@@ -20,6 +21,7 @@ export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps) => {
           font-size: 1.25rem;
           font-weight: ${theme.fonts.weight.light};
           line-height: 2rem;
+          padding: 6px;
         }
       `}</style>
     </>
