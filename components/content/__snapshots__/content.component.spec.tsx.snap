@@ -9,8 +9,10 @@ exports[`Content should render different types of content - text, image and vide
   >
     <img
       alt="Casual crotch shot"
-      className="jsx-1016004996"
+      className="jsx-3162327209"
+      sizes="675px,(max-width: 374px) 334px"
       src="//i1-qa.adis.ws/i/bloblogltd/casual-wear"
+      srcSet="//i1-qa.adis.ws/i/bloblogltd/casual-wear?w=675 675w,//i1-qa.adis.ws/i/bloblogltd/casual-wear?w=374 374w"
     />
   </div>
   <div
