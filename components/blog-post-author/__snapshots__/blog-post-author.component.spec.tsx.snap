@@ -2,10 +2,10 @@
 
 exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = `
 <section
-  className="jsx-3380147109"
+  className="jsx-2613991010"
 >
   <div
-    className="jsx-3380147109 avatar"
+    className="jsx-2613991010 avatar"
   >
     <img
       alt="The dashing Sir Bloblog avatar"
@@ -14,17 +14,17 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
     />
   </div>
   <div
-    className="jsx-3380147109 name"
+    className="jsx-2613991010 name"
   >
     Sir Bloblog
   </div>
   <div
-    className="jsx-3380147109 date"
+    className="jsx-2613991010 date"
   >
     2019-08-14
   </div>
   <div
-    className="jsx-3380147109 readTime"
+    className="jsx-2613991010 readTime"
   >
     15
      mins read

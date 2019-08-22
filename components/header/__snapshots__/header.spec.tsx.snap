@@ -2,13 +2,13 @@
 
 exports[`Header renders blog header 1`] = `
 <header
-  className="jsx-1672599676"
+  className="jsx-4121102434"
 >
   <section
-    className="jsx-1672599676"
+    className="jsx-4121102434"
   >
     <a
-      className="jsx-1672599676"
+      className="jsx-4121102434"
       href="/"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -21,7 +21,7 @@ exports[`Header renders blog header 1`] = `
       />
     </a>
     <h1
-      className="jsx-1672599676"
+      className="jsx-4121102434"
     >
       Blog Title
     </h1>

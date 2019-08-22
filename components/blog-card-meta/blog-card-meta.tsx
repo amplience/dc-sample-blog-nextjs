@@ -19,7 +19,7 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
           color: ${theme.colors.doveGray};
           display: flex;
           font-weight: ${theme.fonts.weight.medium};
-          font-size: 0.875rem;
+          font-size: ${theme.fonts.size.small};
           margin-bottom: 12px;
         }
 

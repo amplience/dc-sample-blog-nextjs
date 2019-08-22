@@ -26,14 +26,14 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
 
         .name {
           color: ${theme.colors.mineShaft};
-          font-size: 1.125rem;
+          font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.medium};
         }
 
         .date,
         .readTime {
           color: ${theme.colors.doveGray};
-          font-size: 1.125rem;
+          font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.regular};
         }
 

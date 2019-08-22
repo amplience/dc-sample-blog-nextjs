@@ -31,7 +31,7 @@ const Header = ({ title }: { title: string }) => {
           margin: 0 12px;
         }
         h1 {
-          font-size: 1.125rem;
+          font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.bold};
           text-transform: uppercase;
           color: ${theme.colors.mineShaft};

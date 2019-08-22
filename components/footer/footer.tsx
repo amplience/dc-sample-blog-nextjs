@@ -76,7 +76,7 @@ const Footer = () => {
         }
 
         .copyright {
-          font-size: 0.875rem;
+          font-size: ${theme.fonts.size.small};
           margin-bottom: 25px;
           align-self: flex-end;
           color: ${theme.colors.silver};

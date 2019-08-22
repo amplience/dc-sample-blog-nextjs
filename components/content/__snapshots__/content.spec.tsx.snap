@@ -17,7 +17,7 @@ exports[`Content should render different types of content - text, image and vide
     className="jsx-724767025"
   >
     <h1
-      className="jsx-1076320130"
+      className="jsx-4222339246"
     >
       This is my first Bloblog
     </h1>
@@ -27,7 +27,7 @@ exports[`Content should render different types of content - text, image and vide
       This is some sample text.
     </p>
     <h2
-      className="jsx-1076320130"
+      className="jsx-4222339246"
     >
       Look-a-header
     </h2>

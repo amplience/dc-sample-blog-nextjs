@@ -49,7 +49,7 @@ const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
         }
 
         section :global(a) {
-          font-size: 0.875rem;
+          font-size: ${theme.fonts.size.small};
           line-height: 2.25rem;
         }
       `}</style>
