@@ -20,6 +20,7 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           background-position: top left, top right;
           background-repeat: no-repeat, no-repeat;
           background-size: auto 100%, auto 100%;
+          padding: 0 20px;
         }
 
         section :global(h1) {
@@ -30,6 +31,8 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
 
         @media (max-width: ${theme.layout.widePageWidth}) {
           section {
+            height: auto;
+            margin: 40px 0;
             background-image: unset;
           }
         }

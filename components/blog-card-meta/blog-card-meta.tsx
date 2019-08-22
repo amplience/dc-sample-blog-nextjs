@@ -23,6 +23,10 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
           margin-bottom: 12px;
         }
 
+        span {
+          max-width: 50%;
+        }
+
         .publish-date {
           margin-left: 6px;
           padding-left: 6px;

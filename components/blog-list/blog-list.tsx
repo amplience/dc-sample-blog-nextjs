@@ -38,14 +38,14 @@ const BlogList = ({ blogPosts = [] }: BlogListProps) => {
           section {
             grid-template-columns: repeat(2, 1fr);
             padding: 0 20px;
+            margin-top: 0;
           }
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
             display: block;
-            margin-bottom: 55px;
-            padding: 0 20px;
+            padding: 0 45px;
           }
         }
       `}</style>

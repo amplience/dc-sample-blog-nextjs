@@ -56,7 +56,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         }
 
         .blog-card-content {
-          padding: 20px;
+          padding: 15px;
         }
 
         article,
@@ -85,8 +85,18 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
 
         @media (max-width: ${theme.layout.widePageWidth}) {
           article {
-            width: 100%;
-            margin-bottom: 55px;
+            min-width: 100%;
+            margin-bottom: 45px;
+          }
+        }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          article {
+            min-height: unset;
+            box-shadow: unset;
+          }
+
+          article:hover {
+            box-shadow: unset;
           }
         }
       `}</style>

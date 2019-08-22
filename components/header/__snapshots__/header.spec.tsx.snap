@@ -2,19 +2,26 @@
 
 exports[`Header renders blog header 1`] = `
 <header
-  className="jsx-834740236"
+  className="jsx-1672599676"
 >
   <section
-    className="jsx-834740236"
+    className="jsx-1672599676"
   >
-    <img
-      alt="Amplience logo"
-      className="jsx-3098292655"
-      src="/static/images/logo-380w.png"
-      srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
-    />
+    <a
+      className="jsx-1672599676"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <img
+        alt="Amplience logo"
+        className="jsx-3098292655"
+        src="/static/images/logo-380w.png"
+        srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
+      />
+    </a>
     <h1
-      className="jsx-834740236"
+      className="jsx-1672599676"
     >
       Blog Title
     </h1>
