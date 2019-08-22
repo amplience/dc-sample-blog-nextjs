@@ -40,6 +40,10 @@ const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
           padding: 0;
         }
 
+        section {
+          min-width: 200px;
+        }
+
         section:not(:last-child) {
           margin-right: 50px;
         }

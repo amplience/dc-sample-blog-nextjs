@@ -60,6 +60,12 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
         section :global(tr:nth-child(odd) td) {
           background-color: ${theme.colors.whiteLilac};
         }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section > div {
+            margin-top: 90px;
+          }
+        }
       `}</style>
     </>
   );

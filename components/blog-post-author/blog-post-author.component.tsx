@@ -47,6 +47,12 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
           width: 52px;
           border-radius: 4px;
         }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            margin-top: 45px;
+          }
+        }
       `}</style>
     </>
   );

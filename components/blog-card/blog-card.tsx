@@ -86,7 +86,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         @media (max-width: ${theme.layout.widePageWidth}) {
           article {
             min-width: 100%;
-            margin-bottom: 45px;
+            margin-bottom: 60px;
           }
         }
         @media (max-width: ${theme.layout.narrowPageWidth}) {

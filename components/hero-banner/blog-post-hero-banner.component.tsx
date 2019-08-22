@@ -1,5 +1,6 @@
 import HeroBannerTitle from './title/title.component';
 import HeroBannerSubtitle from './subtitle/subtitle.component';
+import theme from '../../common/styles/default/theme';
 
 const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
@@ -25,6 +26,17 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
 
         section :global(h2) {
           line-height: 2.25rem;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            padding-bottom: 60px;
+          }
+
+          section :global(h1) {
+            margin-top: 60px;
+            margin-bottom: 50px;
+          }
         }
       `}</style>
     </>

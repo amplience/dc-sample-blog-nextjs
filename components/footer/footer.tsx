@@ -91,6 +91,7 @@ const Footer = () => {
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           footer {
             height: auto;
+            margin-top: 60px;
           }
           section {
             flex-direction: column-reverse;
@@ -112,6 +113,12 @@ const Footer = () => {
           .copyright {
             margin-top: 15px;
             align-self: auto;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          footer {
+            margin-top: 75px;
           }
         }
       `}</style>
