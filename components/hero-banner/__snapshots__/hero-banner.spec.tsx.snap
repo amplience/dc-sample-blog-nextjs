@@ -2,7 +2,7 @@
 
 exports[`HeroBanner renders hero banner with title and subtitle 1`] = `
 <section
-  className="jsx-3063923071"
+  className="jsx-1932325717"
 >
   <h1
     className="jsx-207160566"
@@ -19,7 +19,7 @@ exports[`HeroBanner renders hero banner with title and subtitle 1`] = `
 
 exports[`HeroBanner renders hero banner with title only 1`] = `
 <section
-  className="jsx-3063923071"
+  className="jsx-1932325717"
 >
   <h1
     className="jsx-207160566"

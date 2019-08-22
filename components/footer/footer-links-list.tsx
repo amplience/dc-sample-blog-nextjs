@@ -28,10 +28,6 @@ const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
         <ul>{linkElements}</ul>
       </section>
       <style jsx>{`
-        section {
-          margin-left: 50px;
-        }
-
         h4 {
           text-transform: uppercase;
           color: ${theme.colors.mineShaft};
@@ -42,6 +38,10 @@ const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
           list-style: none;
           margin: 0;
           padding: 0;
+        }
+
+        section:not(:first-child) {
+          margin-left: 50px;
         }
 
         section :global(a) {

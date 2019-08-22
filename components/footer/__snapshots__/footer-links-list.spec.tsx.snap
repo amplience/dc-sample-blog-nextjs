@@ -2,15 +2,15 @@
 
 exports[`FooterLinksList renders a list of 2 footer links with a title 1`] = `
 <section
-  className="jsx-2083469061 footer-links-section"
+  className="jsx-2864337276 footer-links-section"
 >
   <h4
-    className="jsx-2083469061"
+    className="jsx-2864337276"
   >
     Test title
   </h4>
   <ul
-    className="jsx-2083469061"
+    className="jsx-2864337276"
   >
     <li>
       <a
@@ -36,15 +36,15 @@ exports[`FooterLinksList renders a list of 2 footer links with a title 1`] = `
 
 exports[`FooterLinksList renders an empty list when links are undefined 1`] = `
 <section
-  className="jsx-2083469061 footer-links-section"
+  className="jsx-2864337276 footer-links-section"
 >
   <h4
-    className="jsx-2083469061"
+    className="jsx-2864337276"
   >
     Test title
   </h4>
   <ul
-    className="jsx-2083469061"
+    className="jsx-2864337276"
   />
 </section>
 `;

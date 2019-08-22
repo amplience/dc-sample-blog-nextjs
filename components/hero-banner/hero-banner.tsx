@@ -25,7 +25,7 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
 
         section :global(h1) {
           padding-bottom: 10px;
-          border-bottom: 2px solid ${theme.colors.dustyGray};
+          border-bottom: 2px solid ${theme.colors.silver};
           font-weight: ${theme.fonts.weight.light};
         }
 

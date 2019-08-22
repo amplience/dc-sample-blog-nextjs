@@ -62,6 +62,7 @@ const Footer = () => {
         .footer-links {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
         }
 
         .social-links {
@@ -78,7 +79,40 @@ const Footer = () => {
           font-size: 0.875rem;
           margin-bottom: 25px;
           align-self: flex-end;
-          color: ${theme.colors.doveGray};
+          color: ${theme.colors.silver};
+        }
+
+        @media (max-width: ${theme.layout.widePageWidth}) {
+          footer {
+            padding: 45px;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          footer {
+            height: auto;
+          }
+          section {
+            flex-direction: column-reverse;
+          }
+
+          .footer-info {
+            margin-top: 45px;
+            align-items: flex-start;
+          }
+
+          .footer-info :global(.logo) {
+            width: 160px;
+          }
+
+          .social-links {
+            display: none;
+          }
+
+          .copyright {
+            margin-top: 15px;
+            align-self: auto;
+          }
         }
       `}</style>
     </>
