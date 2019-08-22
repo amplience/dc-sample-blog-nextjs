@@ -57,15 +57,15 @@ exports[`Footer renders a footer component 1`] = `
       className="jsx-2071140751 footer-links"
     >
       <section
-        className="jsx-2864337276 footer-links-section"
+        className="jsx-4148074578 footer-links-section"
       >
         <h4
-          className="jsx-2864337276"
+          className="jsx-4148074578"
         >
           For Developers
         </h4>
         <ul
-          className="jsx-2864337276"
+          className="jsx-4148074578"
         >
           <li>
             <a
@@ -115,15 +115,15 @@ exports[`Footer renders a footer component 1`] = `
         </ul>
       </section>
       <section
-        className="jsx-2864337276 footer-links-section"
+        className="jsx-4148074578 footer-links-section"
       >
         <h4
-          className="jsx-2864337276"
+          className="jsx-4148074578"
         >
           Company
         </h4>
         <ul
-          className="jsx-2864337276"
+          className="jsx-4148074578"
         >
           <li>
             <a

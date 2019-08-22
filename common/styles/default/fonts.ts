@@ -1,7 +1,6 @@
 const fonts = {
   size: {
-    root: '16px',
-    mobileRoot: '18px'
+    root: '16px'
   },
   weight: {
     light: '300',

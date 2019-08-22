@@ -40,8 +40,8 @@ const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
           padding: 0;
         }
 
-        section:not(:first-child) {
-          margin-left: 50px;
+        section:not(:last-child) {
+          margin-right: 50px;
         }
 
         section :global(a) {
