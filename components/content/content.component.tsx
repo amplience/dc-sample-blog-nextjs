@@ -14,11 +14,11 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
   return (
     <>
       <section>
-        {content.map((c: AmplienceContent) => {
+        {content.map((c: AmplienceContent, index: number) => {
           if ('image' in c) {
             return (
               <div key={c.image.id}>
-                <Image altText={c.altText} src={c.src} />
+                <Image altText={c.altText} src={c.src} sizes={[675, 374]} />
               </div>
             );
           } else if ('video' in c) {
@@ -29,7 +29,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
             );
           } else if ('text' in c) {
             return (
-              <div>
+              <div key={`text${index}`}>
                 <ReactMarkdown source={c.text} renderers={MARKDOWN_RENDERERS} />
               </div>
             );

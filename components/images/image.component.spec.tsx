@@ -17,7 +17,7 @@ describe('Image', (): void => {
       src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
     };
 
-    const wrapper = renderer.create(<Image altText={image.altText} src={image.src} />).toJSON();
+    const wrapper = renderer.create(<Image altText={image.altText} src={image.src} sizes={[800, 600, 400]} />).toJSON();
     expect(wrapper).toMatchSnapshot();
   });
 });
