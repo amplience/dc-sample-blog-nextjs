@@ -22,13 +22,17 @@
     },
     "altText": {
       "type": "string",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 150,
       "title": "Alt text",
       "description": "insert image alt text"
     }
   },
   "propertyOrder": [
+    "image",
+    "altText"
+  ],
+  "required": [
     "image",
     "altText"
   ]

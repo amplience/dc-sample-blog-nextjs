@@ -19,11 +19,11 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           <Link href={blogLink}>
             <article>
               <div className="blog-card-image">
-                <Image {...{...blogPost.image, sizes: [324, 476, 684, 1000]}} />
+                <Image {...{ ...blogPost.image, sizes: [324, 476, 684, 1000] }} />
               </div>
               <div className="blog-card-content">
                 <h1>{blogPost.title}</h1>
-                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date}/>
+                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
                 <p>{blogPost.description}</p>
               </div>
             </article>
@@ -34,8 +34,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           width: 31%;
           display: flex;
           flex-direction: row;
-          margin-bottom: 36px;
-          box-shadow: 0 6px 12px 2px ${theme.colors.shadowLight};
+          box-shadow: 0 6px 12px 2px ${theme.colors.black08};
           background: white;
           cursor: pointer;
           min-height: 326px;
@@ -46,7 +45,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
 
         article:hover {
-          box-shadow: 0 6px 12px 2px ${theme.colors.shadowDark};
+          box-shadow: 0 6px 12px 2px ${theme.colors.black25};
         }
         
         .blog-card-image :global(img) {
@@ -60,7 +59,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
 
         h1 {
-          font-size: 1.1rem;
+          font-size: ${theme.fonts.size.xLarge};
         }
         
         section {
@@ -68,25 +67,37 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           flex-wrap: wrap;
           margin: auto;
           margin-top: 40px;
-          max-width: ${theme.layout.blogListWidth};
+          max-width: ${theme.layout.widePageWidth};
+        }
+
+        @media (max-width: ${theme.layout.widePageWidth}) {
+          section {
+            max-width: 100%;
+            padding: 0 20px;
+          }
+
+          article {
+            margin-bottom: 55px;
+          }
         }
         
-        @media (max-width: ${theme.layout.blogListWidth}) {
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
           article {
             width: 100%;
             flex: initial;
             flex-direction: column;
+            box-shadow: unset;
           }
           section {
             display: block;
-            padding: 0 20px;
+            padding: 0 45px;
           }
         }
         
-        @media (min-width: ${theme.layout.blogListWidth}) {
+        @media (min-width: ${theme.layout.narrowPageWidth}) {
           article {
             flex: 1 1 0;
-            font-size: 16px;
+            font-size: ${theme.fonts.size.normal};
           }
           .blog-card-image {
             height: 100%;

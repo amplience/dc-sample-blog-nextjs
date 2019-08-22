@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content should render different types of content - text, image and video 1`] = `
+<section
+  className="jsx-724767025"
+>
+  <div
+    className="jsx-724767025"
+  >
+    <img
+      alt="Casual crotch shot"
+      className="jsx-3162327209"
+      sizes="675px,(max-width: 374px) 334px"
+      src="//i1-qa.adis.ws/i/bloblogltd/casual-wear"
+      srcSet="//i1-qa.adis.ws/i/bloblogltd/casual-wear?w=675 675w,//i1-qa.adis.ws/i/bloblogltd/casual-wear?w=374 374w"
+    />
+  </div>
+  <div
+    className="jsx-724767025"
+  >
+    <h1
+      className="jsx-4222339246"
+    >
+      This is my first Bloblog
+    </h1>
+    <p
+      className="jsx-267446502"
+    >
+      This is some sample text.
+    </p>
+    <h2
+      className="jsx-4222339246"
+    >
+      Look-a-header
+    </h2>
+    <p
+      className="jsx-267446502"
+    >
+      This is some more sample text
+    </p>
+  </div>
+  <div
+    className="jsx-724767025 blog-post-video"
+  >
+    <video
+      className="jsx-3974641123"
+      controls={true}
+    >
+      <source
+        className="jsx-3974641123"
+        src="http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p"
+      />
+    </video>
+  </div>
+</section>
+`;

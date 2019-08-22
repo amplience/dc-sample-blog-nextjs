@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import theme from '../common/styles/default/theme';
-import BlogHeader from '../components/blog-header/blog-header';
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
@@ -13,10 +14,11 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
     <>
       <NextSeo title={title} description={description} />
       <div className="site-container">
-        <header>
-          <BlogHeader title={title} />
-        </header>
-        <main>{children}</main>
+        <Header title={title} />
+        <div className="site-content">
+          <main>{children}</main>
+          <Footer />
+        </div>
       </div>
       <style jsx global>{`
         html,
@@ -26,9 +28,13 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           min-height: 100%;
         }
 
+        html {
+          font-size: ${theme.fonts.size.root};
+        }
+
         body {
           font-family: Roboto, Arial, sans-serif;
-          font-size: ${theme.fonts.size.root};
+          font-weight: ${theme.fonts.weight.regular};
           max-width: 100%;
         }
 
@@ -43,21 +49,15 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           height: 100%;
         }
 
-        main {
-          flex: auto;
-          overflow-y: auto;
-        }
-
         .site-container {
           margin: 0;
           display: flex;
           flex-direction: column;
         }
 
-        @media (max-width: ${theme.layout.blogListWidth}) {
-          body {
-            font-size: ${theme.fonts.size.mobileRoot};
-          }
+        .site-content {
+          flex: auto;
+          overflow-y: auto;
         }
       `}</style>
     </>

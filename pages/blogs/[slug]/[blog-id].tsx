@@ -6,7 +6,7 @@ import getBlogPost, { parseContent } from '../../../common/services/blog-post.se
 import convertToBlogDate from '../../../common/services/blog-date.service';
 import BlogPostHeroBanner from '../../../components/hero-banner/blog-post-hero-banner.component';
 import BlogPostAuthor from '../../../components/blog-post-author/blog-post-author.component';
-import Content from '../../../components/content/content.component';
+import Content from '../../../components/content/content';
 
 const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   return (
