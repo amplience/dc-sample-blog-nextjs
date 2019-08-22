@@ -9,7 +9,7 @@ interface VideoProfile {
   ];
 }
 
-export async function getVideoUrl(video: AmplienceVideo): Promise<string> {
+export async function getVideoSources(video: AmplienceVideo): Promise<string[]> {
   const videoMetaUrl = `${buildMediaUrl(video.video)}.json`;
 
   try {
@@ -21,10 +21,10 @@ export async function getVideoUrl(video: AmplienceVideo): Promise<string> {
 
     const videoProfile: VideoProfile = await res.json();
     if (!videoProfile.media || videoProfile.media.length < 1) {
-      return '';
+      return [];
     }
 
-    return videoProfile.media[0].src;
+    return videoProfile.media.map((media: { src: string }): string => media.src);
   } catch (e) {
     throw e;
   }

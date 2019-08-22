@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownParagraph should render a p tag 1`] = `
+<p
+  className="jsx-267446502"
+>
+  test text
+</p>
+`;
