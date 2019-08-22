@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MarkdownLink should render an external link tag 1`] = `
+<span
+  className="jsx-3731109703"
+>
+  <a
+    className="jsx-3655793200"
+    href="//an-external-link"
+    target="_new"
+  >
+    test text
+  </a>
+</span>
+`;
