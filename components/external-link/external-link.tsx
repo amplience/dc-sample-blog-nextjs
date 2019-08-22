@@ -3,7 +3,6 @@ import theme from '../../common/styles/default/theme';
 export interface ExternalLinkProps {
   children: JSX.Element;
   href: string;
-  text?: string;
 }
 
 const ExternalLink = ({ children, href }: ExternalLinkProps) => (

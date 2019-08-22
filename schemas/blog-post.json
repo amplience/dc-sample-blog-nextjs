@@ -14,20 +14,21 @@
       "title": "Title",
       "description": "Used for heading and SEO title tag",
       "type": "string",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 150
     },
     "date": {
       "title": "Creation date",
       "description": "Creation date (YYYY-MM-DD)",
       "type": "string",
-      "maxLength": 10
+      "maxLength": 10,
+      "minLength": 10
     },
     "description": {
       "title": "Description",
       "description": "Used for blog listing page and SEO description",
       "type": "string",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 200
     },
     "image": {
@@ -52,7 +53,7 @@
       "title": "Url slug",
       "description": "Url friendly slug",
       "type": "string",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 100,
       "pattern": "^[a-z0-9-]+$"
     },
@@ -64,7 +65,7 @@
       "maxItems": 10,
       "items": {
         "type": "string",
-        "minLength": 0,
+        "minLength": 1,
         "maxLength": 100,
         "title": "Tag",
         "description": ""
@@ -102,7 +103,7 @@
       "title": "Content",
       "description": "",
       "type": "array",
-      "minItems": 0,
+      "minItems": 1,
       "maxItems": 20,
       "items": {
         "allOf": [
@@ -143,7 +144,6 @@
     "description",
     "image",
     "urlSlug",
-    "tags",
     "readTime",
     "content"
   ]

@@ -21,7 +21,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           } else if ('video' in c) {
             return (
               <div key={c.video.id} className="blog-post-video">
-                <Video video={c.video} src={c.src} />
+                <Video video={c.video} srcSet={c.srcSet} />
               </div>
             );
           } else if ('text' in c) {

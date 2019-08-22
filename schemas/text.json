@@ -15,11 +15,14 @@
       "format": "markdown",
       "title": "Text",
       "description": "",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 6000
     }
   },
   "propertyOrder": [
+    "text"
+  ],
+  "required": [
     "text"
   ]
 }
