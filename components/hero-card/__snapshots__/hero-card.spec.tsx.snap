@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`HeroCard renders empty hero card when blog list is undefined 1`] = `<div />`;
+
 exports[`HeroCard renders full hero card 1`] = `
 <section
   className="jsx-3011788505"

@@ -33,4 +33,11 @@ describe('HeroCard', () => {
     const component = await renderer.create(<HeroCard {...props} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+  test('renders empty hero card when blog list is undefined', async () => {
+    const props = {
+      blogPosts: undefined
+    };
+    const component = await renderer.create(<HeroCard {...props} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
