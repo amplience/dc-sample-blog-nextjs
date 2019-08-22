@@ -1,5 +1,6 @@
 import Author from '../../common/interfaces/author.interface';
 import Image from '../../components/images/image.component';
+import theme from '../../common/styles/default/theme';
 
 function loadAvatar(author: Author): JSX.Element | undefined {
   if (author.avatar) {
@@ -11,8 +12,9 @@ function loadAvatar(author: Author): JSX.Element | undefined {
         <style jsx>{`
           .avatar :global(img) {
             object-fit: cover;
-            height: 32px;
-            width: 32px;
+            height: 52px;
+            width: 52px;
+            border-radius: 4px;
             margin-right: 20px;
           }
         `}</style>
@@ -32,27 +34,36 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
       </section>
       <style jsx>{`
         section {
-          margin-top: 30px;
+          margin-top: 75px;
           display: flex;
           justify-content: flex-start;
           flex-direction: row;
           align-items: center;
-          padding-bottom: 20px;
-          border-bottom: 1px solid #aaa;
+          padding-bottom: 25px;
+          border-bottom: 1px solid ${theme.colors.silver};
         }
 
         .name {
-          font-weight: 500;
-          color: #333;
+          color: ${theme.colors.mineShaft};
+          font-size: ${theme.fonts.size.large};
+          font-weight: ${theme.fonts.weight.medium};
         }
 
         .date,
         .readTime {
-          color: #666;
+          color: ${theme.colors.doveGray};
+          font-size: ${theme.fonts.size.large};
+          font-weight: ${theme.fonts.weight.regular};
         }
 
         section div {
-          margin-right: 20px;
+          margin-right: 12px;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            margin-top: 45px;
+          }
         }
       `}</style>
     </>

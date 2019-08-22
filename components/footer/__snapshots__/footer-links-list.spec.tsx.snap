@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FooterLinksList renders a list of 2 footer links with a title 1`] = `
+<section
+  className="jsx-4062423079 footer-links-section"
+>
+  <h4
+    className="jsx-4062423079"
+  >
+    Test title
+  </h4>
+  <ul
+    className="jsx-4062423079"
+  >
+    <li>
+      <a
+        className="jsx-3655793200"
+        href="//test-link-one"
+        target="_new"
+      >
+        test-link-text-one
+      </a>
+    </li>
+    <li>
+      <a
+        className="jsx-3655793200"
+        href="//test-link-two"
+        target="_new"
+      >
+        test-link-text-two
+      </a>
+    </li>
+  </ul>
+</section>
+`;
+
+exports[`FooterLinksList renders an empty list when links are undefined 1`] = `
+<section
+  className="jsx-4062423079 footer-links-section"
+>
+  <h4
+    className="jsx-4062423079"
+  >
+    Test title
+  </h4>
+  <ul
+    className="jsx-4062423079"
+  />
+</section>
+`;

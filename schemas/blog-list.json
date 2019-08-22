@@ -14,21 +14,21 @@
       "title": "Title",
       "description": "Title of the blog list",
       "type": "string",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 100
     },
     "subTitle": {
       "title": "Subtitle",
       "description": "Subtitle for the blog list",
       "type": "string",
-      "minLength": 0,
+      "minLength": 1,
       "maxLength": 300
     },
     "blogPosts": {
       "title": "Blog posts",
       "description": "List of blog posts",
       "type": "array",
-      "minItems": 0,
+      "minItems": 1,
       "maxItems": 1000,
       "items": {
         "allOf": [
