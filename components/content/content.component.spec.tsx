@@ -29,7 +29,7 @@ describe('Content', (): void => {
           id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
           mediaType: MediaType.VIDEO
         },
-        src: 'http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p'
+        srcSet: ['http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p']
       }
     ];
 
