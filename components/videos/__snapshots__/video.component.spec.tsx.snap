@@ -2,9 +2,11 @@
 
 exports[`Video should render an video 1`] = `
 <video
+  className="jsx-3974641123"
   controls={true}
 >
   <source
+    className="jsx-3974641123"
     src="http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p"
   />
 </video>

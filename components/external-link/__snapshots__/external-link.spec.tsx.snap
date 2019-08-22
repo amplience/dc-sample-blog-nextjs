@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExternalLink renders external link when passed a div 1`] = `
+<a
+  className="jsx-3655793200"
+  href="//href-link"
+  target="_new"
+>
+  <div
+    className="something-to-link"
+  />
+</a>
+`;
