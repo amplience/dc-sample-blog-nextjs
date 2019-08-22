@@ -28,9 +28,12 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           min-height: 100%;
         }
 
+        html {
+          font-size: ${theme.fonts.size.root};
+        }
+
         body {
           font-family: Roboto, Arial, sans-serif;
-          font-size: ${theme.fonts.size.root};
           font-weight: ${theme.fonts.weight.regular};
           max-width: 100%;
         }
@@ -55,12 +58,6 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
         .site-content {
           flex: auto;
           overflow-y: auto;
-        }
-
-        @media (max-width: ${theme.layout.widePageWidth}) {
-          body {
-            font-size: ${theme.fonts.size.mobileRoot};
-          }
         }
       `}</style>
     </>

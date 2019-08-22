@@ -25,18 +25,27 @@ const BlogList = ({ blogPosts = [] }: BlogListProps) => {
       <section>{blogCards.length ? blogCards : noPublishedBlogs}</section>
       <style jsx>{`
         section {
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-gap: 55px 30px;
+          grid-auto-rows: minmax(100px, auto);
           margin: auto;
-          margin-top: 40px;
+          margin-top: 55px;
           max-width: ${theme.layout.widePageWidth};
-          justify-content: space-between;
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {
           section {
-            display: block;
+            grid-template-columns: repeat(2, 1fr);
             padding: 0 20px;
+            margin-top: 0;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            display: block;
+            padding: 0 45px;
           }
         }
       `}</style>

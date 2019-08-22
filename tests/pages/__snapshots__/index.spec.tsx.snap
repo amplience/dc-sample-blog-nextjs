@@ -2,32 +2,39 @@
 
 exports[`Index renders index with content 1`] = `
 <div
-  className="jsx-1531491511 site-container"
+  className="jsx-338100826 site-container"
 >
   <header
-    className="jsx-834740236"
+    className="jsx-4121102434"
   >
     <section
-      className="jsx-834740236"
+      className="jsx-4121102434"
     >
-      <img
-        alt="Amplience logo"
-        className="jsx-3098292655"
-        src="/static/images/logo-380w.png"
-        srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
-      />
+      <a
+        className="jsx-4121102434"
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <img
+          alt="Amplience logo"
+          className="jsx-3359351483 logo"
+          src="/static/images/logo-340w.png"
+          srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+        />
+      </a>
       <h1
-        className="jsx-834740236"
+        className="jsx-4121102434"
       >
         blog-test-title
       </h1>
     </section>
   </header>
   <div
-    className="jsx-1531491511 site-content"
+    className="jsx-338100826 site-content"
   >
     <main
-      className="jsx-1531491511"
+      className="jsx-338100826"
     >
       <div
         className="hero-banner-mock"
@@ -37,25 +44,25 @@ exports[`Index renders index with content 1`] = `
       />
     </main>
     <footer
-      className="jsx-71709737"
+      className="jsx-252567835"
     >
       <section
-        className="jsx-71709737"
+        className="jsx-252567835"
       >
         <div
-          className="jsx-71709737 footer-info"
+          className="jsx-252567835 footer-info"
         >
           <div
-            className="jsx-71709737 footer-info-top"
+            className="jsx-252567835 footer-info-top"
           >
             <img
               alt="Amplience logo"
-              className="jsx-3098292655"
-              src="/static/images/logo-380w.png"
-              srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
+              className="jsx-3359351483 logo"
+              src="/static/images/logo-340w.png"
+              srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
             />
             <div
-              className="jsx-71709737 social-links"
+              className="jsx-252567835 social-links"
             >
               <a
                 className="jsx-3655793200"
@@ -64,7 +71,7 @@ exports[`Index renders index with content 1`] = `
               >
                 <img
                   alt="Twitter logo"
-                  className="jsx-71709737"
+                  className="jsx-252567835"
                   src="/static/images/social/ic_twitter.svg"
                 />
               </a>
@@ -75,32 +82,32 @@ exports[`Index renders index with content 1`] = `
               >
                 <img
                   alt="Linkedin logo"
-                  className="jsx-71709737"
+                  className="jsx-252567835"
                   src="/static/images/social/ic_linkedin.svg"
                 />
               </a>
             </div>
           </div>
           <div
-            className="jsx-71709737 copyright"
+            className="jsx-252567835 copyright"
           >
             © Copyright Amplience 
             2019
           </div>
         </div>
         <div
-          className="jsx-71709737 footer-links"
+          className="jsx-252567835 footer-links"
         >
           <section
-            className="jsx-2083469061 footer-links-section"
+            className="jsx-4062423079 footer-links-section"
           >
             <h4
-              className="jsx-2083469061"
+              className="jsx-4062423079"
             >
               For Developers
             </h4>
             <ul
-              className="jsx-2083469061"
+              className="jsx-4062423079"
             >
               <li>
                 <a
@@ -150,15 +157,15 @@ exports[`Index renders index with content 1`] = `
             </ul>
           </section>
           <section
-            className="jsx-2083469061 footer-links-section"
+            className="jsx-4062423079 footer-links-section"
           >
             <h4
-              className="jsx-2083469061"
+              className="jsx-4062423079"
             >
               Company
             </h4>
             <ul
-              className="jsx-2083469061"
+              className="jsx-4062423079"
             >
               <li>
                 <a

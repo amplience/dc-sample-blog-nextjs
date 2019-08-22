@@ -1,12 +1,18 @@
+import React from 'react';
 import theme from '../../common/styles/default/theme';
 import Logo from '../logo/logo';
+import Link from 'next/link';
 
 const Header = ({ title }: { title: string }) => {
   return (
     <>
       <header>
         <section>
-          <Logo />
+          <Link href="/">
+            <a>
+              <Logo />
+            </a>
+          </Link>
           <h1>{title}</h1>
         </section>
       </header>
@@ -16,16 +22,16 @@ const Header = ({ title }: { title: string }) => {
           display: flex;
           justify-content: center;
           background-color: ${theme.colors.whiteLilac};
-          min-height: 75px;
         }
         section {
-          height: 75px;
           display: flex;
           align-items: center;
+          min-height: 75px;
           width: 1132px;
+          margin: 0 12px;
         }
         h1 {
-          font-size: 1.125rem;
+          font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.bold};
           text-transform: uppercase;
           color: ${theme.colors.mineShaft};

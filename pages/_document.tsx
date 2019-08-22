@@ -13,7 +13,7 @@ export default class CustomDocument extends Document {
         <Head>
           <Manifest />
           <link rel="icon" href="/static/favicon.ico"></link>
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         </Head>
         <body>
           <Main />

@@ -1,5 +1,6 @@
 import HeroBannerTitle from './title/title.component';
 import HeroBannerSubtitle from './subtitle/subtitle.component';
+import theme from '../../common/styles/default/theme';
 
 const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) => {
   return (
@@ -15,9 +16,27 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
           align-items: flex-start;
           justify-content: justified;
           flex-direction: column;
+          padding-bottom: 75px;
         }
+
+        section :global(h1) {
+          margin-top: 40px;
+          margin-bottom: 15px;
+        }
+
         section :global(h2) {
-          color: #666;
+          line-height: 2.25rem;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            padding-bottom: 60px;
+          }
+
+          section :global(h1) {
+            margin-top: 60px;
+            margin-bottom: 50px;
+          }
         }
       `}</style>
     </>

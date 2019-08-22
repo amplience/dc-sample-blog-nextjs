@@ -1,5 +1,5 @@
 import renderer from 'react-test-renderer';
-import Content from './content.component';
+import Content from './content';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import { MediaType } from '../../common/interfaces/media.interface';
 

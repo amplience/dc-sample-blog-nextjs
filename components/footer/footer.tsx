@@ -6,7 +6,7 @@ import ExternalLink from '../external-link/external-link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const footerLinkSections = footerLinks.map(linkSection => <FooterLinksList {...linkSection} />);
+  const footerLinkSections = footerLinks.map((linkSection, index) => <FooterLinksList key={index} {...linkSection} />);
   return (
     <>
       <footer>
@@ -31,7 +31,7 @@ const Footer = () => {
 
       <style jsx>{`
         footer {
-          margin-top: 120px;
+          margin-top: 84px;
           padding-top: 50px;
           flex: auto;
           overflow-y: auto;
@@ -62,6 +62,7 @@ const Footer = () => {
         .footer-links {
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
         }
 
         .social-links {
@@ -75,10 +76,50 @@ const Footer = () => {
         }
 
         .copyright {
-          font-size: 0.875rem;
+          font-size: ${theme.fonts.size.small};
           margin-bottom: 25px;
           align-self: flex-end;
-          color: ${theme.colors.doveGray};
+          color: ${theme.colors.silver};
+        }
+
+        @media (max-width: ${theme.layout.widePageWidth}) {
+          footer {
+            padding: 45px;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          footer {
+            height: auto;
+            margin-top: 60px;
+          }
+          section {
+            flex-direction: column-reverse;
+          }
+
+          .footer-info {
+            margin-top: 45px;
+            align-items: flex-start;
+          }
+
+          .footer-info :global(.logo) {
+            width: 160px;
+          }
+
+          .social-links {
+            display: none;
+          }
+
+          .copyright {
+            margin-top: 15px;
+            align-self: auto;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          footer {
+            margin-top: 75px;
+          }
         }
       `}</style>
     </>

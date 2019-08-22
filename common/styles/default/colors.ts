@@ -1,14 +1,14 @@
 // Colour names from http://chir.ag/projects/name-that-color
 
 const colors = {
-  primary: '#ffffff',
-  shadowLight: '#efefef',
-  shadowDark: '#d6d6d6',
+  black08: 'rgba(0,0,0,0.08)',
+  black25: 'rgba(0,0,0,0.25)',
   mineShaft: '#333333',
   silver: '#cccccc',
   whiteLilac: '#f7f7fc',
   doveGray: '#666666',
-  dustyGray: '#999999'
+  dustyGray: '#999999',
+  radicalRed: '#ff3366'
 };
 
 export default colors;

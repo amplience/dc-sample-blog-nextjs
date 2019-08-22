@@ -6,6 +6,11 @@ const Video = (video: AmplienceVideo) => {
       {video.srcSet.map((src: string) => {
         return <source key={src} src={src} />;
       })}
+      <style jsx>{`
+        video {
+          width: 100%;
+        }
+      `}</style>
     </video>
   );
 };
