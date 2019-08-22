@@ -9,24 +9,27 @@ interface HeroCardProps {
 }
 
 const HeroCard = ({ blogPost }: HeroCardProps) => {
-  const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
-  return (
-    <>
-      <section>
-        <Link href={blogLink}>
-          <article>
-            <div className="blog-card-image">
-              <Image {...{ ...blogPost.image, sizes: [324, 476, 684, 1000] }} />
-            </div>
-            <div className="blog-card-content">
-              <h1>{blogPost.title}</h1>
-              <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
-              <p>{blogPost.description}</p>
-            </div>
-          </article>
-        </Link>
-      </section>
-      <style jsx>{`
+  if (!blogPost) {
+    return <div />;
+  } else {
+    const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
+    return (
+      <>
+        <section>
+          <Link href={blogLink}>
+            <article>
+              <div className="blog-card-image">
+                <Image {...{...blogPost.image, sizes: [324, 476, 684, 1000]}} />
+              </div>
+              <div className="blog-card-content">
+                <h1>{blogPost.title}</h1>
+                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date}/>
+                <p>{blogPost.description}</p>
+              </div>
+            </article>
+          </Link>
+        </section>
+        <style jsx>{`
         article {
           width: 31%;
           display: flex;
@@ -98,8 +101,9 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
 
       `}</style>
-    </>
-  );
+      </>
+    );
+  }
 };
 
 export default HeroCard;
