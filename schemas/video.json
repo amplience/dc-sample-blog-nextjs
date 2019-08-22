@@ -22,5 +22,8 @@
   },
   "propertyOrder": [
     "video"
+  ],
+  "required": [
+    "video"
   ]
 }
