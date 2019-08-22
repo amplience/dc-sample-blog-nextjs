@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import theme from '../common/styles/default/theme';
 import BlogHeader from '../components/blog-header/blog-header';
+import CookieBanner from '../components/cookie-banner/cookie-banner';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
@@ -17,6 +18,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           <BlogHeader title={title} />
         </header>
         <main>{children}</main>
+        <CookieBanner></CookieBanner>
       </div>
       <style jsx global>{`
         html,

@@ -96,6 +96,7 @@
     "next": "^9.0.2",
     "promise.allsettled": "^1.0.1",
     "react": "^16.8.6",
+    "react-cookie-consent": "^2.4.1",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.1.0",
     "react-syntax-highlighter": "^11.0.2"
