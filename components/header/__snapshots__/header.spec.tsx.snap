@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders blog header 1`] = `
+<header
+  className="jsx-834740236"
+>
+  <section
+    className="jsx-834740236"
+  >
+    <img
+      alt="Amplience logo"
+      className="jsx-3098292655"
+      src="/static/images/logo-380w.png"
+      srcSet="/static/images/logo-190w.png 1x, /static/images/logo-380w.png 2x"
+    />
+    <h1
+      className="jsx-834740236"
+    >
+      Blog Title
+    </h1>
+  </section>
+</header>
+`;

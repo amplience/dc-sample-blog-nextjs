@@ -29,11 +29,11 @@ const BlogList = ({ blogPosts = [] }: BlogListProps) => {
           flex-wrap: wrap;
           margin: auto;
           margin-top: 40px;
-          max-width: ${theme.layout.blogListWidth};
+          max-width: ${theme.layout.widePageWidth};
           justify-content: space-between;
         }
 
-        @media (max-width: ${theme.layout.blogListWidth}) {
+        @media (max-width: ${theme.layout.widePageWidth}) {
           section {
             display: block;
             padding: 0 20px;
