@@ -26,37 +26,77 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
       </Link>
       <style jsx>{`
         article {
-          width: 31%;
           display: flex;
           flex-direction: column;
-          margin-bottom: 36px;
-          box-shadow: 0 6px 12px 2px ${theme.colors.shadowLight};
+          box-shadow: 0 20px 25px 0 ${theme.colors.black08};
           background: white;
           cursor: pointer;
-          min-height: 326px;
+          min-height: 400px;
+          min-width: 324px;
+        }
+
+        article:hover,
+        article:hover h1,
+        article:hover p,
+        article:hover :global(.card-meta) {
+          color: ${theme.colors.dustyGray};
         }
 
         article:hover {
-          box-shadow: 0 6px 12px 2px ${theme.colors.shadowDark};
+          box-shadow: 0 20px 14px 2px ${theme.colors.black25};
+        }
+
+        .blog-card-image {
+          height: 135px;
         }
 
         .blog-card-image :global(img) {
-          height: 120px;
-          max-height: 120px;
           object-fit: cover;
+          max-height: 135px;
         }
 
         .blog-card-content {
-          padding 0 20px 20px 20px;
+          padding: 15px;
+        }
+
+        article,
+        h1,
+        p,
+        article :global(.card-meta) {
+          transition-property: color, box-shadow;
+          transition-duration: 0.3s;
         }
 
         h1 {
-          font-size: 1.1rem;
+          color: ${theme.colors.mineShaft};
+          font-size: ${theme.fonts.size.xLarge};
+          font-weight: ${theme.fonts.weight.medium};
+          line-height: 1.875rem;
+          margin-top: 0;
+          margin-bottom: 12px;
         }
 
-        @media (max-width: ${theme.layout.blogListWidth}) {
+        p {
+          color: ${theme.colors.doveGray};
+          font-weight: ${theme.fonts.weight.regular};
+          line-height: ${theme.fonts.size.xLarge};
+          margin-bottom: 0;
+        }
+
+        @media (max-width: ${theme.layout.widePageWidth}) {
           article {
-            width: 100%;
+            min-width: 100%;
+            margin-bottom: 60px;
+          }
+        }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          article {
+            min-height: unset;
+            box-shadow: unset;
+          }
+
+          article:hover {
+            box-shadow: unset;
           }
         }
       `}</style>

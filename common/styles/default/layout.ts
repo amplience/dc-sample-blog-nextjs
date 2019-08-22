@@ -1,5 +1,6 @@
 const layout = {
-  blogListWidth: '1000px'
+  widePageWidth: '1032px',
+  narrowPageWidth: '736px'
 };
 
 export default layout;

@@ -3,7 +3,7 @@ import { ContentClientConfig } from 'dc-delivery-sdk-js';
 import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
 import { MediaType } from '../interfaces/media.interface';
 import { AmplienceContent } from '../interfaces/content.type';
-import { getVideoUrl } from './video.service';
+import { getVideoSources } from './video.service';
 import AmplienceImage from '../interfaces/image.interface';
 import Author from '../interfaces/author.interface';
 import AmplienceVideo from '../interfaces/video.interface';
@@ -46,7 +46,7 @@ export async function parseContent(content: AmplienceContent[]): Promise<Amplien
       c = parseImage(c);
     } else if ('video' in c) {
       c = assignMediaType(c) as AmplienceVideo;
-      c.src = await getVideoUrl(c);
+      c.srcSet = await getVideoSources(c);
     }
 
     updatedContent.push(c);
