@@ -7,17 +7,6 @@ exports[`Index renders index with content 1`] = `
   <header
     className="jsx-4121102434"
   >
-    <script
-      async={true}
-      src="https://www.google-analytics.com/analytics.js"
-    />
-    <script
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
-        }
-      }
-    />
     <section
       className="jsx-4121102434"
     >
@@ -220,5 +209,16 @@ exports[`Index renders index with content 1`] = `
       </section>
     </footer>
   </div>
+  <script
+    async={true}
+    src="https://www.google-analytics.com/analytics.js"
+  />
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+      }
+    }
+  />
 </div>
 `;
