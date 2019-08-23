@@ -15,7 +15,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
     <>
       <NextSeo title={title} description={description} />
       <div className="site-container">
-        <Header title={title} />
+        <Header title="PRODUCT BLOG" />
         <div className="site-content">
           <main>{children}</main>
           <Footer />

@@ -26,7 +26,7 @@ exports[`Index renders index with content 1`] = `
       <h1
         className="jsx-4121102434"
       >
-        blog-test-title
+        PRODUCT BLOG
       </h1>
     </section>
   </header>
