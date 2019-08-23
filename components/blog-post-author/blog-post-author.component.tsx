@@ -7,7 +7,7 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
     <>
       <section>
         <div className="avatar">
-          <Image altText={authors[0].avatar.altText} src={authors[0].avatar.src} />
+          <Image altText={authors[0].avatar.altText} src={authors[0].avatar.src} sizes={[32]} />
         </div>
         <div className="name">{authors[0].name}</div>
         <div className="date">{date}</div>
