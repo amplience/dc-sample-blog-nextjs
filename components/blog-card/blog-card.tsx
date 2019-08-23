@@ -9,7 +9,7 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ blogPost }: BlogCardProps) => {
-  const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
+  const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
   return (
     <>
       <Link href={blogLink}>
