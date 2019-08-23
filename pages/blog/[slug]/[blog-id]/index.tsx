@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
-import Image from '../../../components/images/image.component';
-import BlogPost from '../../../common/interfaces/blog-post.interface';
-import Layout from '../../../layouts/default';
-import getBlogPost, { parseContent } from '../../../common/services/blog-post.service';
-import convertToBlogDate from '../../../common/services/blog-date.service';
-import BlogPostHeroBanner from '../../../components/hero-banner/blog-post-hero-banner.component';
-import BlogPostAuthor from '../../../components/blog-post-author/blog-post-author.component';
-import Content from '../../../components/content/content';
+import Image from '../../../../components/images/image.component';
+import BlogPost from '../../../../common/interfaces/blog-post.interface';
+import Layout from '../../../../layouts/default';
+import getBlogPost, { parseContent } from '../../../../common/services/blog-post.service';
+import convertToBlogDate from '../../../../common/services/blog-date.service';
+import BlogPostHeroBanner from '../../../../components/hero-banner/blog-post-hero-banner.component';
+import BlogPostAuthor from '../../../../components/blog-post-author/blog-post-author.component';
+import Content from '../../../../components/content/content';
 
 const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   return (

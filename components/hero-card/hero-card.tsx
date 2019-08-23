@@ -12,11 +12,11 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
   if (!blogPost) {
     return <div />;
   } else {
-    const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
+    const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
     return (
       <>
         <section>
-          <Link href={blogLink}>
+          <Link as={blogLink} href="/blog/[slug]/[blog-id]">
             <article>
               <div className="blog-card-image">
                 <Image {...{ ...blogPost.image, sizes: [324, 476, 684, 1000] }} />

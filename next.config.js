@@ -3,15 +3,58 @@
 const flow = require('lodash.flow');
 const withManifest = require('next-manifest');
 const withOffline = require('next-offline');
+const ContentClient = require('dc-delivery-sdk-js').ContentClient;
+const allSettled = require('promise.allsettled');
 require('dotenv').config();
 
+const getDynamicPages = async () => {
+  const dcClientConfig = {
+    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
+    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
+  };
+  const dcDeliveryClient = new ContentClient(dcClientConfig);
+  const blogListReferences = (await dcDeliveryClient.getContentItem(process.env.DYNAMIC_CONTENT_REFERENCE_ID)).toJSON();
+
+  const promises = blogListReferences.blogList.blogPosts.map(async reference =>
+    (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
+  );
+  const promiseResults = await allSettled(promises);
+  const rejectedPromises = promiseResults.filter(promise => promise.status === 'rejected');
+  rejectedPromises.forEach(rejectedBlog => console.warn(`Warn: ${rejectedBlog.reason}`));
+  const hydratedBlogPosts = promiseResults
+    .filter(promise => promise.status === 'fulfilled')
+    .map(resolvedPromise => resolvedPromise.value);
+
+  return hydratedBlogPosts.reduce(
+    (pages, post) =>
+      Object.assign({}, pages, {
+        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}/index`]: {
+          page: '/blog/[slug]/[blog-id]/index',
+          query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
+        }
+      }),
+    {}
+  );
+};
+
 const exportPathMap = async function() {
-  return {
+  let dynamicPages;
+
+  try {
+    dynamicPages = await getDynamicPages();
+  } catch (err) {
+    console.log('Error building exportPathMap', err);
+    throw err;
+  }
+
+  console.log(dynamicPages);
+
+  return Object.assign({}, dynamicPages, {
     '/': {
       page: '/',
       query: {}
     }
-  };
+  });
 };
 
 const env = {

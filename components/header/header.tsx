@@ -8,7 +8,7 @@ const Header = ({ title }: { title: string }) => {
     <>
       <header>
         <section>
-          <Link href="/">
+          <Link href="/" prefetch={false}>
             <a>
               <Logo />
             </a>
