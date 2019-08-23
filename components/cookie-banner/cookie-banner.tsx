@@ -21,7 +21,7 @@ const CookieBanner = () => {
           }}
         >
           We use cookies to give you the best possible experience on our website. By continuing to browse this site, you
-          give consent for cookies to be used. For more details please read our <a href="https://amplience.com/privacy-cookie-policy/">Cookie Policy</a>.
+          give consent for cookies to be used. For more details please read our <a href="https://amplience.com/privacy-cookie-policy/" target="_blank">Cookie Policy</a>.
         </CookieConsent>
       </section>
       <style jsx>{`

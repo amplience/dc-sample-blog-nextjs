@@ -245,6 +245,7 @@ exports[`Index renders index with content 1`] = `
         <a
           className="jsx-2706002758"
           href="https://amplience.com/privacy-cookie-policy/"
+          target="_blank"
         >
           Cookie Policy
         </a>
