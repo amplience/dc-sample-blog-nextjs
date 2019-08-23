@@ -2,6 +2,27 @@ import Author from '../../common/interfaces/author.interface';
 import Image from '../../components/images/image.component';
 import theme from '../../common/styles/default/theme';
 
+function loadAvatar(author: Author): JSX.Element | undefined {
+  if (author.avatar) {
+    return (
+      <>
+        <div className="avatar">
+          <Image altText={author.avatar.altText} src={author.avatar.src} sizes={[32]} />
+        </div>
+        <style jsx>{`
+          .avatar :global(img) {
+            object-fit: cover;
+            height: 52px;
+            width: 52px;
+            border-radius: 4px;
+            margin-right: 20px;
+          }
+        `}</style>
+      </>
+    );
+  }
+}
+
 const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: string; readTime: number }) => {
   return (
     <>
@@ -9,9 +30,7 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
           {
             authors.map(author =>
               <div className="authors">
-                <div className="avatar">
-                    <Image altText={author.avatar.altText} src={author.avatar.src} />
-                </div>
+                {loadAvatar(author)}
                 <div className="name">{author.name}</div>
               </div>
             )
@@ -52,13 +71,6 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
           justify-content: flex-start;
           flex-direction: row;
           align-items: center;
-        }
-
-        .avatar :global(img) {
-          object-fit: cover;
-          height: 52px;
-          width: 52px;
-          border-radius: 4px;
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
