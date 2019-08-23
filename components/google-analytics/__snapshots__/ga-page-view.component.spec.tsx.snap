@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GaPageView should render some google analytics capable of tracking page views 1`] = `
+Array [
+  <script
+    async={true}
+    src="https://www.google-analytics.com/analytics.js"
+  />,
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+      }
+    }
+  />,
+]
+`;
