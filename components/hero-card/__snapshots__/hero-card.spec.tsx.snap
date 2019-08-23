@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroCard renders empty hero card when blog list is undefined 1`] = `<div />`;
+
+exports[`HeroCard renders full hero card 1`] = `
+<section
+  className="jsx-1439459320"
+>
+  <article
+    className="jsx-1439459320"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <div
+      className="jsx-1439459320 blog-card-image"
+    >
+      <div
+        className="image-mock"
+      />
+    </div>
+    <div
+      className="jsx-1439459320 blog-card-content"
+    >
+      <h1
+        className="jsx-1439459320"
+      >
+        blog-post-test
+      </h1>
+      <div
+        className="blog-card-meta-mock"
+      />
+      <p
+        className="jsx-1439459320"
+      >
+        blog-post-description
+      </p>
+    </div>
+  </article>
+</section>
+`;
