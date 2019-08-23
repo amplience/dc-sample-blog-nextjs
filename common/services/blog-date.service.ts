@@ -1,8 +1,23 @@
-import dayjs from 'dayjs';
+const MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+];
 
-export default function convertToBlogDate(value: string, format = 'D MMMM, YYYY'): string {
-  if (!value) {
+export default function convertToBlogDate(value: string): string {
+  if (!value || isNaN(Date.parse(value))) {
     return '';
   }
-  return dayjs(value).format(format);
+
+  const blogDate = new Date(value);
+  return `${blogDate.getDate()} ${MONTHS[blogDate.getMonth()]}, ${blogDate.getFullYear()}`;
 }

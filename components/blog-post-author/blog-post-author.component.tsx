@@ -44,7 +44,6 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
           justify-content: flex-start;
           flex-direction: row;
           align-items: center;
-          margin-top: 75px;
           padding-bottom: 25px;
           border-bottom: 1px solid ${theme.colors.silver};
         }
@@ -64,13 +63,6 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
 
         section div {
           margin-right: 12px;
-        }
-        
-        .authors {
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: row;
-          align-items: center;
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {

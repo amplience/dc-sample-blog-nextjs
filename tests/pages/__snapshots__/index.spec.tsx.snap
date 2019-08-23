@@ -40,6 +40,9 @@ exports[`Index renders index with content 1`] = `
         className="hero-banner-mock"
       />
       <div
+        className="hero-card-mock"
+      />
+      <div
         className="blob-list-mock"
       />
     </main>

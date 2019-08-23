@@ -35,4 +35,18 @@ describe('BlogPostAuthor', () => {
     const component = renderer.create(<BlogPostAuthor {...props} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  test('renders author without an avatar, but still has name and read time', (): void => {
+    const props = {
+      authors: [
+        {
+          name: 'Sir Bloblog'
+        }
+      ],
+      readTime: 15,
+      date: '2019-08-14'
+    };
+    const component = renderer.create(<BlogPostAuthor {...props} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });
