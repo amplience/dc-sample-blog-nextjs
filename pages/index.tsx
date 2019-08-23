@@ -5,7 +5,7 @@ import getBlogReferenceList from '../common/services/get-blog-reference-list.ser
 import HeroBanner from '../components/hero-banner/hero-banner';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
-import HeroCard from "../components/hero-card/hero-card";
+import HeroCard from '../components/hero-card/hero-card';
 import getBlogPost from '../common/services/blog-post.service';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
