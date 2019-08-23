@@ -6,20 +6,26 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
   return (
     <>
       <section>
-        <div className="avatar">
-          <Image altText={authors[0].avatar.altText} src={authors[0].avatar.src} />
-        </div>
-        <div className="name">{authors[0].name}</div>
+          {
+            authors.map(author =>
+              <div className="authors">
+                <div className="avatar">
+                    <Image altText={author.avatar.altText} src={author.avatar.src} />
+                </div>
+                <div className="name">{author.name}</div>
+              </div>
+            )
+          }
         <div className="date">{date}</div>
         <div className="readTime">{readTime} mins read</div>
       </section>
       <style jsx>{`
         section {
-          margin-top: 75px;
           display: flex;
           justify-content: flex-start;
           flex-direction: row;
           align-items: center;
+          margin-top: 75px;
           padding-bottom: 25px;
           border-bottom: 1px solid ${theme.colors.silver};
         }
@@ -39,6 +45,13 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
 
         section div {
           margin-right: 12px;
+        }
+        
+        .authors {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: row;
+          align-items: center;
         }
 
         .avatar :global(img) {

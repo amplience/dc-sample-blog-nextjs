@@ -2,16 +2,55 @@
 
 exports[`BlogCardMeta renders full blog card meta 1`] = `
 <div
-  className="jsx-2361119947 card-meta"
+  className="jsx-1115411391 card-meta"
 >
-  <span
-    className="jsx-2361119947"
+  <div
+    className="jsx-1115411391 authors"
   >
-    by 
-    test-name
-  </span>
+    <span
+      className="jsx-1115411391"
+    >
+      by
+    </span>
+    <span
+      className="jsx-1115411391 author"
+    >
+      test-name
+    </span>
+  </div>
   <span
-    className="jsx-2361119947 publish-date"
+    className="jsx-1115411391 publish-date"
+  >
+    13 August, 2019
+  </span>
+</div>
+`;
+
+exports[`BlogCardMeta renders full blog card meta with multiple authors 1`] = `
+<div
+  className="jsx-1115411391 card-meta"
+>
+  <div
+    className="jsx-1115411391 authors"
+  >
+    <span
+      className="jsx-1115411391"
+    >
+      by
+    </span>
+    <span
+      className="jsx-1115411391 author"
+    >
+      test-name
+    </span>
+    <span
+      className="jsx-1115411391 author"
+    >
+      test-name-2
+    </span>
+  </div>
+  <span
+    className="jsx-1115411391 publish-date"
   >
     13 August, 2019
   </span>
