@@ -12,7 +12,10 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
     <>
       <div className="card-meta">
         <div className="authors">
-          <span>by</span>{ authors.map(a => <span className="author">{a.name}</span>) }
+          <span>by</span>
+          {authors.map(a => (
+            <span className="author">{a.name}</span>
+          ))}
         </div>
         <span className="publish-date">{convertToBlogDate(publishedDate)}</span>
       </div>
@@ -28,15 +31,15 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
         span {
           max-width: 50%;
         }
-        
+
         span + span {
-            margin-left: 0.25em;
+          margin-left: 0.25em;
         }
-       
+
         .author:not(:last-child):after {
-          content: ",";
+          content: ',';
         }
-        
+
         .publish-date {
           margin-left: 6px;
           padding-left: 6px;

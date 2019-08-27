@@ -212,6 +212,56 @@ exports[`Index renders index with content 1`] = `
       </section>
     </footer>
   </div>
+  <div
+    className="cookieConsent "
+    style={
+      Object {
+        "align-items": "center",
+        "background": "rgba(255, 255, 255, 0.9)",
+        "bottom": "0",
+        "boxShadow": "20px 20px 20px 10px #000",
+        "color": "#333",
+        "flex-direction": "column",
+        "textAlign": "center",
+        "zIndex": 1,
+      }
+    }
+  >
+    <div
+      className="cookie-banner-content"
+      style={
+        Object {
+          "padding": "20px 0px 10px",
+        }
+      }
+    >
+      We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
+       
+      <a
+        href="https://amplience.com/privacy-cookie-policy/"
+        target="_blank"
+      >
+        Cookie Policy
+      </a>
+      .
+    </div>
+    <button
+      className="cookie-banner-btn"
+      id=""
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#fff",
+          "border": "3px solid #CCC",
+          "borderRadius": "5px",
+          "color": "#333",
+          "margin-bottom": "10px",
+        }
+      }
+    >
+      Accept Cookies
+    </button>
+  </div>
   <script
     async={true}
     src="https://www.google-analytics.com/analytics.js"
