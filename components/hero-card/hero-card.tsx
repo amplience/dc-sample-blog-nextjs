@@ -42,7 +42,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           box-shadow: 0 6px 12px 2px ${theme.colors.black08};
           background: white;
           cursor: pointer;
-          min-height: 326px;
+          height: 400px;
         }
         
         p {
