@@ -7,7 +7,7 @@ function loadAvatar(author: Author): JSX.Element | undefined {
     return (
       <>
         <div className="avatar">
-          <Image altText={author.avatar.altText} src={author.avatar.src} sizes={[52]} />
+          <Image altText={author.avatar.altText} src={author.avatar.src} sizes={[72]} />
         </div>
         <style jsx>{`
           .avatar :global(img) {
