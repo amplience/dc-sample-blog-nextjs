@@ -6,28 +6,29 @@ import Link from 'next/link';
 const Header = ({ title }: { title: string }) => {
   return (
     <>
-      <header>
-        <section>
+      <section>
+        <header>
           <Link href="/">
             <a>
               <Logo />
             </a>
           </Link>
           <h1>{title}</h1>
-        </section>
-      </header>
+        </header>
+      </section>
 
       <style jsx>{`
-        header {
+        section {
           display: flex;
+          flex: 1 0 75px;
           justify-content: center;
           background-color: ${theme.colors.whiteLilac};
         }
-        section {
+        header {
           display: flex;
           align-items: center;
           min-height: 75px;
-          width: 1132px;
+          width: 1032px;
           margin: 0 12px;
         }
         h1 {
