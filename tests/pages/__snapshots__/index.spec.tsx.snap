@@ -212,6 +212,71 @@ exports[`Index renders index with content 1`] = `
       </section>
     </footer>
   </div>
+  <section
+    className="jsx-3999555128"
+  >
+    <div
+      className="cookieConsent "
+      style={
+        Object {
+          "alignItems": "baseline",
+          "background": "rgba(255, 255, 255, 0.9)",
+          "bottom": "0",
+          "boxShadow": "20px 20px 20px 10px #000",
+          "color": "#333",
+          "display": "flex",
+          "flexWrap": "wrap",
+          "justifyContent": "center",
+          "left": "0",
+          "position": "fixed",
+          "textAlign": "center",
+          "width": "100%",
+          "zIndex": "999",
+        }
+      }
+    >
+      <div
+        className=""
+        style={
+          Object {
+            "flex": "1 0 300px",
+            "margin": "15px",
+          }
+        }
+      >
+        We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
+         
+        <a
+          className="jsx-3999555128"
+          href="https://amplience.com/privacy-cookie-policy/"
+          target="_blank"
+        >
+          Cookie Policy
+        </a>
+        .
+      </div>
+      <button
+        className=""
+        id=""
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#fff",
+            "border": "3px solid #CCC",
+            "borderRadius": "5px",
+            "boxShadow": "none",
+            "color": "#333",
+            "cursor": "pointer",
+            "flex": "0 0 auto",
+            "margin": "15px",
+            "padding": "5px 10px",
+          }
+        }
+      >
+        Accept Cookies
+      </button>
+    </div>
+  </section>
   <script
     async={true}
     src="https://www.google-analytics.com/analytics.js"
