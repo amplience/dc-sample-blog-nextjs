@@ -1,18 +1,16 @@
 import React from 'react';
 import theme from '../../common/styles/default/theme';
 import Logo from '../logo/logo';
-import Link from 'next/link';
+import StaticLink from '../static-link/static-link';
 
 const Header = ({ title }: { title: string }) => {
   return (
     <>
       <header>
         <section>
-          <Link href="/" prefetch={false}>
-            <a>
-              <Logo />
-            </a>
-          </Link>
+          <StaticLink href="/" as="/" prefetch={false}>
+            <Logo />
+          </StaticLink>
           <h1>{title}</h1>
         </section>
       </header>

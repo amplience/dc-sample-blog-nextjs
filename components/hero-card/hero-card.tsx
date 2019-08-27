@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from '../images/image.component';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
+import StaticLink from '../static-link/static-link';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -16,7 +16,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
     return (
       <>
         <section>
-          <Link as={blogLink} href="/blog/[slug]/[blog-id]">
+          <StaticLink as={blogLink} href="/blog/[slug]/[blog-id]">
             <article>
               <div className="blog-card-image">
                 <Image {...{ ...blogPost.image, sizes: [324, 476, 684, 1000] }} />
@@ -27,7 +27,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                 <p>{blogPost.description}</p>
               </div>
             </article>
-          </Link>
+          </StaticLink>
         </section>
         <style jsx>{`
         article {
@@ -60,6 +60,11 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
         h1 {
           font-size: ${theme.fonts.size.xLarge};
+          color: ${theme.colors.mineShaft};
+        }
+
+        p {
+          color: ${theme.colors.doveGray};
         }
         
         section {

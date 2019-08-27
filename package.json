@@ -6,12 +6,14 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "export": "npm run build && next export",
+    "next:export": "next export",
+    "export": "run-s clean build next:export",
     "precommit": "npm run lint",
     "commit": "npx git-cz",
     "test:jest": "jest --silent",
     "test": "run-s lint test:jest",
-    "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\""
+    "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\"",
+    "clean": "rimraf .next/* out/*"
   },
   "repository": {
     "type": "git",

@@ -28,8 +28,8 @@ const getDynamicPages = async () => {
   return hydratedBlogPosts.reduce(
     (pages, post) =>
       Object.assign({}, pages, {
-        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}/index`]: {
-          page: '/blog/[slug]/[blog-id]/index',
+        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}`]: {
+          page: '/blog/[slug]/[blog-id]',
           query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
         }
       }),
@@ -38,7 +38,7 @@ const getDynamicPages = async () => {
 };
 
 const exportPathMap = async function() {
-  let dynamicPages;
+  let dynamicPages = {};
 
   try {
     dynamicPages = await getDynamicPages();
@@ -47,7 +47,8 @@ const exportPathMap = async function() {
     throw err;
   }
 
-  console.log(dynamicPages);
+  console.info('Loading dynamic pages:');
+  Object.keys(dynamicPages).forEach(page => console.info(page));
 
   return Object.assign({}, dynamicPages, {
     '/': {
@@ -60,7 +61,8 @@ const exportPathMap = async function() {
 const env = {
   DYNAMIC_CONTENT_REFERENCE_ID: process.env.DYNAMIC_CONTENT_REFERENCE_ID,
   DYNAMIC_CONTENT_ACCOUNT_NAME: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
-  DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL
+  DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,
+  NEXT_STATIC: process.env.NEXT_STATIC || true
 };
 
 const manifest = {
@@ -123,5 +125,6 @@ const plugins = flow([withManifest, withOffline]);
 module.exports = plugins({
   env,
   exportPathMap,
-  manifest
+  manifest,
+  exportTrailingSlash: true
 });

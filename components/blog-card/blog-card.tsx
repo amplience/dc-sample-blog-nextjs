@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from '../images/image.component';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
+import StaticLink from '../static-link/static-link';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -12,7 +12,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
   const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
   return (
     <>
-      <Link as={blogLink} href="/blog/[slug]/[blog-id]">
+      <StaticLink as={blogLink} href="/blog/[slug]/[blog-id]">
         <article>
           <div className="blog-card-image">
             <Image {...{ ...blogPost.image, sizes: [324, 476, 684] }} />
@@ -23,7 +23,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
             <p>{blogPost.description}</p>
           </div>
         </article>
-      </Link>
+      </StaticLink>
       <style jsx>{`
         article {
           display: flex;
