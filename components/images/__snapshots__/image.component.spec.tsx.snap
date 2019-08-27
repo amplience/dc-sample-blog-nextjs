@@ -1,6 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Image should render an image 1`] = `
+exports[`Image should render an image with a height and width 1`] = `
+<img
+  alt="altText"
+  className="jsx-3162327209"
+  sizes="600px"
+  src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
+  srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600 600w"
+/>
+`;
+
+exports[`Image should render an image with a height, width and crop it 1`] = `
+<img
+  alt="altText"
+  className="jsx-3162327209"
+  sizes="600px"
+  src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
+  srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c 600w"
+/>
+`;
+
+exports[`Image should render an image with width only 1`] = `
 <img
   alt="altText"
   className="jsx-3162327209"
