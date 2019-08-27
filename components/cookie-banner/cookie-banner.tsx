@@ -1,5 +1,4 @@
 import CookieConsent from 'react-cookie-consent';
-import theme from '../../common/styles/default/theme';
 
 const CookieBanner = () => {
   return (
@@ -9,18 +8,24 @@ const CookieBanner = () => {
           buttonText="Accept Cookies"
           contentClasses="cookie-banner-content"
           buttonClasses="cookie-banner-btn"
+          disableStyles={true}
           style={{
             background: 'rgba(255, 255, 255, 0.9)',
             color: '#333',
-            justifyContent: 'center',
             boxShadow: '20px 20px 20px 10px #000',
-            textAlign: 'center'
+            textAlign: 'center',
+            'flex-direction': 'column',
+            'align-items': 'center'
+          }}
+          contentStyle={{
+            padding: '20px 0px 10px'
           }}
           buttonStyle={{
             color: '#333',
             background: '#fff',
             border: '3px solid #CCC',
-            borderRadius: '5px'
+            borderRadius: '5px',
+            'margin-bottom': '10px'
           }}
         >
           We use cookies to give you the best possible experience on our website. By continuing to browse this site, you
@@ -31,20 +36,6 @@ const CookieBanner = () => {
           .
         </CookieConsent>
       </section>
-      <style jsx>{`
-        @media (max-width: ${theme.layout.narrowPageWidth}) {
-          :global(.cookieConsent) {
-            flex-flow: column wrap;
-            align-items: center !important;
-          }
-          :global(.cookie-banner-content) {
-            max-height: 80px;
-          }
-          :global(.cookie-banner-btn) {
-            margin: 5px 5px 10px !important;
-          }
-        }
-      `}</style>
     </>
   );
 };
