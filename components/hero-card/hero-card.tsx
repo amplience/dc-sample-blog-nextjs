@@ -12,7 +12,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
   if (!blogPost) {
     return <div />;
   } else {
-    const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
+    const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
     return (
       <>
         <section>
