@@ -16,7 +16,7 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
         <BlogPostHeroBanner title={props.title} subTitle={props.description} />
       </div>
       <div className="blog-image">
-        <Image altText={props.image.altText} src={props.image.src} />
+        <Image altText={props.image.altText} src={props.image.src} sizes={[4096, 2048, 1080, 414]} />
       </div>
       <div className="content-wrapper">
         <Content content={props.content} />

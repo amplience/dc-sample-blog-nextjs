@@ -26,7 +26,7 @@ exports[`Index renders index with content 1`] = `
       <h1
         className="jsx-4121102434"
       >
-        blog-test-title
+        PRODUCT BLOG
       </h1>
     </section>
   </header>
@@ -38,6 +38,9 @@ exports[`Index renders index with content 1`] = `
     >
       <div
         className="hero-banner-mock"
+      />
+      <div
+        className="hero-card-mock"
       />
       <div
         className="blob-list-mock"
@@ -209,69 +212,66 @@ exports[`Index renders index with content 1`] = `
       </section>
     </footer>
   </div>
-  <section
-    className="jsx-2706002758"
+  <div
+    className="cookieConsent "
+    style={
+      Object {
+        "align-items": "center",
+        "background": "rgba(255, 255, 255, 0.9)",
+        "bottom": "0",
+        "boxShadow": "20px 20px 20px 10px #000",
+        "color": "#333",
+        "flex-direction": "column",
+        "textAlign": "center",
+        "zIndex": 1,
+      }
+    }
   >
     <div
-      className="cookieConsent "
+      className="cookie-banner-content"
       style={
         Object {
-          "alignItems": "baseline",
-          "background": "rgba(255, 255, 255, 0.9)",
-          "bottom": "0",
-          "boxShadow": "20px 20px 20px 10px #000",
-          "color": "#333",
-          "display": "flex",
-          "flexWrap": "wrap",
-          "justifyContent": "center",
-          "left": "0",
-          "position": "fixed",
-          "textAlign": "center",
-          "width": "100%",
-          "zIndex": "999",
+          "padding": "20px 0px 10px",
         }
       }
     >
-      <div
-        className=""
-        style={
-          Object {
-            "flex": "1 0 300px",
-            "margin": "15px",
-          }
-        }
+      We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
+       
+      <a
+        href="https://amplience.com/privacy-cookie-policy/"
+        target="_blank"
       >
-        We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our 
-        <a
-          className="jsx-2706002758"
-          href="https://amplience.com/privacy-cookie-policy/"
-          target="_blank"
-        >
-          Cookie Policy
-        </a>
-        .
-      </div>
-      <button
-        className=""
-        id=""
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#fff",
-            "border": "3px solid #CCC",
-            "borderRadius": "5px",
-            "boxShadow": "none",
-            "color": "#333",
-            "cursor": "pointer",
-            "flex": "0 0 auto",
-            "margin": "15px",
-            "padding": "5px 10px",
-          }
-        }
-      >
-        Accept Cookies
-      </button>
+        Cookie Policy
+      </a>
+      .
     </div>
-  </section>
+    <button
+      className="cookie-banner-btn"
+      id=""
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "#fff",
+          "border": "3px solid #CCC",
+          "borderRadius": "5px",
+          "color": "#333",
+          "margin-bottom": "10px",
+        }
+      }
+    >
+      Accept Cookies
+    </button>
+  </div>
+  <script
+    async={true}
+    src="https://www.google-analytics.com/analytics.js"
+  />
+  <script
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+      }
+    }
+  />
 </div>
 `;

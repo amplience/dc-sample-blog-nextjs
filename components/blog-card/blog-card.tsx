@@ -9,13 +9,13 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ blogPost }: BlogCardProps) => {
-  const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
+  const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
   return (
     <>
       <Link href={blogLink}>
         <article>
           <div className="blog-card-image">
-            <Image {...blogPost.image} />
+            <Image {...{ ...blogPost.image, sizes: [324, 476, 684] }} />
           </div>
           <div className="blog-card-content">
             <h1>{blogPost.title}</h1>
