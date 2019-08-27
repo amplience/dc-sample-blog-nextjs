@@ -2,7 +2,7 @@
 
 exports[`CookieBanner renders cookie consent banner 1`] = `
 <section
-  className="jsx-3999555128"
+  className="jsx-351502320"
 >
   <div
     className="cookieConsent "
@@ -25,7 +25,7 @@ exports[`CookieBanner renders cookie consent banner 1`] = `
     }
   >
     <div
-      className=""
+      className="cookie-banner-content"
       style={
         Object {
           "flex": "1 0 300px",
@@ -36,16 +36,16 @@ exports[`CookieBanner renders cookie consent banner 1`] = `
       We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
        
       <a
-        className="jsx-3999555128"
+        className="jsx-351502320"
         href="https://amplience.com/privacy-cookie-policy/"
         target="_blank"
       >
-        Cookie Policy
+        Cookie Policy
       </a>
       .
     </div>
     <button
-      className=""
+      className="cookie-banner-btn"
       id=""
       onClick={[Function]}
       style={
