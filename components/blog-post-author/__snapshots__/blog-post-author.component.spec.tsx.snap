@@ -2,31 +2,35 @@
 
 exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = `
 <section
-  className="jsx-911547231"
+  className="jsx-1646516357"
 >
   <div
-    className="jsx-3144626491 avatar"
+    className="jsx-1646516357 authors"
   >
-    <img
-      alt="The dashing Sir Bloblog avatar"
-      className="jsx-3162327209"
-      sizes="32px"
-      src="//i1-qa.adis.ws/i/bloblogltd/man-business-suit"
-      srcSet="//i1-qa.adis.ws/i/bloblogltd/man-business-suit?w=32 32w"
-    />
+    <div
+      className="jsx-3144626491 avatar"
+    >
+      <img
+        alt="The dashing Sir Bloblog avatar"
+        className="jsx-3162327209"
+        sizes="72px"
+        src="//i1-qa.adis.ws/i/bloblogltd/man-business-suit"
+        srcSet="//i1-qa.adis.ws/i/bloblogltd/man-business-suit?w=72&h=72&sm=c 72w"
+      />
+    </div>
+    <div
+      className="jsx-1646516357 name"
+    >
+      Sir Bloblog
+    </div>
   </div>
   <div
-    className="jsx-911547231 name"
-  >
-    Sir Bloblog
-  </div>
-  <div
-    className="jsx-911547231 date"
+    className="jsx-1646516357 date"
   >
     2019-08-14
   </div>
   <div
-    className="jsx-911547231 readTime"
+    className="jsx-1646516357 readTime"
   >
     15
      mins read
@@ -36,20 +40,24 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
 
 exports[`BlogPostAuthor renders author without an avatar, but still has name and read time 1`] = `
 <section
-  className="jsx-911547231"
+  className="jsx-1646516357"
 >
   <div
-    className="jsx-911547231 name"
+    className="jsx-1646516357 authors"
   >
-    Sir Bloblog
+    <div
+      className="jsx-1646516357 name"
+    >
+      Sir Bloblog
+    </div>
   </div>
   <div
-    className="jsx-911547231 date"
+    className="jsx-1646516357 date"
   >
     2019-08-14
   </div>
   <div
-    className="jsx-911547231 readTime"
+    className="jsx-1646516357 readTime"
   >
     15
      mins read

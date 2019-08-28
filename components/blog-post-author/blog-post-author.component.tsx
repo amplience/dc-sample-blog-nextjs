@@ -7,7 +7,11 @@ function loadAvatar(author: Author): JSX.Element | undefined {
     return (
       <>
         <div className="avatar">
-          <Image altText={author.avatar.altText} src={author.avatar.src} sizes={[32]} />
+          <Image
+            altText={author.avatar.altText}
+            src={author.avatar.src}
+            dynamicImagingOptions={[{ w: 72, h: 72, sm: 'c' }]}
+          />
         </div>
         <style jsx>{`
           .avatar :global(img) {
@@ -27,8 +31,12 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
   return (
     <>
       <section>
-        {loadAvatar(authors[0])}
-        <div className="name">{authors[0].name}</div>
+        {authors.map(author => (
+          <div className="authors">
+            {loadAvatar(author)}
+            <div className="name">{author.name}</div>
+          </div>
+        ))}
         <div className="date">{date}</div>
         <div className="readTime">{readTime} mins read</div>
       </section>
@@ -58,6 +66,13 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
 
         section div {
           margin-right: 12px;
+        }
+
+        .authors {
+          display: flex;
+          justify-content: flex-start;
+          flex-direction: row;
+          align-items: center;
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {

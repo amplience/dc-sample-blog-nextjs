@@ -1,18 +1,30 @@
-function generateSrcOptions(src: string, sizes: number[]): { srcSet: string; mediaSizes: string } {
+export interface DynamicImagingOptions {
+  w: number;
+  h?: number;
+  qlt?: number;
+  sm?: string;
+}
+
+function generateSrcOptions(
+  src: string,
+  dynamicImagingOptions: DynamicImagingOptions[]
+): { srcSet: string; mediaSizes: string } {
   const srcSet: string[] = [];
   const mediaSizes: string[] = [];
 
-  sizes.sort((num1, num2): number => num2 - num1);
-  sizes.forEach((size, index): void => {
-    srcSet.push(`${src}?w=${size} ${size}w`);
-    mediaSizes.push(index > 0 ? `(max-width: ${size}px) ${size - 40}px` : `${size}px`);
+  dynamicImagingOptions.forEach((opts, index): void => {
+    const imageQueryParams: string[] = [];
+    Object.entries(opts).forEach(([key, value]) => imageQueryParams.push(`${key}=${encodeURIComponent(value)}`));
+
+    srcSet.push(`${src}?${imageQueryParams.join('&')} ${opts.w}w`);
+    mediaSizes.push(index > 0 ? `(max-width: ${opts.w}px) ${opts.w - 40}px` : `${opts.w}px`);
   });
 
   return { srcSet: srcSet.join(','), mediaSizes: mediaSizes.join(',') };
 }
 
-const Image = (image: { altText: string; src: string; sizes: number[] }) => {
-  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.sizes);
+const Image = (image: { altText: string; src: string; dynamicImagingOptions: DynamicImagingOptions[] }) => {
+  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions);
 
   return (
     <>
