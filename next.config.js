@@ -3,21 +3,70 @@
 const flow = require('lodash.flow');
 const withManifest = require('next-manifest');
 const withOffline = require('next-offline');
+const ContentClient = require('dc-delivery-sdk-js').ContentClient;
+const allSettled = require('promise.allsettled');
 require('dotenv').config();
 
+const buildDynamicBlogPages = blogPosts => {
+  return blogPosts.reduce(
+    (pages, post) =>
+      Object.assign({}, pages, {
+        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}`]: {
+          page: '/blog',
+          query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
+        }
+      }),
+    {}
+  );
+};
+
+const getBlogPosts = async () => {
+  const dcClientConfig = {
+    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
+    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
+  };
+  const dcDeliveryClient = new ContentClient(dcClientConfig);
+  const blogListReferences = (await dcDeliveryClient.getContentItem(process.env.DYNAMIC_CONTENT_REFERENCE_ID)).toJSON();
+
+  const promises = blogListReferences.blogList.blogPosts.map(async reference =>
+    (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
+  );
+  const promiseResults = await allSettled(promises);
+  const rejectedPromises = promiseResults.filter(promise => promise.status === 'rejected');
+  rejectedPromises.forEach(rejectedBlog => console.warn(`Warn: ${rejectedBlog.reason}`));
+  const hydratedBlogPosts = promiseResults
+    .filter(promise => promise.status === 'fulfilled')
+    .map(resolvedPromise => resolvedPromise.value);
+
+  return hydratedBlogPosts;
+};
+
 const exportPathMap = async function() {
-  return {
+  let dynamicPages = {};
+
+  try {
+    const blogPosts = await getBlogPosts();
+    dynamicPages = buildDynamicBlogPages(blogPosts);
+  } catch (err) {
+    console.log('Error building exportPathMap', err);
+    throw err;
+  }
+
+  console.info('\nLoading dynamic pages:');
+  Object.keys(dynamicPages).forEach(page => console.info(page));
+
+  return Object.assign({}, dynamicPages, {
     '/': {
       page: '/',
       query: {}
     }
-  };
+  });
 };
 
 const env = {
   DYNAMIC_CONTENT_REFERENCE_ID: process.env.DYNAMIC_CONTENT_REFERENCE_ID,
   DYNAMIC_CONTENT_ACCOUNT_NAME: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
-  DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL
+  DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,
 };
 
 const manifest = {
@@ -80,5 +129,6 @@ const plugins = flow([withManifest, withOffline]);
 module.exports = plugins({
   env,
   exportPathMap,
-  manifest
+  manifest,
+  exportTrailingSlash: true
 });

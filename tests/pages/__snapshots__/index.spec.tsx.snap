@@ -11,10 +11,8 @@ exports[`Index renders index with content 1`] = `
       className="jsx-4121102434"
     >
       <a
-        className="jsx-4121102434"
+        className="jsx-3354872520"
         href="/"
-        onClick={[Function]}
-        onMouseEnter={[Function]}
       >
         <img
           alt="Amplience logo"

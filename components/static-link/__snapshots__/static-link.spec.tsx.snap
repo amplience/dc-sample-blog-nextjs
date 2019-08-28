@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StaticLink renders external link as an anchor tag when in static mode 1`] = `
+<a
+  className="jsx-3354872520"
+  href="//href-link"
+>
+  <div
+    className="something-to-link-as-static"
+  />
+</a>
+`;
