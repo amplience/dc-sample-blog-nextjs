@@ -32,7 +32,7 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
     <>
       <section>
         {authors.map(author => (
-          <div className="authors">
+          <div key={author.name} className="authors">
             {loadAvatar(author)}
             <div className="name">{author.name}</div>
           </div>
