@@ -73,8 +73,6 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         section {
-          display: flex;
-          flex-wrap: wrap;
           margin: auto;
           margin-top: 40px;
           max-width: ${theme.layout.widePageWidth};
