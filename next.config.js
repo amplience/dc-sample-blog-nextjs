@@ -29,7 +29,7 @@ const getDynamicPages = async () => {
     (pages, post) =>
       Object.assign({}, pages, {
         [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}`]: {
-          page: '/blog/[slug]/[blog-id]',
+          page: '/blog',
           query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
         }
       }),
