@@ -7,6 +7,7 @@ import convertToBlogDate from '../common/services/blog-date.service';
 import BlogPostHeroBanner from '../components/hero-banner/blog-post-hero-banner.component';
 import BlogPostAuthor from '../components/blog-post-author/blog-post-author.component';
 import Content from '../components/content/content';
+import Microdata from '../components/microdata/microdata';
 
 const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   return (
@@ -16,11 +17,16 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
         <BlogPostHeroBanner title={props.title} subTitle={props.description} />
       </div>
       <div className="blog-image">
-        <Image altText={props.image.altText} src={props.image.src} dynamicImagingOptions={[{w: 4096}, {w: 2048}, {w: 1080}, {w: 414}]} />
+        <Image
+          altText={props.image.altText}
+          src={props.image.src}
+          dynamicImagingOptions={[{ w: 4096 }, { w: 2048 }, { w: 1080 }, { w: 414 }]}
+        />
       </div>
       <div className="content-wrapper">
         <Content content={props.content} />
       </div>
+      <Microdata headline={props.title} imageUrl={props.image.src} authors={props.authors} datePublished={props.date} />
       <style jsx>{`
         .content-wrapper {
           margin: auto;
