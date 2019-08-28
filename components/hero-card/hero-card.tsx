@@ -60,13 +60,13 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         .blog-card-image {
-          height: 400px;
           width: 30%;
         }
         
         .blog-card-image :global(img) {
           object-fit: cover;
-          height: 400px;
+          height: 100%;
+          width: 100%;
         }
         
         .blog-card-content {
@@ -110,8 +110,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           }
           
           .blog-card-image {
-            width: 100%;
-            height: 135px;
+            width: unset;
           }
           
           .blog-card-image :global(img) {

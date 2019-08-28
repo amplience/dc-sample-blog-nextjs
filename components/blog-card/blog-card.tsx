@@ -56,13 +56,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           box-shadow: 0 20px 14px 2px ${theme.colors.black25};
         }
 
-        .blog-card-image {
-          height: 135px;
-        }
-
         .blog-card-image :global(img) {
           object-fit: cover;
-          max-height: 135px;
+          width: 100%;
+          height: 135px;
         }
 
         .blog-card-content {
