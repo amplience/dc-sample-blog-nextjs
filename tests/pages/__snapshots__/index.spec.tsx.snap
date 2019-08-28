@@ -10,12 +10,17 @@ exports[`Index renders index with content 1`] = `
     <section
       className="jsx-4121102434"
     >
-      <img
-        alt="Amplience logo"
-        className="jsx-3359351483 logo"
-        src="/static/images/logo-340w.png"
-        srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
-      />
+      <a
+        className="jsx-3354872520"
+        href="/"
+      >
+        <img
+          alt="Amplience logo"
+          className="jsx-3359351483 logo"
+          src="/static/images/logo-340w.png"
+          srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+        />
+      </a>
       <h1
         className="jsx-4121102434"
       >
