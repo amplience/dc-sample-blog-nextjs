@@ -59,6 +59,10 @@ const exportPathMap = async function() {
     '/': {
       page: '/',
       query: {}
+    },
+    '/error': {
+      page: '/_error',
+      query: {}
     }
   });
 };

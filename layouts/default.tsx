@@ -6,7 +6,7 @@ import CookieBanner from '../components/cookie-banner/cookie-banner';
 import GaPageView from '../components/google-analytics/ga-page-view.component';
 
 interface DefaultLayoutProps {
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
   title: string;
   description?: string;
 }
