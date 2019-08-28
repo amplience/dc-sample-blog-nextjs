@@ -7,7 +7,20 @@ const ContentClient = require('dc-delivery-sdk-js').ContentClient;
 const allSettled = require('promise.allsettled');
 require('dotenv').config();
 
-const getDynamicPages = async () => {
+const buildDynamicBlogPages = blogPosts => {
+  return blogPosts.reduce(
+    (pages, post) =>
+      Object.assign({}, pages, {
+        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}`]: {
+          page: '/blog',
+          query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
+        }
+      }),
+    {}
+  );
+};
+
+const getBlogPosts = async () => {
   const dcClientConfig = {
     account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
     baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
@@ -25,29 +38,21 @@ const getDynamicPages = async () => {
     .filter(promise => promise.status === 'fulfilled')
     .map(resolvedPromise => resolvedPromise.value);
 
-  return hydratedBlogPosts.reduce(
-    (pages, post) =>
-      Object.assign({}, pages, {
-        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}`]: {
-          page: '/blog',
-          query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
-        }
-      }),
-    {}
-  );
+  return hydratedBlogPosts;
 };
 
 const exportPathMap = async function() {
   let dynamicPages = {};
 
   try {
-    dynamicPages = await getDynamicPages();
+    const blogPosts = await getBlogPosts();
+    dynamicPages = buildDynamicBlogPages(blogPosts);
   } catch (err) {
     console.log('Error building exportPathMap', err);
     throw err;
   }
 
-  console.info('Loading dynamic pages:');
+  console.info('\nLoading dynamic pages:');
   Object.keys(dynamicPages).forEach(page => console.info(page));
 
   return Object.assign({}, dynamicPages, {
