@@ -15,7 +15,16 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
       <Link href={blogLink}>
         <article>
           <div className="blog-card-image">
-            <Image {...{ ...blogPost.image, dynamicImagingOptions: [{ w: 324 }, { w: 476 }, { w: 684 }] }} />
+            <Image
+              {...{
+                ...blogPost.image,
+                dynamicImagingOptions: [
+                  { h: 140, w: 260, sm: 'c' },
+                  { h: 140, w: 360, sm: 'c' },
+                  { h: 140, w: 460, sm: 'c' }
+                ]
+              }}
+            />
           </div>
           <div className="blog-card-content">
             <h1>{blogPost.title}</h1>

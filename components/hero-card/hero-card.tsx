@@ -22,7 +22,11 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                 <Image
                   {...{
                     ...blogPost.image,
-                    dynamicImagingOptions: [{ w: 324 }, { w: 476 }, { w: 684 }, { w: 1000 }]
+                    dynamicImagingOptions: [
+                      { h: 420, w: 320, sm: 'c' },
+                      { h: 400, w: 230, sm: 'c' },
+                      { h: 420, w: 684, sm: 'c' }
+                    ]
                   }}
                 />
               </div>
@@ -37,12 +41,14 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         <style jsx>{`
         article {
           width: 31%;
+          flex: 1 1 0;
+          font-size: ${theme.fonts.size.normal};
           display: flex;
           flex-direction: row;
           box-shadow: 0 6px 12px 2px ${theme.colors.black08};
           background: white;
           cursor: pointer;
-          height: 400px;
+          min-height: 400px;
         }
         
         p {
@@ -53,10 +59,14 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           box-shadow: 0 6px 12px 2px ${theme.colors.black25};
         }
         
+        .blog-card-image {
+          height: 400px;
+          width: 30%;
+        }
+        
         .blog-card-image :global(img) {
-          height: 120px;
-          max-height: 120px;
           object-fit: cover;
+          height: 400px;
         }
         
         .blog-card-content {
@@ -92,29 +102,25 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
             flex: initial;
             flex-direction: column;
             box-shadow: unset;
+            min-height: unset;
           }
           section {
             display: block;
             padding: 0 45px;
           }
+          
+          .blog-card-image {
+            width: 100%;
+            height: 135px;
+          }
+          
+          .blog-card-image :global(img) {
+            object-fit: cover;
+            height: 135px;
+          }
         }
         
-        @media (min-width: ${theme.layout.narrowPageWidth}) {
-          article {
-            flex: 1 1 0;
-            font-size: ${theme.fonts.size.normal};
-          }
-          .blog-card-image {
-            height: 100%;
-            width: 100%;
-            max-width: 31%;
-            flex-grow: 1;
-          }
-          .blog-card-image :global(img) {
-            height: 100%;
-            max-height: none;
-          }
-        }
+        
 
       `}</style>
       </>
