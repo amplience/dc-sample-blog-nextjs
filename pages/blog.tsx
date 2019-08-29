@@ -7,44 +7,56 @@ import convertToBlogDate from '../common/services/blog-date.service';
 import BlogPostHeroBanner from '../components/hero-banner/blog-post-hero-banner.component';
 import BlogPostAuthor from '../components/blog-post-author/blog-post-author.component';
 import Content from '../components/content/content';
+import Microdata from '../components/microdata/microdata';
 import SharePost from '../components/share-post/share-post';
 import { NextSeo } from 'next-seo';
 
-const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
+interface BlogPostProps {
+  blogPost: BlogPost;
+}
+
+const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   return (
     <Layout>
       <NextSeo
-        title={props.title}
-        description={props.description}
+        title={blogPost.title}
+        description={blogPost.description}
         twitter={{
           cardType: 'summary_large_image'
         }}
         openGraph={{
-          title: props.title,
-          description: props.description,
+          title: blogPost.title,
+          description: blogPost.description,
           images: [
             {
-              url: 'https:' + props.image.src + '?w=1080',
+              url: 'https:' + blogPost.image.src + '?w=1080',
               width: 1080
             }
           ]
         }}
       />
       <div className="content-wrapper">
-        <BlogPostAuthor authors={props.authors} date={props.date} readTime={props.readTime} />
-        <BlogPostHeroBanner title={props.title} subTitle={props.description} />
+        <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime} />
+        <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
       <div className="blog-image">
         <Image
-          altText={props.image.altText}
-          src={props.image.src}
+          altText={blogPost.image.altText}
+          src={blogPost.image.src}
           dynamicImagingOptions={[{ w: 4096 }, { w: 2048 }, { w: 1080 }, { w: 414 }]}
         />
       </div>
       <div className="content-wrapper">
-        <Content content={props.content} />
-        <SharePost twitterText={props.title} />
+        <Content content={blogPost.content} />
+        <SharePost twitterText={blogPost.title} />
       </div>
+      <Microdata
+        description={blogPost.description}
+        headline={blogPost.title}
+        imageUrl={blogPost.image.src}
+        authors={blogPost.authors}
+        datePublished={blogPost.date}
+      />
       <style jsx>{`
         .content-wrapper {
           margin: auto;
@@ -73,7 +85,7 @@ BlogPostPage.getInitialProps = async ({ query }) => {
     const blogPost = await getBlogPost(blogPostId);
     blogPost.content = await parseContent(blogPost.content);
     blogPost.date = convertToBlogDate(blogPost.date);
-    return blogPost;
+    return { blogPost };
   } catch (err) {
     throw err;
   }
