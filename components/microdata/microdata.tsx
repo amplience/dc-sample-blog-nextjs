@@ -1,43 +1,27 @@
 import Author from '../../common/interfaces/author.interface';
+import { BlogJsonLd } from 'next-seo';
 
 interface MicrodataProps {
+  url: string;
   headline: string;
+  description: string;
   imageUrl: string;
   authors: Author[];
   datePublished: string;
 }
 
-const Microdata = ({ headline, imageUrl, authors = [], datePublished }: MicrodataProps) => {
+const Microdata = ({ url, headline, description, imageUrl, authors = [], datePublished }: MicrodataProps) => {
   const aspectRatios = ['16:9', '4:3', '1:1'];
-  const jsonLdMicrodata = {
-    '@context': 'http://schema.org',
-    '@type': 'BlogPosting',
-    headline: headline,
-    image: {
-      '@type': 'ImageObject',
-      url: [...aspectRatios.map(ratio => `${imageUrl}?w=1200&sm=aspect&aspect=${ratio}`)]
-    },
-    author: {
-      '@type': 'Person',
-      name: [...authors.map(author => author.name)]
-    },
-    datePublished,
-    publisher: {
-      '@type': 'Organization',
-      name: 'Amplience',
-      logo: {
-        '@type': 'ImageObject',
-        url: '//i1.adis.ws/i/ampcomcms/amplience-logo-hidef?$poi$&aspect=1:1'
-      }
-    }
-  };
 
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(jsonLdMicrodata)
-      }}
+    <BlogJsonLd
+      url={url}
+      description={description}
+      title={headline}
+      images={[...aspectRatios.map(ratio => `${imageUrl}?w=1200&sm=aspect&aspect=${ratio}`)]}
+      authorName={authors.map(author => author.name).join(',')}
+      datePublished={datePublished}
+      dateModified={datePublished}
     />
   );
 };

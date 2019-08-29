@@ -64,6 +64,7 @@ const exportPathMap = async function() {
 };
 
 const env = {
+  BLOG_HOST: process.env.BLOG_HOST,
   DYNAMIC_CONTENT_REFERENCE_ID: process.env.DYNAMIC_CONTENT_REFERENCE_ID,
   DYNAMIC_CONTENT_ACCOUNT_NAME: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
   DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,

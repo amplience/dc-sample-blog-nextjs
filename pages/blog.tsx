@@ -9,24 +9,36 @@ import BlogPostAuthor from '../components/blog-post-author/blog-post-author.comp
 import Content from '../components/content/content';
 import Microdata from '../components/microdata/microdata';
 
-const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
+interface BlogPostProps {
+  blogPost: BlogPost;
+  blogUrl: string;
+}
+
+const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost, blogUrl }: BlogPostProps) => {
   return (
-    <Layout title={props.title} description={props.description}>
+    <Layout title={blogPost.title} description={blogPost.description}>
       <div className="content-wrapper">
-        <BlogPostAuthor authors={props.authors} date={props.date} readTime={props.readTime} />
-        <BlogPostHeroBanner title={props.title} subTitle={props.description} />
+        <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime} />
+        <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
       <div className="blog-image">
         <Image
-          altText={props.image.altText}
-          src={props.image.src}
+          altText={blogPost.image.altText}
+          src={blogPost.image.src}
           dynamicImagingOptions={[{ w: 4096 }, { w: 2048 }, { w: 1080 }, { w: 414 }]}
         />
       </div>
       <div className="content-wrapper">
-        <Content content={props.content} />
+        <Content content={blogPost.content} />
       </div>
-      <Microdata headline={props.title} imageUrl={props.image.src} authors={props.authors} datePublished={props.date} />
+      <Microdata
+        url={blogUrl}
+        description={blogPost.description}
+        headline={blogPost.title}
+        imageUrl={blogPost.image.src}
+        authors={blogPost.authors}
+        datePublished={blogPost.date}
+      />
       <style jsx>{`
         .content-wrapper {
           margin: auto;
@@ -49,13 +61,14 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   );
 };
 
-BlogPostPage.getInitialProps = async ({ query }) => {
+BlogPostPage.getInitialProps = async ({ req, query }) => {
   try {
+    const blogUrl = req ? `${process.env.BLOG_HOST}${req.url}` : '';
     const blogPostId = query['blog-id'].toString();
     const blogPost = await getBlogPost(blogPostId);
     blogPost.content = await parseContent(blogPost.content);
     blogPost.date = convertToBlogDate(blogPost.date);
-    return blogPost;
+    return { blogPost, blogUrl };
   } catch (err) {
     throw err;
   }

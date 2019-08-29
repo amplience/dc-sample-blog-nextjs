@@ -1,23 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Microdata should render Microdata component when author is not defined 1`] = `
-<script
-  dangerouslySetInnerHTML={
-    Object {
-      "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BlogPosting\\",\\"headline\\":\\"test-headline\\",\\"image\\":{\\"@type\\":\\"ImageObject\\",\\"url\\":[\\"//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=16:9\\",\\"//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=4:3\\",\\"//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1\\"]},\\"author\\":{\\"@type\\":\\"Person\\",\\"name\\":[]},\\"datePublished\\":\\"2019-07-07\\",\\"publisher\\":{\\"@type\\":\\"Organization\\",\\"name\\":\\"Amplience\\",\\"logo\\":{\\"@type\\":\\"ImageObject\\",\\"url\\":\\"//i1.adis.ws/i/ampcomcms/amplience-logo-hidef?$poi$&aspect=1:1\\"}}}",
-    }
+<BlogJsonLd
+  authorName=""
+  dateModified="2019-07-07"
+  datePublished="2019-07-07"
+  description="description"
+  images={
+    Array [
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=16:9",
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=4:3",
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1",
+    ]
   }
-  type="application/ld+json"
+  title="test-headline"
+  url="test-url/test"
 />
 `;
 
 exports[`Microdata should render a full Microdata component 1`] = `
-<script
-  dangerouslySetInnerHTML={
-    Object {
-      "__html": "{\\"@context\\":\\"http://schema.org\\",\\"@type\\":\\"BlogPosting\\",\\"headline\\":\\"test-headline\\",\\"image\\":{\\"@type\\":\\"ImageObject\\",\\"url\\":[\\"//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=16:9\\",\\"//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=4:3\\",\\"//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1\\"]},\\"author\\":{\\"@type\\":\\"Person\\",\\"name\\":[\\"test-author-1\\"]},\\"datePublished\\":\\"2019-07-07\\",\\"publisher\\":{\\"@type\\":\\"Organization\\",\\"name\\":\\"Amplience\\",\\"logo\\":{\\"@type\\":\\"ImageObject\\",\\"url\\":\\"//i1.adis.ws/i/ampcomcms/amplience-logo-hidef?$poi$&aspect=1:1\\"}}}",
-    }
+<BlogJsonLd
+  authorName="test-author-1"
+  dateModified="2019-07-07"
+  datePublished="2019-07-07"
+  description="description"
+  images={
+    Array [
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=16:9",
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=4:3",
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1",
+    ]
   }
-  type="application/ld+json"
+  title="test-headline"
+  url="test-url/test"
 />
 `;
