@@ -59,10 +59,6 @@ const exportPathMap = async function() {
     '/': {
       page: '/',
       query: {}
-    },
-    '/error': {
-      page: '/_error',
-      query: {}
     }
   });
 };
@@ -70,7 +66,7 @@ const exportPathMap = async function() {
 const env = {
   DYNAMIC_CONTENT_REFERENCE_ID: process.env.DYNAMIC_CONTENT_REFERENCE_ID,
   DYNAMIC_CONTENT_ACCOUNT_NAME: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
-  DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,
+  DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL
 };
 
 const manifest = {

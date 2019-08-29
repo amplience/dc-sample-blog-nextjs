@@ -6,7 +6,7 @@ interface CustomErrorProps {
   statusCode: number | undefined;
 }
 
-const CustomError: NextPage<CustomErrorProps> = ({ statusCode = 500 }: CustomErrorProps) => {
+const CustomError: NextPage<CustomErrorProps> = ({ statusCode = 404 }: CustomErrorProps) => {
   return (
     <Layout title={`${statusCode} Error`} description={`Error on page with status ${statusCode}`}>
       <section>
@@ -22,7 +22,7 @@ const CustomError: NextPage<CustomErrorProps> = ({ statusCode = 500 }: CustomErr
 };
 
 CustomError.getInitialProps = async ({ res, err }) => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : 500;
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 404;
   return { statusCode };
 };
 
