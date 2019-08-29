@@ -16,6 +16,7 @@ exports[`SharePost should render using the process.env.BASE_URL is defined 1`] =
       className="jsx-3021568651"
     >
       <script
+        async={true}
         className="jsx-3021568651"
         src="https://platform.linkedin.com/in.js"
         type="text/javascript"
@@ -66,6 +67,7 @@ exports[`SharePost should render when process.env.BASE_URL is undefined 1`] = `
       className="jsx-3021568651"
     >
       <script
+        async={true}
         className="jsx-3021568651"
         src="https://platform.linkedin.com/in.js"
         type="text/javascript"

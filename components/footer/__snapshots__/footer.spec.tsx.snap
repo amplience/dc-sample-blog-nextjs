@@ -25,6 +25,7 @@ exports[`Footer renders a footer component 1`] = `
           <a
             className="jsx-3655793200"
             href="//twitter.com/amplience"
+            rel="noreferrer"
             target="_new"
           >
             <img
@@ -36,6 +37,7 @@ exports[`Footer renders a footer component 1`] = `
           <a
             className="jsx-3655793200"
             href="//www.linkedin.com/company/amplience/"
+            rel="noreferrer"
             target="_new"
           >
             <img
@@ -71,6 +73,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//github.com/amplience/"
+              rel="noreferrer"
               target="_new"
             >
               GitHub
@@ -80,6 +83,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//stackoverflow.com/questions/tagged/amplience-dynamic-content"
+              rel="noreferrer"
               target="_new"
             >
               Stack Overflow
@@ -89,6 +93,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//docs.amplience.net/integration/developergettingstarted.html"
+              rel="noreferrer"
               target="_new"
             >
               Dynamic Content docs
@@ -98,6 +103,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//docs.amplience.net/contenthub.html"
+              rel="noreferrer"
               target="_new"
             >
               Content Hub docs
@@ -107,6 +113,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//docs.amplience.net/integration/reference.html"
+              rel="noreferrer"
               target="_new"
             >
               API reference
@@ -129,6 +136,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//amplience.com"
+              rel="noreferrer"
               target="_new"
             >
               Website
@@ -138,6 +146,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//amplience.com/careers"
+              rel="noreferrer"
               target="_new"
             >
               Careers
@@ -147,6 +156,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//amplience.com/privacy-cookie-policy"
+              rel="noreferrer"
               target="_new"
             >
               Privacy policy
@@ -156,6 +166,7 @@ exports[`Footer renders a footer component 1`] = `
             <a
               className="jsx-3655793200"
               href="//docs.amplience.net/releasenotes/readme.html"
+              rel="noreferrer"
               target="_new"
             >
               What\`s new

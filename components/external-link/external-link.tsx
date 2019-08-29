@@ -7,7 +7,7 @@ export interface ExternalLinkProps {
 
 const ExternalLink = ({ children, href }: ExternalLinkProps) => (
   <>
-    <a href={href} target="_new">
+    <a href={href} target="_new" rel="noreferrer">
       {children}
     </a>
     <style jsx>{`

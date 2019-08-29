@@ -11,7 +11,7 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
         <h3>Share the post</h3>
         <div>
           <div>
-            <script src="https://platform.linkedin.com/in.js" type="text/javascript">
+            <script async src="https://platform.linkedin.com/in.js" type="text/javascript">
               lang: en_US
             </script>
             <script type="IN/Share" data-url={currentPageUrl}></script>
