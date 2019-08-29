@@ -3,10 +3,10 @@
 exports[`Content should render different types of content - text, image and video 1`] = `
 <React.Fragment>
   <section
-    className="jsx-724767025"
+    className="jsx-538569914"
   >
     <div
-      className="jsx-724767025"
+      className="jsx-538569914"
     >
       <Image
         altText="Casual crotch shot"
@@ -24,7 +24,7 @@ exports[`Content should render different types of content - text, image and vide
       />
     </div>
     <div
-      className="jsx-724767025"
+      className="jsx-538569914"
     >
       <ReactMarkdown
         astPlugins={Array []}
@@ -55,7 +55,7 @@ This is some more sample text"
       />
     </div>
     <div
-      className="jsx-724767025 blog-post-video"
+      className="jsx-538569914 blog-post-video"
     >
       <Video
         srcSet={
@@ -80,13 +80,14 @@ This is some more sample text"
       Array [
         "#666666",
         "#cccccc",
+        "#cccccc",
         "#f7f7fc",
         "736px",
       ]
     }
-    id="2511516268"
+    id="1039621377"
   >
-    section.__jsx-style-dynamic-selector{color:#666666;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector{margin-top:75px;width:100%;}section.__jsx-style-dynamic-selector table{border-collapse:collapse;}section.__jsx-style-dynamic-selector th,section.__jsx-style-dynamic-selector td{border:1px solid #cccccc;padding:12px;}section.__jsx-style-dynamic-selector tr:nth-child(odd) td{background-color:#f7f7fc;}@media (max-width:736px){section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector{margin-top:90px;}}
+    section.__jsx-style-dynamic-selector{color:#666666;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;padding-bottom:50px;border-bottom:1px solid #cccccc;}section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector{margin-top:75px;width:100%;}section.__jsx-style-dynamic-selector table{border-collapse:collapse;}section.__jsx-style-dynamic-selector th,section.__jsx-style-dynamic-selector td{border:1px solid #cccccc;padding:12px;}section.__jsx-style-dynamic-selector tr:nth-child(odd) td{background-color:#f7f7fc;}@media (max-width:736px){section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector{margin-top:90px;}}
   </JSXStyle>
 </React.Fragment>
 `;

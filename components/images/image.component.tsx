@@ -7,6 +7,15 @@ export interface DynamicImagingOptions {
   sm?: string;
 }
 
+function sortImageSizes(dynamicImagingOptions: DynamicImagingOptions[]): DynamicImagingOptions[] {
+  dynamicImagingOptions.sort((opts1: DynamicImagingOptions, opts2: DynamicImagingOptions): number => opts2.w - opts1.w);
+  dynamicImagingOptions.sort((opts1: DynamicImagingOptions, opts2: DynamicImagingOptions): number =>
+    opts1.h && opts2.h ? opts2.h - opts1.h : 0
+  );
+
+  return dynamicImagingOptions;
+}
+
 function generateSrcOptions(
   src: string,
   dynamicImagingOptions: DynamicImagingOptions[]
@@ -14,7 +23,7 @@ function generateSrcOptions(
   const srcSet: string[] = [];
   const mediaSizes: string[] = [];
 
-  dynamicImagingOptions.forEach((opts, index): void => {
+  sortImageSizes(dynamicImagingOptions).forEach((opts, index): void => {
     const imageQueryParams: string[] = [];
     Object.entries(opts).forEach(([key, value]) => imageQueryParams.push(`${key}=${encodeURIComponent(value)}`));
 

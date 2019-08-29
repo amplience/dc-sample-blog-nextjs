@@ -14,7 +14,9 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
         <div className="authors">
           <span>by</span>
           {authors.map(a => (
-            <span className="author">{a.name}</span>
+            <span key={a.name} className="author">
+              {a.name}
+            </span>
           ))}
         </div>
         <span className="publish-date">{convertToBlogDate(publishedDate)}</span>

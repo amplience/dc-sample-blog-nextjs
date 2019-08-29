@@ -1,4 +1,3 @@
-import { NextSeo } from 'next-seo';
 import theme from '../common/styles/default/theme';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
@@ -7,14 +6,11 @@ import GaPageView from '../components/google-analytics/ga-page-view.component';
 
 interface DefaultLayoutProps {
   children: JSX.Element[];
-  title: string;
-  description?: string;
 }
 
-export default ({ children, title, description }: DefaultLayoutProps) => {
+export default ({ children }: DefaultLayoutProps) => {
   return (
     <>
-      <NextSeo title={title} description={description} />
       <div className="site-container">
         <Header title="PRODUCT BLOG" />
         <div className="site-content">

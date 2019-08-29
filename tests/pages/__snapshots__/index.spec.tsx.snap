@@ -215,12 +215,12 @@ exports[`Index renders index with content 1`] = `
     className="cookieConsent "
     style={
       Object {
-        "align-items": "center",
+        "alignItems": "center",
         "background": "rgba(255, 255, 255, 0.9)",
         "bottom": "0",
         "boxShadow": "20px 20px 20px 10px #000",
         "color": "#333",
-        "flex-direction": "column",
+        "flexDirection": "column",
         "textAlign": "center",
         "zIndex": 1,
       }
@@ -254,7 +254,7 @@ exports[`Index renders index with content 1`] = `
           "border": "3px solid #CCC",
           "borderRadius": "5px",
           "color": "#333",
-          "margin-bottom": "10px",
+          "marginBottom": "10px",
         }
       }
     >

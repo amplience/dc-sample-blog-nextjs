@@ -15,7 +15,17 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
       <StaticLink ariaLabel={blogPost.title} href={blogLink}>
         <article>
           <div className="blog-card-image">
-            <Image {...{ ...blogPost.image, dynamicImagingOptions: [{ w: 324 }, { w: 476 }, { w: 684 }] }} />
+            <Image
+              {...{
+                ...blogPost.image,
+                dynamicImagingOptions: [
+                  { h: 140, w: 660, sm: 'c' },
+                  { h: 140, w: 260, sm: 'c' },
+                  { h: 140, w: 360, sm: 'c' },
+                  { h: 140, w: 480, sm: 'c' }
+                ]
+              }}
+            />
           </div>
           <div className="blog-card-content">
             <h1>{blogPost.title}</h1>
@@ -46,13 +56,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           box-shadow: 0 20px 14px 2px ${theme.colors.black25};
         }
 
-        .blog-card-image {
-          height: 135px;
-        }
-
         .blog-card-image :global(img) {
           object-fit: cover;
-          max-height: 135px;
+          width: 100%;
+          height: 135px;
         }
 
         .blog-card-content {
