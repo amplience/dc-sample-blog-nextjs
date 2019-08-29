@@ -1,10 +1,15 @@
-import renderer from 'react-test-renderer';
 import Image from './image.component';
 import AmplienceImage from '../../common/interfaces/image.interface';
 import { MediaType } from '../../common/interfaces/media.interface';
 
+import ShallowRenderer from 'react-test-renderer/shallow';
+
 describe('Image', (): void => {
-  it('should render an image with width only', (): void => {
+  let renderer;
+  beforeEach(() => {
+    renderer = ShallowRenderer.createRenderer();
+  });
+  it('should render a lazy image with width only', (): void => {
     const image: AmplienceImage = {
       altText: 'altText',
       image: {
@@ -17,15 +22,13 @@ describe('Image', (): void => {
       src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
     };
 
-    const wrapper = renderer
-      .create(
-        <Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ w: 800 }, { w: 600 }, { w: 400 }]} />
-      )
-      .toJSON();
-    expect(wrapper).toMatchSnapshot();
+    renderer.render(
+      <Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ w: 800 }, { w: 600 }, { w: 400 }]} />
+    );
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
-  it('should render an image with a height and width', (): void => {
+  it('should render a lazy image with a height and width', (): void => {
     const image: AmplienceImage = {
       altText: 'altText',
       image: {
@@ -38,13 +41,11 @@ describe('Image', (): void => {
       src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
     };
 
-    const wrapper = renderer
-      .create(<Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ h: 800, w: 600 }]} />)
-      .toJSON();
-    expect(wrapper).toMatchSnapshot();
+    renderer.render(<Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ h: 800, w: 600 }]} />);
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
-  it('should render an image with a height, width and crop it', (): void => {
+  it('should render a lazy image with a height, width and crop it', (): void => {
     const image: AmplienceImage = {
       altText: 'altText',
       image: {
@@ -57,9 +58,9 @@ describe('Image', (): void => {
       src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
     };
 
-    const wrapper = renderer
-      .create(<Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c' }]} />)
-      .toJSON();
-    expect(wrapper).toMatchSnapshot();
+    renderer.render(
+      <Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c' }]} />
+    );
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 });

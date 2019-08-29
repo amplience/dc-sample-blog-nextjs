@@ -1,9 +1,13 @@
-import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import Content from './content';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import { MediaType } from '../../common/interfaces/media.interface';
 
 describe('Content', (): void => {
+  let renderer;
+  beforeEach(() => {
+    renderer = ShallowRenderer.createRenderer();
+  });
   it('should render different types of content - text, image and video', (): void => {
     const content: AmplienceContent[] = [
       {
@@ -33,7 +37,7 @@ describe('Content', (): void => {
       }
     ];
 
-    const wrapper = renderer.create(<Content content={content} />).toJSON();
-    expect(wrapper).toMatchSnapshot();
+    renderer.render(<Content content={content} />);
+    expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 });
