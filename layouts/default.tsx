@@ -8,7 +8,7 @@ interface DefaultLayoutProps {
   children: JSX.Element[];
 }
 
-export default ({ children}: DefaultLayoutProps) => {
+export default ({ children }: DefaultLayoutProps) => {
   return (
     <>
       <div className="site-container">
