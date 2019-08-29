@@ -6,35 +6,38 @@ exports[`HeroCard renders full hero card 1`] = `
 <section
   className="jsx-238292447"
 >
-  <article
-    className="jsx-238292447"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+  <a
+    className="jsx-3354872520"
+    href="/blog/url-slug/undefined"
   >
-    <div
-      className="jsx-238292447 blog-card-image"
+    <article
+      className="jsx-238292447"
     >
       <div
-        className="image-mock"
-      />
-    </div>
-    <div
-      className="jsx-238292447 blog-card-content"
-    >
-      <h1
-        className="jsx-238292447"
+        className="jsx-238292447 blog-card-image"
       >
-        blog-post-test
-      </h1>
+        <div
+          className="image-mock"
+        />
+      </div>
       <div
-        className="blog-card-meta-mock"
-      />
-      <p
-        className="jsx-238292447"
+        className="jsx-238292447 blog-card-content"
       >
-        blog-post-description
-      </p>
-    </div>
-  </article>
+        <h1
+          className="jsx-238292447"
+        >
+          blog-post-test
+        </h1>
+        <div
+          className="blog-card-meta-mock"
+        />
+        <p
+          className="jsx-238292447"
+        >
+          blog-post-description
+        </p>
+      </div>
+    </article>
+  </a>
 </section>
 `;
