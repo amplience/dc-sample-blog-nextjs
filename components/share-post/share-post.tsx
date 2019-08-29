@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 
 const SharePost = ({ twitterText }: { twitterText: string }) => {
   const router = useRouter();
-  const baseUrl = process.env.BASE_URL !== undefined ? process.env.BASE_URL : '';
+  const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;
 
   return (
