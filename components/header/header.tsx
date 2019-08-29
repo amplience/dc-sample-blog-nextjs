@@ -8,7 +8,7 @@ const Header = ({ title }: { title: string }) => {
     <>
       <header>
         <section>
-          <StaticLink href="/" as="/" prefetch={false}>
+          <StaticLink href="/">
             <Logo />
           </StaticLink>
           <h1>{title}</h1>

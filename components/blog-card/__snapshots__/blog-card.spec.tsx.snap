@@ -1,34 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlogCard renders full blog card 1`] = `
-<article
-  className="jsx-558580343"
-  onClick={[Function]}
-  onMouseEnter={[Function]}
+<a
+  className="jsx-3354872520"
+  href="/blog/url-slug/undefined"
 >
-  <div
-    className="jsx-558580343 blog-card-image"
+  <article
+    className="jsx-558580343"
   >
     <div
-      className="image-mock"
-    />
-  </div>
-  <div
-    className="jsx-558580343 blog-card-content"
-  >
-    <h1
-      className="jsx-558580343"
+      className="jsx-558580343 blog-card-image"
     >
-      blog-post-test
-    </h1>
+      <div
+        className="image-mock"
+      />
+    </div>
     <div
-      className="blog-card-meta-mock"
-    />
-    <p
-      className="jsx-558580343"
+      className="jsx-558580343 blog-card-content"
     >
-      blog-post-description
-    </p>
-  </div>
-</article>
+      <h1
+        className="jsx-558580343"
+      >
+        blog-post-test
+      </h1>
+      <div
+        className="blog-card-meta-mock"
+      />
+      <p
+        className="jsx-558580343"
+      >
+        blog-post-description
+      </p>
+    </div>
+  </article>
+</a>
 `;
