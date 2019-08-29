@@ -79,7 +79,7 @@ const Footer = () => {
           font-size: ${theme.fonts.size.small};
           margin-bottom: 25px;
           align-self: flex-end;
-          color: ${theme.colors.silver};
+          color: ${theme.colors.mineShaft};
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {

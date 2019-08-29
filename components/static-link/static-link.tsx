@@ -3,11 +3,12 @@ import React from 'react';
 export interface StaticLinkProps {
   children: JSX.Element;
   href: string;
+  ariaLabel?: string;
 }
 
-const StaticLink = ({ children, href }: StaticLinkProps) => (
+const StaticLink = ({ children, href, ariaLabel = '' }: StaticLinkProps) => (
   <>
-    <a href={href}>
+    <a href={href} aria-label={ariaLabel}>
       {children}
       <style jsx>{`
         a {

@@ -7,6 +7,7 @@ exports[`HeroCard renders full hero card 1`] = `
   className="jsx-238292447"
 >
   <a
+    aria-label="blog-post-test"
     className="jsx-580416171"
     href="/blog/url-slug/undefined"
   >

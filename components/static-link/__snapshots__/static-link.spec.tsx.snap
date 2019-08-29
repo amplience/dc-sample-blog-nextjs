@@ -1,7 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`StaticLink renders external link as an anchor tag when in static mode 1`] = `
+exports[`StaticLink renders external link as an anchor tag 1`] = `
 <a
+  aria-label=""
+  className="jsx-580416171"
+  href="//href-link"
+>
+  <div
+    className="something-to-link-as-static"
+  />
+</a>
+`;
+
+exports[`StaticLink renders external link as an anchor tag with aria-label 1`] = `
+<a
+  aria-label="link title"
   className="jsx-580416171"
   href="//href-link"
 >

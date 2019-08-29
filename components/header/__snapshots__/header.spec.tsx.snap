@@ -8,6 +8,7 @@ exports[`Header renders blog header 1`] = `
     className="jsx-4102660572"
   >
     <a
+      aria-label=""
       className="jsx-580416171"
       href="/"
     >
