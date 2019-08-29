@@ -13,8 +13,8 @@ const CookieBanner = () => {
           color: '#333',
           boxShadow: '20px 20px 20px 10px #000',
           textAlign: 'center',
-          'flex-direction': 'column',
-          'align-items': 'center',
+          flexDirection: 'column',
+          alignItems: 'center',
           zIndex: 1
         }}
         contentStyle={{
@@ -25,7 +25,7 @@ const CookieBanner = () => {
           background: '#fff',
           border: '3px solid #CCC',
           borderRadius: '5px',
-          'margin-bottom': '10px'
+          marginBottom: '10px'
         }}
       >
         We use cookies to give you the best possible experience on our website. By continuing to browse this site, you
