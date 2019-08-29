@@ -1,12 +1,12 @@
 import { NextPage } from 'next';
-import Image from '../../../components/images/image.component';
-import BlogPost from '../../../common/interfaces/blog-post.interface';
-import Layout from '../../../layouts/default';
-import getBlogPost, { parseContent } from '../../../common/services/blog-post.service';
-import convertToBlogDate from '../../../common/services/blog-date.service';
-import BlogPostHeroBanner from '../../../components/hero-banner/blog-post-hero-banner.component';
-import BlogPostAuthor from '../../../components/blog-post-author/blog-post-author.component';
-import Content from '../../../components/content/content';
+import Image from '../components/images/image.component';
+import BlogPost from '../common/interfaces/blog-post.interface';
+import Layout from '../layouts/default';
+import getBlogPost, { parseContent } from '../common/services/blog-post.service';
+import convertToBlogDate from '../common/services/blog-date.service';
+import BlogPostHeroBanner from '../components/hero-banner/blog-post-hero-banner.component';
+import BlogPostAuthor from '../components/blog-post-author/blog-post-author.component';
+import Content from '../components/content/content';
 
 const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
   return (
@@ -16,7 +16,11 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
         <BlogPostHeroBanner title={props.title} subTitle={props.description} />
       </div>
       <div className="blog-image">
-        <Image altText={props.image.altText} src={props.image.src} sizes={[4096, 2048, 1080, 414]} />
+        <Image
+          altText={props.image.altText}
+          src={props.image.src}
+          dynamicImagingOptions={[{ w: 4096 }, { w: 2048 }, { w: 1080 }, { w: 414 }]}
+        />
       </div>
       <div className="content-wrapper">
         <Content content={props.content} />
@@ -44,12 +48,11 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
 };
 
 BlogPostPage.getInitialProps = async ({ query }) => {
-  const blogPostId = query['blog-id'].toString();
-  const blogPost = await getBlogPost(blogPostId);
-  blogPost.content = await parseContent(blogPost.content);
-  blogPost.date = convertToBlogDate(blogPost.date);
-
   try {
+    const blogPostId = query['blog-id'].toString();
+    const blogPost = await getBlogPost(blogPostId);
+    blogPost.content = await parseContent(blogPost.content);
+    blogPost.date = convertToBlogDate(blogPost.date);
     return blogPost;
   } catch (err) {
     throw err;

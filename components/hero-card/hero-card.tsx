@@ -1,8 +1,8 @@
-import Link from 'next/link';
 import Image from '../images/image.component';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
+import StaticLink from '../static-link/static-link';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -12,14 +12,19 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
   if (!blogPost) {
     return <div />;
   } else {
-    const blogLink = `/blogs/${blogPost.urlSlug}/${blogPost.id}`;
+    const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
     return (
       <>
         <section>
-          <Link href={blogLink}>
+          <StaticLink href={blogLink}>
             <article>
               <div className="blog-card-image">
-                <Image {...{ ...blogPost.image, sizes: [324, 476, 684, 1000] }} />
+                <Image
+                  {...{
+                    ...blogPost.image,
+                    dynamicImagingOptions: [{ w: 324 }, { w: 476 }, { w: 684 }, { w: 1000 }]
+                  }}
+                />
               </div>
               <div className="blog-card-content">
                 <h1>{blogPost.title}</h1>
@@ -27,7 +32,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                 <p>{blogPost.description}</p>
               </div>
             </article>
-          </Link>
+          </StaticLink>
         </section>
         <style jsx>{`
         article {
@@ -37,7 +42,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           box-shadow: 0 6px 12px 2px ${theme.colors.black08};
           background: white;
           cursor: pointer;
-          min-height: 326px;
+          height: 400px;
         }
         
         p {
@@ -60,11 +65,14 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
         h1 {
           font-size: ${theme.fonts.size.xLarge};
+          color: ${theme.colors.mineShaft};
+        }
+
+        p {
+          color: ${theme.colors.doveGray};
         }
         
         section {
-          display: flex;
-          flex-wrap: wrap;
           margin: auto;
           margin-top: 40px;
           max-width: ${theme.layout.widePageWidth};

@@ -4,14 +4,18 @@
   "description": "Amplience Dynamic Content Static Site with NextJS",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "export": "npm run build && next export",
     "precommit": "npm run lint",
     "commit": "npx git-cz",
-    "test:jest": "jest --silent",
-    "test": "run-s lint test:jest",
-    "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\""
+    "lint": "prettier --check \"**/*.ts\" && eslint \"**/*.ts\"",
+    "pretest": "npm run lint",
+    "test": "jest --silent",
+    "clean": "rimraf .next/* out/*",
+    "prebuild": "npm run clean",
+    "build": "next build",
+    "preexport": "npm run build",
+    "export": "next export",
+    "prestart": "npm run export",
+    "start": "serve out"
   },
   "repository": {
     "type": "git",
@@ -84,17 +88,19 @@
     "next-manifest": "^2.0.0",
     "next-offline": "^4.0.2",
     "next-seo": "^2.0.0",
-    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6",
+    "serve": "^11.1.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
   },
   "dependencies": {
     "dc-delivery-sdk-js": "^0.3.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.2",
     "promise.allsettled": "^1.0.1",
     "react": "^16.8.6",
+    "react-cookie-consent": "^2.4.1",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.1.0",
     "react-syntax-highlighter": "^11.0.2"

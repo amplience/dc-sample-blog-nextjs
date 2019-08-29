@@ -2,6 +2,7 @@ import { NextSeo } from 'next-seo';
 import theme from '../common/styles/default/theme';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
+import CookieBanner from '../components/cookie-banner/cookie-banner';
 import GaPageView from '../components/google-analytics/ga-page-view.component';
 
 interface DefaultLayoutProps {
@@ -20,6 +21,7 @@ export default ({ children, title, description }: DefaultLayoutProps) => {
           <main>{children}</main>
           <Footer />
         </div>
+        <CookieBanner></CookieBanner>
         <GaPageView />
       </div>
       <style jsx global>{`
