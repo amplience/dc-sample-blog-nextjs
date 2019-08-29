@@ -2,7 +2,7 @@
 
 exports[`BlogCard renders full blog card 1`] = `
 <a
-  className="jsx-3354872520"
+  className="jsx-580416171"
   href="/blog/url-slug/undefined"
 >
   <article

@@ -5,16 +5,16 @@ export interface StaticLinkProps {
   href: string;
 }
 
-const StaticLink = ({children, href}: StaticLinkProps) => (
+const StaticLink = ({ children, href }: StaticLinkProps) => (
   <>
     <a href={href}>
       {children}
       <style jsx>{`
-          a {
-            text-decoration: none;
-            display: flex;
-          }
-        `}</style>
+        a {
+          text-decoration: none;
+          display: flex;
+        }
+      `}</style>
     </a>
   </>
 );

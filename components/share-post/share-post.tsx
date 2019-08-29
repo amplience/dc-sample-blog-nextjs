@@ -1,6 +1,6 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
-const SharePost = ({twitterText}: { twitterText: string }) => {
+const SharePost = ({ twitterText }: { twitterText: string }) => {
   const router = useRouter();
   const baseUrl = process.env.BASE_URL !== undefined ? process.env.BASE_URL : '';
   const currentPageUrl = baseUrl + router.asPath;
@@ -11,13 +11,20 @@ const SharePost = ({twitterText}: { twitterText: string }) => {
         <h3>Share the post</h3>
         <div>
           <div>
-            <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+            <script src="https://platform.linkedin.com/in.js" type="text/javascript">
+              lang: en_US
+            </script>
             <script type="IN/Share" data-url={currentPageUrl}></script>
           </div>
           <div>
-            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" className="twitter-share-button"
-               data-text={twitterText}
-               data-show-count="false">Tweet</a>
+            <a
+              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              className="twitter-share-button"
+              data-text={twitterText}
+              data-show-count="false"
+            >
+              Tweet
+            </a>
             <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
           </div>
         </div>
