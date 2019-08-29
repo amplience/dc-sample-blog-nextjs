@@ -11,10 +11,9 @@ import Microdata from '../components/microdata/microdata';
 
 interface BlogPostProps {
   blogPost: BlogPost;
-  blogUrl: string;
 }
 
-const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost, blogUrl }: BlogPostProps) => {
+const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   return (
     <Layout title={blogPost.title} description={blogPost.description}>
       <div className="content-wrapper">
@@ -32,7 +31,6 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost, blogUrl }: BlogPostPr
         <Content content={blogPost.content} />
       </div>
       <Microdata
-        url={blogUrl}
         description={blogPost.description}
         headline={blogPost.title}
         imageUrl={blogPost.image.src}
@@ -61,14 +59,13 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost, blogUrl }: BlogPostPr
   );
 };
 
-BlogPostPage.getInitialProps = async ({ req, query }) => {
+BlogPostPage.getInitialProps = async ({ query }) => {
   try {
-    const blogUrl = req ? `${process.env.BLOG_HOST}${req.url}` : '';
     const blogPostId = query['blog-id'].toString();
     const blogPost = await getBlogPost(blogPostId);
     blogPost.content = await parseContent(blogPost.content);
     blogPost.date = convertToBlogDate(blogPost.date);
-    return { blogPost, blogUrl };
+    return { blogPost };
   } catch (err) {
     throw err;
   }

@@ -1,8 +1,8 @@
-import Author from '../../common/interfaces/author.interface';
 import { BlogJsonLd } from 'next-seo';
+import { useRouter } from 'next/router';
+import Author from '../../common/interfaces/author.interface';
 
 interface MicrodataProps {
-  url: string;
   headline: string;
   description: string;
   imageUrl: string;
@@ -10,12 +10,15 @@ interface MicrodataProps {
   datePublished: string;
 }
 
-const Microdata = ({ url, headline, description, imageUrl, authors = [], datePublished }: MicrodataProps) => {
+const Microdata = ({ headline, description, imageUrl, authors = [], datePublished }: MicrodataProps) => {
+  const router = useRouter();
+  const baseUrl = process.env.BASE_URL !== undefined ? process.env.BASE_URL : '';
+  const currentPageUrl = baseUrl + router.asPath;
   const aspectRatios = ['16:9', '4:3', '1:1'];
 
   return (
     <BlogJsonLd
-      url={url}
+      url={currentPageUrl}
       description={description}
       title={headline}
       images={[...aspectRatios.map(ratio => `${imageUrl}?w=1200&sm=aspect&aspect=${ratio}`)]}

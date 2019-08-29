@@ -14,11 +14,11 @@ exports[`Microdata should render Microdata component when author is not defined 
     ]
   }
   title="test-headline"
-  url="test-url/test"
+  url="http://example.com/mocked-path"
 />
 `;
 
-exports[`Microdata should render a full Microdata component 1`] = `
+exports[`Microdata should render a full Microdata component and BASE_URL is defined 1`] = `
 <BlogJsonLd
   authorName="test-author-1"
   dateModified="2019-07-07"
@@ -32,6 +32,24 @@ exports[`Microdata should render a full Microdata component 1`] = `
     ]
   }
   title="test-headline"
-  url="test-url/test"
+  url="http://example.com/mocked-path"
+/>
+`;
+
+exports[`Microdata should render a full Microdata component and BASE_URL is not defined 1`] = `
+<BlogJsonLd
+  authorName="test-author-1"
+  dateModified="2019-07-07"
+  datePublished="2019-07-07"
+  description="description"
+  images={
+    Array [
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=16:9",
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=4:3",
+      "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1",
+    ]
+  }
+  title="test-headline"
+  url="mocked-path"
 />
 `;
