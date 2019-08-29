@@ -16,7 +16,7 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
         <BlogPostHeroBanner title={props.title} subTitle={props.description} />
       </div>
       <div className="blog-image">
-        <Image altText={props.image.altText} src={props.image.src} dynamicImagingOptions={[{w: 4096}, {w: 2048}, {w: 1080}, {h: 200, w: 414, sm: 'c'}]} />
+        <Image altText={props.image.altText} src={props.image.src} dynamicImagingOptions={[{h: 1024, w: 4096, sm: 'c', scaleFit: 'poi'}, {h: 512, w: 2048, sm: 'c', scaleFit: 'poi'}, {h: 270, w: 1080, sm: 'c', scaleFit: 'poi'}, {h: 200, w: 414, sm: 'c', scaleFit: 'poi'}]} />
       </div>
       <div className="content-wrapper">
         <Content content={props.content} />

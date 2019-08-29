@@ -15,7 +15,7 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
         className="jsx-3162327209"
         sizes="72px"
         src="//i1-qa.adis.ws/i/bloblogltd/man-business-suit"
-        srcSet="//i1-qa.adis.ws/i/bloblogltd/man-business-suit?w=72&h=72&sm=c 72w"
+        srcSet="//i1-qa.adis.ws/i/bloblogltd/man-business-suit?w=72&h=72&sm=c&scaleFit=poi&poi=%7B%24this.metadata.pointOfInterest.x%7D%2C%7B%24this.metadata.pointOfInterest.y%7D%2C%7B%24this.metadata.pointOfInterest.w%7D%2C%7B%24this.metadata.pointOfInterest.h%7D 72w"
       />
     </div>
     <div
