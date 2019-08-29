@@ -2,7 +2,11 @@ import Error from 'next/error';
 import Layout from '../layouts/default';
 import { NextPage } from 'next';
 
-const CustomError: NextPage<any> = ({ statusCode }: any) => {
+interface CustomErrorProps {
+  statusCode: number | undefined;
+}
+
+const CustomError: NextPage<CustomErrorProps> = ({ statusCode = 500 }: CustomErrorProps) => {
   return (
     <Layout title={`${statusCode} Error`} description={`Error on page with status ${statusCode}`}>
       <section>
@@ -17,8 +21,8 @@ const CustomError: NextPage<any> = ({ statusCode }: any) => {
   );
 };
 
-CustomError.getInitialProps = ({ res, err }: any): any => {
-  const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+CustomError.getInitialProps = async ({ res, err }) => {
+  const statusCode = res ? res.statusCode : err ? err.statusCode : 500;
   return { statusCode };
 };
 
