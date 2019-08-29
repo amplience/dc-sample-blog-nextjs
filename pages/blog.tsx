@@ -8,6 +8,8 @@ import BlogPostHeroBanner from '../components/hero-banner/blog-post-hero-banner.
 import BlogPostAuthor from '../components/blog-post-author/blog-post-author.component';
 import Content from '../components/content/content';
 import Microdata from '../components/microdata/microdata';
+import SharePost from '../components/share-post/share-post';
+import { NextSeo } from 'next-seo';
 
 interface BlogPostProps {
   blogPost: BlogPost;
@@ -15,7 +17,24 @@ interface BlogPostProps {
 
 const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   return (
-    <Layout title={blogPost.title} description={blogPost.description}>
+    <Layout>
+      <NextSeo
+        title={blogPost.title}
+        description={blogPost.description}
+        twitter={{
+          cardType: 'summary_large_image'
+        }}
+        openGraph={{
+          title: blogPost.title,
+          description: blogPost.description,
+          images: [
+            {
+              url: 'https:' + blogPost.image.src + '?w=1080',
+              width: 1080
+            }
+          ]
+        }}
+      />
       <div className="content-wrapper">
         <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime} />
         <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
@@ -29,6 +48,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
       </div>
       <div className="content-wrapper">
         <Content content={blogPost.content} />
+        <SharePost twitterText={blogPost.title} />
       </div>
       <Microdata
         description={blogPost.description}
