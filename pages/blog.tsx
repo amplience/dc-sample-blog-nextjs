@@ -19,7 +19,7 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
         <Image
           altText={props.image.altText}
           src={props.image.src}
-          dynamicImagingOptions={[{ w: 4096 }, { w: 2048 }, { w: 1080 }, { w: 414 }]}
+          dynamicImagingOptions={[{ w: 4096 }, { w: 2048 }, { w: 1080 }, { h: 200, w: 414, sm: 'c' }]}
         />
       </div>
       <div className="content-wrapper">
@@ -33,13 +33,17 @@ const BlogPostPage: NextPage<BlogPost> = (props: BlogPost) => {
 
         .blog-image :global(img) {
           object-fit: cover;
-          max-height: 400px;
+          height: 400px;
         }
 
         @media (max-width: 675px) {
           .content-wrapper {
             display: block;
             padding: 0 20px;
+          }
+
+          .blog-image :global(img) {
+            height: 200px;
           }
         }
       `}</style>
