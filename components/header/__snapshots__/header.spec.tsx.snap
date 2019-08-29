@@ -1,17 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders blog header 1`] = `
-<header
-  className="jsx-4121102434"
+<section
+  className="jsx-4102660572"
 >
-  <section
-    className="jsx-4121102434"
+  <header
+    className="jsx-4102660572"
   >
     <a
-      className="jsx-4121102434"
+      className="jsx-580416171"
       href="/"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
     >
       <img
         alt="Amplience logo"
@@ -21,10 +19,10 @@ exports[`Header renders blog header 1`] = `
       />
     </a>
     <h1
-      className="jsx-4121102434"
+      className="jsx-4102660572"
     >
       Blog Title
     </h1>
-  </section>
-</header>
+  </header>
+</section>
 `;

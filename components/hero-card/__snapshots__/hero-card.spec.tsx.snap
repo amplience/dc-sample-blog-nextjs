@@ -4,37 +4,40 @@ exports[`HeroCard renders empty hero card when blog list is undefined 1`] = `<di
 
 exports[`HeroCard renders full hero card 1`] = `
 <section
-  className="jsx-1634934315"
+  className="jsx-563832273"
 >
-  <article
-    className="jsx-1634934315"
-    onClick={[Function]}
-    onMouseEnter={[Function]}
+  <a
+    className="jsx-580416171"
+    href="/blog/url-slug/undefined"
   >
-    <div
-      className="jsx-1634934315 blog-card-image"
+    <article
+      className="jsx-563832273"
     >
       <div
-        className="image-mock"
-      />
-    </div>
-    <div
-      className="jsx-1634934315 blog-card-content"
-    >
-      <h1
-        className="jsx-1634934315"
+        className="jsx-563832273 blog-card-image"
       >
-        blog-post-test
-      </h1>
+        <div
+          className="image-mock"
+        />
+      </div>
       <div
-        className="blog-card-meta-mock"
-      />
-      <p
-        className="jsx-1634934315"
+        className="jsx-563832273 blog-card-content"
       >
-        blog-post-description
-      </p>
-    </div>
-  </article>
+        <h1
+          className="jsx-563832273"
+        >
+          blog-post-test
+        </h1>
+        <div
+          className="blog-card-meta-mock"
+        />
+        <p
+          className="jsx-563832273"
+        >
+          blog-post-description
+        </p>
+      </div>
+    </article>
+  </a>
 </section>
 `;
