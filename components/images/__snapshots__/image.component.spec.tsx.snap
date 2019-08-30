@@ -20,6 +20,26 @@ exports[`Image should render an image with a height, width and crop it 1`] = `
 />
 `;
 
+exports[`Image should render an image with a height, width and crop it to a defined poi 1`] = `
+<img
+  alt="altText"
+  className="jsx-3162327209"
+  sizes="600px"
+  src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
+  srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c&scaleFit=poi&poi=0.30741794586182%2C0.64965417250147%2C0.125%2C0.18867924528302 600w"
+/>
+`;
+
+exports[`Image should render an image with a height, width and crop it to the default poi 1`] = `
+<img
+  alt="altText"
+  className="jsx-3162327209"
+  sizes="600px"
+  src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
+  srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c&scaleFit=poi&poi=%7B%24this.metadata.pointOfInterest.x%7D%2C%7B%24this.metadata.pointOfInterest.y%7D%2C%7B%24this.metadata.pointOfInterest.w%7D%2C%7B%24this.metadata.pointOfInterest.h%7D 600w"
+/>
+`;
+
 exports[`Image should render an image with width only 1`] = `
 <img
   alt="altText"

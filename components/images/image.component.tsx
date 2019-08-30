@@ -3,6 +3,8 @@ export interface DynamicImagingOptions {
   h?: number;
   qlt?: number;
   sm?: string;
+  scaleFit?: string;
+  poi?: string;
 }
 
 function sortImageSizes(dynamicImagingOptions: DynamicImagingOptions[]): DynamicImagingOptions[] {
@@ -23,7 +25,15 @@ function generateSrcOptions(
 
   sortImageSizes(dynamicImagingOptions).forEach((opts, index): void => {
     const imageQueryParams: string[] = [];
-    Object.entries(opts).forEach(([key, value]) => imageQueryParams.push(`${key}=${encodeURIComponent(value)}`));
+
+    if (opts.scaleFit === 'poi' && !opts.poi) {
+      opts.poi =
+        '{$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}';
+    }
+
+    Object.entries(opts).forEach(([key, value]) => {
+      imageQueryParams.push(`${key}=${encodeURIComponent(value)}`);
+    });
 
     srcSet.push(`${src}?${imageQueryParams.join('&')} ${opts.w}w`);
     mediaSizes.push(index > 0 ? `(max-width: ${opts.w}px) ${opts.w - 40}px` : `${opts.w}px`);
