@@ -16,7 +16,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
     return (
       <>
         <section>
-          <StaticLink href={blogLink}>
+          <StaticLink ariaLabel={blogPost.title} href={blogLink}>
             <article>
               <div className="blog-card-image">
                 <Image

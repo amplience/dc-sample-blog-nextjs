@@ -33,6 +33,7 @@ export default ({ children }: DefaultLayoutProps) => {
         }
 
         body {
+          @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
           font-family: Roboto, Arial, sans-serif;
           font-weight: ${theme.fonts.weight.regular};
           max-width: 100%;

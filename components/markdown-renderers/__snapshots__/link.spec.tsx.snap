@@ -7,6 +7,7 @@ exports[`MarkdownLink should render an external link tag 1`] = `
   <a
     className="jsx-3655793200"
     href="//an-external-link"
+    rel="noreferrer"
     target="_new"
   >
     test text

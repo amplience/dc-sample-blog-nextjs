@@ -1,3 +1,5 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 export interface DynamicImagingOptions {
   w: number;
   h?: number;
@@ -47,9 +49,10 @@ const Image = (image: { altText: string; src: string; dynamicImagingOptions: Dyn
 
   return (
     <>
-      <img alt={image.altText} src={image.src} srcSet={srcSet} sizes={mediaSizes} />
+      <LazyLoadImage alt={image.altText} src={image.src} srcSet={srcSet} sizes={mediaSizes} className="lazy-img" />
+
       <style jsx>{`
-        img {
+        :global(img.lazy-img) {
           width: 100%;
         }
       `}</style>

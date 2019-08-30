@@ -12,7 +12,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
   const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
   return (
     <>
-      <StaticLink href={blogLink}>
+      <StaticLink ariaLabel={blogPost.title} href={blogLink}>
         <article>
           <div className="blog-card-image">
             <Image
