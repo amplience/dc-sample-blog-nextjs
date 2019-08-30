@@ -12,7 +12,7 @@ interface MicrodataProps {
 
 const Microdata = ({ headline, description, imageUrl, authors = [], datePublished }: MicrodataProps) => {
   const router = useRouter();
-  const baseUrl = process.env.BASE_URL !== undefined ? process.env.BASE_URL : '';
+  const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;
   const aspectRatios = ['16:9', '4:3', '1:1'];
 
