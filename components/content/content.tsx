@@ -15,7 +15,11 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           if ('image' in c) {
             return (
               <div key={c.image.id}>
-                <Image altText={c.altText} src={c.src} dynamicImagingOptions={[{ w: 675 }, { w: 374 }]} />
+                <Image
+                  altText={c.altText}
+                  src={c.src}
+                  dynamicImagingOptions={[{ w: 675, scaleFit: 'poi' }, { w: 374, scaleFit: 'poi' }]}
+                />
               </div>
             );
           } else if ('video' in c) {

@@ -10,7 +10,7 @@ function loadAvatar(author: Author): JSX.Element | undefined {
           <Image
             altText={author.avatar.altText}
             src={author.avatar.src}
-            dynamicImagingOptions={[{ w: 72, h: 72, sm: 'c' }]}
+            dynamicImagingOptions={[{ w: 72, h: 72, sm: 'c', scaleFit: 'poi' }]}
           />
         </div>
         <style jsx>{`

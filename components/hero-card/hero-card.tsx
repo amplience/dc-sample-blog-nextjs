@@ -23,9 +23,9 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                   {...{
                     ...blogPost.image,
                     dynamicImagingOptions: [
-                      { h: 420, w: 320, sm: 'c' },
-                      { h: 400, w: 230, sm: 'c' },
-                      { h: 420, w: 684, sm: 'c' }
+                      { h: 420, w: 320, sm: 'c', scaleFit: 'poi' },
+                      { h: 400, w: 230, sm: 'c', scaleFit: 'poi' },
+                      { h: 420, w: 684, sm: 'c', scaleFit: 'poi' }
                     ]
                   }}
                 />

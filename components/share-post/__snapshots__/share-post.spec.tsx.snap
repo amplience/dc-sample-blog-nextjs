@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SharePost should render using the process.env.BASE_URL is defined 1`] = `
+exports[`SharePost should render using the process.env.URL is defined 1`] = `
 <section
   className="jsx-3021568651"
 >
@@ -51,7 +51,7 @@ exports[`SharePost should render using the process.env.BASE_URL is defined 1`] =
 </section>
 `;
 
-exports[`SharePost should render when process.env.BASE_URL is undefined 1`] = `
+exports[`SharePost should render when process.env.URL is undefined 1`] = `
 <section
   className="jsx-3021568651"
 >

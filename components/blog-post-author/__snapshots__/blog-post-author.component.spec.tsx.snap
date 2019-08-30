@@ -18,6 +18,7 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
               Array [
                 Object {
                   "h": 72,
+                  "scaleFit": "poi",
                   "sm": "c",
                   "w": 72,
                 },

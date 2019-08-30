@@ -9,6 +9,10 @@
 
 This is an application built using the Amplience Dynamic Content Service and the NextJS framework that generates a static blog website.
 
+## Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/amplience/dc-static-blog-nextjs)
+
 ## Installation
 
 Clone this repo and install the dependencies via npm:

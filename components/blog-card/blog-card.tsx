@@ -19,10 +19,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
               {...{
                 ...blogPost.image,
                 dynamicImagingOptions: [
-                  { h: 140, w: 660, sm: 'c' },
-                  { h: 140, w: 260, sm: 'c' },
-                  { h: 140, w: 360, sm: 'c' },
-                  { h: 140, w: 480, sm: 'c' }
+                  { h: 140, w: 700, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 500, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 360, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 260, sm: 'c', scaleFit: 'poi' }
                 ]
               }}
             />

@@ -13,9 +13,11 @@ exports[`Content should render different types of content - text, image and vide
         dynamicImagingOptions={
           Array [
             Object {
+              "scaleFit": "poi",
               "w": 675,
             },
             Object {
+              "scaleFit": "poi",
               "w": 374,
             },
           ]
