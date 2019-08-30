@@ -65,11 +65,12 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
         datePublished={blogPost.date}
       />
       <style jsx>{`
-        .content-header, .content-footer {
+        .content-header,
+        .content-footer {
           margin: auto;
           max-width: 740px;
         }
-        
+
         .content-wrapper {
           margin: auto;
           max-width: 675px;
@@ -81,8 +82,14 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
           height: 400px;
         }
 
+        :global(footer) {
+          margin-top: 100px;
+        }
+
         @media (max-width: 675px) {
-          .content-header, .content-footer, .content-wrapper {
+          .content-header,
+          .content-footer,
+          .content-wrapper {
             display: block;
             padding: 0 20px;
           }

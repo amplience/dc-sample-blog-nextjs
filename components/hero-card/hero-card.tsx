@@ -52,7 +52,9 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         p {
-          font-size: 1.1rem;
+          font-size: 1.3125rem;
+          color: ${theme.colors.doveGray};
+          line-height: 1.875rem;
         }
 
         article:hover {
@@ -83,14 +85,13 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
         h1 {
           line-height: 2.8125rem;
-          font-size: ${theme.fonts.size.xLarge};
+          font-size: 2.25rem;
           font-weight: ${theme.fonts.weight.medium};
           color: ${theme.colors.mineShaft};
         }
-
-        p {
-          color: ${theme.colors.doveGray};
-          line-height: 1.875rem;
+        
+        :global(.card-meta) {
+          font-size: ${theme.fonts.size.large};
         }
         
         section {

@@ -31,7 +31,6 @@ const Footer = () => {
 
       <style jsx>{`
         footer {
-          margin-top: 84px;
           padding-top: 50px;
           flex: auto;
           background-color: ${theme.colors.whiteLilac};
