@@ -1,6 +1,7 @@
 import Error from 'next/error';
 import Layout from '../layouts/default';
 import { NextPage } from 'next';
+import { NextSeo } from 'next-seo/lib';
 
 interface CustomErrorProps {
   statusCode: number | undefined;
@@ -8,7 +9,8 @@ interface CustomErrorProps {
 
 const CustomError: NextPage<CustomErrorProps> = ({ statusCode = 404 }: CustomErrorProps) => {
   return (
-    <Layout title={`${statusCode} Error`} description={`Error on page with status ${statusCode}`}>
+    <Layout>
+      <NextSeo title={`${statusCode} Error`} description={`Error on page with status ${statusCode}`} />
       <section>
         <Error statusCode={statusCode} />
       </section>
