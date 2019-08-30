@@ -10,8 +10,10 @@ interface VideoProfile {
   ];
 }
 
+const httpsAsset = (url: string): string => `${url}?protocol=https`;
+
 export async function getVideoSources(video: AmplienceVideo): Promise<string[]> {
-  const videoMetaUrl = `${buildMediaUrl(video.video)}.json`;
+  const videoMetaUrl = httpsAsset(`${buildMediaUrl(video.video)}.json`);
 
   try {
     const res = await fetch(videoMetaUrl);
@@ -25,7 +27,7 @@ export async function getVideoSources(video: AmplienceVideo): Promise<string[]> 
       return [];
     }
 
-    return videoProfile.media.map((media: { src: string }): string => media.src);
+    return videoProfile.media.map((media: { src: string }): string => httpsAsset(media.src));
   } catch (e) {
     throw e;
   }
