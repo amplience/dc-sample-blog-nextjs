@@ -32,7 +32,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
               </div>
               <div className="blog-card-content">
                 <h1>{blogPost.title}</h1>
-                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
+                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
                 <p>{blogPost.description}</p>
               </div>
             </article>
@@ -45,7 +45,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           font-size: ${theme.fonts.size.normal};
           display: flex;
           flex-direction: row;
-          box-shadow: 0 6px 12px 2px ${theme.colors.black08};
+          box-shadow: 0 20px 15px 2px ${theme.colors.black08};
           background: white;
           cursor: pointer;
           min-height: 400px;
@@ -56,7 +56,15 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
 
         article:hover {
-          box-shadow: 0 6px 12px 2px ${theme.colors.black25};
+          box-shadow: 0 20px 15px 2px ${theme.colors.black25};
+        }
+        
+        article:hover :global(.publish-date) {
+          border-color: ${theme.colors.dustyGray};
+        }
+        
+        article:hover h1, article:hover p, article:hover :global(.card-meta) {
+          color: ${theme.colors.dustyGray};
         }
         
         .blog-card-image {
@@ -74,12 +82,15 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
 
         h1 {
+          line-height: 2.8125rem;
           font-size: ${theme.fonts.size.xLarge};
+          font-weight: ${theme.fonts.weight.medium};
           color: ${theme.colors.mineShaft};
         }
 
         p {
           color: ${theme.colors.doveGray};
+          line-height: 1.875rem;
         }
         
         section {

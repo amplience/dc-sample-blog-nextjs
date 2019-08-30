@@ -1,5 +1,5 @@
 const layout = {
-  widePageWidth: '1032px',
+  widePageWidth: '1097px',
   narrowPageWidth: '736px'
 };
 

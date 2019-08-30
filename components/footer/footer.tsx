@@ -34,7 +34,6 @@ const Footer = () => {
           margin-top: 84px;
           padding-top: 50px;
           flex: auto;
-          overflow-y: auto;
           background-color: ${theme.colors.whiteLilac};
           height: 400px;
           display: flex;

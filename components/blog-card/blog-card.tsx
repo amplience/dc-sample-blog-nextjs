@@ -29,7 +29,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           </div>
           <div className="blog-card-content">
             <h1>{blogPost.title}</h1>
-            <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} />
+            <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
             <p>{blogPost.description}</p>
           </div>
         </article>

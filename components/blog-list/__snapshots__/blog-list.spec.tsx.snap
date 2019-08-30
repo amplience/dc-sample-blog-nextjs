@@ -2,7 +2,7 @@
 
 exports[`BlogList renders blog list with a single blog 1`] = `
 <section
-  className="jsx-3692910672"
+  className="jsx-2919536176"
 >
   <div
     className="blog-card-mock"
@@ -12,7 +12,7 @@ exports[`BlogList renders blog list with a single blog 1`] = `
 
 exports[`BlogList renders empty blog list when blog list is empty array 1`] = `
 <section
-  className="jsx-3692910672"
+  className="jsx-2919536176"
 >
   <div
     className="jsx-143652140 no-published-blogs"
@@ -28,7 +28,7 @@ exports[`BlogList renders empty blog list when blog list is empty array 1`] = `
 
 exports[`BlogList renders empty blog list when blog list is undefined 1`] = `
 <section
-  className="jsx-3692910672"
+  className="jsx-2919536176"
 >
   <div
     className="jsx-143652140 no-published-blogs"

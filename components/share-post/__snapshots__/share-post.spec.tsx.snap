@@ -2,38 +2,38 @@
 
 exports[`SharePost should render using the process.env.URL is defined 1`] = `
 <section
-  className="jsx-3021568651"
+  className="jsx-3181362040"
 >
   <h3
-    className="jsx-3021568651"
+    className="jsx-3181362040"
   >
     Share the post
   </h3>
   <div
-    className="jsx-3021568651"
+    className="jsx-3181362040"
   >
     <div
-      className="jsx-3021568651"
+      className="jsx-3181362040"
     >
       <script
         async={true}
-        className="jsx-3021568651"
+        className="jsx-3181362040"
         src="https://platform.linkedin.com/in.js"
         type="text/javascript"
       >
         lang: en_US
       </script>
       <script
-        className="jsx-3021568651"
+        className="jsx-3181362040"
         data-url="http://example.com/mocked-path"
         type="IN/Share"
       />
     </div>
     <div
-      className="jsx-3021568651"
+      className="jsx-3181362040"
     >
       <a
-        className="jsx-3021568651 twitter-share-button"
+        className="jsx-3181362040 twitter-share-button"
         data-show-count="false"
         data-text="Testing Title"
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
@@ -43,7 +43,7 @@ exports[`SharePost should render using the process.env.URL is defined 1`] = `
       <script
         async={true}
         charSet="utf-8"
-        className="jsx-3021568651"
+        className="jsx-3181362040"
         src="https://platform.twitter.com/widgets.js"
       />
     </div>
@@ -53,38 +53,38 @@ exports[`SharePost should render using the process.env.URL is defined 1`] = `
 
 exports[`SharePost should render when process.env.URL is undefined 1`] = `
 <section
-  className="jsx-3021568651"
+  className="jsx-3181362040"
 >
   <h3
-    className="jsx-3021568651"
+    className="jsx-3181362040"
   >
     Share the post
   </h3>
   <div
-    className="jsx-3021568651"
+    className="jsx-3181362040"
   >
     <div
-      className="jsx-3021568651"
+      className="jsx-3181362040"
     >
       <script
         async={true}
-        className="jsx-3021568651"
+        className="jsx-3181362040"
         src="https://platform.linkedin.com/in.js"
         type="text/javascript"
       >
         lang: en_US
       </script>
       <script
-        className="jsx-3021568651"
+        className="jsx-3181362040"
         data-url="mocked-path"
         type="IN/Share"
       />
     </div>
     <div
-      className="jsx-3021568651"
+      className="jsx-3181362040"
     >
       <a
-        className="jsx-3021568651 twitter-share-button"
+        className="jsx-3181362040 twitter-share-button"
         data-show-count="false"
         data-text="Testing Title"
         href="https://twitter.com/share?ref_src=twsrc%5Etfw"
@@ -94,7 +94,7 @@ exports[`SharePost should render when process.env.URL is undefined 1`] = `
       <script
         async={true}
         charSet="utf-8"
-        className="jsx-3021568651"
+        className="jsx-3181362040"
         src="https://platform.twitter.com/widgets.js"
       />
     </div>

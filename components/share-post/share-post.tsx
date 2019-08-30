@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import theme from '../../common/styles/default/theme';
 
 const SharePost = ({ twitterText }: { twitterText: string }) => {
   const router = useRouter();
@@ -31,14 +32,17 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
       </section>
       <style jsx>{`
         section {
-          margin-top: 25px;
           display: flex;
-          padding: 0 10px;
+          padding: 25px 10px 0px;
+          border-top: 1px solid ${theme.colors.silver};
         }
         h3 {
           flex: 1 0 0;
           margin: 0;
           padding: 0;
+          font-weight: ${theme.fonts.weight.medium};
+          font-size: ${theme.fonts.size.large};
+          color: ${theme.colors.mineShaft};
         }
         section > div {
           flex: 1 0 0;
@@ -46,7 +50,7 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
           justify-content: flex-end;
         }
         section > div > div {
-          margin-left: 10px;
+          margin: 0px 10px;
         }
       `}</style>
     </>

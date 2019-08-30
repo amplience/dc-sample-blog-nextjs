@@ -35,7 +35,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
           ]
         }}
       />
-      <div className="content-wrapper">
+      <div className="content-header">
         <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime} />
         <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
@@ -53,6 +53,8 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
       </div>
       <div className="content-wrapper">
         <Content content={blogPost.content} />
+      </div>
+      <div className="content-footer">
         <SharePost twitterText={blogPost.title} />
       </div>
       <Microdata
@@ -63,9 +65,15 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
         datePublished={blogPost.date}
       />
       <style jsx>{`
+        .content-header, .content-footer {
+          margin: auto;
+          max-width: 740px;
+        }
+        
         .content-wrapper {
           margin: auto;
           max-width: 675px;
+          padding-bottom: 100px;
         }
 
         .blog-image :global(img) {
@@ -74,7 +82,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
         }
 
         @media (max-width: 675px) {
-          .content-wrapper {
+          .content-header, .content-footer, .content-wrapper {
             display: block;
             padding: 0 20px;
           }
