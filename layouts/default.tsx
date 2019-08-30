@@ -26,6 +26,8 @@ export default ({ children }: DefaultLayoutProps) => {
           margin: 0;
           height: 100%;
           min-height: 100%;
+          overflow-y: scroll;
+          scroll-behavior: smooth;
         }
 
         html {
@@ -58,6 +60,13 @@ export default ({ children }: DefaultLayoutProps) => {
         .site-content {
           flex: auto;
           overflow-y: auto;
+        }
+        
+        @media(max-width: ${theme.layout.narrowPageWidth}) {
+          html,
+          body {
+            -webkit-overflow-scrolling: touch;
+          }
         }
       `}</style>
     </>
