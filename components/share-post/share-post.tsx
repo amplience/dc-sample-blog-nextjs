@@ -1,32 +1,25 @@
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 
-const SharePost = ({ twitterText }: { twitterText: string }) => {
+const SharePost = ({twitterText}: { twitterText: string }) => {
   const router = useRouter();
   const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;
+
+  const linkedinHtmlMarkup = {
+    __html: `<script async src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-url=${currentPageUrl}></script>`
+  };
+  
+  const twitterHtmlMarkup = {
+    __html: `<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text=${twitterText} data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>`
+  };
 
   return (
     <>
       <section>
         <h3>Share the post</h3>
         <div>
-          <div>
-            <script async src="https://platform.linkedin.com/in.js" type="text/javascript">
-              lang: en_US
-            </script>
-            <script type="IN/Share" data-url={currentPageUrl}></script>
-          </div>
-          <div>
-            <a
-              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-              className="twitter-share-button"
-              data-text={twitterText}
-              data-show-count="false"
-            >
-              Tweet
-            </a>
-            <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
-          </div>
+          <div dangerouslySetInnerHTML={linkedinHtmlMarkup} suppressHydrationWarning={true}/>
+          <div dangerouslySetInnerHTML={twitterHtmlMarkup} suppressHydrationWarning={true}/>
         </div>
       </section>
       <style jsx>{`
