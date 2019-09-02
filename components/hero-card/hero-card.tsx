@@ -16,16 +16,16 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
     return (
       <>
         <section>
-          <StaticLink href={blogLink}>
+          <StaticLink ariaLabel={blogPost.title} href={blogLink}>
             <article>
               <div className="blog-card-image">
                 <Image
                   {...{
                     ...blogPost.image,
                     dynamicImagingOptions: [
-                      { h: 420, w: 320, sm: 'c' },
-                      { h: 400, w: 230, sm: 'c' },
-                      { h: 420, w: 684, sm: 'c' }
+                      { h: 420, w: 320, sm: 'c', scaleFit: 'poi' },
+                      { h: 400, w: 230, sm: 'c', scaleFit: 'poi' },
+                      { h: 420, w: 684, sm: 'c', scaleFit: 'poi' }
                     ]
                   }}
                 />

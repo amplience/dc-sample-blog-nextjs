@@ -5,7 +5,7 @@ import CookieBanner from '../components/cookie-banner/cookie-banner';
 import GaPageView from '../components/google-analytics/ga-page-view.component';
 
 interface DefaultLayoutProps {
-  children: JSX.Element[];
+  children: JSX.Element[] | JSX.Element;
 }
 
 export default ({ children }: DefaultLayoutProps) => {
@@ -35,6 +35,7 @@ export default ({ children }: DefaultLayoutProps) => {
         }
 
         body {
+          @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
           font-family: Roboto, Arial, sans-serif;
           font-weight: ${theme.fonts.weight.regular};
           max-width: 100%;

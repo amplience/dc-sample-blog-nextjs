@@ -4,7 +4,7 @@ import ShallowRender from 'react-test-renderer/shallow';
 
 describe('Microdata', (): void => {
   beforeEach(() => {
-    delete process.env.BASE_URL;
+    delete process.env.URL;
   });
   it('should render a full Microdata component and BASE_URL is not defined', (): void => {
     const props = {
@@ -20,7 +20,7 @@ describe('Microdata', (): void => {
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
   it('should render a full Microdata component and BASE_URL is defined', (): void => {
-    process.env.BASE_URL = 'http://example.com/';
+    process.env.URL = 'http://example.com/';
     const props = {
       headline: 'test-headline',
       description: 'description',
@@ -35,7 +35,7 @@ describe('Microdata', (): void => {
   });
 
   it('should render Microdata component when author is not defined', (): void => {
-    process.env.BASE_URL = 'http://example.com/';
+    process.env.URL = 'http://example.com/';
     const props = {
       headline: 'test-headline',
       description: 'description',
