@@ -90,7 +90,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           color: ${theme.colors.mineShaft};
         }
         
-        :global(.card-meta) {
+        article :global(.card-meta div) {
           font-size: ${theme.fonts.size.large};
         }
         
