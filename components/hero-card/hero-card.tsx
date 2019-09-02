@@ -52,7 +52,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         p {
-          font-size: 1.3125rem;
+          font-size: ${theme.fonts.size.xLarge};
           color: ${theme.colors.doveGray};
           line-height: 1.875rem;
         }
@@ -85,7 +85,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
         h1 {
           line-height: 2.8125rem;
-          font-size: 2.25rem;
+          font-size: ${theme.fonts.size.xxxLarge};
           font-weight: ${theme.fonts.weight.medium};
           color: ${theme.colors.mineShaft};
         }

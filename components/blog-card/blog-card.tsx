@@ -76,7 +76,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
 
         h1 {
           color: ${theme.colors.mineShaft};
-          font-size: ${theme.fonts.size.xLarge};
+          font-size: ${theme.fonts.size.xxLarge};
           font-weight: ${theme.fonts.weight.medium};
           line-height: 1.875rem;
           margin-top: 0;
@@ -86,7 +86,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         p {
           color: ${theme.colors.doveGray};
           font-weight: ${theme.fonts.weight.regular};
-          line-height: ${theme.fonts.size.xLarge};
+          line-height: ${theme.fonts.size.xxLarge};
           margin-bottom: 0;
         }
 

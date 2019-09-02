@@ -23,14 +23,14 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
         }
         h1 {
           color: ${theme.colors.mineShaft};
-          font-size: ${theme.fonts.size.xxLarge};
+          font-size: ${theme.fonts.size.xxxxLarge};
           font-weight: ${theme.fonts.weight.regular};
           line-height: 3.75rem;
         }
 
         h2 {
           color: ${theme.colors.mineShaft};
-          font-size: ${theme.fonts.size.xLarge};
+          font-size: ${theme.fonts.size.xxLarge};
           font-weight: ${theme.fonts.weight.light};
           line-height: 2.25rem;
         }
@@ -46,7 +46,7 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
           color: ${theme.colors.mineShaft};
           font-size: 1rem;
           font-weight: ${theme.fonts.weight.bold};
-          line-height: ${theme.fonts.size.xLarge};
+          line-height: ${theme.fonts.size.xxLarge};
         }
 
         h5 {
