@@ -15,7 +15,8 @@
     "preexport": "npm run build",
     "export": "next export",
     "prestart": "npm run export",
-    "start": "serve out"
+    "start": "serve out",
+    "fix": "prettier --write '**/*.ts'"
   },
   "repository": {
     "type": "git",
