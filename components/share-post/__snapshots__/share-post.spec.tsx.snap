@@ -14,39 +14,22 @@ exports[`SharePost should render using the process.env.URL is defined 1`] = `
   >
     <div
       className="jsx-3021568651"
-    >
-      <script
-        async={true}
-        className="jsx-3021568651"
-        src="https://platform.linkedin.com/in.js"
-        type="text/javascript"
-      >
-        lang: en_US
-      </script>
-      <script
-        className="jsx-3021568651"
-        data-url="http://example.com/mocked-path"
-        type="IN/Share"
-      />
-    </div>
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<script async src=\\"https://platform.linkedin.com/in.js\\" type=\\"text/javascript\\">lang: en_US</script><script type=\\"IN/Share\\" data-url=http://example.com/mocked-path></script>",
+        }
+      }
+      suppressHydrationWarning={true}
+    />
     <div
       className="jsx-3021568651"
-    >
-      <a
-        className="jsx-3021568651 twitter-share-button"
-        data-show-count="false"
-        data-text="Testing Title"
-        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-      >
-        Tweet
-      </a>
-      <script
-        async={true}
-        charSet="utf-8"
-        className="jsx-3021568651"
-        src="https://platform.twitter.com/widgets.js"
-      />
-    </div>
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<a href=\\"https://twitter.com/share?ref_src=twsrc%5Etfw\\" class=\\"twitter-share-button\\" data-text=Testing Title data-show-count=\\"false\\">Tweet</a><script async src=\\"https://platform.twitter.com/widgets.js\\" charSet=\\"utf-8\\"></script>",
+        }
+      }
+      suppressHydrationWarning={true}
+    />
   </div>
 </section>
 `;
@@ -65,39 +48,22 @@ exports[`SharePost should render when process.env.URL is undefined 1`] = `
   >
     <div
       className="jsx-3021568651"
-    >
-      <script
-        async={true}
-        className="jsx-3021568651"
-        src="https://platform.linkedin.com/in.js"
-        type="text/javascript"
-      >
-        lang: en_US
-      </script>
-      <script
-        className="jsx-3021568651"
-        data-url="mocked-path"
-        type="IN/Share"
-      />
-    </div>
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<script async src=\\"https://platform.linkedin.com/in.js\\" type=\\"text/javascript\\">lang: en_US</script><script type=\\"IN/Share\\" data-url=mocked-path></script>",
+        }
+      }
+      suppressHydrationWarning={true}
+    />
     <div
       className="jsx-3021568651"
-    >
-      <a
-        className="jsx-3021568651 twitter-share-button"
-        data-show-count="false"
-        data-text="Testing Title"
-        href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-      >
-        Tweet
-      </a>
-      <script
-        async={true}
-        charSet="utf-8"
-        className="jsx-3021568651"
-        src="https://platform.twitter.com/widgets.js"
-      />
-    </div>
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<a href=\\"https://twitter.com/share?ref_src=twsrc%5Etfw\\" class=\\"twitter-share-button\\" data-text=Testing Title data-show-count=\\"false\\">Tweet</a><script async src=\\"https://platform.twitter.com/widgets.js\\" charSet=\\"utf-8\\"></script>",
+        }
+      }
+      suppressHydrationWarning={true}
+    />
   </div>
 </section>
 `;
