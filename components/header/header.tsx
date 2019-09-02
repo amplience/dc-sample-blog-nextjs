@@ -26,7 +26,7 @@ const Header = ({ title }: { title: string }) => {
           display: flex;
           align-items: center;
           min-height: 75px;
-          width: 1032px;
+          width: ${theme.layout.widePageWidth};
           margin: 0 12px;
         }
         h1 {

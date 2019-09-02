@@ -8,7 +8,7 @@ const HeroBannerTitle = ({ title }: { title: string }) => {
         {`
           h1 {
             color: ${theme.colors.mineShaft};
-            font-size: ${theme.fonts.size.xxLarge};
+            font-size: ${theme.fonts.size.xxxxLarge};
             font-weight: ${theme.fonts.weight.regular};
             margin: 0;
             line-height: 60px;

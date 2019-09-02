@@ -44,8 +44,6 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           justify-content: flex-start;
           flex-direction: column;
           align-items: flex-start;
-          padding-bottom: 50px;
-          border-bottom: 1px solid ${theme.colors.silver};
         }
 
         section > div {

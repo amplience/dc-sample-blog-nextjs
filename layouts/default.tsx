@@ -15,8 +15,8 @@ export default ({ children }: DefaultLayoutProps) => {
         <Header title="PRODUCT BLOG" />
         <div className="site-content">
           <main>{children}</main>
-          <Footer />
         </div>
+        <Footer />
         <CookieBanner></CookieBanner>
         <GaPageView />
       </div>
@@ -60,7 +60,6 @@ export default ({ children }: DefaultLayoutProps) => {
 
         .site-content {
           flex: auto;
-          overflow-y: auto;
         }
         
         @media(max-width: ${theme.layout.narrowPageWidth}) {

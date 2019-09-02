@@ -2,10 +2,10 @@
 
 exports[`Header renders blog header 1`] = `
 <section
-  className="jsx-4102660572"
+  className="jsx-3821147582"
 >
   <header
-    className="jsx-4102660572"
+    className="jsx-3821147582"
   >
     <a
       aria-label=""
@@ -20,7 +20,7 @@ exports[`Header renders blog header 1`] = `
       />
     </a>
     <h1
-      className="jsx-4102660572"
+      className="jsx-3821147582"
     >
       Blog Title
     </h1>

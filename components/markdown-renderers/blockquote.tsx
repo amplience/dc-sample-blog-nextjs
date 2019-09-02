@@ -19,8 +19,8 @@ export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps) => {
         blockquote :global(p) {
           color: ${theme.colors.mineShaft};
           margin: 0;
-          font-size: 1.25rem;
-          font-weight: ${theme.fonts.weight.light};
+          font-size: 1.3125rem;
+          font-weight: ${theme.fonts.weight.regular};
           line-height: 2rem;
           padding: 6px;
         }

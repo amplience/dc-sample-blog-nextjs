@@ -16,6 +16,11 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
       <HeroBanner title={title} subTitle={subTitle} />
       <HeroCard blogPost={blogPosts[0]} />
       <BlogList blogPosts={blogPosts.slice(1)} />
+      <style jsx>{`
+        :global(footer) {
+          margin-top: 120px;
+        }
+      `}</style>
     </Layout>
   );
 };
