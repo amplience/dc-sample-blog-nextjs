@@ -119,6 +119,11 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
             box-shadow: unset;
             min-height: unset;
           }
+
+          article:hover {
+            box-shadow: unset;
+          }
+          
           section {
             display: block;
             padding: 0 45px;

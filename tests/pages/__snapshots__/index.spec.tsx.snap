@@ -2,7 +2,7 @@
 
 exports[`Index renders index with content 1`] = `
 <div
-  className="jsx-2237935601 site-container"
+  className="jsx-501907234 site-container"
 >
   <section
     className="jsx-3821147582"
@@ -30,10 +30,10 @@ exports[`Index renders index with content 1`] = `
     </header>
   </section>
   <div
-    className="jsx-2237935601 site-content"
+    className="jsx-501907234 site-content"
   >
     <main
-      className="jsx-2237935601"
+      className="jsx-501907234"
     >
       <div
         className="hero-banner-mock"
