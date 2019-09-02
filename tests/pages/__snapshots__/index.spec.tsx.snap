@@ -5,10 +5,10 @@ exports[`Index renders index with content 1`] = `
   className="jsx-2237935601 site-container"
 >
   <section
-    className="jsx-3821147582"
+    className="jsx-1853008300"
   >
     <header
-      className="jsx-3821147582"
+      className="jsx-1853008300"
     >
       <a
         aria-label=""
@@ -23,7 +23,7 @@ exports[`Index renders index with content 1`] = `
         />
       </a>
       <h1
-        className="jsx-3821147582"
+        className="jsx-1853008300"
       >
         PRODUCT BLOG
       </h1>
