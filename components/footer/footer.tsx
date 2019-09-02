@@ -31,16 +31,16 @@ const Footer = () => {
 
       <style jsx>{`
         footer {
-          padding-top: 50px;
-          flex: auto;
-          background-color: ${theme.colors.whiteLilac};
-          height: 400px;
           display: flex;
+          flex: 1 0 auto;
+          padding-top: 50px;
+          background-color: ${theme.colors.whiteLilac};
           justify-content: center;
         }
 
         section {
           width: ${theme.layout.widePageWidth};
+          min-height: 400px;
           display: flex;
           flex-direction: row;
           justify-content: space-between;

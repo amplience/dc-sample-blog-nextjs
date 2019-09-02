@@ -2,13 +2,13 @@ import Author from '../../common/interfaces/author.interface';
 import Image from '../../components/images/image.component';
 import theme from '../../common/styles/default/theme';
 
-function loadAuthorDetails(authors: Author[]): {avatars: JSX.Element[], authorNames: JSX.Element} {
+function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorNames: JSX.Element } {
   const avatars: JSX.Element[] = [];
   const authorNames: string[] = [];
 
   authors.forEach((author: Author): void => {
     if (author.avatar) {
-       avatars.push(
+      avatars.push(
         <>
           <div className="avatar">
             <Image
@@ -18,27 +18,24 @@ function loadAuthorDetails(authors: Author[]): {avatars: JSX.Element[], authorNa
             />
           </div>
           <style jsx>{`
-          .avatar :global(img) {
-            object-fit: cover;
-            height: 52px;
-            width: 52px;
-            border-radius: 4px;
-            margin-right: 20px;
-          }
-        `}</style>
+            .avatar :global(img) {
+              object-fit: cover;
+              height: 52px;
+              width: 52px;
+              border-radius: 4px;
+              margin-right: 20px;
+            }
+          `}</style>
         </>
       );
     }
 
     authorNames.push(author.name);
-
   });
 
   const authorNamesElement = (
     <>
-      <div className="name">
-        {authorNames.join(', ')}
-      </div>
+      <div className="name">{authorNames.join(', ')}</div>
       <style jsx>{`
         .name {
           color: ${theme.colors.mineShaft};
@@ -49,22 +46,18 @@ function loadAuthorDetails(authors: Author[]): {avatars: JSX.Element[], authorNa
     </>
   );
 
-  return {avatars, authorNames: authorNamesElement};
+  return { avatars, authorNames: authorNamesElement };
 }
 
 const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: string; readTime: number }) => {
-  const {avatars, authorNames} = loadAuthorDetails(authors);
+  const { avatars, authorNames } = loadAuthorDetails(authors);
 
   return (
     <>
       <section>
-        <div className="avatars">
-        {avatars}
-        </div>
+        <div className="avatars">{avatars}</div>
         <div className="publish-data">
-          <div className="authors">
-            {authorNames}
-          </div>
+          <div className="authors">{authorNames}</div>
           <div className="publish-metadata">
             <div className="date">{date}</div>
             <div className="readTime">{readTime} mins read</div>
@@ -102,7 +95,7 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
           justify-content: flex-start;
           flex-direction: column;
         }
-        
+
         .publish-metadata {
           display: flex;
           justify-content: flex-start;

@@ -3,14 +3,14 @@
 exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = `
 <React.Fragment>
   <section
-    className="jsx-3448078682"
+    className="jsx-1471317909"
   >
     <div
-      className="jsx-3448078682 avatars"
+      className="jsx-1471317909 avatars"
     >
       <React.Fragment>
         <div
-          className="jsx-3144626491 avatar"
+          className="jsx-3848208383 avatar"
         >
           <Image
             altText="The dashing Sir Bloblog avatar"
@@ -28,17 +28,17 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
           />
         </div>
         <JSXStyle
-          id="3144626491"
+          id="3848208383"
         >
-          .avatar.jsx-3144626491 img{object-fit:cover;height:52px;width:52px;border-radius:4px;margin-right:20px;}
+          .avatar.jsx-3848208383 img{object-fit:cover;height:52px;width:52px;border-radius:4px;margin-right:20px;}
         </JSXStyle>
       </React.Fragment>
     </div>
     <div
-      className="jsx-3448078682 publish-data"
+      className="jsx-1471317909 publish-data"
     >
       <div
-        className="jsx-3448078682 authors"
+        className="jsx-1471317909 authors"
       >
         <React.Fragment>
           <div
@@ -61,15 +61,15 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
         </React.Fragment>
       </div>
       <div
-        className="jsx-3448078682 publish-metadata"
+        className="jsx-1471317909 publish-metadata"
       >
         <div
-          className="jsx-3448078682 date"
+          className="jsx-1471317909 date"
         >
           2019-08-14
         </div>
         <div
-          className="jsx-3448078682 readTime"
+          className="jsx-1471317909 readTime"
         >
           15
            mins read
@@ -88,7 +88,7 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
         "736px",
       ]
     }
-    id="2864599872"
+    id="3685260175"
   >
     section.__jsx-style-dynamic-selector{margin-top:75px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;padding-bottom:25px;max-width:740px;border-bottom:1px solid #cccccc;}.date.__jsx-style-dynamic-selector{padding-right:6px;margin-right:6px;border-right:1px solid #999999;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{color:#999999;font-size:1.125rem;font-weight:400;}.publish-data.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.publish-metadata.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:5px;}@media (max-width:736px){section.__jsx-style-dynamic-selector{margin-top:45px;}}
   </JSXStyle>
@@ -98,16 +98,16 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
 exports[`BlogPostAuthor renders author without an avatar, but still has name and read time 1`] = `
 <React.Fragment>
   <section
-    className="jsx-3448078682"
+    className="jsx-1471317909"
   >
     <div
-      className="jsx-3448078682 avatars"
+      className="jsx-1471317909 avatars"
     />
     <div
-      className="jsx-3448078682 publish-data"
+      className="jsx-1471317909 publish-data"
     >
       <div
-        className="jsx-3448078682 authors"
+        className="jsx-1471317909 authors"
       >
         <React.Fragment>
           <div
@@ -130,15 +130,15 @@ exports[`BlogPostAuthor renders author without an avatar, but still has name and
         </React.Fragment>
       </div>
       <div
-        className="jsx-3448078682 publish-metadata"
+        className="jsx-1471317909 publish-metadata"
       >
         <div
-          className="jsx-3448078682 date"
+          className="jsx-1471317909 date"
         >
           2019-08-14
         </div>
         <div
-          className="jsx-3448078682 readTime"
+          className="jsx-1471317909 readTime"
         >
           15
            mins read
@@ -157,7 +157,7 @@ exports[`BlogPostAuthor renders author without an avatar, but still has name and
         "736px",
       ]
     }
-    id="2864599872"
+    id="3685260175"
   >
     section.__jsx-style-dynamic-selector{margin-top:75px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;padding-bottom:25px;max-width:740px;border-bottom:1px solid #cccccc;}.date.__jsx-style-dynamic-selector{padding-right:6px;margin-right:6px;border-right:1px solid #999999;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{color:#999999;font-size:1.125rem;font-weight:400;}.publish-data.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.publish-metadata.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:5px;}@media (max-width:736px){section.__jsx-style-dynamic-selector{margin-top:45px;}}
   </JSXStyle>
