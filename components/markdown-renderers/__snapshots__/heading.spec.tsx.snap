@@ -2,7 +2,7 @@
 
 exports[`MarkdownHeading should render a h1 tag 1`] = `
 <h1
-  className="jsx-4222339246"
+  className="jsx-961788151"
 >
   test text
 </h1>
@@ -10,7 +10,7 @@ exports[`MarkdownHeading should render a h1 tag 1`] = `
 
 exports[`MarkdownHeading should render a h2 tag 1`] = `
 <h2
-  className="jsx-4222339246"
+  className="jsx-961788151"
 >
   test text
 </h2>
@@ -18,7 +18,7 @@ exports[`MarkdownHeading should render a h2 tag 1`] = `
 
 exports[`MarkdownHeading should render a h3 tag 1`] = `
 <h3
-  className="jsx-4222339246"
+  className="jsx-961788151"
 >
   test text
 </h3>
@@ -26,7 +26,7 @@ exports[`MarkdownHeading should render a h3 tag 1`] = `
 
 exports[`MarkdownHeading should render a h4 tag 1`] = `
 <h4
-  className="jsx-4222339246"
+  className="jsx-961788151"
 >
   test text
 </h4>
@@ -34,7 +34,7 @@ exports[`MarkdownHeading should render a h4 tag 1`] = `
 
 exports[`MarkdownHeading should render a h5 tag 1`] = `
 <h5
-  className="jsx-4222339246"
+  className="jsx-961788151"
 >
   test text
 </h5>
@@ -42,7 +42,7 @@ exports[`MarkdownHeading should render a h5 tag 1`] = `
 
 exports[`MarkdownHeading should render a h6 tag 1`] = `
 <h6
-  className="jsx-4222339246"
+  className="jsx-961788151"
 >
   test text
 </h6>

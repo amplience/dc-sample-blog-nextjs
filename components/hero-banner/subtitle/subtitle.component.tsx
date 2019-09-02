@@ -8,7 +8,7 @@ const HeroBannerSubtitle = ({ subTitle }: { subTitle?: string }) => {
         {`
           h2 {
             color: ${theme.colors.mineShaft};
-            font-size: ${theme.fonts.size.xLarge};
+            font-size: ${theme.fonts.size.xxLarge};
             font-weight: ${theme.fonts.weight.light};
             margin: 0;
             margin-top: 10px;
