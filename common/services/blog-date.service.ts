@@ -13,11 +13,13 @@ const MONTHS = [
   'December'
 ];
 
+const addLeadingZeroes = (num: number): string => (num < 10 ? `0${num}` : num.toString());
+
 export default function convertToBlogDate(value: string): string {
-  if (!value || isNaN(Date.parse(value))) {
+  if (isNaN(Date.parse(value))) {
     return '';
   }
 
   const blogDate = new Date(value);
-  return `${blogDate.getDate()} ${MONTHS[blogDate.getMonth()]}, ${blogDate.getFullYear()}`;
+  return `${MONTHS[blogDate.getMonth()]} ${addLeadingZeroes(blogDate.getDate())}, ${blogDate.getFullYear()}`;
 }

@@ -5,12 +5,12 @@ exports[`BlogPostHeroBanner renders hero banner with title and subtitle 1`] = `
   className="jsx-2350814384"
 >
   <h1
-    className="jsx-180611785"
+    className="jsx-1446146482"
   >
     Test title
   </h1>
   <h2
-    className="jsx-1538177450"
+    className="jsx-1054465095"
   >
     Test subtitle
   </h2>
@@ -22,7 +22,7 @@ exports[`BlogPostHeroBanner renders hero banner with title only 1`] = `
   className="jsx-2350814384"
 >
   <h1
-    className="jsx-180611785"
+    className="jsx-1446146482"
   >
     Test title
   </h1>

@@ -2,13 +2,13 @@
 
 exports[`Index renders index with content 1`] = `
 <div
-  className="jsx-4200911600 site-container"
+  className="jsx-501907234 site-container"
 >
   <section
-    className="jsx-4102660572"
+    className="jsx-3821147582"
   >
     <header
-      className="jsx-4102660572"
+      className="jsx-3821147582"
     >
       <a
         aria-label=""
@@ -23,17 +23,17 @@ exports[`Index renders index with content 1`] = `
         />
       </a>
       <h1
-        className="jsx-4102660572"
+        className="jsx-3821147582"
       >
         PRODUCT BLOG
       </h1>
     </header>
   </section>
   <div
-    className="jsx-4200911600 site-content"
+    className="jsx-501907234 site-content"
   >
     <main
-      className="jsx-4200911600"
+      className="jsx-501907234"
     >
       <div
         className="hero-banner-mock"
@@ -45,183 +45,183 @@ exports[`Index renders index with content 1`] = `
         className="blob-list-mock"
       />
     </main>
-    <footer
-      className="jsx-4136948433"
+  </div>
+  <footer
+    className="jsx-1835413844"
+  >
+    <section
+      className="jsx-1835413844"
     >
-      <section
-        className="jsx-4136948433"
+      <div
+        className="jsx-1835413844 footer-info"
       >
         <div
-          className="jsx-4136948433 footer-info"
+          className="jsx-1835413844 footer-info-top"
         >
+          <img
+            alt="Amplience logo"
+            className="jsx-3359351483 logo"
+            src="/static/images/logo-340w.png"
+            srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+          />
           <div
-            className="jsx-4136948433 footer-info-top"
+            className="jsx-1835413844 social-links"
           >
-            <img
-              alt="Amplience logo"
-              className="jsx-3359351483 logo"
-              src="/static/images/logo-340w.png"
-              srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
-            />
-            <div
-              className="jsx-4136948433 social-links"
+            <a
+              className="jsx-3655793200"
+              href="//twitter.com/amplience"
+              rel="noreferrer"
+              target="_new"
             >
-              <a
-                className="jsx-3655793200"
-                href="//twitter.com/amplience"
-                rel="noreferrer"
-                target="_new"
-              >
-                <img
-                  alt="Twitter logo"
-                  className="jsx-4136948433"
-                  src="/static/images/social/ic_twitter.svg"
-                />
-              </a>
-              <a
-                className="jsx-3655793200"
-                href="//www.linkedin.com/company/amplience/"
-                rel="noreferrer"
-                target="_new"
-              >
-                <img
-                  alt="Linkedin logo"
-                  className="jsx-4136948433"
-                  src="/static/images/social/ic_linkedin.svg"
-                />
-              </a>
-            </div>
-          </div>
-          <div
-            className="jsx-4136948433 copyright"
-          >
-            © Copyright Amplience 
-            2019
+              <img
+                alt="Twitter logo"
+                className="jsx-1835413844"
+                src="/static/images/social/ic_twitter.svg"
+              />
+            </a>
+            <a
+              className="jsx-3655793200"
+              href="//www.linkedin.com/company/amplience/"
+              rel="noreferrer"
+              target="_new"
+            >
+              <img
+                alt="Linkedin logo"
+                className="jsx-1835413844"
+                src="/static/images/social/ic_linkedin.svg"
+              />
+            </a>
           </div>
         </div>
         <div
-          className="jsx-4136948433 footer-links"
+          className="jsx-1835413844 copyright"
         >
-          <section
-            className="jsx-4062423079 footer-links-section"
-          >
-            <h4
-              className="jsx-4062423079"
-            >
-              For Developers
-            </h4>
-            <ul
-              className="jsx-4062423079"
-            >
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//github.com/amplience/"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//stackoverflow.com/questions/tagged/amplience-dynamic-content"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Stack Overflow
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/integration/developergettingstarted.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Dynamic Content docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/contenthub.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Content Hub docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/integration/reference.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  API reference
-                </a>
-              </li>
-            </ul>
-          </section>
-          <section
-            className="jsx-4062423079 footer-links-section"
-          >
-            <h4
-              className="jsx-4062423079"
-            >
-              Company
-            </h4>
-            <ul
-              className="jsx-4062423079"
-            >
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Website
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com/careers"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com/privacy-cookie-policy"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Privacy policy
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/releasenotes/readme.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  What\`s new
-                </a>
-              </li>
-            </ul>
-          </section>
+          © Copyright Amplience 
+          2019
         </div>
-      </section>
-    </footer>
-  </div>
+      </div>
+      <div
+        className="jsx-1835413844 footer-links"
+      >
+        <section
+          className="jsx-4062423079 footer-links-section"
+        >
+          <h4
+            className="jsx-4062423079"
+          >
+            For Developers
+          </h4>
+          <ul
+            className="jsx-4062423079"
+          >
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//github.com/amplience/"
+                rel="noreferrer"
+                target="_new"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//stackoverflow.com/questions/tagged/amplience-dynamic-content"
+                rel="noreferrer"
+                target="_new"
+              >
+                Stack Overflow
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//docs.amplience.net/integration/developergettingstarted.html"
+                rel="noreferrer"
+                target="_new"
+              >
+                Dynamic Content docs
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//docs.amplience.net/contenthub.html"
+                rel="noreferrer"
+                target="_new"
+              >
+                Content Hub docs
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//docs.amplience.net/integration/reference.html"
+                rel="noreferrer"
+                target="_new"
+              >
+                API reference
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section
+          className="jsx-4062423079 footer-links-section"
+        >
+          <h4
+            className="jsx-4062423079"
+          >
+            Company
+          </h4>
+          <ul
+            className="jsx-4062423079"
+          >
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//amplience.com"
+                rel="noreferrer"
+                target="_new"
+              >
+                Website
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//amplience.com/careers"
+                rel="noreferrer"
+                target="_new"
+              >
+                Careers
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//amplience.com/privacy-cookie-policy"
+                rel="noreferrer"
+                target="_new"
+              >
+                Privacy policy
+              </a>
+            </li>
+            <li>
+              <a
+                className="jsx-3655793200"
+                href="//docs.amplience.net/releasenotes/readme.html"
+                rel="noreferrer"
+                target="_new"
+              >
+                What\`s new
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </footer>
   <div
     className="cookieConsent "
     style={

@@ -5,9 +5,10 @@ import theme from '../../common/styles/default/theme';
 interface BlogCardMetaProps {
   authors: Author[];
   publishedDate: string;
+  readTime: number;
 }
 
-const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
+const BlogCardMeta = ({ authors, publishedDate, readTime }: BlogCardMetaProps) => {
   return (
     <>
       <div className="card-meta">
@@ -19,12 +20,16 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
             </span>
           ))}
         </div>
-        <span className="publish-date">{convertToBlogDate(publishedDate)}</span>
+        <div className="publish-data">
+          <span className="publish-date">{convertToBlogDate(publishedDate)}</span>
+          {`${readTime} minutes`}
+        </div>
       </div>
       <style jsx>{`
         .card-meta {
           color: ${theme.colors.doveGray};
           display: flex;
+          flex-direction: column;
           font-weight: ${theme.fonts.weight.medium};
           font-size: ${theme.fonts.size.small};
           margin-bottom: 12px;
@@ -42,10 +47,14 @@ const BlogCardMeta = ({ authors, publishedDate }: BlogCardMetaProps) => {
           content: ',';
         }
 
+        .publish-data {
+          margin-top: 5px;
+        }
+
         .publish-date {
-          margin-left: 6px;
-          padding-left: 6px;
-          border-left: 1px solid black;
+          margin-right: 6px;
+          padding-right: 6px;
+          border-right: 1px solid black;
         }
       `}</style>
     </>
