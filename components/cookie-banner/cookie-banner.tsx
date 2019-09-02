@@ -9,6 +9,8 @@ const CookieBanner = () => {
         buttonClasses="cookie-banner-btn"
         disableStyles={true}
         style={{
+          position: 'fixed',
+          width: '100%',
           background: 'rgba(255, 255, 255, 0.9)',
           color: '#333',
           boxShadow: '20px 20px 20px 10px #000',
