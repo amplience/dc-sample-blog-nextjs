@@ -9,26 +9,28 @@ require('dotenv').config();
 
 const buildDynamicBlogPages = blogPosts => {
   return blogPosts.reduce(
-    (pages, post) =>
+    (pages, blogPost) =>
       Object.assign({}, pages, {
-        [`/blog/${encodeURIComponent(post.urlSlug.toLowerCase())}/${post._meta.deliveryId}`]: {
+        [`/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`]: {
           page: '/blog',
-          query: { 'blog-id': post._meta.deliveryId, slug: post.urlSlug }
+          query: { 'blog-id': blogPost._meta.deliveryId, slug: blogPost.urlSlug }
         }
       }),
     {}
   );
 };
 
-const getBlogPosts = async () => {
+const getBlogList = async () => {
   const dcClientConfig = {
     account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
     baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
   };
   const dcDeliveryClient = new ContentClient(dcClientConfig);
-  const blogListReferences = (await dcDeliveryClient.getContentItem(process.env.DYNAMIC_CONTENT_REFERENCE_ID)).toJSON();
+  const { title, subTitle, blogList } = (await dcDeliveryClient.getContentItem(
+    process.env.DYNAMIC_CONTENT_REFERENCE_ID
+  )).toJSON();
 
-  const promises = blogListReferences.blogList.blogPosts.map(async reference =>
+  const promises = blogList.blogPosts.map(async reference =>
     (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
   );
   const promiseResults = await allSettled(promises);
@@ -38,15 +40,15 @@ const getBlogPosts = async () => {
     .filter(promise => promise.status === 'fulfilled')
     .map(resolvedPromise => resolvedPromise.value);
 
-  return hydratedBlogPosts;
+  return { title, subTitle, blogPosts: hydratedBlogPosts };
 };
 
 const exportPathMap = async function() {
   let dynamicPages = {};
 
   try {
-    const blogPosts = await getBlogPosts();
-    dynamicPages = buildDynamicBlogPages(blogPosts);
+    const blogList = await getBlogList();
+    dynamicPages = buildDynamicBlogPages(blogList.blogPosts);
   } catch (err) {
     console.log('Error building exportPathMap', err);
     throw err;
