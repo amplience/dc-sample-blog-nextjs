@@ -9,11 +9,14 @@ require('dotenv').config();
 
 const checkForDuplicateSlugs = blogPosts => {
   let seen = new Set();
+  let lastSlug;
   const hasDuplicateSlugs = blogPosts.some(post => {
-    return seen.size === seen.add(post.urlSlug).size;
+    const isDuplicate = seen.size === seen.add(post.urlSlug).size;
+    lastSlug = post.urlSlug;
+    return isDuplicate;
   });
   if (hasDuplicateSlugs) {
-    throw new Error("Blog posts contains duplicate urlSlug's");
+    throw new Error(`Blog posts contain duplicate urlSlugs: ${lastSlug}`);
   }
 };
 
