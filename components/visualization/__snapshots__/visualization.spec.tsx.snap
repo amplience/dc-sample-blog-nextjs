@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Visualization should handle vse errors 1`] = `
+<h1>
+  Loading Visualization...
+</h1>
+`;
+
+exports[`Visualization should handle vse errors 2`] = `
+<Fragment>
+  <h1>
+    Unable to Render Visualization
+  </h1>
+  <p>
+    Reason: 
+    Mock Error
+  </p>
+</Fragment>
+`;
+
+exports[`Visualization should only load content when props are provided 1`] = `
+<h1>
+  Loading Visualization...
+</h1>
+`;
+
+exports[`Visualization should only load content when props are provided 2`] = `
+<Content
+  content={
+    Array [
+      Object {
+        "text": "# Markdown Text",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Visualization should render image 1`] = `
+<h1>
+  Loading Visualization...
+</h1>
+`;
+
+exports[`Visualization should render image 2`] = `
+<Content
+  content={
+    Array [
+      Object {
+        "altText": "altText",
+        "image": Object {
+          "defaultHost": "i1-qa.adis.ws",
+          "endpoint": "bloblogltd",
+          "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+          "mediaType": "i",
+          "name": "friends-shopping-bags",
+        },
+        "src": "//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Visualization should render text 1`] = `
+<h1>
+  Loading Visualization...
+</h1>
+`;
+
+exports[`Visualization should render text 2`] = `
+<Content
+  content={
+    Array [
+      Object {
+        "text": "# Markdown Text",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`Visualization should render video 1`] = `
+<h1>
+  Loading Visualization...
+</h1>
+`;
+
+exports[`Visualization should render video 2`] = `
+<Content
+  content={
+    Array [
+      Object {
+        "srcSet": Array [
+          "http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p",
+        ],
+        "video": Object {
+          "defaultHost": "i1-qa.adis.ws",
+          "endpoint": "bloblogltd",
+          "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+          "mediaType": "v",
+          "name": "SampleVideo_1280x720_5mb",
+        },
+      },
+    ]
+  }
+/>
+`;

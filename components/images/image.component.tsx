@@ -47,9 +47,12 @@ function generateSrcOptions(
 const Image = (image: { altText: string; src: string; dynamicImagingOptions: DynamicImagingOptions[] }) => {
   const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions);
 
+  // Set the visibleByDefault prop if we are within an iframe
+  const visibleByDefault = () : boolean => !!(typeof window === 'object' && window.location !== window.parent.location);
+
   return (
     <>
-      <LazyLoadImage alt={image.altText} src={image.src} srcSet={srcSet} sizes={mediaSizes} className="lazy-img" />
+      <LazyLoadImage alt={image.altText} src={image.src} srcSet={srcSet} sizes={mediaSizes} className="lazy-img" visibleByDefault={visibleByDefault()}/>
 
       <style jsx>{`
         :global(img.lazy-img) {

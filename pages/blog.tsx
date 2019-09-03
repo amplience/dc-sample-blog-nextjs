@@ -80,6 +80,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
         .blog-image :global(img) {
           object-fit: cover;
           height: 400px;
+          margin-bottom: 75px;
         }
 
         :global(footer) {

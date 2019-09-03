@@ -59,6 +59,13 @@ const exportPathMap = async function() {
     '/': {
       page: '/',
       query: {}
+    },
+    '/visualization.html': {
+      page: '/visualization',
+      query: {
+        vse: '',
+        content: ''
+      }
     }
   });
 };

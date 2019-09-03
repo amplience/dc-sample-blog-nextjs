@@ -47,8 +47,12 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
         }
 
         section > div {
-          margin-top: 75px;
+          margin-bottom: 75px;
           width: 100%;
+        }
+
+        section > div:last-child {
+          margin-bottom: 0;
         }
 
         section :global(table) {

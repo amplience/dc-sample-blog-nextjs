@@ -6,19 +6,30 @@ import GaPageView from '../components/google-analytics/ga-page-view.component';
 
 interface DefaultLayoutProps {
   children: JSX.Element[] | JSX.Element;
+  contentOnly?: boolean
 }
 
-export default ({ children }: DefaultLayoutProps) => {
+export default ({children, contentOnly = false}: DefaultLayoutProps) => {
   return (
     <>
       <div className="site-container">
-        <Header title="PRODUCT BLOG" />
+        {
+          !contentOnly &&
+          <>
+            <Header title="PRODUCT BLOG"/>
+          </>
+        }
         <div className="site-content">
           <main>{children}</main>
         </div>
-        <Footer />
-        <CookieBanner></CookieBanner>
-        <GaPageView />
+        {
+          !contentOnly &&
+          <>
+            <Footer/>
+            <CookieBanner></CookieBanner>
+            <GaPageView/>
+          </>
+        }
       </div>
       <style jsx global>{`
         html,
