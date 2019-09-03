@@ -1,5 +1,5 @@
 import BlogPost from '../interfaces/blog-post.interface';
-import { ContentClientConfig } from 'dc-delivery-sdk-js';
+import { ContentClientConfig, DefaultContentBody } from 'dc-delivery-sdk-js';
 import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
 import { MediaType } from '../interfaces/media.interface';
 import { AmplienceContent } from '../interfaces/content.type';
@@ -8,6 +8,7 @@ import AmplienceImage from '../interfaces/image.interface';
 import Author from '../interfaces/author.interface';
 import AmplienceVideo from '../interfaces/video.interface';
 import buildMediaUrl from './media.service';
+import convertToBlogDate from './blog-date.service';
 
 function assignMediaType(obj: AmplienceImage | AmplienceVideo): AmplienceImage | AmplienceVideo {
   if ('image' in obj) {
@@ -55,6 +56,38 @@ export async function parseContent(content: AmplienceContent[]): Promise<Amplien
   return updatedContent;
 }
 
+export function isBlogPost(contentItem: BlogPost | AmplienceContent): contentItem is BlogPost & DefaultContentBody {
+  const blogPost = contentItem as BlogPost;
+  return (
+    blogPost.title !== undefined &&
+    blogPost.authors !== undefined &&
+    blogPost.date !== undefined &&
+    blogPost.description !== undefined &&
+    blogPost.image !== undefined &&
+    blogPost.urlSlug !== undefined &&
+    blogPost.readTime !== undefined &&
+    blogPost.content !== undefined
+  );
+}
+
+export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody): Promise<BlogPost> {
+  const { title, date, description, authors, readTime, image, urlSlug, content, tags } = contentItem;
+  const blogId = contentItem._meta.deliveryId;
+
+  return {
+    id: blogId,
+    title,
+    date: convertToBlogDate(date),
+    description,
+    authors: assignAuthorsAvatarMediaTypes(authors),
+    readTime,
+    image: parseImage(image),
+    urlSlug,
+    content: await parseContent(content),
+    tags
+  };
+}
+
 export default async function getBlogPost(blogPostId: string): Promise<BlogPost> {
   const clientConfig: ContentClientConfig = {
     account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
@@ -63,19 +96,8 @@ export default async function getBlogPost(blogPostId: string): Promise<BlogPost>
 
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
   const contentItem = (await deliveryClient.getContentItemById(blogPostId)).toJSON();
-  const { title, date, description, authors, readTime, image, urlSlug, content, tags } = contentItem;
-  const blogId = contentItem._meta.deliveryId;
-
-  return {
-    id: blogId,
-    title,
-    date,
-    description,
-    authors: assignAuthorsAvatarMediaTypes(authors),
-    readTime,
-    image: parseImage(image),
-    urlSlug,
-    content,
-    tags
-  };
+  if (!isBlogPost(contentItem)) {
+    throw new Error('Content Item is not a Blog Post');
+  }
+  return await parseBlogPost(contentItem);
 }

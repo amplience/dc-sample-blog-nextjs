@@ -2,6 +2,9 @@ import {Component, ReactElement} from 'react';
 import {AmplienceContent} from '../../common/interfaces/content.type';
 import getStagingContentItemById from '../../common/services/vse.service';
 import Content from '../content/content';
+import {isBlogPost} from '../../common/services/blog-post.service';
+import BlogPost from '../../common/interfaces/blog-post.interface';
+import Blog from '../blog/blog';
 
 interface VisualizationProps {
   stagingEnvironment: string;
@@ -10,13 +13,11 @@ interface VisualizationProps {
 
 interface VisualizationState {
   error?: string;
-  content: AmplienceContent[]
+  content?: AmplienceContent[]
+  blogPost: BlogPost;
 }
 
 export default class Visualization extends Component<VisualizationProps, VisualizationState> {
-  state : VisualizationState = {
-    content: []
-  };
 
   componentDidMount(): void {
     // Do we need to load any content?
@@ -31,31 +32,42 @@ export default class Visualization extends Component<VisualizationProps, Visuali
     if (prevProps.stagingEnvironment == this.props.stagingEnvironment && prevProps.contentId == this.props.contentId) {
       return;
     }
-    this.setState({content: []});
+    this.setState({content: undefined});
     this.loadContent();
   }
 
   private async loadContent() {
     try {
-      const content = await getStagingContentItemById(this.props.stagingEnvironment, this.props.contentId);
-      this.setState({content});
+      const contentItem = await getStagingContentItemById(this.props.stagingEnvironment, this.props.contentId);
+      if (isBlogPost(contentItem)) {
+        console.log(JSON.stringify(contentItem));
+        this.setState({blogPost: contentItem});
+      } else {
+        this.setState({content: [contentItem as AmplienceContent] });
+      }
     } catch (error) {
       this.setState({error: error.message});
     }
   }
 
   render(): ReactElement {
-    if (this.state.error) {
-      return (
-        <>
-          <h1>Unable to Render Visualization</h1>
-          <p>Reason: {this.state.error}</p>
-        </>
-      );
+    if (this.state) {
+      if (this.state.error) {
+        return (
+          <>
+            <h1>Unable to Render Visualization</h1>
+            <p>Reason: {this.state.error}</p>
+          </>
+        );
+      }
+      if (this.state.content !== undefined) {
+        return (<Content content={this.state.content}/>);
+      }
+
+      if (this.state.blogPost !== undefined) {
+        return (<Blog blogPost={this.state.blogPost}/>);
+      }
     }
-    if (this.state.content.length > 0) {
-      return (<Content content={this.state.content}/>);
-    }
-    return (<h1>Loading Visualization...</h1>);
+    return (<h2>Loading visualization...</h2>);
   }
 };

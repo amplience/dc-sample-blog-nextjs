@@ -1,9 +1,9 @@
 import Visualization from './visualization';
-import {AmplienceContent} from '../../common/interfaces/content.type';
 import {shallow} from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
 import {MediaType} from '../../common/interfaces/media.interface';
+import * as blogPostFixture from './__fixtures__/blogpost.json';
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
@@ -14,7 +14,7 @@ describe('Visualization', (): void => {
     jest.resetAllMocks();
   });
 
-  async function renderVisualization(contentItem: AmplienceContent[]) {
+  async function renderVisualization(contentItem: any) {
     mockGetStagingContentItemById.mockResolvedValue(contentItem);
 
     const wrapper = shallow<Visualization>(
@@ -25,22 +25,20 @@ describe('Visualization', (): void => {
 
     expect(toJson(wrapper)).toMatchSnapshot();
 
-    await waitUntil(() => wrapper.state('content').length > 0);
+    await waitUntil(() => !wrapper.contains(<h2>Loading visualization...</h2>));
     expect(mockGetStagingContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
   }
 
   it('should render text', async (): Promise<void> => {
-    const contentItem: AmplienceContent[] = [
-      {
-        text: '# Markdown Text'
-      }
-    ];
+    const contentItem = {
+      text: '# Markdown Text'
+    };
     await renderVisualization(contentItem);
   });
 
   it('should render image', async (): Promise<void> => {
-    const contentItem: AmplienceContent[] = [
+    const contentItem =
       {
         altText: 'altText',
         image: {
@@ -51,25 +49,22 @@ describe('Visualization', (): void => {
           mediaType: MediaType.IMAGE
         },
         src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
-      }
-    ];
+      };
 
     await renderVisualization(contentItem);
   });
 
   it('should render video', async (): Promise<void> => {
-    const contentItem: AmplienceContent[] = [
-      {
-        video: {
-          defaultHost: 'i1-qa.adis.ws',
-          endpoint: 'bloblogltd',
-          name: 'SampleVideo_1280x720_5mb',
-          id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
-          mediaType: MediaType.VIDEO
-        },
-        srcSet: ['http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p']
-      }
-    ];
+    const contentItem = {
+      video: {
+        defaultHost: 'i1-qa.adis.ws',
+        endpoint: 'bloblogltd',
+        name: 'SampleVideo_1280x720_5mb',
+        id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
+        mediaType: MediaType.VIDEO
+      },
+      srcSet: ['https://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https']
+    };
 
     await renderVisualization(contentItem);
   });
@@ -93,11 +88,10 @@ describe('Visualization', (): void => {
 
 
   it('should only load content when props are provided', async (): Promise<void> => {
-    mockGetStagingContentItemById.mockResolvedValue([
-      {
+    mockGetStagingContentItemById.mockResolvedValue({
         text: '# Markdown Text'
       }
-    ]);
+    );
 
     const wrapper = shallow<Visualization>(
       <Visualization stagingEnvironment=""
@@ -111,10 +105,13 @@ describe('Visualization', (): void => {
       stagingEnvironment: 'vse',
       contentId: 'content'
     });
-    // wrapper.update();
 
-    await waitUntil(() => wrapper.state('content').length > 0);
+    await waitUntil(() => !wrapper.contains(<h2>Loading visualization...</h2>));
     expect(mockGetStagingContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
+  });
+
+  it('should render a blog post', async () => {
+    await renderVisualization(blogPostFixture);
   });
 });
