@@ -34,7 +34,7 @@ function generateSrcOptions(
     }
 
     Object.entries(opts).forEach(([key, value]) => {
-      imageQueryParams.push(`${key}=${encodeURIComponent(value)}`);
+      imageQueryParams.push(`${key}=${value}`);
     });
 
     srcSet.push(`${src}?${imageQueryParams.join('&')} ${opts.w}w`);
