@@ -18,7 +18,7 @@ const Header = ({ title }: { title: string }) => {
       <style jsx>{`
         section {
           display: flex;
-          flex: 1 0 75px;
+          flex: 1 0 auto;
           justify-content: center;
           background-color: ${theme.colors.whiteLilac};
         }
