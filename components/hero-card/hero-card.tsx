@@ -23,9 +23,15 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                   {...{
                     ...blogPost.image,
                     dynamicImagingOptions: [
-                      { h: 420, w: 320, sm: 'c', scaleFit: 'poi' },
-                      { h: 400, w: 230, sm: 'c', scaleFit: 'poi' },
-                      { h: 420, w: 684, sm: 'c', scaleFit: 'poi' }
+                      { h: 342, w: 684, sm: 'c', scaleFit: 'poi' },
+                      { h: 400, w: 330, sm: 'c', scaleFit: 'poi' },
+                      { h: 205, w: 410, sm: 'c', scaleFit: 'poi' }
+                    ],
+                    mediaSizeOptions: [
+                      {
+                        maxWidth: 736,
+                        breakPoints: [50, 100]
+                      }
                     ]
                   }}
                 />
