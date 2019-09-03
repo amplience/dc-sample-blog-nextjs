@@ -7,6 +7,16 @@ const ContentClient = require('dc-delivery-sdk-js').ContentClient;
 const allSettled = require('promise.allsettled');
 require('dotenv').config();
 
+const checkForDuplicateSlugs = blogPosts => {
+  let seen = new Set();
+  const hasDuplicateSlugs = blogPosts.some(post => {
+    return seen.size === seen.add(post.urlSlug).size;
+  });
+  if (hasDuplicateSlugs) {
+    throw new Error("Blog posts contains duplicate urlSlug's");
+  }
+};
+
 const buildDynamicBlogPages = blogPosts => {
   return blogPosts.reduce(
     (pages, blogPost) =>
@@ -48,6 +58,7 @@ const exportPathMap = async function() {
 
   try {
     const blogList = await getBlogList();
+    checkForDuplicateSlugs(blogList.blogPosts);
     dynamicPages = buildDynamicBlogPages(blogList.blogPosts);
   } catch (err) {
     console.log('Error building exportPathMap', err);
