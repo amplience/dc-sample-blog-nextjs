@@ -1,7 +1,7 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import theme from '../../common/styles/default/theme';
 
-const SharePost = ({twitterText}: { twitterText: string }) => {
+const SharePost = ({ twitterText }: { twitterText: string }) => {
   const router = useRouter();
   const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;
@@ -19,8 +19,8 @@ const SharePost = ({twitterText}: { twitterText: string }) => {
       <section>
         <h3>Share the post</h3>
         <div>
-          <div dangerouslySetInnerHTML={linkedinHtmlMarkup} suppressHydrationWarning={true}/>
-          <div dangerouslySetInnerHTML={twitterHtmlMarkup} suppressHydrationWarning={true}/>
+          <div dangerouslySetInnerHTML={linkedinHtmlMarkup} suppressHydrationWarning={true} />
+          <div dangerouslySetInnerHTML={twitterHtmlMarkup} suppressHydrationWarning={true} />
         </div>
       </section>
       <style jsx>{`
