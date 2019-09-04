@@ -11,7 +11,9 @@ exports[`CookieBanner renders cookie consent banner 1`] = `
       "boxShadow": "20px 20px 20px 10px #000",
       "color": "#333",
       "flexDirection": "column",
+      "position": "fixed",
       "textAlign": "center",
+      "width": "100%",
       "zIndex": 1,
     }
   }

@@ -6,10 +6,10 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
   const avatars: JSX.Element[] = [];
   const authorNames: string[] = [];
 
-  authors.forEach((author: Author): void => {
+  authors.forEach((author: Author, index: number): void => {
     if (author.avatar) {
       avatars.push(
-        <>
+        <div key={index}>
           <div className="avatar">
             <Image
               altText={author.avatar.altText}
@@ -26,7 +26,7 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
               margin-right: 20px;
             }
           `}</style>
-        </>
+        </div>
       );
     }
 

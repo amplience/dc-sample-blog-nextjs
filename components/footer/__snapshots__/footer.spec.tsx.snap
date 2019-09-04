@@ -2,16 +2,16 @@
 
 exports[`Footer renders a footer component 1`] = `
 <footer
-  className="jsx-1835413844"
+  className="jsx-2734617276"
 >
   <section
-    className="jsx-1835413844"
+    className="jsx-2734617276"
   >
     <div
-      className="jsx-1835413844 footer-info"
+      className="jsx-2734617276 footer-info"
     >
       <div
-        className="jsx-1835413844 footer-info-top"
+        className="jsx-2734617276 footer-info-top"
       >
         <img
           alt="Amplience logo"
@@ -20,7 +20,7 @@ exports[`Footer renders a footer component 1`] = `
           srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
         />
         <div
-          className="jsx-1835413844 social-links"
+          className="jsx-2734617276 social-links"
         >
           <a
             className="jsx-3655793200"
@@ -30,7 +30,7 @@ exports[`Footer renders a footer component 1`] = `
           >
             <img
               alt="Twitter logo"
-              className="jsx-1835413844"
+              className="jsx-2734617276"
               src="/static/images/social/ic_twitter.svg"
             />
           </a>
@@ -42,21 +42,21 @@ exports[`Footer renders a footer component 1`] = `
           >
             <img
               alt="Linkedin logo"
-              className="jsx-1835413844"
+              className="jsx-2734617276"
               src="/static/images/social/ic_linkedin.svg"
             />
           </a>
         </div>
       </div>
       <div
-        className="jsx-1835413844 copyright"
+        className="jsx-2734617276 copyright"
       >
         © Copyright Amplience 
         2019
       </div>
     </div>
     <div
-      className="jsx-1835413844 footer-links"
+      className="jsx-2734617276 footer-links"
     >
       <section
         className="jsx-4062423079 footer-links-section"
