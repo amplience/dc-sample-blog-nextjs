@@ -12,7 +12,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
   if (!blogPost) {
     return <div />;
   } else {
-    const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
+    const blogLink = `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
     return (
       <>
         <section>
@@ -86,6 +86,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         .blog-card-content {
+          width: 70%;
           padding 0 20px 20px 20px;
         }
 

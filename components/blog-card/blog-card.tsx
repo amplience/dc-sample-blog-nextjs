@@ -9,7 +9,7 @@ interface BlogCardProps {
 }
 
 const BlogCard = ({ blogPost }: BlogCardProps) => {
-  const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
+  const blogLink = `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
   return (
     <>
       <StaticLink ariaLabel={blogPost.title} href={blogLink}>
