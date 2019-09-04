@@ -23,12 +23,12 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                   {...{
                     ...blogPost.image,
                     dynamicImagingOptions: [
-                      { h: 342, w: 684, sm: 'c', scaleFit: 'poi' },
-                      { h: 400, w: 330, sm: 'c', scaleFit: 'poi' },
-                      { h: 205, w: 410, sm: 'c', scaleFit: 'poi' }
+                      { h: 140, w: 646, sm: 'c', scaleFit: 'poi' },
+                      { h: 402, w: 330, sm: 'c', scaleFit: 'poi' },
+                      { h: 140, w: 410, sm: 'c', scaleFit: 'poi' }
                     ],
                     mediaSizeOptions: [
-                      { maxWidth: parseInt(theme.layout.narrowPageWidth), containerSize: 650 },
+                      { maxWidth: parseInt(theme.layout.narrowPageWidth), containerSize: 646 },
                       { maxWidth: 330 }
                     ]
                   }}
