@@ -23,15 +23,15 @@ To install and use this blog first you need to create the schemas and register t
 
 ## Content Type Schemas
 
-| Filename       | Schema ID                                                                                        | Schema Type  |
-|----------------|--------------------------------------------------------------------------------------------------|--------------|
-| author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json     | Content Type |
-| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json  | Content Type |
-| blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json  | Content Type |
-| blog-slot.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json  | Slot         |
-| image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json      | Content Type |
-| text.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json       | Content Type |
-| video.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json      | Content Type |
+| Filename       | Schema ID                                                                                        | Schema Type  | Visualization Supported |
+|----------------|--------------------------------------------------------------------------------------------------|--------------|-------------------------|
+| author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json     | Content Type | No                      |
+| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json  | Content Type | No                      |
+| blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json  | Content Type | Yes                     |
+| blog-slot.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json  | Slot         | No                      |
+| image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json      | Content Type | Yes                     |
+| text.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json       | Content Type | Yes                     |
+| video.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json      | Content Type | Yes                     |
 
 ### Creating Schemas & Registering Content Types
 
@@ -126,6 +126,12 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 Notes:
 * "Edition - published" must be used if you wish to schedule publishing using Dynamic Content's planning features. This will only rebuild your site when an Edition is published
 * "Snapshot - published" will rebuild your site whenever a Content item or Edition is published.
+
+## How to Configure Visualizations
+
+[Visualisations](https://docs.amplience.net/production/visualizations.html) are easy to use and effective way of previewing your content before you publish it.
+
+For each of Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
 
 # Publishing
 
