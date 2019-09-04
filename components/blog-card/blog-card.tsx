@@ -23,6 +23,11 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
                   { h: 140, w: 500, sm: 'c', scaleFit: 'poi' },
                   { h: 140, w: 360, sm: 'c', scaleFit: 'poi' },
                   { h: 140, w: 260, sm: 'c', scaleFit: 'poi' }
+                ],
+                mediaSizeOptions: [
+                  { maxWidth: parseInt(theme.layout.widePageWidth), containerSize: 513 },
+                  { maxWidth: 736, containerSize: 646 },
+                  { maxWidth: 360 }
                 ]
               }}
             />
