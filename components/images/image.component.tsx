@@ -11,7 +11,7 @@ export interface DynamicImagingOptions {
 
 export interface MediaSizeOptions {
   maxWidth: number;
-  breakPoints: number[];
+  containerSize?: number;
 }
 
 function sortImageSizes(dynamicImagingOptions: DynamicImagingOptions[]): DynamicImagingOptions[] {
@@ -48,7 +48,11 @@ function createMediaSizes(mediaSizeOptions: MediaSizeOptions[]): string[] {
   const mediaSizes: string[] = [];
 
   mediaSizeOptions.forEach((mediaSizeOption: MediaSizeOptions) => {
-    mediaSizes.push(`(max-width: ${mediaSizeOption.maxWidth}px) ${mediaSizeOption.breakPoints.join('vw, ')}vw`);
+    if (mediaSizeOption.containerSize) {
+      mediaSizes.push(`(max-width: ${mediaSizeOption.maxWidth}px) ${mediaSizeOption.containerSize}px`);
+    } else {
+      mediaSizes.push(`${mediaSizeOption.maxWidth}px`);
+    }
   });
 
   return mediaSizes;

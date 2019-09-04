@@ -28,10 +28,8 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                       { h: 205, w: 410, sm: 'c', scaleFit: 'poi' }
                     ],
                     mediaSizeOptions: [
-                      {
-                        maxWidth: 736,
-                        breakPoints: [50, 100]
-                      }
+                      { maxWidth: parseInt(theme.layout.narrowPageWidth), containerSize: 650 },
+                      { maxWidth: 330 }
                     ]
                   }}
                 />
