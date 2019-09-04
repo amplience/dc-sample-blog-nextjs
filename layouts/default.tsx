@@ -72,8 +72,8 @@ export default ({children, contentOnly = false}: DefaultLayoutProps) => {
         .site-content {
           flex: auto;
         }
-        
-        @media(max-width: ${theme.layout.narrowPageWidth}) {
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
           html,
           body {
             -webkit-overflow-scrolling: touch;

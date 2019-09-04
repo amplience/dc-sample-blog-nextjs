@@ -104,10 +104,6 @@ const Footer = () => {
             width: 160px;
           }
 
-          .social-links {
-            display: none;
-          }
-
           .copyright {
             margin-top: 15px;
             align-self: auto;
