@@ -80,6 +80,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         .blog-card-content {
+          width: 70%;
           padding 0 20px 20px 20px;
         }
 
