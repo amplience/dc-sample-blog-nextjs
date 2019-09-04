@@ -12,7 +12,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
   if (!blogPost) {
     return <div />;
   } else {
-    const blogLink = `/blog/${blogPost.urlSlug}/${blogPost.id}`;
+    const blogLink = `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
     return (
       <>
         <section>
@@ -43,6 +43,12 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           </StaticLink>
         </section>
         <style jsx>{`
+        section {
+          margin: auto;
+          margin-top: 40px;
+          max-width: ${theme.layout.widePageWidth};
+        }
+        
         article {
           width: 31%;
           flex: 1 1 0;
@@ -84,6 +90,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         .blog-card-content {
+          width: 70%;
           padding 0 20px 20px 20px;
         }
 
@@ -97,11 +104,13 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         article :global(.card-meta div) {
           font-size: ${theme.fonts.size.large};
         }
-        
-        section {
-          margin: auto;
-          margin-top: 40px;
-          max-width: ${theme.layout.widePageWidth};
+
+        article,
+        h1,
+        p,
+        article :global(.card-meta) {
+          transition-property: color, box-shadow;
+          transition-duration: 0.3s;
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {
