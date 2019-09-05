@@ -19,15 +19,15 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
               {...{
                 ...blogPost.image,
                 dynamicImagingOptions: [
-                  { h: 140, w: 645, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 514, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 410, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 346, sm: 'c', scaleFit: 'poi' }
+                  { h: 140, w: 285, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 345, sm: 'c', scaleFit: 'poi' }
                 ],
-                mediaSizeOptions: [
-                  { maxWidth: parseInt(theme.layout.widePageWidth), containerSize: 514 },
-                  { maxWidth: 736, containerSize: 645 },
-                  { maxWidth: 346 }
+                mediaQueryOptions: [
+                  { mediaFeature: 'max-width', mediaSize: '320px', containerSize: '285px' },
+                  { mediaFeature: 'max-width', mediaSize: '480px', containerSize: '321px' },
+                  { mediaFeature: 'min-width', mediaSize: theme.layout.narrowPageWidth, containerSize: '350px' },
+                  { mediaSize: '345px' }
                 ]
               }}
             />

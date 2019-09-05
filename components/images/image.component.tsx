@@ -9,9 +9,10 @@ export interface DynamicImagingOptions {
   poi?: string;
 }
 
-export interface MediaSizeOptions {
-  maxWidth: number;
-  containerSize?: number;
+export interface MediaQueryOptions {
+  mediaFeature?: string;
+  mediaSize: string;
+  containerSize?: string;
 }
 
 function sortImageSizes(dynamicImagingOptions: DynamicImagingOptions[]): DynamicImagingOptions[] {
@@ -44,14 +45,16 @@ function createSrcSet(dynamicImagingOptions: DynamicImagingOptions[], src: strin
   return srcSet;
 }
 
-function createMediaSizes(mediaSizeOptions: MediaSizeOptions[]): string[] {
+function createMediaSizes(mediaQueryOptions: MediaQueryOptions[]): string[] {
   const mediaSizes: string[] = [];
 
-  mediaSizeOptions.forEach((mediaSizeOption: MediaSizeOptions) => {
-    if (mediaSizeOption.containerSize) {
-      mediaSizes.push(`(max-width: ${mediaSizeOption.maxWidth}px) ${mediaSizeOption.containerSize}px`);
+  mediaQueryOptions.forEach((mediaQueryOption: MediaQueryOptions) => {
+    if (mediaQueryOption.containerSize) {
+      mediaSizes.push(
+        `(${mediaQueryOption.mediaFeature}: ${mediaQueryOption.mediaSize}) ${mediaQueryOption.containerSize}`
+      );
     } else {
-      mediaSizes.push(`${mediaSizeOption.maxWidth}px`);
+      mediaSizes.push(`${mediaQueryOption.mediaSize}`);
     }
   });
 
@@ -61,11 +64,11 @@ function createMediaSizes(mediaSizeOptions: MediaSizeOptions[]): string[] {
 function generateSrcOptions(
   src: string,
   dynamicImagingOptions: DynamicImagingOptions[],
-  mediaSizeOptions?: MediaSizeOptions[]
+  mediaQueryOptions?: MediaQueryOptions[]
 ): { srcSet: string; mediaSizes: string } {
   dynamicImagingOptions = sortImageSizes(dynamicImagingOptions);
   const srcSet: string[] = createSrcSet(dynamicImagingOptions, src);
-  const mediaSizes: string[] = Array.isArray(mediaSizeOptions) ? createMediaSizes(mediaSizeOptions) : [];
+  const mediaSizes: string[] = Array.isArray(mediaQueryOptions) ? createMediaSizes(mediaQueryOptions) : [];
 
   return { srcSet: srcSet.join(','), mediaSizes: mediaSizes.join(',') };
 }
@@ -74,9 +77,9 @@ const Image = (image: {
   altText: string;
   src: string;
   dynamicImagingOptions: DynamicImagingOptions[];
-  mediaSizeOptions?: MediaSizeOptions[];
+  mediaQueryOptions?: MediaQueryOptions[];
 }) => {
-  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions, image.mediaSizeOptions);
+  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions, image.mediaQueryOptions);
 
   return (
     <>

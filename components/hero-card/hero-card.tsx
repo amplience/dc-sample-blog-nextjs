@@ -23,13 +23,12 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                   {...{
                     ...blogPost.image,
                     dynamicImagingOptions: [
-                      { h: 140, w: 646, sm: 'c', scaleFit: 'poi' },
-                      { h: 402, w: 330, sm: 'c', scaleFit: 'poi' },
-                      { h: 140, w: 410, sm: 'c', scaleFit: 'poi' }
+                      { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
+                      { h: 403, w: 330, sm: 'c', scaleFit: 'poi' }
                     ],
-                    mediaSizeOptions: [
-                      { maxWidth: parseInt(theme.layout.narrowPageWidth), containerSize: 646 },
-                      { maxWidth: 330 }
+                    mediaQueryOptions: [
+                      { mediaFeature: 'max-width', mediaSize: theme.layout.narrowPageWidth, containerSize: '321px' },
+                      { mediaSize: '330px' }
                     ]
                   }}
                 />
@@ -80,7 +79,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         .blog-card-image {
-          width: 30%;
+          width: 30%
         }
         
         .blog-card-image :global(img) {
