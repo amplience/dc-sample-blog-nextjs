@@ -47,7 +47,8 @@ describe('Index', () => {
     expect(mockGetHydratedBlogList).toHaveBeenCalledWith('reference-id', undefined);
   });
 
-  test('getInitialProps throws error when getContentItemById returns an error', async () => {
+  test('getInitialProps throws error when DYNAMIC_CONTENT_REFERENCE_ID is undefined', async () => {
+    delete process.env.DYNAMIC_CONTENT_REFERENCE_ID;
     mockGetHydratedBlogList.mockImplementation(() => {
       throw new Error();
     });

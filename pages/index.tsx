@@ -30,8 +30,7 @@ Index.getInitialProps = async ({ query }): Promise<BlogListData> => {
   }
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
   try {
-    const blogList = getHydratedBlogList(id, baseUrl);
-    return blogList;
+    return getHydratedBlogList(id, baseUrl);
   } catch (err) {
     console.error('Unable to get initial props for Index:', err);
     throw err;
