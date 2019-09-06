@@ -1,9 +1,9 @@
-import {NextPage} from 'next';
+import { NextPage } from 'next';
 import BlogPost from '../common/interfaces/blog-post.interface';
 import Layout from '../layouts/default';
 import getBlogPost from '../common/services/blog-post.service';
 import Microdata from '../components/microdata/microdata';
-import {NextSeo} from 'next-seo';
+import { NextSeo } from 'next-seo';
 import Blog from '../components/blog/blog';
 import SharePost from '../components/share-post/share-post';
 
@@ -11,7 +11,7 @@ interface BlogPostProps {
   blogPost: BlogPost;
 }
 
-const BlogPostPage: NextPage<BlogPostProps> = ({blogPost}: BlogPostProps) => {
+const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   return (
     <Layout>
       <NextSeo
@@ -31,9 +31,9 @@ const BlogPostPage: NextPage<BlogPostProps> = ({blogPost}: BlogPostProps) => {
           ]
         }}
       />
-      <Blog blogPost={blogPost}/>
+      <Blog blogPost={blogPost} />
       <div className="content-footer">
-        <SharePost twitterText={blogPost.title}/>
+        <SharePost twitterText={blogPost.title} />
       </div>
       <Microdata
         description={blogPost.description}
@@ -43,20 +43,25 @@ const BlogPostPage: NextPage<BlogPostProps> = ({blogPost}: BlogPostProps) => {
         datePublished={blogPost.date}
       />
       <style jsx>{`
-          .content-footer {
-            margin: auto;
-            max-width: 740px;
-          }
+        .content-footer {
+          margin: auto;
+          max-width: 740px;
+        }
       `}</style>
     </Layout>
   );
 };
 
-BlogPostPage.getInitialProps = async ({query}) => {
+BlogPostPage.getInitialProps = async ({ query }) => {
+  const { vse, blogId } = query;
+  let baseUrl;
+  if (vse) {
+    baseUrl = `//${vse.toString()}`;
+  }
   try {
-    const blogPostId = query['blog-id'].toString();
-    const blogPost = await getBlogPost(blogPostId);
-    return {blogPost};
+    const blogPostId = blogId.toString();
+    const blogPost = await getBlogPost(blogPostId, baseUrl);
+    return { blogPost };
   } catch (err) {
     throw err;
   }

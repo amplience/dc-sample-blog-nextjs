@@ -3,7 +3,7 @@
 exports[`BlogCard renders full blog card 1`] = `
 <a
   aria-label="blog-post-test"
-  className="jsx-580416171"
+  className="jsx-3354872520"
   href="/blog/url-slug"
 >
   <article

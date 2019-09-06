@@ -88,10 +88,10 @@ export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody):
   };
 }
 
-export default async function getBlogPost(blogPostId: string): Promise<BlogPost> {
+export default async function getBlogPost(blogPostId: string, baseUrl?: string): Promise<BlogPost> {
   const clientConfig: ContentClientConfig = {
     account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
+    baseUrl: baseUrl || process.env.DYNAMIC_CONTENT_BASE_URL
   };
 
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);

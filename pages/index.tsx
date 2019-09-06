@@ -1,13 +1,11 @@
 import { NextPage } from 'next';
-import allSettled from 'promise.allsettled';
 import Layout from '../layouts/default';
-import getBlogReferenceList from '../common/services/get-blog-reference-list.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
 import HeroCard from '../components/hero-card/hero-card';
-import getBlogPost from '../common/services/blog-post.service';
 import { NextSeo } from 'next-seo';
+import getHydratedBlogList from '../common/services/get-blog-reference-list.service';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   return (
@@ -25,21 +23,15 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   );
 };
 
-Index.getInitialProps = async (): Promise<BlogListData> => {
+Index.getInitialProps = async ({ query }): Promise<BlogListData> => {
+  let baseUrl;
+  if (query.vse) {
+    baseUrl = `//${query.vse.toString()}`;
+  }
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
   try {
-    const { title, subTitle, blogPosts } = await getBlogReferenceList(id);
-    const promises = blogPosts.map(async reference => {
-      return getBlogPost(reference.id);
-    });
-    const promiseResults = await allSettled(promises);
-    const rejectedPromises = promiseResults.filter(promise => promise.status === 'rejected');
-    rejectedPromises.forEach((rejectedBlog: any) => console.warn(`Warn: ${rejectedBlog.reason}`));
-    const hydratedBlogPosts = promiseResults
-      .filter(promise => promise.status === 'fulfilled')
-      .map((resolvedPromise: any) => resolvedPromise.value);
-
-    return { title, subTitle, blogPosts: hydratedBlogPosts };
+    const blogList = getHydratedBlogList(id, baseUrl);
+    return blogList;
   } catch (err) {
     console.error('Unable to get initial props for Index:', err);
     throw err;

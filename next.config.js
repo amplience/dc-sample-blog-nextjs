@@ -26,7 +26,7 @@ const buildDynamicBlogPages = blogPosts => {
       Object.assign({}, pages, {
         [`/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`]: {
           page: '/blog',
-          query: { 'blog-id': blogPost._meta.deliveryId, slug: blogPost.urlSlug }
+          query: { blogId: blogPost._meta.deliveryId, slug: blogPost.urlSlug }
         }
       }),
     {}
@@ -74,7 +74,9 @@ const exportPathMap = async function() {
   return Object.assign({}, dynamicPages, {
     '/': {
       page: '/',
-      query: {}
+      query: {
+        vse: ''
+      }
     },
     '/visualization.html': {
       page: '/visualization',
