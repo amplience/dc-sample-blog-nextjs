@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "schema": "https://schema.localhost.com/blog-post.json",
+    "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+    "name": "blog-post"
+  },
+  "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+  "title": "My First Blog Post",
+  "date": "August 07, 2019",
+  "description": "Some text for the description that explains this blog post",
+  "authors": [
+    {
+      "_meta": {
+        "schema": "https://schema.localhost.com/author.json",
+        "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+        "name": "blog-author"
+      },
+      "name": "Sir Blog",
+      "avatar": {
+        "_meta": {
+          "schema": "https://schema.localhost.com/image.json",
+          "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+          "name": "blog-avatar"
+        },
+        "image": {
+          "defaultHost": "i1.adis.ws",
+          "endpoint": "blogltd",
+          "name": "man-business-suit",
+          "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+          "_meta": {
+            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+          }
+        },
+        "altText": "The dashing Sir Blog avatar"
+      }
+    }
+  ],
+  "readTime": 12,
+  "image": {
+    "_meta": {
+      "schema": "https://schema.localhost.com/image.json",
+      "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+      "name": "bag-image"
+    },
+    "image": {
+      "defaultHost": "i1.adis.ws",
+      "endpoint": "blogltd",
+      "name": "friends-shopping-bags",
+      "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+      "_meta": {
+        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+      }
+    },
+    "altText": "crotch bags"
+  },
+  "urlSlug": "my-first-blog",
+  "content": [
+    {
+      "_meta": {
+        "schema": "https://schema.localhost.com/image.json",
+        "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+        "name": "casual-crotch-shot"
+      },
+      "image": {
+        "defaultHost": "i1.adis.ws",
+        "endpoint": "blogltd",
+        "name": "casual-wear",
+        "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
+        }
+      },
+      "altText": "Alt text"
+    },
+    {
+      "_meta": {
+        "schema": "https://schema.localhost.com/text.json",
+        "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+        "name": "my-first-blog-text"
+      },
+      "text": "# This is my first Blog\n\n## Look-a-header 2\n\n### Look-a-header 3\n\n#### Look-a-header 4\n\n##### Look-a-header 5\n\n###### Look-a-header 6\n\n_**This**_ _is_ _some_ ~~sample~~ **text**.\n\n![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \"Logo Title Text 1\")\n\nThis is some more sample text with a [LINK](http://bbc.co.uk)\n\n> Comments are cool!\n> \n> See what I mean\n\nLook some code:\n\n```javascript\nconst something = 'anything';\ncalls(something);\n\n```\n\ninline `code` is awesome underlined\n\n* * *\n\n<h4>A title</h4>\n\nA table too:\n\n| Hello | world | table |\n| --- | --- | --- |\n| some | values | here |\n| some | values | here |\n| some | values | here |\n| some | values | here |\n\nGet listed\n\n*   Item One\n*   Item Two\n*   Item Three"
+    },
+    {
+      "_meta": {
+        "schema": "https://schema.localhost.com/video.json",
+        "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+        "name": "my-first-blog-video"
+      },
+      "video": {
+        "defaultHost": "i1.adis.ws",
+        "endpoint": "blogltd",
+        "name": "SampleVideo_1280x720_5mb",
+        "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+        "_meta": {
+          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link"
+        }
+      }
+    }
+  ],
+  "tags": ["sir blog", "you're it", "No tiggy backs"]
+}
