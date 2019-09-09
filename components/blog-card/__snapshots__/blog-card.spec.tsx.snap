@@ -1,38 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`BlogCard renders full blog card 1`] = `
-<a
-  aria-label="blog-post-test"
-  className="jsx-580416171"
-  href="/blog/url-slug"
+<section
+  className="jsx-3477540948"
 >
-  <article
-    className="jsx-196946661"
+  <a
+    aria-label="blog-post-test"
+    className="jsx-580416171"
+    href="/blog/url-slug"
   >
-    <div
-      className="jsx-196946661 blog-card-image"
+    <article
+      className="jsx-3477540948"
     >
       <div
-        className="image-mock"
-      />
-    </div>
-    <div
-      className="jsx-196946661 blog-card-content"
-    >
-      <h1
-        className="jsx-196946661"
+        className="jsx-3477540948 blog-card-image"
       >
-        blog-post-test
-      </h1>
+        <div
+          className="image-mock"
+        />
+      </div>
       <div
-        className="blog-card-meta-mock"
-      />
-      <p
-        className="jsx-196946661"
+        className="jsx-3477540948 blog-card-content"
       >
-        blog-post-description
-      </p>
-    </div>
-  </article>
-</a>
+        <h1
+          className="jsx-3477540948"
+        >
+          blog-post-test
+        </h1>
+        <div
+          className="blog-card-meta-mock"
+        />
+        <p
+          className="jsx-3477540948"
+        >
+          blog-post-description
+        </p>
+      </div>
+    </article>
+  </a>
+</section>
 `;

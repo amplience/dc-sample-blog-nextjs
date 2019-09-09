@@ -11,7 +11,7 @@ interface BlogCardProps {
 const BlogCard = ({ blogPost }: BlogCardProps) => {
   const blogLink = `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
   return (
-    <>
+    <section>
       <StaticLink ariaLabel={blogPost.title} href={blogLink}>
         <article>
           <div className="blog-card-image">
@@ -35,6 +35,9 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         </article>
       </StaticLink>
       <style jsx>{`
+        section {
+          display: flex;
+        }
         article {
           display: flex;
           flex-direction: column;
@@ -91,9 +94,11 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {
+          section {
+            margin-bottom: 60px;
+          }
           article {
             min-width: 100%;
-            margin-bottom: 60px;
           }
         }
         @media (max-width: ${theme.layout.narrowPageWidth}) {
@@ -107,7 +112,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           }
         }
       `}</style>
-    </>
+    </section>
   );
 };
 
