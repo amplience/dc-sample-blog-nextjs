@@ -8,5 +8,5 @@ export default interface Media {
   name: string;
   endpoint: string;
   defaultHost: string;
-  mediaType: MediaType;
+  mediaType?: MediaType;
 }
