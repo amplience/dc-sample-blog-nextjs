@@ -73,6 +73,10 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           margin-top: 0;
         }
 
+        section :global(p:last-child) {
+          margin-bottom: 0;
+        }
+
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section > div:first-child {
             margin-top: 15px;
