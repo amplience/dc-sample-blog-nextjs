@@ -28,6 +28,7 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
           display: flex;
           padding: 25px 10px 0px;
           border-top: 1px solid ${theme.colors.silver};
+          margin-top: 75px;
         }
         h3 {
           flex: 1 0 0;
@@ -43,7 +44,8 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
           justify-content: flex-end;
         }
         section > div > div {
-          margin: 0px 10px;
+          margin: 0px;
+          margin-left: 32px;
         }
       `}</style>
     </>
