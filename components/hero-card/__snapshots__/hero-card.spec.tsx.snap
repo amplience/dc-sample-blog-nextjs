@@ -4,7 +4,7 @@ exports[`HeroCard renders empty hero card when blog list is undefined 1`] = `<di
 
 exports[`HeroCard renders full hero card 1`] = `
 <section
-  className="jsx-2873232947"
+  className="jsx-1630848865"
 >
   <a
     aria-label="blog-post-test"
@@ -12,20 +12,20 @@ exports[`HeroCard renders full hero card 1`] = `
     href="/blog/url-slug"
   >
     <article
-      className="jsx-2873232947"
+      className="jsx-1630848865"
     >
       <div
-        className="jsx-2873232947 blog-card-image"
+        className="jsx-1630848865 blog-card-image"
       >
         <div
           className="image-mock"
         />
       </div>
       <div
-        className="jsx-2873232947 blog-card-content"
+        className="jsx-1630848865 blog-card-content"
       >
         <h1
-          className="jsx-2873232947"
+          className="jsx-1630848865"
         >
           blog-post-test
         </h1>
@@ -33,7 +33,7 @@ exports[`HeroCard renders full hero card 1`] = `
           className="blog-card-meta-mock"
         />
         <p
-          className="jsx-2873232947"
+          className="jsx-1630848865"
         >
           blog-post-description
         </p>

@@ -128,6 +128,10 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
           article:hover {
             box-shadow: unset;
+          } 
+          
+          article :global(.card-meta div) {
+            font-size: unset;
           }
           
           section {
@@ -139,8 +143,24 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
             width: 100%;
           }
           
+          h1 {
+            font-size: ${theme.fonts.size.xxLarge};
+            line-height: 1.875rem;
+          }
+          
+          p {
+            font-weight: ${theme.fonts.weight.regular};
+            line-height: ${theme.fonts.size.xxLarge};
+            font-size: unset;
+          }
+          
           .blog-card-image {
             width: unset;
+          }
+          
+          .blog-card-content {
+            width: unset;
+            padding 15px;
           }
           
           .blog-card-image :global(img) {
