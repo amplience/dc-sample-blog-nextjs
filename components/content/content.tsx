@@ -47,7 +47,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
         }
 
         section > div {
-          margin-bottom: 75px;
+          margin-top: 15px;
           width: 100%;
         }
 
@@ -69,9 +69,13 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           background-color: ${theme.colors.whiteLilac};
         }
 
+        section :global(p:first-child) {
+          margin-top: 0;
+        }
+
         @media (max-width: ${theme.layout.narrowPageWidth}) {
-          section > div {
-            margin-top: 90px;
+          section > div:first-child {
+            margin-top: 15px;
           }
         }
       `}</style>
