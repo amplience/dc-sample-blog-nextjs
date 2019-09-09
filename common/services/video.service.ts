@@ -2,7 +2,7 @@ import buildMediaUrl from './media.service';
 import AmplienceVideo from '../interfaces/video.interface';
 import fetch from 'isomorphic-unfetch';
 
-interface VideoProfile {
+export interface VideoProfile {
   media: [
     {
       src: string;
