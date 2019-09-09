@@ -89,14 +89,15 @@ const Footer = () => {
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           footer {
             height: auto;
-            margin-top: 60px;
+            margin-top: 75px;
+            padding: 75px 60px 50px 60px;
           }
           section {
             flex-direction: column-reverse;
           }
 
           .footer-info {
-            margin-top: 45px;
+            margin-top: 150px;
             align-items: flex-start;
           }
 
