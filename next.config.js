@@ -87,7 +87,7 @@ const env = {
 };
 
 const manifest = {
-  name: 'Amplience Development',
+  name: 'Amplience Product Blog',
   short_name: 'Amplience',
   theme_color: '#29333f',
   background_color: '#29333f',
