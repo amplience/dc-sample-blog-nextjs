@@ -157,6 +157,11 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
             width: unset;
           }
           
+          .blog-card-content {
+            width: unset;
+            padding 15px;
+          }
+          
           .blog-card-image :global(img) {
             object-fit: cover;
             height: 135px;
