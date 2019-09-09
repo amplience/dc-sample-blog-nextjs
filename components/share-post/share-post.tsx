@@ -43,7 +43,14 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
           justify-content: flex-end;
         }
         section > div > div {
-          margin: 0px 10px;
+          margin: 0px;
+          margin-left: 20px;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            margin-top: 75px;
+          }
         }
       `}</style>
     </>

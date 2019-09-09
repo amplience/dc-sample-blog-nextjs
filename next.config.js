@@ -43,6 +43,10 @@ const getBlogList = async () => {
     process.env.DYNAMIC_CONTENT_REFERENCE_ID
   )).toJSON();
 
+  if (blogList.blogPosts === undefined) {
+    blogList.blogPosts = []; // initialise the blogPosts prop
+  }
+
   const promises = blogList.blogPosts.map(async reference =>
     (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
   );
