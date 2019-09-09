@@ -45,7 +45,7 @@ const SharePost = ({ twitterText }: { twitterText: string }) => {
         }
         section > div > div {
           margin: 0px;
-          margin-left: 32px;
+          margin-left: 20px;
         }
       `}</style>
     </>

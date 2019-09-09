@@ -24,12 +24,6 @@ export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps) => {
           line-height: 2rem;
           padding: 6px;
         }
-
-        @media (max-width: ${theme.layout.narrowPageWidth}) {
-          blockquote :global(p) {
-            line-height: 3.125rem;
-          }
-        }
       `}</style>
     </>
   );

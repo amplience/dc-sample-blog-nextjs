@@ -2,18 +2,18 @@
 
 exports[`SharePost should render using the process.env.URL is defined 1`] = `
 <section
-  className="jsx-4186626345"
+  className="jsx-3818356980"
 >
   <h3
-    className="jsx-4186626345"
+    className="jsx-3818356980"
   >
     Share the post
   </h3>
   <div
-    className="jsx-4186626345"
+    className="jsx-3818356980"
   >
     <div
-      className="jsx-4186626345"
+      className="jsx-3818356980"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<script async src=\\"https://platform.linkedin.com/in.js\\" type=\\"text/javascript\\">lang: en_US</script><script type=\\"IN/Share\\" data-url=http://example.com/mocked-path></script>",
@@ -22,7 +22,7 @@ exports[`SharePost should render using the process.env.URL is defined 1`] = `
       suppressHydrationWarning={true}
     />
     <div
-      className="jsx-4186626345"
+      className="jsx-3818356980"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<a href=\\"https://twitter.com/share?ref_src=twsrc%5Etfw\\" class=\\"twitter-share-button\\" data-text=Testing Title data-show-count=\\"false\\">Tweet</a><script async src=\\"https://platform.twitter.com/widgets.js\\" charSet=\\"utf-8\\"></script>",
@@ -36,18 +36,18 @@ exports[`SharePost should render using the process.env.URL is defined 1`] = `
 
 exports[`SharePost should render when process.env.URL is undefined 1`] = `
 <section
-  className="jsx-4186626345"
+  className="jsx-3818356980"
 >
   <h3
-    className="jsx-4186626345"
+    className="jsx-3818356980"
   >
     Share the post
   </h3>
   <div
-    className="jsx-4186626345"
+    className="jsx-3818356980"
   >
     <div
-      className="jsx-4186626345"
+      className="jsx-3818356980"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<script async src=\\"https://platform.linkedin.com/in.js\\" type=\\"text/javascript\\">lang: en_US</script><script type=\\"IN/Share\\" data-url=mocked-path></script>",
@@ -56,7 +56,7 @@ exports[`SharePost should render when process.env.URL is undefined 1`] = `
       suppressHydrationWarning={true}
     />
     <div
-      className="jsx-4186626345"
+      className="jsx-3818356980"
       dangerouslySetInnerHTML={
         Object {
           "__html": "<a href=\\"https://twitter.com/share?ref_src=twsrc%5Etfw\\" class=\\"twitter-share-button\\" data-text=Testing Title data-show-count=\\"false\\">Tweet</a><script async src=\\"https://platform.twitter.com/widgets.js\\" charSet=\\"utf-8\\"></script>",
