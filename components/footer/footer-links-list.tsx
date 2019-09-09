@@ -52,6 +52,12 @@ const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
           font-size: ${theme.fonts.size.small};
           line-height: 2.25rem;
         }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            min-width: unset;
+          }
+        }
       `}</style>
     </>
   );
