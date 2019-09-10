@@ -92,7 +92,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         
         .blog-card-content {
           width: 70%;
-          padding 0 20px 20px 20px;
+          padding 0 20px 0 20px;
         }
 
         h1 {
@@ -118,10 +118,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           section {
             max-width: 100%;
             padding: 0 20px;
-          }
-
-          article {
-            margin-bottom: 55px;
+            margin-bottom: 60px;
           }
         }
         
@@ -136,15 +133,39 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
           article:hover {
             box-shadow: unset;
+          } 
+          
+          article :global(.card-meta div) {
+            font-size: unset;
           }
           
           section {
             display: block;
             padding: 0 45px;
           }
+
+          .blog-card-content {
+            width: 100%;
+          }
+          
+          h1 {
+            font-size: ${theme.fonts.size.xxLarge};
+            line-height: 1.875rem;
+          }
+          
+          p {
+            font-weight: ${theme.fonts.weight.regular};
+            line-height: ${theme.fonts.size.xxLarge};
+            font-size: unset;
+          }
           
           .blog-card-image {
             width: unset;
+          }
+          
+          .blog-card-content {
+            width: unset;
+            padding 15px;
           }
           
           .blog-card-image :global(img) {

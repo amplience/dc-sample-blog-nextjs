@@ -1,5 +1,90 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`CodeBlock should render empty line if value is undefined 1`] = `
+<pre
+  style={
+    Object {
+      "MozHyphens": "none",
+      "MozTabSize": "4",
+      "OTabSize": "4",
+      "WebkitHyphens": "none",
+      "background": "#1d1f21",
+      "borderRadius": "0.3em",
+      "color": "#c5c8c6",
+      "direction": "ltr",
+      "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
+      "hyphens": "none",
+      "lineHeight": "1.5",
+      "margin": ".5em 0",
+      "msHyphens": "none",
+      "overflow": "auto",
+      "padding": "1em",
+      "tabSize": "4",
+      "textAlign": "left",
+      "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
+      "whiteSpace": "pre",
+      "wordBreak": "normal",
+      "wordSpacing": "normal",
+    }
+  }
+>
+  <code
+    style={
+      Object {
+        "MozHyphens": "none",
+        "MozTabSize": "4",
+        "OTabSize": "4",
+        "WebkitHyphens": "none",
+        "color": "#c5c8c6",
+        "direction": "ltr",
+        "float": "left",
+        "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
+        "hyphens": "none",
+        "lineHeight": "1.5",
+        "msHyphens": "none",
+        "paddingRight": "10px",
+        "tabSize": "4",
+        "textAlign": "left",
+        "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
+        "whiteSpace": "pre",
+        "wordBreak": "normal",
+        "wordSpacing": "normal",
+      }
+    }
+  >
+    <span
+      className="react-syntax-highlighter-line-number"
+      style={Object {}}
+    >
+      1
+
+    </span>
+  </code>
+  <code
+    style={
+      Object {
+        "MozHyphens": "none",
+        "MozTabSize": "4",
+        "OTabSize": "4",
+        "WebkitHyphens": "none",
+        "color": "#c5c8c6",
+        "direction": "ltr",
+        "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
+        "hyphens": "none",
+        "lineHeight": "1.5",
+        "msHyphens": "none",
+        "tabSize": "4",
+        "textAlign": "left",
+        "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
+        "whiteSpace": "pre",
+        "wordBreak": "normal",
+        "wordSpacing": "normal",
+      }
+    }
+  />
+</pre>
+`;
+
 exports[`CodeBlock should render some code as a pre tag with syntax highlighting 1`] = `
 <pre
   style={
