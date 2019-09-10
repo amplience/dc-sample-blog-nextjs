@@ -24,13 +24,10 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
 };
 
 Index.getInitialProps = async ({ query }): Promise<BlogListData> => {
-  let baseUrl;
-  if (query.vse) {
-    baseUrl = `//${query.vse.toString()}`;
-  }
+  const stagingEnvironment = query.vse ? `//${query.vse.toString()}` : undefined;
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
   try {
-    return getHydratedBlogList(id, baseUrl);
+    return getHydratedBlogList(id, stagingEnvironment);
   } catch (err) {
     console.error('Unable to get initial props for Index:', err);
     throw err;

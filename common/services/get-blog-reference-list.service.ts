@@ -7,10 +7,14 @@ import BlogPost from '../interfaces/blog-post.interface';
 // eslint-disable-next-line
 const allSettled = require('promise.allsettled');
 
-export async function getBlogReferenceList(blogReferenceListid: string, url?: string): Promise<BlogReferenceList> {
+export async function getBlogReferenceList(
+  blogReferenceListid: string,
+  stagingEnvironment?: string
+): Promise<BlogReferenceList> {
   const clientConfig: ContentClientConfig = {
     account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: url || process.env.DYNAMIC_CONTENT_BASE_URL || ''
+    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || '',
+    stagingEnvironment
   };
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
   const { blogList } = (await deliveryClient.getContentItemById(blogReferenceListid)).toJSON();
@@ -19,11 +23,14 @@ export async function getBlogReferenceList(blogReferenceListid: string, url?: st
   return { title, subTitle, blogPosts };
 }
 
-export default async function getHydratedBlogList(blogListid: string, url?: string): Promise<BlogListData> {
-  const { title, subTitle, blogPosts } = await getBlogReferenceList(blogListid, url);
+export default async function getHydratedBlogList(
+  blogListid: string,
+  stagingEnvironment?: string
+): Promise<BlogListData> {
+  const { title, subTitle, blogPosts } = await getBlogReferenceList(blogListid, stagingEnvironment);
   const promises = blogPosts.map(
     async (reference: BlogPostReference): Promise<BlogPost> => {
-      return getBlogPost(reference.id, url);
+      return getBlogPost(reference.id, stagingEnvironment);
     }
   );
   const promiseResults = await allSettled(promises);

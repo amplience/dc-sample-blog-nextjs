@@ -2,13 +2,18 @@ import React from 'react';
 import theme from '../../common/styles/default/theme';
 import Logo from '../logo/logo';
 import StaticLink from '../static-link/static-link';
+import { useRouter } from 'next/router';
 
 const Header = ({ title }: { title: string }) => {
+  const router = useRouter();
+  const { vse } = router.query;
+
+  const headerLink = vse ? `/?vse=${vse}` : '';
   return (
     <>
       <section>
         <header>
-          <StaticLink href="/">
+          <StaticLink href={headerLink}>
             <Logo />
           </StaticLink>
           <h1>{title}</h1>

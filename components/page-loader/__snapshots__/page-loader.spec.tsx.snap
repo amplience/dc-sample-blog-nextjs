@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageLoader renders page loader 1`] = `
+<div
+  className="jsx-538995977 page-loading"
+  onClick={[Function]}
+>
+  <div
+    className="jsx-538995977 spinner"
+  />
+</div>
+`;

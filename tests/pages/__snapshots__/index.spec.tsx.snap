@@ -13,7 +13,7 @@ exports[`Index renders index with content 1`] = `
       <a
         aria-label=""
         className="jsx-3354872520"
-        href="/"
+        href=""
       >
         <img
           alt="Amplience logo"

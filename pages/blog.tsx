@@ -54,13 +54,10 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
 
 BlogPostPage.getInitialProps = async ({ query }) => {
   const { vse, blogId } = query;
-  let baseUrl;
-  if (vse) {
-    baseUrl = `//${vse.toString()}`;
-  }
+  const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
   try {
     const blogPostId = blogId.toString();
-    const blogPost = await getBlogPost(blogPostId, baseUrl);
+    const blogPost = await getBlogPost(blogPostId, stagingEnvironment);
     return { blogPost };
   } catch (err) {
     throw err;

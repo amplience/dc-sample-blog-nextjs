@@ -16,7 +16,7 @@ exports[`StaticLink renders external link as an anchor tag and vse query string 
 <a
   aria-label=""
   className="jsx-3354872520"
-  href="//href-link?vse=//some-vse-base-url"
+  href="//href-link"
 >
   <div
     className="something-to-link-as-static"

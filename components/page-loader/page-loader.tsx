@@ -1,29 +1,8 @@
 import { Component, SyntheticEvent } from 'react';
-import { Router } from 'next/router';
 
 import theme from '../../common/styles/default/theme';
 
-export class PageLoader extends Component<{}, { isLoading: boolean }> {
-  constructor(props: any) {
-    super(props);
-
-    this.state = {
-      isLoading: false
-    };
-  }
-
-  componentDidMount() {
-    Router.events.on('routeChangeStart', () => {
-      this.setState({ isLoading: true });
-    });
-    Router.events.on('routeChangeComplete', () => {
-      this.setState({ isLoading: false });
-    });
-    Router.events.on('routeChangeError', () => {
-      this.setState({ isLoading: false });
-    });
-  }
-
+export default class PageLoader extends Component {
   onClickHandler(e: SyntheticEvent) {
     e.preventDefault();
     e.stopPropagation();
@@ -32,13 +11,10 @@ export class PageLoader extends Component<{}, { isLoading: boolean }> {
   render() {
     return (
       <>
-        {this.state.isLoading ? (
-          <div className="page-loading" onClick={this.onClickHandler}>
-            <div className="spinner"></div>
-          </div>
-        ) : (
-          ''
-        )}
+        <div className="page-loading" onClick={this.onClickHandler}>
+          <div className="spinner"></div>
+        </div>
+
         <style jsx>{`
           .page-loading {
             position: fixed;
@@ -71,5 +47,3 @@ export class PageLoader extends Component<{}, { isLoading: boolean }> {
     );
   }
 }
-
-export default PageLoader;

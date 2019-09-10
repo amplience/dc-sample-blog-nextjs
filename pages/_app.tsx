@@ -3,7 +3,7 @@ import React from 'react';
 import { DefaultSeo } from 'next-seo';
 
 import SEO from '../next-seo.config';
-import PageLoader from '../components/page-loader/page-loader';
+import RouteChangeLoader from '../components/page-loader/route-change-loader';
 
 export class CustomApp extends App {
   render() {
@@ -11,7 +11,7 @@ export class CustomApp extends App {
     return (
       <Container>
         <DefaultSeo {...SEO} />
-        <PageLoader />
+        <RouteChangeLoader />
         <Component {...pageProps} />
       </Container>
     );
