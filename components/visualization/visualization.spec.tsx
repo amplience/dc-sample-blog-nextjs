@@ -1,15 +1,14 @@
 import Visualization from './visualization';
-import {shallow} from 'enzyme';
+import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
-import {MediaType} from '../../common/interfaces/media.interface';
+import { MediaType } from '../../common/interfaces/media.interface';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
 
 describe('Visualization', (): void => {
-
   beforeEach(() => {
     jest.resetAllMocks();
   });
@@ -17,11 +16,9 @@ describe('Visualization', (): void => {
   async function renderVisualization(contentItem: any) {
     mockGetStagingContentItemById.mockResolvedValue(contentItem);
 
-    const wrapper = shallow<Visualization>(
-      <Visualization stagingEnvironment="vse"
-                     contentId="content"/>,
-      {lifecycleExperimental: true}
-    );
+    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentId="content" />, {
+      lifecycleExperimental: true
+    });
 
     expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -38,18 +35,17 @@ describe('Visualization', (): void => {
   });
 
   it('should render image', async (): Promise<void> => {
-    const contentItem =
-      {
-        altText: 'altText',
-        image: {
-          defaultHost: 'i1-qa.adis.ws',
-          endpoint: 'bloblogltd',
-          name: 'friends-shopping-bags',
-          id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-          mediaType: MediaType.IMAGE
-        },
-        src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
-      };
+    const contentItem = {
+      altText: 'altText',
+      image: {
+        defaultHost: 'i1-qa.adis.ws',
+        endpoint: 'bloblogltd',
+        name: 'friends-shopping-bags',
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
+        mediaType: MediaType.IMAGE
+      },
+      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+    };
 
     await renderVisualization(contentItem);
   });
@@ -69,15 +65,12 @@ describe('Visualization', (): void => {
     await renderVisualization(contentItem);
   });
 
-
   it('should handle vse errors', async (): Promise<void> => {
-    mockGetStagingContentItemById.mockRejectedValue({message: 'Mock Error'});
+    mockGetStagingContentItemById.mockRejectedValue({ message: 'Mock Error' });
 
-    const wrapper = shallow<Visualization>(
-      <Visualization stagingEnvironment="vse"
-                     contentId="content"/>,
-      {lifecycleExperimental: true}
-    );
+    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentId="content" />, {
+      lifecycleExperimental: true
+    });
 
     expect(toJson(wrapper)).toMatchSnapshot();
 
@@ -86,18 +79,14 @@ describe('Visualization', (): void => {
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
-
   it('should only load content when props are provided', async (): Promise<void> => {
     mockGetStagingContentItemById.mockResolvedValue({
-        text: '# Markdown Text'
-      }
-    );
+      text: '# Markdown Text'
+    });
 
-    const wrapper = shallow<Visualization>(
-      <Visualization stagingEnvironment=""
-                     contentId=""/>,
-      {lifecycleExperimental: true}
-    );
+    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="" contentId="" />, {
+      lifecycleExperimental: true
+    });
 
     expect(toJson(wrapper)).toMatchSnapshot();
 

@@ -50,7 +50,7 @@ exports[`Index renders index with content 1`] = `
         </h2>
       </section>
       <section
-        className="jsx-1630848865"
+        className="jsx-4097360785"
       >
         <a
           aria-label="My First Blog Post"
@@ -58,10 +58,10 @@ exports[`Index renders index with content 1`] = `
           href="/blog/my-first-blog"
         >
           <article
-            className="jsx-1630848865"
+            className="jsx-4097360785"
           >
             <div
-              className="jsx-1630848865 blog-card-image"
+              className="jsx-4097360785 blog-card-image"
             >
               <span
                 className="lazy-img"
@@ -75,10 +75,10 @@ exports[`Index renders index with content 1`] = `
               />
             </div>
             <div
-              className="jsx-1630848865 blog-card-content"
+              className="jsx-4097360785 blog-card-content"
             >
               <h1
-                className="jsx-1630848865"
+                className="jsx-4097360785"
               >
                 My First Blog Post
               </h1>
@@ -111,7 +111,7 @@ exports[`Index renders index with content 1`] = `
                 </div>
               </div>
               <p
-                className="jsx-1630848865"
+                className="jsx-4097360785"
               >
                 Some text for the description that explains this blog post
               </p>

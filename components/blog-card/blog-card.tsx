@@ -24,10 +24,15 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
               {...{
                 ...blogPost.image,
                 dynamicImagingOptions: [
-                  { h: 140, w: 700, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 500, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 360, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 260, sm: 'c', scaleFit: 'poi' }
+                  { h: 140, w: 285, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
+                  { h: 140, w: 345, sm: 'c', scaleFit: 'poi' }
+                ],
+                mediaQueryOptions: [
+                  { mediaFeature: 'max-width', mediaSize: '320px', containerSize: '285px' },
+                  { mediaFeature: 'max-width', mediaSize: '480px', containerSize: '321px' },
+                  { mediaFeature: 'min-width', mediaSize: theme.layout.narrowPageWidth, containerSize: '350px' },
+                  { mediaSize: '345px' }
                 ]
               }}
             />
