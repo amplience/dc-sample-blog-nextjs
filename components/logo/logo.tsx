@@ -1,3 +1,5 @@
+import theme from '../../common/styles/default/theme';
+
 const Logo = () => {
   return (
     <>
@@ -10,6 +12,12 @@ const Logo = () => {
       <style jsx>{`
         img {
           width: 160px;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          img {
+            width: 120px;
+          }
         }
       `}</style>
     </>

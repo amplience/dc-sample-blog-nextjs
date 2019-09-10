@@ -43,6 +43,15 @@ const Header = ({ title }: { title: string }) => {
           margin-left: 18px;
           padding-left: 18px;
         }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          h1 {
+            font-size: ${theme.fonts.size.small};
+          }
+
+          header {
+            min-height: 40px;
+          }
+        }
       `}</style>
     </>
   );
