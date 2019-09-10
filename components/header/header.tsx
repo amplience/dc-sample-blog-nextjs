@@ -8,7 +8,7 @@ const Header = ({ title }: { title: string }) => {
   const router = useRouter();
   const { vse } = router.query;
 
-  const headerLink = vse ? `/?vse=${vse}` : '';
+  const headerLink = vse ? `/?vse=${vse}` : '/';
   return (
     <>
       <section>

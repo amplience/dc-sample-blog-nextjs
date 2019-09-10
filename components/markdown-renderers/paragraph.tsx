@@ -11,7 +11,14 @@ export const MarkdownParagraph = ({ children }: MarkdownParagraphProps) => {
       <style jsx>{`
         p {
           color: ${theme.colors.doveGray};
+
           line-height: 1.875rem;
+        }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          p {
+            font-size: ${theme.fonts.size.small};
+            font-weight: ${theme.fonts.weight.light};
+          }
         }
       `}</style>
     </>

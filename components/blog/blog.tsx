@@ -4,27 +4,27 @@ import Image from '../images/image.component';
 import Content from '../content/content';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 
-const Blog = ({blogPost}: { blogPost: BlogPost }) => {
+const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
   return (
     <>
       <div className="content-header">
-        <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime}/>
-        <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description}/>
+        <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime} />
+        <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
       <div className="blog-image">
         <Image
           altText={blogPost.image.altText}
           src={blogPost.image.src}
           dynamicImagingOptions={[
-            {h: 1024, w: 4096, sm: 'c', scaleFit: 'poi'},
-            {h: 512, w: 2048, sm: 'c', scaleFit: 'poi'},
-            {h: 270, w: 1080, sm: 'c', scaleFit: 'poi'},
-            {h: 200, w: 414, sm: 'c', scaleFit: 'poi'}
+            { h: 1024, w: 4096, sm: 'c', scaleFit: 'poi' },
+            { h: 512, w: 2048, sm: 'c', scaleFit: 'poi' },
+            { h: 270, w: 1080, sm: 'c', scaleFit: 'poi' },
+            { h: 200, w: 414, sm: 'c', scaleFit: 'poi' }
           ]}
         />
       </div>
       <div className="content-wrapper">
-        <Content content={blogPost.content}/>
+        <Content content={blogPost.content} />
       </div>
       <style jsx>{`
         .content-header {
@@ -41,7 +41,7 @@ const Blog = ({blogPost}: { blogPost: BlogPost }) => {
         .blog-image :global(img) {
           object-fit: cover;
           height: 400px;
-          margin-bottom: 75px;
+          margin-bottom: 36px;
         }
 
         :global(footer) {

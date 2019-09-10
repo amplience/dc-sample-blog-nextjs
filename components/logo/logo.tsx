@@ -17,6 +17,7 @@ const Logo = () => {
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           img {
             width: 120px;
+            object-fit: contain;
           }
         }
       `}</style>
