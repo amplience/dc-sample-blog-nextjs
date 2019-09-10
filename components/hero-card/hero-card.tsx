@@ -23,9 +23,12 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                   {...{
                     ...blogPost.image,
                     dynamicImagingOptions: [
-                      { h: 420, w: 320, sm: 'c', scaleFit: 'poi' },
-                      { h: 400, w: 230, sm: 'c', scaleFit: 'poi' },
-                      { h: 420, w: 684, sm: 'c', scaleFit: 'poi' }
+                      { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
+                      { h: 403, w: 330, sm: 'c', scaleFit: 'poi' }
+                    ],
+                    mediaQueryOptions: [
+                      { mediaFeature: 'max-width', mediaSize: theme.layout.narrowPageWidth, containerSize: '321px' },
+                      { mediaSize: '330px' }
                     ]
                   }}
                 />
@@ -76,7 +79,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         }
         
         .blog-card-image {
-          width: 30%;
+          width: 30%
         }
         
         .blog-card-image :global(img) {

@@ -9,6 +9,12 @@ export interface DynamicImagingOptions {
   poi?: string;
 }
 
+export interface MediaQueryOptions {
+  mediaFeature?: string;
+  mediaSize: string;
+  containerSize?: string;
+}
+
 function sortImageSizes(dynamicImagingOptions: DynamicImagingOptions[]): DynamicImagingOptions[] {
   dynamicImagingOptions.sort((opts1: DynamicImagingOptions, opts2: DynamicImagingOptions): number => opts2.w - opts1.w);
   dynamicImagingOptions.sort((opts1: DynamicImagingOptions, opts2: DynamicImagingOptions): number =>
@@ -18,14 +24,10 @@ function sortImageSizes(dynamicImagingOptions: DynamicImagingOptions[]): Dynamic
   return dynamicImagingOptions;
 }
 
-function generateSrcOptions(
-  src: string,
-  dynamicImagingOptions: DynamicImagingOptions[]
-): { srcSet: string; mediaSizes: string } {
+function createSrcSet(dynamicImagingOptions: DynamicImagingOptions[], src: string): string[] {
   const srcSet: string[] = [];
-  const mediaSizes: string[] = [];
 
-  sortImageSizes(dynamicImagingOptions).forEach((opts, index): void => {
+  dynamicImagingOptions.forEach((opts): void => {
     const imageQueryParams: string[] = [];
 
     if (opts.scaleFit === 'poi' && !opts.poi) {
@@ -34,22 +36,54 @@ function generateSrcOptions(
     }
 
     Object.entries(opts).forEach(([key, value]) => {
-      imageQueryParams.push(`${key}=${encodeURIComponent(value)}`);
+      imageQueryParams.push(`${key}=${value}`);
     });
 
     srcSet.push(`${src}?${imageQueryParams.join('&')} ${opts.w}w`);
-    mediaSizes.push(index > 0 ? `(max-width: ${opts.w}px) ${opts.w - 40}px` : `${opts.w}px`);
   });
+
+  return srcSet;
+}
+
+function createMediaSizes(mediaQueryOptions: MediaQueryOptions[]): string[] {
+  const mediaSizes: string[] = [];
+
+  mediaQueryOptions.forEach((mediaQueryOption: MediaQueryOptions) => {
+    if (mediaQueryOption.containerSize) {
+      mediaSizes.push(
+        `(${mediaQueryOption.mediaFeature}: ${mediaQueryOption.mediaSize}) ${mediaQueryOption.containerSize}`
+      );
+    } else {
+      mediaSizes.push(`${mediaQueryOption.mediaSize}`);
+    }
+  });
+
+  return mediaSizes;
+}
+
+function generateSrcOptions(
+  src: string,
+  dynamicImagingOptions: DynamicImagingOptions[],
+  mediaQueryOptions?: MediaQueryOptions[]
+): { srcSet: string; mediaSizes: string } {
+  dynamicImagingOptions = sortImageSizes(dynamicImagingOptions);
+  const srcSet: string[] = createSrcSet(dynamicImagingOptions, src);
+  const mediaSizes: string[] = Array.isArray(mediaQueryOptions) ? createMediaSizes(mediaQueryOptions) : [];
 
   return { srcSet: srcSet.join(','), mediaSizes: mediaSizes.join(',') };
 }
 
-const Image = (image: { altText: string; src: string; dynamicImagingOptions: DynamicImagingOptions[] }) => {
-  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions);
+const Image = (image: {
+  altText: string;
+  src: string;
+  dynamicImagingOptions: DynamicImagingOptions[];
+  mediaQueryOptions?: MediaQueryOptions[];
+}) => {
+  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions, image.mediaQueryOptions);
 
   return (
     <>
-      <LazyLoadImage alt={image.altText} src={image.src} srcSet={srcSet} sizes={mediaSizes} className="lazy-img" />
+      <LazyLoadImage alt={image.altText} src={image.src} sizes={mediaSizes} srcSet={srcSet} className="lazy-img" />
 
       <style jsx>{`
         :global(img.lazy-img) {

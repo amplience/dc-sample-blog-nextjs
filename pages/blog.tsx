@@ -44,10 +44,10 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
           altText={blogPost.image.altText}
           src={blogPost.image.src}
           dynamicImagingOptions={[
-            { h: 1024, w: 4096, sm: 'c', scaleFit: 'poi' },
-            { h: 512, w: 2048, sm: 'c', scaleFit: 'poi' },
-            { h: 270, w: 1080, sm: 'c', scaleFit: 'poi' },
-            { h: 200, w: 414, sm: 'c', scaleFit: 'poi' }
+            { h: 400, w: 2048, sm: 'c', scaleFit: 'poi' },
+            { h: 400, w: 1080, sm: 'c', scaleFit: 'poi' },
+            { h: 400, w: 768, sm: 'c', scaleFit: 'poi' },
+            { h: 200, w: 480, sm: 'c', scaleFit: 'poi' }
           ]}
         />
       </div>
