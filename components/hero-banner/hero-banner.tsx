@@ -36,6 +36,20 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
             background-image: unset;
           }
         }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          section {
+            padding-bottom: 16px;
+          }
+          section :global(h1) {
+            font-size: ${theme.fonts.size.xxxLarge};
+            line-height: 2.25rem;
+          }
+          section :global(h2) {
+            font-size: ${theme.fonts.size.large};
+            margin-top: 20px;
+          }
+        }
       `}</style>
     </>
   );

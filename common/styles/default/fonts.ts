@@ -6,8 +6,9 @@ const fonts = {
     large: '1.125rem',
     xLarge: '1.3125rem',
     xxLarge: '1.5rem',
-    xxxLarge: '2.25rem',
-    xxxxLarge: '3rem'
+    xxxLarge: '2rem',
+    xxxxLarge: '2.25rem',
+    xxxxxLarge: '3rem'
   },
   weight: {
     light: '300',

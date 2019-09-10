@@ -2,7 +2,7 @@
 
 exports[`HeroBannerTitle renders hero banner title 1`] = `
 <h1
-  className="jsx-1446146482"
+  className="jsx-2068893830"
 >
   Test title
 </h1>

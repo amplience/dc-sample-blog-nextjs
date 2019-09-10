@@ -115,6 +115,19 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           article:hover {
             box-shadow: unset;
           }
+
+          h1 {
+            line-height: unset;
+            margin: 10px 0;
+          }
+
+          p {
+            font-size: ${theme.fonts.size.small};
+          }
+
+          .blog-card-content {
+            padding 0 10px 0 10px;
+          }
         }
       `}</style>
     </section>
