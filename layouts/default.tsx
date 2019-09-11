@@ -20,14 +20,15 @@ export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
         )}
         <div className="site-content">
           <main>{children}</main>
+
+          {!contentOnly && (
+            <>
+              <Footer />
+              <CookieBanner></CookieBanner>
+              <GaPageView />
+            </>
+          )}
         </div>
-        {!contentOnly && (
-          <>
-            <Footer />
-            <CookieBanner></CookieBanner>
-            <GaPageView />
-          </>
-        )}
       </div>
       <style jsx global>{`
         html,
@@ -69,6 +70,7 @@ export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
 
         .site-content {
           flex: auto;
+          overflow: scroll;
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
