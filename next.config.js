@@ -33,6 +33,18 @@ const buildDynamicBlogPages = blogPosts => {
   );
 };
 
+const sanitiseBlogList = blogList => {
+  if (!blogList) {
+    throw new Error('Error building exportPathMap: slot does not contain a blog list');
+  }
+
+  if (blogList.blogPosts === undefined) {
+    blogList.blogPosts = []; // initialise the blogPosts prop
+  }
+
+  return blogList;
+};
+
 const getBlogList = async () => {
   const dcClientConfig = {
     account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
@@ -42,20 +54,17 @@ const getBlogList = async () => {
   const { title, subTitle, blogList } = (await dcDeliveryClient.getContentItem(
     process.env.DYNAMIC_CONTENT_REFERENCE_ID
   )).toJSON();
-
-  if (blogList.blogPosts === undefined) {
-    blogList.blogPosts = []; // initialise the blogPosts prop
-  }
-
-  const promises = blogList.blogPosts.map(async reference =>
+  const sanitisedBlogList = sanitiseBlogList(blogList);
+  const promises = sanitisedBlogList.blogPosts.map(async reference =>
     (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
   );
   const promiseResults = await allSettled(promises);
-  const rejectedPromises = promiseResults.filter(promise => promise.status === 'rejected');
-  rejectedPromises.forEach(rejectedBlog => console.warn(`Warn: ${rejectedBlog.reason}`));
   const hydratedBlogPosts = promiseResults
     .filter(promise => promise.status === 'fulfilled')
     .map(resolvedPromise => resolvedPromise.value);
+  promiseResults
+    .filter(promise => promise.status === 'rejected')
+    .forEach(rejectedBlog => console.warn(`Warn: ${rejectedBlog.reason}`));
 
   return { title, subTitle, blogPosts: hydratedBlogPosts };
 };
