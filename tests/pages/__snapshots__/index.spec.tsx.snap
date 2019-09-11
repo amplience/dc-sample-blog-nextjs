@@ -5,25 +5,25 @@ exports[`Index renders index with content 1`] = `
   className="jsx-690136081 site-container"
 >
   <section
-    className="jsx-1853008300"
+    className="jsx-921136039"
   >
     <header
-      className="jsx-1853008300"
+      className="jsx-921136039"
     >
       <a
         aria-label=""
         className="jsx-3354872520"
-        href=""
+        href="/"
       >
         <img
           alt="Amplience logo"
-          className="jsx-3359351483 logo"
+          className="jsx-1025394034 logo"
           src="/static/images/logo-340w.png"
           srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
         />
       </a>
       <h1
-        className="jsx-1853008300"
+        className="jsx-921136039"
       >
         PRODUCT BLOG
       </h1>
@@ -36,10 +36,10 @@ exports[`Index renders index with content 1`] = `
       className="jsx-690136081"
     >
       <section
-        className="jsx-2394770330"
+        className="jsx-2977347281"
       >
         <h1
-          className="jsx-1446146482"
+          className="jsx-2068893830"
         >
           blog-test-title
         </h1>
@@ -50,7 +50,7 @@ exports[`Index renders index with content 1`] = `
         </h2>
       </section>
       <section
-        className="jsx-4097360785"
+        className="jsx-3643415495"
       >
         <a
           aria-label="My First Blog Post"
@@ -58,10 +58,10 @@ exports[`Index renders index with content 1`] = `
           href="/blog/my-first-blog"
         >
           <article
-            className="jsx-4097360785"
+            className="jsx-3643415495"
           >
             <div
-              className="jsx-4097360785 blog-card-image"
+              className="jsx-3643415495 blog-card-image"
             >
               <span
                 className="lazy-img"
@@ -75,10 +75,10 @@ exports[`Index renders index with content 1`] = `
               />
             </div>
             <div
-              className="jsx-4097360785 blog-card-content"
+              className="jsx-3643415495 blog-card-content"
             >
               <h1
-                className="jsx-4097360785"
+                className="jsx-3643415495"
               >
                 My First Blog Post
               </h1>
@@ -111,7 +111,7 @@ exports[`Index renders index with content 1`] = `
                 </div>
               </div>
               <p
-                className="jsx-4097360785"
+                className="jsx-3643415495"
               >
                 Some text for the description that explains this blog post
               </p>
@@ -120,7 +120,7 @@ exports[`Index renders index with content 1`] = `
         </a>
       </section>
       <section
-        className="jsx-2919536176"
+        className="jsx-526258296"
       >
         
       </section>
@@ -140,7 +140,7 @@ exports[`Index renders index with content 1`] = `
         >
           <img
             alt="Amplience logo"
-            className="jsx-3359351483 logo"
+            className="jsx-1025394034 logo"
             src="/static/images/logo-340w.png"
             srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
           />

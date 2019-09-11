@@ -23,7 +23,7 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
         }
         h1 {
           color: ${theme.colors.mineShaft};
-          font-size: ${theme.fonts.size.xxxxLarge};
+          font-size: ${theme.fonts.size.xxxxxLarge};
           font-weight: ${theme.fonts.weight.regular};
           line-height: 3.75rem;
         }

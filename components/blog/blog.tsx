@@ -41,7 +41,7 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
         .blog-image :global(img) {
           object-fit: cover;
           height: 400px;
-          margin-bottom: 75px;
+          margin-bottom: 36px;
         }
 
         :global(footer) {

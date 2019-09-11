@@ -34,7 +34,7 @@ const BlogList = ({ blogPosts = [] }: BlogListProps) => {
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
             display: block;
-            padding: 0 45px;
+            padding: 0 26px;
           }
         }
       `}</style>

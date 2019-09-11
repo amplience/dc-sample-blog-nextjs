@@ -3,10 +3,10 @@
 exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = `
 <React.Fragment>
   <section
-    className="jsx-1471317909"
+    className="jsx-3401375430"
   >
     <div
-      className="jsx-1471317909 avatars"
+      className="jsx-3401375430 avatars"
     >
       <div
         className="jsx-3848208383"
@@ -37,14 +37,14 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
       </div>
     </div>
     <div
-      className="jsx-1471317909 publish-data"
+      className="jsx-3401375430 publish-data"
     >
       <div
-        className="jsx-1471317909 authors"
+        className="jsx-3401375430 authors"
       >
         <React.Fragment>
           <div
-            className="jsx-940982213 name"
+            className="jsx-2406003351 name"
           >
             Sir Bloblog
           </div>
@@ -54,24 +54,26 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
                 "#333333",
                 "1.125rem",
                 "500",
+                "736px",
+                "1rem",
               ]
             }
-            id="2651991810"
+            id="2131394532"
           >
-            .name.__jsx-style-dynamic-selector{color:#333333;font-size:1.125rem;font-weight:500;}
+            .name.__jsx-style-dynamic-selector{color:#333333;font-size:1.125rem;font-weight:500;}@media (max-width:736px){.name.__jsx-style-dynamic-selector{font-size:1rem;}}
           </JSXStyle>
         </React.Fragment>
       </div>
       <div
-        className="jsx-1471317909 publish-metadata"
+        className="jsx-3401375430 publish-metadata"
       >
         <div
-          className="jsx-1471317909 date"
+          className="jsx-3401375430 date"
         >
           2019-08-14
         </div>
         <div
-          className="jsx-1471317909 readTime"
+          className="jsx-3401375430 readTime"
         >
           15
            mins read
@@ -88,11 +90,12 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
         "1.125rem",
         "400",
         "736px",
+        "0.875rem",
       ]
     }
-    id="3685260175"
+    id="2854513165"
   >
-    section.__jsx-style-dynamic-selector{margin-top:75px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;padding-bottom:25px;max-width:740px;border-bottom:1px solid #cccccc;}.date.__jsx-style-dynamic-selector{padding-right:6px;margin-right:6px;border-right:1px solid #999999;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{color:#999999;font-size:1.125rem;font-weight:400;}.publish-data.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.publish-metadata.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:5px;}@media (max-width:736px){section.__jsx-style-dynamic-selector{margin-top:45px;}}
+    section.__jsx-style-dynamic-selector{margin-top:75px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;padding-bottom:25px;max-width:740px;border-bottom:1px solid #cccccc;}.date.__jsx-style-dynamic-selector{padding-right:6px;margin-right:6px;border-right:1px solid #999999;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{color:#999999;font-size:1.125rem;font-weight:400;}.publish-data.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.publish-metadata.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:5px;}@media (max-width:736px){section.__jsx-style-dynamic-selector{margin-top:45px;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{font-size:0.875rem;}}
   </JSXStyle>
 </React.Fragment>
 `;
@@ -100,20 +103,20 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
 exports[`BlogPostAuthor renders author without an avatar, but still has name and read time 1`] = `
 <React.Fragment>
   <section
-    className="jsx-1471317909"
+    className="jsx-3401375430"
   >
     <div
-      className="jsx-1471317909 avatars"
+      className="jsx-3401375430 avatars"
     />
     <div
-      className="jsx-1471317909 publish-data"
+      className="jsx-3401375430 publish-data"
     >
       <div
-        className="jsx-1471317909 authors"
+        className="jsx-3401375430 authors"
       >
         <React.Fragment>
           <div
-            className="jsx-940982213 name"
+            className="jsx-2406003351 name"
           >
             Sir Bloblog
           </div>
@@ -123,24 +126,26 @@ exports[`BlogPostAuthor renders author without an avatar, but still has name and
                 "#333333",
                 "1.125rem",
                 "500",
+                "736px",
+                "1rem",
               ]
             }
-            id="2651991810"
+            id="2131394532"
           >
-            .name.__jsx-style-dynamic-selector{color:#333333;font-size:1.125rem;font-weight:500;}
+            .name.__jsx-style-dynamic-selector{color:#333333;font-size:1.125rem;font-weight:500;}@media (max-width:736px){.name.__jsx-style-dynamic-selector{font-size:1rem;}}
           </JSXStyle>
         </React.Fragment>
       </div>
       <div
-        className="jsx-1471317909 publish-metadata"
+        className="jsx-3401375430 publish-metadata"
       >
         <div
-          className="jsx-1471317909 date"
+          className="jsx-3401375430 date"
         >
           2019-08-14
         </div>
         <div
-          className="jsx-1471317909 readTime"
+          className="jsx-3401375430 readTime"
         >
           15
            mins read
@@ -157,11 +162,12 @@ exports[`BlogPostAuthor renders author without an avatar, but still has name and
         "1.125rem",
         "400",
         "736px",
+        "0.875rem",
       ]
     }
-    id="3685260175"
+    id="2854513165"
   >
-    section.__jsx-style-dynamic-selector{margin-top:75px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;padding-bottom:25px;max-width:740px;border-bottom:1px solid #cccccc;}.date.__jsx-style-dynamic-selector{padding-right:6px;margin-right:6px;border-right:1px solid #999999;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{color:#999999;font-size:1.125rem;font-weight:400;}.publish-data.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.publish-metadata.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:5px;}@media (max-width:736px){section.__jsx-style-dynamic-selector{margin-top:45px;}}
+    section.__jsx-style-dynamic-selector{margin-top:75px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-align-content:center;-ms-flex-line-pack:center;align-content:center;padding-bottom:25px;max-width:740px;border-bottom:1px solid #cccccc;}.date.__jsx-style-dynamic-selector{padding-right:6px;margin-right:6px;border-right:1px solid #999999;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{color:#999999;font-size:1.125rem;font-weight:400;}.publish-data.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.publish-metadata.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;margin-top:5px;}@media (max-width:736px){section.__jsx-style-dynamic-selector{margin-top:45px;}.date.__jsx-style-dynamic-selector,.readTime.__jsx-style-dynamic-selector{font-size:0.875rem;}}
   </JSXStyle>
 </React.Fragment>
 `;

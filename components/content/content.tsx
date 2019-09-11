@@ -81,6 +81,10 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           section > div:first-child {
             margin-top: 15px;
           }
+
+          section :global(pre) {
+            font-size: ${theme.fonts.size.small};
+          }
         }
       `}</style>
     </>

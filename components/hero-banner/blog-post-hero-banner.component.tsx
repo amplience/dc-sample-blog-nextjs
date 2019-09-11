@@ -34,8 +34,16 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
           }
 
           section :global(h1) {
-            margin-top: 60px;
-            margin-bottom: 50px;
+            font-size: ${theme.fonts.size.xxxxLarge};
+            font-weight: ${theme.fonts.weight.medium}
+            line-height: 2.813rem;
+            margin-top: 30px;
+            margin-bottom: 20px;
+          }
+
+          section :global(h2) {
+            font-size: ${theme.fonts.size.xLarge};
+            margin-top: 0;
           }
         }
       `}</style>

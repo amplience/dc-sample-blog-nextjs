@@ -8,7 +8,7 @@ const Header = ({ title }: { title: string }) => {
   const router = useRouter();
   const { vse } = router.query;
 
-  const headerLink = vse ? `/?vse=${vse}` : '';
+  const headerLink = vse ? `/?vse=${vse}` : '/';
   return (
     <>
       <section>
@@ -42,6 +42,15 @@ const Header = ({ title }: { title: string }) => {
           border-left: 1px solid ${theme.colors.silver};
           margin-left: 18px;
           padding-left: 18px;
+        }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          h1 {
+            font-size: ${theme.fonts.size.small};
+          }
+
+          header {
+            min-height: 40px;
+          }
         }
       `}</style>
     </>

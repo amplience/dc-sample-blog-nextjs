@@ -42,6 +42,11 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
           font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.medium};
         }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          .name {
+            font-size: ${theme.fonts.size.normal};
+          }
+        }
       `}</style>
     </>
   );
@@ -106,6 +111,11 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
             margin-top: 45px;
+          }
+
+          .date,
+          .readTime {
+            font-size: ${theme.fonts.size.small};
           }
         }
       `}</style>
