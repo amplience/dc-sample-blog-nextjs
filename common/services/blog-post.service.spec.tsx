@@ -5,6 +5,11 @@ import blogPostDataFixture from '../../tests/fixtures/single-blog-post-data-obje
 
 import getBlogPost, { parseContent } from './blog-post.service';
 
+// @ts-ignore
+import { mockGetVideoSources } from './video.service';
+
+jest.mock('./video.service');
+
 const mockGetContentItemById = jest.fn();
 jest.mock('../../common/services/dynamic-content-delivery.service', (): {} => {
   return {
@@ -30,9 +35,13 @@ describe('getBlogPost', () => {
       }
     };
     mockGetContentItemById.mockImplementation(() => contentItem);
+
+    mockGetVideoSources.mockResolvedValue([]);
+
     const result = await getBlogPost('test-blog-id');
 
     expect(result).toEqual(blogPostDataFixture);
+    expect(mockGetVideoSources).toHaveBeenCalled();
   });
 
   test('should return blog post content when author has no avatar', async () => {
@@ -93,7 +102,7 @@ describe('parseContent', () => {
     };
     const expectedImage = JSON.parse(JSON.stringify(videoContent));
     expectedImage.video.mediaType = 'v';
-    expectedImage.srcSet = ['//i1.adis.ws/i/blogltd/casual-wear?protocol=https'];
+    expectedImage.srcSet = ['//i1.adis.ws/v/blogltd/casual-wear?protocol=https'];
 
     mockFetch.mockImplementationOnce(() => {
       return {
@@ -102,7 +111,7 @@ describe('parseContent', () => {
           return {
             media: [
               {
-                src: '//i1.adis.ws/i/blogltd/casual-wear'
+                src: '//i1.adis.ws/v/blogltd/casual-wear'
               }
             ]
           };
@@ -110,9 +119,11 @@ describe('parseContent', () => {
       };
     });
 
+    mockGetVideoSources.mockResolvedValue(['//i1.adis.ws/v/blogltd/casual-wear?protocol=https']);
     const result = await parseContent([videoContent]);
 
     expect(result).toEqual([expectedImage]);
+    expect(mockGetVideoSources).toHaveBeenCalled();
   });
 
   test('should return an empty array when no content to parse', async () => {

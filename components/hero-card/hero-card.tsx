@@ -90,7 +90,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         
         .blog-card-content {
           width: 70%;
-          padding 0 20px 20px 20px;
+          padding 0 20px 0 20px;
         }
 
         h1 {
@@ -116,10 +116,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           section {
             max-width: 100%;
             padding: 0 20px;
-          }
-
-          article {
-            margin-bottom: 55px;
+            margin-bottom: 60px;
           }
         }
         
@@ -143,6 +140,10 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           section {
             display: block;
             padding: 0 45px;
+          }
+
+          .blog-card-content {
+            width: 100%;
           }
           
           h1 {
