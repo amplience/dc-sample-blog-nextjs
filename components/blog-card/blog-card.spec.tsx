@@ -1,36 +1,31 @@
 /* eslint-env jest */
 import renderer from 'react-test-renderer';
 import BlogCard from './blog-card';
-import { MediaType } from '../../common/interfaces/media.interface';
+import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';
 
-jest.mock('../images/image.component', () => () => <div className="image-mock" />);
-jest.mock('../blog-card-meta/blog-card-meta', () => () => <div className="blog-card-meta-mock" />);
+const mockUseRouter = jest.fn();
+jest.mock('next/router', () => {
+  return {
+    useRouter: () => mockUseRouter()
+  };
+});
 
 describe('BlogCard', () => {
   test('renders full blog card', async () => {
-    const props = {
-      blogPost: {
-        title: 'blog-post-test',
-        date: '2019-08-13',
-        description: 'blog-post-description',
-        authors: [],
-        image: {
-          image: {
-            id: 'image-id',
-            name: 'image-name',
-            endpoint: 'image-endpoint',
-            defaultHost: 'image-default-host',
-            mediaType: MediaType.IMAGE
-          },
-          altText: ''
-        },
-        urlSlug: 'url-slug',
-        tags: ['test-tag'],
-        readTime: 15,
-        content: []
-      }
-    };
-    const component = await renderer.create(<BlogCard {...props} />);
+    mockUseRouter.mockImplementationOnce(() => {
+      return { query: {} };
+    });
+    const component = await renderer.create(<BlogCard blogPost={blogPostFixture} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('renders full blog card with vse query string in link for preview', async () => {
+    mockUseRouter.mockImplementationOnce(() => {
+      return {
+        query: { vse: 'test-vse.domain' }
+      };
+    });
+    const component = await renderer.create(<BlogCard blogPost={blogPostFixture} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 });

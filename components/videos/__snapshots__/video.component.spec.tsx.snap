@@ -12,4 +12,4 @@ exports[`Video should render an video 1`] = `
 </video>
 `;
 
-exports[`Video should render an video 2`] = `""`;
+exports[`Video should render nothing when srcSet array is undefined 1`] = `""`;

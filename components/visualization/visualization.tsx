@@ -40,7 +40,6 @@ export default class Visualization extends Component<VisualizationProps, Visuali
     try {
       const contentItem = await getStagingContentItemById(this.props.stagingEnvironment, this.props.contentId);
       if (isBlogPost(contentItem)) {
-        console.log(JSON.stringify(contentItem));
         this.setState({ blogPost: contentItem });
       } else {
         this.setState({ content: [contentItem as AmplienceContent] });
