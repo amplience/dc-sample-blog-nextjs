@@ -11,7 +11,7 @@ This is an application built using the Amplience Dynamic Content Service and the
 
 # How To Use
 
-To use this application you will need to install the content schemas (see ./schema/*.json) in Dynamic Content and some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
+To use this application you will need to install the content schemas (see ./schema/\*.json) in Dynamic Content and some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
 
 Once you have everything installed you can create new blog posts and schedule them when to go live on your blog.
 
@@ -23,29 +23,31 @@ To install and use this blog first you need to create the schemas and register t
 
 ## Content Type Schemas
 
-| Filename       | Schema ID                                                                                        | Schema Type  | Visualization Supported |
-|----------------|--------------------------------------------------------------------------------------------------|--------------|-------------------------|
-| author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json     | Content Type | No                      |
-| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json  | Content Type | No                      |
-| blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json  | Content Type | Yes                     |
-| blog-slot.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json  | Slot         | No                      |
-| image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json      | Content Type | Yes                     |
-| text.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json       | Content Type | Yes                     |
-| video.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json      | Content Type | Yes                     |
+| Filename       | Schema ID                                                                                       | Schema Type  | Visualization Supported |
+| -------------- | ----------------------------------------------------------------------------------------------- | ------------ | ----------------------- |
+| author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json    | Content Type | No                      |
+| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json | Content Type | No                      |
+| blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json | Content Type | Yes                     |
+| blog-slot.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json | Slot         | No                      |
+| image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json     | Content Type | Yes                     |
+| text.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json      | Content Type | Yes                     |
+| video.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json     | Content Type | Yes                     |
 
 ### Creating Schemas & Registering Content Types
 
 In Dynamic Content and navigate to the "Content type schemas" area (Developer -> Content type schemas).
 
 For each of the Content Types list above:-
+
 1. Click on "Create schema"
 2. Enter the Schema Id
-3. Select the Schema Type  from the drop down menu
+3. Select the Schema Type from the drop down menu
 4. Click "Save & open schema"
 
 Navigate to the "Content type" area (Developer -> Content type).
 
 For each of the Content Types list above:-
+
 1. Click on "Register content type"
 2. Select "Internal" for the "Content type schema" option
 3. Select the schema from the drop down list
@@ -59,6 +61,7 @@ Once you have installed and registered all of Content schemas, the next step is 
 A slot is like a placeholder/pointer to your blog-list, it is also the content entry point when the application runs.
 
 How to create a blog-list content item for your blog:
+
 1. Navigate to the "Production" section
 2. Select the repo where you have registered "blog-list.json"
 3. Click "Create content"
@@ -67,6 +70,7 @@ How to create a blog-list content item for your blog:
 6. Click "Save"
 
 How to create a Blog list "slot", so you can schedule updates to your blog:
+
 1. Navigate to the "Production" section
 2. Select your Slots repository
 3. Click "Create slots"
@@ -77,6 +81,7 @@ How to create a Blog list "slot", so you can schedule updates to your blog:
 8. Click "Save"
 
 Getting the content ID of a slot:-
+
 1. Navigate to the "Production" section
 2. Select your Slots repository
 3. Find the slot you wish to use
@@ -95,18 +100,17 @@ Click on the button below to deploy this repository via Netlify.
 
 During the Netlify setup process you will need to define the following build environment variables
 
-| Environment Var              | Required | Description                                        | Example                              |
-|------------------------------|----------|----------------------------------------------------|--------------------------------------|
-| DYNAMIC_CONTENT_REFERENCE_ID | Yes      | The ID of the Blog List slot                       | 00112233-4455-6677-8899-aabbccddeeff |
-| DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Account Name also known as endpoint                | mycompanyid                          |
-| DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL  | https://api.amplience.net            |
-
+| Environment Var              | Required | Description                                       | Example                              |
+| ---------------------------- | -------- | ------------------------------------------------- | ------------------------------------ |
+| DYNAMIC_CONTENT_REFERENCE_ID | Yes      | The ID of the Blog List slot                      | 00112233-4455-6677-8899-aabbccddeeff |
+| DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Account Name also known as endpoint               | mycompanyid                          |
+| DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL | https://api.amplience.net            |
 
 ### Automate Netlify Deployments
 
 It is possible to get Netlify to re-build and publish your blog whenever you publish a change in Dynamic Content using a [Dynamic Content Webhook](https://docs.amplience.net/integration/webhooks.html).
 
-#### 1. Create Netlify "Build hook" 
+#### 1. Create Netlify "Build hook"
 
 1. Navigate to your Netlify Site settings section for you new blog.
 2. Click on "Build & deploy".
@@ -114,7 +118,7 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 4. Click "Add a build hook".
 5. Select the branch you wish to build "master"
 
-#### 2. Create Dynamic Content Webhook 
+#### 2. Create Dynamic Content Webhook
 
 1. Navigate to the "Webhooks" section in Dynamic Content
 2. Click "Add webhook"
@@ -124,13 +128,20 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 6. Click "Save"
 
 Notes:
-* "Edition - published" trigger allows you to use the schedule features of Dynamic Content's, allowing you to schedule when your blog is updated.
+
+- "Edition - published" trigger allows you to use the schedule features of Dynamic Content's, allowing you to schedule when your blog is updated.
 
 ## How to Configure Visualizations
 
 [Visualisations](https://docs.amplience.net/production/visualizations.html) are easy to use and effective way of previewing your content before you publish it.
 
 For each of Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
+
+## How to configure Preview
+
+[Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a greate way of viewing how your entire blog site will look on the before you publish it.
+
+You can create a brand new Preview environment using the following Preview application URL: `https://<your-domain>/?vse={{vse.domain}}`.
 
 # Publishing
 
@@ -157,13 +168,13 @@ _***Note:*** This option is only available if your Webhook is configured using t
 
 (If you have followed the previous section, so you can skip to step 4.)
 
-1. Create your new Blog Post 
+1. Create your new Blog Post
 2. Publish your new Blog Post (don't worry it wont be visible on your site)
 3. Update your Blog List to include your new Blog Post
 4. Create a new Event & Edition in the Planner section of Dynamic Content (set when you want your Blog Post to be published on your Blog).
 5. Add your Blog Slot to the Edition
 6. Add your Blog List into the Blog Slot
-7. Click "Schedule the Edition" 
+7. Click "Schedule the Edition"
 
 When Dynamic Content publishes your updated slot it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook to you created. You can check on the status of the build by logging into your Netlify account and looking at build history.
 
@@ -202,27 +213,36 @@ To use the staging/other environment, the base URL can be overridden to a differ
 DYNAMIC_CONTENT_BASE_URL=<Base-URL>
 ```
 
-## Build & Run  
+## Build & Run
+
 First build the application using
+
 ```
 npm run build
 ```
+
 The application can then be started with
+
 ```
 npm run start
 ```
 
 ## Run with Developer Mode
+
 To start the application with Developer Mode use
+
 ```
 npm run dev
 ```
 
 ## Export as Static Site
+
 To generate the static site files use
+
 ```
-npm run export 
+npm run export
 ```
+
 The files will be exported to the `out` directory, these can then be served as a static site.
 
 ## Built with
