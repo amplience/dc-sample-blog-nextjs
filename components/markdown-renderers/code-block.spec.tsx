@@ -12,14 +12,15 @@ describe('CodeBlock', (): void => {
     expect(wrapper).toMatchSnapshot();
   });
 
-
   it('should render empty line if value is undefined', (): void => {
     const code: { language: string; value?: string } = {
       language: 'javascript',
       value: undefined
     };
 
-    const wrapper = renderer.create(<MarkdownCodeBlock language={code.language} value={code.value as string} />).toJSON();
+    const wrapper = renderer
+      .create(<MarkdownCodeBlock language={code.language} value={code.value as string} />)
+      .toJSON();
     expect(wrapper).toMatchSnapshot();
   });
 });

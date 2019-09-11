@@ -6,18 +6,20 @@ export interface StaticLinkProps {
   ariaLabel?: string;
 }
 
-const StaticLink = ({ children, href, ariaLabel = '' }: StaticLinkProps) => (
-  <>
-    <a href={href} aria-label={ariaLabel}>
-      {children}
-      <style jsx>{`
-        a {
-          text-decoration: none;
-          display: flex;
-        }
-      `}</style>
-    </a>
-  </>
-);
+const StaticLink = ({ children, href, ariaLabel = '' }: StaticLinkProps) => {
+  return (
+    <>
+      <a href={href} aria-label={ariaLabel}>
+        {children}
+        <style jsx>{`
+          a {
+            text-decoration: none;
+            display: flex;
+          }
+        `}</style>
+      </a>
+    </>
+  );
+};
 
 export default StaticLink;

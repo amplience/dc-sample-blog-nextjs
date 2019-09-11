@@ -12,8 +12,8 @@ exports[`Index renders index with content 1`] = `
     >
       <a
         aria-label=""
-        className="jsx-580416171"
-        href="/"
+        className="jsx-3354872520"
+        href=""
       >
         <img
           alt="Amplience logo"
@@ -35,15 +35,95 @@ exports[`Index renders index with content 1`] = `
     <main
       className="jsx-690136081"
     >
-      <div
-        className="hero-banner-mock"
-      />
-      <div
-        className="hero-card-mock"
-      />
-      <div
-        className="blob-list-mock"
-      />
+      <section
+        className="jsx-2394770330"
+      >
+        <h1
+          className="jsx-1446146482"
+        >
+          blog-test-title
+        </h1>
+        <h2
+          className="jsx-1054465095"
+        >
+          blog-test-sub-title
+        </h2>
+      </section>
+      <section
+        className="jsx-4097360785"
+      >
+        <a
+          aria-label="My First Blog Post"
+          className="jsx-3354872520"
+          href="/blog/my-first-blog"
+        >
+          <article
+            className="jsx-4097360785"
+          >
+            <div
+              className="jsx-4097360785 blog-card-image"
+            >
+              <span
+                className="lazy-img"
+                style={
+                  Object {
+                    "display": "inline-block",
+                    "height": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </div>
+            <div
+              className="jsx-4097360785 blog-card-content"
+            >
+              <h1
+                className="jsx-4097360785"
+              >
+                My First Blog Post
+              </h1>
+              <div
+                className="jsx-105857479 card-meta"
+              >
+                <div
+                  className="jsx-105857479 authors"
+                >
+                  <span
+                    className="jsx-105857479"
+                  >
+                    by
+                  </span>
+                  <span
+                    className="jsx-105857479 author"
+                  >
+                    Sir Blog
+                  </span>
+                </div>
+                <div
+                  className="jsx-105857479 publish-data"
+                >
+                  <span
+                    className="jsx-105857479 publish-date"
+                  >
+                    August 07, 2019
+                  </span>
+                  12 minutes
+                </div>
+              </div>
+              <p
+                className="jsx-4097360785"
+              >
+                Some text for the description that explains this blog post
+              </p>
+            </div>
+          </article>
+        </a>
+      </section>
+      <section
+        className="jsx-2919536176"
+      >
+        
+      </section>
     </main>
   </div>
   <footer

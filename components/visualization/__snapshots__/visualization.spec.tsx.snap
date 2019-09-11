@@ -1,10 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Visualization should handle vse errors 1`] = `
-<h2>
-  Loading visualization...
-</h2>
-`;
+exports[`Visualization should handle vse errors 1`] = `<PageLoader />`;
 
 exports[`Visualization should handle vse errors 2`] = `
 <Fragment>
@@ -18,11 +14,7 @@ exports[`Visualization should handle vse errors 2`] = `
 </Fragment>
 `;
 
-exports[`Visualization should only load content when props are provided 1`] = `
-<h2>
-  Loading visualization...
-</h2>
-`;
+exports[`Visualization should only load content when props are provided 1`] = `<PageLoader />`;
 
 exports[`Visualization should only load content when props are provided 2`] = `
 <Content
@@ -36,11 +28,7 @@ exports[`Visualization should only load content when props are provided 2`] = `
 />
 `;
 
-exports[`Visualization should render a blog post 1`] = `
-<h2>
-  Loading visualization...
-</h2>
-`;
+exports[`Visualization should render a blog post 1`] = `<PageLoader />`;
 
 exports[`Visualization should render a blog post 2`] = `
 <Blog
@@ -367,11 +355,7 @@ Get listed
 />
 `;
 
-exports[`Visualization should render image 1`] = `
-<h2>
-  Loading visualization...
-</h2>
-`;
+exports[`Visualization should render image 1`] = `<PageLoader />`;
 
 exports[`Visualization should render image 2`] = `
 <Content
@@ -393,11 +377,7 @@ exports[`Visualization should render image 2`] = `
 />
 `;
 
-exports[`Visualization should render text 1`] = `
-<h2>
-  Loading visualization...
-</h2>
-`;
+exports[`Visualization should render text 1`] = `<PageLoader />`;
 
 exports[`Visualization should render text 2`] = `
 <Content
@@ -411,11 +391,7 @@ exports[`Visualization should render text 2`] = `
 />
 `;
 
-exports[`Visualization should render video 1`] = `
-<h2>
-  Loading visualization...
-</h2>
-`;
+exports[`Visualization should render video 1`] = `<PageLoader />`;
 
 exports[`Visualization should render video 2`] = `
 <Content

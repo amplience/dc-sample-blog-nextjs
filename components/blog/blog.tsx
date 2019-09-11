@@ -4,7 +4,7 @@ import Image from '../images/image.component';
 import Content from '../content/content';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 
-const Blog = ({blogPost}: { blogPost: BlogPost }) => {
+const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
   return (
     <>
       <div className="content-header">

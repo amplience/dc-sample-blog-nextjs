@@ -3,13 +3,18 @@ import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
 import StaticLink from '../static-link/static-link';
+import { useRouter } from 'next/router';
 
 interface BlogCardProps {
   blogPost: BlogPost;
 }
 
 const BlogCard = ({ blogPost }: BlogCardProps) => {
-  const blogLink = `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
+  const router = useRouter();
+  const { vse } = router.query;
+  const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
+  const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
+  const blogLink = `${path}${routerQuery}`;
   return (
     <section>
       <StaticLink ariaLabel={blogPost.title} href={blogLink}>
