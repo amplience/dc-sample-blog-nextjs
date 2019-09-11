@@ -10,12 +10,32 @@ import getBlogPost from '../common/services/blog-post.service';
 import { NextSeo } from 'next-seo';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
+  const noPublishedBlogs = (
+    <div className="no-published-blogs">
+      <p>No blogs published yet!</p>
+      <style jsx>{`
+        .no-published-blogs {
+          padding-top: 60px;
+          display: flex;
+          justify-content: center;
+          min-height: 500px;
+        }
+      `}</style>
+    </div>
+  );
   return (
     <Layout>
       <NextSeo title={title} description={subTitle} />
       <HeroBanner title={title} subTitle={subTitle} />
-      <HeroCard blogPost={blogPosts[0]} />
-      <BlogList blogPosts={blogPosts.slice(1)} />
+      {blogPosts.length ? (
+        <>
+          <HeroCard blogPost={blogPosts[0]} />
+          <BlogList blogPosts={blogPosts.slice(1)} />
+        </>
+      ) : (
+        noPublishedBlogs
+      )}
+
       <style jsx>{`
         :global(footer) {
           margin-top: 120px;
