@@ -120,12 +120,11 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 2. Click "Add webhook"
 3. Enter a sensible label (e.g. "Netlify Deployment")
 4. Enter the Netlify "build hook" that you created in the previous section
-5. Enable the Webhook trigger "Edition - published" and/or "Snapshot - published"
+5. Enable the Webhook trigger "Edition - published"
 6. Click "Save"
 
 Notes:
-* "Edition - published" must be used if you wish to schedule publishing using Dynamic Content's planning features. This will only rebuild your site when an Edition is published
-* "Snapshot - published" will rebuild your site whenever a Content item or Edition is published.
+* "Edition - published" trigger allows you to use the schedule features of Dynamic Content's, allowing you to schedule when your blog is updated.
 
 ## How to Configure Visualizations
 
@@ -135,9 +134,9 @@ For each of Content Type Schemas that support visualization (see table in [Conte
 
 # Publishing
 
-Once you are ready to publish your blog within Dynamic Content just publish your new blog post. At first it won't appear on blog list landing page, this is because the blog list content item will also need to be updated.
+Once you are ready to publish your blog within Dynamic Content just publish your new blog post directly from the "Production" side of Dynamic Content (select the context menu for the new blog post and select "Publish"). At first it won't appear on your blog, this is because the blog list needs to be updated to include it.
 
-Remember the blog list and slot that you configured? The blog list is an array of content item references and at build time the application is requesting this blog list (via the slot), which is used build the index page and blog articles.
+Remember the blog list and slot that you configured? At build time the application is requesting the slot Content Item which has a "content-link" to the blog list content item, the blog list content item contains an array of "content-references" that each point to a blog post. The content graph looks something like this:-
 
 ```
 +--------+                +--------+                     +-----------+
@@ -149,33 +148,24 @@ Remember the blog list and slot that you configured? The blog list is an array o
            (content-link)             (content-reference)
 ```
 
-To update your blog you will have to update the Blog List to include your new Blog Post.
-Next you will need to publish the updated blog list.
+To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order thr list so your new blog post is at the top and click "save"
+Next you will need to schedule this update using an Dynamic Content Edition.
 
-## Publish Now
-
-_***Note:*** This option is only available if your Webhook is configured using the ***"Snapshot - Published"*** trigger_
-
-1. Create your new Blog Post
-2. Publish your new Blog Post
-3. Update your Blog List to include your new Blog Post
-4. Publish your update Blog List
-
-For each of the publishes Dynamic Content will notify Netlify via the webhook you created.
-
-## Publish Later
+## Scheduling
 
 _***Note:*** This option is only available if your Webhook is configured using the ***"Edition - Published"*** trigger_
 
-1. Create your new Blog Post
+(If you have followed the previous section, so you can skip to step 4.)
+
+1. Create your new Blog Post 
 2. Publish your new Blog Post (don't worry it wont be visible on your site)
 3. Update your Blog List to include your new Blog Post
-4. Create a new Event & Edition in the Planner (set when you want your Blog Post to be published on your Blog).
+4. Create a new Event & Edition in the Planner section of Dynamic Content (set when you want your Blog Post to be published on your Blog).
 5. Add your Blog Slot to the Edition
-6. Add your Blog List into the Slot
-7. Schedule the Edition 
+6. Add your Blog List into the Blog Slot
+7. Click "Schedule the Edition" 
 
-When Dynamic Content publishes your update slot it will include your new Blog List content too, due to the "content-link". Dynamic Content will also notify Netlify when it has been published via the webhook to created. You can check on the status of the build by logging into your Netlify account and looking at build history.
+When Dynamic Content publishes your updated slot it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook to you created. You can check on the status of the build by logging into your Netlify account and looking at build history.
 
 ![Scheduling a Blog List update in Dynamic Content](./media/create-blog-list-and-slot.gif)
 
