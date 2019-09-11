@@ -10,6 +10,12 @@ export const MarkdownInlineCode = ({ value }: { value: string }) => {
           border-radius: 5px;
           background-color: ${theme.colors.whiteLilac};
         }
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          code {
+            font-size: ${theme.fonts.size.small};
+            font-weight: ${theme.fonts.weight.light};
+          }
+        }
       `}</style>
     </>
   );

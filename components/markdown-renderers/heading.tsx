@@ -20,10 +20,11 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
         h5,
         h6 {
           margin: 0;
+          padding-top: 16px;
         }
         h1 {
           color: ${theme.colors.mineShaft};
-          font-size: ${theme.fonts.size.xxxxxLarge};
+          font-size: ${theme.fonts.size.xxxxLarge};
           font-weight: ${theme.fonts.weight.regular};
           line-height: 3.75rem;
         }
@@ -61,6 +62,12 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
           font-size: ${theme.fonts.size.small};
           font-weight: ${theme.fonts.weight.bold};
           line-height: 1.25rem;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          h1 {
+            font-size: ${theme.fonts.size.xxxLarge};
+          }
         }
       `}</style>
     </>

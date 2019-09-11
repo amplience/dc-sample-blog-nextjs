@@ -2,7 +2,7 @@
 
 exports[`MarkdownInlineCode should render some inline code as a code tag with styles 1`] = `
 <code
-  className="jsx-475412211"
+  className="jsx-2292396180"
 >
   import { something } from 'somewhere';
 </code>
