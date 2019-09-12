@@ -11,15 +11,15 @@ This is an application built using the Amplience Dynamic Content Service and the
 
 # How To Use
 
-To use this application you will need to install the content schemas (see ./schema/*.json) in Dynamic Content and some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
+To use this application you will need to install the content schemas (see ./schema/*.json) in Dynamic Content and have some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
 
-Once you have everything installed you can create new blog posts and schedule them when to go live on your blog.
+Once you have everything installed you can then create new blog posts and schedule them for when you want them to go live on your blog.
 
 ![Scheduling a Blog List update in Dynamic Content](./media/create-blog-list-and-slot.gif)
 
 # Installation
 
-To install and use this blog first you need to create the schemas and register the Content Types in Dynamic Content.
+To install and use this blog you first need to create the required schemas and register the Content Types in Dynamic Content.
 
 ## Content Type Schemas
 
@@ -35,15 +35,15 @@ To install and use this blog first you need to create the schemas and register t
 
 ### Creating Schemas & Registering Content Types
 
-In Dynamic Content and navigate to the "Content type schemas" area (Developer -> Content type schemas).
+In Dynamic Content, navigate to the "Content type schemas" area (Developer -> Content type schemas).
 
-For each of the Content Types list above:-
+For each of the Content Type Schemas listed above:-
 1. Click on "Create schema"
 2. Enter the Schema Id
 3. Select the Schema Type  from the drop down menu
 4. Click "Save & open schema"
 
-Navigate to the "Content type" area (Developer -> Content type).
+Navigate to the "Content types" area (Developer -> Content types).
 
 For each of the Content Types list above:-
 1. Click on "Register content type"
@@ -55,7 +55,7 @@ For each of the Content Types list above:-
 
 ### Creating A Blog-List & Slot
 
-Once you have installed and registered all of Content schemas, the next step is to create an blog-list Content item and a Slot.
+Once you have installed and registered all of Content schemas, the next step is to create a blog-list Content item and a Slot.
 A slot is like a placeholder/pointer to your blog-list, it is also the content entry point when the application runs.
 
 How to create a blog-list content item for your blog:
@@ -106,31 +106,31 @@ During the Netlify setup process you will need to define the following build env
 
 It is possible to get Netlify to re-build and publish your blog whenever you publish a change in Dynamic Content using a [Dynamic Content Webhook](https://docs.amplience.net/integration/webhooks.html).
 
-#### 1. Create Netlify "Build hook" 
+#### 1. Create a Netlify "Build hook" 
 
 1. Navigate to your Netlify Site settings section for you new blog.
 2. Click on "Build & deploy".
 3. Scroll down to the "Build hooks" section.
 4. Click "Add a build hook".
-5. Select the branch you wish to build "master"
+5. Select the branch you wish to build, e.g. "master"
 
-#### 2. Create Dynamic Content Webhook 
+#### 2. Create a Dynamic Content Webhook 
 
 1. Navigate to the "Webhooks" section in Dynamic Content
 2. Click "Add webhook"
 3. Enter a sensible label (e.g. "Netlify Deployment")
-4. Enter the Netlify "build hook" that you created in the previous section
+4. Enter the Netlify "build hook" that you created in the previous section as your URL
 5. Enable the Webhook trigger "Edition - published"
 6. Click "Save"
 
 Notes:
-* "Edition - published" trigger allows you to use the schedule features of Dynamic Content's, allowing you to schedule when your blog is updated.
+* The "Edition - published" webhook trigger allows you to use the scheduling features of Dynamic Content, allowing you to schedule in advance when your blog will be updated.
 
 ## How to Configure Visualizations
 
-[Visualisations](https://docs.amplience.net/production/visualizations.html) are easy to use and effective way of previewing your content before you publish it.
+[Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content before you publish it.
 
-For each of Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
+For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
 
 # Publishing
 
@@ -148,7 +148,7 @@ Remember the blog list and slot that you configured? At build time the applicati
            (content-link)             (content-reference)
 ```
 
-To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order thr list so your new blog post is at the top and click "save"
+To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list so your new blog post is at the top and click "save"
 Next you will need to schedule this update using an Dynamic Content Edition.
 
 ## Scheduling
@@ -165,7 +165,7 @@ _***Note:*** This option is only available if your Webhook is configured using t
 6. Add your Blog List into the Blog Slot
 7. Click "Schedule the Edition" 
 
-When Dynamic Content publishes your updated slot it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook to you created. You can check on the status of the build by logging into your Netlify account and looking at build history.
+When Dynamic Content publishes your updated slot it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook to you created. You can check on the status of the build by logging into your Netlify account and looking at your build history.
 
 ![Scheduling a Blog List update in Dynamic Content](./media/create-blog-list-and-slot.gif)
 
