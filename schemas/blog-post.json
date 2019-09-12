@@ -42,9 +42,7 @@
         {
           "properties": {
             "contentType": {
-              "enum": [
-                "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"
-              ]
+              "enum": ["https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"]
             }
           }
         }
@@ -91,9 +89,7 @@
           {
             "properties": {
               "contentType": {
-                "enum": [
-                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json"
-                ]
+                "enum": ["https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json"]
               }
             }
           }
@@ -127,25 +123,6 @@
       }
     }
   },
-  "propertyOrder": [
-    "title",
-    "authors",
-    "date",
-    "description",
-    "image",
-    "urlSlug",
-    "tags",
-    "readTime",
-    "content"
-  ],
-  "required": [
-    "title",
-    "authors",
-    "date",
-    "description",
-    "image",
-    "urlSlug",
-    "readTime",
-    "content"
-  ]
+  "propertyOrder": ["title", "authors", "date", "description", "image", "urlSlug", "tags", "readTime", "content"],
+  "required": ["title", "authors", "date", "description", "image", "urlSlug", "readTime", "content"]
 }
