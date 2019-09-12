@@ -11,7 +11,6 @@ const HeroBannerTitle = ({ title }: { title: string }) => {
             font-size: ${theme.fonts.size.xxxxxLarge};
             font-weight: ${theme.fonts.weight.regular};
             margin: 0;
-            line-height: 60px;
           }
         `}
       </style>

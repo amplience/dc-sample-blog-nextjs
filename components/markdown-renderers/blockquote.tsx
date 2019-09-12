@@ -21,7 +21,6 @@ export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps) => {
           margin: 0;
           font-size: 1.3125rem;
           font-weight: ${theme.fonts.weight.regular};
-          line-height: 2rem;
           padding: 6px;
         }
       `}</style>

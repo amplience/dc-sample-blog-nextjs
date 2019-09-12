@@ -20,10 +20,10 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
           <style jsx>{`
             .avatar :global(img) {
               object-fit: cover;
-              height: 52px;
-              width: 52px;
+              height: 36px;
+              width: 36px;
               border-radius: 4px;
-              margin-right: 20px;
+              margin-right: 10px;
             }
           `}</style>
         </div>
@@ -39,7 +39,7 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
       <style jsx>{`
         .name {
           color: ${theme.colors.mineShaft};
-          font-size: ${theme.fonts.size.large};
+          font-size: ${theme.fonts.size.normal};
           font-weight: ${theme.fonts.weight.medium};
         }
         @media (max-width: ${theme.layout.narrowPageWidth}) {
@@ -110,7 +110,8 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
-            margin-top: 45px;
+            margin-top: 25px;
+            padding-bottom: 15px;
           }
 
           .date,

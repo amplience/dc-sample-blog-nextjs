@@ -159,8 +159,8 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           }
           
           p {
-            font-size: ${theme.fonts.size.small};
-            font-weight: ${theme.fonts.weight.regular};
+            font-size: ${theme.fonts.size.normal};
+            font-weight: ${theme.fonts.weight.light};
             line-height: ${theme.fonts.size.xxLarge};
           }
           
