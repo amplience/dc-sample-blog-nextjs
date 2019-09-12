@@ -139,7 +139,7 @@ For each of Content Type Schemas that support visualization (see table in [Conte
 
 ## How to configure Preview
 
-[Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a greate way of viewing how your entire blog site will look on the before you publish it.
+[Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time - before it is published.
 
 You can create a brand new Preview environment using the following Preview application URL: `https://<your-domain>/?vse={{vse.domain}}`.
 
