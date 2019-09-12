@@ -3,6 +3,7 @@ import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
 import CookieBanner from '../components/cookie-banner/cookie-banner';
 import GaPageView from '../components/google-analytics/ga-page-view.component';
+import ScrollTop from '../components/scroll-top/scroll-top';
 
 interface DefaultLayoutProps {
   children: JSX.Element[] | JSX.Element;
@@ -20,23 +21,25 @@ export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
         )}
         <div className="site-content">
           <main>{children}</main>
+          {!contentOnly && (
+            <>
+              <Footer />
+              <CookieBanner></CookieBanner>
+              <GaPageView />
+            </>
+          )}
         </div>
-        {!contentOnly && (
-          <>
-            <Footer />
-            <CookieBanner></CookieBanner>
-            <GaPageView />
-          </>
-        )}
+        <ScrollTop />
       </div>
       <style jsx global>{`
         html,
         body {
           margin: 0;
-          height: 100%;
           min-height: 100%;
-          overflow-y: scroll;
+          overflow-y: hidden;
           scroll-behavior: smooth;
+          text-size-adjust: 100%;
+          height: 100vh;
         }
 
         html {
@@ -65,10 +68,12 @@ export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
           margin: 0;
           display: flex;
           flex-direction: column;
+          overflow: hidden;
         }
 
         .site-content {
           flex: auto;
+          overflow: auto;
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
