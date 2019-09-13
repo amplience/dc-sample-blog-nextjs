@@ -20,26 +20,33 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           background-position: top left, top right;
           background-repeat: no-repeat, no-repeat;
           background-size: auto 100%, auto 100%;
-          padding: 0 20px;
+          background-color: ${theme.colors.mirage95};
+          padding: 40 20px;
         }
 
         section :global(h1) {
+          color: white;
+          font-weight: ${theme.fonts.weight.light};
           padding-bottom: 10px;
-          border-bottom: 2px solid ${theme.colors.silver};
+          border-bottom: 1px solid ${theme.colors.dustyGray};
+        }
+
+        section :global(h2) {
+          color: ${theme.colors.silver};
           font-weight: ${theme.fonts.weight.light};
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {
           section {
             height: auto;
-            margin: 40px 0;
+            padding: 40px 16px;
             background-image: unset;
           }
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
-            padding-bottom: 16px;
+            padding: 16px;
           }
           section :global(h1) {
             font-size: ${theme.fonts.size.xxxLarge};
@@ -47,7 +54,7 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           }
           section :global(h2) {
             font-size: ${theme.fonts.size.large};
-            margin-top: 20px;
+            margin-top: 10px;
           }
         }
       `}</style>

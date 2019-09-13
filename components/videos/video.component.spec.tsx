@@ -16,11 +16,11 @@ describe('Video', (): void => {
       srcSet: ['http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p']
     };
 
-    const wrapper = renderer.create(<Video video={video.video} srcSet={video.srcSet} />).toJSON();
+    const wrapper = renderer.create(<Video {...video} />).toJSON();
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('should render an video', (): void => {
+  it('should render nothing when srcSet array is undefined', (): void => {
     const video: AmplienceVideo = {
       video: {
         defaultHost: 'i1-qa.adis.ws',
@@ -28,11 +28,10 @@ describe('Video', (): void => {
         name: 'SampleVideo_1280x720_5mb',
         id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
         mediaType: MediaType.VIDEO
-      },
-      srcSet: []
+      }
     };
 
-    const wrapper = renderer.create(<Video video={video.video} srcSet={video.srcSet} />).toJSON();
+    const wrapper = renderer.create(<Video {...video} />).toJSON();
     expect(wrapper).toMatchSnapshot();
   });
 });

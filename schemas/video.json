@@ -20,10 +20,6 @@
       ]
     }
   },
-  "propertyOrder": [
-    "video"
-  ],
-  "required": [
-    "video"
-  ]
+  "propertyOrder": ["video"],
+  "required": ["video"]
 }

@@ -24,25 +24,21 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
           margin-bottom: 15px;
         }
 
-        section :global(h2) {
-          line-height: 2.25rem;
-        }
-
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
-            padding-bottom: 60px;
+            padding-bottom: 40px;
           }
 
           section :global(h1) {
-            font-size: ${theme.fonts.size.xxxxLarge};
-            font-weight: ${theme.fonts.weight.medium}
-            line-height: 2.813rem;
+            font-size: ${theme.fonts.size.xxxLarge};
+            font-weight: ${theme.fonts.weight.bold};
             margin-top: 30px;
             margin-bottom: 20px;
           }
 
           section :global(h2) {
             font-size: ${theme.fonts.size.xLarge};
+            font-weight: ${theme.fonts.weight.light};
             margin-top: 0;
           }
         }

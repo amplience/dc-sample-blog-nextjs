@@ -60,6 +60,40 @@ describe('getBlogPost', () => {
 
     expect(result).toEqual(blogPostDataNoAuthorAvatarFixture);
   });
+
+  test('should throw an error when DYNAMIC_CONTENT_ACCOUNT_NAME is not set', async () => {
+    const contentItem = {
+      body: {
+        notBlogContent: 'no blog'
+      },
+      toJSON: () => {
+        return {
+          notBlogContent: 'no blog'
+        };
+      }
+    };
+    mockGetContentItemById.mockImplementation(() => {
+      throw new Error();
+    });
+    delete process.env.DYNAMIC_CONTENT_ACCOUNT_NAME;
+    await expect(getBlogPost('test-blog-id')).rejects.toThrowError();
+  });
+
+  test('should throw an error when we do not get a blog post back', async () => {
+    const contentItem = {
+      body: {
+        notBlogContent: 'no blog'
+      },
+      toJSON: () => {
+        return {
+          notBlogContent: 'no blog'
+        };
+      }
+    };
+    mockGetContentItemById.mockImplementation(() => contentItem);
+
+    await expect(getBlogPost('test-blog-id')).rejects.toThrowError();
+  });
 });
 
 const mockFetch = jest.fn();

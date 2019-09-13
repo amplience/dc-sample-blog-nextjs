@@ -11,7 +11,7 @@ interface BlogCardProps {
 
 const BlogCard = ({ blogPost }: BlogCardProps) => {
   const router = useRouter();
-  const { vse } = router.query;
+  const vse = router.query.vse ? router.query.vse.toString() : '';
   const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
   const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
   const blogLink = `${path}${routerQuery}`;
@@ -47,6 +47,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
       <style jsx>{`
         section {
           display: flex;
+        }
+
+        section :global(a) {
+          flex: 1;
         }
         article {
           display: flex;
@@ -123,11 +127,11 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
 
           h1 {
             line-height: unset;
-            margin: 10px 0;
+            margin: 20px 0;
           }
-
+          
           p {
-            font-size: ${theme.fonts.size.small};
+            font-weight: ${theme.fonts.weight.light};
           }
 
           .blog-card-content {

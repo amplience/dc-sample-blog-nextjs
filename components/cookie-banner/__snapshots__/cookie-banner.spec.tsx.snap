@@ -30,6 +30,7 @@ exports[`CookieBanner renders cookie consent banner 1`] = `
      
     <a
       href="https://amplience.com/privacy-cookie-policy/"
+      rel="noreferrer"
       target="_blank"
     >
       Cookie Policy

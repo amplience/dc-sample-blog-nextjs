@@ -30,7 +30,6 @@ const BlogCardMeta = ({ authors, publishedDate, readTime }: BlogCardMetaProps) =
           color: ${theme.colors.doveGray};
           display: flex;
           flex-direction: column;
-          font-weight: ${theme.fonts.weight.medium};
           font-size: ${theme.fonts.size.small};
           margin-bottom: 12px;
         }
@@ -41,6 +40,10 @@ const BlogCardMeta = ({ authors, publishedDate, readTime }: BlogCardMetaProps) =
 
         span + span {
           margin-left: 0.25em;
+        }
+
+        .authors {
+          font-weight: ${theme.fonts.weight.bold};
         }
 
         .author:not(:last-child):after {
