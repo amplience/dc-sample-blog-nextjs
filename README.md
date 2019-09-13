@@ -133,7 +133,7 @@ Notes:
 
 ## How to Configure Visualizations
 
-[Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content before you publish it.
+[Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content, while you edit, and before you publish it.
 
 For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
 
@@ -142,6 +142,10 @@ For each of the Content Type Schemas that support visualization (see table in [C
 [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time - before it is published.
 
 You can create a brand new Preview environment using the following Preview application URL: `https://<your-domain>/?vse={{vse.domain}}`.
+
+Notes:
+
+- Blog slot editions will not include any unpublished blog posts as they are a reference link in the blog post. Publishing the newly create blog posts will make them available when using Preview.
 
 # Publishing
 
