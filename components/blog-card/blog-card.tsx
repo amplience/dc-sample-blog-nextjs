@@ -123,11 +123,11 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
 
           h1 {
             line-height: unset;
-            margin: 10px 0;
+            margin: 20px 0;
           }
-
+          
           p {
-            font-size: ${theme.fonts.size.small};
+            font-weight: ${theme.fonts.weight.light};
           }
 
           .blog-card-content {

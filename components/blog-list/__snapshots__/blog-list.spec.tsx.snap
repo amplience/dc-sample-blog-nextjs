@@ -14,15 +14,7 @@ exports[`BlogList renders empty blog list when blog list is empty array 1`] = `
 <section
   className="jsx-526258296"
 >
-  <div
-    className="jsx-143652140 no-published-blogs"
-  >
-    <p
-      className="jsx-143652140"
-    >
-      No blogs published yet!
-    </p>
-  </div>
+  
 </section>
 `;
 
@@ -30,14 +22,6 @@ exports[`BlogList renders empty blog list when blog list is undefined 1`] = `
 <section
   className="jsx-526258296"
 >
-  <div
-    className="jsx-143652140 no-published-blogs"
-  >
-    <p
-      className="jsx-143652140"
-    >
-      No blogs published yet!
-    </p>
-  </div>
+  
 </section>
 `;

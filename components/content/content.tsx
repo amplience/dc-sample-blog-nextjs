@@ -77,13 +77,21 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           margin-bottom: 0;
         }
 
+        section :global(img) {
+          width: 100%;
+        }
+
+        section :global(li) {
+          margin-bottom: 8px;
+        }
+
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section > div:first-child {
             margin-top: 15px;
           }
 
           section :global(pre, li) {
-            font-size: ${theme.fonts.size.small};
+            font-size: ${theme.fonts.size.large};
             font-weight: ${theme.fonts.weight.light};
           }
         }

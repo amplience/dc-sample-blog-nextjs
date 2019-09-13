@@ -19,10 +19,6 @@
       "maxLength": 6000
     }
   },
-  "propertyOrder": [
-    "text"
-  ],
-  "required": [
-    "text"
-  ]
+  "propertyOrder": ["text"],
+  "required": ["text"]
 }

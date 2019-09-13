@@ -26,42 +26,42 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
           color: ${theme.colors.mineShaft};
           font-size: ${theme.fonts.size.xxxxLarge};
           font-weight: ${theme.fonts.weight.regular};
-          line-height: 3.75rem;
         }
 
         h2 {
           color: ${theme.colors.mineShaft};
           font-size: ${theme.fonts.size.xxLarge};
           font-weight: ${theme.fonts.weight.light};
-          line-height: 2.25rem;
         }
 
         h3 {
           color: ${theme.colors.mineShaft};
           font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.bold};
-          line-height: 1.625rem;
         }
 
         h4 {
           color: ${theme.colors.mineShaft};
           font-size: 1rem;
           font-weight: ${theme.fonts.weight.bold};
-          line-height: ${theme.fonts.size.xxLarge};
         }
 
         h5 {
           color: ${theme.colors.doveGray};
           font-size: ${theme.fonts.size.small};
           font-weight: ${theme.fonts.weight.bold};
-          line-height: 1.25rem;
         }
 
         h6 {
           color: ${theme.colors.dustyGray};
           font-size: ${theme.fonts.size.small};
           font-weight: ${theme.fonts.weight.bold};
-          line-height: 1.25rem;
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          h1 {
+            font-size: ${theme.fonts.size.xxxLarge};
+          }
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {

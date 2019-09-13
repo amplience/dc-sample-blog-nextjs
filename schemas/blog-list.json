@@ -48,12 +48,6 @@
       }
     }
   },
-  "required": [
-    "title"
-  ],
-  "propertyOrder": [
-    "title",
-    "subTitle",
-    "blogPosts"
-  ]
+  "required": ["title"],
+  "propertyOrder": ["title", "subTitle", "blogPosts"]
 }
