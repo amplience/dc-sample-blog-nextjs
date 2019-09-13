@@ -5,10 +5,10 @@ exports[`Index renders index with content 1`] = `
   className="jsx-873644259 site-container"
 >
   <section
-    className="jsx-921136039"
+    className="jsx-1904209643"
   >
     <header
-      className="jsx-921136039"
+      className="jsx-1904209643"
     >
       <a
         aria-label=""
@@ -18,12 +18,12 @@ exports[`Index renders index with content 1`] = `
         <img
           alt="Amplience logo"
           className="jsx-1025394034 logo"
-          src="/static/images/logo-340w.png"
-          srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+          src="/static/images/logo-white-340w.png"
+          srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
         />
       </a>
       <h1
-        className="jsx-921136039"
+        className="jsx-1904209643"
       >
         PRODUCT BLOG
       </h1>
@@ -36,7 +36,7 @@ exports[`Index renders index with content 1`] = `
       className="jsx-873644259"
     >
       <section
-        className="jsx-2977347281"
+        className="jsx-2541469627"
       >
         <h1
           className="jsx-2799736912"

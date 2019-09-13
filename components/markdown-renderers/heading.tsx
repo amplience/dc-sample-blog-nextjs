@@ -63,6 +63,12 @@ export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
             font-size: ${theme.fonts.size.xxxLarge};
           }
         }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          h1 {
+            font-size: ${theme.fonts.size.xxxLarge};
+          }
+        }
       `}</style>
     </>
   );

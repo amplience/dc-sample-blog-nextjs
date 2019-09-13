@@ -1,12 +1,13 @@
 import theme from '../../common/styles/default/theme';
 
-const Logo = () => {
+const Logo = ({ darkMode }: { darkMode?: boolean }) => {
+  const logoSrcName = darkMode ? 'logo-white' : 'logo';
   return (
     <>
       <img
         className="logo"
-        src="/static/images/logo-340w.png"
-        srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+        src={`/static/images/${logoSrcName}-340w.png`}
+        srcSet={`/static/images/${logoSrcName}-160w.png 1x, /static/images/${logoSrcName}-340w.png 2x`}
         alt="Amplience logo"
       />
       <style jsx>{`
