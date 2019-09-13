@@ -39,7 +39,7 @@ exports[`Index renders index with content 1`] = `
         className="jsx-2977347281"
       >
         <h1
-          className="jsx-2068893830"
+          className="jsx-2799736912"
         >
           blog-test-title
         </h1>
@@ -50,7 +50,7 @@ exports[`Index renders index with content 1`] = `
         </h2>
       </section>
       <section
-        className="jsx-3643415495"
+        className="jsx-3480211804"
       >
         <a
           aria-label="My First Blog Post"
@@ -58,10 +58,10 @@ exports[`Index renders index with content 1`] = `
           href="/blog/my-first-blog"
         >
           <article
-            className="jsx-3643415495"
+            className="jsx-3480211804"
           >
             <div
-              className="jsx-3643415495 blog-card-image"
+              className="jsx-3480211804 blog-card-image"
             >
               <span
                 className="lazy-img"
@@ -75,35 +75,35 @@ exports[`Index renders index with content 1`] = `
               />
             </div>
             <div
-              className="jsx-3643415495 blog-card-content"
+              className="jsx-3480211804 blog-card-content"
             >
               <h1
-                className="jsx-3643415495"
+                className="jsx-3480211804"
               >
                 My First Blog Post
               </h1>
               <div
-                className="jsx-105857479 card-meta"
+                className="jsx-3343601279 card-meta"
               >
                 <div
-                  className="jsx-105857479 authors"
+                  className="jsx-3343601279 authors"
                 >
                   <span
-                    className="jsx-105857479"
+                    className="jsx-3343601279"
                   >
                     by
                   </span>
                   <span
-                    className="jsx-105857479 author"
+                    className="jsx-3343601279 author"
                   >
                     Sir Blog
                   </span>
                 </div>
                 <div
-                  className="jsx-105857479 publish-data"
+                  className="jsx-3343601279 publish-data"
                 >
                   <span
-                    className="jsx-105857479 publish-date"
+                    className="jsx-3343601279 publish-date"
                   >
                     August 07, 2019
                   </span>
@@ -111,7 +111,7 @@ exports[`Index renders index with content 1`] = `
                 </div>
               </div>
               <p
-                className="jsx-3643415495"
+                className="jsx-3480211804"
               >
                 Some text for the description that explains this blog post
               </p>

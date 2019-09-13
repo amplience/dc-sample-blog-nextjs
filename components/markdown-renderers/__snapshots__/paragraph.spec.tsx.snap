@@ -2,7 +2,7 @@
 
 exports[`MarkdownParagraph should render a p tag 1`] = `
 <p
-  className="jsx-1818180085"
+  className="jsx-430790654"
 >
   test text
 </p>
