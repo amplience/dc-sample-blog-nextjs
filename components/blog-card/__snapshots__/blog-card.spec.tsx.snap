@@ -2,7 +2,7 @@
 
 exports[`BlogCard renders full blog card 1`] = `
 <section
-  className="jsx-3182958052"
+  className="jsx-2152454282"
 >
   <a
     aria-label="My First Blog Post"
@@ -10,10 +10,10 @@ exports[`BlogCard renders full blog card 1`] = `
     href="/blog/my-first-blog"
   >
     <article
-      className="jsx-3182958052"
+      className="jsx-2152454282"
     >
       <div
-        className="jsx-3182958052 blog-card-image"
+        className="jsx-2152454282 blog-card-image"
       >
         <span
           className="lazy-img"
@@ -27,35 +27,35 @@ exports[`BlogCard renders full blog card 1`] = `
         />
       </div>
       <div
-        className="jsx-3182958052 blog-card-content"
+        className="jsx-2152454282 blog-card-content"
       >
         <h1
-          className="jsx-3182958052"
+          className="jsx-2152454282"
         >
           My First Blog Post
         </h1>
         <div
-          className="jsx-105857479 card-meta"
+          className="jsx-3343601279 card-meta"
         >
           <div
-            className="jsx-105857479 authors"
+            className="jsx-3343601279 authors"
           >
             <span
-              className="jsx-105857479"
+              className="jsx-3343601279"
             >
               by
             </span>
             <span
-              className="jsx-105857479 author"
+              className="jsx-3343601279 author"
             >
               Sir Blog
             </span>
           </div>
           <div
-            className="jsx-105857479 publish-data"
+            className="jsx-3343601279 publish-data"
           >
             <span
-              className="jsx-105857479 publish-date"
+              className="jsx-3343601279 publish-date"
             >
               August 07, 2019
             </span>
@@ -63,7 +63,7 @@ exports[`BlogCard renders full blog card 1`] = `
           </div>
         </div>
         <p
-          className="jsx-4116127750"
+          className="jsx-2152454282"
         >
           Some text for the description that explains this blog post
         </p>
@@ -75,7 +75,7 @@ exports[`BlogCard renders full blog card 1`] = `
 
 exports[`BlogCard renders full blog card with vse query string in link for preview 1`] = `
 <section
-  className="jsx-4116127750"
+  className="jsx-2152454282"
 >
   <a
     aria-label="My First Blog Post"
@@ -83,10 +83,10 @@ exports[`BlogCard renders full blog card with vse query string in link for previ
     href="/preview?vse=test-vse.domain&content=8d6943c7-6028-4fac-b45e-57fc63bd032a"
   >
     <article
-      className="jsx-4116127750"
+      className="jsx-2152454282"
     >
       <div
-        className="jsx-4116127750 blog-card-image"
+        className="jsx-2152454282 blog-card-image"
       >
         <span
           className="lazy-img"
@@ -100,35 +100,35 @@ exports[`BlogCard renders full blog card with vse query string in link for previ
         />
       </div>
       <div
-        className="jsx-4116127750 blog-card-content"
+        className="jsx-2152454282 blog-card-content"
       >
         <h1
-          className="jsx-4116127750"
+          className="jsx-2152454282"
         >
           My First Blog Post
         </h1>
         <div
-          className="jsx-105857479 card-meta"
+          className="jsx-3343601279 card-meta"
         >
           <div
-            className="jsx-105857479 authors"
+            className="jsx-3343601279 authors"
           >
             <span
-              className="jsx-105857479"
+              className="jsx-3343601279"
             >
               by
             </span>
             <span
-              className="jsx-105857479 author"
+              className="jsx-3343601279 author"
             >
               Sir Blog
             </span>
           </div>
           <div
-            className="jsx-105857479 publish-data"
+            className="jsx-3343601279 publish-data"
           >
             <span
-              className="jsx-105857479 publish-date"
+              className="jsx-3343601279 publish-date"
             >
               August 07, 2019
             </span>
@@ -136,7 +136,7 @@ exports[`BlogCard renders full blog card with vse query string in link for previ
           </div>
         </div>
         <p
-          className="jsx-3182958052"
+          className="jsx-2152454282"
         >
           Some text for the description that explains this blog post
         </p>

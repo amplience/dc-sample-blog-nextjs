@@ -3,19 +3,19 @@
 exports[`Blog renders full blog 1`] = `
 Array [
   <div
-    className="jsx-1353509764 content-header"
+    className="jsx-718450558 content-header"
   >
     <section
-      className="jsx-3401375430"
+      className="jsx-3378232041"
     >
       <div
-        className="jsx-3401375430 avatars"
+        className="jsx-3378232041 avatars"
       >
         <div
-          className="jsx-3848208383"
+          className="jsx-2854206183"
         >
           <div
-            className="jsx-3848208383 avatar"
+            className="jsx-2854206183 avatar"
           >
             <div
               className="image-mock"
@@ -24,27 +24,27 @@ Array [
         </div>
       </div>
       <div
-        className="jsx-3401375430 publish-data"
+        className="jsx-3378232041 publish-data"
       >
         <div
-          className="jsx-3401375430 authors"
+          className="jsx-3378232041 authors"
         >
           <div
-            className="jsx-2406003351 name"
+            className="jsx-3680733511 name"
           >
             Sir Blog
           </div>
         </div>
         <div
-          className="jsx-3401375430 publish-metadata"
+          className="jsx-3378232041 publish-metadata"
         >
           <div
-            className="jsx-3401375430 date"
+            className="jsx-3378232041 date"
           >
             August 07, 2019
           </div>
           <div
-            className="jsx-3401375430 readTime"
+            className="jsx-3378232041 readTime"
           >
             12
              mins read
@@ -53,10 +53,10 @@ Array [
       </div>
     </section>
     <section
-      className="jsx-849790538"
+      className="jsx-3528769338"
     >
       <h1
-        className="jsx-2068893830"
+        className="jsx-2799736912"
       >
         My First Blog Post
       </h1>
@@ -68,60 +68,60 @@ Array [
     </section>
   </div>,
   <div
-    className="jsx-1353509764 blog-image"
+    className="jsx-718450558 blog-image"
   >
     <div
       className="image-mock"
     />
   </div>,
   <div
-    className="jsx-1353509764 content-wrapper"
+    className="jsx-718450558 content-wrapper"
   >
     <section
-      className="jsx-2170168318"
+      className="jsx-2988077148"
     >
       <div
-        className="jsx-2170168318"
+        className="jsx-2988077148"
       >
         <div
           className="image-mock"
         />
       </div>
       <div
-        className="jsx-2170168318"
+        className="jsx-2988077148"
       >
         <h1
-          className="jsx-1575086170"
+          className="jsx-2595089998"
         >
           This is my first Blog
         </h1>
         <h2
-          className="jsx-1575086170"
+          className="jsx-2595089998"
         >
           Look-a-header 2
         </h2>
         <h3
-          className="jsx-1575086170"
+          className="jsx-2595089998"
         >
           Look-a-header 3
         </h3>
         <h4
-          className="jsx-1575086170"
+          className="jsx-2595089998"
         >
           Look-a-header 4
         </h4>
         <h5
-          className="jsx-1575086170"
+          className="jsx-2595089998"
         >
           Look-a-header 5
         </h5>
         <h6
-          className="jsx-1575086170"
+          className="jsx-2595089998"
         >
           Look-a-header 6
         </h6>
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           <em>
             <strong>
@@ -147,7 +147,7 @@ Array [
           .
         </p>
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           <img
             alt="alt text"
@@ -156,7 +156,7 @@ Array [
           />
         </p>
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           This is some more sample text with a 
           <span
@@ -173,21 +173,21 @@ Array [
           </span>
         </p>
         <blockquote
-          className="jsx-1592857840"
+          className="jsx-2064009043"
         >
           <p
-            className="jsx-1818180085"
+            className="jsx-430790654"
           >
             Comments are cool!
           </p>
           <p
-            className="jsx-1818180085"
+            className="jsx-430790654"
           >
             See what I mean
           </p>
         </blockquote>
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           Look some code:
         </p>
@@ -396,11 +396,11 @@ Array [
           </code>
         </pre>
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           inline 
           <code
-            className="jsx-2292396180"
+            className="jsx-3800523359"
           >
             code
           </code>
@@ -409,7 +409,7 @@ Array [
         <hr />
         &lt;h4&gt;A title&lt;/h4&gt;
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           A table too:
         </p>
@@ -475,7 +475,7 @@ Array [
           </tbody>
         </table>
         <p
-          className="jsx-1818180085"
+          className="jsx-430790654"
         >
           Get listed
         </p>
@@ -492,7 +492,7 @@ Array [
         </ul>
       </div>
       <div
-        className="jsx-2170168318 blog-post-video"
+        className="jsx-2988077148 blog-post-video"
       >
         
       </div>

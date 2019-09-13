@@ -48,6 +48,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
         section {
           display: flex;
         }
+
+        section :global(a) {
+          flex: 1;
+        }
         article {
           display: flex;
           flex-direction: column;
