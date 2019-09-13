@@ -145,7 +145,7 @@ You can create a brand new Preview environment using the following Preview appli
 
 Notes:
 
-- Blog slot editions will not include any unpublished blog posts as they are a reference link in the blog post. Publishing the newly create blog posts will make them available when using Preview.
+- Blog slot editions will not include any unpublished blog posts as they are a reference link in the blog post. Publishing the newly created blog posts will make them available when using Preview.
 
 # Publishing
 
