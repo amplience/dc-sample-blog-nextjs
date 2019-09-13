@@ -1,4 +1,7 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+import { Image as DcImage } from 'dc-delivery-sdk-js';
+import { defaultClientConfig } from '../../common/services/dynamic-content-client-config';
+import AmplienceImage from '../../common/interfaces/image.interface';
 
 export interface DynamicImagingOptions {
   w: number;
@@ -73,13 +76,18 @@ function generateSrcOptions(
   return { srcSet: srcSet.join(','), mediaSizes: mediaSizes.join(',') };
 }
 
-const Image = (image: {
-  altText: string;
-  src: string;
+const Image = ({
+  image,
+  dynamicImagingOptions,
+  mediaQueryOptions
+}: {
+  image: AmplienceImage;
   dynamicImagingOptions: DynamicImagingOptions[];
   mediaQueryOptions?: MediaQueryOptions[];
 }) => {
-  const { srcSet, mediaSizes } = generateSrcOptions(image.src, image.dynamicImagingOptions, image.mediaQueryOptions);
+  const dcImage = new DcImage(image.image, defaultClientConfig);
+  const src = dcImage.url().build();
+  const { srcSet, mediaSizes } = generateSrcOptions(src, dynamicImagingOptions, mediaQueryOptions);
 
   // Set the visibleByDefault prop if we are within an iframe
   const visibleByDefault = (): boolean => !!(typeof window === 'object' && window.location !== window.parent.location);
@@ -88,7 +96,7 @@ const Image = (image: {
     <>
       <LazyLoadImage
         alt={image.altText}
-        src={image.src}
+        src={src}
         sizes={mediaSizes}
         srcSet={srcSet}
         className="lazy-img"

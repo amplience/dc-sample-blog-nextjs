@@ -26,7 +26,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
               <div className="blog-card-image">
                 <Image
                   {...{
-                    ...blogPost.image,
+                    image: blogPost.image,
                     dynamicImagingOptions: [
                       { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
                       { h: 403, w: 330, sm: 'c', scaleFit: 'poi' }

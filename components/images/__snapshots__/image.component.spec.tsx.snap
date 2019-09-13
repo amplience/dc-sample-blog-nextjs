@@ -4,7 +4,6 @@ exports[`Image should render a lazy image with a height and width 1`] = `
 <React.Fragment>
   <t
     afterLoad={[Function]}
-    alt="altText"
     beforeLoad={[Function]}
     className="lazy-img"
     delayMethod="throttle"
@@ -12,8 +11,8 @@ exports[`Image should render a lazy image with a height and width 1`] = `
     effect=""
     placeholderSrc=""
     sizes=""
-    src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
-    srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600 600w"
+    src="https://undefined/i/undefined/undefined"
+    srcSet="https://undefined/i/undefined/undefined?h=800&w=600 600w"
     threshold={100}
     visibleByDefault={false}
     wrapperClassName=""
@@ -38,8 +37,8 @@ exports[`Image should render a lazy image with a height, width and crop it 1`] =
     effect=""
     placeholderSrc=""
     sizes=""
-    src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
-    srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c 600w"
+    src="https://i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
+    srcSet="https://i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c 600w"
     threshold={100}
     visibleByDefault={false}
     wrapperClassName=""
@@ -56,7 +55,6 @@ exports[`Image should render a lazy image with width only 1`] = `
 <React.Fragment>
   <t
     afterLoad={[Function]}
-    alt="altText"
     beforeLoad={[Function]}
     className="lazy-img"
     delayMethod="throttle"
@@ -64,8 +62,8 @@ exports[`Image should render a lazy image with width only 1`] = `
     effect=""
     placeholderSrc=""
     sizes=""
-    src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
-    srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?w=800 800w,//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?w=600 600w,//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?w=400 400w"
+    src="https://undefined/i/undefined/undefined"
+    srcSet="https://undefined/i/undefined/undefined?w=800 800w,https://undefined/i/undefined/undefined?w=600 600w,https://undefined/i/undefined/undefined?w=400 400w"
     threshold={100}
     visibleByDefault={false}
     wrapperClassName=""
@@ -82,7 +80,6 @@ exports[`Image should render an image with a height, width and crop it to a defi
 <React.Fragment>
   <t
     afterLoad={[Function]}
-    alt="altText"
     beforeLoad={[Function]}
     className="lazy-img"
     delayMethod="throttle"
@@ -90,8 +87,8 @@ exports[`Image should render an image with a height, width and crop it to a defi
     effect=""
     placeholderSrc=""
     sizes=""
-    src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
-    srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c&scaleFit=poi&poi=0.30741794586182,0.64965417250147,0.125,0.18867924528302 600w"
+    src="https://undefined/i/undefined/undefined"
+    srcSet="https://undefined/i/undefined/undefined?h=800&w=600&sm=c&scaleFit=poi&poi=0.30741794586182,0.64965417250147,0.125,0.18867924528302 600w"
     threshold={100}
     visibleByDefault={false}
     wrapperClassName=""
@@ -116,8 +113,8 @@ exports[`Image should render an image with a height, width and crop it to the de
     effect=""
     placeholderSrc=""
     sizes=""
-    src="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
-    srcSet="//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 600w"
+    src="https://i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags"
+    srcSet="https://i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags?h=800&w=600&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 600w"
     threshold={100}
     visibleByDefault={false}
     wrapperClassName=""

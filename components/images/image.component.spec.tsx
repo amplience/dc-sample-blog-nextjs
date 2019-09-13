@@ -1,6 +1,5 @@
 import Image from './image.component';
 import AmplienceImage from '../../common/interfaces/image.interface';
-import { MediaType } from '../../common/interfaces/media.interface';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
 
@@ -16,14 +15,12 @@ describe('Image', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'friends-shopping-bags',
-        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-        mediaType: MediaType.IMAGE
-      },
-      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650'
+      }
     };
 
     renderer.render(
-      <Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ w: 800 }, { w: 600 }, { w: 400 }]} />
+      <Image image={image.image} altText={image.altText} dynamicImagingOptions={[{ w: 800 }, { w: 600 }, { w: 400 }]} />
     );
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
@@ -35,13 +32,11 @@ describe('Image', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'friends-shopping-bags',
-        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-        mediaType: MediaType.IMAGE
-      },
-      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650'
+      }
     };
 
-    renderer.render(<Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ h: 800, w: 600 }]} />);
+    renderer.render(<Image image={image.image} altText={image.altText} dynamicImagingOptions={[{ h: 800, w: 600 }]} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
@@ -52,14 +47,12 @@ describe('Image', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'friends-shopping-bags',
-        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-        mediaType: MediaType.IMAGE
-      },
-      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650'
+      }
     };
 
     renderer.render(
-      <Image altText={image.altText} src={image.src} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c' }]} />
+      <Image image={image} altText={image.altText} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c' }]} />
     );
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
@@ -71,16 +64,14 @@ describe('Image', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'friends-shopping-bags',
-        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-        mediaType: MediaType.IMAGE
-      },
-      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650'
+      }
     };
 
     renderer.render(
       <Image
+        image={image}
         altText={image.altText}
-        src={image.src}
         dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c', scaleFit: 'poi' }]}
       />
     );
@@ -94,16 +85,14 @@ describe('Image', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'friends-shopping-bags',
-        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-        mediaType: MediaType.IMAGE
-      },
-      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650'
+      }
     };
 
     renderer.render(
       <Image
+        image={image.image}
         altText={image.altText}
-        src={image.src}
         dynamicImagingOptions={[
           {
             h: 800,

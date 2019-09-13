@@ -1,7 +1,6 @@
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Content from './content';
 import { AmplienceContent } from '../../common/interfaces/content.type';
-import { MediaType } from '../../common/interfaces/media.interface';
 
 describe('Content', (): void => {
   let renderer;
@@ -9,17 +8,15 @@ describe('Content', (): void => {
     renderer = ShallowRenderer.createRenderer();
   });
   it('should render different types of content - text, image and video', (): void => {
-    const content: AmplienceContent[] = [
+    const content = [
       {
         image: {
           defaultHost: 'i1-qa.adis.ws',
           endpoint: 'bloblogltd',
           name: 'casual-wear',
-          id: 'e1b511d2-1a33-47e7-8dc7-f460534cb0c7',
-          mediaType: MediaType.IMAGE
+          id: 'e1b511d2-1a33-47e7-8dc7-f460534cb0c7'
         },
-        altText: 'Casual crotch shot',
-        src: '//i1-qa.adis.ws/i/bloblogltd/casual-wear'
+        altText: 'Casual crotch shot'
       },
       {
         text:
@@ -30,8 +27,7 @@ describe('Content', (): void => {
           defaultHost: 'i1-qa.adis.ws',
           endpoint: 'bloblogltd',
           name: 'SampleVideo_1280x720_5mb',
-          id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
-          mediaType: MediaType.VIDEO
+          id: '721044de-d125-4a1a-8ddc-2201b9463f2d'
         },
         srcSet: ['http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p']
       }

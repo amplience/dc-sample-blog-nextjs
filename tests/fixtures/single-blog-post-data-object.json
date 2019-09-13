@@ -20,10 +20,8 @@
           "defaultHost": "i1.adis.ws",
           "endpoint": "blogltd",
           "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
-          "mediaType": "i",
           "name": "man-business-suit"
-        },
-        "src": "//i1.adis.ws/i/blogltd/man-business-suit"
+        }
       },
       "name": "Sir Blog"
     }
@@ -43,10 +41,8 @@
         "defaultHost": "i1.adis.ws",
         "endpoint": "blogltd",
         "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
-        "mediaType": "i",
         "name": "casual-wear"
-      },
-      "src": "//i1.adis.ws/i/blogltd/casual-wear"
+      }
     },
     {
       "_meta": {
@@ -70,7 +66,6 @@
         "defaultHost": "i1.adis.ws",
         "endpoint": "blogltd",
         "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
-        "mediaType": "v",
         "name": "SampleVideo_1280x720_5mb"
       }
     }
@@ -92,17 +87,11 @@
       "defaultHost": "i1.adis.ws",
       "endpoint": "blogltd",
       "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-      "mediaType": "i",
       "name": "friends-shopping-bags"
-    },
-    "src": "//i1.adis.ws/i/blogltd/friends-shopping-bags"
+    }
   },
   "readTime": 12,
-  "tags": [
-    "sir blog",
-    "you're it",
-    "No tiggy backs"
-  ],
+  "tags": ["sir blog", "you're it", "No tiggy backs"],
   "title": "My First Blog Post",
   "urlSlug": "my-first-blog"
 }

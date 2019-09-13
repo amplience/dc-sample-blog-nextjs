@@ -1,8 +1,6 @@
 /* eslint-env jest */
 import renderer from 'react-test-renderer';
 import HeroCard from './hero-card';
-import { MediaType } from '../../common/interfaces/media.interface';
-
 import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';
 
 const mockUseRouter = jest.fn();

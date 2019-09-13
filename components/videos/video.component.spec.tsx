@@ -1,7 +1,6 @@
 import renderer from 'react-test-renderer';
 import Video from './video.component';
 import AmplienceVideo from '../../common/interfaces/video.interface';
-import { MediaType } from '../../common/interfaces/media.interface';
 
 describe('Video', (): void => {
   it('should render an video', (): void => {
@@ -10,8 +9,7 @@ describe('Video', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'SampleVideo_1280x720_5mb',
-        id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
-        mediaType: MediaType.VIDEO
+        id: '721044de-d125-4a1a-8ddc-2201b9463f2d'
       },
       srcSet: ['http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p']
     };
@@ -26,8 +24,7 @@ describe('Video', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'SampleVideo_1280x720_5mb',
-        id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
-        mediaType: MediaType.VIDEO
+        id: '721044de-d125-4a1a-8ddc-2201b9463f2d'
       }
     };
 

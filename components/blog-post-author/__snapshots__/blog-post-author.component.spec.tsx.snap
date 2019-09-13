@@ -15,7 +15,6 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
           className="jsx-2854206183 avatar"
         >
           <Image
-            altText="The dashing Sir Bloblog avatar"
             dynamicImagingOptions={
               Array [
                 Object {
@@ -26,7 +25,17 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
                 },
               ]
             }
-            src="//i1-qa.adis.ws/i/bloblogltd/man-business-suit"
+            image={
+              Object {
+                "altText": "The dashing Sir Bloblog avatar",
+                "image": Object {
+                  "defaultHost": "i1-qa.adis.ws",
+                  "endpoint": "bloblogltd",
+                  "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                  "name": "man-business-suit",
+                },
+              }
+            }
           />
         </div>
         <JSXStyle

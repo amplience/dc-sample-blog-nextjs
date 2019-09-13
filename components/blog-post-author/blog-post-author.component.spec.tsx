@@ -1,6 +1,5 @@
 /* eslint-env jest */
 import BlogPostAuthor from './blog-post-author.component';
-import { MediaType } from '../../common/interfaces/media.interface';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
 describe('BlogPostAuthor', () => {
@@ -18,11 +17,9 @@ describe('BlogPostAuthor', () => {
               defaultHost: 'i1-qa.adis.ws',
               endpoint: 'bloblogltd',
               name: 'man-business-suit',
-              id: 'f9549d3d-f616-487c-b1ad-fad5152f2c7d',
-              mediaType: MediaType.IMAGE
+              id: 'f9549d3d-f616-487c-b1ad-fad5152f2c7d'
             },
-            altText: 'The dashing Sir Bloblog avatar',
-            src: '//i1-qa.adis.ws/i/bloblogltd/man-business-suit'
+            altText: 'The dashing Sir Bloblog avatar'
           }
         }
       ],

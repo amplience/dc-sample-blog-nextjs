@@ -1,9 +1,9 @@
-import { ContentClientConfig } from 'dc-delivery-sdk-js';
 import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
 import { BlogReferenceList, BlogPostReference } from '../interfaces/blog-reference-list.interface';
 import { BlogListData } from '../interfaces/blog-list.interface';
 import getBlogPost from './blog-post.service';
 import BlogPost from '../interfaces/blog-post.interface';
+import { defaultClientConfig } from './dynamic-content-client-config';
 // eslint-disable-next-line
 const allSettled = require('promise.allsettled');
 
@@ -11,11 +11,7 @@ export async function getBlogReferenceList(
   blogReferenceListid: string,
   stagingEnvironment?: string
 ): Promise<BlogReferenceList> {
-  const clientConfig: ContentClientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || '',
-    stagingEnvironment
-  };
+  const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
   const { blogList } = (await deliveryClient.getContentItemById(blogReferenceListid)).toJSON();
   const { title, subTitle, blogPosts = [] }: BlogReferenceList = blogList;

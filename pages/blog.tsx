@@ -6,12 +6,15 @@ import Microdata from '../components/microdata/microdata';
 import { NextSeo } from 'next-seo';
 import Blog from '../components/blog/blog';
 import SharePost from '../components/share-post/share-post';
+import { Image } from 'dc-delivery-sdk-js';
+import { defaultClientConfig } from '../common/services/dynamic-content-client-config';
 
 interface BlogPostProps {
   blogPost: BlogPost;
 }
 
 const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
+  const blogImage = new Image(blogPost.image.image, defaultClientConfig).url().build();
   return (
     <Layout>
       <NextSeo
@@ -25,7 +28,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
           description: blogPost.description,
           images: [
             {
-              url: 'https:' + blogPost.image.src + '?w=1080',
+              url: `https:${blogImage}?w=1080`,
               width: 1080
             }
           ]
@@ -38,7 +41,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
       <Microdata
         description={blogPost.description}
         headline={blogPost.title}
-        imageUrl={blogPost.image.src}
+        imageUrl={blogImage}
         authors={blogPost.authors}
         datePublished={blogPost.date}
       />
