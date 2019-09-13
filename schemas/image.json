@@ -28,12 +28,6 @@
       "description": "insert image alt text"
     }
   },
-  "propertyOrder": [
-    "image",
-    "altText"
-  ],
-  "required": [
-    "image",
-    "altText"
-  ]
+  "propertyOrder": ["image", "altText"],
+  "required": ["image", "altText"]
 }

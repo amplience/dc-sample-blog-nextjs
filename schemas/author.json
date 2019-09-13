@@ -29,20 +29,13 @@
           "properties": {
             "contentType": {
               "title": "image",
-              "enum": [
-                "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"
-              ]
+              "enum": ["https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"]
             }
           }
         }
       ]
     }
   },
-  "propertyOrder": [
-    "name",
-    "avatar"
-  ],
-  "required": [
-    "name"
-  ]
+  "propertyOrder": ["name", "avatar"],
+  "required": ["name"]
 }
