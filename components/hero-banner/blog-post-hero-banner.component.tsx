@@ -31,7 +31,7 @@ const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: str
 
           section :global(h1) {
             font-size: ${theme.fonts.size.xxxLarge};
-            font-weight: ${theme.fonts.weight.medium};
+            font-weight: ${theme.fonts.weight.bold};
             margin-top: 30px;
             margin-bottom: 20px;
           }

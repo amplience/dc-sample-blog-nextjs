@@ -40,7 +40,7 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
         .name {
           color: ${theme.colors.mineShaft};
           font-size: ${theme.fonts.size.normal};
-          font-weight: ${theme.fonts.weight.medium};
+          font-weight: ${theme.fonts.weight.bold};
         }
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           .name {
@@ -90,7 +90,7 @@ const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: 
 
         .date,
         .readTime {
-          color: ${theme.colors.dustyGray};
+          color: ${theme.colors.doveGray};
           font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.regular};
         }
