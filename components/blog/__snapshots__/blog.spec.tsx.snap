@@ -3,7 +3,7 @@
 exports[`Blog renders full blog 1`] = `
 Array [
   <div
-    className="jsx-718450558 content-header"
+    className="jsx-2814946630 content-header"
   >
     <section
       className="jsx-3378232041"
@@ -68,14 +68,14 @@ Array [
     </section>
   </div>,
   <div
-    className="jsx-718450558 blog-image"
+    className="jsx-2814946630 blog-image"
   >
     <div
       className="image-mock"
     />
   </div>,
   <div
-    className="jsx-718450558 content-wrapper"
+    className="jsx-2814946630 content-wrapper"
   >
     <section
       className="jsx-2988077148"
