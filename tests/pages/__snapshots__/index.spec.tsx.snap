@@ -361,7 +361,7 @@ exports[`Index renders index with content 1`] = `
     <script
       dangerouslySetInnerHTML={
         Object {
-          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'ga-tracking-id', 'auto'); ga('send', 'pageview');",
         }
       }
     />
