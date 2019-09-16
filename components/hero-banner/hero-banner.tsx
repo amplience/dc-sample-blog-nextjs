@@ -46,10 +46,11 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           section {
-            padding: 16px;
+            padding: 48px 16px;
           }
           section :global(h1) {
             font-size: ${theme.fonts.size.xxxLarge};
+            font-weight: ${theme.fonts.weight.bold};
             line-height: 2.25rem;
           }
           section :global(h2) {
