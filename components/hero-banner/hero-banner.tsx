@@ -50,7 +50,6 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           }
           section :global(h1) {
             font-size: ${theme.fonts.size.xxxLarge};
-            font-weight: ${theme.fonts.weight.bold};
             line-height: 2.25rem;
           }
           section :global(h2) {

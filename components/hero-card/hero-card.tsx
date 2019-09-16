@@ -155,6 +155,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           
           h1 {
             font-size: ${theme.fonts.size.xxLarge};
+            font-weight: ${theme.fonts.weight.bold};
             line-height: unset;
             margin: 20px 0;
           }
