@@ -19,9 +19,7 @@ describe('Image', (): void => {
       }
     };
 
-    renderer.render(
-      <Image image={image.image} altText={image.altText} dynamicImagingOptions={[{ w: 800 }, { w: 600 }, { w: 400 }]} />
-    );
+    renderer.render(<Image image={image} dynamicImagingOptions={[{ w: 800 }, { w: 600 }, { w: 400 }]} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
@@ -36,7 +34,7 @@ describe('Image', (): void => {
       }
     };
 
-    renderer.render(<Image image={image.image} altText={image.altText} dynamicImagingOptions={[{ h: 800, w: 600 }]} />);
+    renderer.render(<Image image={image} dynamicImagingOptions={[{ h: 800, w: 600 }]} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
@@ -51,9 +49,7 @@ describe('Image', (): void => {
       }
     };
 
-    renderer.render(
-      <Image image={image} altText={image.altText} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c' }]} />
-    );
+    renderer.render(<Image image={image} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c' }]} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
@@ -68,13 +64,7 @@ describe('Image', (): void => {
       }
     };
 
-    renderer.render(
-      <Image
-        image={image}
-        altText={image.altText}
-        dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c', scaleFit: 'poi' }]}
-      />
-    );
+    renderer.render(<Image image={image} dynamicImagingOptions={[{ h: 800, w: 600, sm: 'c', scaleFit: 'poi' }]} />);
     expect(renderer.getRenderOutput()).toMatchSnapshot();
   });
 
@@ -91,8 +81,7 @@ describe('Image', (): void => {
 
     renderer.render(
       <Image
-        image={image.image}
-        altText={image.altText}
+        image={image}
         dynamicImagingOptions={[
           {
             h: 800,
