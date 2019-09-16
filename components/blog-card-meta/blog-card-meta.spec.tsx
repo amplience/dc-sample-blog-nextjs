@@ -1,7 +1,6 @@
 /* eslint-env jest */
 import renderer from 'react-test-renderer';
 import BlogCardMeta from './blog-card-meta';
-import { MediaType } from '../../common/interfaces/media.interface';
 
 describe('BlogCardMeta', () => {
   test('renders full blog card meta', async () => {
@@ -14,14 +13,14 @@ describe('BlogCardMeta', () => {
               id: 'image-id',
               name: 'image-name',
               endpoint: 'image-endpoint',
-              defaultHost: 'image-default-host',
-              mediaType: MediaType.IMAGE
+              defaultHost: 'image-default-host'
             },
             altText: ''
           }
         }
       ],
-      publishedDate: '2019-08-13'
+      publishedDate: '2019-08-13',
+      readTime: 123
     };
     const component = await renderer.create(<BlogCardMeta {...props} />);
     expect(component.toJSON()).toMatchSnapshot();
@@ -36,8 +35,7 @@ describe('BlogCardMeta', () => {
               id: 'image-id',
               name: 'image-name',
               endpoint: 'image-endpoint',
-              defaultHost: 'image-default-host',
-              mediaType: MediaType.IMAGE
+              defaultHost: 'image-default-host'
             },
             altText: ''
           }
@@ -49,14 +47,14 @@ describe('BlogCardMeta', () => {
               id: 'image-id-2',
               name: 'image-name-2',
               endpoint: 'image-endpoint-2',
-              defaultHost: 'image-default-host-2',
-              mediaType: MediaType.IMAGE
+              defaultHost: 'image-default-host-2'
             },
             altText: ''
           }
         }
       ],
-      publishedDate: '2019-08-13'
+      publishedDate: '2019-08-13',
+      readTime: 123
     };
     const component = await renderer.create(<BlogCardMeta {...props} />);
     expect(component.toJSON()).toMatchSnapshot();

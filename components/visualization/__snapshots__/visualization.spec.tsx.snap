@@ -367,10 +367,8 @@ exports[`Visualization should render image 2`] = `
           "defaultHost": "i1-qa.adis.ws",
           "endpoint": "bloblogltd",
           "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-          "mediaType": "i",
           "name": "friends-shopping-bags",
         },
-        "src": "//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags",
       },
     ]
   }
@@ -405,7 +403,6 @@ exports[`Visualization should render video 2`] = `
           "defaultHost": "i1-qa.adis.ws",
           "endpoint": "bloblogltd",
           "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
-          "mediaType": "v",
           "name": "SampleVideo_1280x720_5mb",
         },
       },

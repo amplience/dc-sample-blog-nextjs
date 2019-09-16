@@ -13,8 +13,7 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
       </div>
       <div className="blog-image">
         <Image
-          altText={blogPost.image.altText}
-          src={blogPost.image.src}
+          image={blogPost.image}
           dynamicImagingOptions={[
             { h: 400, w: 2048, sm: 'c', scaleFit: 'poi' },
             { h: 400, w: 1080, sm: 'c', scaleFit: 'poi' },

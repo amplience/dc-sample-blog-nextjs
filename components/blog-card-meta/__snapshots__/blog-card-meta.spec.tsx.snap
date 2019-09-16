@@ -26,7 +26,7 @@ exports[`BlogCardMeta renders full blog card meta 1`] = `
     >
       August 13, 2019
     </span>
-    undefined minutes
+    123 minutes
   </div>
 </div>
 `;
@@ -62,7 +62,7 @@ exports[`BlogCardMeta renders full blog card meta with multiple authors 1`] = `
     >
       August 13, 2019
     </span>
-    undefined minutes
+    123 minutes
   </div>
 </div>
 `;

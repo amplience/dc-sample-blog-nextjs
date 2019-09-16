@@ -1,55 +1,18 @@
 import BlogPost from '../interfaces/blog-post.interface';
-import { ContentClientConfig, DefaultContentBody } from 'dc-delivery-sdk-js';
+import { DefaultContentBody } from 'dc-delivery-sdk-js';
 import { DynamicContentDeliveryService } from './dynamic-content-delivery.service';
-import { MediaType } from '../interfaces/media.interface';
 import { AmplienceContent } from '../interfaces/content.type';
 import { getVideoSources } from './video.service';
-import AmplienceImage from '../interfaces/image.interface';
-import Author from '../interfaces/author.interface';
-import AmplienceVideo from '../interfaces/video.interface';
-import buildMediaUrl from './media.service';
 import convertToBlogDate from './blog-date.service';
-
-function assignMediaType(obj: AmplienceImage | AmplienceVideo): AmplienceImage | AmplienceVideo {
-  if ('image' in obj) {
-    obj.image.mediaType = MediaType.IMAGE;
-  } else if ('video' in obj) {
-    obj.video.mediaType = MediaType.VIDEO;
-  }
-
-  return obj;
-}
-
-function parseImage(image: AmplienceImage): AmplienceImage {
-  image = assignMediaType(image) as AmplienceImage;
-  image.src = buildMediaUrl(image.image);
-
-  return image;
-}
-
-function assignAuthorsAvatarMediaTypes(authors: Author[]): Author[] {
-  return authors.map(
-    (author): Author => {
-      if (author.avatar !== undefined) {
-        author.avatar = parseImage(author.avatar);
-      }
-
-      return author;
-    }
-  );
-}
+import { defaultClientConfig } from './dynamic-content-client-config';
 
 export async function parseContent(content: AmplienceContent[]): Promise<AmplienceContent[]> {
   const updatedContent: AmplienceContent[] = [];
 
   for (let c of content) {
-    if ('image' in c) {
-      c = parseImage(c);
-    } else if ('video' in c) {
-      c = assignMediaType(c) as AmplienceVideo;
+    if ('video' in c) {
       c.srcSet = await getVideoSources(c);
     }
-
     updatedContent.push(c);
   }
 
@@ -79,9 +42,9 @@ export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody):
     title,
     date: convertToBlogDate(date),
     description,
-    authors: assignAuthorsAvatarMediaTypes(authors),
+    authors,
     readTime,
-    image: parseImage(image),
+    image,
     urlSlug,
     content: await parseContent(content),
     tags
@@ -89,11 +52,7 @@ export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody):
 }
 
 export default async function getBlogPost(blogPostId: string, stagingEnvironment?: string): Promise<BlogPost> {
-  const clientConfig: ContentClientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL,
-    stagingEnvironment
-  };
+  const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
 
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
   const contentItem = (await deliveryClient.getContentItemById(blogPostId)).toJSON();

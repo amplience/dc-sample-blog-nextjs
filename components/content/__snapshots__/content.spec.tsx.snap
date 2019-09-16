@@ -9,7 +9,6 @@ exports[`Content should render different types of content - text, image and vide
       className="jsx-2988077148"
     >
       <Image
-        altText="Casual crotch shot"
         dynamicImagingOptions={
           Array [
             Object {
@@ -22,7 +21,17 @@ exports[`Content should render different types of content - text, image and vide
             },
           ]
         }
-        src="//i1-qa.adis.ws/i/bloblogltd/casual-wear"
+        image={
+          Object {
+            "altText": "Casual crotch shot",
+            "image": Object {
+              "defaultHost": "i1-qa.adis.ws",
+              "endpoint": "bloblogltd",
+              "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+              "name": "casual-wear",
+            },
+          }
+        }
       />
     </div>
     <div
@@ -70,7 +79,6 @@ This is some more sample text"
             "defaultHost": "i1-qa.adis.ws",
             "endpoint": "bloblogltd",
             "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
-            "mediaType": "v",
             "name": "SampleVideo_1280x720_5mb",
           }
         }

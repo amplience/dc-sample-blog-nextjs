@@ -11,11 +11,7 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
       avatars.push(
         <div key={index}>
           <div className="avatar">
-            <Image
-              altText={author.avatar.altText}
-              src={author.avatar.src}
-              dynamicImagingOptions={[{ w: 72, h: 72, sm: 'c', scaleFit: 'poi' }]}
-            />
+            <Image image={author.avatar} dynamicImagingOptions={[{ w: 72, h: 72, sm: 'c', scaleFit: 'poi' }]} />
           </div>
           <style jsx>{`
             .avatar :global(img) {

@@ -2,7 +2,6 @@ import Visualization from './visualization';
 import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
-import { MediaType } from '../../common/interfaces/media.interface';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
 
 const mockGetStagingContentItemById = jest.fn();
@@ -41,10 +40,8 @@ describe('Visualization', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'friends-shopping-bags',
-        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650',
-        mediaType: MediaType.IMAGE
-      },
-      src: '//i1-qa.adis.ws/i/bloblogltd/friends-shopping-bags'
+        id: 'edc77f02-0e92-4b1a-88f9-711cacb5d650'
+      }
     };
 
     await renderVisualization(contentItem);
@@ -56,8 +53,7 @@ describe('Visualization', (): void => {
         defaultHost: 'i1-qa.adis.ws',
         endpoint: 'bloblogltd',
         name: 'SampleVideo_1280x720_5mb',
-        id: '721044de-d125-4a1a-8ddc-2201b9463f2d',
-        mediaType: MediaType.VIDEO
+        id: '721044de-d125-4a1a-8ddc-2201b9463f2d'
       },
       srcSet: ['https://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https']
     };

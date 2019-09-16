@@ -100,7 +100,7 @@ const mockFetch = jest.fn();
 jest.mock('isomorphic-unfetch', () => () => mockFetch());
 
 describe('parseContent', () => {
-  test('should parse image when passed as content', async () => {
+  test('should not parse image when passed as content', async () => {
     const imageContent = {
       image: {
         defaultHost: 'i1.adis.ws',
@@ -114,8 +114,6 @@ describe('parseContent', () => {
       altText: 'alt text'
     };
     const expectedImage = JSON.parse(JSON.stringify(imageContent));
-    expectedImage.image.mediaType = 'i';
-    expectedImage.src = '//i1.adis.ws/i/blogltd/casual-wear';
 
     const result = await parseContent([imageContent]);
 
@@ -135,7 +133,6 @@ describe('parseContent', () => {
       }
     };
     const expectedImage = JSON.parse(JSON.stringify(videoContent));
-    expectedImage.video.mediaType = 'v';
     expectedImage.srcSet = ['//i1.adis.ws/v/blogltd/casual-wear?protocol=https'];
 
     mockFetch.mockImplementationOnce(() => {

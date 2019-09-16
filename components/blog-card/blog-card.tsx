@@ -22,7 +22,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           <div className="blog-card-image">
             <Image
               {...{
-                ...blogPost.image,
+                image: blogPost.image,
                 dynamicImagingOptions: [
                   { h: 140, w: 285, sm: 'c', scaleFit: 'poi' },
                   { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },

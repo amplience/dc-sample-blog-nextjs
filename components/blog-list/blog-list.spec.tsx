@@ -2,7 +2,6 @@
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import BlogList from './blog-list';
-import { MediaType } from '../../common/interfaces/media.interface';
 import BlogCard from '../blog-card/blog-card';
 jest.mock('../blog-card/blog-card', () => () => <div className="blog-card-mock" />);
 
@@ -20,8 +19,7 @@ describe('BlogList', () => {
           id: 'image-id',
           name: 'image-name',
           endpoint: 'image-endpoint',
-          defaultHost: 'image-default-host',
-          mediaType: MediaType.IMAGE
+          defaultHost: 'image-default-host'
         },
         altText: ''
       },

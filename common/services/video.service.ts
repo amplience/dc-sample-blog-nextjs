@@ -1,6 +1,7 @@
-import buildMediaUrl from './media.service';
 import AmplienceVideo from '../interfaces/video.interface';
 import fetch from 'isomorphic-unfetch';
+import { ImageUrlBuilder, Video as DcVideo } from 'dc-delivery-sdk-js';
+import { defaultClientConfig } from './dynamic-content-client-config';
 
 export interface VideoProfile {
   media: [
@@ -13,7 +14,9 @@ export interface VideoProfile {
 const httpsAsset = (url: string): string => `${url}?protocol=https`;
 
 export async function getVideoSources(video: AmplienceVideo): Promise<string[]> {
-  const videoMetaUrl = httpsAsset(`${buildMediaUrl(video.video)}.json`);
+  const dcVideo = new DcVideo(video.video, defaultClientConfig);
+  const url = new ImageUrlBuilder(dcVideo).build();
+  const videoMetaUrl = httpsAsset(`${url}.json`);
 
   try {
     const res = await fetch(videoMetaUrl);
