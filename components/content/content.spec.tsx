@@ -1,6 +1,5 @@
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Content from './content';
-import { AmplienceContent } from '../../common/interfaces/content.type';
 
 describe('Content', (): void => {
   let renderer;
