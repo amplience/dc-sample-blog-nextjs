@@ -7,17 +7,15 @@ import { debounce } from 'debounce';
  */
 export default class ScrollTop extends Component {
   componentDidMount(): void {
-    window.addEventListener('resize', this.handleResize());
+    window.addEventListener('resize', debounce(this.handleResize, 200));
   }
 
   componentWillUnmount(): void {
-    window.removeEventListener('resize', this.handleResize());
+    window.removeEventListener('resize', debounce(this.handleResize, 200));
   }
 
   handleResize() {
-    return debounce(() => {
-      window.scrollTo(0, 0);
-    }, 200);
+    window.scrollTo(0, 0);
   }
 
   render(): null {

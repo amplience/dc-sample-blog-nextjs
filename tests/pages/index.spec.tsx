@@ -17,6 +17,13 @@ describe('Index', () => {
     expect(component.toJSON()).toMatchSnapshot();
   });
 
+  test('renders index with content but no blog posts', async () => {
+    const emptyBlogPostFixture = JSON.parse(JSON.stringify(blogListFixture));
+    emptyBlogPostFixture.blogPosts = [];
+    const component = await renderer.create(<Index {...emptyBlogPostFixture} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
   test('getInitialProps returns content via api', async () => {
     mockGetHydratedBlogList.mockImplementation(() => {
       return blogListFixture;
