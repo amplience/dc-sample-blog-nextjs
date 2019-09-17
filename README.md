@@ -202,6 +202,16 @@ To use the staging/other environment, the base URL can be overridden to a differ
 DYNAMIC_CONTENT_BASE_URL=<Base-URL>
 ```
 
+### Adding a noindex, nofollow meta tag to pages
+It's possible that you do not want the content of the blog indexing just yet, so to help achieve this we have added a flag to add a noindex meta tag in the header of all blog pages.
+
+Preview and visualization pages are always set to not be indexed, the pages that are configurable at the moment are the blog list and article pages.
+
+**N.B. Blog pages are indexed by default.**
+```
+X_ROBOTS_TAG_NOINDEX=true
+```
+
 ## Build & Run  
 First build the application using
 ```

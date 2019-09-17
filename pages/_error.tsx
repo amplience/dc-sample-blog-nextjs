@@ -10,7 +10,7 @@ interface CustomErrorProps {
 const CustomError: NextPage<CustomErrorProps> = ({ statusCode = 404 }: CustomErrorProps) => {
   return (
     <Layout>
-      <NextSeo title={`${statusCode} Error`} description={`Error on page with status ${statusCode}`} />
+      <NextSeo title={`${statusCode} Error`} description={`Error on page with status ${statusCode}`} noindex={true} />
       <section>
         <Error statusCode={statusCode} />
       </section>
