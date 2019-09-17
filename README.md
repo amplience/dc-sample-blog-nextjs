@@ -95,11 +95,12 @@ Click on the button below to deploy this repository via Netlify.
 
 During the Netlify setup process you will need to define the following build environment variables
 
-| Environment Var              | Required | Description                                        | Example                              |
-|------------------------------|----------|----------------------------------------------------|--------------------------------------|
-| DYNAMIC_CONTENT_REFERENCE_ID | Yes      | The ID of the Blog List slot                       | 00112233-4455-6677-8899-aabbccddeeff |
-| DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Account Name also known as endpoint                | mycompanyid                          |
-| DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL  | https://api.amplience.net            |
+| Environment Var              | Required | Description                                                 | Example                              |
+|------------------------------|----------|-------------------------------------------------------------|--------------------------------------|
+| DYNAMIC_CONTENT_REFERENCE_ID | Yes      | The ID of the Blog List slot                                | 00112233-4455-6677-8899-aabbccddeeff |
+| DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Account Name also known as endpoint                         | mycompanyid                          |
+| DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL           | https://api.amplience.net            |
+| X_ROBOTS_TAG_NOINDEX         | No       | (Optional) Adds a noindex,nofollow meta tag to blog pages   | true                                 |
 
 
 ### Automate Netlify Deployments
