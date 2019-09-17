@@ -30,22 +30,18 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                     {
                       di: {
                         sm: 'c',
-                        h: '140',
-                        w: '345',
-                        scaleFit: 'poi',
-                        poi:
-                          '{$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}'
+                        h: 140,
+                        w: 345,
+                        scaleFit: 'poi'
                       },
                       media: '(max-width: 736px)'
                     },
                     {
                       di: {
                         sm: 'c',
-                        h: '403',
-                        w: '330',
-                        scaleFit: 'poi',
-                        poi:
-                          '{$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}'
+                        h: 403,
+                        w: 330,
+                        scaleFit: 'poi'
                       }
                     }
                   ]}
