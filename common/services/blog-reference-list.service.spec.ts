@@ -1,5 +1,5 @@
 /* eslint-env jest */
-import getHydratedBlogList, { getBlogReferenceList } from './get-blog-reference-list.service';
+import getHydratedBlogList, { getBlogReferenceList } from './blog-reference-list.service';
 import { ContentItem } from 'dc-delivery-sdk-js';
 import { BlogReferenceList } from '../interfaces/blog-reference-list.interface';
 import blogListFixture from '../../tests/fixtures/blog-list-one-blog.json';
