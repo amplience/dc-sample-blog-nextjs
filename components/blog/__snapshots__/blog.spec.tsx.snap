@@ -1,568 +1,213 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Blog renders full blog 1`] = `
-Array [
+<React.Fragment>
   <div
     className="jsx-2678308288 content-header"
   >
-    <section
-      className="jsx-3378232041"
-    >
-      <div
-        className="jsx-3378232041 avatars"
-      >
-        <div
-          className="jsx-2854206183"
-        >
-          <div
-            className="jsx-2854206183 avatar"
-          >
-            <picture>
-              <source
-                srcSet="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/man-business-suit?&w=72&h=72&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-                type="image/webp"
-              />
-              <source
-                srcSet="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/man-business-suit?&w=72&h=72&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-              />
-              <img
-                alt="The dashing Sir Blog avatar"
-                src="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
-              />
-            </picture>
-          </div>
-        </div>
-      </div>
-      <div
-        className="jsx-3378232041 publish-data"
-      >
-        <div
-          className="jsx-3378232041 authors"
-        >
-          <div
-            className="jsx-3680733511 name"
-          >
-            Sir Blog
-          </div>
-        </div>
-        <div
-          className="jsx-3378232041 publish-metadata"
-        >
-          <div
-            className="jsx-3378232041 date"
-          >
-            August 07, 2019
-          </div>
-          <div
-            className="jsx-3378232041 readTime"
-          >
-            12
-             mins read
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      className="jsx-3528769338"
-    >
-      <h1
-        className="jsx-2799736912"
-      >
-        My First Blog Post
-      </h1>
-      <h2
-        className="jsx-1054465095"
-      >
-        Some text for the description that explains this blog post
-      </h2>
-    </section>
-  </div>,
+    <BlogPostAuthor
+      authors={
+        Array [
+          Object {
+            "_meta": Object {
+              "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+              "name": "blog-author",
+              "schema": "https://schema.localhost.com/author.json",
+            },
+            "avatar": Object {
+              "_meta": Object {
+                "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                "name": "blog-avatar",
+                "schema": "https://schema.localhost.com/image.json",
+              },
+              "altText": "The dashing Sir Blog avatar",
+              "image": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                },
+                "defaultHost": "i1.adis.ws",
+                "endpoint": "blogltd",
+                "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                "name": "man-business-suit",
+              },
+            },
+            "name": "Sir Blog",
+          },
+        ]
+      }
+      date="August 07, 2019"
+      readTime={12}
+    />
+    <BlogPostHeroBanner
+      subTitle="Some text for the description that explains this blog post"
+      title="My First Blog Post"
+    />
+  </div>
   <div
     className="jsx-2678308288 blog-image"
   >
-    <picture>
-      <source
-        media="(min-width: 1080px)"
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2048&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=4096&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 768px)"
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1080&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2160&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 480px)"
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=768&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1536&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-        type="image/webp"
-      />
-      <source
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=960&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-        type="image/webp"
-      />
-      <source
-        media="(min-width: 1080px)"
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2048&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=4096&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-      />
-      <source
-        media="(min-width: 768px)"
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1080&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2160&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-      />
-      <source
-        media="(min-width: 480px)"
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=768&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1536&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-      />
-      <source
-        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=960&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-      />
-      <img
-        alt="crotch bags"
-        src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
-      />
-    </picture>
-  </div>,
+    <Picture
+      image={
+        Object {
+          "_meta": Object {
+            "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+            "name": "bag-image",
+            "schema": "https://schema.localhost.com/image.json",
+          },
+          "altText": "crotch bags",
+          "image": Object {
+            "_meta": Object {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+            },
+            "defaultHost": "i1.adis.ws",
+            "endpoint": "blogltd",
+            "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+            "name": "friends-shopping-bags",
+          },
+        }
+      }
+      sources={
+        Array [
+          Object {
+            "di": Object {
+              "scaleFit": "poi",
+              "sm": "c",
+              "w": 2048,
+            },
+            "media": "(min-width: 1080px)",
+          },
+          Object {
+            "di": Object {
+              "scaleFit": "poi",
+              "sm": "c",
+              "w": 1080,
+            },
+            "media": "(min-width: 768px)",
+          },
+          Object {
+            "di": Object {
+              "scaleFit": "poi",
+              "sm": "c",
+              "w": 768,
+            },
+            "media": "(min-width: 480px)",
+          },
+          Object {
+            "di": Object {
+              "scaleFit": "poi",
+              "sm": "c",
+              "w": 480,
+            },
+          },
+        ]
+      }
+    />
+  </div>
   <div
     className="jsx-2678308288 content-wrapper"
   >
-    <section
-      className="jsx-2988077148"
-    >
-      <div
-        className="jsx-2988077148"
-      >
-        <picture>
-          <source
-            media="(min-width: 415px)"
-            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=675&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=1350&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-            type="image/webp"
-          />
-          <source
-            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=828&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-            type="image/webp"
-          />
-          <source
-            media="(min-width: 415px)"
-            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=675&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=1350&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-          />
-          <source
-            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=828&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-          />
-          <img
-            alt="Alt text"
-            src="https://i1.adis.ws/i/blogltd/casual-wear?&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
-          />
-        </picture>
-      </div>
-      <div
-        className="jsx-2988077148"
-      >
-        <h1
-          className="jsx-2595089998"
-        >
-          This is my first Blog
-        </h1>
-        <h2
-          className="jsx-2595089998"
-        >
-          Look-a-header 2
-        </h2>
-        <h3
-          className="jsx-2595089998"
-        >
-          Look-a-header 3
-        </h3>
-        <h4
-          className="jsx-2595089998"
-        >
-          Look-a-header 4
-        </h4>
-        <h5
-          className="jsx-2595089998"
-        >
-          Look-a-header 5
-        </h5>
-        <h6
-          className="jsx-2595089998"
-        >
-          Look-a-header 6
-        </h6>
-        <p
-          className="jsx-430790654"
-        >
-          <em>
-            <strong>
-              This
-            </strong>
-          </em>
-           
-          <em>
-            is
-          </em>
-           
-          <em>
-            some
-          </em>
-           
-          <del>
-            sample
-          </del>
-           
-          <strong>
-            text
-          </strong>
-          .
-        </p>
-        <p
-          className="jsx-430790654"
-        >
-          <img
-            alt="alt text"
-            src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"
-            title="Logo Title Text 1"
-          />
-        </p>
-        <p
-          className="jsx-430790654"
-        >
-          This is some more sample text with a 
-          <span
-            className="jsx-3731109703"
-          >
-            <a
-              className="jsx-3655793200"
-              href="http://bbc.co.uk"
-              rel="noreferrer"
-              target="_new"
-            >
-              LINK
-            </a>
-          </span>
-        </p>
-        <blockquote
-          className="jsx-2064009043"
-        >
-          <p
-            className="jsx-430790654"
-          >
-            Comments are cool!
-          </p>
-          <p
-            className="jsx-430790654"
-          >
-            See what I mean
-          </p>
-        </blockquote>
-        <p
-          className="jsx-430790654"
-        >
-          Look some code:
-        </p>
-        <pre
-          style={
-            Object {
-              "MozHyphens": "none",
-              "MozTabSize": "4",
-              "OTabSize": "4",
-              "WebkitHyphens": "none",
-              "background": "#1d1f21",
-              "borderRadius": "0.3em",
-              "color": "#c5c8c6",
-              "direction": "ltr",
-              "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-              "hyphens": "none",
-              "lineHeight": "1.5",
-              "margin": ".5em 0",
-              "msHyphens": "none",
-              "overflow": "auto",
-              "padding": "1em",
-              "tabSize": "4",
-              "textAlign": "left",
-              "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
-              "whiteSpace": "pre",
-              "wordBreak": "normal",
-              "wordSpacing": "normal",
-            }
-          }
-        >
-          <code
-            style={
-              Object {
-                "MozHyphens": "none",
-                "MozTabSize": "4",
-                "OTabSize": "4",
-                "WebkitHyphens": "none",
-                "color": "#c5c8c6",
-                "direction": "ltr",
-                "float": "left",
-                "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-                "hyphens": "none",
-                "lineHeight": "1.5",
-                "msHyphens": "none",
-                "paddingRight": "10px",
-                "tabSize": "4",
-                "textAlign": "left",
-                "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
-                "whiteSpace": "pre",
-                "wordBreak": "normal",
-                "wordSpacing": "normal",
-              }
-            }
-          >
-            <span
-              className="react-syntax-highlighter-line-number"
-              style={Object {}}
-            >
-              1
+    <Content
+      content={
+        Array [
+          Object {
+            "_meta": Object {
+              "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+              "name": "casual-crotch-shot",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "Alt text",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "i1.adis.ws",
+              "endpoint": "blogltd",
+              "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+              "name": "casual-wear",
+            },
+          },
+          Object {
+            "_meta": Object {
+              "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+              "name": "my-first-blog-text",
+              "schema": "https://schema.localhost.com/text.json",
+            },
+            "text": "# This is my first Blog
 
-            </span>
-            <span
-              className="react-syntax-highlighter-line-number"
-              style={Object {}}
-            >
-              2
+## Look-a-header 2
 
-            </span>
-          </code>
-          <code
-            style={
-              Object {
-                "MozHyphens": "none",
-                "MozTabSize": "4",
-                "OTabSize": "4",
-                "WebkitHyphens": "none",
-                "color": "#c5c8c6",
-                "direction": "ltr",
-                "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-                "hyphens": "none",
-                "lineHeight": "1.5",
-                "msHyphens": "none",
-                "tabSize": "4",
-                "textAlign": "left",
-                "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
-                "whiteSpace": "pre",
-                "wordBreak": "normal",
-                "wordSpacing": "normal",
-              }
-            }
-          >
-            <span
-              style={Object {}}
-            >
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#96CBFE",
-                  }
-                }
-              >
-                const
-              </span>
-              <span
-                style={Object {}}
-              >
-                 something 
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#EDEDED",
-                  }
-                }
-              >
-                =
-              </span>
-              <span
-                style={Object {}}
-              >
-                 
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#A8FF60",
-                  }
-                }
-              >
-                'anything'
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#c5c8c6",
-                  }
-                }
-              >
-                ;
-              </span>
-              <span
-                style={Object {}}
-              >
-                
+### Look-a-header 3
 
-              </span>
-            </span>
-            <span
-              style={Object {}}
-            >
-              <span
-                style={Object {}}
-              >
-                
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#DAD085",
-                  }
-                }
-              >
-                calls
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#c5c8c6",
-                  }
-                }
-              >
-                (
-              </span>
-              <span
-                style={Object {}}
-              >
-                something
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#c5c8c6",
-                  }
-                }
-              >
-                )
-              </span>
-              <span
-                className="token"
-                style={
-                  Object {
-                    "color": "#c5c8c6",
-                  }
-                }
-              >
-                ;
-              </span>
-            </span>
-          </code>
-        </pre>
-        <p
-          className="jsx-430790654"
-        >
-          inline 
-          <code
-            className="jsx-3800523359"
-          >
-            code
-          </code>
-           is awesome underlined
-        </p>
-        <hr />
-        &lt;h4&gt;A title&lt;/h4&gt;
-        <p
-          className="jsx-430790654"
-        >
-          A table too:
-        </p>
-        <table>
-          <thead>
-            <tr>
-              <th>
-                Hello
-              </th>
-              <th>
-                world
-              </th>
-              <th>
-                table
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                some
-              </td>
-              <td>
-                values
-              </td>
-              <td>
-                here
-              </td>
-            </tr>
-            <tr>
-              <td>
-                some
-              </td>
-              <td>
-                values
-              </td>
-              <td>
-                here
-              </td>
-            </tr>
-            <tr>
-              <td>
-                some
-              </td>
-              <td>
-                values
-              </td>
-              <td>
-                here
-              </td>
-            </tr>
-            <tr>
-              <td>
-                some
-              </td>
-              <td>
-                values
-              </td>
-              <td>
-                here
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <p
-          className="jsx-430790654"
-        >
-          Get listed
-        </p>
-        <ul>
-          <li>
-            Item One
-          </li>
-          <li>
-            Item Two
-          </li>
-          <li>
-            Item Three
-          </li>
-        </ul>
-      </div>
-      <div
-        className="jsx-2988077148 blog-post-video"
-      >
-        
-      </div>
-    </section>
-  </div>,
-]
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+          },
+          Object {
+            "_meta": Object {
+              "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+              "name": "my-first-blog-video",
+              "schema": "https://schema.localhost.com/video.json",
+            },
+            "srcSet": Array [],
+            "video": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+              },
+              "defaultHost": "i1.adis.ws",
+              "endpoint": "blogltd",
+              "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+              "name": "SampleVideo_1280x720_5mb",
+            },
+          },
+        ]
+      }
+    />
+  </div>
+  <JSXStyle
+    id="2678308288"
+  >
+    .content-header.jsx-2678308288{margin:auto;max-width:740px;}.content-wrapper.jsx-2678308288{margin:auto;max-width:675px;padding-bottom:100px;}.blog-image.jsx-2678308288 img{object-fit:cover;width:100%;}footer{margin-top:100px;}@media (max-width:675px){.content-header.jsx-2678308288,.content-footer.jsx-2678308288,.content-wrapper.jsx-2678308288{display:block;padding:0 20px;}}
+  </JSXStyle>
+</React.Fragment>
 `;

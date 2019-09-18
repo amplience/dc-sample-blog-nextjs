@@ -1,10 +1,9 @@
 /* eslint-env jest */
 import renderer from 'react-test-renderer';
+import ShallowRenderer from 'react-test-renderer/shallow';
 import BlogCard from './blog-card';
 import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';
 import { mount } from 'enzyme';
-import toJson from 'enzyme-to-json';
-import StaticLink from '../static-link/static-link';
 
 const mockUseRouter = jest.fn();
 jest.mock('next/router', () => {
@@ -18,8 +17,10 @@ describe('BlogCard', () => {
     mockUseRouter.mockImplementationOnce(() => {
       return { query: {} };
     });
-    const component = mount(<BlogCard blogPost={blogPostFixture} />);
-    expect(toJson(component)).toMatchSnapshot();
+
+    const component = ShallowRenderer.createRenderer();
+    component.render(<BlogCard blogPost={blogPostFixture} />);
+    expect(component.getRenderOutput()).toMatchSnapshot();
   });
 
   test('renders full blog card with lazy loaded placeholders', () => {

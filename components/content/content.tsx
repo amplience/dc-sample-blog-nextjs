@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import markdown from '../markdown-renderers/markdown';
 import theme from '../../common/styles/default/theme';
 import Picture from '../picture/picture';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const MARKDOWN_RENDERERS = { ...markdown };
 
@@ -12,8 +13,10 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
     <>
       <section>
         {content.map((c: AmplienceContent, index: number) => {
+          let contentComponent;
+
           if ('image' in c) {
-            return (
+            contentComponent = (
               <div key={c.image.id}>
                 <Picture
                   image={c}
@@ -30,21 +33,29 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
               </div>
             );
           } else if ('video' in c) {
-            return (
+            contentComponent = (
               <div key={c.video.id} className="blog-post-video">
                 <Video video={c.video} srcSet={c.srcSet} />
               </div>
             );
           } else if ('text' in c) {
-            return (
+            contentComponent = (
               <div key={`text${index}`}>
                 <ReactMarkdown source={c.text} renderers={MARKDOWN_RENDERERS} />
               </div>
             );
           }
+          return (
+            <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
+              {contentComponent}
+            </LazyLoadComponent>
+          );
         })}
       </section>
       <style jsx>{`
+        .content-placeholder {
+          height: 800px;
+        }
         section {
           color: ${theme.colors.doveGray};
           display: flex;
