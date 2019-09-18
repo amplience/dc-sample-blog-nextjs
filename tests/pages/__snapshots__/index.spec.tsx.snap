@@ -63,16 +63,28 @@ exports[`Index renders index with content 1`] = `
             <div
               className="jsx-1454689318 blog-card-image"
             >
-              <span
-                className="lazy-img"
-                style={
-                  Object {
-                    "display": "inline-block",
-                    "height": 0,
-                    "width": 0,
-                  }
-                }
-              />
+              <picture>
+                <source
+                  media="(max-width: 736px)"
+                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+                  type="image/webp"
+                />
+                <source
+                  media="(max-width: 736px)"
+                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+                />
+                <source
+                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+                />
+                <img
+                  alt="crotch bags"
+                  src="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+                />
+              </picture>
             </div>
             <div
               className="jsx-1454689318 blog-card-content"
@@ -140,6 +152,309 @@ exports[`Index renders index with content 1`] = `
             <img
               alt="Amplience logo"
               className="jsx-1701653183 logo"
+              src="/static/images/logo-340w.png"
+              srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+            />
+            <div
+              className="jsx-27833366 social-links"
+            >
+              <a
+                className="jsx-3655793200"
+                href="//twitter.com/amplience"
+                rel="noreferrer"
+                target="_new"
+              >
+                <img
+                  alt="Twitter logo"
+                  className="jsx-27833366"
+                  src="/static/images/social/ic_twitter.svg"
+                />
+              </a>
+              <a
+                className="jsx-3655793200"
+                href="//www.linkedin.com/company/amplience/"
+                rel="noreferrer"
+                target="_new"
+              >
+                <img
+                  alt="Linkedin logo"
+                  className="jsx-27833366"
+                  src="/static/images/social/ic_linkedin.svg"
+                />
+              </a>
+            </div>
+          </div>
+          <div
+            className="jsx-27833366 copyright"
+          >
+            © Copyright Amplience 
+            2019
+          </div>
+        </div>
+        <div
+          className="jsx-27833366 footer-links"
+        >
+          <section
+            className="jsx-287747732 footer-links-section"
+          >
+            <h4
+              className="jsx-287747732"
+            >
+              For Developers
+            </h4>
+            <ul
+              className="jsx-287747732"
+            >
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//github.com/amplience/"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  GitHub
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//stackoverflow.com/questions/tagged/amplience-dynamic-content"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  Stack Overflow
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//docs.amplience.net/integration/developergettingstarted.html"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  Dynamic Content docs
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//docs.amplience.net/contenthub.html"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  Content Hub docs
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//docs.amplience.net/integration/reference.html"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  API reference
+                </a>
+              </li>
+            </ul>
+          </section>
+          <section
+            className="jsx-287747732 footer-links-section"
+          >
+            <h4
+              className="jsx-287747732"
+            >
+              Company
+            </h4>
+            <ul
+              className="jsx-287747732"
+            >
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//amplience.com"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  Website
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//amplience.com/careers"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  Careers
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//amplience.com/privacy-cookie-policy"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  Privacy policy
+                </a>
+              </li>
+              <li>
+                <a
+                  className="jsx-3655793200"
+                  href="//docs.amplience.net/releasenotes/readme.html"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  What\`s new
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </section>
+    </footer>
+    <div
+      className="cookieConsent "
+      style={
+        Object {
+          "alignItems": "center",
+          "background": "rgba(255, 255, 255, 0.9)",
+          "bottom": "0",
+          "boxShadow": "20px 20px 20px 10px #000",
+          "color": "#333",
+          "flexDirection": "column",
+          "position": "fixed",
+          "textAlign": "center",
+          "width": "100%",
+          "zIndex": 1,
+        }
+      }
+    >
+      <div
+        className="cookie-banner-content"
+        style={
+          Object {
+            "padding": "20px 0px 10px",
+          }
+        }
+      >
+        We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
+         
+        <a
+          href="https://amplience.com/privacy-cookie-policy/"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Cookie Policy
+        </a>
+        .
+      </div>
+      <button
+        className="cookie-banner-btn"
+        id=""
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "#fff",
+            "border": "3px solid #CCC",
+            "borderRadius": "5px",
+            "color": "#333",
+            "marginBottom": "10px",
+          }
+        }
+      >
+        Accept Cookies
+      </button>
+    </div>
+    <script
+      async={true}
+      src="https://www.google-analytics.com/analytics.js"
+    />
+    <script
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Index renders index with content but no blog posts 1`] = `
+<div
+  className="jsx-873644259 site-container"
+>
+  <section
+    className="jsx-1904209643"
+  >
+    <header
+      className="jsx-1904209643"
+    >
+      <a
+        aria-label=""
+        className="jsx-3354872520"
+        href="/"
+      >
+        <img
+          alt="Amplience logo"
+          className="jsx-1025394034 logo"
+          src="/static/images/logo-white-340w.png"
+          srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
+        />
+      </a>
+      <h1
+        className="jsx-1904209643"
+      >
+        PRODUCT BLOG
+      </h1>
+    </header>
+  </section>
+  <div
+    className="jsx-873644259 site-content"
+  >
+    <main
+      className="jsx-873644259"
+    >
+      <section
+        className="jsx-2541469627"
+      >
+        <h1
+          className="jsx-2799736912"
+        >
+          blog-test-title
+        </h1>
+        <h2
+          className="jsx-1054465095"
+        >
+          blog-test-sub-title
+        </h2>
+      </section>
+      <div
+        className="jsx-3275285957 no-published-blogs"
+      >
+        <p
+          className="jsx-3275285957"
+        >
+          No blogs published yet!
+        </p>
+      </div>
+    </main>
+    <footer
+      className="jsx-27833366"
+    >
+      <section
+        className="jsx-27833366"
+      >
+        <div
+          className="jsx-27833366 footer-info"
+        >
+          <div
+            className="jsx-27833366 footer-info-top"
+          >
+            <img
+              alt="Amplience logo"
+              className="jsx-1025394034 logo"
               src="/static/images/logo-340w.png"
               srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
             />

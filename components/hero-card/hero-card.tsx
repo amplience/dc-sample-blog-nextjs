@@ -1,9 +1,9 @@
-import Image from '../images/image.component';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
 import StaticLink from '../static-link/static-link';
 import { useRouter } from 'next/router';
+import Picture from '../picture/picture';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -24,18 +24,27 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           <StaticLink ariaLabel={blogPost.title} href={blogLink}>
             <article>
               <div className="blog-card-image">
-                <Image
-                  {...{
-                    image: blogPost.image,
-                    dynamicImagingOptions: [
-                      { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
-                      { h: 403, w: 330, sm: 'c', scaleFit: 'poi' }
-                    ],
-                    mediaQueryOptions: [
-                      { mediaFeature: 'max-width', mediaSize: theme.layout.narrowPageWidth, containerSize: '321px' },
-                      { mediaSize: '330px' }
-                    ]
-                  }}
+                <Picture
+                  image={blogPost.image}
+                  sources={[
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 345,
+                        scaleFit: 'poi'
+                      },
+                      media: '(max-width: 736px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 403,
+                        w: 330,
+                        scaleFit: 'poi'
+                      }
+                    }
+                  ]}
                 />
               </div>
               <div className="blog-card-content">

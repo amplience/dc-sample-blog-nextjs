@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picture it should render a picture element 1`] = `
+<picture>
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&fmt=webp 2x"
+    type="image/webp"
+  />
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690 2x"
+  />
+  <img
+    alt="some-alt-text"
+    src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345"
+  />
+</picture>
+`;
+
+exports[`Picture it should render a picture element with media 1`] = `
+<picture>
+  <source
+    media="(max-width: 736px)"
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&fmt=webp 2x"
+    type="image/webp"
+  />
+  <source
+    media="(max-width: 736px)"
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690 2x"
+  />
+  <img
+    alt="some-alt-text"
+    src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345"
+  />
+</picture>
+`;
+
+exports[`Picture it should render a picture element with no \`h\` di option 1`] = `
+<picture>
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&w=345&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&w=690&fmt=webp 2x"
+    type="image/webp"
+  />
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&w=345 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&w=690 2x"
+  />
+  <img
+    alt="some-alt-text"
+    src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&w=345"
+  />
+</picture>
+`;
+
+exports[`Picture it should render a picture element with no \`w\` di option 1`] = `
+<picture>
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=345&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=690&fmt=webp 2x"
+    type="image/webp"
+  />
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=345 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=690 2x"
+  />
+  <img
+    alt="some-alt-text"
+    src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=345"
+  />
+</picture>
+`;
+
+exports[`Picture it should render a picture element with poi 1`] = `
+<picture>
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+    type="image/webp"
+  />
+  <source
+    srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+  />
+  <img
+    alt="some-alt-text"
+    src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+  />
+</picture>
+`;
