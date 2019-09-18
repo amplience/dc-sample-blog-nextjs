@@ -17,9 +17,19 @@ Array [
           <div
             className="jsx-2854206183 avatar"
           >
-            <div
-              className="image-mock"
-            />
+            <picture>
+              <source
+                srcSet="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/man-business-suit?&w=72&h=72&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+                type="image/webp"
+              />
+              <source
+                srcSet="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/man-business-suit?&w=72&h=72&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+              />
+              <img
+                alt="The dashing Sir Blog avatar"
+                src="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+              />
+            </picture>
           </div>
         </div>
       </div>
@@ -120,9 +130,28 @@ Array [
       <div
         className="jsx-2988077148"
       >
-        <div
-          className="image-mock"
-        />
+        <picture>
+          <source
+            media="(min-width: 415px)"
+            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=675&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=1350&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=828&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 415px)"
+            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=675&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=1350&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/casual-wear?&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/casual-wear?&w=828&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <img
+            alt="Alt text"
+            src="https://i1.adis.ws/i/blogltd/casual-wear?&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+          />
+        </picture>
       </div>
       <div
         className="jsx-2988077148"

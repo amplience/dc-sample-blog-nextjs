@@ -1,6 +1,6 @@
 import Author from '../../common/interfaces/author.interface';
-import Image from '../../components/images/image.component';
 import theme from '../../common/styles/default/theme';
+import Picture from '../picture/picture';
 
 function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorNames: JSX.Element } {
   const avatars: JSX.Element[] = [];
@@ -11,7 +11,14 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
       avatars.push(
         <div key={index}>
           <div className="avatar">
-            <Image image={author.avatar} dynamicImagingOptions={[{ w: 72, h: 72, sm: 'c', scaleFit: 'poi' }]} />
+            <Picture
+              image={author.avatar}
+              sources={[
+                {
+                  di: { w: 36, h: 36, sm: 'c', scaleFit: 'poi' }
+                }
+              ]}
+            />
           </div>
           <style jsx>{`
             .avatar :global(img) {

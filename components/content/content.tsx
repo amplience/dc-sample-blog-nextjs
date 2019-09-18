@@ -1,9 +1,9 @@
-import Image from '../images/image.component';
 import Video from '../videos/video.component';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import ReactMarkdown from 'react-markdown';
 import markdown from '../markdown-renderers/markdown';
 import theme from '../../common/styles/default/theme';
+import Picture from '../picture/picture';
 
 const MARKDOWN_RENDERERS = { ...markdown };
 
@@ -15,7 +15,18 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
           if ('image' in c) {
             return (
               <div key={c.image.id}>
-                <Image image={c} dynamicImagingOptions={[{ w: 675, scaleFit: 'poi' }, { w: 374, scaleFit: 'poi' }]} />
+                <Picture
+                  image={c}
+                  sources={[
+                    {
+                      di: { w: 675, scaleFit: 'poi' },
+                      media: '(min-width: 415px)'
+                    },
+                    {
+                      di: { w: 414, scaleFit: 'poi' }
+                    }
+                  ]}
+                />
               </div>
             );
           } else if ('video' in c) {

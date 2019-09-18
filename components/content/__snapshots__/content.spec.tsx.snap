@@ -8,19 +8,7 @@ exports[`Content should render different types of content - text, image and vide
     <div
       className="jsx-2988077148"
     >
-      <Image
-        dynamicImagingOptions={
-          Array [
-            Object {
-              "scaleFit": "poi",
-              "w": 675,
-            },
-            Object {
-              "scaleFit": "poi",
-              "w": 374,
-            },
-          ]
-        }
+      <Picture
         image={
           Object {
             "altText": "Casual crotch shot",
@@ -31,6 +19,23 @@ exports[`Content should render different types of content - text, image and vide
               "name": "casual-wear",
             },
           }
+        }
+        sources={
+          Array [
+            Object {
+              "di": Object {
+                "scaleFit": "poi",
+                "w": 675,
+              },
+              "media": "(min-width: 415px)",
+            },
+            Object {
+              "di": Object {
+                "scaleFit": "poi",
+                "w": 414,
+              },
+            },
+          ]
         }
       />
     </div>

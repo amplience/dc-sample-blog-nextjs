@@ -14,17 +14,7 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
         <div
           className="jsx-2854206183 avatar"
         >
-          <Image
-            dynamicImagingOptions={
-              Array [
-                Object {
-                  "h": 72,
-                  "scaleFit": "poi",
-                  "sm": "c",
-                  "w": 72,
-                },
-              ]
-            }
+          <Picture
             image={
               Object {
                 "altText": "The dashing Sir Bloblog avatar",
@@ -35,6 +25,18 @@ exports[`BlogPostAuthor renders author with an avatar, name and read time 1`] = 
                   "name": "man-business-suit",
                 },
               }
+            }
+            sources={
+              Array [
+                Object {
+                  "di": Object {
+                    "h": 36,
+                    "scaleFit": "poi",
+                    "sm": "c",
+                    "w": 36,
+                  },
+                },
+              ]
             }
           />
         </div>
