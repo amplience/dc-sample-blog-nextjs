@@ -5,7 +5,7 @@ import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
 import HeroCard from '../components/hero-card/hero-card';
 import { NextSeo } from 'next-seo';
-import getHydratedBlogList from '../common/services/get-blog-reference-list.service';
+import getHydratedBlogList from '../common/services/blog-reference-list.service';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   const noPublishedBlogs = (
