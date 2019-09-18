@@ -7,23 +7,23 @@ exports[`BlogCard renders full blog card 1`] = `
     beforeLoad={[Function]}
     placeholder={
       <div
-        className="jsx-1393874548 article-placeholder"
+        className="jsx-887154041 article-placeholder"
       />
     }
     visibleByDefault={false}
   >
     <section
-      className="jsx-1393874548"
+      className="jsx-887154041"
     >
       <StaticLink
         ariaLabel="My First Blog Post"
         href="/blog/my-first-blog"
       >
         <article
-          className="jsx-1393874548"
+          className="jsx-887154041"
         >
           <div
-            className="jsx-1393874548 blog-card-image"
+            className="jsx-887154041 blog-card-image"
           >
             <Picture
               image={
@@ -96,10 +96,10 @@ exports[`BlogCard renders full blog card 1`] = `
             />
           </div>
           <div
-            className="jsx-1393874548 blog-card-content"
+            className="jsx-887154041 blog-card-content"
           >
             <h1
-              className="jsx-1393874548"
+              className="jsx-887154041"
             >
               My First Blog Post
             </h1>
@@ -137,7 +137,7 @@ exports[`BlogCard renders full blog card 1`] = `
               readTime={12}
             />
             <p
-              className="jsx-1393874548"
+              className="jsx-887154041"
             >
               Some text for the description that explains this blog post
             </p>
@@ -160,18 +160,19 @@ exports[`BlogCard renders full blog card 1`] = `
         "1.5rem",
         "1097px",
         "736px",
+        "700",
         "300",
       ]
     }
-    id="477236033"
+    id="3348607778"
   >
-    section.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}section.__jsx-style-dynamic-selector a{-webkit-flex:1;-ms-flex:1;flex:1;}article.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:0 20px 25px 0 rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;min-width:324px;}article.__jsx-style-dynamic-selector:hover,article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 14px 2px rgba(0,0,0,0.25);}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;width:100%;height:135px;}.blog-card-content.__jsx-style-dynamic-selector{padding:15px;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}h1.__jsx-style-dynamic-selector{color:#333333;font-size:1.5rem;font-weight:500;line-height:1.875rem;margin-top:0;margin-bottom:12px;}p.__jsx-style-dynamic-selector{color:#666666;font-weight:400;line-height:1.5rem;margin-bottom:0;}.article-placeholder.__jsx-style-dynamic-selector{height:400px;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{margin-bottom:60px;}article.__jsx-style-dynamic-selector{min-width:100%;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{min-height:unset;box-shadow:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}h1.__jsx-style-dynamic-selector{line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-weight:300;}.blog-card-content.__jsx-style-dynamic-selector{padding:0 10px 0 10px;}}
+    section.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}section.__jsx-style-dynamic-selector a{-webkit-flex:1;-ms-flex:1;flex:1;}article.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:0 20px 25px 0 rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;min-width:324px;}article.__jsx-style-dynamic-selector:hover,article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 14px 2px rgba(0,0,0,0.25);}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;width:100%;height:135px;}.blog-card-content.__jsx-style-dynamic-selector{padding:15px;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}h1.__jsx-style-dynamic-selector{color:#333333;font-size:1.5rem;font-weight:500;line-height:1.875rem;margin-top:0;margin-bottom:12px;}p.__jsx-style-dynamic-selector{color:#666666;font-weight:400;line-height:1.5rem;margin-bottom:0;}.article-placeholder.__jsx-style-dynamic-selector{height:400px;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{margin-bottom:60px;}article.__jsx-style-dynamic-selector{min-width:100%;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{min-height:unset;box-shadow:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}h1.__jsx-style-dynamic-selector{font-weight:700;line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-weight:300;}.blog-card-content.__jsx-style-dynamic-selector{padding:0 10px 0 10px;}}
   </JSXStyle>
 </React.Fragment>
 `;
 
 exports[`BlogCard renders full blog card with lazy loaded placeholders 1`] = `
 <div
-  className="jsx-1393874548 article-placeholder"
+  className="jsx-887154041 article-placeholder"
 />
 `;

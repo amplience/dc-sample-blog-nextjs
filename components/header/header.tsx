@@ -49,7 +49,7 @@ const Header = ({ title }: { title: string }) => {
           }
 
           header {
-            min-height: 40px;
+            min-height: 60px;
           }
         }
       `}</style>

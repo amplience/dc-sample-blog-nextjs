@@ -168,6 +168,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           }
 
           h1 {
+            font-weight: ${theme.fonts.weight.bold};
             line-height: unset;
             margin: 20px 0;
           }
