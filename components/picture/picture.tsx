@@ -47,21 +47,23 @@ const Picture = ({ image, sources }: PictureProps) => {
   const defaultSource = pictureSources[pictureSources.length - 1];
   return (
     <picture>
-      {pictureSources.map((source: PictureSource) => (
-        <>
-          <source
-            srcSet={`${src}${generateDiQueryString(source.di)}&fmt=webp 1x, ${src}${generateDiQueryString(
-              source.di,
-              2
-            )}&fmt=webp 2x`}
-            type="image/webp"
-            media={source.media}
-          />
-          <source
-            srcSet={`${src}${generateDiQueryString(source.di)} 1x, ${src}${generateDiQueryString(source.di, 2)} 2x`}
-            media={source.media}
-          />
-        </>
+      {pictureSources.map((source: PictureSource, index: number) => (
+        <source
+          key={`source-webp-${index}`}
+          srcSet={`${src}${generateDiQueryString(source.di)}&fmt=webp 1x, ${src}${generateDiQueryString(
+            source.di,
+            2
+          )}&fmt=webp 2x`}
+          type="image/webp"
+          media={source.media}
+        />
+      ))}
+      {pictureSources.map((source: PictureSource, index: number) => (
+        <source
+          key={`source-${index}`}
+          srcSet={`${src}${generateDiQueryString(source.di)} 1x, ${src}${generateDiQueryString(source.di, 2)} 2x`}
+          media={source.media}
+        />
       ))}
       <img src={`${src}${generateDiQueryString(defaultSource!.di)}`} alt={image.altText} />
     </picture>

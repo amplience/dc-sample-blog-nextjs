@@ -70,12 +70,12 @@ exports[`Index renders index with content 1`] = `
                   type="image/webp"
                 />
                 <source
-                  media="(max-width: 736px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-                />
-                <source
                   srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
                   type="image/webp"
+                />
+                <source
+                  media="(max-width: 736px)"
+                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
                 />
                 <source
                   srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
