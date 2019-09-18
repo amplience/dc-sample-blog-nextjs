@@ -1,8 +1,8 @@
 import BlogPostAuthor from '../blog-post-author/blog-post-author.component';
 import BlogPostHeroBanner from '../hero-banner/blog-post-hero-banner.component';
-import Image from '../images/image.component';
 import Content from '../content/content';
 import BlogPost from '../../common/interfaces/blog-post.interface';
+import Picture from '../picture/picture';
 
 const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
   return (
@@ -12,13 +12,24 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
         <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
       <div className="blog-image">
-        <Image
+        <Picture
           image={blogPost.image}
-          dynamicImagingOptions={[
-            { h: 400, w: 2048, sm: 'c', scaleFit: 'poi' },
-            { h: 400, w: 1080, sm: 'c', scaleFit: 'poi' },
-            { h: 400, w: 768, sm: 'c', scaleFit: 'poi' },
-            { h: 200, w: 480, sm: 'c', scaleFit: 'poi' }
+          sources={[
+            {
+              di: { w: 2048, sm: 'c', scaleFit: 'poi' },
+              media: '(min-width: 1080px)'
+            },
+            {
+              di: { w: 1080, sm: 'c', scaleFit: 'poi' },
+              media: '(min-width: 768px)'
+            },
+            {
+              di: { w: 768, sm: 'c', scaleFit: 'poi' },
+              media: '(min-width: 480px)'
+            },
+            {
+              di: { w: 480, sm: 'c', scaleFit: 'poi' }
+            }
           ]}
         />
       </div>
@@ -39,7 +50,7 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
 
         .blog-image :global(img) {
           object-fit: cover;
-          height: 400px;
+          width: 100%;
         }
 
         :global(footer) {
@@ -52,10 +63,6 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
           .content-wrapper {
             display: block;
             padding: 0 20px;
-          }
-
-          .blog-image :global(img) {
-            height: 200px;
           }
         }
       `}</style>

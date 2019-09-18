@@ -3,7 +3,7 @@
 exports[`Blog renders full blog 1`] = `
 Array [
   <div
-    className="jsx-718450558 content-header"
+    className="jsx-2678308288 content-header"
   >
     <section
       className="jsx-3378232041"
@@ -68,14 +68,51 @@ Array [
     </section>
   </div>,
   <div
-    className="jsx-718450558 blog-image"
+    className="jsx-2678308288 blog-image"
   >
-    <div
-      className="image-mock"
-    />
+    <picture>
+      <source
+        media="(min-width: 1080px)"
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2048&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=4096&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1080&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2160&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 480px)"
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=768&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1536&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+        type="image/webp"
+      />
+      <source
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=960&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+        type="image/webp"
+      />
+      <source
+        media="(min-width: 1080px)"
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2048&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=4096&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+      />
+      <source
+        media="(min-width: 768px)"
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1080&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2160&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+      />
+      <source
+        media="(min-width: 480px)"
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=768&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1536&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+      />
+      <source
+        srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=960&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+      />
+      <img
+        alt="crotch bags"
+        src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+      />
+    </picture>
   </div>,
   <div
-    className="jsx-718450558 content-wrapper"
+    className="jsx-2678308288 content-wrapper"
   >
     <section
       className="jsx-2988077148"
