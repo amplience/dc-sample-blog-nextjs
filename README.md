@@ -142,7 +142,7 @@ Dynamic Content has two ways of allowing you to see you content changes before t
 
 * [Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content directly from within Dynamic Content app during the authoring stage.
 
-* [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time, during the planning stage before it is published.
+* [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time, during the planning stage, before it is published.
 
 ### How to Configure Visualizations
 
@@ -172,7 +172,7 @@ Remember the blog list and slot that you configured? At build time the applicati
            (content-link)             (content-reference)
 ```
 
-To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list so your new blog post is at the top and click "save"
+To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list, so that your new blog post is at the top.  Then click "Save".
 Next you will need to schedule this update using an Dynamic Content Edition.
 
 ## Scheduling
@@ -189,7 +189,7 @@ _***Note:*** This option is only available if your Webhook is configured using t
 6. Add your Blog List into the Blog Slot
 7. Click "Schedule the Edition"
 
-When Dynamic Content publishes your updated slot it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook to you created. You can check on the status of the build by logging into your Netlify account and looking at your build history.
+When Dynamic Content publishes your updated slot, it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook you created. You can check on the status of the build by logging into your Netlify account and looking at your build history.
 
 ![Scheduling a Blog List update in Dynamic Content](./media/publish-blog-list-via-edition.gif)
 
