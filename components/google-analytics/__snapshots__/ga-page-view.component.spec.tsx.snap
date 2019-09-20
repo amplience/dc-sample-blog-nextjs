@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`GaPageView should not render google analytics when GA_TRACKING_ID is undefined 1`] = `null`;
+
 exports[`GaPageView should render some google analytics capable of tracking page views 1`] = `
 Array [
   <script
@@ -9,7 +11,7 @@ Array [
   <script
     dangerouslySetInnerHTML={
       Object {
-        "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+        "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'test', 'auto'); ga('send', 'pageview');",
       }
     }
   />,
