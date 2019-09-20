@@ -1,14 +1,17 @@
 import { Component, ReactElement } from 'react';
-import { AmplienceContent } from '../../common/interfaces/content.type';
+import { AmplienceContent, isAmplienceContent } from '../../common/interfaces/content.type';
 import getStagingContentItemById from '../../common/services/vse.service';
 import Content from '../content/content';
 import { isBlogPost } from '../../common/services/blog-post.service';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import Blog from '../blog/blog';
 import PageLoader from '../page-loader/page-loader';
-import { getReferencedBlogPosts, isBlogReferenceList } from '../../common/services/blog-reference-list.service';
+import { getReferencedBlogPosts } from '../../common/services/blog-reference-list.service';
 import HeroCard from '../hero-card/hero-card';
 import BlogList from '../blog-list/blog-list';
+import { BlogReferenceList } from '../../common/interfaces/blog-reference-list.interface';
+import HeroBanner from '../hero-banner/hero-banner';
+import NoBlogPosts from '../blog-list/no-blog-posts';
 
 interface VisualizationProps {
   stagingEnvironment: string;
@@ -19,7 +22,11 @@ interface VisualizationState {
   error?: string;
   content?: AmplienceContent[];
   blogPost: BlogPost;
-  blogList: BlogPost[];
+  blogList: {
+    title: string;
+    subTitle?: string;
+    blogPosts: BlogPost[];
+  };
 }
 
 export default class Visualization extends Component<VisualizationProps, VisualizationState> {
@@ -43,13 +50,16 @@ export default class Visualization extends Component<VisualizationProps, Visuali
   private async loadContent() {
     try {
       const contentItem = await getStagingContentItemById(this.props.stagingEnvironment, this.props.contentId);
-      if (isBlogReferenceList(contentItem)) {
-        const blogList = await getReferencedBlogPosts(contentItem.blogPosts);
-        this.setState({ blogList });
-      } else if (isBlogPost(contentItem)) {
+      if (isBlogPost(contentItem)) {
         this.setState({ blogPost: contentItem });
-      } else {
+      } else if (isAmplienceContent(contentItem)) {
         this.setState({ content: [contentItem as AmplienceContent] });
+      } else {
+        let blogPosts: BlogPost[] = [];
+        if ('blogPosts' in contentItem) {
+          blogPosts = await getReferencedBlogPosts((contentItem as BlogReferenceList).blogPosts);
+        }
+        this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } as VisualizationState['blogList'] });
       }
     } catch (error) {
       this.setState({ error: error.message });
@@ -77,8 +87,15 @@ export default class Visualization extends Component<VisualizationProps, Visuali
       if (this.state.blogList !== undefined) {
         return (
           <>
-            <HeroCard blogPost={this.state.blogList[0]} />
-            <BlogList blogPosts={this.state.blogList.slice(1)} />
+            <HeroBanner title={this.state.blogList.title} subTitle={this.state.blogList.subTitle} />
+            {this.state.blogList.blogPosts.length ? (
+              <>
+                <HeroCard blogPost={this.state.blogList.blogPosts[0]} />
+                <BlogList blogPosts={this.state.blogList.blogPosts.slice(1)} />
+              </>
+            ) : (
+              <NoBlogPosts />
+            )}
           </>
         );
       }

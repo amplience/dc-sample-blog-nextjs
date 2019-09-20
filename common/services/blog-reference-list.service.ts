@@ -12,7 +12,7 @@ const allSettled = require('promise.allsettled');
 export function isBlogReferenceList(
   contentItem: BlogReferenceList | BlogPost | AmplienceContent
 ): contentItem is BlogReferenceList & DefaultContentBody {
-  return 'title' in contentItem && 'blogPosts' in contentItem && Array.isArray(contentItem.blogPosts);
+  return 'title' in contentItem;
 }
 
 export async function getBlogReferenceList(

@@ -101,11 +101,41 @@ describe('Visualization', (): void => {
   });
 
   it('should render a blog list', async () => {
-    const blogList = [
-      blogPostFixture,
-      { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032b', title: 'Second blog post' } },
-      { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032c', title: 'Third blog post' } }
-    ];
+    const blogList = {
+      title: 'A blog title',
+      subTitle: 'A strap line',
+      blogPosts: [
+        {
+          blogPostFixture
+        },
+        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032b', title: 'Second blog post' } },
+        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032c', title: 'Third blog post' } }
+      ]
+    };
+
+    await renderVisualization(blogList);
+  });
+
+  it('should render a blog list without a subtitle', async () => {
+    const blogList = {
+      title: 'A blog title',
+      blogPosts: [
+        {
+          blogPostFixture
+        },
+        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032b', title: 'Second blog post' } },
+        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032c', title: 'Third blog post' } }
+      ]
+    };
+
+    await renderVisualization(blogList);
+  });
+
+  it('should render a blog list without any blog posts', async () => {
+    const blogList = {
+      title: 'A blog title',
+      blogPosts: []
+    };
 
     await renderVisualization(blogList);
   });
