@@ -90,6 +90,19 @@ Getting the content ID of a slot:-
 
 ![Create Blog List and Slot](media/create-blog-list-and-slot.gif)
 
+Adding a Blog post to a Blog list
+
+1. Navigate to the "Production" section
+2. Select the repo where you have registered "blog-list.json"
+3. Edit the previously created Blog list
+4. Click the "link" icon and select "Create and add new"
+5. Fill out all the fields in the form
+6. Click "Save"
+
+Note:
+
+- When adding the blog "Image" we recommend maintaining a 3:1, width:height ratio.
+
 ## Deploy To Netlify
 
 Click on the button below to deploy this repository via Netlify.
@@ -106,10 +119,11 @@ During the Netlify setup process you will need to define the following build env
 | DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Your Amplience Account Name, also known as Endpoint (ths is supplied when your account is created). | mycompanyid                          |
 | DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL                                                   | https://api.amplience.net            |
 | GA_TRACKING_ID               | No       | (Optional) Google Analytics                                                                         | UA-1234567890                        |
-| BASE_URL                     | Yes*     | (Optional) Base URL, used in generating links                                                       | https://blog.example.com             |
+| BASE_URL                     | Yes\*    | (Optional) Base URL, used in generating links                                                       | https://blog.example.com             |
 
 Notes:
-\* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
+
+- Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 
 ### Automate Netlify Deployments
 
@@ -140,9 +154,9 @@ Notes:
 
 Dynamic Content has two ways of allowing you to see you content changes before they go live:
 
-* [Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content directly from within Dynamic Content app during the authoring stage.
+- [Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content directly from within Dynamic Content app during the authoring stage.
 
-* [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time, during the planning stage, before it is published.
+- [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time, during the planning stage, before it is published.
 
 ### How to Configure Visualizations
 
@@ -172,7 +186,7 @@ Remember the blog list and slot that you configured? At build time the applicati
            (content-link)             (content-reference)
 ```
 
-To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list, so that your new blog post is at the top.  Then click "Save".
+To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list, so that your new blog post is at the top. Then click "Save".
 Next you will need to schedule this update using an Dynamic Content Edition.
 
 ## Scheduling

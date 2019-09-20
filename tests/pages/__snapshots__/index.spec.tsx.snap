@@ -373,7 +373,7 @@ exports[`Index renders index with content 1`] = `
     <script
       dangerouslySetInnerHTML={
         Object {
-          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'undefined', 'auto'); ga('send', 'pageview');",
+          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'ga-tracking-id', 'auto'); ga('send', 'pageview');",
         }
       }
     />
@@ -386,10 +386,10 @@ exports[`Index renders index with content but no blog posts 1`] = `
   className="jsx-873644259 site-container"
 >
   <section
-    className="jsx-1904209643"
+    className="jsx-1255100151"
   >
     <header
-      className="jsx-1904209643"
+      className="jsx-1255100151"
     >
       <a
         aria-label=""
@@ -398,13 +398,13 @@ exports[`Index renders index with content but no blog posts 1`] = `
       >
         <img
           alt="Amplience logo"
-          className="jsx-1025394034 logo"
+          className="jsx-1701653183 logo"
           src="/static/images/logo-white-340w.png"
           srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
         />
       </a>
       <h1
-        className="jsx-1904209643"
+        className="jsx-1255100151"
       >
         PRODUCT BLOG
       </h1>
@@ -417,7 +417,7 @@ exports[`Index renders index with content but no blog posts 1`] = `
       className="jsx-873644259"
     >
       <section
-        className="jsx-2541469627"
+        className="jsx-510563373"
       >
         <h1
           className="jsx-2799736912"
@@ -454,7 +454,7 @@ exports[`Index renders index with content but no blog posts 1`] = `
           >
             <img
               alt="Amplience logo"
-              className="jsx-1025394034 logo"
+              className="jsx-1701653183 logo"
               src="/static/images/logo-340w.png"
               srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
             />
