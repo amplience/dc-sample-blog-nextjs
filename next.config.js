@@ -88,14 +88,14 @@ const getBlogList = async () => {
 const exportPathMap = async function() {
   let dynamicPages = {};
 
-  console.info('Copying public folder to root');
-  const rootDir = __dirname;
+  console.info('Copying public folder to out');
+  const outDir = `${__dirname}/out`;
   const publicDir = `${__dirname}/static/public`;
   try {
-    copyFilesRecursively(publicDir, rootDir);
+    copyFilesRecursively(publicDir, outDir);
   }
   catch (err) {
-    console.error('Error copying root files');
+    console.error('Error copying public files to out dir');
     throw err;
   }
   
