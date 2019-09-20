@@ -121,9 +121,7 @@ During the Netlify setup process you will need to define the following build env
 | GA_TRACKING_ID               | No       | (Optional) Google Analytics                                                                         | UA-1234567890                        |
 | BASE_URL                     | Yes\*    | (Optional) Base URL, used in generating links                                                       | https://blog.example.com             |
 
-Notes:
-
-- Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
+\* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 
 ### Automate Netlify Deployments
 
