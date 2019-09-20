@@ -8,6 +8,15 @@ import { NextSeo } from 'next-seo';
 import getHydratedBlogList from '../common/services/blog-reference-list.service';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
+  const seoParams: { [key: string]: string | boolean } = {
+    title,
+    description: subTitle
+  };
+
+  if (process.env.X_ROBOTS_TAG_NOINDEX === 'true') {
+    seoParams.noindex = true;
+  }
+
   const noPublishedBlogs = (
     <div className="no-published-blogs">
       <p>No blogs published yet!</p>
@@ -23,7 +32,7 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   );
   return (
     <Layout>
-      <NextSeo title={title} description={subTitle} />
+      <NextSeo {...seoParams} />
       <HeroBanner title={title} subTitle={subTitle} />
       {blogPosts.length ? (
         <>

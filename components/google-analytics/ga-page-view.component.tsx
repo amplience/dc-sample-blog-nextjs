@@ -2,7 +2,7 @@ const GaPageView = () => {
   const TRACKING_ID = process.env.GA_TRACKING_ID;
 
   if (TRACKING_ID === undefined) {
-    return (<></>);
+    return <></>;
   }
 
   return (

@@ -107,6 +107,7 @@ During the Netlify setup process you will need to define the following build env
 | DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL                                                   | https://api.amplience.net            |
 | GA_TRACKING_ID               | No       | (Optional) Google Analytics                                                                         | UA-1234567890                        |
 | BASE_URL                     | Yes*     | (Optional) Base URL, used in generating links                                                       | https://blog.example.com             |
+| X_ROBOTS_TAG_NOINDEX         | No       | (Optional) Adds a noindex,nofollow meta tag to blog pages                                           | true                                 |
 
 Notes:
 \* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
@@ -226,8 +227,17 @@ To use the staging/other environment, the base URL can be overridden to a differ
 DYNAMIC_CONTENT_BASE_URL=<Base-URL>
 ```
 
-## Build & Run
+### Adding a noindex, nofollow meta tag to pages
+It's possible that you do not want the content of the blog indexing just yet, so to help achieve this we have added a flag to add a noindex meta tag in the header of all blog pages.
 
+Preview and visualization pages are always set to not be indexed, the pages that are configurable at the moment are the blog list and article pages.
+
+**N.B. Blog pages are indexed by default.**
+```
+X_ROBOTS_TAG_NOINDEX=true
+```
+
+## Build & Run
 First build the application using
 
 ```
