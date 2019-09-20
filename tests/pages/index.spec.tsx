@@ -5,7 +5,7 @@ import blogListFixture from '../fixtures/blog-list-one-blog.json';
 
 const mockGetHydratedBlogList = jest.fn();
 
-jest.mock('../../common/services/get-blog-reference-list.service', () => (a, b) => mockGetHydratedBlogList(a, b));
+jest.mock('../../common/services/blog-reference-list.service', () => (a, b) => mockGetHydratedBlogList(a, b));
 
 describe('Index', () => {
   beforeEach(() => {
