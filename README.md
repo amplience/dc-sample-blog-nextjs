@@ -15,7 +15,7 @@ To use this application you will need to install the content schemas (see ./sche
 
 Once you have everything installed you can then create new blog posts and schedule them for when you want them to go live on your blog.
 
-![Scheduling a Blog List update in Dynamic Content](./media/create-blog-list-and-slot.gif)
+![Scheduling a Blog List update in Dynamic Content](./media/publish-blog-list-via-edition.gif)
 
 # Installation
 
@@ -100,12 +100,17 @@ Click on the button below to deploy this repository via Netlify.
 
 During the Netlify setup process you will need to define the following build environment variables
 
-| Environment Var              | Required | Description                                                 | Example                              |
-| ---------------------------- | -------- | ----------------------------------------------------------- | ------------------------------------ |
-| DYNAMIC_CONTENT_REFERENCE_ID | Yes      | The ID of the Blog List slot                                | 00112233-4455-6677-8899-aabbccddeeff |
-| DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Account Name also known as endpoint                         | mycompanyid                          |
-| DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL           | https://api.amplience.net            |
-| X_ROBOTS_TAG_NOINDEX         | No       | (Optional) Adds a noindex,nofollow meta tag to blog pages   | true                                 |
+| Environment Var              | Required | Description                                                                                         | Example                              |
+| ---------------------------- | -------- | --------------------------------------------------------------------------------------------------- | ------------------------------------ |
+| DYNAMIC_CONTENT_REFERENCE_ID | Yes      | The ID of the Blog List slot                                                                        | 00112233-4455-6677-8899-aabbccddeeff |
+| DYNAMIC_CONTENT_ACCOUNT_NAME | Yes      | Your Amplience Account Name, also known as Endpoint (ths is supplied when your account is created). | mycompanyid                          |
+| DYNAMIC_CONTENT_BASE_URL     | No       | (Optional) Override the Content Delivery Base URL                                                   | https://api.amplience.net            |
+| GA_TRACKING_ID               | No       | (Optional) Google Analytics                                                                         | UA-1234567890                        |
+| BASE_URL                     | Yes*     | (Optional) Base URL, used in generating links                                                       | https://blog.example.com             |
+| X_ROBOTS_TAG_NOINDEX         | No       | (Optional) Adds a noindex,nofollow meta tag to blog pages                                           | true                                 |
+
+Notes:
+\* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 
 ### Automate Netlify Deployments
 
@@ -132,15 +137,19 @@ Notes:
 
 - The "Edition - published" webhook trigger allows you to use the scheduling features of Dynamic Content, allowing you to schedule in advance when your blog will be updated.
 
-## How to Configure Visualizations
+## Visualizations & Preview Support
 
-[Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content, while you edit, and before you publish it.
+Dynamic Content has two ways of allowing you to see you content changes before they go live:
+
+* [Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content directly from within Dynamic Content app during the authoring stage.
+
+* [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time, during the planning stage, before it is published.
+
+### How to Configure Visualizations
 
 For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
 
-## How to configure Preview
-
-[Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time - before it is published.
+### How to configure Preview
 
 You can create a brand new Preview environment using the following Preview application URL: `https://<your-domain>/?vse={{vse.domain}}`.
 
@@ -164,7 +173,7 @@ Remember the blog list and slot that you configured? At build time the applicati
            (content-link)             (content-reference)
 ```
 
-To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list so your new blog post is at the top and click "save"
+To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list, so that your new blog post is at the top.  Then click "Save".
 Next you will need to schedule this update using an Dynamic Content Edition.
 
 ## Scheduling
@@ -181,9 +190,9 @@ _***Note:*** This option is only available if your Webhook is configured using t
 6. Add your Blog List into the Blog Slot
 7. Click "Schedule the Edition"
 
-When Dynamic Content publishes your updated slot it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook to you created. You can check on the status of the build by logging into your Netlify account and looking at your build history.
+When Dynamic Content publishes your updated slot, it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook you created. You can check on the status of the build by logging into your Netlify account and looking at your build history.
 
-![Scheduling a Blog List update in Dynamic Content](./media/create-blog-list-and-slot.gif)
+![Scheduling a Blog List update in Dynamic Content](./media/publish-blog-list-via-edition.gif)
 
 # Local Development
 
@@ -238,16 +247,20 @@ npm run build
 The application can then be started with
 
 ```
-npm run start
+PORT=3000 npm run start
 ```
+
+Note: Omitting the `PORT` environment var will mean your application will start up on port 5000.
 
 ## Run with Developer Mode
 
 To start the application with Developer Mode use
 
 ```
-npm run dev
+PORT=3000 npm run dev
 ```
+
+Note: Omitting the `PORT` environment var will mean your application will start up on port 3000.
 
 ## Export as Static Site
 

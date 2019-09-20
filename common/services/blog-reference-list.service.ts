@@ -4,8 +4,21 @@ import { BlogListData } from '../interfaces/blog-list.interface';
 import getBlogPost from './blog-post.service';
 import BlogPost from '../interfaces/blog-post.interface';
 import { defaultClientConfig } from './dynamic-content-client-config';
+import { AmplienceContent } from '../interfaces/content.type';
+import { DefaultContentBody } from 'dc-delivery-sdk-js';
 // eslint-disable-next-line
 const allSettled = require('promise.allsettled');
+
+export function isBlogReferenceList(
+  contentItem: BlogReferenceList | BlogPost | AmplienceContent
+): contentItem is BlogReferenceList & DefaultContentBody {
+  return (
+    'title' in contentItem &&
+    'subTitle' in contentItem &&
+    'blogPosts' in contentItem &&
+    Array.isArray(contentItem.blogPosts)
+  );
+}
 
 export async function getBlogReferenceList(
   blogReferenceListid: string,
@@ -19,11 +32,10 @@ export async function getBlogReferenceList(
   return { title, subTitle, blogPosts };
 }
 
-export default async function getHydratedBlogList(
-  blogListid: string,
+export async function getReferencedBlogPosts(
+  blogPosts: BlogPostReference[],
   stagingEnvironment?: string
-): Promise<BlogListData> {
-  const { title, subTitle, blogPosts } = await getBlogReferenceList(blogListid, stagingEnvironment);
+): Promise<BlogPost[]> {
   const promises = blogPosts.map(
     async (reference: BlogPostReference): Promise<BlogPost> => {
       return getBlogPost(reference.id, stagingEnvironment);
@@ -37,6 +49,15 @@ export default async function getHydratedBlogList(
   const hydratedBlogPosts = promiseResults
     .filter((promise: { status: string }): boolean => promise.status === 'fulfilled')
     .map((resolvedPromise: { value: BlogPost }): BlogPost => resolvedPromise.value);
+  return hydratedBlogPosts;
+}
+
+export default async function getHydratedBlogList(
+  blogListid: string,
+  stagingEnvironment?: string
+): Promise<BlogListData> {
+  const { title, subTitle, blogPosts } = await getBlogReferenceList(blogListid, stagingEnvironment);
+  const hydratedBlogPosts = await getReferencedBlogPosts(blogPosts, stagingEnvironment);
 
   return { title, subTitle, blogPosts: hydratedBlogPosts };
 }

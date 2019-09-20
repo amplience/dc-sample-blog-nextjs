@@ -4,7 +4,7 @@ exports[`HeroCard renders empty hero card when blog list is undefined 1`] = `<di
 
 exports[`HeroCard renders full hero card 1`] = `
 <section
-  className="jsx-3480211804"
+  className="jsx-1454689318"
 >
   <a
     aria-label="My First Blog Post"
@@ -12,27 +12,39 @@ exports[`HeroCard renders full hero card 1`] = `
     href="/blog/my-first-blog"
   >
     <article
-      className="jsx-3480211804"
+      className="jsx-1454689318"
     >
       <div
-        className="jsx-3480211804 blog-card-image"
+        className="jsx-1454689318 blog-card-image"
       >
-        <span
-          className="lazy-img"
-          style={
-            Object {
-              "display": "inline-block",
-              "height": 0,
-              "width": 0,
-            }
-          }
-        />
+        <picture>
+          <source
+            media="(max-width: 736px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 736px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <img
+            alt="crotch bags"
+            src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+          />
+        </picture>
       </div>
       <div
-        className="jsx-3480211804 blog-card-content"
+        className="jsx-1454689318 blog-card-content"
       >
         <h1
-          className="jsx-3480211804"
+          className="jsx-1454689318"
         >
           My First Blog Post
         </h1>
@@ -65,7 +77,7 @@ exports[`HeroCard renders full hero card 1`] = `
           </div>
         </div>
         <p
-          className="jsx-3480211804"
+          className="jsx-1454689318"
         >
           Some text for the description that explains this blog post
         </p>
@@ -77,7 +89,7 @@ exports[`HeroCard renders full hero card 1`] = `
 
 exports[`HeroCard renders full hero card with vse query string in link for preview 1`] = `
 <section
-  className="jsx-3480211804"
+  className="jsx-1454689318"
 >
   <a
     aria-label="My First Blog Post"
@@ -85,27 +97,39 @@ exports[`HeroCard renders full hero card with vse query string in link for previ
     href="/preview?vse=test-vse.domain&content=8d6943c7-6028-4fac-b45e-57fc63bd032a"
   >
     <article
-      className="jsx-3480211804"
+      className="jsx-1454689318"
     >
       <div
-        className="jsx-3480211804 blog-card-image"
+        className="jsx-1454689318 blog-card-image"
       >
-        <span
-          className="lazy-img"
-          style={
-            Object {
-              "display": "inline-block",
-              "height": 0,
-              "width": 0,
-            }
-          }
-        />
+        <picture>
+          <source
+            media="(max-width: 736px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(max-width: 736px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=345&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=690&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <img
+            alt="crotch bags"
+            src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+          />
+        </picture>
       </div>
       <div
-        className="jsx-3480211804 blog-card-content"
+        className="jsx-1454689318 blog-card-content"
       >
         <h1
-          className="jsx-3480211804"
+          className="jsx-1454689318"
         >
           My First Blog Post
         </h1>
@@ -138,7 +162,7 @@ exports[`HeroCard renders full hero card with vse query string in link for previ
           </div>
         </div>
         <p
-          className="jsx-3480211804"
+          className="jsx-1454689318"
         >
           Some text for the description that explains this blog post
         </p>

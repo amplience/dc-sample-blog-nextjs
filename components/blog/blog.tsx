@@ -15,10 +15,10 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
         <Image
           image={blogPost.image}
           dynamicImagingOptions={[
-            { h: 400, w: 2048, sm: 'c', scaleFit: 'poi' },
-            { h: 400, w: 1080, sm: 'c', scaleFit: 'poi' },
-            { h: 400, w: 768, sm: 'c', scaleFit: 'poi' },
-            { h: 200, w: 480, sm: 'c', scaleFit: 'poi' }
+            { w: 2048, scaleFit: 'poi' },
+            { w: 1080, scaleFit: 'poi' },
+            { w: 768, scaleFit: 'poi' },
+            { w: 480, scaleFit: 'poi' }
           ]}
         />
       </div>
@@ -39,7 +39,6 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
 
         .blog-image :global(img) {
           object-fit: cover;
-          height: 400px;
         }
 
         :global(footer) {
@@ -52,10 +51,6 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
           .content-wrapper {
             display: block;
             padding: 0 20px;
-          }
-
-          .blog-image :global(img) {
-            height: 200px;
           }
         }
       `}</style>

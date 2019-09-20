@@ -15,7 +15,7 @@
     "preexport": "npm run build",
     "export": "next export",
     "prestart": "npm run export",
-    "start": "PORT=3000 serve",
+    "start": "serve",
     "fix": "prettier --write '**/*.ts'"
   },
   "repository": {
