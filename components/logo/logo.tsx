@@ -17,7 +17,7 @@ const Logo = ({ darkMode }: { darkMode?: boolean }) => {
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           img {
-            width: 120px;
+            width: 140px;
             object-fit: contain;
           }
         }

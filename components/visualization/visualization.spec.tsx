@@ -99,4 +99,14 @@ describe('Visualization', (): void => {
   it('should render a blog post', async () => {
     await renderVisualization(blogPostFixture);
   });
+
+  it('should render a blog list', async () => {
+    const blogList = [
+      blogPostFixture,
+      { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032b', title: 'Second blog post' } },
+      { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032c', title: 'Third blog post' } }
+    ];
+
+    await renderVisualization(blogList);
+  });
 });

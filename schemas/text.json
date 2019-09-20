@@ -16,7 +16,7 @@
       "title": "Text",
       "description": "",
       "minLength": 1,
-      "maxLength": 6000
+      "maxLength": 30000
     }
   },
   "propertyOrder": ["text"],

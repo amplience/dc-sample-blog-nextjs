@@ -2,7 +2,7 @@
 
 exports[`BlogCard renders full blog card 1`] = `
 <section
-  className="jsx-2152454282"
+  className="jsx-3616766322"
 >
   <a
     aria-label="My First Blog Post"
@@ -10,10 +10,10 @@ exports[`BlogCard renders full blog card 1`] = `
     href="/blog/my-first-blog"
   >
     <article
-      className="jsx-2152454282"
+      className="jsx-3616766322"
     >
       <div
-        className="jsx-2152454282 blog-card-image"
+        className="jsx-3616766322 blog-card-image"
       >
         <span
           className="lazy-img"
@@ -27,10 +27,10 @@ exports[`BlogCard renders full blog card 1`] = `
         />
       </div>
       <div
-        className="jsx-2152454282 blog-card-content"
+        className="jsx-3616766322 blog-card-content"
       >
         <h1
-          className="jsx-2152454282"
+          className="jsx-3616766322"
         >
           My First Blog Post
         </h1>
@@ -63,7 +63,7 @@ exports[`BlogCard renders full blog card 1`] = `
           </div>
         </div>
         <p
-          className="jsx-2152454282"
+          className="jsx-3616766322"
         >
           Some text for the description that explains this blog post
         </p>
@@ -75,7 +75,7 @@ exports[`BlogCard renders full blog card 1`] = `
 
 exports[`BlogCard renders full blog card with vse query string in link for preview 1`] = `
 <section
-  className="jsx-2152454282"
+  className="jsx-3616766322"
 >
   <a
     aria-label="My First Blog Post"
@@ -83,10 +83,10 @@ exports[`BlogCard renders full blog card with vse query string in link for previ
     href="/preview?vse=test-vse.domain&content=8d6943c7-6028-4fac-b45e-57fc63bd032a"
   >
     <article
-      className="jsx-2152454282"
+      className="jsx-3616766322"
     >
       <div
-        className="jsx-2152454282 blog-card-image"
+        className="jsx-3616766322 blog-card-image"
       >
         <span
           className="lazy-img"
@@ -100,10 +100,10 @@ exports[`BlogCard renders full blog card with vse query string in link for previ
         />
       </div>
       <div
-        className="jsx-2152454282 blog-card-content"
+        className="jsx-3616766322 blog-card-content"
       >
         <h1
-          className="jsx-2152454282"
+          className="jsx-3616766322"
         >
           My First Blog Post
         </h1>
@@ -136,7 +136,7 @@ exports[`BlogCard renders full blog card with vse query string in link for previ
           </div>
         </div>
         <p
-          className="jsx-2152454282"
+          className="jsx-3616766322"
         >
           Some text for the description that explains this blog post
         </p>

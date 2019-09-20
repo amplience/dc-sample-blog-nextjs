@@ -2,10 +2,10 @@
 
 exports[`Header renders blog header 1`] = `
 <section
-  className="jsx-1904209643"
+  className="jsx-1255100151"
 >
   <header
-    className="jsx-1904209643"
+    className="jsx-1255100151"
   >
     <a
       aria-label=""
@@ -14,13 +14,13 @@ exports[`Header renders blog header 1`] = `
     >
       <img
         alt="Amplience logo"
-        className="jsx-1025394034 logo"
+        className="jsx-1701653183 logo"
         src="/static/images/logo-white-340w.png"
         srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
       />
     </a>
     <h1
-      className="jsx-1904209643"
+      className="jsx-1255100151"
     >
       Blog Title
     </h1>
@@ -30,10 +30,10 @@ exports[`Header renders blog header 1`] = `
 
 exports[`Header renders blog header with preview vse query string link 1`] = `
 <section
-  className="jsx-1904209643"
+  className="jsx-1255100151"
 >
   <header
-    className="jsx-1904209643"
+    className="jsx-1255100151"
   >
     <a
       aria-label=""
@@ -42,13 +42,13 @@ exports[`Header renders blog header with preview vse query string link 1`] = `
     >
       <img
         alt="Amplience logo"
-        className="jsx-1025394034 logo"
+        className="jsx-1701653183 logo"
         src="/static/images/logo-white-340w.png"
         srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
       />
     </a>
     <h1
-      className="jsx-1904209643"
+      className="jsx-1255100151"
     >
       Blog Title
     </h1>
