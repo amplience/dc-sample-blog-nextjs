@@ -449,10 +449,10 @@ exports[`Index renders index with content but no blog posts 1`] = `
         </h2>
       </section>
       <div
-        className="jsx-3275285957 no-published-blogs"
+        className="jsx-1210611463 no-published-blogs"
       >
         <p
-          className="jsx-3275285957"
+          className="jsx-1210611463"
         >
           No blogs published yet!
         </p>

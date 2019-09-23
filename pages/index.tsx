@@ -6,6 +6,7 @@ import BlogList from '../components/blog-list/blog-list';
 import HeroCard from '../components/hero-card/hero-card';
 import { NextSeo } from 'next-seo';
 import getHydratedBlogList from '../common/services/blog-reference-list.service';
+import NoBlogPosts from '../components/blog-list/no-blog-posts';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   const seoParams: { [key: string]: string | boolean } = {
@@ -17,19 +18,6 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
     seoParams.noindex = true;
   }
 
-  const noPublishedBlogs = (
-    <div className="no-published-blogs">
-      <p>No blogs published yet!</p>
-      <style jsx>{`
-        .no-published-blogs {
-          padding-top: 60px;
-          display: flex;
-          justify-content: center;
-          min-height: 500px;
-        }
-      `}</style>
-    </div>
-  );
   return (
     <Layout>
       <NextSeo {...seoParams} />
@@ -40,7 +28,7 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
           <BlogList blogPosts={blogPosts.slice(1)} />
         </>
       ) : (
-        noPublishedBlogs
+        <NoBlogPosts />
       )}
 
       <style jsx>{`
