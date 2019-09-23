@@ -3,87 +3,125 @@
 exports[`Content should render different types of content - text, image and video 1`] = `
 <React.Fragment>
   <section
-    className="jsx-2988077148"
+    className="jsx-1163017566"
   >
-    <div
-      className="jsx-2988077148"
+    <t
+      afterLoad={[Function]}
+      beforeLoad={[Function]}
+      placeholder={
+        <div
+          className="jsx-1163017566 content-placeholder"
+        />
+      }
+      visibleByDefault={false}
     >
-      <Image
-        dynamicImagingOptions={
-          Array [
+      <div
+        className="jsx-1163017566"
+      >
+        <Picture
+          image={
             Object {
-              "scaleFit": "poi",
-              "w": 675,
-            },
-            Object {
-              "scaleFit": "poi",
-              "w": 374,
-            },
-          ]
-        }
-        image={
-          Object {
-            "altText": "Casual crotch shot",
-            "image": Object {
-              "defaultHost": "i1-qa.adis.ws",
-              "endpoint": "bloblogltd",
-              "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
-              "name": "casual-wear",
-            },
+              "altText": "Casual crotch shot",
+              "image": Object {
+                "defaultHost": "i1-qa.adis.ws",
+                "endpoint": "bloblogltd",
+                "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                "name": "casual-wear",
+              },
+            }
           }
-        }
-      />
-    </div>
-    <div
-      className="jsx-2988077148"
+          sources={
+            Array [
+              Object {
+                "di": Object {
+                  "scaleFit": "poi",
+                  "w": 675,
+                },
+                "media": "(min-width: 415px)",
+              },
+              Object {
+                "di": Object {
+                  "scaleFit": "poi",
+                  "w": 414,
+                },
+              },
+            ]
+          }
+        />
+      </div>
+    </t>
+    <t
+      afterLoad={[Function]}
+      beforeLoad={[Function]}
+      placeholder={
+        <div
+          className="jsx-1163017566 content-placeholder"
+        />
+      }
+      visibleByDefault={false}
     >
-      <ReactMarkdown
-        astPlugins={Array []}
-        escapeHtml={true}
-        parserOptions={Object {}}
-        plugins={Array []}
-        rawSourcePos={false}
-        renderers={
-          Object {
-            "blockquote": [Function],
-            "code": [Function],
-            "heading": [Function],
-            "inlineCode": [Function],
-            "link": [Function],
-            "paragraph": [Function],
+      <div
+        className="jsx-1163017566"
+      >
+        <ReactMarkdown
+          astPlugins={Array []}
+          escapeHtml={true}
+          parserOptions={Object {}}
+          plugins={Array []}
+          rawSourcePos={false}
+          renderers={
+            Object {
+              "blockquote": [Function],
+              "code": [Function],
+              "heading": [Function],
+              "inlineCode": [Function],
+              "link": [Function],
+              "paragraph": [Function],
+            }
           }
-        }
-        skipHtml={false}
-        source="# This is my first Bloblog
+          skipHtml={false}
+          source="# This is my first Bloblog
 
 This is some sample text.
 
 ## Look-a-header
 
 This is some more sample text"
-        sourcePos={false}
-        transformLinkUri={[Function]}
-      />
-    </div>
-    <div
-      className="jsx-2988077148 blog-post-video"
+          sourcePos={false}
+          transformLinkUri={[Function]}
+        />
+      </div>
+    </t>
+    <t
+      afterLoad={[Function]}
+      beforeLoad={[Function]}
+      placeholder={
+        <div
+          className="jsx-1163017566 content-placeholder"
+        />
+      }
+      visibleByDefault={false}
     >
-      <Video
-        srcSet={
-          Array [
-            "http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p",
-          ]
-        }
-        video={
-          Object {
-            "defaultHost": "i1-qa.adis.ws",
-            "endpoint": "bloblogltd",
-            "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
-            "name": "SampleVideo_1280x720_5mb",
+      <div
+        className="jsx-1163017566 blog-post-video"
+      >
+        <Video
+          srcSet={
+            Array [
+              "http://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p",
+            ]
           }
-        }
-      />
-    </div>
+          video={
+            Object {
+              "defaultHost": "i1-qa.adis.ws",
+              "endpoint": "bloblogltd",
+              "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+              "name": "SampleVideo_1280x720_5mb",
+            }
+          }
+        />
+      </div>
+    </t>
   </section>
   <JSXStyle
     dynamic={
@@ -96,9 +134,25 @@ This is some more sample text"
         "300",
       ]
     }
-    id="2003050541"
+    id="3960364902"
   >
-    section.__jsx-style-dynamic-selector{color:#666666;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector{margin-top:15px;width:100%;}section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector:last-child{margin-bottom:0;}section.__jsx-style-dynamic-selector table{border-collapse:collapse;}section.__jsx-style-dynamic-selector th,section.__jsx-style-dynamic-selector td{border:1px solid #cccccc;padding:12px;}section.__jsx-style-dynamic-selector tr:nth-child(odd) td{background-color:#f7f7fc;}section.__jsx-style-dynamic-selector p:first-child{margin-top:0;}section.__jsx-style-dynamic-selector p:last-child{margin-bottom:0;}section.__jsx-style-dynamic-selector img{width:100%;}section.__jsx-style-dynamic-selector li{margin-bottom:8px;}@media (max-width:736px){section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector:first-child{margin-top:15px;}section.__jsx-style-dynamic-selector pre,li{font-size:1.125rem;font-weight:300;}}
+    .content-placeholder.__jsx-style-dynamic-selector{height:800px;}section.__jsx-style-dynamic-selector{color:#666666;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-webkit-justify-content:flex-start;-ms-flex-pack:start;justify-content:flex-start;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;}section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector{margin-top:15px;width:100%;}section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector:last-child{margin-bottom:0;}section.__jsx-style-dynamic-selector table{border-collapse:collapse;}section.__jsx-style-dynamic-selector th,section.__jsx-style-dynamic-selector td{border:1px solid #cccccc;padding:12px;}section.__jsx-style-dynamic-selector tr:nth-child(odd) td{background-color:#f7f7fc;}section.__jsx-style-dynamic-selector p:first-child{margin-top:0;}section.__jsx-style-dynamic-selector p:last-child{margin-bottom:0;}section.__jsx-style-dynamic-selector img{width:100%;}section.__jsx-style-dynamic-selector li{margin-bottom:8px;}@media (max-width:736px){section.__jsx-style-dynamic-selector&gt;div.__jsx-style-dynamic-selector:first-child{margin-top:15px;}section.__jsx-style-dynamic-selector pre,li{font-size:1.125rem;font-weight:300;}}
   </JSXStyle>
 </React.Fragment>
+`;
+
+exports[`Content should render different types of content intially with placeholders - text, image and video 1`] = `
+<section
+  className="jsx-1163017566"
+>
+  <div
+    className="jsx-1163017566 content-placeholder"
+  />
+  <div
+    className="jsx-1163017566 content-placeholder"
+  />
+  <div
+    className="jsx-1163017566 content-placeholder"
+  />
+</section>
 `;

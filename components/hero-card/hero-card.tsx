@@ -30,17 +30,35 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
                     {
                       di: {
                         sm: 'c',
-                        h: 140,
-                        w: 345,
+                        h: 403,
+                        w: 330,
                         scaleFit: 'poi'
                       },
-                      media: '(max-width: 736px)'
+                      media: '(min-width: 728px)'
                     },
                     {
                       di: {
                         sm: 'c',
-                        h: 403,
-                        w: 330,
+                        h: 140,
+                        w: 728,
+                        scaleFit: 'poi'
+                      },
+                      media: '(min-width: 528px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 528,
+                        scaleFit: 'poi'
+                      },
+                      media: '(min-width: 415px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 414,
                         scaleFit: 'poi'
                       }
                     }

@@ -1,8 +1,8 @@
 import BlogPostAuthor from '../blog-post-author/blog-post-author.component';
 import BlogPostHeroBanner from '../hero-banner/blog-post-hero-banner.component';
-import Image from '../images/image.component';
 import Content from '../content/content';
 import BlogPost from '../../common/interfaces/blog-post.interface';
+import Picture from '../picture/picture';
 
 const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
   return (
@@ -12,13 +12,24 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
         <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
       <div className="blog-image">
-        <Image
+        <Picture
           image={blogPost.image}
-          dynamicImagingOptions={[
-            { w: 2048, scaleFit: 'poi' },
-            { w: 1080, scaleFit: 'poi' },
-            { w: 768, scaleFit: 'poi' },
-            { w: 480, scaleFit: 'poi' }
+          sources={[
+            {
+              di: { w: 2048, sm: 'c', scaleFit: 'poi' },
+              media: '(min-width: 1080px)'
+            },
+            {
+              di: { w: 1080, sm: 'c', scaleFit: 'poi' },
+              media: '(min-width: 768px)'
+            },
+            {
+              di: { w: 768, sm: 'c', scaleFit: 'poi' },
+              media: '(min-width: 480px)'
+            },
+            {
+              di: { w: 480, sm: 'c', scaleFit: 'poi' }
+            }
           ]}
         />
       </div>
@@ -39,6 +50,7 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }) => {
 
         .blog-image :global(img) {
           object-fit: cover;
+          width: 100%;
         }
 
         :global(footer) {

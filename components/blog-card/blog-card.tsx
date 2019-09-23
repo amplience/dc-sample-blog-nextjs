@@ -1,9 +1,10 @@
-import Image from '../images/image.component';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
 import StaticLink from '../static-link/static-link';
 import { useRouter } from 'next/router';
+import Picture from '../picture/picture';
+import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -16,34 +17,71 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
   const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
   const blogLink = `${path}${routerQuery}`;
   return (
-    <section>
-      <StaticLink ariaLabel={blogPost.title} href={blogLink}>
-        <article>
-          <div className="blog-card-image">
-            <Image
-              {...{
-                image: blogPost.image,
-                dynamicImagingOptions: [
-                  { h: 140, w: 285, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 321, sm: 'c', scaleFit: 'poi' },
-                  { h: 140, w: 345, sm: 'c', scaleFit: 'poi' }
-                ],
-                mediaQueryOptions: [
-                  { mediaFeature: 'max-width', mediaSize: '320px', containerSize: '285px' },
-                  { mediaFeature: 'max-width', mediaSize: '480px', containerSize: '321px' },
-                  { mediaFeature: 'min-width', mediaSize: theme.layout.narrowPageWidth, containerSize: '350px' },
-                  { mediaSize: '345px' }
-                ]
-              }}
-            />
-          </div>
-          <div className="blog-card-content">
-            <h1>{blogPost.title}</h1>
-            <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
-            <p>{blogPost.description}</p>
-          </div>
-        </article>
-      </StaticLink>
+    <>
+      <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
+        <section>
+          <StaticLink ariaLabel={blogPost.title} href={blogLink}>
+            <article>
+              <div className="blog-card-image">
+                <Picture
+                  image={blogPost.image}
+                  sources={[
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 345,
+                        scaleFit: 'poi'
+                      },
+                      media: '(min-width: 1098px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 728,
+                        scaleFit: 'poi'
+                      },
+                      media: '(min-width: 728px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 728,
+                        scaleFit: 'poi'
+                      },
+                      media: '(min-width: 528px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 528,
+                        scaleFit: 'poi'
+                      },
+                      media: '(min-width: 415px)'
+                    },
+                    {
+                      di: {
+                        sm: 'c',
+                        h: 140,
+                        w: 414,
+                        scaleFit: 'poi'
+                      }
+                    }
+                  ]}
+                />
+              </div>
+              <div className="blog-card-content">
+                <h1>{blogPost.title}</h1>
+                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
+                <p>{blogPost.description}</p>
+              </div>
+            </article>
+          </StaticLink>
+        </section>
+      </LazyLoadComponent>
       <style jsx>{`
         section {
           display: flex;
@@ -107,6 +145,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           margin-bottom: 0;
         }
 
+        .article-placeholder {
+          height: 400px;
+        }
+
         @media (max-width: ${theme.layout.widePageWidth}) {
           section {
             margin-bottom: 60px;
@@ -140,7 +182,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
           }
         }
       `}</style>
-    </section>
+    </>
   );
 };
 
