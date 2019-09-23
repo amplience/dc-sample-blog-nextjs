@@ -36,7 +36,7 @@ exports[`Blog page renders Blog page with content 1`] = `
       className="jsx-873644259"
     >
       <div
-        className="jsx-2814946630 content-header"
+        className="jsx-2678308288 content-header"
       >
         <section
           className="jsx-3378232041"
@@ -50,16 +50,19 @@ exports[`Blog page renders Blog page with content 1`] = `
               <div
                 className="jsx-2854206183 avatar"
               >
-                <span
-                  className="lazy-img"
-                  style={
-                    Object {
-                      "display": "inline-block",
-                      "height": 0,
-                      "width": 0,
-                    }
-                  }
-                />
+                <picture>
+                  <source
+                    srcSet="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/man-business-suit?&w=72&h=72&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/man-business-suit?&w=72&h=72&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+                  />
+                  <img
+                    alt="The dashing Sir Blog avatar"
+                    src="https://i1.adis.ws/i/blogltd/man-business-suit?&w=36&h=36&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+                  />
+                </picture>
               </div>
             </div>
           </div>
@@ -108,448 +111,64 @@ exports[`Blog page renders Blog page with content 1`] = `
         </section>
       </div>
       <div
-        className="jsx-2814946630 blog-image"
+        className="jsx-2678308288 blog-image"
       >
-        <span
-          className="lazy-img"
-          style={
-            Object {
-              "display": "inline-block",
-              "height": 0,
-              "width": 0,
-            }
-          }
-        />
+        <picture>
+          <source
+            media="(min-width: 1080px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2048&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=4096&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1080&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2160&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=768&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1536&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=960&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
+            type="image/webp"
+          />
+          <source
+            media="(min-width: 1080px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2048&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=4096&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1080&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=2160&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=768&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=1536&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <source
+            srcSet="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=960&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
+          />
+          <img
+            alt="crotch bags"
+            src="https://i1.adis.ws/i/blogltd/friends-shopping-bags?&w=480&sm=c&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
+          />
+        </picture>
       </div>
       <div
-        className="jsx-2814946630 content-wrapper"
+        className="jsx-2678308288 content-wrapper"
       >
         <section
-          className="jsx-2988077148"
+          className="jsx-1163017566"
         >
           <div
-            className="jsx-2988077148"
-          >
-            <span
-              className="lazy-img"
-              style={
-                Object {
-                  "display": "inline-block",
-                  "height": 0,
-                  "width": 0,
-                }
-              }
-            />
-          </div>
+            className="jsx-1163017566 content-placeholder"
+          />
           <div
-            className="jsx-2988077148"
-          >
-            <h1
-              className="jsx-2595089998"
-            >
-              This is my first Blog
-            </h1>
-            <h2
-              className="jsx-2595089998"
-            >
-              Look-a-header 2
-            </h2>
-            <h3
-              className="jsx-2595089998"
-            >
-              Look-a-header 3
-            </h3>
-            <h4
-              className="jsx-2595089998"
-            >
-              Look-a-header 4
-            </h4>
-            <h5
-              className="jsx-2595089998"
-            >
-              Look-a-header 5
-            </h5>
-            <h6
-              className="jsx-2595089998"
-            >
-              Look-a-header 6
-            </h6>
-            <p
-              className="jsx-430790654"
-            >
-              <em>
-                <strong>
-                  This
-                </strong>
-              </em>
-               
-              <em>
-                is
-              </em>
-               
-              <em>
-                some
-              </em>
-               
-              <del>
-                sample
-              </del>
-               
-              <strong>
-                text
-              </strong>
-              .
-            </p>
-            <p
-              className="jsx-430790654"
-            >
-              <img
-                alt="alt text"
-                src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"
-                title="Logo Title Text 1"
-              />
-            </p>
-            <p
-              className="jsx-430790654"
-            >
-              This is some more sample text with a 
-              <span
-                className="jsx-3731109703"
-              >
-                <a
-                  className="jsx-3655793200"
-                  href="http://bbc.co.uk"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  LINK
-                </a>
-              </span>
-            </p>
-            <blockquote
-              className="jsx-2064009043"
-            >
-              <p
-                className="jsx-430790654"
-              >
-                Comments are cool!
-              </p>
-              <p
-                className="jsx-430790654"
-              >
-                See what I mean
-              </p>
-            </blockquote>
-            <p
-              className="jsx-430790654"
-            >
-              Look some code:
-            </p>
-            <pre
-              style={
-                Object {
-                  "MozHyphens": "none",
-                  "MozTabSize": "4",
-                  "OTabSize": "4",
-                  "WebkitHyphens": "none",
-                  "background": "#1d1f21",
-                  "borderRadius": "0.3em",
-                  "color": "#c5c8c6",
-                  "direction": "ltr",
-                  "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-                  "hyphens": "none",
-                  "lineHeight": "1.5",
-                  "margin": ".5em 0",
-                  "msHyphens": "none",
-                  "overflow": "auto",
-                  "padding": "1em",
-                  "tabSize": "4",
-                  "textAlign": "left",
-                  "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
-                  "whiteSpace": "pre",
-                  "wordBreak": "normal",
-                  "wordSpacing": "normal",
-                }
-              }
-            >
-              <code
-                style={
-                  Object {
-                    "MozHyphens": "none",
-                    "MozTabSize": "4",
-                    "OTabSize": "4",
-                    "WebkitHyphens": "none",
-                    "color": "#c5c8c6",
-                    "direction": "ltr",
-                    "float": "left",
-                    "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-                    "hyphens": "none",
-                    "lineHeight": "1.5",
-                    "msHyphens": "none",
-                    "paddingRight": "10px",
-                    "tabSize": "4",
-                    "textAlign": "left",
-                    "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
-                    "whiteSpace": "pre",
-                    "wordBreak": "normal",
-                    "wordSpacing": "normal",
-                  }
-                }
-              >
-                <span
-                  className="react-syntax-highlighter-line-number"
-                  style={Object {}}
-                >
-                  1
-
-                </span>
-                <span
-                  className="react-syntax-highlighter-line-number"
-                  style={Object {}}
-                >
-                  2
-
-                </span>
-              </code>
-              <code
-                style={
-                  Object {
-                    "MozHyphens": "none",
-                    "MozTabSize": "4",
-                    "OTabSize": "4",
-                    "WebkitHyphens": "none",
-                    "color": "#c5c8c6",
-                    "direction": "ltr",
-                    "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
-                    "hyphens": "none",
-                    "lineHeight": "1.5",
-                    "msHyphens": "none",
-                    "tabSize": "4",
-                    "textAlign": "left",
-                    "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
-                    "whiteSpace": "pre",
-                    "wordBreak": "normal",
-                    "wordSpacing": "normal",
-                  }
-                }
-              >
-                <span
-                  style={Object {}}
-                >
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#96CBFE",
-                      }
-                    }
-                  >
-                    const
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                     something 
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#EDEDED",
-                      }
-                    }
-                  >
-                    =
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                     
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#A8FF60",
-                      }
-                    }
-                  >
-                    'anything'
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#c5c8c6",
-                      }
-                    }
-                  >
-                    ;
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    
-
-                  </span>
-                </span>
-                <span
-                  style={Object {}}
-                >
-                  <span
-                    style={Object {}}
-                  >
-                    
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#DAD085",
-                      }
-                    }
-                  >
-                    calls
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#c5c8c6",
-                      }
-                    }
-                  >
-                    (
-                  </span>
-                  <span
-                    style={Object {}}
-                  >
-                    something
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#c5c8c6",
-                      }
-                    }
-                  >
-                    )
-                  </span>
-                  <span
-                    className="token"
-                    style={
-                      Object {
-                        "color": "#c5c8c6",
-                      }
-                    }
-                  >
-                    ;
-                  </span>
-                </span>
-              </code>
-            </pre>
-            <p
-              className="jsx-430790654"
-            >
-              inline 
-              <code
-                className="jsx-3800523359"
-              >
-                code
-              </code>
-               is awesome underlined
-            </p>
-            <hr />
-            &lt;h4&gt;A title&lt;/h4&gt;
-            <p
-              className="jsx-430790654"
-            >
-              A table too:
-            </p>
-            <table>
-              <thead>
-                <tr>
-                  <th>
-                    Hello
-                  </th>
-                  <th>
-                    world
-                  </th>
-                  <th>
-                    table
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    some
-                  </td>
-                  <td>
-                    values
-                  </td>
-                  <td>
-                    here
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    some
-                  </td>
-                  <td>
-                    values
-                  </td>
-                  <td>
-                    here
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    some
-                  </td>
-                  <td>
-                    values
-                  </td>
-                  <td>
-                    here
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    some
-                  </td>
-                  <td>
-                    values
-                  </td>
-                  <td>
-                    here
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <p
-              className="jsx-430790654"
-            >
-              Get listed
-            </p>
-            <ul>
-              <li>
-                Item One
-              </li>
-              <li>
-                Item Two
-              </li>
-              <li>
-                Item Three
-              </li>
-            </ul>
-          </div>
+            className="jsx-1163017566 content-placeholder"
+          />
           <div
-            className="jsx-2988077148 blog-post-video"
-          >
-            
-          </div>
+            className="jsx-1163017566 content-placeholder"
+          />
         </section>
       </div>
       <div
