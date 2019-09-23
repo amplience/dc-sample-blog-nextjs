@@ -66,7 +66,7 @@ BlogPostPage.getInitialProps = async ({ query }) => {
   const { vse, blogId } = query;
   const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
   try {
-    const blogPostId = blogId.toString();
+    const blogPostId = blogId ? blogId.toString() : '';
     const blogPost = await getBlogPost(blogPostId, stagingEnvironment);
     return { blogPost };
   } catch (err) {

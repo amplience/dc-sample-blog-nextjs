@@ -63,8 +63,8 @@ const sanitiseBlogList = blogList => {
 
 const getBlogList = async () => {
   const dcClientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL || ''
+    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
+    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
   };
   const dcDeliveryClient = new ContentClient(dcClientConfig);
   const { title, subTitle, blogList } = (await dcDeliveryClient.getContentItem(

@@ -11,6 +11,7 @@ describe('Index', () => {
   beforeEach(() => {
     process.env.DYNAMIC_CONTENT_REFERENCE_ID = 'reference-id';
     process.env.GA_TRACKING_ID = 'ga-tracking-id';
+    mockGetHydratedBlogList.mockClear();
   });
 
   test('renders index with content', async () => {
