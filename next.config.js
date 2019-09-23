@@ -1,11 +1,27 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/camelcase*/
+const fs = require('fs');
 const flow = require('lodash.flow');
 const withManifest = require('next-manifest');
 const withOffline = require('next-offline');
 const ContentClient = require('dc-delivery-sdk-js').ContentClient;
 const allSettled = require('promise.allsettled');
 require('dotenv').config();
+
+const copyFilesRecursively = (sourceDir, destDir) => {
+  if (!fs.existsSync(destDir)) {
+    fs.mkdirSync(destDir);
+  }
+  
+  const files = fs.readdirSync(sourceDir);
+  files.forEach(async file => {
+    if (fs.lstatSync(`${sourceDir}/${file}`).isDirectory()) {
+      copyFilesRecursively(`${sourceDir}/${file}`, `${destDir}/${file}`)
+    } else {
+      fs.copyFileSync(`${sourceDir}/${file}`, `${destDir}/${file}`)
+    }
+  });
+};
 
 const checkForDuplicateSlugs = blogPosts => {
   let seen = new Set();
@@ -72,6 +88,17 @@ const getBlogList = async () => {
 const exportPathMap = async function() {
   let dynamicPages = {};
 
+  console.info('Copying public folder to out');
+  const outDir = `${__dirname}/out`;
+  const publicDir = `${__dirname}/static/public`;
+  try {
+    copyFilesRecursively(publicDir, outDir);
+  }
+  catch (err) {
+    console.error('Error copying public files to out dir');
+    throw err;
+  }
+  
   try {
     const blogList = await getBlogList();
     checkForDuplicateSlugs(blogList.blogPosts);

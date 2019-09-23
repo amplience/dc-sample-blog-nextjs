@@ -10,10 +10,18 @@ jest.mock('../../common/services/blog-reference-list.service', () => (a, b) => m
 describe('Index', () => {
   beforeEach(() => {
     process.env.DYNAMIC_CONTENT_REFERENCE_ID = 'reference-id';
+    process.env.GA_TRACKING_ID = 'ga-tracking-id';
   });
 
   test('renders index with content', async () => {
     const component = await renderer.create(<Index {...blogListFixture} />);
+    expect(component.toJSON()).toMatchSnapshot();
+  });
+
+  test('renders index with content but no blog posts', async () => {
+    const emptyBlogPostFixture = JSON.parse(JSON.stringify(blogListFixture));
+    emptyBlogPostFixture.blogPosts = [];
+    const component = await renderer.create(<Index {...emptyBlogPostFixture} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 

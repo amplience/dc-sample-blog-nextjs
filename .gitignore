@@ -93,3 +93,6 @@ out
 
 # PWA Manifest
 static/manifest/manifest.json
+
+# Robots file
+robots.txt

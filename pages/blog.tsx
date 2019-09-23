@@ -15,25 +15,32 @@ interface BlogPostProps {
 
 const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   const blogImage = new Image(blogPost.image.image, defaultClientConfig).url().build();
+
+  const seoParams: { [key: string]: string | any } = {
+    title: blogPost.title,
+    description: blogPost.description,
+    twitter: {
+      cardType: 'summary_large_image'
+    },
+    openGraph: {
+      title: blogPost.title,
+      description: blogPost.description,
+      images: [
+        {
+          url: `https:${blogImage}?w=1080`,
+          width: 1080
+        }
+      ]
+    }
+  };
+
+  if (process.env.X_ROBOTS_TAG_NOINDEX === 'true') {
+    seoParams.noindex = true;
+  }
+
   return (
     <Layout>
-      <NextSeo
-        title={blogPost.title}
-        description={blogPost.description}
-        twitter={{
-          cardType: 'summary_large_image'
-        }}
-        openGraph={{
-          title: blogPost.title,
-          description: blogPost.description,
-          images: [
-            {
-              url: `https:${blogImage}?w=1080`,
-              width: 1080
-            }
-          ]
-        }}
-      />
+      <NextSeo {...seoParams} />
       <Blog blogPost={blogPost} />
       <div className="content-footer">
         <SharePost twitterText={blogPost.title} />

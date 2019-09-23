@@ -9,9 +9,18 @@ import getHydratedBlogList from '../common/services/blog-reference-list.service'
 import NoBlogPosts from '../components/blog-list/no-blog-posts';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
+  const seoParams: { [key: string]: string | boolean } = {
+    title,
+    description: subTitle
+  };
+
+  if (process.env.X_ROBOTS_TAG_NOINDEX === 'true') {
+    seoParams.noindex = true;
+  }
+
   return (
     <Layout>
-      <NextSeo title={title} description={subTitle} />
+      <NextSeo {...seoParams} />
       <HeroBanner title={title} subTitle={subTitle} />
       {blogPosts.length ? (
         <>
