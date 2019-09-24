@@ -34,7 +34,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
     }
   };
 
-  if (process.env.X_ROBOTS_TAG_NOINDEX === 'true') {
+  if (process.env.ROBOTS_META_TAG_NOINDEX === 'true') {
     seoParams.noindex = true;
   }
 
