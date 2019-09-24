@@ -12,13 +12,13 @@ const copyFilesRecursively = (sourceDir, destDir) => {
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir);
   }
-  
+
   const files = fs.readdirSync(sourceDir);
-  files.forEach(async file => {
+  files.forEach(file => {
     if (fs.lstatSync(`${sourceDir}/${file}`).isDirectory()) {
-      copyFilesRecursively(`${sourceDir}/${file}`, `${destDir}/${file}`)
+      copyFilesRecursively(`${sourceDir}/${file}`, `${destDir}/${file}`);
     } else {
-      fs.copyFileSync(`${sourceDir}/${file}`, `${destDir}/${file}`)
+      fs.copyFileSync(`${sourceDir}/${file}`, `${destDir}/${file}`);
     }
   });
 };
@@ -93,12 +93,11 @@ const exportPathMap = async function() {
   const publicDir = `${__dirname}/static/public`;
   try {
     copyFilesRecursively(publicDir, outDir);
-  }
-  catch (err) {
+  } catch (err) {
     console.error('Error copying public files to out dir');
     throw err;
   }
-  
+
   try {
     const blogList = await getBlogList();
     checkForDuplicateSlugs(blogList.blogPosts);

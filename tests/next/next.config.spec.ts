@@ -4,6 +4,29 @@ import blogPostFixture from '../fixtures/single-blog-post-content-item.json';
 import nextConfig from '../../next.config';
 import { BlogListData } from '../../common/interfaces/blog-list.interface.js';
 import BlogPost from '../../common/interfaces/blog-post.interface.js';
+import fs from 'fs';
+
+const mockExistsSync = jest.fn();
+const mockMkdirSync = jest.fn();
+const mockReaddirSync = jest.fn();
+const mockIsDirectory = jest.fn();
+const mockCopyFilesRecursively = jest.fn();
+const mockCopyFileSync = jest.fn();
+
+jest.mock('fs', (): { [key: string]: Function } => {
+  return {
+    existsSync: (): Function => mockExistsSync(),
+    mkdirSync: (): Function => mockMkdirSync(),
+    readdirSync: (): Function => mockReaddirSync(),
+    lstatSync: jest.fn((): { isDirectory: Function } => {
+      return { isDirectory: (): Function => mockIsDirectory() };
+    }),
+    copyFilesRecursively: (): Function => mockCopyFilesRecursively(),
+    copyFileSync: (): Function => mockCopyFileSync()
+  };
+});
+
+// jest.mock('fs');
 
 const mockGetContentItem = jest.fn();
 jest.mock(
@@ -33,6 +56,12 @@ jest.mock(
 );
 
 describe('next.config.js', (): void => {
+  beforeEach((): void => {
+    jest.clearAllMocks();
+    mockExistsSync.mockImplementation((): boolean => true);
+    mockReaddirSync.mockImplementation((): [] => []);
+    console.log(fs);
+  });
   test('exportPathMap should return landing page and a single blog paths', async (): Promise<void> => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
@@ -196,5 +225,74 @@ describe('next.config.js', (): void => {
       }
     });
     expect(global.console.warn).toHaveBeenCalled();
+  });
+
+  test('exportPathMap should create a new destDir if one does not exist', async (): Promise<void> => {
+    const blogListContentItem = {
+      toJSON: (): { blogList: BlogListData } => {
+        return { blogList: blogListFixture };
+      }
+    };
+    const blogPostContentItem = {
+      toJSON(): BlogPost {
+        return blogPostFixture;
+      }
+    };
+    mockGetContentItem
+      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+
+    mockExistsSync.mockImplementationOnce((): boolean => false);
+
+    await nextConfig.exportPathMap();
+
+    expect(mockMkdirSync).toHaveBeenCalled();
+  });
+
+  test('exportPathMap should copy files recursively if source is a directory', async (): Promise<void> => {
+    const blogListContentItem = {
+      toJSON: (): { blogList: BlogListData } => {
+        return { blogList: blogListFixture };
+      }
+    };
+    const blogPostContentItem = {
+      toJSON(): BlogPost {
+        return blogPostFixture;
+      }
+    };
+    mockGetContentItem
+      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+
+    mockExistsSync.mockReturnValue(false);
+    mockMkdirSync.mockImplementationOnce((): Function => jest.fn());
+    mockReaddirSync.mockReturnValue(['source/dir']);
+    mockIsDirectory.mockReturnValueOnce(true).mockReturnValueOnce(false);
+    mockCopyFileSync.mockImplementationOnce((): Function => jest.fn());
+
+    await nextConfig.exportPathMap();
+
+    expect(mockReaddirSync).toHaveBeenCalledTimes(2);
+  });
+
+  test('exportPathMap should throw an error when static fiel copy fails', async (): Promise<void> => {
+    const blogListContentItem = {
+      toJSON: (): { blogList: BlogListData } => {
+        return { blogList: blogListFixture };
+      }
+    };
+    const blogPostContentItem = {
+      toJSON(): BlogPost {
+        return blogPostFixture;
+      }
+    };
+    mockGetContentItem
+      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+    mockReaddirSync.mockImplementationOnce((): void => {
+      throw new Error('Failed to read dir');
+    });
+
+    await expect(nextConfig.exportPathMap()).rejects.toThrowError();
   });
 });
