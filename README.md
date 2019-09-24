@@ -26,7 +26,7 @@ To install and use this blog you first need to create the required schemas and r
 | Filename       | Schema ID                                                                                       | Schema Type  | Visualization Supported |
 | -------------- | ----------------------------------------------------------------------------------------------- | ------------ | ----------------------- |
 | author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json    | Content Type | No                      |
-| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json | Content Type | No                      |
+| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json | Content Type | Yes                     |
 | blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json | Content Type | Yes                     |
 | blog-slot.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json | Slot         | No                      |
 | image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json     | Content Type | Yes                     |
