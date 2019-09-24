@@ -26,8 +26,6 @@ jest.mock('fs', (): { [key: string]: Function } => {
   };
 });
 
-// jest.mock('fs');
-
 const mockGetContentItem = jest.fn();
 jest.mock(
   'dc-delivery-sdk-js',
