@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://schema.localhost.com/blog-slot.json",
+  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json",
   "title": "Blog Slot",
   "description": "Slot for blog",
 
@@ -21,7 +21,9 @@
         {
           "properties": {
             "contentType": {
-              "enum": ["https://schema.localhost.com/blog-list.json"]
+              "enum": [
+                "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json"
+              ]
             }
           }
         }
