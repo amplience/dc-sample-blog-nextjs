@@ -16,7 +16,9 @@
     "export": "next export",
     "prestart": "npm run export",
     "start": "serve",
-    "fix": "prettier --write '**/*.ts'"
+    "fix": "prettier --write '**/*.ts'",
+    "prerelease": "npm run test",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -95,6 +97,7 @@
     "prettier": "^1.18.2",
     "react-test-renderer": "^16.8.6",
     "serve": "^11.1.0",
+    "standard-version": "^7.0.0",
     "ts-jest": "^24.0.2",
     "typescript": "^3.5.3"
   },
