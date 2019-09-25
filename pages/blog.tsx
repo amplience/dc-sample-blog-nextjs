@@ -27,7 +27,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
       description: blogPost.description,
       images: [
         {
-          url: `https:${blogImage}?w=1080`,
+          url: `${blogImage}?w=1080`,
           width: 1080
         }
       ]
