@@ -6,6 +6,7 @@
 ![](https://img.shields.io/badge/node-v10%2B-blue.svg)
 ![](https://img.shields.io/badge/nextjs-v9%2B-blue.svg)
 ![](https://img.shields.io/badge/amplience%20delivery%20sdk-v0.3.0%2B-blue.svg)
+![https://travis-ci.org/amplience/dc-static-blog-nextjs](https://travis-ci.org/amplience/dc-static-blog-nextjs.svg?branch=master)
 
 This is an application built using the Amplience Dynamic Content Service and the NextJS framework that generates a static blog website.
 
