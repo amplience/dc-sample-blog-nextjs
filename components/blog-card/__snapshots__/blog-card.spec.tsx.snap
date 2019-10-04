@@ -2,22 +2,22 @@
 
 exports[`BlogCard renders full blog card 1`] = `
 <React.Fragment>
-  <t
-    afterLoad={[Function]}
-    beforeLoad={[Function]}
-    placeholder={
-      <div
-        className="jsx-887154041 article-placeholder"
-      />
-    }
-    visibleByDefault={false}
+  <section
+    className="jsx-887154041"
   >
-    <section
-      className="jsx-887154041"
+    <StaticLink
+      ariaLabel="My First Blog Post"
+      href="/blog/my-first-blog"
     >
-      <StaticLink
-        ariaLabel="My First Blog Post"
-        href="/blog/my-first-blog"
+      <t
+        afterLoad={[Function]}
+        beforeLoad={[Function]}
+        placeholder={
+          <div
+            className="jsx-887154041 article-placeholder"
+          />
+        }
+        visibleByDefault={false}
       >
         <article
           className="jsx-887154041"
@@ -143,9 +143,9 @@ exports[`BlogCard renders full blog card 1`] = `
             </p>
           </div>
         </article>
-      </StaticLink>
-    </section>
-  </t>
+      </t>
+    </StaticLink>
+  </section>
   <JSXStyle
     dynamic={
       Array [
@@ -172,7 +172,17 @@ exports[`BlogCard renders full blog card 1`] = `
 `;
 
 exports[`BlogCard renders full blog card with lazy loaded placeholders 1`] = `
-<div
-  className="jsx-887154041 article-placeholder"
-/>
+<section
+  className="jsx-887154041"
+>
+  <a
+    aria-label="My First Blog Post"
+    className="jsx-3354872520"
+    href="/blog/my-first-blog"
+  >
+    <div
+      className="jsx-887154041 article-placeholder"
+    />
+  </a>
+</section>
 `;

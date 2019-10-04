@@ -18,9 +18,9 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
   const blogLink = `${path}${routerQuery}`;
   return (
     <>
-      <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
-        <section>
-          <StaticLink ariaLabel={blogPost.title} href={blogLink}>
+      <section>
+        <StaticLink ariaLabel={blogPost.title} href={blogLink}>
+          <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
             <article>
               <div className="blog-card-image">
                 <Picture
@@ -79,9 +79,10 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
                 <p>{blogPost.description}</p>
               </div>
             </article>
-          </StaticLink>
-        </section>
-      </LazyLoadComponent>
+          </LazyLoadComponent>
+        </StaticLink>
+      </section>
+
       <style jsx>{`
         section {
           display: flex;
