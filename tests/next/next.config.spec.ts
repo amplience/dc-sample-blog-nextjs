@@ -4,7 +4,6 @@ import blogPostFixture from '../fixtures/single-blog-post-content-item.json';
 import nextConfig from '../../next.config';
 import { BlogListData } from '../../common/interfaces/blog-list.interface.js';
 import BlogPost from '../../common/interfaces/blog-post.interface.js';
-import fs from 'fs';
 
 const mockExistsSync = jest.fn();
 const mockMkdirSync = jest.fn();
@@ -58,7 +57,6 @@ describe('next.config.js', (): void => {
     jest.clearAllMocks();
     mockExistsSync.mockImplementation((): boolean => true);
     mockReaddirSync.mockImplementation((): [] => []);
-    console.log(fs);
   });
   test('exportPathMap should return landing page and a single blog paths', async (): Promise<void> => {
     const blogListContentItem = {
