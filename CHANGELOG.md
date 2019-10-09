@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.0.0...v1.1.0) (2019-10-09)
+
+
+### Bug Fixes
+
+* **blog card:** moving lazy load component inside the anchor tag so links are always available ([75f9e4e](https://github.com/amplience/dc-static-blog-nextjs/commit/75f9e4e))
+* **service worker:** added some config to fix safari video issues ([cba34f4](https://github.com/amplience/dc-static-blog-nextjs/commit/cba34f4))
+
+
+### Features
+
+* **dynamic content config:** media host env vars to override dynamic content client default host ([e6b3d6d](https://github.com/amplience/dc-static-blog-nextjs/commit/e6b3d6d))
+
 ## 1.0.0 (2019-09-25)
 
 
