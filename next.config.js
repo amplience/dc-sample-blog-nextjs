@@ -203,5 +203,13 @@ module.exports = plugins({
   env,
   exportPathMap,
   manifest,
-  exportTrailingSlash: true
+  exportTrailingSlash: true,
+  workboxOpts: {
+    runtimeCaching: [
+      {
+        urlPattern: /.mp4$/,
+        handler: 'NetworkFirst'
+      }
+    ]
+  }
 });
