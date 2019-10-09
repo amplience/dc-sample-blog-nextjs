@@ -103,6 +103,7 @@ Adding a Blog post to a Blog list
 Note:
 
 - When adding the blog "Image" we recommend maintaining a 3:1, width:height ratio.
+- Recommended video format is MP4 to avoid issues with Safari.
 
 ## Deploy To Netlify
 
