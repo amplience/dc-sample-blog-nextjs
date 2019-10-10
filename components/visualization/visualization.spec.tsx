@@ -6,6 +6,9 @@ import * as blogPostFixture from './__fixtures__/blogpost.json';
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
+const mockGetReferencedBlogPosts = jest.fn();
+const blogReferenceList = require('../../common/services/blog-reference-list.service');
+blogReferenceList.getReferencedBlogPosts = mockGetReferencedBlogPosts;
 
 describe('Visualization', (): void => {
   beforeEach(() => {
@@ -114,6 +117,7 @@ describe('Visualization', (): void => {
     };
 
     await renderVisualization(blogList);
+    expect(mockGetReferencedBlogPosts).toHaveBeenCalledWith(expect.anything(), 'vse');
   });
 
   it('should render a blog list without a subtitle', async () => {

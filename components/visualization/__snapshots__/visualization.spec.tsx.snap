@@ -30,37 +30,15 @@ exports[`Visualization should only load content when props are provided 2`] = `
 
 exports[`Visualization should render a blog list 1`] = `<PageLoader />`;
 
-exports[`Visualization should render a blog list 2`] = `
-<Fragment>
-  <HeroBanner
-    subTitle="A strap line"
-    title="A blog title"
-  />
-  <NoBlogPosts />
-</Fragment>
-`;
+exports[`Visualization should render a blog list 2`] = `<PageLoader />`;
 
 exports[`Visualization should render a blog list without a subtitle 1`] = `<PageLoader />`;
 
-exports[`Visualization should render a blog list without a subtitle 2`] = `
-<Fragment>
-  <HeroBanner
-    title="A blog title"
-  />
-  <NoBlogPosts />
-</Fragment>
-`;
+exports[`Visualization should render a blog list without a subtitle 2`] = `<PageLoader />`;
 
 exports[`Visualization should render a blog list without any blog posts 1`] = `<PageLoader />`;
 
-exports[`Visualization should render a blog list without any blog posts 2`] = `
-<Fragment>
-  <HeroBanner
-    title="A blog title"
-  />
-  <NoBlogPosts />
-</Fragment>
-`;
+exports[`Visualization should render a blog list without any blog posts 2`] = `<PageLoader />`;
 
 exports[`Visualization should render a blog post 1`] = `<PageLoader />`;
 
