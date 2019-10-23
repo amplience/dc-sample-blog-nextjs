@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.1.0...v1.1.1) (2019-10-23)
+
+
+### Bug Fixes
+
+* **blog list visualisation:** delay in update of visualisation of linked content in blog lists ([c1e3480](https://github.com/amplience/dc-static-blog-nextjs/commit/c1e3480))
+
 ## [1.1.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.0.0...v1.1.0) (2019-10-09)
 
 
