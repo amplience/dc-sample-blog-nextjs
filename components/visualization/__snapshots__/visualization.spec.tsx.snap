@@ -36,7 +36,331 @@ exports[`Visualization should render a blog list 2`] = `
     subTitle="A strap line"
     title="A blog title"
   />
-  <NoBlogPosts />
+  <HeroCard
+    blogPost={
+      Object {
+        "authors": Array [
+          Object {
+            "_meta": Object {
+              "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+              "name": "bloblog-author",
+              "schema": "https://schema.localhost.com/author.json",
+            },
+            "avatar": Object {
+              "_meta": Object {
+                "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                "name": "bloblog-avatar",
+                "schema": "https://schema.localhost.com/image.json",
+              },
+              "altText": "The dashing Sir Bloblog avatar",
+              "image": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                },
+                "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                "endpoint": "bloblogltd",
+                "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                "mediaType": "i",
+                "name": "man-business-suit",
+              },
+              "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/man-business-suit",
+            },
+            "name": "Sir Bloblog",
+          },
+        ],
+        "content": Array [
+          Object {
+            "_meta": Object {
+              "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+              "name": "casual-crotch-shot",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "Casual crotch shot",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+              "endpoint": "bloblogltd",
+              "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+              "mediaType": "i",
+              "name": "casual-wear",
+            },
+            "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/casual-wear",
+          },
+          Object {
+            "_meta": Object {
+              "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+              "name": "my-first-bloblog-text",
+              "schema": "https://schema.localhost.com/text.json",
+            },
+            "text": "# This is my first Bloblog
+
+## Look-a-header 2
+
+### Look-a-header 3
+
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+          },
+          Object {
+            "_meta": Object {
+              "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+              "name": "my-first-bloblog-video",
+              "schema": "https://schema.localhost.com/video.json",
+            },
+            "srcSet": Array [
+              "https://1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https",
+            ],
+            "video": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+              },
+              "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+              "endpoint": "bloblogltd",
+              "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+              "mediaType": "v",
+              "name": "SampleVideo_1280x720_5mb",
+            },
+          },
+        ],
+        "date": "August 07, 2019",
+        "default": Object {
+          "authors": Array [
+            Object {
+              "_meta": Object {
+                "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                "name": "bloblog-author",
+                "schema": "https://schema.localhost.com/author.json",
+              },
+              "avatar": Object {
+                "_meta": Object {
+                  "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                  "name": "bloblog-avatar",
+                  "schema": "https://schema.localhost.com/image.json",
+                },
+                "altText": "The dashing Sir Bloblog avatar",
+                "image": Object {
+                  "_meta": Object {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                  },
+                  "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                  "endpoint": "bloblogltd",
+                  "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                  "mediaType": "i",
+                  "name": "man-business-suit",
+                },
+                "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/man-business-suit",
+              },
+              "name": "Sir Bloblog",
+            },
+          ],
+          "content": Array [
+            Object {
+              "_meta": Object {
+                "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+                "name": "casual-crotch-shot",
+                "schema": "https://schema.localhost.com/image.json",
+              },
+              "altText": "Casual crotch shot",
+              "image": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                },
+                "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                "endpoint": "bloblogltd",
+                "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                "mediaType": "i",
+                "name": "casual-wear",
+              },
+              "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/casual-wear",
+            },
+            Object {
+              "_meta": Object {
+                "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+                "name": "my-first-bloblog-text",
+                "schema": "https://schema.localhost.com/text.json",
+              },
+              "text": "# This is my first Bloblog
+
+## Look-a-header 2
+
+### Look-a-header 3
+
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+            },
+            Object {
+              "_meta": Object {
+                "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+                "name": "my-first-bloblog-video",
+                "schema": "https://schema.localhost.com/video.json",
+              },
+              "srcSet": Array [
+                "https://1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https",
+              ],
+              "video": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                },
+                "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                "endpoint": "bloblogltd",
+                "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+                "mediaType": "v",
+                "name": "SampleVideo_1280x720_5mb",
+              },
+            },
+          ],
+          "date": "August 07, 2019",
+          "description": "Some text for the description that explains this bloblog post",
+          "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+          "image": Object {
+            "_meta": Object {
+              "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+              "name": "crotchy-bag-image",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "crotch bags",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+              "endpoint": "bloblogltd",
+              "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+              "mediaType": "i",
+              "name": "friends-shopping-bags",
+            },
+            "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/friends-shopping-bags",
+          },
+          "readTime": 12,
+          "tags": Array [
+            "sir bloblog",
+            "you're it",
+            "No tiggy backs",
+          ],
+          "title": "My First Bloblog Post",
+          "urlSlug": "my-first-bloblog",
+        },
+        "description": "Some text for the description that explains this bloblog post",
+        "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+        "image": Object {
+          "_meta": Object {
+            "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+            "name": "crotchy-bag-image",
+            "schema": "https://schema.localhost.com/image.json",
+          },
+          "altText": "crotch bags",
+          "image": Object {
+            "_meta": Object {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+            },
+            "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+            "endpoint": "bloblogltd",
+            "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+            "mediaType": "i",
+            "name": "friends-shopping-bags",
+          },
+          "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/friends-shopping-bags",
+        },
+        "readTime": 12,
+        "tags": Array [
+          "sir bloblog",
+          "you're it",
+          "No tiggy backs",
+        ],
+        "title": "My First Bloblog Post",
+        "urlSlug": "my-first-bloblog",
+      }
+    }
+  />
+  <BlogList
+    blogPosts={Array []}
+  />
 </Fragment>
 `;
 
@@ -47,7 +371,331 @@ exports[`Visualization should render a blog list without a subtitle 2`] = `
   <HeroBanner
     title="A blog title"
   />
-  <NoBlogPosts />
+  <HeroCard
+    blogPost={
+      Object {
+        "authors": Array [
+          Object {
+            "_meta": Object {
+              "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+              "name": "bloblog-author",
+              "schema": "https://schema.localhost.com/author.json",
+            },
+            "avatar": Object {
+              "_meta": Object {
+                "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                "name": "bloblog-avatar",
+                "schema": "https://schema.localhost.com/image.json",
+              },
+              "altText": "The dashing Sir Bloblog avatar",
+              "image": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                },
+                "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                "endpoint": "bloblogltd",
+                "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                "mediaType": "i",
+                "name": "man-business-suit",
+              },
+              "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/man-business-suit",
+            },
+            "name": "Sir Bloblog",
+          },
+        ],
+        "content": Array [
+          Object {
+            "_meta": Object {
+              "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+              "name": "casual-crotch-shot",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "Casual crotch shot",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+              "endpoint": "bloblogltd",
+              "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+              "mediaType": "i",
+              "name": "casual-wear",
+            },
+            "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/casual-wear",
+          },
+          Object {
+            "_meta": Object {
+              "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+              "name": "my-first-bloblog-text",
+              "schema": "https://schema.localhost.com/text.json",
+            },
+            "text": "# This is my first Bloblog
+
+## Look-a-header 2
+
+### Look-a-header 3
+
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+          },
+          Object {
+            "_meta": Object {
+              "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+              "name": "my-first-bloblog-video",
+              "schema": "https://schema.localhost.com/video.json",
+            },
+            "srcSet": Array [
+              "https://1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https",
+            ],
+            "video": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+              },
+              "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+              "endpoint": "bloblogltd",
+              "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+              "mediaType": "v",
+              "name": "SampleVideo_1280x720_5mb",
+            },
+          },
+        ],
+        "date": "August 07, 2019",
+        "default": Object {
+          "authors": Array [
+            Object {
+              "_meta": Object {
+                "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                "name": "bloblog-author",
+                "schema": "https://schema.localhost.com/author.json",
+              },
+              "avatar": Object {
+                "_meta": Object {
+                  "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                  "name": "bloblog-avatar",
+                  "schema": "https://schema.localhost.com/image.json",
+                },
+                "altText": "The dashing Sir Bloblog avatar",
+                "image": Object {
+                  "_meta": Object {
+                    "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                  },
+                  "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                  "endpoint": "bloblogltd",
+                  "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                  "mediaType": "i",
+                  "name": "man-business-suit",
+                },
+                "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/man-business-suit",
+              },
+              "name": "Sir Bloblog",
+            },
+          ],
+          "content": Array [
+            Object {
+              "_meta": Object {
+                "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+                "name": "casual-crotch-shot",
+                "schema": "https://schema.localhost.com/image.json",
+              },
+              "altText": "Casual crotch shot",
+              "image": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                },
+                "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                "endpoint": "bloblogltd",
+                "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                "mediaType": "i",
+                "name": "casual-wear",
+              },
+              "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/casual-wear",
+            },
+            Object {
+              "_meta": Object {
+                "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+                "name": "my-first-bloblog-text",
+                "schema": "https://schema.localhost.com/text.json",
+              },
+              "text": "# This is my first Bloblog
+
+## Look-a-header 2
+
+### Look-a-header 3
+
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+            },
+            Object {
+              "_meta": Object {
+                "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+                "name": "my-first-bloblog-video",
+                "schema": "https://schema.localhost.com/video.json",
+              },
+              "srcSet": Array [
+                "https://1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https",
+              ],
+              "video": Object {
+                "_meta": Object {
+                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                },
+                "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+                "endpoint": "bloblogltd",
+                "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+                "mediaType": "v",
+                "name": "SampleVideo_1280x720_5mb",
+              },
+            },
+          ],
+          "date": "August 07, 2019",
+          "description": "Some text for the description that explains this bloblog post",
+          "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+          "image": Object {
+            "_meta": Object {
+              "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+              "name": "crotchy-bag-image",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "crotch bags",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+              "endpoint": "bloblogltd",
+              "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+              "mediaType": "i",
+              "name": "friends-shopping-bags",
+            },
+            "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/friends-shopping-bags",
+          },
+          "readTime": 12,
+          "tags": Array [
+            "sir bloblog",
+            "you're it",
+            "No tiggy backs",
+          ],
+          "title": "My First Bloblog Post",
+          "urlSlug": "my-first-bloblog",
+        },
+        "description": "Some text for the description that explains this bloblog post",
+        "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+        "image": Object {
+          "_meta": Object {
+            "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+            "name": "crotchy-bag-image",
+            "schema": "https://schema.localhost.com/image.json",
+          },
+          "altText": "crotch bags",
+          "image": Object {
+            "_meta": Object {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+            },
+            "defaultHost": "1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io",
+            "endpoint": "bloblogltd",
+            "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+            "mediaType": "i",
+            "name": "friends-shopping-bags",
+          },
+          "src": "//1hgphw4170lum1o2yx0py00raf.staging.bigcontent.io/i/bloblogltd/friends-shopping-bags",
+        },
+        "readTime": 12,
+        "tags": Array [
+          "sir bloblog",
+          "you're it",
+          "No tiggy backs",
+        ],
+        "title": "My First Bloblog Post",
+        "urlSlug": "my-first-bloblog",
+      }
+    }
+  />
+  <BlogList
+    blogPosts={Array []}
+  />
 </Fragment>
 `;
 

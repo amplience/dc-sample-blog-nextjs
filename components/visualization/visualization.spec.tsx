@@ -3,9 +3,13 @@ import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
+import PageLoader from "../page-loader/page-loader";
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
+const mockGetReferencedBlogPosts = jest.fn();
+const blogReferenceList = require('../../common/services/blog-reference-list.service');
+blogReferenceList.getReferencedBlogPosts = mockGetReferencedBlogPosts;
 
 describe('Visualization', (): void => {
   beforeEach(() => {
@@ -21,7 +25,8 @@ describe('Visualization', (): void => {
 
     expect(toJson(wrapper)).toMatchSnapshot();
 
-    await waitUntil(() => !wrapper.contains(<h2>Loading visualization...</h2>));
+    await waitUntil(() => !wrapper.contains(<PageLoader />));
+
     expect(mockGetStagingContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
   }
@@ -91,7 +96,8 @@ describe('Visualization', (): void => {
       contentId: 'content'
     });
 
-    await waitUntil(() => !wrapper.contains(<h2>Loading visualization...</h2>));
+    await waitUntil(() => !wrapper.contains(<PageLoader />));
+
     expect(mockGetStagingContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
   });
@@ -104,29 +110,20 @@ describe('Visualization', (): void => {
     const blogList = {
       title: 'A blog title',
       subTitle: 'A strap line',
-      blogPosts: [
-        {
-          blogPostFixture
-        },
-        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032b', title: 'Second blog post' } },
-        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032c', title: 'Third blog post' } }
-      ]
+      blogPosts: [ blogPostFixture ]
     };
+    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
 
     await renderVisualization(blogList);
+    expect(mockGetReferencedBlogPosts).toHaveBeenCalledWith(expect.anything(), 'vse');
   });
 
   it('should render a blog list without a subtitle', async () => {
     const blogList = {
       title: 'A blog title',
-      blogPosts: [
-        {
-          blogPostFixture
-        },
-        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032b', title: 'Second blog post' } },
-        { ...blogPostFixture, ...{ id: '8d6943c7-6028-4fac-b45e-57fc63bd032c', title: 'Third blog post' } }
-      ]
+      blogPosts: [ blogPostFixture ]
     };
+    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
 
     await renderVisualization(blogList);
   });
@@ -136,6 +133,7 @@ describe('Visualization', (): void => {
       title: 'A blog title',
       blogPosts: []
     };
+    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
 
     await renderVisualization(blogList);
   });

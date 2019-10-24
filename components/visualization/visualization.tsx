@@ -57,7 +57,7 @@ export default class Visualization extends Component<VisualizationProps, Visuali
       } else {
         let blogPosts: BlogPost[] = [];
         if ('blogPosts' in contentItem) {
-          blogPosts = await getReferencedBlogPosts((contentItem as BlogReferenceList).blogPosts);
+          blogPosts = await getReferencedBlogPosts((contentItem as BlogReferenceList).blogPosts, this.props.stagingEnvironment);
         }
         this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } as VisualizationState['blogList'] });
       }
