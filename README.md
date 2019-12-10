@@ -44,6 +44,8 @@ For each of the Content Type Schemas listed above:-
 2. Enter the Schema Id
 3. Select the Schema Type from the drop down menu
 4. Click "Save & open schema"
+5. Open the .json file and copy & paste in the JSON content into the editor, overwriting the existing JSON.
+6. Click "Save" (top right)
 
 Navigate to the "Content types" area (Developer -> Content types).
 
