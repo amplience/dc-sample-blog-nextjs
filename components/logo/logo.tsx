@@ -6,18 +6,18 @@ const Logo = ({ darkMode }: { darkMode?: boolean }) => {
     <>
       <img
         className="logo"
-        src={`/static/images/${logoSrcName}-340w.png`}
-        srcSet={`/static/images/${logoSrcName}-160w.png 1x, /static/images/${logoSrcName}-340w.png 2x`}
+        src={`/static/images/${logoSrcName}-100h.png`}
+        srcSet={`/static/images/${logoSrcName}-50h.png 1x, /static/images/${logoSrcName}-100h.png 2x`}
         alt="Amplience logo"
       />
       <style jsx>{`
         img {
-          width: 160px;
+          height: 50px;
+          margin-bottom: 6px;
         }
 
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           img {
-            width: 140px;
             object-fit: contain;
           }
         }

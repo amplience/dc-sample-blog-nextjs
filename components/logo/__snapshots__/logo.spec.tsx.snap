@@ -3,8 +3,8 @@
 exports[`Logo renders logo 1`] = `
 <img
   alt="Amplience logo"
-  className="jsx-1701653183 logo"
-  src="/static/images/logo-340w.png"
-  srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+  className="jsx-2718936118 logo"
+  src="/static/images/logo-100h.png"
+  srcSet="/static/images/logo-50h.png 1x, /static/images/logo-100h.png 2x"
 />
 `;
