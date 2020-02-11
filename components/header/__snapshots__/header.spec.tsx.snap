@@ -2,10 +2,10 @@
 
 exports[`Header renders blog header 1`] = `
 <section
-  className="jsx-1255100151"
+  className="jsx-3469519543"
 >
   <header
-    className="jsx-1255100151"
+    className="jsx-3469519543"
   >
     <a
       aria-label=""
@@ -20,7 +20,7 @@ exports[`Header renders blog header 1`] = `
       />
     </a>
     <h1
-      className="jsx-1255100151"
+      className="jsx-3469519543"
     >
       Blog Title
     </h1>
@@ -30,10 +30,10 @@ exports[`Header renders blog header 1`] = `
 
 exports[`Header renders blog header with preview vse query string link 1`] = `
 <section
-  className="jsx-1255100151"
+  className="jsx-3469519543"
 >
   <header
-    className="jsx-1255100151"
+    className="jsx-3469519543"
   >
     <a
       aria-label=""
@@ -48,7 +48,7 @@ exports[`Header renders blog header with preview vse query string link 1`] = `
       />
     </a>
     <h1
-      className="jsx-1255100151"
+      className="jsx-3469519543"
     >
       Blog Title
     </h1>
