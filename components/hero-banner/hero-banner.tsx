@@ -16,10 +16,6 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           justify-content: center;
           flex-direction: column;
           text-align: center;
-          background-image: url('/static/images/blog-header_left.png'), url('/static/images/blog-header_right.png');
-          background-position: top left, top right;
-          background-repeat: no-repeat, no-repeat;
-          background-size: auto 100%, auto 100%;
           background-color: ${theme.colors.mirage95};
           padding: 40 20px;
         }

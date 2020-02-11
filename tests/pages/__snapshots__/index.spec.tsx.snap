@@ -17,9 +17,9 @@ exports[`Index renders index with content 1`] = `
       >
         <img
           alt="Amplience logo"
-          className="jsx-1701653183 logo"
-          src="/static/images/logo-white-340w.png"
-          srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
+          className="jsx-2718936118 logo"
+          src="/static/images/logo-white-100h.png"
+          srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
         />
       </a>
       <h1
@@ -36,7 +36,7 @@ exports[`Index renders index with content 1`] = `
       className="jsx-873644259"
     >
       <section
-        className="jsx-510563373"
+        className="jsx-3485500121"
       >
         <h1
           className="jsx-2799736912"
@@ -169,9 +169,9 @@ exports[`Index renders index with content 1`] = `
           >
             <img
               alt="Amplience logo"
-              className="jsx-1701653183 logo"
-              src="/static/images/logo-340w.png"
-              srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+              className="jsx-2718936118 logo"
+              src="/static/images/logo-100h.png"
+              srcSet="/static/images/logo-50h.png 1x, /static/images/logo-100h.png 2x"
             />
             <div
               className="jsx-27833366 social-links"
@@ -416,9 +416,9 @@ exports[`Index renders index with content but no blog posts 1`] = `
       >
         <img
           alt="Amplience logo"
-          className="jsx-1701653183 logo"
-          src="/static/images/logo-white-340w.png"
-          srcSet="/static/images/logo-white-160w.png 1x, /static/images/logo-white-340w.png 2x"
+          className="jsx-2718936118 logo"
+          src="/static/images/logo-white-100h.png"
+          srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
         />
       </a>
       <h1
@@ -435,7 +435,7 @@ exports[`Index renders index with content but no blog posts 1`] = `
       className="jsx-873644259"
     >
       <section
-        className="jsx-510563373"
+        className="jsx-3485500121"
       >
         <h1
           className="jsx-2799736912"
@@ -472,9 +472,9 @@ exports[`Index renders index with content but no blog posts 1`] = `
           >
             <img
               alt="Amplience logo"
-              className="jsx-1701653183 logo"
-              src="/static/images/logo-340w.png"
-              srcSet="/static/images/logo-160w.png 1x, /static/images/logo-340w.png 2x"
+              className="jsx-2718936118 logo"
+              src="/static/images/logo-100h.png"
+              srcSet="/static/images/logo-50h.png 1x, /static/images/logo-100h.png 2x"
             />
             <div
               className="jsx-27833366 social-links"
