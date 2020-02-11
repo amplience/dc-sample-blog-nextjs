@@ -5,10 +5,10 @@ exports[`Index renders index with content 1`] = `
   className="jsx-873644259 site-container"
 >
   <section
-    className="jsx-1255100151"
+    className="jsx-3469519543"
   >
     <header
-      className="jsx-1255100151"
+      className="jsx-3469519543"
     >
       <a
         aria-label=""
@@ -23,7 +23,7 @@ exports[`Index renders index with content 1`] = `
         />
       </a>
       <h1
-        className="jsx-1255100151"
+        className="jsx-3469519543"
       >
         PRODUCT BLOG
       </h1>
@@ -404,10 +404,10 @@ exports[`Index renders index with content but no blog posts 1`] = `
   className="jsx-873644259 site-container"
 >
   <section
-    className="jsx-1255100151"
+    className="jsx-3469519543"
   >
     <header
-      className="jsx-1255100151"
+      className="jsx-3469519543"
     >
       <a
         aria-label=""
@@ -422,7 +422,7 @@ exports[`Index renders index with content but no blog posts 1`] = `
         />
       </a>
       <h1
-        className="jsx-1255100151"
+        className="jsx-3469519543"
       >
         PRODUCT BLOG
       </h1>

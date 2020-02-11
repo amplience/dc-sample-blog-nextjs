@@ -47,10 +47,6 @@ const Header = ({ title }: { title: string }) => {
           h1 {
             font-size: ${theme.fonts.size.small};
           }
-
-          header {
-            min-height: 60px;
-          }
         }
       `}</style>
     </>
