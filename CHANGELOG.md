@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.1.1...v1.2.0) (2020-02-12)
+
+
+### Bug Fixes
+
+* **header on mobile:** removed min-height on header ([50e7a91](https://github.com/amplience/dc-static-blog-nextjs/commit/50e7a91))
+
+
+### Features
+
+* **logo:** new Amplience logo ([bc3f642](https://github.com/amplience/dc-static-blog-nextjs/commit/bc3f642))
+
 ### [1.1.1](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.1.0...v1.1.1) (2019-10-23)
 
 
