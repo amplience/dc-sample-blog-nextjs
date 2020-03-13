@@ -17,6 +17,7 @@ exports[`BlogCard renders full blog card 1`] = `
             className="jsx-887154041 article-placeholder"
           />
         }
+        useIntersectionObserver={true}
         visibleByDefault={false}
       >
         <article
