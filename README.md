@@ -36,6 +36,22 @@ To install and use this blog you first need to create the required schemas and r
 
 ### Creating Schemas & Registering Content Types
 
+#### Import using the CLI (recommended)
+You can import the schemas and content types to your hub using the [Dynamic Content CLI](https://www.npmjs.com/package/@amplience/dc-cli).
+
+Install and configure the CLI tool, clone this repository and then use the the CLI import definitions included by running the following commands:
+
+```
+npm install -g @amplience/dc-cli
+dc-cli configure --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID>
+cd ~/git
+git clone https://github.com/amplience/dc-static-blog-nextjs
+dc-cli content-type-schema import ~/git/dc-static-blog-nextjs/dc-cli-definitions/content-type-schemas
+dc-cli content-type import ~/git/dc-static-blog-nextjs/dc-cli-definitions/content-types
+```
+
+#### Create and register manually in Dynamic Content
+
 In Dynamic Content, navigate to the "Content type schemas" area (Developer -> Content type schemas).
 
 For each of the Content Type Schemas listed above:-
@@ -60,7 +76,7 @@ For each of the Content Types list above:-
 
 ### Creating A Blog-List & Slot
 
-Once you have installed and registered all of Content schemas, the next step is to create a blog-list Content item and a Slot.
+Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog-list Content item and a Slot.
 A slot is like a placeholder/pointer to your blog-list, it is also the content entry point when the application runs.
 
 How to create a blog-list content item for your blog:
