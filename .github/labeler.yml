@@ -1,0 +1,13 @@
+test:
+  - src/**/*.spec.*
+  - src/**/*.snap
+  - tests/**
+documentation:
+  - ./**/*.md
+schemas:
+  - ./schemas/**
+blog:
+  - ./pages/**
+  - ./layouts/**
+  - ./components/**
+  - ./common/**
