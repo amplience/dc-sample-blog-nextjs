@@ -13,7 +13,7 @@ describe('video.service', (): void => {
           json(): VideoProfile {
             return { media: [{ src: 'test-video-src' }] };
           },
-          status: 200
+          status: 200,
         };
       });
       const video = {
@@ -22,8 +22,8 @@ describe('video.service', (): void => {
           name: 'video-name',
           endpoint: 'video-endpoint',
           defaultHost: 'video-default-host',
-          mediaType: 'v'
-        }
+          mediaType: 'v',
+        },
       };
       const result = await getVideoSources(video);
       expect(result).toEqual(['test-video-src?protocol=https']);
@@ -33,10 +33,9 @@ describe('video.service', (): void => {
       mockFetch.mockImplementationOnce((): { json: Function; status: number } => {
         return {
           json(): VideoProfile {
-            //@ts-ignore - so we can return and empty array from the fetch request
-            return { media: [] };
+            return ({ media: [] } as unknown) as VideoProfile;
           },
-          status: 200
+          status: 200,
         };
       });
       const video = {
@@ -44,8 +43,8 @@ describe('video.service', (): void => {
           id: 'video-id',
           name: 'video-name',
           endpoint: 'video-endpoint',
-          defaultHost: 'video-default-host'
-        }
+          defaultHost: 'video-default-host',
+        },
       };
       const result = await getVideoSources(video);
       expect(result).toEqual([]);
@@ -54,7 +53,7 @@ describe('video.service', (): void => {
     test('should throw', async (): Promise<void> => {
       mockFetch.mockImplementationOnce((): { status: number } => {
         return {
-          status: 500
+          status: 500,
         };
       });
       const video = {
@@ -62,8 +61,8 @@ describe('video.service', (): void => {
           id: 'video-id',
           name: 'video-name',
           endpoint: 'video-endpoint',
-          defaultHost: 'video-default-host'
-        }
+          defaultHost: 'video-default-host',
+        },
       };
       await expect(getVideoSources(video)).rejects.toThrowError(
         `Unable to parse video meta data, API responded with a 500`

@@ -10,9 +10,9 @@ jest.mock(
       ...jest.requireActual('dc-delivery-sdk-js'),
       ContentClient: jest.fn((): { getContentItem: Function } => {
         return {
-          getContentItem: mockGetContentItem
+          getContentItem: mockGetContentItem,
         };
-      })
+      }),
     };
   }
 );
@@ -24,7 +24,7 @@ describe('DynamicContentDeliveryService', (): void => {
 
   test('loads a new client', (): void => {
     const opts = {
-      account: 'DELIVERY_SERVICE_ACCOUNT_ID'
+      account: 'DELIVERY_SERVICE_ACCOUNT_ID',
     };
     new DynamicContentDeliveryService(opts);
     expect(ContentClient).toBeCalledWith(opts);
@@ -42,12 +42,12 @@ describe('DynamicContentDeliveryService', (): void => {
       _meta: {
         schema: 'http://example.com/schema.json',
         deliveryId: 'delivery-id',
-        name: 'content-name'
-      }
+        name: 'content-name',
+      },
     };
     mockGetContentItem.mockImplementation((): MockContentItemResponse => contentItemResponse);
     const opts = {
-      account: 'DELIVERY_SERVICE_ACCOUNT_ID'
+      account: 'DELIVERY_SERVICE_ACCOUNT_ID',
     };
     const service = new DynamicContentDeliveryService(opts);
     const result = await service.getContentItemById('123');

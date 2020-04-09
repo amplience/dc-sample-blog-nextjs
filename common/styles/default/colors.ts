@@ -10,7 +10,7 @@ const colors = {
   doveGray: '#666666',
   dustyGray: '#999999',
   radicalRed: '#ff3366',
-  mirage: '#17202b'
+  mirage: '#17202b',
 };
 
 export default colors;

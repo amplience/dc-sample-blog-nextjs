@@ -1,4 +1,5 @@
 import getStagingContentItemById from './vse.service';
+// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 // @ts-ignore
 import { mockIsBlogPost, mockParseBlogPost, mockParseContent } from './blog-post.service';
 import { ContentItem } from 'dc-delivery-sdk-js';
@@ -13,12 +14,12 @@ const mockGetContentItem = jest.fn().mockImplementation(
           name: 'name',
           toJSON: (): {} => {
             return {};
-          }
-        }
+          },
+        },
       },
       toJSON: (): {} => {
         return {};
-      }
+      },
     };
   }
 );
@@ -30,9 +31,9 @@ jest.mock(
       ...jest.requireActual('dc-delivery-sdk-js'),
       ContentClient: jest.fn((): { getContentItem: Function } => {
         return {
-          getContentItem: mockGetContentItem
+          getContentItem: mockGetContentItem,
         };
-      })
+      }),
     };
   }
 );

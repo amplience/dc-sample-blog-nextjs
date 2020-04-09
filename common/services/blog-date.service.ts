@@ -10,7 +10,7 @@ const MONTHS = [
   'September',
   'October',
   'November',
-  'December'
+  'December',
 ];
 
 const addLeadingZeroes = (num: number): string => (num < 10 ? `0${num}` : num.toString());

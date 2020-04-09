@@ -8,14 +8,14 @@ const fonts = {
     xxLarge: '1.5rem',
     xxxLarge: '2rem',
     xxxxLarge: '2.25rem',
-    xxxxxLarge: '3rem'
+    xxxxxLarge: '3rem',
   },
   weight: {
     light: '300',
     regular: '400',
     medium: '500',
-    bold: '700'
-  }
+    bold: '700',
+  },
 };
 
 export default fonts;

@@ -9,7 +9,7 @@ import { defaultClientConfig } from './dynamic-content-client-config';
 export async function parseContent(content: AmplienceContent[]): Promise<AmplienceContent[]> {
   const updatedContent: AmplienceContent[] = [];
 
-  for (let c of content) {
+  for (const c of content) {
     if ('video' in c) {
       c.srcSet = await getVideoSources(c);
     }
@@ -47,7 +47,7 @@ export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody):
     image,
     urlSlug,
     content: await parseContent(content),
-    tags
+    tags,
   };
 }
 

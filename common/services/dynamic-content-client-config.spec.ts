@@ -19,7 +19,7 @@ describe('dynamic-content-client-config', (): void => {
 
     expect(defaultClientConfig).toEqual({
       account: 'account-id',
-      secureMediaHost: 'custom-secure-media-host.amplience.net'
+      secureMediaHost: 'custom-secure-media-host.amplience.net',
     });
   });
 
@@ -28,7 +28,7 @@ describe('dynamic-content-client-config', (): void => {
 
     expect(defaultClientConfig).toEqual({
       account: '',
-      secureMediaHost: ''
+      secureMediaHost: '',
     });
   });
 });

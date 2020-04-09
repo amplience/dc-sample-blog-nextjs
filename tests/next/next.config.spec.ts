@@ -21,7 +21,7 @@ jest.mock('fs', (): { [key: string]: Function } => {
       return { isDirectory: (): Function => mockIsDirectory() };
     }),
     copyFilesRecursively: (): Function => mockCopyFilesRecursively(),
-    copyFileSync: (): Function => mockCopyFileSync()
+    copyFileSync: (): Function => mockCopyFileSync(),
   };
 });
 
@@ -33,9 +33,9 @@ jest.mock(
       ...jest.requireActual('dc-delivery-sdk-js'),
       ContentClient: jest.fn((): { getContentItem: Function } => {
         return {
-          getContentItem: mockGetContentItem
+          getContentItem: mockGetContentItem,
         };
-      })
+      }),
     };
   }
 );
@@ -62,12 +62,12 @@ describe('next.config.js', (): void => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
         return { blogList: blogListFixture };
-      }
+      },
     };
     const blogPostContentItem = {
       toJSON(): BlogPost {
         return blogPostFixture;
-      }
+      },
     };
     mockGetContentItem
       .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
@@ -80,29 +80,29 @@ describe('next.config.js', (): void => {
         page: '/blog',
         query: {
           blogId: '8d6943c7-6028-4fac-b45e-57fc63bd032a',
-          slug: 'my-first-blog'
-        }
+          slug: 'my-first-blog',
+        },
       },
       '/': {
         page: '/',
         query: {
-          vse: ''
-        }
+          vse: '',
+        },
       },
       '/preview': {
         page: '/preview',
         query: {
           content: '',
-          vse: ''
-        }
+          vse: '',
+        },
       },
       '/visualization.html': {
         page: '/visualization',
         query: {
           vse: '',
-          content: ''
-        }
-      }
+          content: '',
+        },
+      },
     });
   });
 
@@ -110,12 +110,12 @@ describe('next.config.js', (): void => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
         return { blogList: blogListDuplicateBlogFixture };
-      }
+      },
     };
     const blogPostContentItem = {
       toJSON(): BlogPost {
         return blogPostFixture;
-      }
+      },
     };
     mockGetContentItem
       .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
@@ -132,9 +132,9 @@ describe('next.config.js', (): void => {
       toJSON: (): { blogList: BlogListData } => {
         return {
           // @ts-ignore
-          notBlogList: {}
+          notBlogList: {},
         };
-      }
+      },
     };
     mockGetContentItem.mockImplementationOnce((): { toJSON: Function } => blogListContentItem);
 
@@ -152,10 +152,10 @@ describe('next.config.js', (): void => {
           // @ts-ignore
           blogList: {
             title: 'some title',
-            subTitle: 'some subtitle'
-          }
+            subTitle: 'some subtitle',
+          },
         };
-      }
+      },
     };
     mockGetContentItem.mockImplementationOnce((): { toJSON: Function } => blogListContentItem);
 
@@ -165,23 +165,23 @@ describe('next.config.js', (): void => {
       '/': {
         page: '/',
         query: {
-          vse: ''
-        }
+          vse: '',
+        },
       },
       '/preview': {
         page: '/preview',
         query: {
           content: '',
-          vse: ''
-        }
+          vse: '',
+        },
       },
       '/visualization.html': {
         page: '/visualization',
         query: {
           vse: '',
-          content: ''
-        }
-      }
+          content: '',
+        },
+      },
     });
   });
 
@@ -190,7 +190,7 @@ describe('next.config.js', (): void => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
         return { blogList: blogListFixture };
-      }
+      },
     };
     mockGetContentItem
       .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
@@ -202,23 +202,23 @@ describe('next.config.js', (): void => {
       '/': {
         page: '/',
         query: {
-          vse: ''
-        }
+          vse: '',
+        },
       },
       '/preview': {
         page: '/preview',
         query: {
           content: '',
-          vse: ''
-        }
+          vse: '',
+        },
       },
       '/visualization.html': {
         page: '/visualization',
         query: {
           vse: '',
-          content: ''
-        }
-      }
+          content: '',
+        },
+      },
     });
     expect(global.console.warn).toHaveBeenCalled();
   });
@@ -227,12 +227,12 @@ describe('next.config.js', (): void => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
         return { blogList: blogListFixture };
-      }
+      },
     };
     const blogPostContentItem = {
       toJSON(): BlogPost {
         return blogPostFixture;
-      }
+      },
     };
     mockGetContentItem
       .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
@@ -249,12 +249,12 @@ describe('next.config.js', (): void => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
         return { blogList: blogListFixture };
-      }
+      },
     };
     const blogPostContentItem = {
       toJSON(): BlogPost {
         return blogPostFixture;
-      }
+      },
     };
     mockGetContentItem
       .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
@@ -275,12 +275,12 @@ describe('next.config.js', (): void => {
     const blogListContentItem = {
       toJSON: (): { blogList: BlogListData } => {
         return { blogList: blogListFixture };
-      }
+      },
     };
     const blogPostContentItem = {
       toJSON(): BlogPost {
         return blogPostFixture;
-      }
+      },
     };
     mockGetContentItem
       .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)

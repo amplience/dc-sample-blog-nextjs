@@ -13,9 +13,9 @@ jest.mock('../../common/services/dynamic-content-delivery.service', (): {} => {
   return {
     DynamicContentDeliveryService: jest.fn((): { [key: string]: {} } => {
       return {
-        getContentItemById: (): BlogReferenceList => mockGetContentItemById()
+        getContentItemById: (): BlogReferenceList => mockGetContentItemById(),
       };
-    })
+    }),
   };
 });
 
@@ -26,8 +26,8 @@ describe('getBlogReferenceList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
-      }
+        toJSON: jest.fn(),
+      },
     };
     const blogList = {
       title: 'blog-test-title',
@@ -36,18 +36,18 @@ describe('getBlogReferenceList', (): void => {
         {
           id: '8d6943c7-6028-4fac-b45e-57fc63bd032a',
           _meta: {
-            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference',
           },
-          contentType: 'https://schema.localhost.com/blog-post.json'
-        }
-      ]
+          contentType: 'https://schema.localhost.com/blog-post.json',
+        },
+      ],
     };
 
     const contentItem = {
       body: { ...blogList, ...blogListMeta },
       toJSON: (): { blogList: BlogReferenceList } => {
         return { blogList };
-      }
+      },
     };
     mockGetContentItemById.mockImplementation((): ContentItem => contentItem);
 
@@ -62,20 +62,20 @@ describe('getBlogReferenceList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
-      }
+        toJSON: jest.fn(),
+      },
     };
     const blogList = {
       title: 'blog-test-title',
       subTitle: 'blog-test-sub-title',
-      blogPosts: undefined
+      blogPosts: undefined,
     };
 
     const contentItem = {
       body: { ...blogList, ...blogListMeta },
       toJSON: (): { blogList: BlogReferenceList } => {
         return { blogList };
-      }
+      },
     };
     mockGetContentItemById.mockImplementation((): ContentItem => contentItem);
 
@@ -92,8 +92,8 @@ describe('getHydratedBlogList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
-      }
+        toJSON: jest.fn(),
+      },
     };
     const blogListRef = {
       title: 'blog-test-title',
@@ -102,18 +102,18 @@ describe('getHydratedBlogList', (): void => {
         {
           id: 'blog-id-1',
           _meta: {
-            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference',
           },
-          contentType: 'https://schema.localhost.com/blog-post.json'
+          contentType: 'https://schema.localhost.com/blog-post.json',
         },
         {
           id: 'blog-id-2',
           _meta: {
-            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference',
           },
-          contentType: 'https://schema.localhost.com/blog-post.json'
-        }
-      ]
+          contentType: 'https://schema.localhost.com/blog-post.json',
+        },
+      ],
     };
 
     const blogPost = blogListFixture.blogPosts[0];
@@ -122,7 +122,7 @@ describe('getHydratedBlogList', (): void => {
       body: { ...blogListRef, ...blogListMeta },
       toJSON: (): { blogList: BlogReferenceList } => {
         return { blogList: blogListRef };
-      }
+      },
     };
     mockGetContentItemById.mockImplementation((): ContentItem => contentItem);
     mockGetBlogPost
@@ -140,8 +140,8 @@ describe('getHydratedBlogList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
-      }
+        toJSON: jest.fn(),
+      },
     };
     const blogListRef = {
       title: 'blog-test-title',
@@ -150,11 +150,11 @@ describe('getHydratedBlogList', (): void => {
         {
           id: 'blog-id-1',
           _meta: {
-            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference'
+            schema: 'http://bigcontent.io/cms/schema/v1/core#/definitions/content-reference',
           },
-          contentType: 'https://schema.localhost.com/blog-post.json'
-        }
-      ]
+          contentType: 'https://schema.localhost.com/blog-post.json',
+        },
+      ],
     };
 
     const blogPost = blogListFixture.blogPosts[0];
@@ -163,7 +163,7 @@ describe('getHydratedBlogList', (): void => {
       body: { ...blogListRef, ...blogListMeta },
       toJSON: (): { blogList: BlogReferenceList } => {
         return { blogList: blogListRef };
-      }
+      },
     };
     mockGetContentItemById.mockImplementation((): ContentItem => contentItem);
     mockGetBlogPost.mockImplementationOnce((): BlogPost => blogPost);
