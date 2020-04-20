@@ -6,7 +6,7 @@ export default class CustomDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <Manifest />
+          <Manifest href={"/static/manifest/manifest.json"} />
           <link rel="icon" href="/static/favicon.ico"></link>
           <link rel="apple-touch-icon" href="/static/icons/icon-192x192.png"></link>
           <link rel="preconnect" href="https://www.google-analytics.com"></link>

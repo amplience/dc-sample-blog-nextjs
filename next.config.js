@@ -144,6 +144,7 @@ const env = {
 };
 
 const manifest = {
+  output: './static/manifest/',
   name: 'Amplience Product Blog',
   short_name: 'Amplience',
   theme_color: '#29333f',
