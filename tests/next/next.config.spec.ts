@@ -91,17 +91,9 @@ describe('next.config.js', (): void => {
       },
       '/preview': {
         page: '/preview',
-        query: {
-          content: '',
-          vse: '',
-        },
       },
       '/visualization.html': {
         page: '/visualization',
-        query: {
-          vse: '',
-          content: '',
-        },
       },
     });
   });
@@ -170,17 +162,9 @@ describe('next.config.js', (): void => {
       },
       '/preview': {
         page: '/preview',
-        query: {
-          content: '',
-          vse: '',
-        },
       },
       '/visualization.html': {
         page: '/visualization',
-        query: {
-          vse: '',
-          content: '',
-        },
       },
     });
   });
@@ -207,17 +191,9 @@ describe('next.config.js', (): void => {
       },
       '/preview': {
         page: '/preview',
-        query: {
-          content: '',
-          vse: '',
-        },
       },
       '/visualization.html': {
         page: '/visualization',
-        query: {
-          vse: '',
-          content: '',
-        },
       },
     });
     expect(global.console.warn).toHaveBeenCalled();

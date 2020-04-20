@@ -119,17 +119,9 @@ const exportPathMap = async function() {
     },
     '/preview': {
       page: '/preview',
-      query: {
-        content: '',
-        vse: ''
-      }
     },
     '/visualization.html': {
       page: '/visualization',
-      query: {
-        vse: '',
-        content: ''
-      }
     }
   });
 };
