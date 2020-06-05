@@ -12,7 +12,7 @@
     "visualizations": [
       {
         "label": "Visualisation",
-        "templatedUri": "https://productblog.amplience.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}",
+        "templatedUri": "https://blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}",
         "default": true
       }
     ],
