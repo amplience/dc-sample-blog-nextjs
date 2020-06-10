@@ -12,26 +12,28 @@ const mockIsDirectory = jest.fn();
 const mockCopyFilesRecursively = jest.fn();
 const mockCopyFileSync = jest.fn();
 
-jest.mock('fs', (): { [key: string]: Function } => {
+jest.mock('fs', ():
+  | { [key: string]: () => jest.Mock }
+  | { [key: string]: () => { [key: string]: () => jest.Mock } } => {
   return {
-    existsSync: (): Function => mockExistsSync(),
-    mkdirSync: (): Function => mockMkdirSync(),
-    readdirSync: (): Function => mockReaddirSync(),
-    lstatSync: jest.fn((): { isDirectory: Function } => {
-      return { isDirectory: (): Function => mockIsDirectory() };
+    existsSync: () => mockExistsSync(),
+    mkdirSync: () => mockMkdirSync(),
+    readdirSync: () => mockReaddirSync(),
+    lstatSync: jest.fn((): { isDirectory } => {
+      return { isDirectory: () => mockIsDirectory() };
     }),
-    copyFilesRecursively: (): Function => mockCopyFilesRecursively(),
-    copyFileSync: (): Function => mockCopyFileSync()
+    copyFilesRecursively: () => mockCopyFilesRecursively(),
+    copyFileSync: () => mockCopyFileSync()
   };
 });
 
 const mockGetContentItem = jest.fn();
 jest.mock(
   'dc-delivery-sdk-js',
-  (): Function => {
+  (): jest.Mock => {
     return {
       ...jest.requireActual('dc-delivery-sdk-js'),
-      ContentClient: jest.fn((): { getContentItem: Function } => {
+      ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
         return {
           getContentItem: mockGetContentItem
         };
@@ -39,18 +41,12 @@ jest.mock(
     };
   }
 );
-jest.mock(
-  'next-manifest',
-  (): Function => {
-    return (config): { [key: string]: string } => config;
-  }
-);
-jest.mock(
-  'next-offline',
-  (): Function => {
-    return (config): { [key: string]: string } => config;
-  }
-);
+jest.mock('next-manifest', (): ((config: { [key: string]: string }) => { [key: string]: string }) => {
+  return (config): { [key: string]: string } => config;
+});
+jest.mock('next-offline', (): ((config: { [key: string]: string }) => { [key: string]: string }) => {
+  return (config): { [key: string]: string } => config;
+});
 
 describe('next.config.js', (): void => {
   beforeEach((): void => {
@@ -70,8 +66,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
 
     const result = await nextConfig.exportPathMap();
 
@@ -118,9 +114,9 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem)
-      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
 
     await expect(nextConfig.exportPathMap()).rejects.toThrowError(
       `Blog posts contain duplicate urlSlugs: my-first-blog`
@@ -129,14 +125,13 @@ describe('next.config.js', (): void => {
 
   test('should throw an error when delivery sdk returns content with an empty blog list', async (): Promise<void> => {
     const blogListContentItem = {
-      toJSON: (): { blogList: BlogListData } => {
+      toJSON: (): unknown => {
         return {
-          // @ts-ignore
           notBlogList: {}
         };
       }
     };
-    mockGetContentItem.mockImplementationOnce((): { toJSON: Function } => blogListContentItem);
+    mockGetContentItem.mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem);
 
     await expect(nextConfig.exportPathMap()).rejects.toThrowError(
       `Error building exportPathMap: slot does not contain a blog list`
@@ -147,9 +142,8 @@ describe('next.config.js', (): void => {
     void
   > => {
     const blogListContentItem = {
-      toJSON: (): { blogList: BlogListData } => {
+      toJSON: (): { blogList: Partial<BlogListData> } => {
         return {
-          // @ts-ignore
           blogList: {
             title: 'some title',
             subTitle: 'some subtitle'
@@ -157,7 +151,7 @@ describe('next.config.js', (): void => {
         };
       }
     };
-    mockGetContentItem.mockImplementationOnce((): { toJSON: Function } => blogListContentItem);
+    mockGetContentItem.mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem);
 
     const result = await nextConfig.exportPathMap();
 
@@ -193,7 +187,7 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
       .mockImplementationOnce((): Error => new Error('Content id not found'));
 
     const result = await nextConfig.exportPathMap();
@@ -235,8 +229,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
 
     mockExistsSync.mockImplementationOnce((): boolean => false);
 
@@ -257,14 +251,14 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
 
     mockExistsSync.mockReturnValue(false);
-    mockMkdirSync.mockImplementationOnce((): Function => jest.fn());
+    mockMkdirSync.mockImplementationOnce((): (() => jest.Mock) => jest.fn());
     mockReaddirSync.mockReturnValue(['source/dir']);
     mockIsDirectory.mockReturnValueOnce(true).mockReturnValueOnce(false);
-    mockCopyFileSync.mockImplementationOnce((): Function => jest.fn());
+    mockCopyFileSync.mockImplementationOnce((): (() => jest.Mock) => jest.fn());
 
     await nextConfig.exportPathMap();
 
@@ -283,8 +277,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: Function } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: Function } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
     mockReaddirSync.mockImplementationOnce((): void => {
       throw new Error('Failed to read dir');
     });

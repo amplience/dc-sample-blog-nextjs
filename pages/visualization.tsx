@@ -17,4 +17,8 @@ const VisualizationPage = () => {
   );
 };
 
+VisualizationPage.getInitialProps = () => {
+  return {};
+};
+
 export default VisualizationPage;

@@ -67,9 +67,9 @@ const getBlogList = async () => {
     baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
   };
   const dcDeliveryClient = new ContentClient(dcClientConfig);
-  const { title, subTitle, blogList } = (await dcDeliveryClient.getContentItem(
-    process.env.DYNAMIC_CONTENT_REFERENCE_ID
-  )).toJSON();
+  const { title, subTitle, blogList } = (
+    await dcDeliveryClient.getContentItem(process.env.DYNAMIC_CONTENT_REFERENCE_ID)
+  ).toJSON();
   const sanitisedBlogList = sanitiseBlogList(blogList);
   const promises = sanitisedBlogList.blogPosts.map(async reference =>
     (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
@@ -85,7 +85,7 @@ const getBlogList = async () => {
   return { title, subTitle, blogPosts: hydratedBlogPosts };
 };
 
-const exportPathMap = async function() {
+const exportPathMap = async function () {
   let dynamicPages = {};
 
   console.info('Copying public folder to out');
@@ -153,6 +153,7 @@ const manifest = {
   Scope: '/',
   start_url: '/',
   cache: true,
+  output: './static/',
   icons: [
     {
       src: '/static/icons/icon-72x72.png',

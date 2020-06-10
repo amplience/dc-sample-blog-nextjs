@@ -15,6 +15,7 @@ describe('dynamic-content-client-config', (): void => {
     process.env.DYNAMIC_CONTENT_ACCOUNT_NAME = 'account-id';
     process.env.DYNAMIC_CONTENT_SECURE_MEDIA_HOST = 'custom-secure-media-host.amplience.net';
 
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const defaultClientConfig = require('./dynamic-content-client-config').defaultClientConfig;
 
     expect(defaultClientConfig).toEqual({
@@ -24,6 +25,7 @@ describe('dynamic-content-client-config', (): void => {
   });
 
   test('it should set all config values as empty strings if no env var set', (): void => {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     const defaultClientConfig = require('./dynamic-content-client-config').defaultClientConfig;
 
     expect(defaultClientConfig).toEqual({

@@ -3,19 +3,16 @@ import { ContentClient } from 'dc-delivery-sdk-js';
 
 const mockGetContentItem = jest.fn();
 
-jest.mock(
-  'dc-delivery-sdk-js',
-  (): Function => {
-    return {
-      ...jest.requireActual('dc-delivery-sdk-js'),
-      ContentClient: jest.fn((): { getContentItem: Function } => {
-        return {
-          getContentItem: mockGetContentItem
-        };
-      })
-    };
-  }
-);
+jest.mock('dc-delivery-sdk-js', (): (() => jest.Mock) => {
+  return {
+    ...jest.requireActual('dc-delivery-sdk-js'),
+    ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
+      return {
+        getContentItem: mockGetContentItem
+      };
+    })
+  };
+});
 
 describe('DynamicContentDeliveryService', (): void => {
   afterAll((): void => {

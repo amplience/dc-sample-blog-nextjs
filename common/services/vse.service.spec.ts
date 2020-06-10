@@ -1,7 +1,12 @@
 import getStagingContentItemById from './vse.service';
-// @ts-ignore
-import { mockIsBlogPost, mockParseBlogPost, mockParseContent } from './blog-post.service';
+import * as blogPostService from './blog-post.service';
 import { ContentItem } from 'dc-delivery-sdk-js';
+
+jest.mock('./blog-post.service');
+
+const mockIsBlogPost: any = blogPostService.isBlogPost;
+const mockParseBlogPost: any = blogPostService.parseBlogPost;
+const mockParseContent: any = blogPostService.parseContent;
 
 const mockGetContentItem = jest.fn().mockImplementation(
   async (): Promise<ContentItem> => {
@@ -11,12 +16,12 @@ const mockGetContentItem = jest.fn().mockImplementation(
           schema: 'schema',
           deliveryId: 'deliveryId',
           name: 'name',
-          toJSON: (): {} => {
+          toJSON: (): unknown => {
             return {};
           }
         }
       },
-      toJSON: (): {} => {
+      toJSON: (): unknown => {
         return {};
       }
     };
@@ -25,10 +30,10 @@ const mockGetContentItem = jest.fn().mockImplementation(
 
 jest.mock(
   'dc-delivery-sdk-js',
-  (): Function => {
+  (): jest.Mock => {
     return {
       ...jest.requireActual('dc-delivery-sdk-js'),
-      ContentClient: jest.fn((): { getContentItem: Function } => {
+      ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
         return {
           getContentItem: mockGetContentItem
         };
