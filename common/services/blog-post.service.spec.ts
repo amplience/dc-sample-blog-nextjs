@@ -5,15 +5,16 @@ import blogPostDataFixture from '../../tests/fixtures/single-blog-post-data-obje
 
 import getBlogPost, { parseContent } from './blog-post.service';
 
-// @ts-ignore
-import { mockGetVideoSources } from './video.service';
+import * as videoService from './video.service';
 
 jest.mock('./video.service');
 
+const mockGetVideoSources = (videoService.getVideoSources as unknown) as jest.Mock;
+
 const mockGetContentItemById = jest.fn();
-jest.mock('../../common/services/dynamic-content-delivery.service', (): {} => {
+jest.mock('../../common/services/dynamic-content-delivery.service', () => {
   return {
-    DynamicContentDeliveryService: jest.fn((): { [key: string]: {} } => {
+    DynamicContentDeliveryService: jest.fn(() => {
       return {
         getContentItemById: () => mockGetContentItemById()
       };
@@ -62,16 +63,6 @@ describe('getBlogPost', () => {
   });
 
   test('should throw an error when DYNAMIC_CONTENT_ACCOUNT_NAME is not set', async () => {
-    const contentItem = {
-      body: {
-        notBlogContent: 'no blog'
-      },
-      toJSON: () => {
-        return {
-          notBlogContent: 'no blog'
-        };
-      }
-    };
     mockGetContentItemById.mockImplementation(() => {
       throw new Error();
     });

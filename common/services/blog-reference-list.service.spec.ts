@@ -9,9 +9,9 @@ const mockGetContentItemById = jest.fn();
 const mockGetBlogPost = jest.fn();
 
 jest.mock('../../common/services/blog-post.service', (): (() => jest.Mock) => (): jest.Mock => mockGetBlogPost());
-jest.mock('../../common/services/dynamic-content-delivery.service', (): unknown => {
+jest.mock('../../common/services/dynamic-content-delivery.service', () => {
   return {
-    DynamicContentDeliveryService: jest.fn((): { [key: string]: unknown } => {
+    DynamicContentDeliveryService: jest.fn(() => {
       return {
         getContentItemById: (): BlogReferenceList => mockGetContentItemById()
       };

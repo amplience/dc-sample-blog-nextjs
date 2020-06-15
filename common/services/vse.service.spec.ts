@@ -4,9 +4,9 @@ import { ContentItem } from 'dc-delivery-sdk-js';
 
 jest.mock('./blog-post.service');
 
-const mockIsBlogPost: any = blogPostService.isBlogPost;
-const mockParseBlogPost: any = blogPostService.parseBlogPost;
-const mockParseContent: any = blogPostService.parseContent;
+const mockIsBlogPost = (blogPostService.isBlogPost as unknown) as jest.Mock;
+const mockParseBlogPost = (blogPostService.parseBlogPost as unknown) as jest.Mock;
+const mockParseContent = (blogPostService.parseContent as unknown) as jest.Mock;
 
 const mockGetContentItem = jest.fn().mockImplementation(
   async (): Promise<ContentItem> => {
@@ -28,19 +28,16 @@ const mockGetContentItem = jest.fn().mockImplementation(
   }
 );
 
-jest.mock(
-  'dc-delivery-sdk-js',
-  (): jest.Mock => {
-    return {
-      ...jest.requireActual('dc-delivery-sdk-js'),
-      ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
-        return {
-          getContentItem: mockGetContentItem
-        };
-      })
-    };
-  }
-);
+jest.mock('dc-delivery-sdk-js', () => {
+  return {
+    ...jest.requireActual('dc-delivery-sdk-js'),
+    ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
+      return {
+        getContentItem: mockGetContentItem
+      };
+    })
+  };
+});
 
 jest.mock('./blog-post.service');
 

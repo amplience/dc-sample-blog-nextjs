@@ -1,7 +1,7 @@
 import { VideoProfile, getVideoSources } from './video.service';
 
 const mockFetch = jest.fn();
-jest.mock('isomorphic-unfetch', (): unknown => {
+jest.mock('isomorphic-unfetch', () => {
   return (): jest.Mock => mockFetch();
 });
 

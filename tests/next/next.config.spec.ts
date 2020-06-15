@@ -28,19 +28,16 @@ jest.mock('fs', ():
 });
 
 const mockGetContentItem = jest.fn();
-jest.mock(
-  'dc-delivery-sdk-js',
-  (): jest.Mock => {
-    return {
-      ...jest.requireActual('dc-delivery-sdk-js'),
-      ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
-        return {
-          getContentItem: mockGetContentItem
-        };
-      })
-    };
-  }
-);
+jest.mock('dc-delivery-sdk-js', () => {
+  return {
+    ...jest.requireActual('dc-delivery-sdk-js'),
+    ContentClient: jest.fn(() => {
+      return {
+        getContentItem: mockGetContentItem
+      };
+    })
+  };
+});
 jest.mock('next-manifest', (): ((config: { [key: string]: string }) => { [key: string]: string }) => {
   return (config): { [key: string]: string } => config;
 });
@@ -66,8 +63,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON } => blogPostContentItem);
 
     const result = await nextConfig.exportPathMap();
 
@@ -114,9 +111,9 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem)
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON } => blogPostContentItem)
+      .mockImplementationOnce((): { toJSON } => blogPostContentItem);
 
     await expect(nextConfig.exportPathMap()).rejects.toThrowError(
       `Blog posts contain duplicate urlSlugs: my-first-blog`
@@ -125,13 +122,13 @@ describe('next.config.js', (): void => {
 
   test('should throw an error when delivery sdk returns content with an empty blog list', async (): Promise<void> => {
     const blogListContentItem = {
-      toJSON: (): unknown => {
+      toJSON: () => {
         return {
           notBlogList: {}
         };
       }
     };
-    mockGetContentItem.mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem);
+    mockGetContentItem.mockImplementationOnce((): { toJSON } => blogListContentItem);
 
     await expect(nextConfig.exportPathMap()).rejects.toThrowError(
       `Error building exportPathMap: slot does not contain a blog list`
@@ -151,7 +148,7 @@ describe('next.config.js', (): void => {
         };
       }
     };
-    mockGetContentItem.mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem);
+    mockGetContentItem.mockImplementationOnce((): { toJSON } => blogListContentItem);
 
     const result = await nextConfig.exportPathMap();
 
@@ -187,7 +184,7 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON } => blogListContentItem)
       .mockImplementationOnce((): Error => new Error('Content id not found'));
 
     const result = await nextConfig.exportPathMap();
@@ -229,8 +226,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON } => blogPostContentItem);
 
     mockExistsSync.mockImplementationOnce((): boolean => false);
 
@@ -251,8 +248,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON } => blogPostContentItem);
 
     mockExistsSync.mockReturnValue(false);
     mockMkdirSync.mockImplementationOnce((): (() => jest.Mock) => jest.fn());
@@ -277,8 +274,8 @@ describe('next.config.js', (): void => {
       }
     };
     mockGetContentItem
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogListContentItem)
-      .mockImplementationOnce((): { toJSON: () => unknown } => blogPostContentItem);
+      .mockImplementationOnce((): { toJSON } => blogListContentItem)
+      .mockImplementationOnce((): { toJSON } => blogPostContentItem);
     mockReaddirSync.mockImplementationOnce((): void => {
       throw new Error('Failed to read dir');
     });
