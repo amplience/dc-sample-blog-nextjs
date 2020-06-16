@@ -106,6 +106,7 @@
     "typescript": "^3.9.5"
   },
   "dependencies": {
+    "algoliasearch": "^4.3.0",
     "dc-delivery-sdk-js": "^0.5.0",
     "debounce": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",
