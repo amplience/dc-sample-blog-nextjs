@@ -1,0 +1,5 @@
+{
+  "body": "../../schemas/blog-slot.json",
+  "schemaId": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json",
+  "validationLevel": "SLOT"
+}
