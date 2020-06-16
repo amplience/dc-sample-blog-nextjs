@@ -44,10 +44,10 @@ Install and configure the CLI tool, clone this repository and then use the the C
 ```
 npm install -g @amplience/dc-cli
 dc-cli configure --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID>
-cd ~/git
 git clone https://github.com/amplience/dc-static-blog-nextjs
-dc-cli content-type-schema import ~/git/dc-static-blog-nextjs/dc-cli-definitions/content-type-schemas
-dc-cli content-type import ~/git/dc-static-blog-nextjs/dc-cli-definitions/content-types
+cd dc-static-blog-nextjs
+dc-cli content-type-schema import ./dc-cli-definitions/content-type-schemas
+dc-cli content-type import ./dc-cli-definitions/content-types
 ```
 
 #### Create and register manually in Dynamic Content
