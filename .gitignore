@@ -92,7 +92,5 @@ out
 .vscode/
 
 # PWA Manifest
-static/manifest.json
+public/static/manifest.json
 
-# Robots file
-robots.txt
