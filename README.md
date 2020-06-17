@@ -36,6 +36,22 @@ To install and use this blog you first need to create the required schemas and r
 
 ### Creating Schemas & Registering Content Types
 
+#### Import using the CLI (recommended)
+You can import the schemas and content types to your hub using the [Dynamic Content CLI](https://www.npmjs.com/package/@amplience/dc-cli).
+
+Install and configure the CLI tool, clone this repository and then use the the CLI import definitions included by running the following commands:
+
+```
+npm install -g @amplience/dc-cli
+dc-cli configure --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID>
+git clone https://github.com/amplience/dc-static-blog-nextjs
+cd dc-static-blog-nextjs
+dc-cli content-type-schema import ./dc-cli-definitions/content-type-schemas
+dc-cli content-type import ./dc-cli-definitions/content-types
+```
+
+#### Create and register manually in Dynamic Content
+
 In Dynamic Content, navigate to the "Content type schemas" area (Developer -> Content type schemas).
 
 For each of the Content Type Schemas listed above:-
@@ -60,7 +76,7 @@ For each of the Content Types list above:-
 
 ### Creating A Blog-List & Slot
 
-Once you have installed and registered all of Content schemas, the next step is to create a blog-list Content item and a Slot.
+Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog-list Content item and a Slot.
 A slot is like a placeholder/pointer to your blog-list, it is also the content entry point when the application runs.
 
 How to create a blog-list content item for your blog:
@@ -167,11 +183,13 @@ Dynamic Content has two ways of allowing you to see you content changes before t
 
 ### How to Configure Visualizations
 
-For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `http://my-blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
+For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `https://blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
+
+If you used the CLI to register your content types, they will already have visualisations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the import command again, or by manually updating your content types in Dynamic Content.
 
 ### How to configure Preview
 
-You can create a brand new Preview environment using the following Preview application URL: `https://<your-domain>/?vse={{vse.domain}}`.
+The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
 
 Notes:
 
