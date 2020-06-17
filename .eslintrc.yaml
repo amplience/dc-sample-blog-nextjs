@@ -5,7 +5,12 @@ extends:
   - "plugin:@typescript-eslint/recommended"
   - "prettier"
   - "prettier/@typescript-eslint"
+plugins: 
+  - deprecation
+parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaVersion: 2018
+  project: "./tsconfig.eslint.json"
 rules:
   "@typescript-eslint/no-parameter-properties": off
+  "deprecation/deprecation": warn
