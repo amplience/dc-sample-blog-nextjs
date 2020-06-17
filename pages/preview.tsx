@@ -17,4 +17,8 @@ const PreviewPage = () => {
   );
 };
 
+PreviewPage.getInitialProps = () => {
+  return {};
+};
+
 export default PreviewPage;

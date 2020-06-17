@@ -13,6 +13,7 @@ exports[`Content should render different types of content - text, image and vide
           className="jsx-1163017566 content-placeholder"
         />
       }
+      useIntersectionObserver={true}
       visibleByDefault={false}
     >
       <div
@@ -58,6 +59,7 @@ exports[`Content should render different types of content - text, image and vide
           className="jsx-1163017566 content-placeholder"
         />
       }
+      useIntersectionObserver={true}
       visibleByDefault={false}
     >
       <div
@@ -100,6 +102,7 @@ This is some more sample text"
           className="jsx-1163017566 content-placeholder"
         />
       }
+      useIntersectionObserver={true}
       visibleByDefault={false}
     >
       <div

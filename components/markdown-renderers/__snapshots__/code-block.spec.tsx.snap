@@ -54,7 +54,6 @@ exports[`CodeBlock should render empty line if value is undefined 1`] = `
   >
     <span
       className="react-syntax-highlighter-line-number"
-      style={Object {}}
     >
       1
 
@@ -139,35 +138,30 @@ exports[`CodeBlock should render some code as a pre tag with syntax highlighting
   >
     <span
       className="react-syntax-highlighter-line-number"
-      style={Object {}}
     >
       1
 
     </span>
     <span
       className="react-syntax-highlighter-line-number"
-      style={Object {}}
     >
       2
 
     </span>
     <span
       className="react-syntax-highlighter-line-number"
-      style={Object {}}
     >
       3
 
     </span>
     <span
       className="react-syntax-highlighter-line-number"
-      style={Object {}}
     >
       4
 
     </span>
     <span
       className="react-syntax-highlighter-line-number"
-      style={Object {}}
     >
       5
 
