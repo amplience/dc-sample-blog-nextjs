@@ -92,10 +92,7 @@ out
 .vscode/
 
 # PWA Manifest
-static/manifest/manifest.json
-
-# Robots file
-robots.txt
+public/static/manifest.json
 
 # OS generated files
 .DS_Store

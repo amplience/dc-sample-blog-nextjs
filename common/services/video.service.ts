@@ -4,11 +4,9 @@ import { ImageUrlBuilder, Video as DcVideo } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from './dynamic-content-client-config';
 
 export interface VideoProfile {
-  media: [
-    {
-      src: string;
-    }
-  ];
+  media: {
+    src: string;
+  }[];
 }
 
 const httpsAsset = (url: string): string => `${url}?protocol=https`;
