@@ -1,0 +1,26 @@
+{
+  "contentTypeUri": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json",
+  "status": "ACTIVE",
+  "settings": {
+    "label": "Video",
+    "icons": [
+      {
+        "size": 256,
+        "url": "https://i1.adis.ws/i/ampproduct/icon-videoplayer"
+      }
+    ],
+    "visualizations": [
+      {
+        "label": "Visualization",
+        "templatedUri": "https://blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}",
+        "default": true
+      }
+    ],
+    "cards": [
+      {
+        "templatedUri": "https://bigcontent.io/cms/cards/text/index.html?headline=text&src=%2F%2F{{vse.domain}}%2Fcms%2Fcontent%2Fquery%3FfullBodyObject%3Dtrue%26query%3D%257B%2522sys.iri%2522%253A%2522http%253A%252F%252Fcontent.cms.amplience.com%252F{{content.sys.id}}%2522%257D%26scope%3Dtree%26store%3Dstaging"
+      }
+    ]
+  },
+  "repositories": ["content"]
+}
