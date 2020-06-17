@@ -1,14 +1,15 @@
-import { NextPage } from 'next';
-import Layout from '../layouts/default';
-import HeroBanner from '../components/hero-banner/hero-banner';
-import { BlogListData } from '../common/interfaces/blog-list.interface';
-import BlogList from '../components/blog-list/blog-list';
-import HeroCard from '../components/hero-card/hero-card';
+import { GetServerSideProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import getHydratedBlogList from '../common/services/blog-reference-list.service';
-import NoBlogPosts from '../components/blog-list/no-blog-posts';
+import { InstantSearchProps } from 'react-instantsearch-dom';
+import { findResultsState } from 'react-instantsearch-dom/server';
+import { BlogListData } from '../common/interfaces/blog-list.interface';
+import getSearchClient from '../common/services/algolia-search-client-factory.service';
+import { getBlogListContent } from '../common/services/blog-reference-list.service';
+import AlgoliaInstantSearch from '../components/algolia-instant-search/algolia-instant-search';
+import HeroBanner from '../components/hero-banner/hero-banner';
+import Layout from '../layouts/default';
 
-const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
+const Index: NextPage<BlogListData> = ({title, subTitle, searchParams}): JSX.Element => {
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: subTitle
@@ -22,14 +23,9 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
     <Layout>
       <NextSeo {...seoParams} />
       <HeroBanner title={title} subTitle={subTitle} />
-      {blogPosts.length ? (
-        <>
-          <HeroCard blogPost={blogPosts[0]} />
-          <BlogList blogPosts={blogPosts.slice(1)} />
-        </>
-      ) : (
-        <NoBlogPosts />
-      )}
+      <>
+        <AlgoliaInstantSearch {...searchParams}></AlgoliaInstantSearch>
+      </>
 
       <style jsx>{`
         :global(footer) {
@@ -40,13 +36,23 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   );
 };
 
-Index.getInitialProps = async ({ query }): Promise<BlogListData> => {
-  const stagingEnvironment = query.vse ? `//${query.vse.toString()}` : undefined;
+Index.getInitialProps = async (query?: GetServerSideProps): Promise<BlogListData> => {
+  const searchClient = getSearchClient();
+  const indexName = process.env.ALGOLIA_PRODUCTION_INDEX_NAME || '';
+  const stagingEnvironment = query?.vse ? `//${query.vse.toString()}` : undefined;
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
+
   try {
-    return getHydratedBlogList(id, stagingEnvironment);
+    const { title, subTitle } = await getBlogListContent(id, stagingEnvironment);
+    const resultsState = await findResultsState(AlgoliaInstantSearch, {
+      searchClient,
+      indexName
+    });
+    const searchParams: InstantSearchProps = { searchClient, indexName, resultsState };
+
+    return { title, subTitle, searchParams };
   } catch (err) {
-    console.error('Unable to get initial props for Index:', err);
+    console.error('Unable to get static props for Index:', err);
     throw err;
   }
 };

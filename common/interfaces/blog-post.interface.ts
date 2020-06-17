@@ -3,12 +3,13 @@ import Author from './author.interface';
 import { AmplienceContent } from './content.type';
 
 export default interface BlogPost {
-  id: string;
+  objectID: string;
+  deliveryKey: string;
   title: string;
   date: string;
   description: string;
   authors: Author[];
-  image: AmplienceImage;
+  imagePath: string;
   urlSlug: string;
   tags: string[];
   readTime: number;

@@ -13,8 +13,8 @@ interface BlogCardProps {
 const BlogCard = ({ blogPost }: BlogCardProps) => {
   const router = useRouter();
   const vse = router.query.vse ? router.query.vse.toString() : '';
-  const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
-  const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
+  const routerQuery = vse ? `?vse=${vse}&content=${blogPost.objectID}` : '';
+  const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.deliveryKey || blogPost.objectID)}`;
   const blogLink = `${path}${routerQuery}`;
   return (
     <>
@@ -24,7 +24,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
             <article>
               <div className="blog-card-image">
                 <Picture
-                  image={blogPost.image}
+                  image={blogPost.imagePath}
                   sources={[
                     {
                       di: {
@@ -173,7 +173,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
             line-height: unset;
             margin: 20px 0;
           }
-          
+
           p {
             font-weight: ${theme.fonts.weight.light};
           }

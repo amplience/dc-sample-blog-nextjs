@@ -7,3 +7,8 @@ export interface BlogReferenceList {
   subTitle: string;
   blogPosts: BlogPostReference[];
 }
+
+export interface BlogListContent {
+  title: string;
+  subTitle: string;
+}
