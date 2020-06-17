@@ -5,6 +5,8 @@ const withOffline = require('next-offline');
 const algoliasearch = require('algoliasearch');
 require('dotenv').config();
 
+const INDEX_HITS_PER_PAGE = 1000;
+
 const exportPathMap = async function () {
   let dynamicPages = {};
 
@@ -14,7 +16,8 @@ const exportPathMap = async function () {
   try {
     const results = await index.search('', {
       attributesToRetrieve: ['objectID', 'deliveryKey'],
-      attributesToHighlight: []
+      attributesToHighlight: [],
+      hitsPerPage: INDEX_HITS_PER_PAGE
     });
 
     dynamicPages = results.hits.reduce((pages, blogPost) => {
