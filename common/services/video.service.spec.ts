@@ -1,14 +1,14 @@
 import { VideoProfile, getVideoSources } from './video.service';
 
 const mockFetch = jest.fn();
-jest.mock('isomorphic-unfetch', (): {} => {
-  return (): Function => mockFetch();
+jest.mock('isomorphic-unfetch', () => {
+  return (): jest.Mock => mockFetch();
 });
 
 describe('video.service', (): void => {
   describe('getVideoSources', (): void => {
     test('should return array containing a media src with https query string protocol', async (): Promise<void> => {
-      mockFetch.mockImplementationOnce((): { json: Function; status: number } => {
+      mockFetch.mockImplementationOnce((): { json: () => VideoProfile; status: number } => {
         return {
           json(): VideoProfile {
             return { media: [{ src: 'test-video-src' }] };
@@ -30,10 +30,9 @@ describe('video.service', (): void => {
     });
 
     test('should return array containing an empty array when api returns no sources', async (): Promise<void> => {
-      mockFetch.mockImplementationOnce((): { json: Function; status: number } => {
+      mockFetch.mockImplementationOnce((): { json: () => VideoProfile; status: number } => {
         return {
           json(): VideoProfile {
-            //@ts-ignore - so we can return and empty array from the fetch request
             return { media: [] };
           },
           status: 200

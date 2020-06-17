@@ -8,10 +8,10 @@ import BlogPost from '../interfaces/blog-post.interface';
 const mockGetContentItemById = jest.fn();
 const mockGetBlogPost = jest.fn();
 
-jest.mock('../../common/services/blog-post.service', (): Function => (): Function => mockGetBlogPost());
-jest.mock('../../common/services/dynamic-content-delivery.service', (): {} => {
+jest.mock('../../common/services/blog-post.service', (): (() => jest.Mock) => (): jest.Mock => mockGetBlogPost());
+jest.mock('../../common/services/dynamic-content-delivery.service', () => {
   return {
-    DynamicContentDeliveryService: jest.fn((): { [key: string]: {} } => {
+    DynamicContentDeliveryService: jest.fn(() => {
       return {
         getContentItemById: (): BlogReferenceList => mockGetContentItemById()
       };
@@ -26,7 +26,7 @@ describe('getBlogReferenceList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
+        toJSON: (): void => undefined
       }
     };
     const blogList = {
@@ -62,7 +62,7 @@ describe('getBlogReferenceList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
+        toJSON: (): void => undefined
       }
     };
     const blogList = {
@@ -92,7 +92,7 @@ describe('getHydratedBlogList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
+        toJSON: (): void => undefined
       }
     };
     const blogListRef = {
@@ -140,7 +140,7 @@ describe('getHydratedBlogList', (): void => {
         name: 'test',
         deliveryId: 'test-delivery-id',
         schema: 'test-schema',
-        toJSON: (): void => {}
+        toJSON: (): void => undefined
       }
     };
     const blogListRef = {

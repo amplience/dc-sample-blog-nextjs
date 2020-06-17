@@ -1,27 +1,10 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/camelcase*/
-const fs = require('fs');
 const flow = require('lodash.flow');
 const withManifest = require('next-manifest');
 const withOffline = require('next-offline');
 const ContentClient = require('dc-delivery-sdk-js').ContentClient;
 const allSettled = require('promise.allsettled');
 require('dotenv').config();
-
-const copyFilesRecursively = (sourceDir, destDir) => {
-  if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir);
-  }
-
-  const files = fs.readdirSync(sourceDir);
-  files.forEach(file => {
-    if (fs.lstatSync(`${sourceDir}/${file}`).isDirectory()) {
-      copyFilesRecursively(`${sourceDir}/${file}`, `${destDir}/${file}`);
-    } else {
-      fs.copyFileSync(`${sourceDir}/${file}`, `${destDir}/${file}`);
-    }
-  });
-};
 
 const checkForDuplicateSlugs = blogPosts => {
   let seen = new Set();
@@ -67,9 +50,9 @@ const getBlogList = async () => {
     baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
   };
   const dcDeliveryClient = new ContentClient(dcClientConfig);
-  const { title, subTitle, blogList } = (await dcDeliveryClient.getContentItem(
-    process.env.DYNAMIC_CONTENT_REFERENCE_ID
-  )).toJSON();
+  const { title, subTitle, blogList } = (
+    await dcDeliveryClient.getContentItem(process.env.DYNAMIC_CONTENT_REFERENCE_ID)
+  ).toJSON();
   const sanitisedBlogList = sanitiseBlogList(blogList);
   const promises = sanitisedBlogList.blogPosts.map(async reference =>
     (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
@@ -85,18 +68,8 @@ const getBlogList = async () => {
   return { title, subTitle, blogPosts: hydratedBlogPosts };
 };
 
-const exportPathMap = async function() {
+const exportPathMap = async function () {
   let dynamicPages = {};
-
-  console.info('Copying public folder to out');
-  const outDir = `${__dirname}/out`;
-  const publicDir = `${__dirname}/static/public`;
-  try {
-    copyFilesRecursively(publicDir, outDir);
-  } catch (err) {
-    console.error('Error copying public files to out dir');
-    throw err;
-  }
 
   try {
     const blogList = await getBlogList();
@@ -153,6 +126,7 @@ const manifest = {
   Scope: '/',
   start_url: '/',
   cache: true,
+  output: './public/static/',
   icons: [
     {
       src: '/static/icons/icon-72x72.png',

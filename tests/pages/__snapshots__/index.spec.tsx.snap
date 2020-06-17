@@ -332,7 +332,7 @@ exports[`Index renders index with content 1`] = `
       </section>
     </footer>
     <div
-      className="cookieConsent "
+      className="CookieConsent"
       style={
         Object {
           "alignItems": "center",
@@ -367,22 +367,26 @@ exports[`Index renders index with content 1`] = `
         </a>
         .
       </div>
-      <button
-        className="cookie-banner-btn"
-        id=""
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#fff",
-            "border": "3px solid #CCC",
-            "borderRadius": "5px",
-            "color": "#333",
-            "marginBottom": "10px",
-          }
-        }
+      <div
+        className=""
       >
-        Accept Cookies
-      </button>
+        <button
+          className="cookie-banner-btn"
+          id="rcc-confirm-button"
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#fff",
+              "border": "3px solid #CCC",
+              "borderRadius": "5px",
+              "color": "#333",
+              "marginBottom": "10px",
+            }
+          }
+        >
+          Accept Cookies
+        </button>
+      </div>
     </div>
     <script
       async={true}
@@ -635,7 +639,7 @@ exports[`Index renders index with content but no blog posts 1`] = `
       </section>
     </footer>
     <div
-      className="cookieConsent "
+      className="CookieConsent"
       style={
         Object {
           "alignItems": "center",
@@ -670,22 +674,26 @@ exports[`Index renders index with content but no blog posts 1`] = `
         </a>
         .
       </div>
-      <button
-        className="cookie-banner-btn"
-        id=""
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#fff",
-            "border": "3px solid #CCC",
-            "borderRadius": "5px",
-            "color": "#333",
-            "marginBottom": "10px",
-          }
-        }
+      <div
+        className=""
       >
-        Accept Cookies
-      </button>
+        <button
+          className="cookie-banner-btn"
+          id="rcc-confirm-button"
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#fff",
+              "border": "3px solid #CCC",
+              "borderRadius": "5px",
+              "color": "#333",
+              "marginBottom": "10px",
+            }
+          }
+        >
+          Accept Cookies
+        </button>
+      </div>
     </div>
     <script
       async={true}
