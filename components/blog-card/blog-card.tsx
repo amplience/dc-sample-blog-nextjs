@@ -24,7 +24,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
             <article>
               <div className="blog-card-image">
                 <Picture
-                  image={blogPost.imagePath}
+                  image={blogPost.image}
                   sources={[
                     {
                       di: {

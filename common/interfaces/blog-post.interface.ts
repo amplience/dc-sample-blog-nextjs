@@ -9,7 +9,7 @@ export default interface BlogPost {
   date: string;
   description: string;
   authors: Author[];
-  imagePath: string;
+  image: AmplienceImage;
   urlSlug: string;
   tags: string[];
   readTime: number;

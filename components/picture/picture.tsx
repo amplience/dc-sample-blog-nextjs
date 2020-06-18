@@ -1,4 +1,6 @@
-const MEDIA_HOST = process.env.DYNAMIC_CONTENT_SECURE_MEDIA_HOST || '';
+import { Image } from 'dc-delivery-sdk-js';
+import { defaultClientConfig } from '../../common/services/dynamic-content-client-config';
+import AmplienceImage from '../../common/interfaces/image.interface';
 
 type ArrayOneOrMore<T> = {
   0: T;
@@ -17,7 +19,7 @@ interface PictureSource {
 }
 
 interface PictureProps {
-  image: string;
+  image: AmplienceImage;
   sources: ArrayOneOrMore<PictureSource>;
 }
 
@@ -38,11 +40,9 @@ function generateDiQueryString(queryOpts: DiOptions, density = 1) {
   return `?${queryString.join('')}`;
 }
 
-function generateMediaPath(imagePath: string): string {
-  return `//${MEDIA_HOST}/i/${imagePath}`;
-}
-
 const Picture = ({ image, sources }: PictureProps) => {
+  const dcImage = new Image(image.image, defaultClientConfig);
+  const src = dcImage.url().build();
   const pictureSources = [...sources];
   const defaultSource = pictureSources[pictureSources.length - 1];
   return (
@@ -50,9 +50,10 @@ const Picture = ({ image, sources }: PictureProps) => {
       {pictureSources.map((source: PictureSource, index: number) => (
         <source
           key={`source-webp-${index}`}
-          srcSet={`${generateMediaPath(image)}${generateDiQueryString(source.di)}&fmt=webp 1x, ${generateMediaPath(
-            image
-          )}${generateDiQueryString(source.di, 2)}&fmt=webp 2x`}
+          srcSet={`${src}${generateDiQueryString(source.di)}&fmt=webp 1x, ${src}${generateDiQueryString(
+            source.di,
+            2
+          )}&fmt=webp 2x`}
           type="image/webp"
           media={source.media}
         />
@@ -60,13 +61,11 @@ const Picture = ({ image, sources }: PictureProps) => {
       {pictureSources.map((source: PictureSource, index: number) => (
         <source
           key={`source-${index}`}
-          srcSet={`${generateMediaPath(image)}${generateDiQueryString(source.di)} 1x, ${generateMediaPath(
-            image
-          )}${generateDiQueryString(source.di, 2)} 2x`}
+          srcSet={`${src}${generateDiQueryString(source.di)} 1x, ${src}${generateDiQueryString(source.di, 2)} 2x`}
           media={source.media}
         />
       ))}
-      <img src={`${generateMediaPath(image)}${generateDiQueryString(defaultSource!.di)}`} alt={image} />
+      <img src={`${src}${generateDiQueryString(defaultSource!.di)}`} alt={image.altText} />
     </picture>
   );
 };

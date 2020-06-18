@@ -1,7 +1,8 @@
-import { InstantSearchProps } from 'react-instantsearch-dom';
+import { SearchClient } from 'algoliasearch';
 
 export interface BlogListData {
   title: string;
   subTitle: string;
-  searchParams: InstantSearchProps;
+  indexName: string;
+  resultsState: unknown;
 }
