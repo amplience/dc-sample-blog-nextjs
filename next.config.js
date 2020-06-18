@@ -1,109 +1,36 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/camelcase*/
-const fs = require('fs');
 const flow = require('lodash.flow');
 const withManifest = require('next-manifest');
 const withOffline = require('next-offline');
-const ContentClient = require('dc-delivery-sdk-js').ContentClient;
-const allSettled = require('promise.allsettled');
+const algoliasearch = require('algoliasearch');
 require('dotenv').config();
 
-const copyFilesRecursively = (sourceDir, destDir) => {
-  if (!fs.existsSync(destDir)) {
-    fs.mkdirSync(destDir);
-  }
-
-  const files = fs.readdirSync(sourceDir);
-  files.forEach(file => {
-    if (fs.lstatSync(`${sourceDir}/${file}`).isDirectory()) {
-      copyFilesRecursively(`${sourceDir}/${file}`, `${destDir}/${file}`);
-    } else {
-      fs.copyFileSync(`${sourceDir}/${file}`, `${destDir}/${file}`);
-    }
-  });
-};
-
-const checkForDuplicateSlugs = blogPosts => {
-  let seen = new Set();
-  let lastSlug;
-  const hasDuplicateSlugs = blogPosts.some(post => {
-    const isDuplicate = seen.size === seen.add(post.urlSlug).size;
-    lastSlug = post.urlSlug;
-    return isDuplicate;
-  });
-  if (hasDuplicateSlugs) {
-    throw new Error(`Blog posts contain duplicate urlSlugs: ${lastSlug}`);
-  }
-};
-
-const buildDynamicBlogPages = blogPosts => {
-  return blogPosts.reduce(
-    (pages, blogPost) =>
-      Object.assign({}, pages, {
-        [`/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`]: {
-          page: '/blog',
-          query: { blogId: blogPost._meta.deliveryId, slug: blogPost.urlSlug }
-        }
-      }),
-    {}
-  );
-};
-
-const sanitiseBlogList = blogList => {
-  if (!blogList) {
-    throw new Error('Error building exportPathMap: slot does not contain a blog list');
-  }
-
-  if (blogList.blogPosts === undefined) {
-    blogList.blogPosts = []; // initialise the blogPosts prop
-  }
-
-  return blogList;
-};
-
-const getBlogList = async () => {
-  const dcClientConfig = {
-    account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
-    baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL
-  };
-  const dcDeliveryClient = new ContentClient(dcClientConfig);
-  const { title, subTitle, blogList } = (
-    await dcDeliveryClient.getContentItem(process.env.DYNAMIC_CONTENT_REFERENCE_ID)
-  ).toJSON();
-  const sanitisedBlogList = sanitiseBlogList(blogList);
-  const promises = sanitisedBlogList.blogPosts.map(async reference =>
-    (await dcDeliveryClient.getContentItem(reference.id)).toJSON()
-  );
-  const promiseResults = await allSettled(promises);
-  const hydratedBlogPosts = promiseResults
-    .filter(promise => promise.status === 'fulfilled')
-    .map(resolvedPromise => resolvedPromise.value);
-  promiseResults
-    .filter(promise => promise.status === 'rejected')
-    .forEach(rejectedBlog => console.warn(`Warn: ${rejectedBlog.reason}`));
-
-  return { title, subTitle, blogPosts: hydratedBlogPosts };
-};
+const INDEX_HITS_PER_PAGE = 1000;
 
 const exportPathMap = async function () {
   let dynamicPages = {};
 
-  console.info('Copying public folder to out');
-  const outDir = `${__dirname}/out`;
-  const publicDir = `${__dirname}/static/public`;
-  try {
-    copyFilesRecursively(publicDir, outDir);
-  } catch (err) {
-    console.error('Error copying public files to out dir');
-    throw err;
-  }
+  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_SEARCH_ONLY_KEY);
+  const index = client.initIndex(process.env.ALGOLIA_PRODUCTION_INDEX_NAME);
 
   try {
-    const blogList = await getBlogList();
-    checkForDuplicateSlugs(blogList.blogPosts);
-    dynamicPages = buildDynamicBlogPages(blogList.blogPosts);
+    const results = await index.search('', {
+      attributesToRetrieve: ['objectID', 'deliveryKey'],
+      attributesToHighlight: [],
+      hitsPerPage: INDEX_HITS_PER_PAGE
+    });
+
+    dynamicPages = results.hits.reduce((pages, blogPost) => {
+      const slug = blogPost.deliveryKey ? blogPost.deliveryKey.toLowerCase() : blogPost.objectID.toLowerCase();
+      return Object.assign({}, pages, {
+        [`/blog/${encodeURIComponent(slug)}`]: {
+          page: '/blog',
+          query: { blogId: blogPost.objectID, slug: slug }
+        }
+      });
+    }, {});
   } catch (err) {
-    console.log('Error building exportPathMap', err);
+    console.error('Error building exportPathMap', err);
     throw err;
   }
 
@@ -136,6 +63,9 @@ const exportPathMap = async function () {
 
 const env = {
   URL: process.env.URL,
+  ALGOLIA_APPLICATION_ID: process.env.ALGOLIA_APPLICATION_ID,
+  ALGOLIA_SEARCH_ONLY_KEY: process.env.ALGOLIA_SEARCH_ONLY_KEY,
+  ALGOLIA_PRODUCTION_INDEX_NAME: process.env.ALGOLIA_PRODUCTION_INDEX_NAME,
   DYNAMIC_CONTENT_REFERENCE_ID: process.env.DYNAMIC_CONTENT_REFERENCE_ID,
   DYNAMIC_CONTENT_ACCOUNT_NAME: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
   DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,
@@ -153,7 +83,7 @@ const manifest = {
   Scope: '/',
   start_url: '/',
   cache: true,
-  output: './static/',
+  output: './public/static/',
   icons: [
     {
       src: '/static/icons/icon-72x72.png',
