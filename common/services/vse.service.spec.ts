@@ -8,7 +8,7 @@ const mockIsBlogPost = (blogPostService.isBlogPost as unknown) as jest.Mock;
 const mockParseBlogPost = (blogPostService.parseBlogPost as unknown) as jest.Mock;
 const mockParseContent = (blogPostService.parseContent as unknown) as jest.Mock;
 
-const mockGetContentItem = jest.fn().mockImplementation(
+const mockGetContentItemById = jest.fn().mockImplementation(
   async (): Promise<ContentItem> => {
     return await {
       body: {
@@ -31,9 +31,9 @@ const mockGetContentItem = jest.fn().mockImplementation(
 jest.mock('dc-delivery-sdk-js', () => {
   return {
     ...jest.requireActual('dc-delivery-sdk-js'),
-    ContentClient: jest.fn((): { getContentItem: jest.Mock } => {
+    ContentClient: jest.fn((): { getContentItemById: jest.Mock } => {
       return {
-        getContentItem: mockGetContentItem
+        getContentItemById: mockGetContentItemById
       };
     })
   };
@@ -52,7 +52,7 @@ describe('VSE Service', (): void => {
 
     const blogPost = await getStagingContentItemById('stagingEnvironment', 'contentId');
 
-    expect(mockGetContentItem).toHaveBeenCalled();
+    expect(mockGetContentItemById).toHaveBeenCalled();
     expect(mockIsBlogPost).toHaveBeenCalled();
     expect(mockParseBlogPost).toHaveBeenCalled();
     expect(blogPost).toEqual({});
@@ -64,7 +64,7 @@ describe('VSE Service', (): void => {
 
     const blogPost = await getStagingContentItemById('stagingEnvironment', 'contentId');
 
-    expect(mockGetContentItem).toHaveBeenCalled();
+    expect(mockGetContentItemById).toHaveBeenCalled();
     expect(mockIsBlogPost).toHaveBeenCalled();
     expect(mockParseContent).toHaveBeenCalled();
     expect(blogPost).toEqual({});

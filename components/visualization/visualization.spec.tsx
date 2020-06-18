@@ -3,13 +3,12 @@ import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
-import PageLoader from "../page-loader/page-loader";
+import PageLoader from '../page-loader/page-loader';
+import getReferencedBlogPosts from '../../common/services/blog-post/get-referenced-blog-posts.service';
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
-const mockGetReferencedBlogPosts = jest.fn();
-const blogReferenceList = require('../../common/services/blog-reference-list.service');
-blogReferenceList.getReferencedBlogPosts = mockGetReferencedBlogPosts;
+jest.mock('../../common/services/blog-post/get-referenced-blog-posts.service');
 
 describe('Visualization', (): void => {
   beforeEach(() => {
@@ -110,20 +109,20 @@ describe('Visualization', (): void => {
     const blogList = {
       title: 'A blog title',
       subTitle: 'A strap line',
-      blogPosts: [ blogPostFixture ]
+      blogPosts: [blogPostFixture]
     };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
+    (getReferencedBlogPosts as jest.Mock).mockResolvedValue(blogList.blogPosts);
 
     await renderVisualization(blogList);
-    expect(mockGetReferencedBlogPosts).toHaveBeenCalledWith(expect.anything(), 'vse');
+    expect((getReferencedBlogPosts as jest.Mock)).toHaveBeenCalledWith(expect.anything(), 'vse');
   });
 
   it('should render a blog list without a subtitle', async () => {
     const blogList = {
       title: 'A blog title',
-      blogPosts: [ blogPostFixture ]
+      blogPosts: [blogPostFixture]
     };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
+    (getReferencedBlogPosts as jest.Mock).mockResolvedValue(blogList.blogPosts);
 
     await renderVisualization(blogList);
   });
@@ -133,7 +132,7 @@ describe('Visualization', (): void => {
       title: 'A blog title',
       blogPosts: []
     };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
+    (getReferencedBlogPosts as jest.Mock).mockResolvedValue(blogList.blogPosts);
 
     await renderVisualization(blogList);
   });

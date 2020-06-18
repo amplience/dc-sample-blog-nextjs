@@ -5,8 +5,8 @@ import { BlogListData } from '../common/interfaces/blog-list.interface';
 import BlogList from '../components/blog-list/blog-list';
 import HeroCard from '../components/hero-card/hero-card';
 import { NextSeo } from 'next-seo';
-import getHydratedBlogList from '../common/services/blog-reference-list.service';
 import NoBlogPosts from '../components/blog-list/no-blog-posts';
+import getHydratedBlogList from '../common/services/blog-list/get-hydrated-blog-list.service';
 
 const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   const seoParams: { [key: string]: string | boolean } = {
@@ -41,10 +41,15 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
 };
 
 Index.getInitialProps = async ({ query }): Promise<BlogListData> => {
+  if (!process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY) {
+    throw new Error('Missing env var DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY');
+  }
   const stagingEnvironment = query.vse ? `//${query.vse.toString()}` : undefined;
-  const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
   try {
-    return getHydratedBlogList(id, stagingEnvironment);
+    return getHydratedBlogList(
+      process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY,
+      stagingEnvironment
+    );
   } catch (err) {
     console.error('Unable to get initial props for Index:', err);
     throw err;
