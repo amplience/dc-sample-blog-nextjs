@@ -1,11 +1,14 @@
-import { InstantSearch, SearchBox } from 'react-instantsearch-dom';
-import AlgoliaInstantSearchProps from '../../common/interfaces/algolia-instant-search-props.interface';
-import getSearchClient from '../../common/services/algolia-search-client-factory.service';
-import SearchResultList from '../algolia-search-result-list/algolia-search-result-list';
 import algoliasearch from 'algoliasearch';
-// import SearchBox from '../algolia-search-input/algolia-search-input';
+import { InstantSearch, SearchBox } from 'react-instantsearch-dom';
+import SearchResultList from '../algolia-search-result-list/algolia-search-result-list';
 
-export function getClient() {}
+interface AlgoliaInstantSearchProps {
+  indexName: string;
+  searchState: unknown;
+  resultsState: unknown;
+  appId: string;
+  searchKey: string;
+}
 
 export default function AlgoliaInstantSearch({
   indexName,

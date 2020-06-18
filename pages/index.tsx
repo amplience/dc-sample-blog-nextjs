@@ -1,15 +1,12 @@
-import algoliasearch, { SearchClient } from 'algoliasearch';
+import algoliasearch from 'algoliasearch';
 import { GetServerSideProps, NextPage } from 'next';
 import { NextSeo } from 'next-seo';
-import { InstantSearch, SearchBox } from 'react-instantsearch-dom';
 import { findResultsState } from 'react-instantsearch-dom/server';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
 import { getBlogListContent } from '../common/services/blog-reference-list.service';
 import AlgoliaInstantSearch from '../components/algolia-instant-search/algolia-instant-search';
-import SearchResultList from '../components/algolia-search-result-list/algolia-search-result-list';
 import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
-import { string } from 'yargs';
 
 interface AlgoliaSearchParams {appId: string; searchKey: string; indexName: string;}
 
