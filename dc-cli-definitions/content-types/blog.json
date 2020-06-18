@@ -1,8 +1,8 @@
 {
-  "contentTypeUri": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json",
+  "contentTypeUri": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json",
   "status": "ACTIVE",
   "settings": {
-    "label": "Blog list",
+    "label": "Blog",
     "icons": [
       {
         "size": 256,

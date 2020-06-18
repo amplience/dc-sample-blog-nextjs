@@ -1,0 +1,5 @@
+{
+  "body": "../../schemas/blog.json",
+  "schemaId": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json",
+  "validationLevel": "CONTENT_TYPE"
+}
