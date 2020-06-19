@@ -1,9 +1,9 @@
-import { Component } from 'react';
+import React, { Component, ReactElement } from 'react';
 import { Router } from 'next/router';
 import PageLoader from './page-loader';
 
-export class RouteChangeLoader extends Component<{}, { isLoading: boolean }> {
-  constructor(props: any) {
+export class RouteChangeLoader extends Component<unknown, { isLoading: boolean }> {
+  constructor(props: unknown) {
     super(props);
 
     this.state = {
@@ -11,7 +11,7 @@ export class RouteChangeLoader extends Component<{}, { isLoading: boolean }> {
     };
   }
 
-  componentDidMount() {
+  componentDidMount(): void {
     Router.events.on('routeChangeStart', () => {
       this.setState({ isLoading: true });
     });
@@ -23,7 +23,7 @@ export class RouteChangeLoader extends Component<{}, { isLoading: boolean }> {
     });
   }
 
-  render() {
+  render(): ReactElement {
     return <>{this.state.isLoading ? <PageLoader /> : ''}</>;
   }
 }

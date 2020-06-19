@@ -1,4 +1,4 @@
-import { Component, ReactElement } from 'react';
+import React, { Component } from 'react';
 import { AmplienceContent, isAmplienceContent } from '../../common/interfaces/content.type';
 import getStagingContentItemById from '../../common/services/vse.service';
 import Content from '../content/content';
@@ -57,7 +57,10 @@ export default class Visualization extends Component<VisualizationProps, Visuali
       } else {
         let blogPosts: BlogPost[] = [];
         if ('blogPosts' in contentItem) {
-          blogPosts = await getReferencedBlogPosts((contentItem as BlogReferenceList).blogPosts, this.props.stagingEnvironment);
+          blogPosts = await getReferencedBlogPosts(
+            (contentItem as BlogReferenceList).blogPosts,
+            this.props.stagingEnvironment
+          );
         }
         this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } as VisualizationState['blogList'] });
       }
@@ -66,7 +69,7 @@ export default class Visualization extends Component<VisualizationProps, Visuali
     }
   }
 
-  render(): ReactElement {
+  render(): JSX.Element {
     if (this.state) {
       if (this.state.error) {
         return (

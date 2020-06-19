@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import HeroCard from './hero-card';
 import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';
@@ -33,7 +34,7 @@ describe('HeroCard', () => {
     const props = {
       blogPosts: undefined
     };
-    //@ts-ignore
+
     const component = await renderer.create(<HeroCard {...props} />);
     expect(component.toJSON()).toMatchSnapshot();
   });

@@ -2,8 +2,6 @@
 import { getBlogListContent } from './blog-reference-list.service';
 import { ContentItem } from 'dc-delivery-sdk-js';
 import { BlogListContent } from '../interfaces/blog-reference-list.interface';
-import blogListFixture from '../../tests/fixtures/blog-list-one-blog.json';
-import BlogPost from '../interfaces/blog-post.interface';
 
 const mockGetContentItemById = jest.fn();
 const mockGetBlogPost = jest.fn();

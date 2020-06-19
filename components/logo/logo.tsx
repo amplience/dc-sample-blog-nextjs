@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 
-const Logo = ({ darkMode }: { darkMode?: boolean }) => {
+const Logo = ({ darkMode }: { darkMode?: boolean }): ReactElement => {
   const logoSrcName = darkMode ? 'logo-white' : 'logo';
   return (
     <>

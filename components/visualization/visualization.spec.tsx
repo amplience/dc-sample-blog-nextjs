@@ -1,13 +1,17 @@
+import React from 'react';
 import Visualization from './visualization';
 import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
-import PageLoader from "../page-loader/page-loader";
+import PageLoader from '../page-loader/page-loader';
+import { AmplienceContent } from '../../common/interfaces/content.type';
+import BlogPost from '../../common/interfaces/blog-post.interface';
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
 const mockGetReferencedBlogPosts = jest.fn();
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const blogReferenceList = require('../../common/services/blog-reference-list.service');
 blogReferenceList.getReferencedBlogPosts = mockGetReferencedBlogPosts;
 
@@ -16,7 +20,7 @@ describe('Visualization', (): void => {
     jest.resetAllMocks();
   });
 
-  async function renderVisualization(contentItem: any) {
+  async function renderVisualization(contentItem: Partial<AmplienceContent> | Partial<BlogPost>) {
     mockGetStagingContentItemById.mockResolvedValue(contentItem);
 
     const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentId="content" />, {
@@ -110,7 +114,7 @@ describe('Visualization', (): void => {
     const blogList = {
       title: 'A blog title',
       subTitle: 'A strap line',
-      blogPosts: [ blogPostFixture ]
+      blogPosts: [blogPostFixture]
     };
     mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
 
@@ -121,7 +125,7 @@ describe('Visualization', (): void => {
   it('should render a blog list without a subtitle', async () => {
     const blogList = {
       title: 'A blog title',
-      blogPosts: [ blogPostFixture ]
+      blogPosts: [blogPostFixture]
     };
     mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
 

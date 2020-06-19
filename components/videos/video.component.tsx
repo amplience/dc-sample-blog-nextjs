@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react';
 import AmplienceVideo from '../../common/interfaces/video.interface';
 
-const Video = (video: AmplienceVideo) => {
+const Video = (video: AmplienceVideo): ReactElement => {
   const videoSrcSet = video.srcSet || [];
   return (
     <>

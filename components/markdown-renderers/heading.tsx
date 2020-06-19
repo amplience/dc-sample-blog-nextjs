@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
@@ -7,7 +8,7 @@ interface MarkdownHeadingProps {
   level: number;
 }
 
-export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps) => {
+export const MarkdownHeading = ({ children, level }: MarkdownHeadingProps): ReactElement => {
   const Tag = `h${level}` as HeadingTag;
   return (
     <>

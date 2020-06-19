@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import ExternalLink from '../external-link/external-link';
 
 interface MarkdownLinkProps {
@@ -5,7 +6,7 @@ interface MarkdownLinkProps {
   href: string;
 }
 
-export const MarkdownLink = ({ children, href }: MarkdownLinkProps) => {
+export const MarkdownLink = ({ children, href }: MarkdownLinkProps): ReactElement => {
   return (
     <>
       <span>

@@ -1,4 +1,6 @@
-const GaPageView = () => {
+import React, { ReactElement } from 'react';
+
+const GaPageView = (): ReactElement => {
   const TRACKING_ID = process.env.GA_TRACKING_ID;
 
   if (TRACKING_ID === undefined) {

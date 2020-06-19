@@ -1,3 +1,4 @@
+import React from 'react';
 import renderer from 'react-test-renderer';
 import Video from './video.component';
 import AmplienceVideo from '../../common/interfaces/video.interface';

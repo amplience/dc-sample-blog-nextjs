@@ -71,6 +71,7 @@
     }
   ],
   "date": "August 07, 2019",
+  "deliveryKey": "test-delivery-key",
   "description": "Some text for the description that explains this blog post",
   "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
   "image": {

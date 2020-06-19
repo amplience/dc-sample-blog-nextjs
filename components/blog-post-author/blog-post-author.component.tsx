@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import Author from '../../common/interfaces/author.interface';
 import theme from '../../common/styles/default/theme';
 import Picture from '../picture/picture';
@@ -57,7 +58,15 @@ function loadAuthorDetails(authors: Author[]): { avatars: JSX.Element[]; authorN
   return { avatars, authorNames: authorNamesElement };
 }
 
-const BlogPostAuthor = ({ authors, date, readTime }: { authors: Author[]; date: string; readTime: number }) => {
+const BlogPostAuthor = ({
+  authors,
+  date,
+  readTime
+}: {
+  authors: Author[];
+  date: string;
+  readTime: number;
+}): ReactElement => {
   const { avatars, authorNames } = loadAuthorDetails(authors);
 
   return (

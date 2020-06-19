@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import BlogPostAuthor from './blog-post-author.component';
 import ShallowRenderer from 'react-test-renderer/shallow';
 

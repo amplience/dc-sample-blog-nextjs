@@ -3,8 +3,8 @@ import Author from './author.interface';
 import { AmplienceContent } from './content.type';
 
 export default interface BlogPost {
-  objectID: string;
-  deliveryKey: string;
+  id: string;
+  deliveryKey?: string;
   title: string;
   date: string;
   description: string;

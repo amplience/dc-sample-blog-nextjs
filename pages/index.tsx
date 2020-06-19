@@ -1,5 +1,6 @@
+import React from 'react';
 import algoliasearch from 'algoliasearch';
-import { GetServerSideProps, NextPage } from 'next';
+import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import { findResultsState } from 'react-instantsearch-dom/server';
 import { BlogListData } from '../common/interfaces/blog-list.interface';
@@ -8,10 +9,14 @@ import AlgoliaInstantSearch from '../components/algolia-instant-search/algolia-i
 import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
 
-interface AlgoliaSearchParams {appId: string; searchKey: string; indexName: string;}
+interface AlgoliaSearchParams {
+  appId: string;
+  searchKey: string;
+  indexName: string;
+}
 
 function getSearchParams(): AlgoliaSearchParams {
-  const { ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_KEY , ALGOLIA_PRODUCTION_INDEX_NAME} = process.env;
+  const { ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_ONLY_KEY, ALGOLIA_PRODUCTION_INDEX_NAME } = process.env;
   const indexName = ALGOLIA_PRODUCTION_INDEX_NAME || '';
 
   if (!ALGOLIA_APPLICATION_ID) {
@@ -22,11 +27,11 @@ function getSearchParams(): AlgoliaSearchParams {
     throw new Error('Invalid configuration params, missing ALGOLIA_SEARCH_ONLY_KEY');
   }
 
-  return {appId: ALGOLIA_APPLICATION_ID, searchKey: ALGOLIA_SEARCH_ONLY_KEY, indexName}
+  return { appId: ALGOLIA_APPLICATION_ID, searchKey: ALGOLIA_SEARCH_ONLY_KEY, indexName };
 }
 
-const Index: NextPage<BlogListData> = ({title, subTitle, indexName, resultsState}): JSX.Element => {
-  const {appId, searchKey} = getSearchParams();
+const Index: NextPage<BlogListData> = ({ title, subTitle, indexName, resultsState }): JSX.Element => {
+  const { appId, searchKey } = getSearchParams();
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: subTitle
@@ -41,14 +46,14 @@ const Index: NextPage<BlogListData> = ({title, subTitle, indexName, resultsState
     searchKey,
     indexName,
     resultsState
-  }
+  };
 
   return (
     <Layout>
       <NextSeo {...seoParams} />
       <HeroBanner title={title} subTitle={subTitle} />
       <>
-      <AlgoliaInstantSearch {...searchParams} />
+        <AlgoliaInstantSearch {...searchParams} />
       </>
 
       <style jsx>{`
@@ -60,10 +65,12 @@ const Index: NextPage<BlogListData> = ({title, subTitle, indexName, resultsState
   );
 };
 
-Index.getInitialProps = async (query?: GetServerSideProps): Promise<BlogListData> => {
-  const {appId, searchKey, indexName } = getSearchParams();
+Index.getInitialProps = async (query): Promise<BlogListData> => {
+  const { appId, searchKey, indexName } = getSearchParams();
   const searchClient = algoliasearch(appId, searchKey);
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   const stagingEnvironment = query?.vse ? `//${query.vse.toString()}` : undefined;
   const id: string = process.env.DYNAMIC_CONTENT_REFERENCE_ID || '';
 

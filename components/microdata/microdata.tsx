@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import { BlogJsonLd } from 'next-seo';
 import { useRouter } from 'next/router';
 import Author from '../../common/interfaces/author.interface';
@@ -10,7 +11,7 @@ interface MicrodataProps {
   datePublished: string;
 }
 
-const Microdata = ({ headline, description, imageUrl, authors = [], datePublished }: MicrodataProps) => {
+const Microdata = ({ headline, description, imageUrl, authors = [], datePublished }: MicrodataProps): ReactElement => {
   const router = useRouter();
   const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;

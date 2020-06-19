@@ -1,5 +1,3 @@
-import { SearchClient } from 'algoliasearch';
-
 export interface BlogListData {
   title: string;
   subTitle: string;

@@ -1,5 +1,6 @@
+import React from 'react';
 import algoliasearch from 'algoliasearch';
-import { InstantSearch, SearchBox } from 'react-instantsearch-dom';
+import { InstantSearch } from 'react-instantsearch-dom';
 import SearchResultList from '../algolia-search-result-list/algolia-search-result-list';
 
 interface AlgoliaInstantSearchProps {
@@ -18,7 +19,6 @@ export default function AlgoliaInstantSearch({
   const searchClient = algoliasearch(appId, searchKey);
   return (
     <InstantSearch indexName={indexName} searchClient={searchClient} resultsState={resultsState}>
-      <SearchBox />
       <SearchResultList></SearchResultList>
     </InstantSearch>
   );

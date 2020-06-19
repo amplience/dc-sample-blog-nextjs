@@ -1,3 +1,4 @@
+import React from 'react';
 import { connectStateResults } from 'react-instantsearch-dom';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import NoBlogPosts from '../blog-list/no-blog-posts';

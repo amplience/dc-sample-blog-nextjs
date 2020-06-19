@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import BlogCard from '../blog-card/blog-card';
 import theme from '../../common/styles/default/theme';
@@ -6,7 +7,7 @@ interface BlogListProps {
   blogPosts: BlogPost[];
 }
 
-const BlogList = ({ blogPosts = [] }: BlogListProps) => {
+const BlogList = ({ blogPosts = [] }: BlogListProps): ReactElement => {
   const blogCards = blogPosts.map((blogPost: BlogPost, index: number) => <BlogCard key={index} blogPost={blogPost} />);
 
   return (

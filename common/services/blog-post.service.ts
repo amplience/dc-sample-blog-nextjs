@@ -36,9 +36,11 @@ export function isBlogPost(contentItem: BlogPost | AmplienceContent): contentIte
 export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody): Promise<BlogPost> {
   const { title, date, description, authors, readTime, image, urlSlug, content, tags } = contentItem;
   const blogId = contentItem._meta.deliveryId;
+  const deliveryKey = contentItem._meta.deliveryKey;
 
   return {
     id: blogId,
+    deliveryKey,
     title,
     date: convertToBlogDate(date),
     description,

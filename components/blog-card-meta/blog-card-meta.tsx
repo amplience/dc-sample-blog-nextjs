@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import Author from '../../common/interfaces/author.interface';
 import convertToBlogDate from '../../common/services/blog-date.service';
 import theme from '../../common/styles/default/theme';
@@ -8,7 +9,7 @@ interface BlogCardMetaProps {
   readTime: number;
 }
 
-const BlogCardMeta = ({ authors, publishedDate, readTime }: BlogCardMetaProps) => {
+const BlogCardMeta = ({ authors, publishedDate, readTime }: BlogCardMetaProps): ReactElement => {
   return (
     <>
       <div className="card-meta">

@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import Blog from './blog';
 import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';

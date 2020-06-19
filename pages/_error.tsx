@@ -1,3 +1,4 @@
+import React from 'react';
 import Error from 'next/error';
 import Layout from '../layouts/default';
 import { NextPage } from 'next';
