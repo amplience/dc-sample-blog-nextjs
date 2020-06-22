@@ -4,18 +4,21 @@ import renderer from 'react-test-renderer';
 import Index from '../../pages/index';
 import blogListFixture from '../fixtures/blog-list-one-blog.json';
 import * as blogListService from '../../common/services/blog-reference-list.service';
+import * as reactInstantsearchDomServer from 'react-instantsearch-dom/server';
 
 jest.mock('../../common/services/blog-reference-list.service', () => ({
   getBlogListContent: jest.fn()
 }));
 
-jest.mock('algoliasearch');
-jest.mock('react-instantsearch-dom/server');
-jest.mock('react-instantsearch-dom');
-jest.mock('react-instantsearch-core');
+jest.mock('react-instantsearch-dom/server', () => ({
+  findResultsState: jest.fn()
+}));
 
-describe.skip('Index', () => {
+jest.mock('../../components/algolia-instant-search/algolia-instant-search');
+
+describe('Index', () => {
   let getBlogListContentSpy;
+  let findResultsStateSpy;
 
   beforeEach(() => {
     process.env.ALGOLIA_APPLICATION_ID = 'algolia-app-id';
@@ -25,6 +28,7 @@ describe.skip('Index', () => {
     process.env.GA_TRACKING_ID = 'ga-tracking-id';
 
     getBlogListContentSpy = jest.spyOn(blogListService, 'getBlogListContent');
+    findResultsStateSpy = jest.spyOn(reactInstantsearchDomServer, 'findResultsState');
   });
 
   afterEach(() => {
@@ -38,15 +42,19 @@ describe.skip('Index', () => {
 
   test('renders index with content but no blog posts', async () => {
     const emptyBlogPostFixture = JSON.parse(JSON.stringify(blogListFixture));
-    emptyBlogPostFixture.requestsState.rawResults.hits = [];
-    emptyBlogPostFixture.requestsState.rawResults.nbHits = 0;
+    console.log(blogListFixture);
+    emptyBlogPostFixture.resultsState.rawResults.hits = [];
+    emptyBlogPostFixture.resultsState.rawResults.nbHits = 0;
     const component = await renderer.create(<Index {...emptyBlogPostFixture} />);
     expect(component.toJSON()).toMatchSnapshot();
   });
 
   test('getInitialProps returns content via api', async () => {
     getBlogListContentSpy.mockImplementation(() => {
-      return blogListFixture;
+      return { title: blogListFixture.title, subTitle: blogListFixture.subTitle };
+    });
+    findResultsStateSpy.mockImplementation(() => {
+      return blogListFixture.resultsState;
     });
     const query = {};
     const result = await Index.getInitialProps({ query, pathname: '/' });
@@ -54,9 +62,13 @@ describe.skip('Index', () => {
     expect(result).toEqual({ ...blogListFixture });
   });
 
-  test('getInitialProps should call getHydratedBlogList with base url', async () => {
+  // skipping until we implement preview for the latest version of NextJS (^9.4.4)
+  test.skip('getInitialProps should call getBlogListContent with base url', async () => {
     getBlogListContentSpy.mockImplementation(() => {
-      return blogListFixture;
+      return { title: blogListFixture.title, subTitle: blogListFixture.subTitle };
+    });
+    findResultsStateSpy.mockImplementation(() => {
+      return blogListFixture.resultsState;
     });
     const query = { vse: 'vse-base-url' };
     await Index.getInitialProps({ query, pathname: '/' });
@@ -64,9 +76,12 @@ describe.skip('Index', () => {
     expect(getBlogListContentSpy).toHaveBeenCalledWith('reference-id', `//${query.vse}`);
   });
 
-  test('getInitialProps should call getHydratedBlogList without base url', async () => {
+  test('getInitialProps should call getBlogListContent without base url', async () => {
     getBlogListContentSpy.mockImplementation(() => {
-      return blogListFixture;
+      return { title: blogListFixture.title, subTitle: blogListFixture.subTitle };
+    });
+    findResultsStateSpy.mockImplementation(() => {
+      return blogListFixture.resultsState;
     });
     const query = {};
     await Index.getInitialProps({ query, pathname: '/' });

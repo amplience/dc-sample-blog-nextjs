@@ -49,111 +49,9 @@ exports[`Index renders index with content 1`] = `
           blog-test-sub-title
         </h2>
       </section>
-      <section
-        className="jsx-1454689318"
-      >
-        <a
-          aria-label="My First Blog Post"
-          className="jsx-3354872520"
-          href="/blog/my-first-blog"
-        >
-          <article
-            className="jsx-1454689318"
-          >
-            <div
-              className="jsx-1454689318 blog-card-image"
-            >
-              <picture>
-                <source
-                  media="(min-width: 728px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 528px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=728&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=1456&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 415px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=528&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=1056&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-                  type="image/webp"
-                />
-                <source
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=828&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}&fmt=webp 2x"
-                  type="image/webp"
-                />
-                <source
-                  media="(min-width: 728px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=403&w=330&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=806&w=660&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-                />
-                <source
-                  media="(min-width: 528px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=728&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=1456&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-                />
-                <source
-                  media="(min-width: 415px)"
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=528&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=1056&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-                />
-                <source
-                  srcSet="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 1x, https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=280&w=828&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h} 2x"
-                />
-                <img
-                  alt="crotch bags"
-                  src="https://i1-qa.adis.ws/i/blogltd/friends-shopping-bags?&sm=c&h=140&w=414&scaleFit=poi&poi={$this.metadata.pointOfInterest.x},{$this.metadata.pointOfInterest.y},{$this.metadata.pointOfInterest.w},{$this.metadata.pointOfInterest.h}"
-                />
-              </picture>
-            </div>
-            <div
-              className="jsx-1454689318 blog-card-content"
-            >
-              <h1
-                className="jsx-1454689318"
-              >
-                My First Blog Post
-              </h1>
-              <div
-                className="jsx-3343601279 card-meta"
-              >
-                <div
-                  className="jsx-3343601279 authors"
-                >
-                  <span
-                    className="jsx-3343601279"
-                  >
-                    by
-                  </span>
-                  <span
-                    className="jsx-3343601279 author"
-                  >
-                    Sir Blog
-                  </span>
-                </div>
-                <div
-                  className="jsx-3343601279 publish-data"
-                >
-                  <span
-                    className="jsx-3343601279 publish-date"
-                  >
-                    August 07, 2019
-                  </span>
-                  12 minutes
-                </div>
-              </div>
-              <p
-                className="jsx-1454689318"
-              >
-                Some text for the description that explains this blog post
-              </p>
-            </div>
-          </article>
-        </a>
-      </section>
-      <section
-        className="jsx-526258296"
-      >
-        
-      </section>
+      <div>
+        AlgoliaInstantSearch mock
+      </div>
     </main>
     <footer
       className="jsx-27833366"
@@ -452,14 +350,8 @@ exports[`Index renders index with content but no blog posts 1`] = `
           blog-test-sub-title
         </h2>
       </section>
-      <div
-        className="jsx-1210611463 no-published-blogs"
-      >
-        <p
-          className="jsx-1210611463"
-        >
-          No blogs published yet!
-        </p>
+      <div>
+        AlgoliaInstantSearch mock
       </div>
     </main>
     <footer

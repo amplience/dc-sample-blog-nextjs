@@ -1,7 +1,7 @@
 {
   "title": "blog-test-title",
   "subTitle": "blog-test-sub-title",
-  "indexName": "index-name",
+  "indexName": "algolia-index-name",
   "resultsState": {
     "rawResults": [
       {
