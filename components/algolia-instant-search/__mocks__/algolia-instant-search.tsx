@@ -1,5 +1,5 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
-const AlgoliaInstantSearch = () => <div>AlgoliaInstantSearch mock</div>;
+const AlgoliaInstantSearch = (): ReactElement => <div>AlgoliaInstantSearch mock</div>;
 
 export default AlgoliaInstantSearch;

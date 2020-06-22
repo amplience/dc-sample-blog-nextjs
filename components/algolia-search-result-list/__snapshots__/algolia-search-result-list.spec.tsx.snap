@@ -1,0 +1,204 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultList renders component with a multiple blog posts 1`] = `
+<div
+  id="searchResults"
+>
+  <HeroCard
+    blogPost={
+      Object {
+        "_highlightResult": Object {
+          "content": Array [
+            Object {
+              "matchLevel": "none",
+              "matchedWords": Array [],
+              "value": "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+            },
+          ],
+          "description": Object {
+            "matchLevel": "none",
+            "matchedWords": Array [],
+            "value": "This is the first blog post. It explains all the new features of our search index functionality",
+          },
+          "title": Object {
+            "matchLevel": "none",
+            "matchedWords": Array [],
+            "value": "All the about the new search index feature",
+          },
+        },
+        "authors": Array [
+          Object {
+            "name": "AN Author",
+          },
+        ],
+        "content": Array [
+          "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+        ],
+        "date": "2020-04-22",
+        "dateAsTimeStamp": 1587513600,
+        "deliveryKey": "",
+        "description": "This is the first blog post. It explains all the new features of our search index functionality",
+        "image": Object {
+          "_meta": Object {
+            "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+            "name": "bag-image",
+            "schema": "https://schema.localhost.com/image.json",
+          },
+          "altText": "crotch bags",
+          "image": Object {
+            "_meta": Object {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+            },
+            "defaultHost": "i1-qa.adis.ws",
+            "endpoint": "blogltd",
+            "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+            "mediaType": "i",
+            "name": "friends-shopping-bags",
+          },
+          "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags",
+        },
+        "objectID": "aa2bde70-767a-496d-ba35-c5d7a36713fe",
+        "readTime": 5,
+        "schema": "https://schema.localhost.com/blog-post.json",
+        "tags": Array [
+          "search",
+          "indexes",
+        ],
+        "title": "All the about the new search index feature",
+      }
+    }
+  />
+  <BlogList
+    blogPosts={
+      Array [
+        Object {
+          "_highlightResult": Object {
+            "content": Array [
+              Object {
+                "matchLevel": "none",
+                "matchedWords": Array [],
+                "value": "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+              },
+            ],
+            "description": Object {
+              "matchLevel": "none",
+              "matchedWords": Array [],
+              "value": "This is the first blog post. It explains all the new features of our search index functionality",
+            },
+            "title": Object {
+              "matchLevel": "none",
+              "matchedWords": Array [],
+              "value": "How to use search from your front end.",
+            },
+          },
+          "authors": Array [
+            Object {
+              "name": "AN Author",
+            },
+          ],
+          "content": Array [
+            "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+          ],
+          "date": "2020-04-22",
+          "dateAsTimeStamp": 1587513600,
+          "deliveryKey": "",
+          "description": "This is the first blog post. It explains all the new features of our search index functionality",
+          "image": Object {
+            "_meta": Object {
+              "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+              "name": "bag-image",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "crotch bags",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "i1-qa.adis.ws",
+              "endpoint": "blogltd",
+              "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+              "mediaType": "i",
+              "name": "friends-shopping-bags",
+            },
+            "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags",
+          },
+          "objectID": "67186472-dc1d-4e81-9dfc-eb0a44e9abb3",
+          "readTime": 5,
+          "schema": "https://schema.localhost.com/blog-post.json",
+          "tags": Array [
+            "search",
+            "indexes",
+            "front end",
+            "UI",
+          ],
+          "title": "How to use search from your front end.",
+        },
+        Object {
+          "_highlightResult": Object {
+            "content": Array [
+              Object {
+                "matchLevel": "none",
+                "matchedWords": Array [],
+                "value": "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+              },
+            ],
+            "description": Object {
+              "matchLevel": "none",
+              "matchedWords": Array [],
+              "value": "This is the first blog post. It explains all the new features of our search index functionality",
+            },
+            "title": Object {
+              "matchLevel": "none",
+              "matchedWords": Array [],
+              "value": "Find out about the enhancements to Dynamic Content search",
+            },
+          },
+          "authors": Array [
+            Object {
+              "name": "Roger Writer",
+            },
+          ],
+          "content": Array [
+            "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+          ],
+          "date": "2020-04-22",
+          "dateAsTimeStamp": 1587513600,
+          "deliveryKey": "",
+          "description": "This is the first blog post. It explains all the new features of our search index functionality",
+          "image": Object {
+            "_meta": Object {
+              "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+              "name": "bag-image",
+              "schema": "https://schema.localhost.com/image.json",
+            },
+            "altText": "crotch bags",
+            "image": Object {
+              "_meta": Object {
+                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+              },
+              "defaultHost": "i1-qa.adis.ws",
+              "endpoint": "blogltd",
+              "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+              "mediaType": "i",
+              "name": "friends-shopping-bags",
+            },
+            "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags",
+          },
+          "objectID": "0f590113-9733-4446-abcd-a103d17a2063",
+          "readTime": 5,
+          "schema": "https://schema.localhost.com/blog-post.json",
+          "tags": Array [
+            "Dynamic Content Search",
+            "search",
+            "blogs",
+            "releases",
+          ],
+          "title": "Find out about the enhancements to Dynamic Content search",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`SearchResultList renders component with no blog posts 1`] = `<NoBlogPosts />`;
