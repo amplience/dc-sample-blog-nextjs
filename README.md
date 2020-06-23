@@ -230,12 +230,12 @@ Notes:
 
 # Creating your first blog post
 
-After all of that we now everything setup you are ready to start writing your first blog post.
+After all of that we now have everything setup and you are ready to start writing your first blog post.
 
 1. In Dynamic Content go to the "Production" tab and select the "Content" repository on the left. 
 2. Click "Create content" and select the "Blog post" content-type
 3. Proceed to fill out the form, you can click on the "( + )" icons to include other content items
-4. Once done, click "Save" and 
+4. Once done, click "Save"
 5. Next we need to define the "Delivery Key" for this content item, this will become the URL path/slug (e.g. /blog/hello-and-welcome-to-our-new-blog)
 6. You can preview your blog post via the visualisation icon (the eye) in the toolbar.
 7. Once you're happy, go ahead an publish.
@@ -244,9 +244,9 @@ After all of that we now everything setup you are ready to start writing your fi
 
 Once you are ready to publish your blog within Dynamic Content just publish your new blog post directly from the "Production" side of Dynamic Content (select the context menu for the new blog post and select "Publish"). 
 
-The webhooks that were created when you created your search index will push your update the search index, and the Netlify webhook will trigger Netlify to rebuild your site.
+The webhooks that were generated when you created your search index will push your updates to the search index, and the Netlify webhook will be triggered to rebuild your site.
 
-After a few moments you new blog post should be visible on your Netlify site.
+After a few moments your new blog post should be visible on your Netlify site.
 
 # Local Development
 
