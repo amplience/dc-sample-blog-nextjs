@@ -135,6 +135,9 @@ During the Netlify setup process you will need to define the following build env
 
 | Environment Var                   | Required | Description                                                                                                     | Example                                |
 | --------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| ALGOLIA_APPLICATION_ID            | Yes      | The Algolia Application ID                                                                                      | applicationABCDEFGH                    |
+| ALGOLIA_SEARCH_ONLY_KEY           | Yes      | The Algolia Search API key                                                                                      | aabbccddeeff11223344556677889900       |
+| ALGOLIA_PRODUCTION_INDEX_NAME     | Yes      | The Algolia production index name                                                                               | hub1.index-name                        |
 | DYNAMIC_CONTENT_REFERENCE_ID      | Yes      | The ID of the Blog List slot                                                                                    | 00112233-4455-6677-8899-aabbccddeeff   |
 | DYNAMIC_CONTENT_ACCOUNT_NAME      | Yes      | Your Amplience Account Name, also known as Endpoint (ths is supplied when your account is created).             | mycompanyid                            |
 | DYNAMIC_CONTENT_BASE_URL          | No       | (Optional) Override the Content Delivery Base URL                                                               | https://api.amplience.net              |
