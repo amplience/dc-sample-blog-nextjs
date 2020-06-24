@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index components renders index with content 1`] = `
+exports[`Index renders index with content 1`] = `
 <div
   className="jsx-873644259 site-container"
 >
@@ -301,7 +301,7 @@ exports[`Index components renders index with content 1`] = `
 </div>
 `;
 
-exports[`Index components renders index with content but no blog posts 1`] = `
+exports[`Index renders index with content but no blog posts 1`] = `
 <div
   className="jsx-873644259 site-container"
 >

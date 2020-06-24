@@ -15,13 +15,6 @@ const exportPathMap = async function () {
         vse: ''
       }
     },
-    '/preview': {
-      page: '/preview',
-      query: {
-        content: '',
-        vse: ''
-      }
-    },
     '/visualization.html': {
       page: '/visualization',
       query: {

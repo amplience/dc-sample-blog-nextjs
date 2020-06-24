@@ -12,10 +12,11 @@ import useSWR from 'swr';
 interface IndexProps {
   title: string;
   subTitle: string;
-  buildTimeResultState: unknown;
+  buildTimeResultState: string;
+  indexName: string;
 }
 
-const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState }): JSX.Element => {
+const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState, indexName }): JSX.Element => {
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: subTitle
@@ -37,9 +38,9 @@ const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState }):
   );
 
   const searchParams = {
-    indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
     searchClient,
-    resultsState: runtimeResultState || buildTimeResultState
+    indexName,
+    resultsState: runtimeResultState || JSON.parse(buildTimeResultState)
   };
 
   return (
@@ -59,31 +60,33 @@ const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState }):
   );
 };
 
-Index.getInitialProps = async ({ query }): Promise<IndexProps> => {
+export async function getStaticProps({
+  preview,
+  previewData
+}: {
+  preview?: boolean;
+  previewData?: { vse?: string };
+}): Promise<{ props: IndexProps }> {
   const searchClient = algoliasearch(
     process.env.ALGOLIA_APPLICATION_ID as string,
     process.env.ALGOLIA_API_KEY as string
   );
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
-  const stagingEnvironment = query?.vse ? `//${query.vse.toString()}` : undefined;
-
-  try {
-    const blog = await getBlogContentItem(
-      process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string,
-      stagingEnvironment
-    );
-    const buildTimeResultState = await findResultsState(AlgoliaInstantSearch, {
+  const stagingEnvironment = previewData?.vse ? `${previewData.vse.toString()}` : undefined;
+  const blog = await getBlogContentItem(
+    process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string,
+    stagingEnvironment
+  );
+  const indexName = preview
+    ? (process.env.ALGOLIA_STAGING_INDEX_NAME as string)
+    : (process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string);
+  const buildTimeResultState = JSON.stringify(
+    await findResultsState(AlgoliaInstantSearch, {
       searchClient,
-      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
-    });
+      indexName: indexName
+    })
+  );
 
-    return { ...blog, buildTimeResultState };
-  } catch (err) {
-    console.error('Unable to get static props for Index:', err);
-    throw err;
-  }
-};
+  return { props: {...blog, buildTimeResultState, indexName }};
+}
 
 export default Index;

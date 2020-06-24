@@ -15,7 +15,7 @@ describe('SearchResultList', () => {
   });
   test('renders component with a multiple blog posts', async () => {
     const component = ShallowRenderer.createRenderer();
-    const props = { searchResults: blogListFixture.resultsState.rawResults[0] };
+    const props = { searchResults: JSON.parse(blogListFixture.buildTimeResultState).rawResults[0] };
 
     component.render(<SearchResultList {...props} />);
 
