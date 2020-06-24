@@ -35,7 +35,7 @@ To install and use this blog you first need to create the required schemas and r
 
 ### Creating Schemas & Registering Content Types
 
-#### Import using our dc-cli tool (recommended)
+#### Import using the dc-cli (recommended)
 
 You can import the schemas and content types to your hub using the [Dynamic Content CLI](https://www.npmjs.com/package/@amplience/dc-cli).
 
@@ -223,11 +223,13 @@ If you used the dc-cli tool to register your content types, they will already ha
 
 ### How to configure Preview
 
-The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
+The Preview application URL should be the domain with the path of `/api/preview?vse={{vse.domain}}`, e.g.: `https://blog.example.com/api/preview?vse={{vse.domain}}`.
+
+To exit preview mode and view production data again simply visit the domain with a path of `/api/exit-preview`, e.g.: `https://blog.example.com/api/exit-preview`.
 
 Notes:
 
-- Blog slot editions will not include any unpublished blog posts as they are a reference link in the blog post. Publishing the newly created blog posts will make them available when using Preview.
+- The application uses a staging search index to load the blog posts and it will load the blog title and description from the VSE supplied.
 
 # Creating your first blog post
 
