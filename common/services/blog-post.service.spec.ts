@@ -2,9 +2,7 @@
 
 import blogPostContentItemFixture from '../../tests/fixtures/single-blog-post-content-item.json';
 import blogPostDataFixture from '../../tests/fixtures/single-blog-post-data-object.json';
-
-import getBlogPost, { parseContent } from './blog-post.service';
-
+import { getBlogPostByDeliveryId, parseContent } from './blog-post.service';
 import * as videoService from './video.service';
 
 jest.mock('./video.service');
@@ -22,7 +20,7 @@ jest.mock('../../common/services/dynamic-content-delivery.service', () => {
   };
 });
 
-describe('getBlogPost', () => {
+describe('getBlogPostByDeliveryId', () => {
   beforeEach(() => {
     process.env.DYNAMIC_CONTENT_ACCOUNT_NAME = 'account-name';
     process.env.DYNAMIC_CONTENT_BASE_URL = 'dc-base-url';
@@ -39,7 +37,7 @@ describe('getBlogPost', () => {
 
     mockGetVideoSources.mockResolvedValue([]);
 
-    const result = await getBlogPost('test-blog-id');
+    const result = await getBlogPostByDeliveryId('test-blog-id');
 
     expect(result).toEqual(blogPostDataFixture);
     expect(mockGetVideoSources).toHaveBeenCalled();
@@ -57,7 +55,7 @@ describe('getBlogPost', () => {
     mockGetContentItemById.mockImplementation(() => contentItem);
     const blogPostDataNoAuthorAvatarFixture = JSON.parse(JSON.stringify(blogPostDataFixture));
     delete blogPostDataNoAuthorAvatarFixture.authors[0].avatar;
-    const result = await getBlogPost('test-blog-id');
+    const result = await getBlogPostByDeliveryId('test-blog-id');
 
     expect(result).toEqual(blogPostDataNoAuthorAvatarFixture);
   });
@@ -67,7 +65,7 @@ describe('getBlogPost', () => {
       throw new Error();
     });
     delete process.env.DYNAMIC_CONTENT_ACCOUNT_NAME;
-    await expect(getBlogPost('test-blog-id')).rejects.toThrowError();
+    await expect(getBlogPostByDeliveryId('test-blog-id')).rejects.toThrowError();
   });
 
   test('should throw an error when we do not get a blog post back', async () => {
@@ -83,7 +81,7 @@ describe('getBlogPost', () => {
     };
     mockGetContentItemById.mockImplementation(() => contentItem);
 
-    await expect(getBlogPost('test-blog-id')).rejects.toThrowError();
+    await expect(getBlogPostByDeliveryId('test-blog-id')).rejects.toThrowError();
   });
 });
 

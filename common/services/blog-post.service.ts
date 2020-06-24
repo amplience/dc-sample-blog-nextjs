@@ -51,11 +51,22 @@ export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody):
   };
 }
 
-export default async function getBlogPost(blogPostId: string, stagingEnvironment?: string): Promise<BlogPost> {
+export async function getBlogPostByDeliveryId(id: string, stagingEnvironment?: string): Promise<BlogPost> {
   const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
 
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
-  const contentItem = (await deliveryClient.getContentItemById(blogPostId)).toJSON();
+  const contentItem = (await deliveryClient.getContentItemById(id)).toJSON();
+  if (!isBlogPost(contentItem)) {
+    throw new Error('Content Item is not a Blog Post');
+  }
+  return await parseBlogPost(contentItem);
+}
+
+export async function getBlogPostByDeliveryKey(key: string, stagingEnvironment?: string): Promise<BlogPost> {
+  const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
+
+  const deliveryClient = new DynamicContentDeliveryService(clientConfig);
+  const contentItem = (await deliveryClient.getContentItemByKey(key)).toJSON();
   if (!isBlogPost(contentItem)) {
     throw new Error('Content Item is not a Blog Post');
   }

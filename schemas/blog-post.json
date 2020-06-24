@@ -48,14 +48,6 @@
         }
       ]
     },
-    "urlSlug": {
-      "title": "Url slug",
-      "description": "Url friendly slug",
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 100,
-      "pattern": "^[a-z0-9-]+$"
-    },
     "tags": {
       "title": "Tags",
       "description": "Blog tags",

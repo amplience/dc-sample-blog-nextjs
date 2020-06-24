@@ -1,5 +1,5 @@
 export interface BlogPostReference {
-  id: string;
+  deliveryKey: string;
 }
 
 export interface BlogReferenceList {

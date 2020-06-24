@@ -6,12 +6,12 @@ import { isBlogPost } from '../../common/services/blog-post.service';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import Blog from '../blog/blog';
 import PageLoader from '../page-loader/page-loader';
-import { getReferencedBlogPosts } from '../../common/services/blog-reference-list.service';
 import HeroCard from '../hero-card/hero-card';
 import BlogList from '../blog-list/blog-list';
 import { BlogReferenceList } from '../../common/interfaces/blog-reference-list.interface';
 import HeroBanner from '../hero-banner/hero-banner';
 import NoBlogPosts from '../blog-list/no-blog-posts';
+import getReferencedBlogPosts from '../../common/services/blog-post/get-referenced-blog-posts.service';
 
 interface VisualizationProps {
   stagingEnvironment: string;
@@ -57,7 +57,10 @@ export default class Visualization extends Component<VisualizationProps, Visuali
       } else {
         let blogPosts: BlogPost[] = [];
         if ('blogPosts' in contentItem) {
-          blogPosts = await getReferencedBlogPosts((contentItem as BlogReferenceList).blogPosts, this.props.stagingEnvironment);
+          blogPosts = await getReferencedBlogPosts(
+            (contentItem as BlogReferenceList).blogPosts,
+            this.props.stagingEnvironment
+          );
         }
         this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } as VisualizationState['blogList'] });
       }

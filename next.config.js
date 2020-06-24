@@ -8,36 +8,7 @@ require('dotenv').config();
 const INDEX_HITS_PER_PAGE = 1000;
 
 const exportPathMap = async function () {
-  let dynamicPages = {};
-
-  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_SEARCH_ONLY_KEY);
-  const index = client.initIndex(process.env.ALGOLIA_PRODUCTION_INDEX_NAME);
-
-  try {
-    const results = await index.search('', {
-      attributesToRetrieve: ['objectID', 'deliveryKey'],
-      attributesToHighlight: [],
-      hitsPerPage: INDEX_HITS_PER_PAGE
-    });
-
-    dynamicPages = results.hits.reduce((pages, blogPost) => {
-      const slug = blogPost.deliveryKey ? blogPost.deliveryKey.toLowerCase() : blogPost.objectID.toLowerCase();
-      return Object.assign({}, pages, {
-        [`/blog/${encodeURIComponent(slug)}`]: {
-          page: '/blog',
-          query: { blogId: blogPost.objectID, slug: slug }
-        }
-      });
-    }, {});
-  } catch (err) {
-    console.error('Error building exportPathMap', err);
-    throw err;
-  }
-
-  console.info('\nLoading dynamic pages:');
-  Object.keys(dynamicPages).forEach(page => console.info(page));
-
-  return Object.assign({}, dynamicPages, {
+  const pages = {
     '/': {
       page: '/',
       query: {
@@ -58,7 +29,38 @@ const exportPathMap = async function () {
         content: ''
       }
     }
-  });
+  };
+
+  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_SEARCH_ONLY_KEY);
+  const index = client.initIndex(process.env.ALGOLIA_PRODUCTION_INDEX_NAME);
+
+  try {
+    console.info('\nLoading blog posts:');
+    const results = await index.search('', {
+      attributesToRetrieve: ['objectID', 'deliveryKey'],
+      attributesToHighlight: [],
+      hitsPerPage: INDEX_HITS_PER_PAGE
+    });
+
+    results.hits.forEach(blogPost => {
+      if (!blogPost.deliveryKey) {
+        console.warn('No deliveryKey for blogPost', blogPost);
+      } else {
+        const path = `/blog/${encodeURIComponent(blogPost.deliveryKey)}`;
+        const pageInfo = {
+          page: '/blog',
+          query: { deliveryKey: blogPost.deliveryKey }
+        };
+        console.info(`Loading blog post "${path}`, pageInfo);
+        pages[path] = pageInfo;
+      }
+    });
+  } catch (err) {
+    console.error('Error building exportPathMap', err);
+    throw err;
+  }
+
+  return pages;
 };
 
 const env = {
@@ -66,8 +68,8 @@ const env = {
   ALGOLIA_APPLICATION_ID: process.env.ALGOLIA_APPLICATION_ID,
   ALGOLIA_SEARCH_ONLY_KEY: process.env.ALGOLIA_SEARCH_ONLY_KEY,
   ALGOLIA_PRODUCTION_INDEX_NAME: process.env.ALGOLIA_PRODUCTION_INDEX_NAME,
-  DYNAMIC_CONTENT_REFERENCE_ID: process.env.DYNAMIC_CONTENT_REFERENCE_ID,
-  DYNAMIC_CONTENT_ACCOUNT_NAME: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME,
+  DYNAMIC_CONTENT_HUB_NAME: process.env.DYNAMIC_CONTENT_HUB_NAME,
+  DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY: process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY,
   DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,
   DYNAMIC_CONTENT_SECURE_MEDIA_HOST: process.env.DYNAMIC_CONTENT_SECURE_MEDIA_HOST,
   ROBOTS_META_TAG_NOINDEX: process.env.ROBOTS_META_TAG_NOINDEX

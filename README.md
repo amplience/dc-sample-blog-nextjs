@@ -27,28 +27,31 @@ To install and use this blog you first need to create the required schemas and r
 | Filename       | Schema ID                                                                                       | Schema Type  | Visualization Supported |
 | -------------- | ----------------------------------------------------------------------------------------------- | ------------ | ----------------------- |
 | author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json    | Content Type | No                      |
-| blog-list.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-list.json | Content Type | Yes                     |
+| blog.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json      | Content Type | Yes                     |
 | blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json | Content Type | Yes                     |
-| blog-slot.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-slot.json | Slot         | No                      |
 | image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json     | Content Type | Yes                     |
 | text.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json      | Content Type | Yes                     |
 | video.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json     | Content Type | Yes                     |
 
 ### Creating Schemas & Registering Content Types
 
-#### Import using the CLI (recommended)
+#### Import using our dc-cli tool (recommended)
+
 You can import the schemas and content types to your hub using the [Dynamic Content CLI](https://www.npmjs.com/package/@amplience/dc-cli).
 
 Install and configure the CLI tool, clone this repository and then use the the CLI import definitions included by running the following commands:
 
 ```
-npm install -g @amplience/dc-cli
-dc-cli configure --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID>
 git clone https://github.com/amplience/dc-static-blog-nextjs
 cd dc-static-blog-nextjs
-dc-cli content-type-schema import ./dc-cli-definitions/content-type-schemas
-dc-cli content-type import ./dc-cli-definitions/content-types
+npm install
+npx dc-cli --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID> configure
+npm run sync
 ```
+
+Notes:
+
+ - `npm run sync` imports the content-type-schemas and content-types as well as synchronizing any content type changes to your content items. 
 
 #### Create and register manually in Dynamic Content
 
@@ -74,54 +77,76 @@ For each of the Content Types list above:-
 5. Associate the Content type to the correct repo (blog-slot.json should be in the repo that is marked as Slots)
 6. Click "Save".
 
-### Creating A Blog-List & Slot
+### Creating a Blog content item
 
-Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog-list Content item and a Slot.
-A slot is like a placeholder/pointer to your blog-list, it is also the content entry point when the application runs.
+Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog content item.
 
-How to create a blog-list content item for your blog:
+How to create a blog content item for your blog:
 
 1. Navigate to the "Production" section
-2. Select the repo where you have registered "blog-list.json"
+2. Select the repo where you have registered "blog.json"
 3. Click "Create content"
-4. Select the "Blog List" (or whatever label to assigned to the "blog-list.json" content type)
+4. Select the "Blog" (or whatever label to assigned to the "blog.json" content type)
 5. Enter a title and a subtitle (these will appear on your blog)
 6. Click "Save"
+7. Select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve this blog post during the build phase.
 
-How to create a Blog list "slot", so you can schedule updates to your blog:
+### Creating a search index for your blog-post's
 
-1. Navigate to the "Production" section
-2. Select your Slots repository
-3. Click "Create slots"
-4. Select the "Blog Slot" (or whatever label to assigned to the "blog-slot.json" content type)
-5. Click the "+" under "Blog list"
-6. Click "Add existing"
-7. Select your newly created Blog List
-8. Click "Save"
+1. Navigate to the "Development" section
+2. Select "Search Indexes"
+3. Click "Create index"
+4. Enter a search label (e.g. "blog posts")
+5. Select the "Blog post" content type
+6. Select "Production" when asked what kind of data is to be stored in this index.
+7. Make a note of the index name in the top left (there's a copy text button next to it), we'll be needed this later
+8. Select the "Keys" tab and record the "Application ID" & "Search API key".
 
-Getting the content ID of a slot:-
+We have now created a Search Index and series of webhooks that can push and remove data to your search index whenever you publish or archive a Blog Post.
 
-1. Navigate to the "Production" section
-2. Select your Slots repository
-3. Find the slot you wish to use
-4. In the "..." menu for that item, select "Get content ID"
-5. Copy the Content ID, this ID will need to be assigned to the `DYNAMIC_CONTENT_REFERENCE_ID` environment variable
+Next we have to customize the webhook payload, as we want change some of the data structures in the search index.
 
-![Create Blog List and Slot](media/create-blog-list-and-slot.gif)
+1. Navigate back to your Search Index (if you're not still there)
+2. Select the "Webhooks" tab
+3. Select the "indexing webhook" or the "PUT" webhook, it should be called something like "Search Index: MyHub.blog-posts / Blog post" (you can click directly on the webhook name or via the context menu at the right hand side)
+4. Scroll down the bottom of the webhook configuration screen and in "Payload" section replace `{{{JSONstringify this}}}` with the following:
 
-Adding a Blog post to a Blog list
+```handlebars
+{
+  "title": "{{{title}}}",
+  "description": "{{{description}}}",
+  "deliveryKey": "{{{_meta.deliveryKey}}}",
+  "schema": "{{{_meta.schema}}}",
+  "authors": [
+    {{#each authors}}{{#if @index}},{{/if}}
+      {
+        "name":"{{{name}}}"
+      }
+    {{/each}}
+  ],
+  {{#if tags}}
+    "tags": {{{JSONstringify tags}}},
+  {{/if}}
+  "date": "{{{this.date}}}",
+  "dateAsTimeStamp": {{{moment date format="X"}}},
+  "readTime": {{{readTime}}},
+  "content": [
+  {{#each content}}
+    {{#if text}}
+      {{#if @index}},{{/if}}
+      {{{JSONstringify text}}}
+    {{/if}}
+  {{/each}}
+  ],
+  "image": {{{JSONstringify image}}}
+}
+```
 
-1. Navigate to the "Production" section
-2. Select the repo where you have registered "blog-list.json"
-3. Edit the previously created Blog list
-4. Click the "link" icon and select "Create and add new"
-5. Fill out all the fields in the form
-6. Click "Save"
+5. Click Save
 
-Note:
+Notes:
 
-- When adding the blog "Image" we recommend maintaining a 3:1, width:height ratio.
-- Recommended video format is MP4 to avoid issues with Safari.
+- For more information regarding the webhook payload that is mentioned here, please our documentation - [Optimizing the Algolia record size](https://docs.amplience.net/integration/webhooksearchexamplepart2.html)
 
 ## Deploy To Netlify
 
@@ -133,18 +158,25 @@ Click on the button below to deploy this repository via Netlify.
 
 During the Netlify setup process you will need to define the following build environment variables
 
-| Environment Var                   | Required | Description                                                                                                     | Example                                |
-| --------------------------------- | -------- | --------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
-| ALGOLIA_APPLICATION_ID            | Yes      | The Algolia Application ID                                                                                      | applicationABCDEFGH                    |
-| ALGOLIA_SEARCH_ONLY_KEY           | Yes      | The Algolia Search API key                                                                                      | aabbccddeeff11223344556677889900       |
-| ALGOLIA_PRODUCTION_INDEX_NAME     | Yes      | The Algolia production index name                                                                               | hub1.index-name                        |
-| DYNAMIC_CONTENT_REFERENCE_ID      | Yes      | The ID of the Blog List slot                                                                                    | 00112233-4455-6677-8899-aabbccddeeff   |
-| DYNAMIC_CONTENT_ACCOUNT_NAME      | Yes      | Your Amplience Account Name, also known as Endpoint (ths is supplied when your account is created).             | mycompanyid                            |
-| DYNAMIC_CONTENT_BASE_URL          | No       | (Optional) Override the Content Delivery Base URL                                                               | https://api.amplience.net              |
-| DYNAMIC_CONTENT_SECURE_MEDIA_HOST | No       | (Optional) Allows users with custom hostnames to override the hostname used when constructing secure media URLs | custom-secure-media-host.amplience.net |
-| GA_TRACKING_ID                    | No       | (Optional) Google Analytics                                                                                     | UA-1234567890                          |
-| BASE_URL                          | Yes\*    | (Optional) Base URL, used in generating links                                                                   | https://blog.example.com               |
-| ROBOTS_META_TAG_NOINDEX           | No       | (Optional) Adds a noindex,nofollow meta tag to blog pages                                                       | true                                   |
+#### Required settings
+
+| Environment Var                        | Description                                                             | Example                          |
+| -------------------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
+| ALGOLIA_APPLICATION_ID                 | The Algolia Application ID                                              | applicationABCDEFGH              |
+| ALGOLIA_SEARCH_ONLY_KEY                | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
+| ALGOLIA_PRODUCTION_INDEX_NAME          | The Algolia production index name                                       | my-hub.blog-posts                |
+| DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
+| DYNAMIC_CONTENT_HUB_NAME               | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
+
+#### Optional settings
+
+| Environment Var                   | Description                                                                                          | Example                                |
+| --------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------------------------------- |
+| DYNAMIC_CONTENT_BASE_URL          | Override the Content Delivery Base URL                                                               | https://api.amplience.net              |
+| DYNAMIC_CONTENT_SECURE_MEDIA_HOST | Allows users with custom hostnames to override the hostname used when constructing secure media URLs | custom-secure-media-host.amplience.net |
+| GA_TRACKING_ID                    | Google Analytics                                                                                     | UA-1234567890                          |
+| BASE_URL\*                        | Base URL, used in generating links                                                                   | https://blog.example.com               |
+| ROBOTS_META_TAG_NOINDEX           | Adds a noindex,nofollow meta tag to blog pages                                                       | true                                   |
 
 \* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 
@@ -166,12 +198,13 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 2. Click "Add webhook"
 3. Enter a sensible label (e.g. "Netlify Deployment")
 4. Enter the Netlify "build hook" that you created in the previous section as your URL
-5. Enable the Webhook trigger "Edition - published"
-6. Click "Save"
+5. Enable the Webhook trigger "Snapshot - Published"
+6. Under "Filters", click new and add the JSON path "$.payload.rootContentItem.contentTypeUri", ensure "Equals" operator is selected and enter "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json" as the value
+7. Click "Save"
 
 Notes:
 
-- The "Edition - published" webhook trigger allows you to use the scheduling features of Dynamic Content, allowing you to schedule in advance when your blog will be updated.
+- This will tell Netlify to rebuild your blog whenever you publish any Blog post changes
 
 ## Visualizations & Preview Support
 
@@ -185,7 +218,7 @@ Dynamic Content has two ways of allowing you to see you content changes before t
 
 For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `https://blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
 
-If you used the CLI to register your content types, they will already have visualisations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the import command again, or by manually updating your content types in Dynamic Content.
+If you used the dc-cli tool to register your content types, they will already have visualisations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the `npm run sync` command again, or by manually updating your content types in Dynamic Content.
 
 ### How to configure Preview
 
@@ -195,42 +228,25 @@ Notes:
 
 - Blog slot editions will not include any unpublished blog posts as they are a reference link in the blog post. Publishing the newly created blog posts will make them available when using Preview.
 
+# Creating your first blog post
+
+After all of that we now have everything setup and you are ready to start writing your first blog post.
+
+1. In Dynamic Content go to the "Production" tab and select the "Content" repository on the left. 
+2. Click "Create content" and select the "Blog post" content-type
+3. Proceed to fill out the form, you can click on the "( + )" icons to include other content items
+4. Once done, click "Save"
+5. Next we need to define the "Delivery Key" for this content item, this will become the URL path/slug (e.g. /blog/hello-and-welcome-to-our-new-blog)
+6. You can preview your blog post via the visualisation icon (the eye) in the toolbar.
+7. Once you're happy, go ahead an publish.
+
 # Publishing
 
-Once you are ready to publish your blog within Dynamic Content just publish your new blog post directly from the "Production" side of Dynamic Content (select the context menu for the new blog post and select "Publish"). At first it won't appear on your blog, this is because the blog list needs to be updated to include it.
+Once you are ready to publish your blog within Dynamic Content just publish your new blog post directly from the "Production" side of Dynamic Content (select the context menu for the new blog post and select "Publish"). 
 
-Remember the blog list and slot that you configured? At build time the application is requesting the slot Content Item which has a "content-link" to the blog list content item, the blog list content item contains an array of "content-references" that each point to a blog post. The content graph looks something like this:-
+The webhooks that were generated when you created your search index will push your updates to the search index, and the Netlify webhook will be triggered to rebuild your site.
 
-```
-+--------+                +--------+                     +-----------+
-|        |                |        |     - - - - - >     | Blog Post |
-|  Slot  |    ------>     |  Blog  |                     +-----------+
-|        |                |  List  |                     +-----------+
-|        |                |        |     - - - - - >     | Blog Post |
-+---+----+                +--------+                     +-----------+
-           (content-link)             (content-reference)
-```
-
-To get the application to display your new blog post you will need to update the Blog List to include your new Blog Post. To do this open your blog list content item, add your new blog post and re-order the list, so that your new blog post is at the top. Then click "Save".
-Next you will need to schedule this update using an Dynamic Content Edition.
-
-## Scheduling
-
-_***Note:*** This option is only available if your Webhook is configured using the ***"Edition - Published"*** trigger_
-
-(If you have followed the previous section, so you can skip to step 4.)
-
-1. Create your new Blog Post
-2. Publish your new Blog Post (don't worry it wont be visible on your site)
-3. Update your Blog List to include your new Blog Post
-4. Create a new Event & Edition in the Planner section of Dynamic Content (set when you want your Blog Post to be published on your Blog).
-5. Add your Blog Slot to the Edition
-6. Add your Blog List into the Blog Slot
-7. Click "Schedule the Edition"
-
-When Dynamic Content publishes your updated slot, it will also include your updated Blog List Content Item too, due to the "content-link" between the slot and the Blog List. Dynamic Content will also notify Netlify when it has been published via the webhook you created. You can check on the status of the build by logging into your Netlify account and looking at your build history.
-
-![Scheduling a Blog List update in Dynamic Content](./media/publish-blog-list-via-edition.gif)
+After a few moments your new blog post should be visible on your Netlify site.
 
 # Local Development
 
@@ -250,16 +266,19 @@ npm run test
 
 ## Setup
 
-To setup the application create a `.env` file within the root of the project containing the following - replacing `Content-Id` and `Account-Name` with your values.
+To setup the application create a `.env` file within the root of the project containing the following - replacing values with the values you used during the setup of the blog.
 
 ```
-DYNAMIC_CONTENT_REFERENCE_ID=<Content-Id>
-DYNAMIC_CONTENT_ACCOUNT_NAME=<Account-Name>
+DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY=<Blog-Delivery-Key>
+DYNAMIC_CONTENT_HUB_NAME=<Account-Name>
+ALGOLIA_APPLICATION_ID=<SEARCH_INDEX_APPLICATION_ID>
+ALGOLIA_SEARCH_ONLY_KEY=<SEARCH_INDEX_SEARCH_KEY>
+ALGOLIA_PRODUCTION_INDEX_NAME=<SEARCH_INDEX_NAME>
 ```
 
 ### Using Staging/Other Environments
 
-To use the staging/other environment, the base URL can be overridden to a different value.
+To use the staging/other Dynamic Content environments, the base URL can be overridden to a different value.
 
 ```
 DYNAMIC_CONTENT_BASE_URL=<Base-URL>
