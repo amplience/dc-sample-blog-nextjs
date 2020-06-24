@@ -45,7 +45,7 @@ Install and configure the CLI tool, clone this repository and then use the the C
 git clone https://github.com/amplience/dc-static-blog-nextjs
 cd dc-static-blog-nextjs
 npm install
-npx dc-cli --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID>
+npx dc-cli --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID> configure
 npm run sync
 ```
 
