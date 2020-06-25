@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 export interface StaticLinkProps {
   children: JSX.Element;
@@ -6,7 +6,7 @@ export interface StaticLinkProps {
   ariaLabel?: string;
 }
 
-const StaticLink = ({ children, href, ariaLabel = '' }: StaticLinkProps) => {
+const StaticLink = ({ children, href, ariaLabel = '' }: StaticLinkProps): ReactElement => {
   return (
     <>
       <a href={href} aria-label={ariaLabel}>

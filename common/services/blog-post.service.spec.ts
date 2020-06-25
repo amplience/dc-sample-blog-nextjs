@@ -1,89 +1,11 @@
 /* eslint-env jest */
 
-import blogPostContentItemFixture from '../../tests/fixtures/single-blog-post-content-item.json';
-import blogPostDataFixture from '../../tests/fixtures/single-blog-post-data-object.json';
-import { getBlogPostByDeliveryId, parseContent } from './blog-post.service';
 import * as videoService from './video.service';
+import { parseContent } from './blog-post.service';
 
 jest.mock('./video.service');
 
 const mockGetVideoSources = (videoService.getVideoSources as unknown) as jest.Mock;
-
-const mockGetContentItemById = jest.fn();
-jest.mock('../../common/services/dynamic-content-delivery.service', () => {
-  return {
-    DynamicContentDeliveryService: jest.fn(() => {
-      return {
-        getContentItemById: () => mockGetContentItemById()
-      };
-    })
-  };
-});
-
-describe('getBlogPostByDeliveryId', () => {
-  beforeEach(() => {
-    process.env.DYNAMIC_CONTENT_ACCOUNT_NAME = 'account-name';
-    process.env.DYNAMIC_CONTENT_BASE_URL = 'dc-base-url';
-  });
-
-  test('should return blog post content', async () => {
-    const contentItem = {
-      body: blogPostContentItemFixture,
-      toJSON: () => {
-        return blogPostContentItemFixture;
-      }
-    };
-    mockGetContentItemById.mockImplementation(() => contentItem);
-
-    mockGetVideoSources.mockResolvedValue([]);
-
-    const result = await getBlogPostByDeliveryId('test-blog-id');
-
-    expect(result).toEqual(blogPostDataFixture);
-    expect(mockGetVideoSources).toHaveBeenCalled();
-  });
-
-  test('should return blog post content when author has no avatar', async () => {
-    const blogPostContentItemNoAuthorAvatarFixture = JSON.parse(JSON.stringify(blogPostContentItemFixture));
-    delete blogPostContentItemNoAuthorAvatarFixture.authors[0].avatar;
-    const contentItem = {
-      body: blogPostContentItemNoAuthorAvatarFixture,
-      toJSON: () => {
-        return blogPostContentItemNoAuthorAvatarFixture;
-      }
-    };
-    mockGetContentItemById.mockImplementation(() => contentItem);
-    const blogPostDataNoAuthorAvatarFixture = JSON.parse(JSON.stringify(blogPostDataFixture));
-    delete blogPostDataNoAuthorAvatarFixture.authors[0].avatar;
-    const result = await getBlogPostByDeliveryId('test-blog-id');
-
-    expect(result).toEqual(blogPostDataNoAuthorAvatarFixture);
-  });
-
-  test('should throw an error when DYNAMIC_CONTENT_ACCOUNT_NAME is not set', async () => {
-    mockGetContentItemById.mockImplementation(() => {
-      throw new Error();
-    });
-    delete process.env.DYNAMIC_CONTENT_ACCOUNT_NAME;
-    await expect(getBlogPostByDeliveryId('test-blog-id')).rejects.toThrowError();
-  });
-
-  test('should throw an error when we do not get a blog post back', async () => {
-    const contentItem = {
-      body: {
-        notBlogContent: 'no blog'
-      },
-      toJSON: () => {
-        return {
-          notBlogContent: 'no blog'
-        };
-      }
-    };
-    mockGetContentItemById.mockImplementation(() => contentItem);
-
-    await expect(getBlogPostByDeliveryId('test-blog-id')).rejects.toThrowError();
-  });
-});
 
 const mockFetch = jest.fn();
 jest.mock('isomorphic-unfetch', () => () => mockFetch());

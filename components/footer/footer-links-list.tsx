@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import ExternalLink from '../external-link/external-link';
 import Text from '../text/text';
 
@@ -13,7 +14,7 @@ interface FooterLinksListProps {
   links: FooterLink[];
 }
 
-const FooterLinksList = ({ title, links = [] }: FooterLinksListProps) => {
+const FooterLinksList = ({ title, links = [] }: FooterLinksListProps): ReactElement => {
   const linkElements = links.map((link: FooterLink, key: number) => (
     <li key={key}>
       <ExternalLink href={link.href}>

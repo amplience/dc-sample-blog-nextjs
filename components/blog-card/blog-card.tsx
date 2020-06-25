@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
@@ -10,11 +11,11 @@ interface BlogCardProps {
   blogPost: BlogPost;
 }
 
-const BlogCard = ({ blogPost }: BlogCardProps) => {
+const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
   const router = useRouter();
   const vse = router.query.vse ? router.query.vse.toString() : '';
   const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
-  const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || blogPost._meta.deliveryId).toLowerCase())}`;
+  const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
   const blogLink = `${path}${routerQuery}`;
   return (
     <>
@@ -173,7 +174,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
             line-height: unset;
             margin: 20px 0;
           }
-          
+
           p {
             font-weight: ${theme.fonts.weight.light};
           }

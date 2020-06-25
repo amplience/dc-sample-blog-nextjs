@@ -1,7 +1,7 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import RouteChangeLoader from './route-change-loader';
-// @ts-ignore
 import { mockRouterOn } from 'next/router';
 import { shallow } from 'enzyme';
 

@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
@@ -9,14 +10,14 @@ interface HeroCardProps {
   blogPost: BlogPost;
 }
 
-const HeroCard = ({ blogPost }: HeroCardProps) => {
+const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
   if (!blogPost) {
     return <div />;
   } else {
     const router = useRouter();
     const { vse } = router.query;
     const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
-    const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || blogPost._meta.deliveryId).toLowerCase())}`;
+    const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
     const blogLink = `${path}${routerQuery}`;
     return (
       <>
@@ -79,7 +80,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           margin-top: 40px;
           max-width: ${theme.layout.widePageWidth};
         }
-        
+
         article {
           width: 31%;
           flex: 1 1 0;
@@ -91,7 +92,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           cursor: pointer;
           min-height: 400px;
         }
-        
+
         p {
           font-size: ${theme.fonts.size.xLarge};
           color: ${theme.colors.doveGray};
@@ -101,25 +102,25 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
         article:hover {
           box-shadow: 0 20px 15px 2px ${theme.colors.black25};
         }
-        
+
         article:hover :global(.publish-date) {
           border-color: ${theme.colors.dustyGray};
         }
-        
+
         article:hover h1, article:hover p, article:hover :global(.card-meta) {
           color: ${theme.colors.dustyGray};
         }
-        
+
         .blog-card-image {
           width: 30%
         }
-        
+
         .blog-card-image :global(img) {
           object-fit: cover;
           height: 100%;
           width: 100%;
         }
-        
+
         .blog-card-content {
           width: 70%;
           padding 0 20px 0 20px;
@@ -132,7 +133,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           color: ${theme.colors.mineShaft};
           margin-top: 16px;
         }
-        
+
         article :global(.card-meta div) {
           font-size: ${theme.fonts.size.large};
         }
@@ -152,7 +153,7 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
             margin-bottom: 60px;
           }
         }
-        
+
         @media (max-width: ${theme.layout.narrowPageWidth}) {
           article {
             font-size: ${theme.fonts.size.small};
@@ -165,12 +166,12 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
 
           article:hover {
             box-shadow: unset;
-          } 
-          
+          }
+
           article :global(.card-meta div) {
             font-size: unset;
           }
-          
+
           section {
             display: block;
             padding: 0 26px;
@@ -179,36 +180,36 @@ const HeroCard = ({ blogPost }: HeroCardProps) => {
           .blog-card-content {
             width: 100%;
           }
-          
+
           h1 {
             font-size: ${theme.fonts.size.xxLarge};
             font-weight: ${theme.fonts.weight.bold};
             line-height: unset;
             margin: 20px 0;
           }
-          
+
           p {
             font-size: ${theme.fonts.size.normal};
             font-weight: ${theme.fonts.weight.light};
             line-height: ${theme.fonts.size.xxLarge};
           }
-          
+
           .blog-card-image {
             width: unset;
           }
-          
+
           .blog-card-content {
             width: unset;
             padding: 0 10px 0 10px;
           }
-          
+
           .blog-card-image :global(img) {
             object-fit: cover;
             height: 135px;
           }
         }
-        
-        
+
+
 
       `}</style>
       </>

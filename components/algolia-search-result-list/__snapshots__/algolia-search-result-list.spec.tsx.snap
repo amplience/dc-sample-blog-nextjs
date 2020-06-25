@@ -1,0 +1,82 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResultList renders component with a multiple blog posts 1`] = `
+<div
+  id="searchResults"
+>
+  <HeroCard
+    blogPost={
+      Object {
+        "_highlightResult": Object {
+          "content": Array [
+            Object {
+              "matchLevel": "none",
+              "matchedWords": Array [],
+              "value": "Welcome to our new test blog, I do hope you like it.",
+            },
+          ],
+          "description": Object {
+            "matchLevel": "none",
+            "matchedWords": Array [],
+            "value": "Hello and welcome to our test blog",
+          },
+          "title": Object {
+            "matchLevel": "none",
+            "matchedWords": Array [],
+            "value": "Hello and welcome",
+          },
+        },
+        "_meta": Object {
+          "deliveryId": "19cef5f9-e094-4176-a516-c1b213f584b3",
+          "deliveryKey": "hello-and-welcome",
+          "name": "hello-and-welcome",
+          "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+        },
+        "authors": Array [
+          Object {
+            "name": "A User",
+          },
+        ],
+        "content": Array [
+          "Welcome to our new test blog, I do hope you like it.",
+        ],
+        "date": "2020-06-17",
+        "dateAsTimeStamp": 1592352000,
+        "deliveryKey": "hello-and-welcome",
+        "description": "Hello and welcome",
+        "image": Object {
+          "_meta": Object {
+            "deliveryId": "ad1ff37d-6a65-43a9-b807-4d7b16365a0c",
+            "name": "glasses",
+            "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
+          },
+          "altText": "Glasses",
+          "image": Object {
+            "_meta": Object {
+              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+            },
+            "defaultHost": "i1-qa.adis.ws",
+            "endpoint": "endpoint",
+            "id": "66b34275-c273-4343-a673-09893a9aadd3",
+            "name": "glasses",
+          },
+        },
+        "objectID": "19cef5f9-e094-4176-a516-c1b213f584b3",
+        "readTime": 3,
+        "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+        "tags": Array [
+          "blog",
+          "testing",
+          "search",
+        ],
+        "title": "Hello and welcome",
+      }
+    }
+  />
+  <BlogList
+    blogPosts={Array []}
+  />
+</div>
+`;
+
+exports[`SearchResultList renders component with no blog posts 1`] = `<NoBlogPosts />`;

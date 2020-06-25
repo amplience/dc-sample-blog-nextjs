@@ -113,6 +113,7 @@ Next we have to customize the webhook payload, as we want change some of the dat
 
 ```handlebars
 {
+  "_meta": {{{JSONstringify _meta}}},
   "title": "{{{title}}}",
   "description": "{{{description}}}",
   "deliveryKey": "{{{_meta.deliveryKey}}}",
@@ -163,7 +164,7 @@ During the Netlify setup process you will need to define the following build env
 | Environment Var                        | Description                                                             | Example                          |
 | -------------------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
 | ALGOLIA_APPLICATION_ID                 | The Algolia Application ID                                              | applicationABCDEFGH              |
-| ALGOLIA_SEARCH_ONLY_KEY                | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
+| ALGOLIA_API_KEY                        | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
 | ALGOLIA_PRODUCTION_INDEX_NAME          | The Algolia production index name                                       | my-hub.blog-posts                |
 | DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
 | DYNAMIC_CONTENT_HUB_NAME               | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
@@ -272,7 +273,7 @@ To setup the application create a `.env` file within the root of the project con
 DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY=<Blog-Delivery-Key>
 DYNAMIC_CONTENT_HUB_NAME=<Account-Name>
 ALGOLIA_APPLICATION_ID=<SEARCH_INDEX_APPLICATION_ID>
-ALGOLIA_SEARCH_ONLY_KEY=<SEARCH_INDEX_SEARCH_KEY>
+ALGOLIA_API_KEY=<SEARCH_INDEX_SEARCH_KEY>
 ALGOLIA_PRODUCTION_INDEX_NAME=<SEARCH_INDEX_NAME>
 ```
 

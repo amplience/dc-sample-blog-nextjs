@@ -1,10 +1,11 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 
 interface MarkdownParagraphProps {
   children: JSX.Element;
 }
 
-export const MarkdownParagraph = ({ children }: MarkdownParagraphProps) => {
+export const MarkdownParagraph = ({ children }: MarkdownParagraphProps): ReactElement => {
   return (
     <>
       <p>{children}</p>

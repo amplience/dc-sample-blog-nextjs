@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react';
 import theme from '../../../common/styles/default/theme';
 
-const HeroBannerSubtitle = ({ subTitle }: { subTitle?: string }) => {
+const HeroBannerSubtitle = ({ subTitle }: { subTitle?: string }): ReactElement => {
   return (
     <>
       {subTitle ? <h2>{subTitle}</h2> : ''}

@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import Video from '../videos/video.component';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import ReactMarkdown from 'react-markdown';
@@ -8,7 +9,7 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const MARKDOWN_RENDERERS = { ...markdown };
 
-const Content = ({ content }: { content: AmplienceContent[] }) => {
+const Content = ({ content }: { content: AmplienceContent[] }): ReactElement => {
   return (
     <>
       <section>

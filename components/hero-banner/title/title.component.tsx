@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react';
 import theme from '../../../common/styles/default/theme';
 
-const HeroBannerTitle = ({ title }: { title: string }) => {
+const HeroBannerTitle = ({ title }: { title: string }): ReactElement => {
   return (
     <>
       <h1>{title}</h1>

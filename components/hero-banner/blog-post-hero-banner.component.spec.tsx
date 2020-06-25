@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import BlogPostHeroBanner from './blog-post-hero-banner.component';
 

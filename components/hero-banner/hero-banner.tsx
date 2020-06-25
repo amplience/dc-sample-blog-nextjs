@@ -1,7 +1,8 @@
+import React, { ReactElement } from 'react';
 import HeroBannerTitle from './title/title.component';
 import HeroBannerSubtitle from './subtitle/subtitle.component';
 import theme from '../../common/styles/default/theme';
-const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) => {
+const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }): ReactElement => {
   return (
     <>
       <section>

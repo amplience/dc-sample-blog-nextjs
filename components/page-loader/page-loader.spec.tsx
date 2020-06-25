@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import PageLoader from './page-loader';
 import { shallow } from 'enzyme';

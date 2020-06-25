@@ -1,8 +1,9 @@
+import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import Manifest from 'next-manifest/manifest';
 
 export default class CustomDocument extends Document {
-  render() {
+  render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>

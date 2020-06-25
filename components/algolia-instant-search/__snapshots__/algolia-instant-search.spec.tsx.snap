@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AlgoliaInstantSearch renders component 1`] = `
+<InstantSearch
+  indexName="test-index-name"
+  resultsState={
+    Object {
+      "testResultStateData": "test result state value",
+    }
+  }
+  searchClient={Object {}}
+>
+  <SearchResultList />
+</InstantSearch>
+`;

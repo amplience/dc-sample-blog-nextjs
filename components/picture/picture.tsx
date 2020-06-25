@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from '../../common/services/dynamic-content-client-config';
 import AmplienceImage from '../../common/interfaces/image.interface';
@@ -36,11 +37,11 @@ function generateDiQueryString(queryOpts: DiOptions, density = 1) {
         }
       : {})
   };
-  const queryString = Object.entries(diOpts).map(([key, value]: any) => `&${key}=${value}`);
+  const queryString = Object.entries(diOpts).map(([key, value]) => `&${key}=${value}`);
   return `?${queryString.join('')}`;
 }
 
-const Picture = ({ image, sources }: PictureProps) => {
+const Picture = ({ image, sources }: PictureProps): ReactElement => {
   const dcImage = new Image(image.image, defaultClientConfig);
   const src = dcImage.url().build();
   const pictureSources = [...sources];
@@ -65,7 +66,7 @@ const Picture = ({ image, sources }: PictureProps) => {
           media={source.media}
         />
       ))}
-      <img src={`${src}${generateDiQueryString(defaultSource!.di)}`} alt={image.altText} />
+      <img src={`${src}${generateDiQueryString(defaultSource?.di)}`} alt={image.altText} />
     </picture>
   );
 };

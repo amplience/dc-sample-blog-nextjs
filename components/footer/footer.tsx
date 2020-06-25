@@ -1,10 +1,11 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 import Logo from '../logo/logo';
 import FooterLinksList from './footer-links-list';
 import footerLinks from './footer-links';
 import ExternalLink from '../external-link/external-link';
 
-const Footer = () => {
+const Footer = (): ReactElement => {
   const currentYear = new Date().getFullYear();
   const footerLinkSections = footerLinks.map((linkSection, index) => <FooterLinksList key={index} {...linkSection} />);
   return (

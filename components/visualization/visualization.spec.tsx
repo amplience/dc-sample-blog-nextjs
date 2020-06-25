@@ -1,21 +1,24 @@
+import React from 'react';
 import Visualization from './visualization';
 import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
 import toJson from 'enzyme-to-json';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
 import PageLoader from '../page-loader/page-loader';
-import getReferencedBlogPosts from '../../common/services/blog-post/get-referenced-blog-posts.service';
+import { AmplienceContent } from '../../common/interfaces/content.type';
+import BlogPost from '../../common/interfaces/blog-post.interface';
 
 const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
-jest.mock('../../common/services/blog-post/get-referenced-blog-posts.service');
+const mockGetReferencedBlogPosts = jest.fn();
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 
 xdescribe('Visualization', (): void => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
 
-  async function renderVisualization(contentItem: any) {
+  async function renderVisualization(contentItem: Partial<AmplienceContent> | Partial<BlogPost>) {
     mockGetStagingContentItemById.mockResolvedValue(contentItem);
 
     const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentId="content" />, {
@@ -103,37 +106,5 @@ xdescribe('Visualization', (): void => {
 
   it('should render a blog post', async () => {
     await renderVisualization(blogPostFixture);
-  });
-
-  it('should render a blog list', async () => {
-    const blogList = {
-      title: 'A blog title',
-      subTitle: 'A strap line',
-      blogPosts: [blogPostFixture]
-    };
-    (getReferencedBlogPosts as jest.Mock).mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
-    expect((getReferencedBlogPosts as jest.Mock)).toHaveBeenCalledWith(expect.anything(), 'vse');
-  });
-
-  it('should render a blog list without a subtitle', async () => {
-    const blogList = {
-      title: 'A blog title',
-      blogPosts: [blogPostFixture]
-    };
-    (getReferencedBlogPosts as jest.Mock).mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
-  });
-
-  it('should render a blog list without any blog posts', async () => {
-    const blogList = {
-      title: 'A blog title',
-      blogPosts: []
-    };
-    (getReferencedBlogPosts as jest.Mock).mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
   });
 });

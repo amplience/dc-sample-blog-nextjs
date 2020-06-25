@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 import Logo from '../logo/logo';
 import StaticLink from '../static-link/static-link';
 import { useRouter } from 'next/router';
 
-const Header = ({ title }: { title: string }) => {
+const Header = ({ title }: { title: string }): ReactElement => {
   const router = useRouter();
   const { vse } = router.query;
 

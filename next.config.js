@@ -31,7 +31,7 @@ const exportPathMap = async function () {
     }
   };
 
-  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_SEARCH_ONLY_KEY);
+  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_API_KEY);
   const index = client.initIndex(process.env.ALGOLIA_PRODUCTION_INDEX_NAME);
 
   try {
@@ -66,7 +66,7 @@ const exportPathMap = async function () {
 const env = {
   URL: process.env.URL,
   ALGOLIA_APPLICATION_ID: process.env.ALGOLIA_APPLICATION_ID,
-  ALGOLIA_SEARCH_ONLY_KEY: process.env.ALGOLIA_SEARCH_ONLY_KEY,
+  ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
   ALGOLIA_PRODUCTION_INDEX_NAME: process.env.ALGOLIA_PRODUCTION_INDEX_NAME,
   DYNAMIC_CONTENT_HUB_NAME: process.env.DYNAMIC_CONTENT_HUB_NAME,
   DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY: process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY,

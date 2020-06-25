@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 
-export const MarkdownInlineCode = ({ value }: { value: string }) => {
+export const MarkdownInlineCode = ({ value }: { value: string }): ReactElement => {
   return (
     <>
       <code>{value}</code>

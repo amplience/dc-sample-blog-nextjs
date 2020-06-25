@@ -1,14 +1,20 @@
+import React from 'react';
+import algoliasearch from 'algoliasearch';
 import { NextPage } from 'next';
-import Layout from '../layouts/default';
-import HeroBanner from '../components/hero-banner/hero-banner';
-import { Blog } from '../common/interfaces/blog.interface';
-import BlogList from '../components/blog-list/blog-list';
-import HeroCard from '../components/hero-card/hero-card';
 import { NextSeo } from 'next-seo';
-import NoBlogPosts from '../components/blog-list/no-blog-posts';
-import getHydratedBlogList from '../common/services/blog-list/get-hydrated-blog-list.service';
+import { findResultsState } from 'react-instantsearch-dom/server';
+import getBlogContentItem from '../common/services/get-blog-content-item.service';
+import AlgoliaInstantSearch from '../components/algolia-instant-search/algolia-instant-search';
+import HeroBanner from '../components/hero-banner/hero-banner';
+import Layout from '../layouts/default';
 
-const Index: NextPage<Blog> = ({ title, subTitle, blogPosts }) => {
+interface IndexProps {
+  title: string;
+  subTitle: string;
+  resultsState: unknown;
+}
+
+const Index: NextPage<IndexProps> = ({ title, subTitle, resultsState }): JSX.Element => {
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: subTitle
@@ -18,18 +24,20 @@ const Index: NextPage<Blog> = ({ title, subTitle, blogPosts }) => {
     seoParams.noindex = true;
   }
 
+  const searchParams = {
+    appId : process.env.ALGOLIA_APPLICATION_ID as string,
+    apiKey: process.env.ALGOLIA_API_KEY as string,
+    indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
+    resultsState
+  };
+
   return (
     <Layout>
       <NextSeo {...seoParams} />
       <HeroBanner title={title} subTitle={subTitle} />
-      {blogPosts.length ? (
-        <>
-          <HeroCard blogPost={blogPosts[0]} />
-          <BlogList blogPosts={blogPosts.slice(1)} />
-        </>
-      ) : (
-        <NoBlogPosts />
-      )}
+      <>
+        <AlgoliaInstantSearch {...searchParams} />
+      </>
 
       <style jsx>{`
         :global(footer) {
@@ -40,18 +48,24 @@ const Index: NextPage<Blog> = ({ title, subTitle, blogPosts }) => {
   );
 };
 
-Index.getInitialProps = async ({ query }): Promise<Blog> => {
-  if (!process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY) {
-    throw new Error('Missing env var DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY');
-  }
-  const stagingEnvironment = query.vse ? `//${query.vse.toString()}` : undefined;
+
+Index.getInitialProps = async ({ query }): Promise<IndexProps> => {
+  const searchClient = algoliasearch(process.env.ALGOLIA_APPLICATION_ID as string, process.env.ALGOLIA_API_KEY as string);
+
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
+  const stagingEnvironment = query?.vse ? `//${query.vse.toString()}` : undefined;
+
   try {
-    return getHydratedBlogList(
-      process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY,
-      stagingEnvironment
-    );
+    const blog = await getBlogContentItem(process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string, stagingEnvironment);
+    const resultsState = await findResultsState(AlgoliaInstantSearch, {
+      searchClient,
+      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
+    });
+
+    return { ...blog, resultsState};
   } catch (err) {
-    console.error('Unable to get initial props for Index:', err);
+    console.error('Unable to get static props for Index:', err);
     throw err;
   }
 };

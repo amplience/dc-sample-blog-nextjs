@@ -1,7 +1,8 @@
+import React, { ReactElement } from 'react';
 import { useRouter } from 'next/router';
 import theme from '../../common/styles/default/theme';
 
-const SharePost = ({ twitterText }: { twitterText: string }) => {
+const SharePost = ({ twitterText }: { twitterText: string }): ReactElement => {
   const router = useRouter();
   const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;

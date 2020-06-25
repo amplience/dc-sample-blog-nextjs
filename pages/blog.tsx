@@ -1,3 +1,4 @@
+import React from 'react';
 import { NextPage } from 'next';
 import BlogPost from '../common/interfaces/blog-post.interface';
 import Layout from '../layouts/default';
@@ -8,6 +9,7 @@ import Blog from '../components/blog/blog';
 import SharePost from '../components/share-post/share-post';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from '../common/services/dynamic-content-client-config';
+import { NextPageContext } from 'next';
 
 interface BlogPostProps {
   blogPost: BlogPost;
@@ -17,7 +19,7 @@ interface BlogPostProps {
 const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   const blogImage = new Image(blogPost.image.image, defaultClientConfig).url().build();
 
-  const seoParams: { [key: string]: string | any } = {
+  const seoParams: { [key: string]: string | unknown } = {
     title: blogPost.title,
     description: blogPost.description,
     twitter: {
@@ -63,18 +65,14 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   );
 };
 
-BlogPostPage.getInitialProps = async ({ query }) : Promise<{blogPost: BlogPost}>=> {
+BlogPostPage.getInitialProps = async ({ query }: NextPageContext) => {
   const { vse, deliveryKey } = query;
   const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
   if (typeof deliveryKey !== 'string') {
     throw new Error('Unable to generate BlogPostPage, missing deliveryKey');
   }
-  try {
-    const blogPost = await getBlogPostByDeliveryKey(deliveryKey, stagingEnvironment);
-    return { blogPost };
-  } catch (err) {
-    throw err;
-  }
+  const blogPost = await getBlogPostByDeliveryKey(deliveryKey, stagingEnvironment);
+  return { blogPost };
 };
 
 export default BlogPostPage;

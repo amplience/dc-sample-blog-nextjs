@@ -1,4 +1,6 @@
-const NoBlogPosts = () => {
+import React, { ReactElement } from 'react';
+
+const NoBlogPosts = (): ReactElement => {
   return (
     <>
       <div className="no-published-blogs">

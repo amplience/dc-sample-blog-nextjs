@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import BlogPostPage from '../../pages/blog';
 import blogPostFixture from '../fixtures/single-blog-post-data-object.json';

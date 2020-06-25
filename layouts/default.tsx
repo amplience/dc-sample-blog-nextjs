@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import theme from '../common/styles/default/theme';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
@@ -6,11 +7,12 @@ import GaPageView from '../components/google-analytics/ga-page-view.component';
 import ScrollTop from '../components/scroll-top/scroll-top';
 
 interface DefaultLayoutProps {
-  children: JSX.Element[] | JSX.Element;
+  children: ReactElement[] | ReactElement;
   contentOnly?: boolean;
 }
 
-export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
+// eslint-disable-next-line react/display-name
+export default ({ children, contentOnly = false }: DefaultLayoutProps): ReactElement => {
   return (
     <>
       <div className="site-container">
