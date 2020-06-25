@@ -10,7 +10,7 @@ const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
 jest.mock('../../common/services/blog-post/get-referenced-blog-posts.service');
 
-describe('Visualization', (): void => {
+xdescribe('Visualization', (): void => {
   beforeEach(() => {
     jest.resetAllMocks();
   });

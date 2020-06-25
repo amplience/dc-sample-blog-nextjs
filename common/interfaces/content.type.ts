@@ -6,7 +6,7 @@ import BlogPost from './blog-post.interface';
 import { DefaultContentBody } from 'dc-delivery-sdk-js';
 
 export function isAmplienceContent(
-  contentItem: BlogReferenceList | BlogPost | AmplienceContent
+  contentItem: BlogReferenceList | BlogPost | AmplienceContent | DefaultContentBody
 ): contentItem is AmplienceContent & DefaultContentBody {
   return 'video' in contentItem || 'image' in contentItem || 'text' in contentItem;
 }

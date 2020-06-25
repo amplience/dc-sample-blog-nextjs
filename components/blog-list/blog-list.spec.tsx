@@ -23,7 +23,6 @@ describe('BlogList', () => {
         },
         altText: ''
       },
-      urlSlug: 'url-slug',
       tags: ['test-tag'],
       readTime: 15,
       content: []

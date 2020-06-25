@@ -115,6 +115,6 @@
       }
     }
   },
-  "propertyOrder": ["title", "authors", "date", "description", "image", "urlSlug", "tags", "readTime", "content"],
-  "required": ["title", "authors", "date", "description", "image", "urlSlug", "readTime", "content"]
+  "propertyOrder": ["title", "authors", "date", "description", "image", "tags", "readTime", "content"],
+  "required": ["title", "authors", "date", "description", "image", "readTime", "content"]
 }

@@ -14,7 +14,7 @@ const BlogCard = ({ blogPost }: BlogCardProps) => {
   const router = useRouter();
   const vse = router.query.vse ? router.query.vse.toString() : '';
   const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
-  const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.urlSlug.toLowerCase())}`;
+  const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || blogPost._meta.deliveryId).toLowerCase())}`;
   const blogLink = `${path}${routerQuery}`;
   return (
     <>

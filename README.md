@@ -89,7 +89,7 @@ How to create a blog content item for your blog:
 4. Select the "Blog" (or whatever label to assigned to the "blog.json" content type)
 5. Enter a title and a subtitle (these will appear on your blog)
 6. Click "Save"
-7. Select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve this blog post during the build phase.
+7. Click on the "Save" drop down menu, select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve this blog post during the build phase.
 
 ### Creating a search index for your blog-post's
 

@@ -2,6 +2,7 @@ import { DynamicContentDeliveryService } from '../dynamic-content-delivery.servi
 import { BlogReferenceList, BlogPostReference } from '../../interfaces/blog-reference-list.interface';
 import { defaultClientConfig } from '../dynamic-content-client-config';
 import algoliasearch from 'algoliasearch';
+import { isBlog } from '../../interfaces/blog.interface';
 
 const INDEX_HITS_PER_PAGE = 1000;
 
@@ -29,7 +30,10 @@ export default async function getBlogReferenceList(
   // get the title and subTitle from DC
   const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
-  const { title, subTitle } = (await deliveryClient.getContentItemByKey(blogListDeliveryKey)).toJSON();
+  const blogContentItem = (await deliveryClient.getContentItemByKey(blogListDeliveryKey)).toJSON();
+  if (!isBlog(blogContentItem)) {
+    throw new Error(`Content item ${blogListDeliveryKey} is not a blog`);
+  }
 
-  return { title, subTitle, blogPosts: results.hits };
+  return { ...blogContentItem, blogPosts: results.hits };
 }
