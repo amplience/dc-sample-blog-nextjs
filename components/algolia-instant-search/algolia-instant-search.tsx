@@ -1,22 +1,19 @@
 import React from 'react';
-import algoliasearch from 'algoliasearch';
+import { SearchClient } from 'algoliasearch';
 import { InstantSearch } from 'react-instantsearch-dom';
 import SearchResultList from '../algolia-search-result-list/algolia-search-result-list';
 
 interface AlgoliaInstantSearchProps {
   indexName: string;
   resultsState: unknown;
-  appId: string;
-  apiKey: string;
+  searchClient: SearchClient;
 }
 
 export default function AlgoliaInstantSearch({
   indexName,
   resultsState,
-  appId,
-  apiKey
+  searchClient
 }: AlgoliaInstantSearchProps): JSX.Element {
-  const searchClient = algoliasearch(appId, apiKey);
   return (
     <InstantSearch indexName={indexName} searchClient={searchClient} resultsState={resultsState}>
       <SearchResultList></SearchResultList>

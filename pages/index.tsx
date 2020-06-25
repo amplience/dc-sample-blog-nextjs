@@ -7,14 +7,15 @@ import getBlogContentItem from '../common/services/get-blog-content-item.service
 import AlgoliaInstantSearch from '../components/algolia-instant-search/algolia-instant-search';
 import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
+import useSWR from 'swr';
 
 interface IndexProps {
   title: string;
   subTitle: string;
-  resultsState: unknown;
+  buildTimeResultState: unknown;
 }
 
-const Index: NextPage<IndexProps> = ({ title, subTitle, resultsState }): JSX.Element => {
+const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState }): JSX.Element => {
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: subTitle
@@ -24,11 +25,21 @@ const Index: NextPage<IndexProps> = ({ title, subTitle, resultsState }): JSX.Ele
     seoParams.noindex = true;
   }
 
+  const searchClient = algoliasearch(
+    process.env.ALGOLIA_APPLICATION_ID as string,
+    process.env.ALGOLIA_API_KEY as string
+  );
+  const { data: runtimeResultState } = useSWR('index', () =>
+    findResultsState(AlgoliaInstantSearch, {
+      searchClient,
+      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
+    })
+  );
+
   const searchParams = {
-    appId : process.env.ALGOLIA_APPLICATION_ID as string,
-    apiKey: process.env.ALGOLIA_API_KEY as string,
     indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
-    resultsState
+    searchClient,
+    resultsState: runtimeResultState || buildTimeResultState
   };
 
   return (
@@ -48,22 +59,27 @@ const Index: NextPage<IndexProps> = ({ title, subTitle, resultsState }): JSX.Ele
   );
 };
 
-
 Index.getInitialProps = async ({ query }): Promise<IndexProps> => {
-  const searchClient = algoliasearch(process.env.ALGOLIA_APPLICATION_ID as string, process.env.ALGOLIA_API_KEY as string);
+  const searchClient = algoliasearch(
+    process.env.ALGOLIA_APPLICATION_ID as string,
+    process.env.ALGOLIA_API_KEY as string
+  );
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
   const stagingEnvironment = query?.vse ? `//${query.vse.toString()}` : undefined;
 
   try {
-    const blog = await getBlogContentItem(process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string, stagingEnvironment);
-    const resultsState = await findResultsState(AlgoliaInstantSearch, {
+    const blog = await getBlogContentItem(
+      process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string,
+      stagingEnvironment
+    );
+    const buildTimeResultState = await findResultsState(AlgoliaInstantSearch, {
       searchClient,
       indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
     });
 
-    return { ...blog, resultsState};
+    return { ...blog, buildTimeResultState };
   } catch (err) {
     console.error('Unable to get static props for Index:', err);
     throw err;

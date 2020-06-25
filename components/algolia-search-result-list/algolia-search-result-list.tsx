@@ -2,6 +2,7 @@ import React from 'react';
 import { connectStateResults } from 'react-instantsearch-dom';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import NoBlogPosts from '../blog-list/no-blog-posts';
+import LoadingBlogPosts from '../blog-list/loading-blog-posts';
 import HeroCard from '../hero-card/hero-card';
 import BlogList from '../blog-list/blog-list';
 
@@ -20,6 +21,9 @@ const flattenBlogPosts = (searchResults: SearchResults<BasicDoc>): BlogPost[] =>
 };
 
 const SearchResultList = connectStateResults(({ searchResults }) => {
+  if(!searchResults) {
+    return <LoadingBlogPosts />
+  }
   const blogPosts = flattenBlogPosts(searchResults);
   return blogPosts.length > 0 ? (
     <div id="searchResults">
