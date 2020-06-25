@@ -14,7 +14,7 @@ describe('AlgoliaInstantSearch', () => {
     const component = ShallowRenderer.createRenderer();
     const props = {
       appId: 'test-app-id',
-      searchKey: 'test-search-key',
+      apiKey: 'test-search-key',
       indexName: 'test-index-name',
       resultsState: {
         testResultStateData: 'test result state value'
@@ -22,7 +22,7 @@ describe('AlgoliaInstantSearch', () => {
     };
     component.render(<AlgoliaInstantSearch {...props} />);
 
-    expect(algoliasearch).toHaveBeenCalledWith(props.appId, props.searchKey);
+    expect(algoliasearch).toHaveBeenCalledWith(props.appId, props.apiKey);
     expect(component.getRenderOutput()).toMatchSnapshot();
   });
 });

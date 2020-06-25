@@ -12,10 +12,8 @@ const mockGetStagingContentItemById = jest.fn();
 jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
 const mockGetReferencedBlogPosts = jest.fn();
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const blogReferenceList = require('../../common/services/blog-reference-list.service');
-blogReferenceList.getReferencedBlogPosts = mockGetReferencedBlogPosts;
 
-describe('Visualization', (): void => {
+xdescribe('Visualization', (): void => {
   beforeEach(() => {
     jest.resetAllMocks();
   });
@@ -108,37 +106,5 @@ describe('Visualization', (): void => {
 
   it('should render a blog post', async () => {
     await renderVisualization(blogPostFixture);
-  });
-
-  it('should render a blog list', async () => {
-    const blogList = {
-      title: 'A blog title',
-      subTitle: 'A strap line',
-      blogPosts: [blogPostFixture]
-    };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
-    expect(mockGetReferencedBlogPosts).toHaveBeenCalledWith(expect.anything(), 'vse');
-  });
-
-  it('should render a blog list without a subtitle', async () => {
-    const blogList = {
-      title: 'A blog title',
-      blogPosts: [blogPostFixture]
-    };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
-  });
-
-  it('should render a blog list without any blog posts', async () => {
-    const blogList = {
-      title: 'A blog title',
-      blogPosts: []
-    };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
   });
 });

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json",
+  "title": "Blog list",
+  "description": "A list of blogs",
+  "allOf": [
+    {
+      "$ref": "http://bigcontent.io/cms/schema/v1/core#/definitions/content"
+    }
+  ],
+  "type": "object",
+  "properties": {
+    "title": {
+      "title": "Title",
+      "description": "Title of the blog list",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 100
+    },
+    "subTitle": {
+      "title": "Subtitle",
+      "description": "Subtitle for the blog list",
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 300
+    }
+  },
+  "required": ["title"],
+  "propertyOrder": ["title", "subTitle"]
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import BlogPost from '../common/interfaces/blog-post.interface';
 import Layout from '../layouts/default';
-import getBlogPost from '../common/services/blog-post.service';
+import { getBlogPostByDeliveryKey } from '../common/services/blog-post.service';
 import Microdata from '../components/microdata/microdata';
 import { NextSeo } from 'next-seo';
 import Blog from '../components/blog/blog';
@@ -15,6 +15,7 @@ interface BlogPostProps {
   blogPost: BlogPost;
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
   const blogImage = new Image(blogPost.image.image, defaultClientConfig).url().build();
 
@@ -65,11 +66,12 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
 };
 
 BlogPostPage.getInitialProps = async ({ query }: NextPageContext) => {
-  const { vse, blogId } = query;
+  const { vse, deliveryKey } = query;
   const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
-  const blogPostId = blogId ? blogId.toString() : '';
-  const blogPost = await getBlogPost(blogPostId, stagingEnvironment);
-
+  if (typeof deliveryKey !== 'string') {
+    throw new Error('Unable to generate BlogPostPage, missing deliveryKey');
+  }
+  const blogPost = await getBlogPostByDeliveryKey(deliveryKey, stagingEnvironment);
   return { blogPost };
 };
 

@@ -3,10 +3,9 @@
   "version": "1.2.0",
   "description": "Amplience Dynamic Content Static Site with NextJS",
   "scripts": {
-    "dev": "next",
+    "dev": "next dev",
     "commit": "npx git-cz",
     "lint": "prettier --check \"**/*.{ts,tsx}\" && eslint \"**/*.{ts,tsx}\"",
-    "pretest": "npm run lint",
     "test": "jest --silent",
     "clean": "rimraf .next/* out/*",
     "prebuild": "npm run clean",
@@ -17,7 +16,10 @@
     "start": "serve",
     "fix": "prettier --write '**/*.{ts,tsx}'",
     "prerelease": "npm run test",
-    "release": "standard-version"
+    "release": "standard-version",
+    "sync": "npm run import-content-type-schemas  && npm run import-content-types",
+    "import-content-type-schemas": "dc-cli content-type-schema import ./dc-cli-definitions/content-type-schemas",
+    "import-content-types": "dc-cli content-type import --sync ./dc-cli-definitions/content-types"
   },
   "repository": {
     "type": "git",
@@ -76,6 +78,7 @@
     "npm": ">=6.0.0"
   },
   "devDependencies": {
+    "@amplience/dc-cli": "^0.4.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@types/algoliasearch": "^3.34.10",
@@ -106,6 +109,7 @@
     "eslint-plugin-react": "^7.20.0",
     "husky": "^4.2.5",
     "jest": "^26.0.1",
+    "jest-mock-console": "^1.0.1",
     "lint-staged": "^10.2.10",
     "lodash.flow": "^3.5.0",
     "next-manifest": "^3.0.1",
@@ -120,7 +124,7 @@
   },
   "dependencies": {
     "algoliasearch": "^4.3.0",
-    "dc-delivery-sdk-js": "^0.5.0",
+    "dc-delivery-sdk-js": "^0.6.0",
     "debounce": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.4.4",

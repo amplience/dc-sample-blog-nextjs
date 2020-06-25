@@ -1,4 +1,5 @@
 import nextConfig from '../../next.config';
+import mockConsole from 'jest-mock-console';
 
 const mockSearch = jest.fn();
 jest.mock('algoliasearch', () => () => {
@@ -19,6 +20,15 @@ jest.mock('next-offline', (): ((config: { [key: string]: string }) => { [key: st
 });
 
 describe('next.config.js', (): void => {
+  let restoreConsole;
+  beforeEach(() => {
+    restoreConsole = mockConsole(['log', 'info', 'warn', 'error']);
+  });
+
+  afterEach(() => {
+    restoreConsole();
+  });
+
   beforeEach((): void => {
     jest.clearAllMocks();
   });
@@ -37,8 +47,7 @@ describe('next.config.js', (): void => {
       '/blog/test-delivery-key': {
         page: '/blog',
         query: {
-          blogId: 'test-object-id',
-          slug: 'test-delivery-key'
+          deliveryKey: 'test-delivery-key'
         }
       },
       '/': {
@@ -64,7 +73,7 @@ describe('next.config.js', (): void => {
     });
   });
 
-  test('exportPathMap should return landing page and a single blog path using the object id when delivery key is not set', async (): Promise<
+  test('exportPathMap should return landing page and omit any blog posts that do not have a delivery key is not set', async (): Promise<
     void
   > => {
     mockSearch.mockImplementationOnce(() => {
@@ -76,13 +85,6 @@ describe('next.config.js', (): void => {
     const result = await nextConfig.exportPathMap();
 
     expect(result).toEqual({
-      '/blog/test-object-id': {
-        page: '/blog',
-        query: {
-          blogId: 'test-object-id',
-          slug: 'test-object-id'
-        }
-      },
       '/': {
         page: '/',
         query: {

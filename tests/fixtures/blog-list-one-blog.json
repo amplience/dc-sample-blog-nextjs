@@ -1,162 +1,63 @@
 {
-  "title": "blog-test-title",
-  "subTitle": "blog-test-sub-title",
-  "indexName": "algolia-index-name",
+  "_meta": {
+    "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json",
+    "deliveryId": "9cb44d61-d00b-49b7-b23b-72bb9a0a1de6",
+    "deliveryKey": "blog",
+    "name": "blog"
+  },
+  "title": "Blog",
+  "subTitle": "subtitle",
   "resultsState": {
     "rawResults": [
       {
         "hits": [
           {
-            "title": "All the about the new search index feature",
-            "description": "This is the first blog post. It explains all the new features of our search index functionality",
-            "deliveryKey": "",
-            "schema": "https://schema.localhost.com/blog-post.json",
-            "authors": [{ "name": "AN Author" }],
-            "tags": ["search", "indexes"],
-            "date": "2020-04-22",
-            "readTime": 5,
-            "dateAsTimeStamp": 1587513600,
-            "content": [
-              "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content."
-            ],
+            "_meta": {
+              "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+              "deliveryId": "19cef5f9-e094-4176-a516-c1b213f584b3",
+              "deliveryKey": "hello-and-welcome",
+              "name": "hello-and-welcome"
+            },
+            "title": "Hello and welcome",
+            "description": "Hello and welcome",
+            "deliveryKey": "hello-and-welcome",
+            "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+            "authors": [{ "name": "A User" }],
+            "tags": ["blog", "testing", "search"],
+            "date": "2020-06-17",
+            "dateAsTimeStamp": 1592352000,
+            "readTime": 3,
+            "content": ["Welcome to our new test blog, I do hope you like it."],
             "image": {
-              "_meta": {
-                "schema": "https://schema.localhost.com/image.json",
-                "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                "name": "bag-image"
-              },
               "image": {
                 "defaultHost": "i1-qa.adis.ws",
-                "endpoint": "blogltd",
-                "name": "friends-shopping-bags",
-                "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                "_meta": {
-                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                },
-                "mediaType": "i"
+                "endpoint": "endpoint",
+                "name": "glasses",
+                "id": "66b34275-c273-4343-a673-09893a9aadd3",
+                "_meta": { "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link" }
               },
-              "altText": "crotch bags",
-              "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags"
+              "altText": "Glasses",
+              "_meta": {
+                "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
+                "deliveryId": "ad1ff37d-6a65-43a9-b807-4d7b16365a0c",
+                "name": "glasses"
+              }
             },
-            "objectID": "aa2bde70-767a-496d-ba35-c5d7a36713fe",
+            "objectID": "19cef5f9-e094-4176-a516-c1b213f584b3",
             "_highlightResult": {
               "title": {
-                "value": "All the about the new search index feature",
+                "value": "Hello and welcome",
                 "matchLevel": "none",
                 "matchedWords": []
               },
               "description": {
-                "value": "This is the first blog post. It explains all the new features of our search index functionality",
+                "value": "Hello and welcome to our test blog",
                 "matchLevel": "none",
                 "matchedWords": []
               },
               "content": [
                 {
-                  "value": "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
-                  "matchLevel": "none",
-                  "matchedWords": []
-                }
-              ]
-            }
-          },
-          {
-            "title": "How to use search from your front end.",
-            "description": "This is the first blog post. It explains all the new features of our search index functionality",
-            "deliveryKey": "",
-            "schema": "https://schema.localhost.com/blog-post.json",
-            "authors": [{ "name": "AN Author" }],
-            "tags": ["search", "indexes", "front end", "UI"],
-            "date": "2020-04-22",
-            "readTime": 5,
-            "dateAsTimeStamp": 1587513600,
-            "content": [
-              "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content."
-            ],
-
-            "image": {
-              "_meta": {
-                "schema": "https://schema.localhost.com/image.json",
-                "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                "name": "bag-image"
-              },
-              "image": {
-                "defaultHost": "i1-qa.adis.ws",
-                "endpoint": "blogltd",
-                "name": "friends-shopping-bags",
-                "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                "_meta": {
-                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                },
-                "mediaType": "i"
-              },
-              "altText": "crotch bags",
-              "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags"
-            },
-            "objectID": "67186472-dc1d-4e81-9dfc-eb0a44e9abb3",
-            "_highlightResult": {
-              "title": { "value": "How to use search from your front end.", "matchLevel": "none", "matchedWords": [] },
-              "description": {
-                "value": "This is the first blog post. It explains all the new features of our search index functionality",
-                "matchLevel": "none",
-                "matchedWords": []
-              },
-              "content": [
-                {
-                  "value": "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
-                  "matchLevel": "none",
-                  "matchedWords": []
-                }
-              ]
-            }
-          },
-          {
-            "title": "Find out about the enhancements to Dynamic Content search",
-            "description": "This is the first blog post. It explains all the new features of our search index functionality",
-            "deliveryKey": "",
-            "schema": "https://schema.localhost.com/blog-post.json",
-            "authors": [{ "name": "Roger Writer" }],
-            "tags": ["Dynamic Content Search", "search", "blogs", "releases"],
-            "date": "2020-04-22",
-            "readTime": 5,
-            "dateAsTimeStamp": 1587513600,
-            "content": [
-              "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content."
-            ],
-
-            "image": {
-              "_meta": {
-                "schema": "https://schema.localhost.com/image.json",
-                "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                "name": "bag-image"
-              },
-              "image": {
-                "defaultHost": "i1-qa.adis.ws",
-                "endpoint": "blogltd",
-                "name": "friends-shopping-bags",
-                "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                "_meta": {
-                  "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link"
-                },
-                "mediaType": "i"
-              },
-              "altText": "crotch bags",
-              "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags"
-            },
-            "objectID": "0f590113-9733-4446-abcd-a103d17a2063",
-            "_highlightResult": {
-              "title": {
-                "value": "Find out about the enhancements to Dynamic Content search",
-                "matchLevel": "none",
-                "matchedWords": []
-              },
-              "description": {
-                "value": "This is the first blog post. It explains all the new features of our search index functionality",
-                "matchLevel": "none",
-                "matchedWords": []
-              },
-              "content": [
-                {
-                  "value": "This is some example text, explaining how to use the new search index features. Now you can easily set up and manage and search index from within Dynamic Content.",
+                  "value": "Welcome to our new test blog, I do hope you like it.",
                   "matchLevel": "none",
                   "matchedWords": []
                 }
@@ -164,15 +65,15 @@
             }
           }
         ],
-        "nbHits": 9,
+        "nbHits": 1,
         "page": 0,
         "nbPages": 1,
         "hitsPerPage": 20,
         "exhaustiveNbHits": true,
         "query": "",
         "params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D&tagFilters=",
-        "index": "bloblog-hub-01.blog-production-olly",
-        "processingTimeMS": 2
+        "index": "QAReleaseAmpBlog.published-blog-posts",
+        "processingTimeMS": 1
       }
     ],
     "state": {
@@ -185,7 +86,7 @@
       "numericRefinements": {},
       "tagRefinements": [],
       "hierarchicalFacetsRefinements": {},
-      "index": "bloblog-hub-01.blog-production-olly",
+      "index": "QAReleaseAmpBlog.published-blog-posts",
       "highlightPreTag": "<ais-highlight-0000000000>",
       "highlightPostTag": "</ais-highlight-0000000000>"
     }

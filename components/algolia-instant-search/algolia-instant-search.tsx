@@ -7,16 +7,16 @@ interface AlgoliaInstantSearchProps {
   indexName: string;
   resultsState: unknown;
   appId: string;
-  searchKey: string;
+  apiKey: string;
 }
 
 export default function AlgoliaInstantSearch({
   indexName,
   resultsState,
   appId,
-  searchKey
+  apiKey
 }: AlgoliaInstantSearchProps): JSX.Element {
-  const searchClient = algoliasearch(appId, searchKey);
+  const searchClient = algoliasearch(appId, apiKey);
   return (
     <InstantSearch indexName={indexName} searchClient={searchClient} resultsState={resultsState}>
       <SearchResultList></SearchResultList>

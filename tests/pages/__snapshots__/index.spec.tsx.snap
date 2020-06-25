@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index renders index with content 1`] = `
+exports[`Index components renders index with content 1`] = `
 <div
   className="jsx-873644259 site-container"
 >
@@ -41,12 +41,12 @@ exports[`Index renders index with content 1`] = `
         <h1
           className="jsx-2799736912"
         >
-          blog-test-title
+          Blog
         </h1>
         <h2
           className="jsx-1054465095"
         >
-          blog-test-sub-title
+          subtitle
         </h2>
       </section>
       <div>
@@ -301,7 +301,7 @@ exports[`Index renders index with content 1`] = `
 </div>
 `;
 
-exports[`Index renders index with content but no blog posts 1`] = `
+exports[`Index components renders index with content but no blog posts 1`] = `
 <div
   className="jsx-873644259 site-container"
 >
@@ -342,12 +342,12 @@ exports[`Index renders index with content but no blog posts 1`] = `
         <h1
           className="jsx-2799736912"
         >
-          blog-test-title
+          Blog
         </h1>
         <h2
           className="jsx-1054465095"
         >
-          blog-test-sub-title
+          subtitle
         </h2>
       </section>
       <div>

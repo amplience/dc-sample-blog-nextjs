@@ -17,7 +17,7 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
     const router = useRouter();
     const { vse } = router.query;
     const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
-    const path = vse ? '/preview' : `/blog/${encodeURIComponent(blogPost.deliveryKey || blogPost.id)}`;
+    const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
     const blogLink = `${path}${routerQuery}`;
     return (
       <>
