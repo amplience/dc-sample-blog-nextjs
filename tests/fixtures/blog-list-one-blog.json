@@ -3,6 +3,12 @@
   "subTitle": "blog-test-sub-title",
   "blogPosts": [
     {
+      "_meta": {
+        "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+        "deliveryKey": "my-first-blog",
+        "name": "blog-post",
+        "schema": "https://schema.localhost.com/blog-post.json"
+      },
       "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
       "title": "My First Blog Post",
       "date": "August 07, 2019",
@@ -56,7 +62,6 @@
         "altText": "crotch bags",
         "src": "//i1-qa.adis.ws/i/blogltd/friends-shopping-bags"
       },
-      "urlSlug": "my-first-blog",
       "content": [
         {
           "_meta": {

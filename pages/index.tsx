@@ -1,14 +1,14 @@
 import { NextPage } from 'next';
 import Layout from '../layouts/default';
 import HeroBanner from '../components/hero-banner/hero-banner';
-import { BlogListData } from '../common/interfaces/blog-list.interface';
+import { Blog } from '../common/interfaces/blog.interface';
 import BlogList from '../components/blog-list/blog-list';
 import HeroCard from '../components/hero-card/hero-card';
 import { NextSeo } from 'next-seo';
 import NoBlogPosts from '../components/blog-list/no-blog-posts';
 import getHydratedBlogList from '../common/services/blog-list/get-hydrated-blog-list.service';
 
-const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
+const Index: NextPage<Blog> = ({ title, subTitle, blogPosts }) => {
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: subTitle
@@ -40,7 +40,7 @@ const Index: NextPage<BlogListData> = ({ title, subTitle, blogPosts }) => {
   );
 };
 
-Index.getInitialProps = async ({ query }): Promise<BlogListData> => {
+Index.getInitialProps = async ({ query }): Promise<Blog> => {
   if (!process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY) {
     throw new Error('Missing env var DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY');
   }

@@ -1,4 +1,10 @@
 {
+  "_meta": {
+    "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+    "deliveryKey": "my-first-blog",
+    "name": "blog-post",
+    "schema": "https://schema.localhost.com/blog-post.json"
+  },
   "authors": [
     {
       "_meta": {
@@ -30,6 +36,7 @@
     {
       "_meta": {
         "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+        "name": "casual-crotch-shot",
         "name": "casual-crotch-shot",
         "schema": "https://schema.localhost.com/image.json"
       },
@@ -92,6 +99,5 @@
   },
   "readTime": 12,
   "tags": ["sir blog", "you're it", "No tiggy backs"],
-  "title": "My First Blog Post",
-  "urlSlug": "my-first-blog"
+  "title": "My First Blog Post"
 }

@@ -2,16 +2,15 @@ import { Component, ReactElement } from 'react';
 import { AmplienceContent, isAmplienceContent } from '../../common/interfaces/content.type';
 import getStagingContentItemById from '../../common/services/vse.service';
 import Content from '../content/content';
-import { isBlogPost } from '../../common/services/blog-post.service';
+import { isBlogPost, parseBlogPost, parseContent } from '../../common/services/blog-post.service';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import Blog from '../blog/blog';
 import PageLoader from '../page-loader/page-loader';
 import HeroCard from '../hero-card/hero-card';
 import BlogList from '../blog-list/blog-list';
-import { BlogReferenceList } from '../../common/interfaces/blog-reference-list.interface';
 import HeroBanner from '../hero-banner/hero-banner';
 import NoBlogPosts from '../blog-list/no-blog-posts';
-import getReferencedBlogPosts from '../../common/services/blog-post/get-referenced-blog-posts.service';
+import { isBlog } from '../../common/interfaces/blog.interface';
 
 interface VisualizationProps {
   stagingEnvironment: string;
@@ -50,19 +49,16 @@ export default class Visualization extends Component<VisualizationProps, Visuali
   private async loadContent() {
     try {
       const contentItem = await getStagingContentItemById(this.props.stagingEnvironment, this.props.contentId);
+
       if (isBlogPost(contentItem)) {
-        this.setState({ blogPost: contentItem });
+        const blogPost = await parseBlogPost(contentItem);
+        this.setState({ blogPost });
       } else if (isAmplienceContent(contentItem)) {
-        this.setState({ content: [contentItem as AmplienceContent] });
-      } else {
-        let blogPosts: BlogPost[] = [];
-        if ('blogPosts' in contentItem) {
-          blogPosts = await getReferencedBlogPosts(
-            (contentItem as BlogReferenceList).blogPosts,
-            this.props.stagingEnvironment
-          );
-        }
-        this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } as VisualizationState['blogList'] });
+        const content = await parseContent([contentItem]);
+        this.setState({ content });
+      } else if (isBlog(contentItem)) {
+        const blogPosts: BlogPost[] = []; // TODO: get list from staging index
+        this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } });
       }
     } catch (error) {
       this.setState({ error: error.message });
