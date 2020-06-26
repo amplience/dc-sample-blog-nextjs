@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ShallowRenderer from 'react-test-renderer/shallow';
-import SearchResultList from './algolia-search-result-list';
+import SearchResultList from './search-result-list';
 
 import blogListFixture from '../../tests/fixtures/blog-list-one-blog.json';
 
@@ -15,7 +15,7 @@ describe('SearchResultList', () => {
   });
   test('renders component with a multiple blog posts', async () => {
     const component = ShallowRenderer.createRenderer();
-    const props = { searchResults: blogListFixture.resultsState.rawResults[0] };
+    const props = { searchResults: blogListFixture.buildTimeResultState.rawResults[0] };
 
     component.render(<SearchResultList {...props} />);
 
