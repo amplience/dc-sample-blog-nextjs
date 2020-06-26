@@ -12,17 +12,15 @@ jest.mock('../algolia-search-result-list/algolia-search-result-list');
 describe('AlgoliaInstantSearch', () => {
   test('renders component', async () => {
     const component = ShallowRenderer.createRenderer();
+    const mockSearchClient = algoliasearch('id', 'key'); 
     const props = {
-      appId: 'test-app-id',
-      apiKey: 'test-search-key',
+      searchClient: mockSearchClient,
       indexName: 'test-index-name',
       resultsState: {
         testResultStateData: 'test result state value'
       }
     };
     component.render(<AlgoliaInstantSearch {...props} />);
-
-    expect(algoliasearch).toHaveBeenCalledWith(props.appId, props.apiKey);
     expect(component.getRenderOutput()).toMatchSnapshot();
   });
 });
