@@ -45,9 +45,9 @@ describe('next.config.js', (): void => {
 
     expect(result).toEqual({
       '/blog/test-delivery-key': {
-        page: '/blog',
+        page: '/blog/[...slug]',
         query: {
-          deliveryKey: 'test-delivery-key'
+          slug: 'test-delivery-key'
         }
       },
       '/': {

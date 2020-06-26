@@ -2,10 +2,10 @@ import React, { ReactElement } from 'react';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
-import StaticLink from '../static-link/static-link';
 import { useRouter } from 'next/router';
 import Picture from '../picture/picture';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
+import NextLink from '../next-link/next-link';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -20,7 +20,7 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
   return (
     <>
       <section>
-        <StaticLink ariaLabel={blogPost.title} href={blogLink}>
+        <NextLink href="/blog/[...slug]" as={blogLink} ariaLabel={blogPost.title}>
           <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
             <article>
               <div className="blog-card-image">
@@ -81,7 +81,7 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
               </div>
             </article>
           </LazyLoadComponent>
-        </StaticLink>
+        </NextLink>
       </section>
 
       <style jsx>{`

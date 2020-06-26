@@ -5,9 +5,10 @@ exports[`BlogCard renders full blog card 1`] = `
   <section
     className="jsx-3551177564"
   >
-    <StaticLink
+    <NextLink
       ariaLabel="My First Blog Post"
-      href="/blog/my-first-blog"
+      as="/blog/my-first-blog"
+      href="/blog/[...slug]"
     >
       <t
         afterLoad={[Function]}
@@ -145,7 +146,7 @@ exports[`BlogCard renders full blog card 1`] = `
           </div>
         </article>
       </t>
-    </StaticLink>
+    </NextLink>
   </section>
   <JSXStyle
     dynamic={
@@ -178,8 +179,10 @@ exports[`BlogCard renders full blog card with lazy loaded placeholders 1`] = `
 >
   <a
     aria-label="My First Blog Post"
-    className="jsx-3354872520"
+    className="jsx-3574172415"
     href="/blog/my-first-blog"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     <div
       className="jsx-3551177564 article-placeholder"

@@ -8,8 +8,10 @@ exports[`HeroCard renders full hero card 1`] = `
 >
   <a
     aria-label="My First Blog Post"
-    className="jsx-3354872520"
+    className="jsx-3574172415"
     href="/blog/my-first-blog"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     <article
       className="jsx-2211547671"
@@ -111,8 +113,10 @@ exports[`HeroCard renders full hero card with vse query string in link for previ
 >
   <a
     aria-label="My First Blog Post"
-    className="jsx-3354872520"
+    className="jsx-3574172415"
     href="/preview?vse=test-vse.domain&content=8d6943c7-6028-4fac-b45e-57fc63bd032a"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
   >
     <article
       className="jsx-2211547671"
