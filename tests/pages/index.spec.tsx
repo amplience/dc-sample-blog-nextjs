@@ -1,14 +1,19 @@
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
 import Index from '../../pages/index';
 import blogListFixture from '../fixtures/blog-list-one-blog.json';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
 jest.mock('react-instantsearch-dom/server', () => ({
   findResultsState: jest.fn()
 }));
 
-jest.mock('../../components/algolia-instant-search/algolia-instant-search');
+jest.mock('react-instantsearch-dom', () => ({
+  ...jest.requireActual('react-instantsearch-dom'),
+  connectStateResults: templateFn => params => templateFn(params)
+}));
+
+jest.mock('algoliasearch', () => jest.fn().mockImplementation(() => ({ search: jest.fn() })));
 
 describe('Index', () => {
   beforeEach(() => {
@@ -24,17 +29,10 @@ describe('Index', () => {
   });
 
   describe('components', () => {
-    test('renders index with content', async () => {
-      const component = await renderer.create(<Index {...blogListFixture} />);
-      expect(component.toJSON()).toMatchSnapshot();
-    });
-
-    test('renders index with content but no blog posts', async () => {
-      const emptyBlogPostFixture = JSON.parse(JSON.stringify(blogListFixture));
-      emptyBlogPostFixture.resultsState.rawResults.hits = [];
-      emptyBlogPostFixture.resultsState.rawResults.nbHits = 0;
-      const component = await renderer.create(<Index {...emptyBlogPostFixture} />);
-      expect(component.toJSON()).toMatchSnapshot();
+    it('should render index', async () => {
+      const component = ShallowRenderer.createRenderer();
+      component.render(<Index {...blogListFixture} />);
+      expect(component.getRenderOutput()).toMatchSnapshot();
     });
   });
 });

@@ -1,603 +1,132 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index components renders index with content 1`] = `
-<div
-  className="jsx-873644259 site-container"
->
-  <section
-    className="jsx-3469519543"
-  >
-    <header
-      className="jsx-3469519543"
-    >
-      <a
-        aria-label=""
-        className="jsx-3354872520"
-        href="/"
-      >
-        <img
-          alt="Amplience logo"
-          className="jsx-2718936118 logo"
-          src="/static/images/logo-white-100h.png"
-          srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
-        />
-      </a>
-      <h1
-        className="jsx-3469519543"
-      >
-        PRODUCT BLOG
-      </h1>
-    </header>
-  </section>
-  <div
-    className="jsx-873644259 site-content"
-  >
-    <main
-      className="jsx-873644259"
-    >
-      <section
-        className="jsx-3485500121"
-      >
-        <h1
-          className="jsx-2799736912"
-        >
-          Blog
-        </h1>
-        <h2
-          className="jsx-1054465095"
-        >
-          subtitle
-        </h2>
-      </section>
-      <div>
-        AlgoliaInstantSearch mock
-      </div>
-    </main>
-    <footer
-      className="jsx-27833366"
-    >
-      <section
-        className="jsx-27833366"
-      >
-        <div
-          className="jsx-27833366 footer-info"
-        >
-          <div
-            className="jsx-27833366 footer-info-top"
-          >
-            <img
-              alt="Amplience logo"
-              className="jsx-2718936118 logo"
-              src="/static/images/logo-100h.png"
-              srcSet="/static/images/logo-50h.png 1x, /static/images/logo-100h.png 2x"
-            />
-            <div
-              className="jsx-27833366 social-links"
-            >
-              <a
-                className="jsx-3655793200"
-                href="//twitter.com/amplience"
-                rel="noreferrer"
-                target="_new"
-              >
-                <img
-                  alt="Twitter logo"
-                  className="jsx-27833366"
-                  src="/static/images/social/ic_twitter.svg"
-                />
-              </a>
-              <a
-                className="jsx-3655793200"
-                href="//www.linkedin.com/company/amplience/"
-                rel="noreferrer"
-                target="_new"
-              >
-                <img
-                  alt="Linkedin logo"
-                  className="jsx-27833366"
-                  src="/static/images/social/ic_linkedin.svg"
-                />
-              </a>
-            </div>
-          </div>
-          <div
-            className="jsx-27833366 copyright"
-          >
-            © Copyright Amplience 
-            2019
-          </div>
-        </div>
-        <div
-          className="jsx-27833366 footer-links"
-        >
-          <section
-            className="jsx-287747732 footer-links-section"
-          >
-            <h4
-              className="jsx-287747732"
-            >
-              For Developers
-            </h4>
-            <ul
-              className="jsx-287747732"
-            >
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//github.com/amplience/"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//stackoverflow.com/questions/tagged/amplience-dynamic-content"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Stack Overflow
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/integration/developergettingstarted.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Dynamic Content docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/contenthub.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Content Hub docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/integration/reference.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  API reference
-                </a>
-              </li>
-            </ul>
-          </section>
-          <section
-            className="jsx-287747732 footer-links-section"
-          >
-            <h4
-              className="jsx-287747732"
-            >
-              Company
-            </h4>
-            <ul
-              className="jsx-287747732"
-            >
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Website
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com/careers"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com/privacy-cookie-policy"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Privacy policy
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/releasenotes/readme.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  What\`s new
-                </a>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </section>
-    </footer>
-    <div
-      className="CookieConsent"
-      style={
-        Object {
-          "alignItems": "center",
-          "background": "rgba(255, 255, 255, 0.9)",
-          "bottom": "0",
-          "boxShadow": "20px 20px 20px 10px #000",
-          "color": "#333",
-          "flexDirection": "column",
-          "position": "fixed",
-          "textAlign": "center",
-          "width": "100%",
-          "zIndex": 1,
-        }
-      }
-    >
-      <div
-        className="cookie-banner-content"
-        style={
+exports[`Index components should render index 1`] = `
+<_default>
+  <b
+    description="heading"
+    title="Blog"
+  />
+  <InstantSearch
+    indexName="algolia-index-name"
+    refresh={false}
+    resultsState={
+      Object {
+        "rawResults": Array [
           Object {
-            "padding": "20px 0px 10px",
-          }
-        }
-      >
-        We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
-         
-        <a
-          href="https://amplience.com/privacy-cookie-policy/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Cookie Policy
-        </a>
-        .
-      </div>
-      <div
-        className=""
-      >
-        <button
-          className="cookie-banner-btn"
-          id="rcc-confirm-button"
-          onClick={[Function]}
-          style={
-            Object {
-              "background": "#fff",
-              "border": "3px solid #CCC",
-              "borderRadius": "5px",
-              "color": "#333",
-              "marginBottom": "10px",
-            }
-          }
-        >
-          Accept Cookies
-        </button>
-      </div>
-    </div>
-    <script
-      async={true}
-      src="https://www.google-analytics.com/analytics.js"
-    />
-    <script
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'ga-tracking-id', 'auto'); ga('send', 'pageview');",
-        }
+            "exhaustiveNbHits": true,
+            "hits": Array [
+              Object {
+                "_highlightResult": Object {
+                  "content": Array [
+                    Object {
+                      "matchLevel": "none",
+                      "matchedWords": Array [],
+                      "value": "Welcome to our new test blog, I do hope you like it.",
+                    },
+                  ],
+                  "description": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "Hello and welcome to our test blog",
+                  },
+                  "title": Object {
+                    "matchLevel": "none",
+                    "matchedWords": Array [],
+                    "value": "Hello and welcome",
+                  },
+                },
+                "_meta": Object {
+                  "deliveryId": "19cef5f9-e094-4176-a516-c1b213f584b3",
+                  "deliveryKey": "hello-and-welcome",
+                  "name": "hello-and-welcome",
+                  "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+                },
+                "authors": Array [
+                  Object {
+                    "name": "A User",
+                  },
+                ],
+                "content": Array [
+                  "Welcome to our new test blog, I do hope you like it.",
+                ],
+                "date": "2020-06-17",
+                "dateAsTimeStamp": 1592352000,
+                "deliveryKey": "hello-and-welcome",
+                "description": "Hello and welcome",
+                "image": Object {
+                  "_meta": Object {
+                    "deliveryId": "ad1ff37d-6a65-43a9-b807-4d7b16365a0c",
+                    "name": "glasses",
+                    "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
+                  },
+                  "altText": "Glasses",
+                  "image": Object {
+                    "_meta": Object {
+                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                    },
+                    "defaultHost": "i1-qa.adis.ws",
+                    "endpoint": "endpoint",
+                    "id": "66b34275-c273-4343-a673-09893a9aadd3",
+                    "name": "glasses",
+                  },
+                },
+                "objectID": "19cef5f9-e094-4176-a516-c1b213f584b3",
+                "readTime": 3,
+                "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+                "tags": Array [
+                  "blog",
+                  "testing",
+                  "search",
+                ],
+                "title": "Hello and welcome",
+              },
+            ],
+            "hitsPerPage": 20,
+            "index": "QAReleaseAmpBlog.published-blog-posts",
+            "nbHits": 1,
+            "nbPages": 1,
+            "page": 0,
+            "params": "highlightPreTag=%3Cais-highlight-0000000000%3E&highlightPostTag=%3C%2Fais-highlight-0000000000%3E&facets=%5B%5D&tagFilters=",
+            "processingTimeMS": 1,
+            "query": "",
+          },
+        ],
+        "state": Object {
+          "disjunctiveFacets": Array [],
+          "disjunctiveFacetsRefinements": Object {},
+          "facets": Array [],
+          "facetsExcludes": Object {},
+          "facetsRefinements": Object {},
+          "hierarchicalFacets": Array [],
+          "hierarchicalFacetsRefinements": Object {},
+          "highlightPostTag": "</ais-highlight-0000000000>",
+          "highlightPreTag": "<ais-highlight-0000000000>",
+          "index": "QAReleaseAmpBlog.published-blog-posts",
+          "numericRefinements": Object {},
+          "tagRefinements": Array [],
+        },
       }
-    />
-  </div>
-</div>
-`;
-
-exports[`Index components renders index with content but no blog posts 1`] = `
-<div
-  className="jsx-873644259 site-container"
->
-  <section
-    className="jsx-3469519543"
+    }
+    searchClient={
+      Object {
+        "search": [MockFunction],
+      }
+    }
+    stalledSearchDelay={200}
   >
-    <header
-      className="jsx-3469519543"
+    <HeroBanner
+      heading="heading"
     >
-      <a
-        aria-label=""
-        className="jsx-3354872520"
-        href="/"
-      >
-        <img
-          alt="Amplience logo"
-          className="jsx-2718936118 logo"
-          src="/static/images/logo-white-100h.png"
-          srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
-        />
-      </a>
-      <h1
-        className="jsx-3469519543"
-      >
-        PRODUCT BLOG
-      </h1>
-    </header>
-  </section>
-  <div
-    className="jsx-873644259 site-content"
+      <HeaderSearchBox
+        placeholderText=""
+      />
+    </HeroBanner>
+    <Unknown />
+  </InstantSearch>
+  <JSXStyle
+    id="3562176578"
   >
-    <main
-      className="jsx-873644259"
-    >
-      <section
-        className="jsx-3485500121"
-      >
-        <h1
-          className="jsx-2799736912"
-        >
-          Blog
-        </h1>
-        <h2
-          className="jsx-1054465095"
-        >
-          subtitle
-        </h2>
-      </section>
-      <div>
-        AlgoliaInstantSearch mock
-      </div>
-    </main>
-    <footer
-      className="jsx-27833366"
-    >
-      <section
-        className="jsx-27833366"
-      >
-        <div
-          className="jsx-27833366 footer-info"
-        >
-          <div
-            className="jsx-27833366 footer-info-top"
-          >
-            <img
-              alt="Amplience logo"
-              className="jsx-2718936118 logo"
-              src="/static/images/logo-100h.png"
-              srcSet="/static/images/logo-50h.png 1x, /static/images/logo-100h.png 2x"
-            />
-            <div
-              className="jsx-27833366 social-links"
-            >
-              <a
-                className="jsx-3655793200"
-                href="//twitter.com/amplience"
-                rel="noreferrer"
-                target="_new"
-              >
-                <img
-                  alt="Twitter logo"
-                  className="jsx-27833366"
-                  src="/static/images/social/ic_twitter.svg"
-                />
-              </a>
-              <a
-                className="jsx-3655793200"
-                href="//www.linkedin.com/company/amplience/"
-                rel="noreferrer"
-                target="_new"
-              >
-                <img
-                  alt="Linkedin logo"
-                  className="jsx-27833366"
-                  src="/static/images/social/ic_linkedin.svg"
-                />
-              </a>
-            </div>
-          </div>
-          <div
-            className="jsx-27833366 copyright"
-          >
-            © Copyright Amplience 
-            2019
-          </div>
-        </div>
-        <div
-          className="jsx-27833366 footer-links"
-        >
-          <section
-            className="jsx-287747732 footer-links-section"
-          >
-            <h4
-              className="jsx-287747732"
-            >
-              For Developers
-            </h4>
-            <ul
-              className="jsx-287747732"
-            >
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//github.com/amplience/"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//stackoverflow.com/questions/tagged/amplience-dynamic-content"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Stack Overflow
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/integration/developergettingstarted.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Dynamic Content docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/contenthub.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Content Hub docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/integration/reference.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  API reference
-                </a>
-              </li>
-            </ul>
-          </section>
-          <section
-            className="jsx-287747732 footer-links-section"
-          >
-            <h4
-              className="jsx-287747732"
-            >
-              Company
-            </h4>
-            <ul
-              className="jsx-287747732"
-            >
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Website
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com/careers"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//amplience.com/privacy-cookie-policy"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  Privacy policy
-                </a>
-              </li>
-              <li>
-                <a
-                  className="jsx-3655793200"
-                  href="//docs.amplience.net/releasenotes/readme.html"
-                  rel="noreferrer"
-                  target="_new"
-                >
-                  What\`s new
-                </a>
-              </li>
-            </ul>
-          </section>
-        </div>
-      </section>
-    </footer>
-    <div
-      className="CookieConsent"
-      style={
-        Object {
-          "alignItems": "center",
-          "background": "rgba(255, 255, 255, 0.9)",
-          "bottom": "0",
-          "boxShadow": "20px 20px 20px 10px #000",
-          "color": "#333",
-          "flexDirection": "column",
-          "position": "fixed",
-          "textAlign": "center",
-          "width": "100%",
-          "zIndex": 1,
-        }
-      }
-    >
-      <div
-        className="cookie-banner-content"
-        style={
-          Object {
-            "padding": "20px 0px 10px",
-          }
-        }
-      >
-        We use cookies to give you the best possible experience on our website. By continuing to browse this site, you give consent for cookies to be used. For more details please read our
-         
-        <a
-          href="https://amplience.com/privacy-cookie-policy/"
-          rel="noreferrer"
-          target="_blank"
-        >
-          Cookie Policy
-        </a>
-        .
-      </div>
-      <div
-        className=""
-      >
-        <button
-          className="cookie-banner-btn"
-          id="rcc-confirm-button"
-          onClick={[Function]}
-          style={
-            Object {
-              "background": "#fff",
-              "border": "3px solid #CCC",
-              "borderRadius": "5px",
-              "color": "#333",
-              "marginBottom": "10px",
-            }
-          }
-        >
-          Accept Cookies
-        </button>
-      </div>
-    </div>
-    <script
-      async={true}
-      src="https://www.google-analytics.com/analytics.js"
-    />
-    <script
-      dangerouslySetInnerHTML={
-        Object {
-          "__html": "window.ga=window.ga||function(){(ga.q = ga.q || []).push(arguments)};ga.l=+new Date; ga('create', 'ga-tracking-id', 'auto'); ga('send', 'pageview');",
-        }
-      }
-    />
-  </div>
-</div>
+    footer{margin-top:120px;}
+  </JSXStyle>
+</_default>
 `;

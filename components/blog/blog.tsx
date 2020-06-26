@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import BlogPostAuthor from '../blog-post-author/blog-post-author.component';
-import BlogPostHeroBanner from '../hero-banner/blog-post-hero-banner.component';
+import BlogPostHeroBanner from '../hero-banner/blog-post-hero-banner';
 import Content from '../content/content';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import Picture from '../picture/picture';

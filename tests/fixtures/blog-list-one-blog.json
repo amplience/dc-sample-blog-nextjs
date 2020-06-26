@@ -6,8 +6,9 @@
     "name": "blog"
   },
   "title": "Blog",
-  "subTitle": "subtitle",
-  "resultsState": {
+  "heading": "heading",
+  "searchPlaceHolder": "",
+  "buildTimeResultState": {
     "rawResults": [
       {
         "hits": [

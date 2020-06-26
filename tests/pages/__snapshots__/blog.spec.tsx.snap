@@ -2,7 +2,7 @@
 
 exports[`Blog page renders Blog page with content 1`] = `
 <div
-  className="jsx-873644259 site-container"
+  className="jsx-2459590784 site-container"
 >
   <section
     className="jsx-3469519543"
@@ -30,10 +30,10 @@ exports[`Blog page renders Blog page with content 1`] = `
     </header>
   </section>
   <div
-    className="jsx-873644259 site-content"
+    className="jsx-2459590784 site-content"
   >
     <main
-      className="jsx-873644259"
+      className="jsx-2459590784"
     >
       <div
         className="jsx-2678308288 content-header"
@@ -99,7 +99,7 @@ exports[`Blog page renders Blog page with content 1`] = `
           className="jsx-3528769338"
         >
           <h1
-            className="jsx-2799736912"
+            className="jsx-641291359"
           >
             My First Blog Post
           </h1>

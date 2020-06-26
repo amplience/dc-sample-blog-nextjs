@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import HeroBannerSubtitle from './subtitle.component';
+import HeroBannerSubtitle from './subtitle';
 
 describe('HeroBannerSubtitle', () => {
   test('renders hero banner subtitle', async () => {
