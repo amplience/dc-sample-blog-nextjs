@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import algoliasearch from 'algoliasearch';
 import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
@@ -8,13 +8,17 @@ import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
 import useSWR from 'swr';
 import { Blog } from '../common/interfaces/blog.interface';
-import { InstantSearch } from 'react-instantsearch-dom';
+import { InstantSearch, connectSearchBox } from 'react-instantsearch-dom';
+import { BasicDoc, Configure } from 'react-instantsearch-core';
 import SearchResultList from '../components/search-result-list/search-result-list';
 import HeaderSearchBox from '../components/header-search-box/header-search-box';
+import { SuggestionSelectedEventData } from 'react-autosuggest';
 
 interface IndexProps extends Blog {
   buildTimeResultState: unknown;
 }
+
+const VirtualSearchBox = connectSearchBox(() => null);
 
 const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildTimeResultState }): JSX.Element => {
   const seoParams: { [key: string]: string | boolean } = {
@@ -36,6 +40,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
       indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
     })
   );
+  const [query, setQuery] = useState('');
 
   return (
     <Layout>
@@ -45,9 +50,23 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         searchClient={searchClient}
         resultsState={runtimeResultState || buildTimeResultState}
       >
+        <Configure hitsPerPage={5} />
         <HeroBanner heading={heading}>
-          <HeaderSearchBox placeholderText={searchPlaceHolder}/>
+          <HeaderSearchBox
+            placeholderText={searchPlaceHolder}
+            onSuggestionSelected={(_, { suggestion }: SuggestionSelectedEventData<BasicDoc>) =>
+              setQuery(suggestion.title)
+            }
+            onSuggestionCleared={() => setQuery('')}
+          />
         </HeroBanner>
+      </InstantSearch>
+      <InstantSearch
+        indexName={process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string}
+        searchClient={searchClient}
+        resultsState={runtimeResultState || buildTimeResultState}
+      >
+        <VirtualSearchBox defaultRefinement={query} />
         <SearchResultList></SearchResultList>
       </InstantSearch>
 
