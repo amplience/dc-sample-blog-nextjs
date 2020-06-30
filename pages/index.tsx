@@ -8,9 +8,10 @@ import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
 import useSWR from 'swr';
 import { Blog } from '../common/interfaces/blog.interface';
-import { InstantSearch } from 'react-instantsearch-dom';
+import { InstantSearch, Configure } from 'react-instantsearch-dom';
 import SearchResultList from '../components/search-result-list/search-result-list';
 import HeaderSearchBox from '../components/header-search-box/header-search-box';
+import SearchResultPagination from '../components/search-result-pagination/search-result-pagination';
 
 interface IndexProps extends Blog {
   buildTimeResultState: unknown;
@@ -45,17 +46,21 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         searchClient={searchClient}
         resultsState={runtimeResultState || buildTimeResultState}
       >
+        <Configure hitsPerPage={10} />
         <HeroBanner heading={heading}>
-          <HeaderSearchBox placeholderText={searchPlaceHolder}/>
+          <HeaderSearchBox placeholderText={searchPlaceHolder} />
         </HeroBanner>
         <SearchResultList></SearchResultList>
+        <SearchResultPagination />
       </InstantSearch>
 
-      <style jsx>{`
-        :global(footer) {
-          margin-top: 120px;
-        }
-      `}</style>
+      <style jsx>
+        {`
+          :global(footer) {
+            margin-top: 120px;
+          }
+        `}
+      </style>
     </Layout>
   );
 };
