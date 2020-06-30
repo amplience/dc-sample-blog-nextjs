@@ -102,6 +102,20 @@ How to create a blog content item for your blog:
 7. Make a note of the index name in the top left (there's a copy text button next to it), we'll be needed this later
 8. Select the "Keys" tab and record the "Application ID" & "Search API key".
 
+#### Add sort options
+
+For the sort-by drop menu to work we need to create the following  4 sort by indexes (also known as replica indexes)
+
+| Property        | Ordering   |
+| --------------- | ---------- |
+| dateAsTimeStamp | Ascending  |
+| dateAsTimeStamp | Descending |
+| readTime        | Ascending  |
+| readTime        | Descending |
+
+To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete" 
+
+#### Configure Webhook
 We have now created a Search Index and series of webhooks that can push and remove data to your search index whenever you publish or archive a Blog Post.
 
 Next we have to customize the webhook payload, as we want change some of the data structures in the search index.
@@ -143,7 +157,7 @@ Next we have to customize the webhook payload, as we want change some of the dat
 }
 ```
 
-5. Click Save
+5. Click "Save" to save you changes 
 
 Notes:
 
