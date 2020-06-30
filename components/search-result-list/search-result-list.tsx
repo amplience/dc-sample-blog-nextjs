@@ -8,6 +8,7 @@ import BlogList from '../blog-list/blog-list';
 
 import { SearchResults, BasicDoc } from 'react-instantsearch-core';
 import NoResults from '../blog-list/no-results';
+import SortByDropdown from './sort-by-dropdown';
 
 const flattenBlogPosts = (searchResults: SearchResults<BasicDoc>): BlogPost[] => {
   if (!searchResults || searchResults.nbHits === 0) {
@@ -37,6 +38,7 @@ const SearchResultList = connectStateResults(({ searchResults }) => {
   const blogPosts = flattenBlogPosts(searchResults);
   return (
     <div id="searchResults">
+      <SortByDropdown />
       <HeroCard blogPost={blogPosts[0]} />
       <BlogList blogPosts={blogPosts.slice(1)} />
     </div>
