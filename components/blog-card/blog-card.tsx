@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Picture from '../picture/picture';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import NextLink from '../next-link/next-link';
+import { Highlight } from 'react-instantsearch-dom';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -75,9 +76,13 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
                 />
               </div>
               <div className="blog-card-content">
-                <h1>{blogPost.title}</h1>
+                <h1>
+                  <Highlight hit={blogPost} attribute="title" tagName="mark" />
+                </h1>
                 <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
-                <p>{blogPost.description}</p>
+                <p>
+                  <Highlight hit={blogPost} attribute="description" tagName="mark" />
+                </p>
               </div>
             </article>
           </LazyLoadComponent>

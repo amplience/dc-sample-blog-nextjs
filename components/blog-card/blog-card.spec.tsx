@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
@@ -12,6 +13,13 @@ jest.mock('next/router', () => {
     useRouter: () => mockUseRouter()
   };
 });
+
+jest.mock('react-instantsearch-dom', () => ({
+  ...jest.requireActual('react-instantsearch-core'),
+  Highlight: () => {
+    return <></>;
+  }
+}));
 
 describe('BlogCard', () => {
   test('renders full blog card', () => {
