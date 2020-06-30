@@ -1,14 +1,14 @@
 import React, { ReactElement } from 'react';
 import Link from 'next/link';
 
-export interface StaticLinkProps {
+export interface NextLinkProps {
   children: JSX.Element;
   href: string;
   as: string;
   ariaLabel?: string;
 }
 
-const NextLink = ({ children, href, as, ariaLabel = '' }: StaticLinkProps): ReactElement => {
+const NextLink = ({ children, href, as, ariaLabel = '' }: NextLinkProps): ReactElement => {
   return (
     <>
       <Link href={href} as={as}>
