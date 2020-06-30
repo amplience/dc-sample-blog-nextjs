@@ -114,6 +114,9 @@ exports[`Index components should render index 1`] = `
     }
     stalledSearchDelay={200}
   >
+    <ConnectorWrapper
+      hitsPerPage={10}
+    />
     <HeroBanner
       heading="heading"
     >
@@ -122,9 +125,10 @@ exports[`Index components should render index 1`] = `
       />
     </HeroBanner>
     <Unknown />
+    <SearchResultPagination />
   </InstantSearch>
   <JSXStyle
-    id="3562176578"
+    id="2750196598"
   >
     footer{margin-top:120px;}
   </JSXStyle>
