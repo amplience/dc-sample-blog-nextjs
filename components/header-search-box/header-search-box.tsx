@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { SearchBox } from 'react-instantsearch-dom';
+import theme from '../../common/styles/default/theme';
 
 const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactElement => {
   return (
@@ -38,7 +39,7 @@ const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactEle
         .ais-SearchBox-input {
           height: 57px;
           background-color: #4a515a;
-          color: #ccc;
+          color: ${theme.colors.silver};
           border-radius: 3px;
           box-shadow: 0 4px 48px 0 rgba(0, 0, 0, 0.2);
           font-size: 18px;
@@ -48,22 +49,22 @@ const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactEle
         }
 
         .ais-SearchBox .ais-SearchBox-input::placeholder {
-          color: #ccc;
+          color: ${theme.colors.silver};
           font-style: italic;
           opacity: 1; /* Firefox */
         }
 
         .ais-SearchBox-input:-ms-input-placeholder {
-          color: #ccc;
+          color: ${theme.colors.silver};
         }
 
         .ais-SearchBox-input::-ms-input-placeholder {
-          color: #ccc;
+          color: ${theme.colors.silver};
         }
 
         .ais-SearchBox-input:focus {
           background-color: #fff;
-          color: #666;
+          color: ${theme.colors.doveGray};
           border: 1px solid #039b35;
         }
 
@@ -76,13 +77,13 @@ const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactEle
           left: 0;
           top: 50%;
           height: 100%;
-          color: #ccc;
+          color: ${theme.colors.silver};
           width: 64px;
         }
 
         .ais-SearchBox-reset {
           right: 0;
-          color: #ccc;
+          color: ${theme.colors.silver};
         }
 
         .ais-SearchBox-reset, .ais-SearchBox-loadingIndicator, .ais-SearchBox-submit {
