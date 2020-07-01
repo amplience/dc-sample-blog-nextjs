@@ -2,9 +2,9 @@ import React, { ReactElement } from 'react';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
-import StaticLink from '../static-link/static-link';
 import { useRouter } from 'next/router';
 import Picture from '../picture/picture';
+import NextLink from '../next-link/next-link';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -22,7 +22,7 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
     return (
       <>
         <section>
-          <StaticLink ariaLabel={blogPost.title} href={blogLink}>
+          <NextLink href="/blog/[...slug]" as={blogLink} ariaLabel={blogPost.title}>
             <article>
               <div className="blog-card-image">
                 <Picture
@@ -72,7 +72,7 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
                 <p>{blogPost.description}</p>
               </div>
             </article>
-          </StaticLink>
+          </NextLink>
         </section>
         <style jsx>{`
         section {

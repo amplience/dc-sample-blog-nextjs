@@ -48,8 +48,8 @@ const exportPathMap = async function () {
       } else {
         const path = `/blog/${encodeURIComponent(blogPost.deliveryKey)}`;
         const pageInfo = {
-          page: '/blog',
-          query: { deliveryKey: blogPost.deliveryKey }
+          page: '/blog/[...slug]',
+          query: { slug: blogPost.deliveryKey }
         };
         console.info(`Loading blog post "${path}`, pageInfo);
         pages[path] = pageInfo;

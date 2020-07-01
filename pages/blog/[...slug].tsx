@@ -1,14 +1,14 @@
 import React from 'react';
 import { NextPage } from 'next';
-import BlogPost from '../common/interfaces/blog-post.interface';
-import Layout from '../layouts/default';
-import { getBlogPostByDeliveryKey } from '../common/services/blog-post.service';
-import Microdata from '../components/microdata/microdata';
+import BlogPost from '../../common/interfaces/blog-post.interface';
+import Layout from '../../layouts/default';
+import { getBlogPostByDeliveryKey } from '../../common/services/blog-post.service';
+import Microdata from '../../components/microdata/microdata';
 import { NextSeo } from 'next-seo';
-import Blog from '../components/blog/blog';
-import SharePost from '../components/share-post/share-post';
+import Blog from '../../components/blog/blog';
+import SharePost from '../../components/share-post/share-post';
 import { Image } from 'dc-delivery-sdk-js';
-import { defaultClientConfig } from '../common/services/dynamic-content-client-config';
+import { defaultClientConfig } from '../../common/services/dynamic-content-client-config';
 import { NextPageContext } from 'next';
 
 interface BlogPostProps {
@@ -66,8 +66,9 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
 };
 
 BlogPostPage.getInitialProps = async ({ query }: NextPageContext) => {
-  const { vse, deliveryKey } = query;
+  const { vse, slug } = query;
   const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
+  const deliveryKey = slug && slug[0];
   if (typeof deliveryKey !== 'string') {
     throw new Error('Unable to generate BlogPostPage, missing deliveryKey');
   }
