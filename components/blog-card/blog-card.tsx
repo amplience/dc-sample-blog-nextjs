@@ -15,7 +15,7 @@ interface BlogCardProps {
 const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
   const router = useRouter();
   const vse = router.query.vse ? router.query.vse.toString() : '';
-  const routerQuery = vse ? `?vse=${vse}&content=${blogPost.id}` : '';
+  const routerQuery = vse ? `?vse=${vse}&content=${blogPost._meta.deliveryId}` : '';
   const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
   const blogLink = `${path}${routerQuery}`;
   return (
