@@ -5,7 +5,7 @@ exports[`HeroCard renders empty hero card when blog list is undefined 1`] = `<di
 exports[`HeroCard renders full hero card 1`] = `
 <React.Fragment>
   <section
-    className="jsx-2211547671"
+    className="jsx-3076843137"
   >
     <NextLink
       ariaLabel="My First Blog Post"
@@ -13,10 +13,10 @@ exports[`HeroCard renders full hero card 1`] = `
       href="/blog/[...slug]"
     >
       <article
-        className="jsx-2211547671"
+        className="jsx-3076843137"
       >
         <div
-          className="jsx-2211547671 blog-card-image"
+          className="jsx-3076843137 blog-card-image"
         >
           <Picture
             image={
@@ -80,10 +80,10 @@ exports[`HeroCard renders full hero card 1`] = `
           />
         </div>
         <div
-          className="jsx-2211547671 blog-card-content"
+          className="jsx-3076843137 blog-card-content"
         >
           <h1
-            className="jsx-2211547671"
+            className="jsx-3076843137"
           >
             <Highlight
               attribute="title"
@@ -282,7 +282,7 @@ Get listed
             readTime={12}
           />
           <p
-            className="jsx-2211547671"
+            className="jsx-3076843137"
           >
             <Highlight
               attribute="description"
@@ -476,9 +476,9 @@ Get listed
         "1.5rem",
       ]
     }
-    id="543841783"
+    id="1660561060"
   >
-    section.__jsx-style-dynamic-selector{margin:auto;margin-top:40px;max-width:1097px;}article.__jsx-style-dynamic-selector{width:31%;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;font-size:1rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;box-shadow:0 20px 15px 2px rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;}p.__jsx-style-dynamic-selector{font-size:1.3125rem;color:#666666;line-height:1.875rem;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 15px 2px rgba(0,0,0,0.25);}article.__jsx-style-dynamic-selector:hover .publish-date{border-color:#999999;}article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}.blog-card-image.__jsx-style-dynamic-selector{width:30%;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:100%;width:100%;}.blog-card-content.__jsx-style-dynamic-selector{width:70%;padding:0 20px 0 20px;}h1.__jsx-style-dynamic-selector{line-height:2.8125rem;font-size:3rem;font-weight:500;color:#333333;margin-top:16px;}article.__jsx-style-dynamic-selector .card-meta div{font-size:1.125rem;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{max-width:100%;padding:0 20px;margin-bottom:60px;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{font-size:0.875rem;width:100%;-webkit-flex:initial;-ms-flex:initial;flex:initial;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:unset;min-height:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}article.__jsx-style-dynamic-selector .card-meta div{font-size:unset;}section.__jsx-style-dynamic-selector{display:block;padding:0 26px;}.blog-card-content.__jsx-style-dynamic-selector{width:100%;}h1.__jsx-style-dynamic-selector{font-size:1.5rem;font-weight:700;line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-size:1rem;font-weight:300;line-height:1.5rem;}.blog-card-image.__jsx-style-dynamic-selector{width:unset;}.blog-card-content.__jsx-style-dynamic-selector{width:unset;padding:0 10px 0 10px;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:135px;}}
+    section.__jsx-style-dynamic-selector{margin:auto;margin-top:20px;max-width:1097px;}article.__jsx-style-dynamic-selector{width:31%;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;font-size:1rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;box-shadow:0 20px 15px 2px rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;}p.__jsx-style-dynamic-selector{font-size:1.3125rem;color:#666666;line-height:1.875rem;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 15px 2px rgba(0,0,0,0.25);}article.__jsx-style-dynamic-selector:hover .publish-date{border-color:#999999;}article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}.blog-card-image.__jsx-style-dynamic-selector{width:30%;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:100%;width:100%;}.blog-card-content.__jsx-style-dynamic-selector{width:70%;padding:0 20px 0 20px;}h1.__jsx-style-dynamic-selector{line-height:2.8125rem;font-size:3rem;font-weight:500;color:#333333;margin-top:16px;}article.__jsx-style-dynamic-selector .card-meta div{font-size:1.125rem;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{max-width:100%;padding:0 20px;margin-bottom:60px;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{font-size:0.875rem;width:100%;-webkit-flex:initial;-ms-flex:initial;flex:initial;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:unset;min-height:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}article.__jsx-style-dynamic-selector .card-meta div{font-size:unset;}section.__jsx-style-dynamic-selector{display:block;padding:0 26px;}.blog-card-content.__jsx-style-dynamic-selector{width:100%;}h1.__jsx-style-dynamic-selector{font-size:1.5rem;font-weight:700;line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-size:1rem;font-weight:300;line-height:1.5rem;}.blog-card-image.__jsx-style-dynamic-selector{width:unset;}.blog-card-content.__jsx-style-dynamic-selector{width:unset;padding:0 10px 0 10px;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:135px;}}
   </JSXStyle>
 </React.Fragment>
 `;
@@ -486,7 +486,7 @@ Get listed
 exports[`HeroCard renders full hero card with vse query string in link for preview 1`] = `
 <React.Fragment>
   <section
-    className="jsx-2211547671"
+    className="jsx-3076843137"
   >
     <NextLink
       ariaLabel="My First Blog Post"
@@ -494,10 +494,10 @@ exports[`HeroCard renders full hero card with vse query string in link for previ
       href="/blog/[...slug]"
     >
       <article
-        className="jsx-2211547671"
+        className="jsx-3076843137"
       >
         <div
-          className="jsx-2211547671 blog-card-image"
+          className="jsx-3076843137 blog-card-image"
         >
           <Picture
             image={
@@ -561,10 +561,10 @@ exports[`HeroCard renders full hero card with vse query string in link for previ
           />
         </div>
         <div
-          className="jsx-2211547671 blog-card-content"
+          className="jsx-3076843137 blog-card-content"
         >
           <h1
-            className="jsx-2211547671"
+            className="jsx-3076843137"
           >
             <Highlight
               attribute="title"
@@ -763,7 +763,7 @@ Get listed
             readTime={12}
           />
           <p
-            className="jsx-2211547671"
+            className="jsx-3076843137"
           >
             <Highlight
               attribute="description"
@@ -957,9 +957,9 @@ Get listed
         "1.5rem",
       ]
     }
-    id="543841783"
+    id="1660561060"
   >
-    section.__jsx-style-dynamic-selector{margin:auto;margin-top:40px;max-width:1097px;}article.__jsx-style-dynamic-selector{width:31%;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;font-size:1rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;box-shadow:0 20px 15px 2px rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;}p.__jsx-style-dynamic-selector{font-size:1.3125rem;color:#666666;line-height:1.875rem;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 15px 2px rgba(0,0,0,0.25);}article.__jsx-style-dynamic-selector:hover .publish-date{border-color:#999999;}article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}.blog-card-image.__jsx-style-dynamic-selector{width:30%;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:100%;width:100%;}.blog-card-content.__jsx-style-dynamic-selector{width:70%;padding:0 20px 0 20px;}h1.__jsx-style-dynamic-selector{line-height:2.8125rem;font-size:3rem;font-weight:500;color:#333333;margin-top:16px;}article.__jsx-style-dynamic-selector .card-meta div{font-size:1.125rem;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{max-width:100%;padding:0 20px;margin-bottom:60px;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{font-size:0.875rem;width:100%;-webkit-flex:initial;-ms-flex:initial;flex:initial;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:unset;min-height:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}article.__jsx-style-dynamic-selector .card-meta div{font-size:unset;}section.__jsx-style-dynamic-selector{display:block;padding:0 26px;}.blog-card-content.__jsx-style-dynamic-selector{width:100%;}h1.__jsx-style-dynamic-selector{font-size:1.5rem;font-weight:700;line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-size:1rem;font-weight:300;line-height:1.5rem;}.blog-card-image.__jsx-style-dynamic-selector{width:unset;}.blog-card-content.__jsx-style-dynamic-selector{width:unset;padding:0 10px 0 10px;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:135px;}}
+    section.__jsx-style-dynamic-selector{margin:auto;margin-top:20px;max-width:1097px;}article.__jsx-style-dynamic-selector{width:31%;-webkit-flex:1 1 0;-ms-flex:1 1 0;flex:1 1 0;font-size:1rem;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;box-shadow:0 20px 15px 2px rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;}p.__jsx-style-dynamic-selector{font-size:1.3125rem;color:#666666;line-height:1.875rem;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 15px 2px rgba(0,0,0,0.25);}article.__jsx-style-dynamic-selector:hover .publish-date{border-color:#999999;}article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}.blog-card-image.__jsx-style-dynamic-selector{width:30%;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:100%;width:100%;}.blog-card-content.__jsx-style-dynamic-selector{width:70%;padding:0 20px 0 20px;}h1.__jsx-style-dynamic-selector{line-height:2.8125rem;font-size:3rem;font-weight:500;color:#333333;margin-top:16px;}article.__jsx-style-dynamic-selector .card-meta div{font-size:1.125rem;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{max-width:100%;padding:0 20px;margin-bottom:60px;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{font-size:0.875rem;width:100%;-webkit-flex:initial;-ms-flex:initial;flex:initial;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:unset;min-height:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}article.__jsx-style-dynamic-selector .card-meta div{font-size:unset;}section.__jsx-style-dynamic-selector{display:block;padding:0 26px;}.blog-card-content.__jsx-style-dynamic-selector{width:100%;}h1.__jsx-style-dynamic-selector{font-size:1.5rem;font-weight:700;line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-size:1rem;font-weight:300;line-height:1.5rem;}.blog-card-image.__jsx-style-dynamic-selector{width:unset;}.blog-card-content.__jsx-style-dynamic-selector{width:unset;padding:0 10px 0 10px;}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;height:135px;}}
   </JSXStyle>
 </React.Fragment>
 `;

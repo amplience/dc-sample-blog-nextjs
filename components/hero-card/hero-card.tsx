@@ -80,7 +80,7 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
         <style jsx>{`
         section {
           margin: auto;
-          margin-top: 40px;
+          margin-top: 20px;
           max-width: ${theme.layout.widePageWidth};
         }
 

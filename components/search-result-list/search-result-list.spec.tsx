@@ -50,6 +50,7 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
+        <SortByDropdown />
         <HeroCard
           blogPost={
             Object {
@@ -78,6 +79,7 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
+        <SortByDropdown />
         <HeroCard
           blogPost={
             Object {
