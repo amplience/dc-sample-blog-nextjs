@@ -4,21 +4,22 @@ import { NextPage } from 'next';
 import { NextSeo } from 'next-seo';
 import { findResultsState } from 'react-instantsearch-dom/server';
 import getBlogContentItem from '../common/services/get-blog-content-item.service';
-import AlgoliaInstantSearch from '../components/algolia-instant-search/algolia-instant-search';
 import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
 import useSWR from 'swr';
+import { Blog } from '../common/interfaces/blog.interface';
+import { InstantSearch } from 'react-instantsearch-dom';
+import SearchResultList from '../components/search-result-list/search-result-list';
+import HeaderSearchBox from '../components/header-search-box/header-search-box';
 
-interface IndexProps {
-  title: string;
-  subTitle: string;
+interface IndexProps extends Blog {
   buildTimeResultState: unknown;
 }
 
-const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState }): JSX.Element => {
+const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildTimeResultState }): JSX.Element => {
   const seoParams: { [key: string]: string | boolean } = {
     title,
-    description: subTitle
+    description: heading
   };
 
   if (process.env.ROBOTS_META_TAG_NOINDEX === 'true') {
@@ -30,25 +31,25 @@ const Index: NextPage<IndexProps> = ({ title, subTitle, buildTimeResultState }):
     process.env.ALGOLIA_API_KEY as string
   );
   const { data: runtimeResultState } = useSWR('index', () =>
-    findResultsState(AlgoliaInstantSearch, {
+    findResultsState(InstantSearch, {
       searchClient,
       indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
     })
   );
 
-  const searchParams = {
-    indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
-    searchClient,
-    resultsState: runtimeResultState || buildTimeResultState
-  };
-
   return (
     <Layout>
       <NextSeo {...seoParams} />
-      <HeroBanner title={title} subTitle={subTitle} />
-      <>
-        <AlgoliaInstantSearch {...searchParams} />
-      </>
+      <InstantSearch
+        indexName={process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string}
+        searchClient={searchClient}
+        resultsState={runtimeResultState || buildTimeResultState}
+      >
+        <HeroBanner heading={heading}>
+          <HeaderSearchBox placeholderText={searchPlaceHolder}/>
+        </HeroBanner>
+        <SearchResultList></SearchResultList>
+      </InstantSearch>
 
       <style jsx>{`
         :global(footer) {
@@ -74,7 +75,7 @@ Index.getInitialProps = async ({ query }): Promise<IndexProps> => {
       process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string,
       stagingEnvironment
     );
-    const buildTimeResultState = await findResultsState(AlgoliaInstantSearch, {
+    const buildTimeResultState = await findResultsState(InstantSearch, {
       searchClient,
       indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
     });

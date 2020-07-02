@@ -1,16 +1,16 @@
 import React, { ReactElement } from 'react';
 import theme from '../../../common/styles/default/theme';
 
-const HeroBannerTitle = ({ title }: { title: string }): ReactElement => {
+const HeroBannerHeading = ({ heading }: { heading: string }): ReactElement => {
   return (
     <>
-      <h1>{title}</h1>
+      <h1>{heading}</h1>
       <style jsx>
         {`
           h1 {
             color: ${theme.colors.mineShaft};
-            font-size: ${theme.fonts.size.xxxxxLarge};
-            font-weight: ${theme.fonts.weight.regular};
+            font-size: ${theme.fonts.size.xxxLarge};
+            font-weight: ${theme.fonts.weight.light};
             margin: 0;
           }
         `}
@@ -19,4 +19,4 @@ const HeroBannerTitle = ({ title }: { title: string }): ReactElement => {
   );
 };
 
-export default HeroBannerTitle;
+export default HeroBannerHeading;

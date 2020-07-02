@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeroBannerHeading renders hero banner title 1`] = `
+<h1
+  className="jsx-641291359"
+>
+  Test title
+</h1>
+`;

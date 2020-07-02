@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import React from 'react';
 import renderer from 'react-test-renderer';
-import BlogPostHeroBanner from './blog-post-hero-banner.component';
+import BlogPostHeroBanner from './blog-post-hero-banner';
 
 describe('BlogPostHeroBanner', () => {
   test('renders hero banner with title and subtitle', async () => {

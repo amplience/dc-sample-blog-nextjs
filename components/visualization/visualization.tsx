@@ -23,7 +23,7 @@ interface VisualizationState {
   blogPost: BlogPost;
   blogList: {
     title: string;
-    subTitle?: string;
+    heading: string;
     blogPosts: BlogPost[];
   };
 }
@@ -86,7 +86,7 @@ export default class Visualization extends Component<VisualizationProps, Visuali
       if (this.state.blogList !== undefined) {
         return (
           <>
-            <HeroBanner title={this.state.blogList.title} subTitle={this.state.blogList.subTitle} />
+            <HeroBanner heading={this.state.blogList.heading} />
             {this.state.blogList.blogPosts.length ? (
               <>
                 <HeroCard blogPost={this.state.blogList.blogPosts[0]} />

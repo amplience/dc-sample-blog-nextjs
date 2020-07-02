@@ -4,6 +4,7 @@ import theme from '../../common/styles/default/theme';
 import BlogCardMeta from '../blog-card-meta/blog-card-meta';
 import { useRouter } from 'next/router';
 import Picture from '../picture/picture';
+import { Highlight } from 'react-instantsearch-dom';
 import NextLink from '../next-link/next-link';
 
 interface HeroCardProps {
@@ -67,9 +68,11 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
                 />
               </div>
               <div className="blog-card-content">
-                <h1>{blogPost.title}</h1>
+                <h1>
+                  <Highlight hit={blogPost} attribute="title" tagName="mark" />
+                </h1>
                 <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
-                <p>{blogPost.description}</p>
+                <p><Highlight hit={blogPost} attribute="description" tagName="mark" /></p>
               </div>
             </article>
           </NextLink>

@@ -7,6 +7,7 @@ import HeroCard from '../hero-card/hero-card';
 import BlogList from '../blog-list/blog-list';
 
 import { SearchResults, BasicDoc } from 'react-instantsearch-core';
+import NoResults from '../blog-list/no-results';
 
 const flattenBlogPosts = (searchResults: SearchResults<BasicDoc>): BlogPost[] => {
   if (!searchResults || searchResults.nbHits === 0) {
@@ -21,17 +22,24 @@ const flattenBlogPosts = (searchResults: SearchResults<BasicDoc>): BlogPost[] =>
 };
 
 const SearchResultList = connectStateResults(({ searchResults }) => {
-  if(!searchResults) {
-    return <LoadingBlogPosts />
+  if (!searchResults) {
+    return <LoadingBlogPosts />;
   }
+
+  if (searchResults.query.length > 0 && searchResults.nbHits === 0) {
+    return <NoResults query={searchResults.query} />;
+  }
+
+  if (searchResults.nbHits === 0) {
+    return <NoBlogPosts />;
+  }
+
   const blogPosts = flattenBlogPosts(searchResults);
-  return blogPosts.length > 0 ? (
+  return (
     <div id="searchResults">
       <HeroCard blogPost={blogPosts[0]} />
       <BlogList blogPosts={blogPosts.slice(1)} />
     </div>
-  ) : (
-    <NoBlogPosts />
   );
 });
 

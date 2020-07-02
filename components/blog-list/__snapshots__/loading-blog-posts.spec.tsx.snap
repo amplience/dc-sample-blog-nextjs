@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingBlogPosts should render component 1`] = `
+<div
+  className="jsx-3443866396 loading-blog-posts"
+>
+  <p
+    className="jsx-3443866396"
+  >
+    Loading...
+  </p>
+</div>
+`;

@@ -1,13 +1,13 @@
 import React, { ReactElement } from 'react';
-import HeroBannerTitle from './title/title.component';
-import HeroBannerSubtitle from './subtitle/subtitle.component';
+import HeroBannerHeading from './title/hero-banner-heading';
 import theme from '../../common/styles/default/theme';
+import HeroBannerSubtitle from './subtitle/subtitle';
 
 const BlogPostHeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }): ReactElement => {
   return (
     <>
       <section>
-        <HeroBannerTitle title={title} />
+        <HeroBannerHeading heading={title} />
         <HeroBannerSubtitle subTitle={subTitle} />
       </section>
       <style jsx>{`
