@@ -51,7 +51,7 @@ npm run sync
 
 Notes:
 
- - `npm run sync` imports the content-type-schemas and content-types as well as synchronizing any content type changes to your content items. 
+- `npm run sync` imports the content-type-schemas and content-types as well as synchronizing any content type changes to your content items.
 
 #### Create and register manually in Dynamic Content
 
@@ -214,7 +214,7 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 3. Enter a sensible label (e.g. "Netlify Deployment")
 4. Enter the Netlify "build hook" that you created in the previous section as your URL
 5. Enable the Webhook trigger "Snapshot - Published"
-6. Under "Filters", click new and add the JSON path "$.payload.rootContentItem.contentTypeUri", ensure "Equals" operator is selected and enter "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json" as the value
+6. Under "Filters", click new and add the JSON path "\$.payload.rootContentItem.contentTypeUri", ensure "Equals" operator is selected and enter "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json" as the value
 7. Click "Save"
 
 Notes:
@@ -231,13 +231,13 @@ Dynamic Content has two ways of allowing you to see you content changes before t
 
 ### How to Configure Visualizations
 
-For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `https://blog.example.com/visualization.html?vse={{vse.domain}}&content={{content.sys.id}}`
+For each of the Content Type Schemas that support visualization (see table in [Content Type Schemas](#Content-Type-Schemas)) update each registered content type to include a visualization. The Visualization URI should be the domain with the path of `/visualization/?vse={{vse.domain}}&content={{content.sys.id}}`, e.g. `https://blog.example.com/visualization/?vse={{vse.domain}}&content={{content.sys.id}}`
 
-If you used the dc-cli tool to register your content types, they will already have visualisations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the `npm run sync` command again, or by manually updating your content types in Dynamic Content.
+If you used the dc-cli tool to register your content types, they will already have visualizations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the `npm run sync` command again, or by manually updating your content types in Dynamic Content.
 
 ### How to configure Preview
 
-The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
+The Preview application URL should be the domain with the path of `/preview/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/preview/?vse={{vse.domain}}`.
 
 Notes:
 
@@ -247,7 +247,7 @@ Notes:
 
 After all of that we now have everything setup and you are ready to start writing your first blog post.
 
-1. In Dynamic Content go to the "Production" tab and select the "Content" repository on the left. 
+1. In Dynamic Content go to the "Production" tab and select the "Content" repository on the left.
 2. Click "Create content" and select the "Blog post" content-type
 3. Proceed to fill out the form, you can click on the "( + )" icons to include other content items
 4. Once done, click "Save"
@@ -257,7 +257,7 @@ After all of that we now have everything setup and you are ready to start writin
 
 # Publishing
 
-Once you are ready to publish your blog within Dynamic Content just publish your new blog post directly from the "Production" side of Dynamic Content (select the context menu for the new blog post and select "Publish"). 
+Once you are ready to publish your blog within Dynamic Content just publish your new blog post directly from the "Production" side of Dynamic Content (select the context menu for the new blog post and select "Publish").
 
 The webhooks that were generated when you created your search index will push your updates to the search index, and the Netlify webhook will be triggered to rebuild your site.
 

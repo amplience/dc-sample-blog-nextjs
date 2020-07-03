@@ -7,12 +7,12 @@ import { NextSeo } from 'next-seo/lib';
 const VisualizationPage = (): ReactElement => {
   const router = useRouter();
   const stagingEnvironment = router.query.vse ? router.query.vse.toString() : '';
-  const contentId = router.query.content ? router.query.content.toString() : '';
+  const contentItemId = router.query.content ? router.query.content.toString() : '';
   return (
     <>
       <NextSeo noindex={true} />
       <Layout contentOnly={true}>
-        <Visualization stagingEnvironment={stagingEnvironment} contentId={contentId} />
+        <Visualization stagingEnvironment={stagingEnvironment} contentItemId={contentItemId} />
       </Layout>
     </>
   );
