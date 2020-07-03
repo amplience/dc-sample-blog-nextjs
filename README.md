@@ -115,7 +115,7 @@ For the sort-by drop menu to work we need to create the following 4 sort by inde
 
 To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete"
 
-#### Configure Webhook
+#### Configure webhook custom payload
 
 We have now created a Search Index and series of webhooks that can push and remove data to your search index whenever you publish or archive a Blog Post.
 
@@ -163,6 +163,33 @@ Next we have to customize the webhook payload, as we want change some of the dat
 Notes:
 
 - For more information regarding the webhook payload that is mentioned here, please our documentation - [Optimizing the Algolia record size](https://docs.amplience.net/integration/webhooksearchexamplepart2.html)
+
+#### Add a custom ranking to your primary index
+
+By default your search index is sorted in the order in which your blog posts are published, to change this so they are sorted by the most recent, you need to add a "customRanking" to your primary index.
+
+On your index select the "Configure" tab and paste in the following configuration and click "Save" (if you asked, don't copy this setting to your replicas)
+
+```json
+{
+  "customRanking": ["desc(dateAsTimeStamp)"]
+}
+```
+
+If you have any blog posts in your index, you can confirm your changes in the "Browse" tab where all of your blog posts should now be sorted by date, with your most recent blog post at the top.
+
+#### Add sort options
+
+For the sort-by drop menu to work we need to create the following 4 sort by indexes (also known as replica indexes)
+
+| Property        | Ordering   |
+| --------------- | ---------- |
+| dateAsTimeStamp | Ascending  |
+| dateAsTimeStamp | Descending |
+| readTime        | Ascending  |
+| readTime        | Descending |
+
+To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete"
 
 ## Deploy To Netlify
 
