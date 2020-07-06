@@ -104,7 +104,7 @@ How to create a blog content item for your blog:
 
 #### Add sort options
 
-For the sort-by drop menu to work we need to create the following  4 sort by indexes (also known as replica indexes)
+For the sort-by drop menu to work we need to create the following 4 sort by indexes (also known as replica indexes)
 
 | Property        | Ordering   |
 | --------------- | ---------- |
@@ -113,9 +113,10 @@ For the sort-by drop menu to work we need to create the following  4 sort by ind
 | readTime        | Ascending  |
 | readTime        | Descending |
 
-To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete" 
+To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete"
 
 #### Configure Webhook
+
 We have now created a Search Index and series of webhooks that can push and remove data to your search index whenever you publish or archive a Blog Post.
 
 Next we have to customize the webhook payload, as we want change some of the data structures in the search index.
@@ -157,7 +158,7 @@ Next we have to customize the webhook payload, as we want change some of the dat
 }
 ```
 
-5. Click "Save" to save you changes 
+5. Click "Save" to save you changes
 
 Notes:
 
@@ -192,6 +193,7 @@ During the Netlify setup process you will need to define the following build env
 | GA_TRACKING_ID                    | Google Analytics                                                                                     | UA-1234567890                          |
 | BASE_URL\*                        | Base URL, used in generating links                                                                   | https://blog.example.com               |
 | ROBOTS_META_TAG_NOINDEX           | Adds a noindex,nofollow meta tag to blog pages                                                       | true                                   |
+| ALGOLIA_STAGING_INDEX_NAME        | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
 
 \* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 
