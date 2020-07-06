@@ -65,21 +65,13 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
   );
 };
 
-Index.getInitialProps = async ({ query }): Promise<IndexProps> => {
+Index.getInitialProps = async (): Promise<IndexProps> => {
   const searchClient = algoliasearch(
     process.env.ALGOLIA_APPLICATION_ID as string,
     process.env.ALGOLIA_API_KEY as string
   );
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
-  const stagingEnvironment = query?.vse ? `//${query.vse.toString()}` : undefined;
-
   try {
-    const blog = await getBlogContentItem(
-      process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string,
-      stagingEnvironment
-    );
+    const blog = await getBlogContentItem(process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string);
     const buildTimeResultState = await findResultsState(InstantSearch, {
       searchClient,
       indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
