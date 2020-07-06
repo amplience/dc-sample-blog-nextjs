@@ -3,16 +3,16 @@
 exports[`SortByDropdown should render LoadingBlogPosts when searchResults is undefined 1`] = `
 <React.Fragment>
   <div
-    className="jsx-3817679898 sort-by-container"
+    className="jsx-3184742088 sort-by-container"
   >
     <span
-      className="jsx-3817679898"
+      className="jsx-3184742088"
     >
       Sort by
     </span>
     <ConnectorWrapper
       className="container-option"
-      defaultRefinement="instant_search"
+      defaultRefinement="indexName"
       items={
         Array [
           Object {
@@ -45,9 +45,9 @@ exports[`SortByDropdown should render LoadingBlogPosts when searchResults is und
         "500",
       ]
     }
-    id="466742199"
+    id="4049161898"
   >
-    div.sort-by-container.__jsx-style-dynamic-selector{margin:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:20px;-webkit-box-pack:right;-webkit-justify-content:right;-ms-flex-pack:right;justify-content:right;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:1097px;padding-right:40px;}div.sort-by-container.__jsx-style-dynamic-selector&gt;span.__jsx-style-dynamic-selector{padding-right:15px;font-size:1.125rem;font-weight:400;}select.ais-SortBy-select{color:#333;font-size:1.125rem;font-weight:500;background-color:#f2f2f2;padding:5px 30px 5px 5px;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;}div.ais-SortBy{position:relative;}div.ais-SortBy:after{color:#333;content:'▾';right:15px;top:6px;position:absolute;pointer-events:none;}
+    div.sort-by-container.__jsx-style-dynamic-selector{margin:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:20px;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:1097px;padding-right:40px;}div.sort-by-container.__jsx-style-dynamic-selector&gt;span.__jsx-style-dynamic-selector{padding-right:15px;font-size:1.125rem;font-weight:400;}select.ais-SortBy-select{color:#333;font-size:1.125rem;font-weight:500;background-color:#f2f2f2;padding:5px 30px 5px 5px;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;}div.ais-SortBy{position:relative;}div.ais-SortBy:after{color:#333;content:'▾';right:15px;top:6px;position:absolute;pointer-events:none;}
   </JSXStyle>
 </React.Fragment>
 `;

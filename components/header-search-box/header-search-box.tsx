@@ -2,12 +2,12 @@ import React, { ReactElement } from 'react';
 import { SearchBox } from 'react-instantsearch-dom';
 import theme from '../../common/styles/default/theme';
 
-const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactElement => {
+const HeaderSearchBox = ({ placeholderText }: { placeholderText: string }): ReactElement => {
   return (
     <>
       <SearchBox
         translations={{
-          placeholder: placeholderText,
+          placeholder: placeholderText
         }}
         submit={
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 18 18">
@@ -27,6 +27,16 @@ const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactEle
         }
       />
       <style jsx global>{`
+        /* clears the 'X' from Internet Explorer */
+        input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+        input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+        /* clears the 'X' from Chrome & Safari */
+        input[type="search"]::-webkit-search-decoration,
+        input[type="search"]::-webkit-search-cancel-button,
+        input[type="search"]::-webkit-search-results-button,
+        input[type="search"]::-webkit-search-results-decoration { display: none; }
+
         .ais-SearchBox-form {
           position: relative;
         }
@@ -46,6 +56,13 @@ const HeaderSearchBox = ({placeholderText}: {placeholderText: string}): ReactEle
           width: 100%;
           border: none;
           padding-left: 56px;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+        }
+
+        .ais-SearchBox-input:focus, .ais-SearchBox-submit:focus, .ais-SearchBox-reset:focus {
+          outline: none;
         }
 
         .ais-SearchBox .ais-SearchBox-input::placeholder {
