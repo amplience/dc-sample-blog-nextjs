@@ -38,7 +38,7 @@ const SortByDropdown = (): ReactElement => {
           margin: auto;
           display: flex;
           margin-top: 20px;
-          justify-content: right;
+          justify-content: flex-end;
           align-items: center;
           max-width: ${theme.layout.widePageWidth};
           padding-right: 40px;
