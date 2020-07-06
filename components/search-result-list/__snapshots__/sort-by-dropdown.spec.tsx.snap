@@ -12,7 +12,7 @@ exports[`SortByDropdown should render LoadingBlogPosts when searchResults is und
     </span>
     <ConnectorWrapper
       className="container-option"
-      defaultRefinement="indexName_sort-dateastimestamp-desc"
+      defaultRefinement="instant_search"
       items={
         Array [
           Object {
