@@ -168,7 +168,7 @@ Notes:
 
 By default your search index is sorted in the order in which your blog posts are published, to change this so they are sorted by the most recent, you need to add a "customRanking" to your primary index.
 
-On your index select the "Configure" tab and paste in the following configuration and click "Save" (if you asked, don't copy this setting to your replicas)
+On your index select the "Configure" tab and paste in the following configuration and click "Save" (if you're asked, don't copy this setting to your replicas)
 
 ```json
 {
@@ -176,7 +176,7 @@ On your index select the "Configure" tab and paste in the following configuratio
 }
 ```
 
-If you have any blog posts in your index, you can confirm your changes in the "Browse" tab where all of your blog posts should now be sorted by date, with your most recent blog post at the top.
+If you have any blog posts in your index, you can validate your changes in the "Browse" tab where all of your blog posts should now be sorted by date, with your most recent blog post at the top.
 
 #### Add sort options
 
