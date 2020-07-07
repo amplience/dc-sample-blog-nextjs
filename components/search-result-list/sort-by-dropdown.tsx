@@ -33,7 +33,8 @@ const SortByDropdown = (): ReactElement => {
           ]}
         />
       </div>
-      <style jsx>{`
+      <style jsx>
+        {`
         div.sort-by-container {
           margin: auto;
           display: flex;
@@ -72,7 +73,32 @@ const SortByDropdown = (): ReactElement => {
           position: absolute;
           pointer-events: none;
         }
-      }`}</style>
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          div.sort-by-container {
+            padding: 0 26px;
+          }
+
+          div.sort-by-container > span {
+            padding: 0;
+            margin: auto;
+            margin-right: 20px;
+            white-space: nowrap;
+          }
+
+          :global(div.ais-SortBy) {
+            margin: auto;
+            margin-left: 0;
+            overflow: hidden;
+          }
+
+          :global(div.ais-SortBy select) {
+            width: 100%;
+            text-overflow: ellipsis;
+          }
+        }
+      }`}
+      </style>
     </>
   );
 };
