@@ -191,6 +191,18 @@ For the sort-by drop menu to work we need to create the following 4 sort by inde
 
 To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete"
 
+### Add facets
+
+Faceting search results can be achieved via the "Configuration" tab when editing a search index. Within this section there is a "Add snippet" menu with a "Facets" option. Once the snippet has been generated, add the fields in which are to be added as facets. For example:
+
+```json
+{
+  "attributesForFaceting": ["authors.name", "tags"]
+}
+```
+
+Click "Save" and search results are now faceted.
+
 ## Deploy To Netlify
 
 Click on the button below to deploy this repository via Netlify.
@@ -221,6 +233,8 @@ During the Netlify setup process you will need to define the following build env
 | BASE_URL\*                        | Base URL, used in generating links                                                                   | https://blog.example.com               |
 | ROBOTS_META_TAG_NOINDEX           | Adds a noindex,nofollow meta tag to blog pages                                                       | true                                   |
 | ALGOLIA_STAGING_INDEX_NAME        | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
+| AUTHORS_FACET_FIELD               | The name of the faceted field for authors                                                            | authors.name                           |
+| TAGS_FACET_FIELD                  | The name of the faceted field for tags                                                               | tags                                   |
 
 \* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 

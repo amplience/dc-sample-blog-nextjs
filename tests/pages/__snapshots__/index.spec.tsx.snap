@@ -129,6 +129,7 @@ exports[`Index components should render index 1`] = `
       <HeaderSearchBox
         placeholderText=""
       />
+      <HeaderFacetBar />
     </HeroBanner>
     <Unknown />
     <SearchResultPagination />

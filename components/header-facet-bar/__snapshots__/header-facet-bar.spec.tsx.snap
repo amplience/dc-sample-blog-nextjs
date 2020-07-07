@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderFaceBar component should render author and tags facet menus with a clear button 1`] = `
+<React.Fragment>
+  <div
+    className="jsx-3417640431"
+    id="FacetBar"
+  >
+    <h3
+      className="jsx-3417640431"
+    >
+      Show blogs by
+    </h3>
+    <React.Fragment>
+      <img
+        alt="Authors"
+        className="jsx-3417640431"
+        src="/static/images/ic-person.svg"
+      />
+      <ConnectorWrapper
+        attribute="authors"
+      />
+    </React.Fragment>
+    <React.Fragment>
+      <img
+        alt="Tags"
+        className="jsx-3417640431"
+        src="/static/images/ic-tag.svg"
+      />
+      <ConnectorWrapper
+        attribute="tags"
+      />
+    </React.Fragment>
+    <ConnectorWrapper
+      clearsQuery={true}
+    />
+  </div>
+  <JSXStyle
+    id="3417640431"
+  >
+    #FacetBar.jsx-3417640431{width:100%;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;text-align:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}h3.jsx-3417640431{font-size:16px;color:#999;font-weight:400;padding-right:20px;}img.jsx-3417640431{height:40px;width:40px;padding-right:10px;fill:#a7aaaf;}
+  </JSXStyle>
+</React.Fragment>
+`;
