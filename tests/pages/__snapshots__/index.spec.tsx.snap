@@ -117,6 +117,9 @@ exports[`Index components should render index 1`] = `
     <ConnectorWrapper
       hitsPerPage={10}
     />
+    <ConnectorWrapper
+      scrollOn="page"
+    />
     <HeroBanner
       heading="heading"
     >
