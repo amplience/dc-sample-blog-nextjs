@@ -8,7 +8,7 @@ import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
 import useSWR from 'swr';
 import { Blog } from '../common/interfaces/blog.interface';
-import { InstantSearch, Configure } from 'react-instantsearch-dom';
+import { InstantSearch, Configure, ScrollTo } from 'react-instantsearch-dom';
 import SearchResultList from '../components/search-result-list/search-result-list';
 import HeaderSearchBox from '../components/header-search-box/header-search-box';
 import SearchResultPagination from '../components/search-result-pagination/search-result-pagination';
@@ -47,6 +47,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         resultsState={runtimeResultState || buildTimeResultState}
       >
         <Configure hitsPerPage={10} />
+        <ScrollTo scrollOn="page" />
         <HeroBanner heading={heading}>
           <HeaderSearchBox placeholderText={searchPlaceHolder} />
         </HeroBanner>
