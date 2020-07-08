@@ -8,6 +8,7 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import NextLink from '../next-link/next-link';
 import { Highlight } from 'react-instantsearch-dom';
 import qs from 'qs';
+import TagChips from '../tag-chips/tag-chips';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -85,6 +86,7 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
                 <p>
                   <Highlight hit={blogPost} attribute="description" tagName="mark" />
                 </p>
+                <TagChips tags={blogPost.tags} />
               </div>
             </article>
           </LazyLoadComponent>

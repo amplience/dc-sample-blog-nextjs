@@ -10,6 +10,7 @@ import SharePost from '../../components/share-post/share-post';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from '../../common/services/dynamic-content-client-config';
 import { NextPageContext } from 'next';
+import TagChips from '../../components/tag-chips/tag-chips';
 
 interface BlogPostProps {
   blogPost: BlogPost;
@@ -45,6 +46,7 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
     <Layout>
       <NextSeo {...seoParams} />
       <Blog blogPost={blogPost} />
+      <TagChips tags={blogPost.tags} />
       <div className="content-footer">
         <SharePost twitterText={blogPost.title} />
       </div>
@@ -56,9 +58,14 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
         datePublished={blogPost.date}
       />
       <style jsx>{`
-        .content-footer {
+        .content-footer,
+        :global(div.tag-chips) {
           margin: auto;
           max-width: 740px;
+        }
+
+        :global(div.tag-chips) {
+          padding-left: 0px !important;
         }
       `}</style>
     </Layout>

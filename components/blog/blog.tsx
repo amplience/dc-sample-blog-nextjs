@@ -4,12 +4,14 @@ import BlogPostHeroBanner from '../hero-banner/blog-post-hero-banner';
 import Content from '../content/content';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import Picture from '../picture/picture';
+import TagChips from '../tag-chips/tag-chips';
 
 const Blog = ({ blogPost }: { blogPost: BlogPost }): ReactElement => {
   return (
     <>
       <div className="content-header">
         <BlogPostAuthor authors={blogPost.authors} date={blogPost.date} readTime={blogPost.readTime} />
+        <TagChips tags={blogPost.tags} />
         <BlogPostHeroBanner title={blogPost.title} subTitle={blogPost.description} />
       </div>
       <div className="blog-image">
@@ -41,6 +43,10 @@ const Blog = ({ blogPost }: { blogPost: BlogPost }): ReactElement => {
         .content-header {
           margin: auto;
           max-width: 740px;
+        }
+
+        .content-header :global(div.tag-chips) {
+          padding-top: 25px;
         }
 
         .content-wrapper {

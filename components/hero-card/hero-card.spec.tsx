@@ -1,10 +1,9 @@
 /* eslint-disable react/display-name */
 /* eslint-env jest */
 import React from 'react';
-import renderer from 'react-test-renderer';
-import HeroCard from './hero-card';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';
+import HeroCard from './hero-card';
 
 const mockUseRouter = jest.fn();
 jest.mock('next/router', () => {
