@@ -59,11 +59,12 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
     process.env.ALGOLIA_APPLICATION_ID as string,
     process.env.ALGOLIA_API_KEY as string
   );
+
   const { data: runtimeResultState } = useSWR('index', () =>
     findResultsState(InstantSearch, {
       searchClient,
       indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
-      searchState
+      searchState: { ...searchState, tagFilters: 'tags:search' }
     })
   );
   const onSearchStateChange = (updatedSearchState: SearchState) => {
