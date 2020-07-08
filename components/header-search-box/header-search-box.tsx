@@ -63,7 +63,6 @@ const HeaderSearchBox = ({ placeholderText }: { placeholderText: string }): Reac
             background-color: #4a515a;
             color: ${theme.colors.silver};
             border-radius: 3px;
-            box-shadow: 0 4px 48px 0 rgba(0, 0, 0, 0.2);
             font-size: 18px;
             width: 100%;
             border: none;
