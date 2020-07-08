@@ -12,8 +12,12 @@ export class RouteChangeLoader extends Component<unknown, { isLoading: boolean }
   }
 
   componentDidMount(): void {
-    Router.events.on('routeChangeStart', () => {
-      this.setState({ isLoading: true });
+    Router.events.on('routeChangeStart', prop => {
+      const routeChangeLocation = new URL(prop, window.location.origin);
+      const currentPathname = window?.location?.pathname;
+      if (routeChangeLocation.pathname !== currentPathname) {
+        this.setState({ isLoading: true });
+      }
     });
     Router.events.on('routeChangeComplete', () => {
       this.setState({ isLoading: false });

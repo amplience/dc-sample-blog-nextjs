@@ -26,6 +26,7 @@ export default class PageLoader extends Component {
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 999;
           }
 
           .spinner {

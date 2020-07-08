@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import algoliasearch from 'algoliasearch';
 import { NextPage } from 'next';
+import Router from 'next/router';
 import { NextSeo } from 'next-seo';
 import { findResultsState } from 'react-instantsearch-dom/server';
+import qs from 'qs';
 import getBlogContentItem from '../common/services/get-blog-content-item.service';
 import HeroBanner from '../components/hero-banner/hero-banner';
 import Layout from '../layouts/default';
 import useSWR from 'swr';
 import { Blog } from '../common/interfaces/blog.interface';
 import { InstantSearch, Configure, ScrollTo } from 'react-instantsearch-dom';
+import { SearchState } from 'react-instantsearch-core';
 import SearchResultList from '../components/search-result-list/search-result-list';
 import HeaderSearchBox from '../components/header-search-box/header-search-box';
 import SearchResultPagination from '../components/search-result-pagination/search-result-pagination';
+import { useRouter } from 'next/router';
 
 interface IndexProps extends Blog {
   buildTimeResultState: unknown;
 }
 
+const sanitiseStateParams = (state: SearchState) => {
+  const acceptedKeys = ['page', 'query', 'sortBy'];
+  return Object.keys(state).reduce((r: SearchState, s) => {
+    if (acceptedKeys.includes(s)) {
+      r[s] = state[s];
+    }
+    return r;
+  }, {});
+};
+
+const createURL = (state: SearchState): string => `?${qs.stringify(sanitiseStateParams(state))}`;
+
+const urlToSearchState = (path: string): SearchState =>
+  path.includes('?') ? sanitiseStateParams(qs.parse(path.substring(path.indexOf('?') + 1))) : {};
+
+const searchStateToUrl = (searchState: SearchState): string => {
+  return searchState ? `${window.location.pathname}?${qs.stringify(sanitiseStateParams(searchState))}` : '';
+};
+
+const DEBOUNCE_TIME = 500;
+
 const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildTimeResultState }): JSX.Element => {
+  const router = useRouter();
+  const [searchState, setSearchState] = useState(urlToSearchState(router.asPath));
+  const [debouncedSetState, setDebouncedSetState] = useState(0);
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: heading
@@ -34,9 +62,19 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
   const { data: runtimeResultState } = useSWR('index', () =>
     findResultsState(InstantSearch, {
       searchClient,
-      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
+      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
+      searchState
     })
   );
+  const onSearchStateChange = (updatedSearchState: SearchState) => {
+    clearTimeout(debouncedSetState);
+    setDebouncedSetState(
+      window.setTimeout(() => {
+        Router.replace(searchStateToUrl(updatedSearchState));
+      }, DEBOUNCE_TIME)
+    );
+    setSearchState(updatedSearchState);
+  };
 
   return (
     <Layout>
@@ -45,6 +83,9 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         indexName={process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string}
         searchClient={searchClient}
         resultsState={runtimeResultState || buildTimeResultState}
+        createURL={createURL}
+        searchState={searchState}
+        onSearchStateChange={onSearchStateChange}
       >
         <Configure hitsPerPage={10} />
         <ScrollTo scrollOn="page" />

@@ -7,7 +7,9 @@ exports[`Index components should render index 1`] = `
     title="Blog"
   />
   <InstantSearch
+    createURL={[Function]}
     indexName="algolia-index-name"
+    onSearchStateChange={[Function]}
     refresh={false}
     resultsState={
       Object {
@@ -112,6 +114,7 @@ exports[`Index components should render index 1`] = `
         "search": [MockFunction],
       }
     }
+    searchState={Object {}}
     stalledSearchDelay={200}
   >
     <ConnectorWrapper
