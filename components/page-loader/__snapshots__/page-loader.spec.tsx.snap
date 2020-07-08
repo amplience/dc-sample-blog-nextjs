@@ -2,11 +2,11 @@
 
 exports[`PageLoader renders page loader 1`] = `
 <div
-  className="jsx-538995977 page-loading"
+  className="jsx-1481206946 page-loading"
   onClick={[Function]}
 >
   <div
-    className="jsx-538995977 spinner"
+    className="jsx-1481206946 spinner"
   />
 </div>
 `;
