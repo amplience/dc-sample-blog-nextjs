@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import algoliasearch from 'algoliasearch';
 import { NextPage } from 'next';
-import Router from 'next/router';
+import Router, { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
 import { findResultsState } from 'react-instantsearch-dom/server';
 import qs from 'qs';
@@ -15,7 +15,6 @@ import { SearchState } from 'react-instantsearch-core';
 import SearchResultList from '../components/search-result-list/search-result-list';
 import HeaderSearchBox from '../components/header-search-box/header-search-box';
 import SearchResultPagination from '../components/search-result-pagination/search-result-pagination';
-import { useRouter } from 'next/router';
 
 interface IndexProps extends Blog {
   buildTimeResultState: unknown;
@@ -67,14 +66,19 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
     })
   );
   const onSearchStateChange = (updatedSearchState: SearchState) => {
+    const searchStateUrl = searchStateToUrl(updatedSearchState);
     clearTimeout(debouncedSetState);
     setDebouncedSetState(
       window.setTimeout(() => {
-        Router.replace(searchStateToUrl(updatedSearchState));
+        Router.push(searchStateUrl, searchStateUrl, { shallow: true });
       }, DEBOUNCE_TIME)
     );
     setSearchState(updatedSearchState);
   };
+
+  useEffect(() => {
+    setSearchState(urlToSearchState(router.asPath));
+  }, [router.asPath]);
 
   return (
     <Layout>
