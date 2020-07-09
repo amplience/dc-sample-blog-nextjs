@@ -53,29 +53,7 @@ Notes:
 
 - `npm run sync` imports the content-type-schemas and content-types as well as synchronizing any content type changes to your content items.
 
-#### Create and register manually in Dynamic Content
-
-In Dynamic Content, navigate to the "Content type schemas" area (Developer -> Content type schemas).
-
-For each of the Content Type Schemas listed above:-
-
-1. Click on "Create schema"
-2. Enter the Schema Id
-3. Select the Schema Type from the drop down menu
-4. Click "Save & open schema"
-5. Open the .json file and copy & paste in the JSON content into the editor, overwriting the existing JSON.
-6. Click "Save" (top right)
-
-Navigate to the "Content types" area (Developer -> Content types).
-
-For each of the Content Types list above:-
-
-1. Click on "Register content type"
-2. Select "Internal" for the "Content type schema" option
-3. Select the schema from the drop down list
-4. Enter a sensible label (e.g. author.json to be "Author")
-5. Associate the Content type to the correct repo (blog-slot.json should be in the repo that is marked as Slots)
-6. Click "Save".
+- Alternatively you can create the schemas and register the content types listed above manually in Dynamic Content.
 
 ### Creating a Blog content item
 
@@ -89,9 +67,11 @@ How to create a blog content item for your blog:
 4. Select the "Blog" (or whatever label to assigned to the "blog.json" content type)
 5. Enter a title, heading and search placeholder (these will appear on your blog)
 6. Enter a delivery key, e.g. "blog", this value will be used later on to retrieve the blog during the build process
-6. Click "Save"
+7. Click "Save"
+8. Click on the "Save" drop down menu, select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve the blog during the build phase.
+9. Click "Publish". The blog must be published for it to be available to the Netlify build process later, otherwise the build will fail.
 
-### Creating a search index for your blog-post's
+### Creating a production search index for your published blog-posts
 
 1. Navigate to the "Development" section
 2. Select "Search Indexes"
@@ -99,21 +79,36 @@ How to create a blog content item for your blog:
 4. Enter a search label (e.g. "blog posts")
 5. Select the "Blog post" content type
 6. Select "Production" when asked what kind of data is to be stored in this index.
-7. Make a note of the index name in the top left (there's a copy text button next to it), we'll be needed this later
-8. Select the "Keys" tab and record the "Application ID" & "Search API key".
+7. Make a note of the index name in the top left (there's a copy text button next to it), we'll be needing this later
+8. Select the "Keys" tab and make a note of the "Application ID" & "Search API key".
+
+#### Configure your index
+
+Configure searchable attributes, custom ranking (to ensure) and facets. Respectively these settings will ensure relevant keyword search, sort blog posts by the 'creation date' property (newest first), and enable filtering by author or tag.
+
+On your index select the "Configure" tab and paste in the following configuration and click "Save".
+
+```json
+{
+  "searchableAttributes": ["title", "description", "content"],
+  "customRanking": ["desc(dateAsTimeStamp)"],
+  "attributesForFaceting": ["tags", "authors.name"]
+}
+```
+
+Note that the dateAsTimeStamp attribute used for ranking and sorting will not be available until you have configured the webhook custom payload and published some blog posts (see below).
 
 #### Add sort options
 
-For the sort-by drop menu to work we need to create the following 4 sort by indexes (also known as replica indexes)
+For the sort-by drop menu to work we need to create the following 4 sort options
 
 | Property        | Ordering   |
 | --------------- | ---------- |
 | dateAsTimeStamp | Ascending  |
-| dateAsTimeStamp | Descending |
 | readTime        | Ascending  |
 | readTime        | Descending |
 
-To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete"
+From the newly created search index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete" (repeating for each option).
 
 #### Configure webhook custom payload
 
@@ -123,7 +118,7 @@ Next we have to customize the webhook payload, as we want change some of the dat
 
 1. Navigate back to your Search Index (if you're not still there)
 2. Select the "Webhooks" tab
-3. Select the "indexing webhook" or the "PUT" webhook, it should be called something like "Search Index: MyHub.blog-posts / Blog post" (you can click directly on the webhook name or via the context menu at the right hand side)
+3. Select the "indexing webhook" or "PUT" webhook, it should be called something like "Search Index: MyHub.blog-posts / Blog post" (you can click directly on the webhook name or via the context menu at the right hand side)
 4. Scroll down the bottom of the webhook configuration screen and in "Payload" section replace `{{{JSONstringify this}}}` with the following:
 
 ```handlebars
@@ -164,32 +159,19 @@ Notes:
 
 - For more information regarding the webhook payload that is mentioned here, please our documentation - [Optimizing the Algolia record size](https://docs.amplience.net/integration/webhooksearchexamplepart2.html)
 
-#### Add a custom ranking to your primary index
+### Creating a staging search index for visualization and preview
 
-By default your search index is sorted in the order in which your blog posts are published, to change this so they are sorted by the most recent, you need to add a "customRanking" to your primary index.
+1. Navigate to the "Development" section
+2. Select "Search Indexes"
+3. Click "Create index"
+4. Enter a search label (e.g. "blog posts - staging")
+5. Select the "Blog post" content type
+6. Select "Staging" when asked what kind of data is to be stored in this index.
+7. Make a note of the index name in the top left (there's a copy text button next to it), we'll be needing this later
 
-On your index select the "Configure" tab and paste in the following configuration and click "Save" (if you're asked, don't copy this setting to your replicas)
+#### Configure your index, Add sort options and Configure webhook custom payload
 
-```json
-{
-  "customRanking": ["desc(dateAsTimeStamp)"]
-}
-```
-
-If you have any blog posts in your index, you can validate your changes in the "Browse" tab where all of your blog posts should now be sorted by date, with your most recent blog post at the top.
-
-#### Add sort options
-
-For the sort-by drop menu to work we need to create the following 4 sort by indexes (also known as replica indexes)
-
-| Property        | Ordering   |
-| --------------- | ---------- |
-| dateAsTimeStamp | Ascending  |
-| dateAsTimeStamp | Descending |
-| readTime        | Ascending  |
-| readTime        | Descending |
-
-To create these replicas from the newly created index click on the "Add sort option" button in the top right and enter the property and ordering and click "Save & complete"
+Repeat all of the steps used for your production index to configure your index, add sort options and configure webhook custom payload.
 
 ### Add facets
 
@@ -215,13 +197,13 @@ During the Netlify setup process you will need to define the following build env
 
 #### Required settings
 
-| Environment Var              | Description                                                             | Example                          |
-| ---------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
-| ALGOLIA_APPLICATION_ID       | The Algolia Application ID                                              | applicationABCDEFGH              |
-| SEARCH_API_KEY               | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
-| SEARCH_INDEX_NAME_PRODUCTION | The Algolia production index name                                       | my-hub.blog-posts                |
-| DYNAMIC_CONTENT_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
-| DYNAMIC_CONTENT_HUB_NAME     | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
+| Environment Var                        | Description                                                             | Example                  |
+| -------------------------------------- | ----------------------------------------------------------------------- | ------------------------ |
+| ALGOLIA_APPLICATION_ID                 | The search application ID                                               | my-search-application-id |
+| ALGOLIA_API_KEY                        | The search API key                                                      | my-search-api-key        |
+| ALGOLIA_PRODUCTION_INDEX_NAME          | The production search index name                                        | my-hub.blog-posts        |
+| DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                     |
+| DYNAMIC_CONTENT_HUB_NAME               | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                   |
 
 #### Optional settings
 
@@ -278,13 +260,13 @@ For each of the Content Type Schemas that support visualization (see table in [C
 
 If you used the dc-cli tool to register your content types, they will already have visualizations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the `npm run sync` command again, or by manually updating your content types in Dynamic Content.
 
-### How to configure Preview
+### How to configure Preview (optional)
 
-The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
+Navigate to Hub settings > "Preview" in Dynamic Content. The Preview application URL should be the domain with the path of `/preview/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/preview/?vse={{vse.domain}}`.
 
 Notes:
 
-- Blog slot editions will not include any unpublished blog posts as they are a reference link in the blog post. Publishing the newly created blog posts will make them available when using Preview.
+- Since blog posts are published on demand, not through an edition, the purpose of the preview application is to display the blog with the latest staged content (current saved versions), no time-based preview will be possible. Therefore it is not required to configure it in Dynamic Content.
 
 # Creating your first blog post
 
