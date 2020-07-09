@@ -12,15 +12,13 @@ This is an application built using the Amplience Dynamic Content Service and the
 
 # How To Use
 
-To use this application you will need to install the content schemas (see ./schema/\*.json) in Dynamic Content and have some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
+To use this application you will need to install the content schemas (see ./schema/\*.json) and setup the search indexes in Dynamic Content and have some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
 
-Once you have everything installed you can then create new blog posts and schedule them for when you want them to go live on your blog.
+Once you have everything installed you can then create new blog posts and publish them to your blog.
 
 ![Scheduling a Blog List update in Dynamic Content](./media/publish-blog-list-via-edition.gif)
 
 # Installation
-
-To install and use this blog you first need to create the required schemas and register the Content Types in Dynamic Content.
 
 ## Content Type Schemas
 
@@ -57,7 +55,7 @@ Notes:
 
 ### Creating a Blog content item
 
-Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog content item.
+Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog content item. This is used to store the title and description for you blog to create the entry point for NextJs to build the blog.
 
 How to create a blog content item for your blog:
 
