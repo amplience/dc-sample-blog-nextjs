@@ -1,27 +1,28 @@
-import React, { useState, useEffect } from 'react';
 import algoliasearch from 'algoliasearch';
 import { NextPage } from 'next';
-import Router, { useRouter } from 'next/router';
 import { NextSeo } from 'next-seo';
-import { findResultsState } from 'react-instantsearch-dom/server';
+import Router, { useRouter } from 'next/router';
 import qs from 'qs';
-import getBlogContentItem from '../common/services/get-blog-content-item.service';
-import HeroBanner from '../components/hero-banner/hero-banner';
-import Layout from '../layouts/default';
+import React, { useEffect, useState } from 'react';
+import { SearchState } from 'react-instantsearch-core';
+import { Configure, InstantSearch, ScrollTo } from 'react-instantsearch-dom';
+import { findResultsState } from 'react-instantsearch-dom/server';
 import useSWR from 'swr';
 import { Blog } from '../common/interfaces/blog.interface';
-import { InstantSearch, Configure, ScrollTo } from 'react-instantsearch-dom';
-import { SearchState } from 'react-instantsearch-core';
-import SearchResultList from '../components/search-result-list/search-result-list';
+import getBlogContentItem from '../common/services/get-blog-content-item.service';
+import HeaderFacetBar from '../components/header-facet-bar/header-facet-bar';
 import HeaderSearchBox from '../components/header-search-box/header-search-box';
+import HeroBanner from '../components/hero-banner/hero-banner';
+import SearchResultList from '../components/search-result-list/search-result-list';
 import SearchResultPagination from '../components/search-result-pagination/search-result-pagination';
+import Layout from '../layouts/default';
 
 interface IndexProps extends Blog {
   buildTimeResultState: unknown;
 }
 
-const sanitiseStateParams = (state: SearchState) => {
-  const acceptedKeys = ['page', 'query', 'sortBy'];
+const sanitizeStateParams = (state: SearchState) => {
+  const acceptedKeys = ['page', 'query', 'sortBy', 'menu'];
   return Object.keys(state).reduce((r: SearchState, s) => {
     if (acceptedKeys.includes(s)) {
       r[s] = state[s];
@@ -30,13 +31,13 @@ const sanitiseStateParams = (state: SearchState) => {
   }, {});
 };
 
-const createURL = (state: SearchState): string => `?${qs.stringify(sanitiseStateParams(state))}`;
+const createURL = (state: SearchState): string => `?${qs.stringify(sanitizeStateParams(state))}`;
 
 const urlToSearchState = (path: string): SearchState =>
-  path.includes('?') ? sanitiseStateParams(qs.parse(path.substring(path.indexOf('?') + 1))) : {};
+  path.includes('?') ? sanitizeStateParams(qs.parse(path.substring(path.indexOf('?') + 1))) : {};
 
 const searchStateToUrl = (searchState: SearchState): string => {
-  return searchState ? `${window.location.pathname}?${qs.stringify(sanitiseStateParams(searchState))}` : '';
+  return searchState ? `${window.location.pathname}?${qs.stringify(sanitizeStateParams(searchState))}` : '';
 };
 
 const DEBOUNCE_TIME = 500;
@@ -95,6 +96,10 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         <ScrollTo scrollOn="page" />
         <HeroBanner heading={heading}>
           <HeaderSearchBox placeholderText={searchPlaceHolder} />
+          <HeaderFacetBar
+            authors={process.env.AUTHORS_FACET_FIELD as string}
+            tags={process.env.TAGS_FACET_FIELD as string}
+          />
         </HeroBanner>
         <SearchResultList></SearchResultList>
         <SearchResultPagination />
@@ -116,6 +121,7 @@ Index.getInitialProps = async (): Promise<IndexProps> => {
     process.env.ALGOLIA_APPLICATION_ID as string,
     process.env.ALGOLIA_API_KEY as string
   );
+
   try {
     const blog = await getBlogContentItem(process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string);
     const buildTimeResultState = await findResultsState(InstantSearch, {
