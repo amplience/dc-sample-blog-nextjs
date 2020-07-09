@@ -33,8 +33,20 @@
       "minLength": 0,
       "maxLength": 150,
       "examples": ["Search for articles and topics"]
+    },
+    "_meta":{
+      "type":"object",
+      "properties":{
+        "deliveryKey":{
+          "type":"string",
+          "title":"Delivery key",
+          "description": "The delivery key will be used to retrieve the blog when it is built",
+          "examples": ["blog"]
+        }
+      },
+      "required": ["deliveryKey"]
     }
   },
   "required": ["title", "heading", "searchPlaceHolder"],
-  "propertyOrder": ["title", "heading", "searchPlaceHolder"]
+  "propertyOrder": ["title", "heading", "searchPlaceHolder","_meta"]
 }
