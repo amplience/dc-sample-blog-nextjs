@@ -48,7 +48,6 @@ export default ({ children, contentOnly = false }: DefaultLayoutProps): ReactEle
           font-size: ${theme.fonts.size.root};
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap');
         body {
           font-family: 'Roboto', Arial, sans-serif;
           font-weight: ${theme.fonts.weight.regular};
