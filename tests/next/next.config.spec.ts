@@ -73,7 +73,7 @@ describe('next.config.js', (): void => {
     });
   });
 
-  test('exportPathMap should return landing page and omit any blog posts that do not have a delivery key is not set', async (): Promise<
+  test('exportPathMap should return landing page and use delivery id if any blog posts do not have a delivery key set', async (): Promise<
     void
   > => {
     mockSearch.mockImplementationOnce(() => {
@@ -96,6 +96,12 @@ describe('next.config.js', (): void => {
         query: {
           content: '',
           vse: ''
+        }
+      },
+      '/blog/test-object-id': {
+        page: '/blog/[...slug]',
+        query: {
+          slug: 'test-object-id'
         }
       },
       '/visualization.html': {

@@ -43,17 +43,18 @@ const exportPathMap = async function () {
     });
 
     results.hits.forEach(blogPost => {
+      console.log(blogPost);
       if (!blogPost.deliveryKey) {
         console.warn('No deliveryKey for blogPost', blogPost);
-      } else {
-        const path = `/blog/${encodeURIComponent(blogPost.deliveryKey)}`;
-        const pageInfo = {
-          page: '/blog/[...slug]',
-          query: { slug: blogPost.deliveryKey }
-        };
-        console.info(`Loading blog post "${path}`, pageInfo);
-        pages[path] = pageInfo;
       }
+      const slug = blogPost.deliveryKey ? blogPost.deliveryKey : blogPost.objectID;
+      const path = `/blog/${encodeURIComponent(slug)}`;
+      const pageInfo = {
+        page: '/blog/[...slug]',
+        query: { slug }
+      };
+      console.info(`Loading blog post "${path}`, pageInfo);
+      pages[path] = pageInfo;
     });
   } catch (err) {
     console.error('Error building exportPathMap', err);
