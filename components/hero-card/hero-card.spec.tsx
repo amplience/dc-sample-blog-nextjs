@@ -20,11 +20,10 @@ jest.mock('react-instantsearch-dom', () => ({
   }
 }));
 
-
 describe('HeroCard', () => {
   test('renders full hero card', async () => {
     mockUseRouter.mockImplementationOnce(() => {
-      return { query: {} };
+      return { asPath: '' };
     });
     const component = ShallowRenderer.createRenderer();
     component.render(<HeroCard blogPost={blogPostFixture} />);
@@ -33,7 +32,7 @@ describe('HeroCard', () => {
 
   test('renders full hero card with vse query string in link for preview', async () => {
     mockUseRouter.mockImplementationOnce(() => {
-      return { query: { vse: 'test-vse.domain' } };
+      return { asPath: '?vse=test-vse.domain' };
     });
     const component = ShallowRenderer.createRenderer();
     component.render(<HeroCard blogPost={blogPostFixture} />);
