@@ -11,7 +11,7 @@ const SortByDropdown = (): ReactElement => {
         <span>Sort by</span>
         <SortBy
           className="container-option"
-          defaultRefinement={indexName}
+          defaultRefinement={`${indexName}_sort-dateastimestamp-desc`}
           items={[
             {
               label: 'Sort by date (ascending)',
