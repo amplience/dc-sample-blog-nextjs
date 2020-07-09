@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Picture from '../picture/picture';
 import { Highlight } from 'react-instantsearch-dom';
 import NextLink from '../next-link/next-link';
+import TagChips from '../tag-chips/tag-chips';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -72,7 +73,10 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
                   <Highlight hit={blogPost} attribute="title" tagName="mark" />
                 </h1>
                 <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
-                <p><Highlight hit={blogPost} attribute="description" tagName="mark" /></p>
+                <p>
+                  <Highlight hit={blogPost} attribute="description" tagName="mark" />
+                </p>
+                <TagChips tags={blogPost.tags} />
               </div>
             </article>
           </NextLink>
