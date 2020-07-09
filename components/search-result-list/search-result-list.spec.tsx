@@ -6,6 +6,7 @@ import { isBlogPost } from '../../common/services/blog-post.service';
 jest.mock('../../common/services/blog-post.service');
 
 jest.mock('react-instantsearch-dom', () => ({
+  ...jest.requireActual('react-instantsearch-dom'),
   connectStateResults: templateFn => params => templateFn(params)
 }));
 
@@ -53,6 +54,9 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
+        <ConnectorWrapper
+          hitsPerPage={4}
+        />
         <SortByDropdown />
         <HeroCard
           blogPost={
@@ -82,6 +86,9 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
+        <ConnectorWrapper
+          hitsPerPage={4}
+        />
         <SortByDropdown />
         <HeroCard
           blogPost={
@@ -123,6 +130,9 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
+        <ConnectorWrapper
+          hitsPerPage={4}
+        />
         <SortByDropdown />
         <HeroCard />
         <BlogList
