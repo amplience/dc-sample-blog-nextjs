@@ -12,6 +12,10 @@ export default class CustomDocument extends Document {
           <link rel="apple-touch-icon" href="/static/icons/icon-192x192.png"></link>
           <link rel="preconnect" href="https://www.google-analytics.com"></link>
           <link rel="preconnect" href="https://i1.adis.ws"></link>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+          ></link>
         </Head>
         <body>
           <Main />
