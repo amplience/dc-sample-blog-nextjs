@@ -23,7 +23,7 @@
         "deliveryKey":{
           "type":"string",
           "title":"Delivery key",
-          "description": "The delivery key is used as the URL slugt"
+          "description": "The delivery key is used as the URL slug"
         }
       },
       "required": ["deliveryKey"]
