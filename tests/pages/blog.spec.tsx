@@ -23,6 +23,7 @@ describe('Blog page', () => {
   beforeEach(() => {
     process.env.DYNAMIC_CONTENT_REFERENCE_ID = 'reference-id';
     process.env.GA_TRACKING_ID = 'ga-tracking-id';
+    process.env.TAGS_FACET_FIELD = 'tags';
     blogPost = { ...blogPostFixture };
     blogPost._meta.toJSON = () => ({});
     jest.clearAllMocks();

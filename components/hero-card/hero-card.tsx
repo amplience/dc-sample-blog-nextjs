@@ -7,6 +7,7 @@ import Picture from '../picture/picture';
 import { Highlight } from 'react-instantsearch-dom';
 import NextLink from '../next-link/next-link';
 import qs from 'qs';
+import TagChips from '../tag-chips/tag-chips';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -78,6 +79,7 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
                 <p>
                   <Highlight hit={blogPost} attribute="description" tagName="mark" />
                 </p>
+                <TagChips tags={blogPost.tags} />
               </div>
             </article>
           </NextLink>
