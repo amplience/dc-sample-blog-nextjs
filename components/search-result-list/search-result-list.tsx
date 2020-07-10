@@ -15,11 +15,11 @@ const BlogPostSearchResultList: FunctionComponent<StateResultsProvided<BlogPost>
   const router = useRouter();
   const facetSelected =
     router.query[`menu[${process.env.AUTHORS_FACET_FIELD}]`] || router.query[`menu[${process.env.TAGS_FACET_FIELD}]`];
-  let pageSize = 4;
+  let pageSize = 10;
   let showHeroCard = true;
 
   if (facetSelected || searchResults?.query || searchResults?.page > 0) {
-    pageSize = 3;
+    pageSize = 9;
     showHeroCard = false;
   }
 

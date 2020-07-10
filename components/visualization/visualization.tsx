@@ -62,10 +62,10 @@ export default class Visualization extends Component<VisualizationProps, Visuali
   private async getSearchParams(): Promise<SearchParams> {
     const searchClient = algoliasearch(
       process.env.ALGOLIA_APPLICATION_ID as string,
-      process.env.ALGOLIA_API_KEY as string
+      process.env.SEARCH_API_KEY as string
     );
 
-    const indexName = process.env.ALGOLIA_STAGING_INDEX_NAME as string;
+    const indexName = process.env.SEARCH_INDEX_NAME_STAGING as string;
 
     const resultsState = await findResultsState(InstantSearch, {
       searchClient,
