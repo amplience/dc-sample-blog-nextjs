@@ -28,8 +28,8 @@ jest.mock('isomorphic-unfetch', () => {
 describe('Visualization', (): void => {
   beforeEach(() => {
     process.env.ALGOLIA_APPLICATION_ID = 'algolia-app-id';
-    process.env.ALGOLIA_API_KEY = 'algolia-search-key';
-    process.env.ALGOLIA_STAGING_INDEX_NAME = 'algolia-index-name';
+    process.env.SEARCH_API_KEY = 'algolia-search-key';
+    process.env.SEARCH_INDEX_NAME_STAGING = 'algolia-index-name';
 
     mockFetch.mockImplementationOnce((): { json: () => VideoProfile; status: number } => {
       return {

@@ -4,7 +4,6 @@ describe('dynamic-content-client-config', (): void => {
   beforeEach((): void => {
     jest.resetModules();
     process.env = { ...OLD_ENV };
-    delete process.env.DYNAMIC_CONTENT_ACCOUNT_NAME;
     delete process.env.DYNAMIC_CONTENT_SECURE_MEDIA_HOST;
   });
 
