@@ -31,8 +31,8 @@ const exportPathMap = async function () {
     }
   };
 
-  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.ALGOLIA_API_KEY);
-  const index = client.initIndex(process.env.ALGOLIA_PRODUCTION_INDEX_NAME);
+  const client = algoliasearch(process.env.ALGOLIA_APPLICATION_ID, process.env.SEARCH_API_KEY);
+  const index = client.initIndex(process.env.SEARCH_INDEX_NAME_PRODUCTION);
 
   try {
     console.info('\nLoading blog posts:');
@@ -66,12 +66,12 @@ const exportPathMap = async function () {
 const env = {
   URL: process.env.URL,
   ALGOLIA_APPLICATION_ID: process.env.ALGOLIA_APPLICATION_ID,
-  ALGOLIA_API_KEY: process.env.ALGOLIA_API_KEY,
-  ALGOLIA_PRODUCTION_INDEX_NAME: process.env.ALGOLIA_PRODUCTION_INDEX_NAME,
-  ALGOLIA_STAGING_INDEX_NAME: process.env.ALGOLIA_STAGING_INDEX_NAME,
+  SEARCH_API_KEY: process.env.SEARCH_API_KEY,
+  SEARCH_INDEX_NAME_PRODUCTION: process.env.SEARCH_INDEX_NAME_PRODUCTION,
+  SEARCH_INDEX_NAME_STAGING: process.env.SEARCH_INDEX_NAME_STAGING,
   AUTHORS_FACET_FIELD: process.env.AUTHORS_FACET_FIELD,
   DYNAMIC_CONTENT_HUB_NAME: process.env.DYNAMIC_CONTENT_HUB_NAME,
-  DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY: process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY,
+  DYNAMIC_CONTENT_DELIVERY_KEY: process.env.DYNAMIC_CONTENT_DELIVERY_KEY,
   DYNAMIC_CONTENT_BASE_URL: process.env.DYNAMIC_CONTENT_BASE_URL,
   DYNAMIC_CONTENT_SECURE_MEDIA_HOST: process.env.DYNAMIC_CONTENT_SECURE_MEDIA_HOST,
   ROBOTS_META_TAG_NOINDEX: process.env.ROBOTS_META_TAG_NOINDEX,

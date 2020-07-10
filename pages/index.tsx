@@ -57,12 +57,12 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
 
   const searchClient = algoliasearch(
     process.env.ALGOLIA_APPLICATION_ID as string,
-    process.env.ALGOLIA_API_KEY as string
+    process.env.SEARCH_API_KEY as string
   );
   const { data: runtimeResultState } = useSWR('index', () =>
     findResultsState(InstantSearch, {
       searchClient,
-      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string,
+      indexName: process.env.SEARCH_INDEX_NAME_PRODUCTION as string,
       searchState
     })
   );
@@ -85,7 +85,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
     <Layout>
       <NextSeo {...seoParams} />
       <InstantSearch
-        indexName={process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string}
+        indexName={process.env.SEARCH_INDEX_NAME_PRODUCTION as string}
         searchClient={searchClient}
         resultsState={runtimeResultState || buildTimeResultState}
         createURL={createURL}
@@ -119,14 +119,14 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
 Index.getInitialProps = async (): Promise<IndexProps> => {
   const searchClient = algoliasearch(
     process.env.ALGOLIA_APPLICATION_ID as string,
-    process.env.ALGOLIA_API_KEY as string
+    process.env.SEARCH_API_KEY as string
   );
 
   try {
-    const blog = await getBlogContentItem(process.env.DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY as string);
+    const blog = await getBlogContentItem(process.env.DYNAMIC_CONTENT_DELIVERY_KEY as string);
     const buildTimeResultState = await findResultsState(InstantSearch, {
       searchClient,
-      indexName: process.env.ALGOLIA_PRODUCTION_INDEX_NAME as string
+      indexName: process.env.SEARCH_INDEX_NAME_PRODUCTION as string
     });
 
     return { ...blog, buildTimeResultState };
