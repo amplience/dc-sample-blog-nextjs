@@ -55,7 +55,7 @@ describe('SearchResultList', () => {
         id="searchResults"
       >
         <ConnectorWrapper
-          hitsPerPage={4}
+          hitsPerPage={10}
         />
         <SortByDropdown />
         <HeroCard
@@ -87,7 +87,7 @@ describe('SearchResultList', () => {
         id="searchResults"
       >
         <ConnectorWrapper
-          hitsPerPage={4}
+          hitsPerPage={10}
         />
         <SortByDropdown />
         <HeroCard
@@ -131,7 +131,7 @@ describe('SearchResultList', () => {
         id="searchResults"
       >
         <ConnectorWrapper
-          hitsPerPage={4}
+          hitsPerPage={10}
         />
         <SortByDropdown />
         <HeroCard />
