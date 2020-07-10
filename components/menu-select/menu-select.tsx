@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { MenuProvided } from 'react-instantsearch-core';
 import { connectMenu } from 'react-instantsearch-dom';
 import { useRouter } from 'next/router';
+import theme from '../../common/styles/default/theme';
 
 const attributeSelected = (el: HTMLSelectElement) => {
   if (!el.value) {
@@ -38,12 +39,21 @@ const MenuSelect = ({
       </select>
       <style jsx>{`
         select {
+          font-family: 'Roboto', Arial, sans-serif;
+          font-weight: ${theme.fonts.weight.regular};
+          font-size: ${theme.fonts.size.small};
           margin-right: 20px;
           width: 320px;
           background-color: #2d3640;
           border: 1px solid #4e555e;
           color: #999;
           padding: 5px;
+          -webkit-appearance: none;
+          background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' fill='%23999'><polygon points='0,0 80,0 40,40'/></svg>")
+            no-repeat;
+          background-size: 12px;
+          background-position: calc(100% - 5px) 10px;
+          background-repeat: no-repeat;
         }
 
         select.selected {
