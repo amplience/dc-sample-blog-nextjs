@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Picture from '../picture/picture';
 import { Highlight } from 'react-instantsearch-dom';
 import NextLink from '../next-link/next-link';
+import qs from 'qs';
 
 interface HeroCardProps {
   blogPost: BlogPost;
@@ -16,14 +17,16 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
     return <div />;
   } else {
     const router = useRouter();
-    const { vse } = router.query;
+    const parsedQueryString = qs.parse(router.asPath.substring(router.asPath.indexOf('?') + 1));
+    const { vse } = parsedQueryString;
     const routerQuery = vse ? `?vse=${vse}&content=${blogPost._meta.deliveryId}` : '';
     const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
-    const blogLink = `${path}${routerQuery}`;
+    const blogHref = vse ? '/preview' : '/blog/[...slug]';
+
     return (
       <>
         <section>
-          <NextLink href="/blog/[...slug]" as={blogLink} ariaLabel={blogPost.title}>
+          <NextLink href={blogHref} as={`${path}${routerQuery}`} ariaLabel={blogPost.title}>
             <article>
               <div className="blog-card-image">
                 <Picture
@@ -72,7 +75,9 @@ const HeroCard = ({ blogPost }: HeroCardProps): ReactElement => {
                   <Highlight hit={blogPost} attribute="title" tagName="mark" />
                 </h1>
                 <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
-                <p><Highlight hit={blogPost} attribute="description" tagName="mark" /></p>
+                <p>
+                  <Highlight hit={blogPost} attribute="description" tagName="mark" />
+                </p>
               </div>
             </article>
           </NextLink>

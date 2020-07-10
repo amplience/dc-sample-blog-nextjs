@@ -22,7 +22,7 @@ interface IndexProps extends Blog {
 }
 
 const sanitizeStateParams = (state: SearchState) => {
-  const acceptedKeys = ['page', 'query', 'sortBy', 'menu'];
+  const acceptedKeys = ['page', 'query', 'sortBy', 'menu', 'vse'];
   return Object.keys(state).reduce((r: SearchState, s) => {
     if (acceptedKeys.includes(s)) {
       r[s] = state[s];
