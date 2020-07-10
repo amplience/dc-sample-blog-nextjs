@@ -43,7 +43,6 @@ const exportPathMap = async function () {
     });
 
     results.hits.forEach(blogPost => {
-      console.log(blogPost);
       if (!blogPost.deliveryKey) {
         console.warn('No deliveryKey for blogPost', blogPost);
       }
