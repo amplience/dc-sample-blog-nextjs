@@ -280,7 +280,7 @@ If you used the dc-cli tool to register your content types, they will already ha
 
 ### How to configure Preview
 
-The Preview application URL should be the domain with the path of `/preview/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/preview/?vse={{vse.domain}}`.
+The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
 
 Notes:
 
@@ -295,7 +295,7 @@ After all of that we now have everything setup and you are ready to start writin
 3. Proceed to fill out the form, you can click on the "( + )" icons to include other content items
 4. Once done, click "Save"
 5. Next we need to define the "Delivery Key" for this content item, this will become the URL path/slug (e.g. /blog/hello-and-welcome-to-our-new-blog)
-6. You can preview your blog post via the visualisation icon (the eye) in the toolbar.
+6. You can preview your blog post via the visualization icon (the eye) in the toolbar.
 7. Once you're happy, go ahead an publish.
 
 # Publishing
