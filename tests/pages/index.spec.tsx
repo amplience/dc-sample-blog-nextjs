@@ -18,8 +18,8 @@ jest.mock('algoliasearch', () => jest.fn().mockImplementation(() => ({ search: j
 describe('Index', () => {
   beforeEach(() => {
     process.env.ALGOLIA_APPLICATION_ID = 'algolia-app-id';
-    process.env.ALGOLIA_API_KEY = 'algolia-search-key';
-    process.env.ALGOLIA_PRODUCTION_INDEX_NAME = 'algolia-index-name';
+    process.env.SEARCH_API_KEY = 'algolia-search-key';
+    process.env.SEARCH_INDEX_NAME_PRODUCTION = 'algolia-index-name';
     process.env.DYNAMIC_CONTENT_REFERENCE_ID = 'reference-id';
     process.env.GA_TRACKING_ID = 'ga-tracking-id';
   });

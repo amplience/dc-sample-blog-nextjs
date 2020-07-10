@@ -215,13 +215,13 @@ During the Netlify setup process you will need to define the following build env
 
 #### Required settings
 
-| Environment Var                        | Description                                                             | Example                          |
-| -------------------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
-| ALGOLIA_APPLICATION_ID                 | The Algolia Application ID                                              | applicationABCDEFGH              |
-| ALGOLIA_API_KEY                        | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
-| ALGOLIA_PRODUCTION_INDEX_NAME          | The Algolia production index name                                       | my-hub.blog-posts                |
-| DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
-| DYNAMIC_CONTENT_HUB_NAME               | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
+| Environment Var              | Description                                                             | Example                          |
+| ---------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
+| ALGOLIA_APPLICATION_ID       | The Algolia Application ID                                              | applicationABCDEFGH              |
+| SEARCH_API_KEY               | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
+| SEARCH_INDEX_NAME_PRODUCTION | The Algolia production index name                                       | my-hub.blog-posts                |
+| DYNAMIC_CONTENT_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
+| DYNAMIC_CONTENT_HUB_NAME     | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
 
 #### Optional settings
 
@@ -232,7 +232,7 @@ During the Netlify setup process you will need to define the following build env
 | GA_TRACKING_ID                    | Google Analytics                                                                                     | UA-1234567890                          |
 | BASE_URL\*                        | Base URL, used in generating links                                                                   | https://blog.example.com               |
 | ROBOTS_META_TAG_NOINDEX           | Adds a noindex,nofollow meta tag to blog pages                                                       | true                                   |
-| ALGOLIA_STAGING_INDEX_NAME        | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
+| SEARCH_INDEX_NAME_STAGING         | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
 | AUTHORS_FACET_FIELD               | The name of the faceted field for authors                                                            | authors.name                           |
 | TAGS_FACET_FIELD                  | The name of the faceted field for tags                                                               | tags                                   |
 
@@ -327,11 +327,11 @@ npm run test
 To setup the application create a `.env` file within the root of the project containing the following - replacing values with the values you used during the setup of the blog.
 
 ```
-DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY=<Blog-Delivery-Key>
+DYNAMIC_CONTENT_DELIVERY_KEY=<Blog-Delivery-Key>
 DYNAMIC_CONTENT_HUB_NAME=<Account-Name>
 ALGOLIA_APPLICATION_ID=<SEARCH_INDEX_APPLICATION_ID>
-ALGOLIA_API_KEY=<SEARCH_INDEX_SEARCH_KEY>
-ALGOLIA_PRODUCTION_INDEX_NAME=<SEARCH_INDEX_NAME>
+SEARCH_API_KEY=<SEARCH_INDEX_SEARCH_KEY>
+SEARCH_INDEX_NAME_PRODUCTION=<SEARCH_INDEX_NAME>
 ```
 
 ### Using Staging/Other Environments
