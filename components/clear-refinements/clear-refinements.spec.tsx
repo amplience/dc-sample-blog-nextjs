@@ -12,7 +12,7 @@ describe('ClearRefinements component', () => {
     const component = renderer.create(<ClearRefinements />).toJSON();
     expect(component).toMatchInlineSnapshot(`
       <button
-        className="jsx-2901729026"
+        className="jsx-3340861473"
         disabled={true}
         onClick={[Function]}
       >
