@@ -215,13 +215,13 @@ During the Netlify setup process you will need to define the following build env
 
 #### Required settings
 
-| Environment Var                        | Description                                                             | Example                          |
-| -------------------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
-| ALGOLIA_APPLICATION_ID                 | The Algolia Application ID                                              | applicationABCDEFGH              |
-| ALGOLIA_API_KEY                        | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
-| ALGOLIA_PRODUCTION_INDEX_NAME          | The Algolia production index name                                       | my-hub.blog-posts                |
-| DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
-| DYNAMIC_CONTENT_HUB_NAME               | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
+| Environment Var              | Description                                                             | Example                          |
+| ---------------------------- | ----------------------------------------------------------------------- | -------------------------------- |
+| ALGOLIA_APPLICATION_ID       | The Algolia Application ID                                              | applicationABCDEFGH              |
+| SEARCH_API_KEY               | The Algolia Search API key                                              | aabbccddeeff11223344556677889900 |
+| SEARCH_INDEX_NAME_PRODUCTION | The Algolia production index name                                       | my-hub.blog-posts                |
+| DYNAMIC_CONTENT_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                             |
+| DYNAMIC_CONTENT_HUB_NAME     | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                           |
 
 #### Optional settings
 
@@ -232,7 +232,7 @@ During the Netlify setup process you will need to define the following build env
 | GA_TRACKING_ID                    | Google Analytics                                                                                     | UA-1234567890                          |
 | BASE_URL\*                        | Base URL, used in generating links                                                                   | https://blog.example.com               |
 | ROBOTS_META_TAG_NOINDEX           | Adds a noindex,nofollow meta tag to blog pages                                                       | true                                   |
-| ALGOLIA_STAGING_INDEX_NAME        | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
+| SEARCH_INDEX_NAME_STAGING         | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
 | AUTHORS_FACET_FIELD               | The name of the faceted field for authors                                                            | authors.name                           |
 | TAGS_FACET_FIELD                  | The name of the faceted field for tags                                                               | tags                                   |
 
@@ -280,7 +280,7 @@ If you used the dc-cli tool to register your content types, they will already ha
 
 ### How to configure Preview
 
-The Preview application URL should be the domain with the path of `/preview/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/preview/?vse={{vse.domain}}`.
+The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
 
 Notes:
 
@@ -295,7 +295,7 @@ After all of that we now have everything setup and you are ready to start writin
 3. Proceed to fill out the form, you can click on the "( + )" icons to include other content items
 4. Once done, click "Save"
 5. Next we need to define the "Delivery Key" for this content item, this will become the URL path/slug (e.g. /blog/hello-and-welcome-to-our-new-blog)
-6. You can preview your blog post via the visualisation icon (the eye) in the toolbar.
+6. You can preview your blog post via the visualization icon (the eye) in the toolbar.
 7. Once you're happy, go ahead an publish.
 
 # Publishing
@@ -327,11 +327,11 @@ npm run test
 To setup the application create a `.env` file within the root of the project containing the following - replacing values with the values you used during the setup of the blog.
 
 ```
-DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY=<Blog-Delivery-Key>
+DYNAMIC_CONTENT_DELIVERY_KEY=<Blog-Delivery-Key>
 DYNAMIC_CONTENT_HUB_NAME=<Account-Name>
 ALGOLIA_APPLICATION_ID=<SEARCH_INDEX_APPLICATION_ID>
-ALGOLIA_API_KEY=<SEARCH_INDEX_SEARCH_KEY>
-ALGOLIA_PRODUCTION_INDEX_NAME=<SEARCH_INDEX_NAME>
+SEARCH_API_KEY=<SEARCH_INDEX_SEARCH_KEY>
+SEARCH_INDEX_NAME_PRODUCTION=<SEARCH_INDEX_NAME>
 ```
 
 ### Using Staging/Other Environments

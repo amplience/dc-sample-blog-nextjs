@@ -2,7 +2,7 @@
 
 exports[`Blog page renders Blog page with content 1`] = `
 <div
-  className="jsx-2459590784 site-container"
+  className="jsx-3319508426 site-container"
 >
   <section
     className="jsx-3469519543"
@@ -30,13 +30,13 @@ exports[`Blog page renders Blog page with content 1`] = `
     </header>
   </section>
   <div
-    className="jsx-2459590784 site-content"
+    className="jsx-3319508426 site-content"
   >
     <main
-      className="jsx-2459590784"
+      className="jsx-3319508426"
     >
       <div
-        className="jsx-2678308288 content-header"
+        className="jsx-452798245 content-header"
       >
         <section
           className="jsx-3378232041"
@@ -95,6 +95,28 @@ exports[`Blog page renders Blog page with content 1`] = `
             </div>
           </div>
         </section>
+        <div
+          className="jsx-3886722059 tag-chips"
+        >
+          <span
+            className="jsx-3886722059"
+            onClick={[Function]}
+          >
+            sir blog
+          </span>
+          <span
+            className="jsx-3886722059"
+            onClick={[Function]}
+          >
+            you're it
+          </span>
+          <span
+            className="jsx-3886722059"
+            onClick={[Function]}
+          >
+            No tiggy backs
+          </span>
+        </div>
         <section
           className="jsx-3528769338"
         >
@@ -111,7 +133,7 @@ exports[`Blog page renders Blog page with content 1`] = `
         </section>
       </div>
       <div
-        className="jsx-2678308288 blog-image"
+        className="jsx-452798245 blog-image"
       >
         <picture>
           <source
@@ -155,7 +177,7 @@ exports[`Blog page renders Blog page with content 1`] = `
         </picture>
       </div>
       <div
-        className="jsx-2678308288 content-wrapper"
+        className="jsx-452798245 content-wrapper"
       >
         <section
           className="jsx-1163017566"
@@ -172,7 +194,29 @@ exports[`Blog page renders Blog page with content 1`] = `
         </section>
       </div>
       <div
-        className="jsx-3936729912 content-footer"
+        className="jsx-3886722059 tag-chips"
+      >
+        <span
+          className="jsx-3886722059"
+          onClick={[Function]}
+        >
+          sir blog
+        </span>
+        <span
+          className="jsx-3886722059"
+          onClick={[Function]}
+        >
+          you're it
+        </span>
+        <span
+          className="jsx-3886722059"
+          onClick={[Function]}
+        >
+          No tiggy backs
+        </span>
+      </div>
+      <div
+        className="jsx-113928496 content-footer"
       >
         <section
           className="jsx-2442235184"

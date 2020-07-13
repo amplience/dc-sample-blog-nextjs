@@ -12,23 +12,23 @@ exports[`SortByDropdown should render LoadingBlogPosts when searchResults is und
     </span>
     <ConnectorWrapper
       className="container-option"
-      defaultRefinement="indexName_sort-dateastimestamp-desc"
+      defaultRefinement="indexName"
       items={
         Array [
           Object {
-            "label": "Sort by date (ascending)",
-            "value": "indexName_sort-dateastimestamp-asc",
+            "label": "date (ascending)",
+            "value": "indexName",
           },
           Object {
-            "label": "Sort by date (descending)",
+            "label": "date (descending)",
             "value": "indexName_sort-dateastimestamp-desc",
           },
           Object {
-            "label": "Sort by readtime (ascending)",
+            "label": "readtime (ascending)",
             "value": "indexName_sort-readtime-asc",
           },
           Object {
-            "label": "Sort by readtime (descending)",
+            "label": "readtime (descending)",
             "value": "indexName_sort-readtime-desc",
           },
         ]

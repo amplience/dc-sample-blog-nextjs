@@ -24,7 +24,7 @@ jest.mock('react-instantsearch-dom', () => ({
 describe('BlogCard', () => {
   test('renders full blog card', () => {
     mockUseRouter.mockImplementationOnce(() => {
-      return { query: {} };
+      return { asPath: '' };
     });
 
     const component = ShallowRenderer.createRenderer();
@@ -34,7 +34,7 @@ describe('BlogCard', () => {
 
   test('renders full blog card with lazy loaded placeholders', () => {
     mockUseRouter.mockImplementationOnce(() => {
-      return { query: {} };
+      return { asPath: '' };
     });
     const component = renderer.create(<BlogCard blogPost={blogPostFixture} />);
     expect(component.toJSON()).toMatchSnapshot();
@@ -43,7 +43,7 @@ describe('BlogCard', () => {
   test('renders full blog card with vse query string in link for preview', () => {
     mockUseRouter.mockImplementationOnce(() => {
       return {
-        query: { vse: 'test-vse.domain' }
+        asPath: '/?vse=test-vse.domain'
       };
     });
 

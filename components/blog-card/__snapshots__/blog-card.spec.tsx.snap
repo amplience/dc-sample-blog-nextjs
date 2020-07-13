@@ -465,6 +465,15 @@ Get listed
                 tagName="mark"
               />
             </p>
+            <TagChips
+              tags={
+                Array [
+                  "sir blog",
+                  "you're it",
+                  "No tiggy backs",
+                ]
+              }
+            />
           </div>
         </article>
       </t>

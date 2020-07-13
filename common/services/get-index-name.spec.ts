@@ -3,13 +3,13 @@ import * as nextRouter from 'next/router';
 
 describe('getIndexName', () => {
   beforeAll(() => {
-    process.env.ALGOLIA_PRODUCTION_INDEX_NAME = 'production';
-    process.env.ALGOLIA_STAGING_INDEX_NAME = 'staging';
+    process.env.SEARCH_INDEX_NAME_PRODUCTION = 'production';
+    process.env.SEARCH_INDEX_NAME_STAGING = 'staging';
   });
 
   afterAll(() => {
-    delete process.env.ALGOLIA_PRODUCTION_INDEX_NAME;
-    delete process.env.ALGOLIA_STAGING_INDEX_NAME;
+    delete process.env.SEARCH_INDEX_NAME_PRODUCTION;
+    delete process.env.SEARCH_INDEX_NAME_STAGING;
     jest.restoreAllMocks();
   });
 

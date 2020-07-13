@@ -7,6 +7,8 @@ import Picture from '../picture/picture';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import NextLink from '../next-link/next-link';
 import { Highlight } from 'react-instantsearch-dom';
+import qs from 'qs';
+import TagChips from '../tag-chips/tag-chips';
 
 interface BlogCardProps {
   blogPost: BlogPost;
@@ -14,14 +16,19 @@ interface BlogCardProps {
 
 const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
   const router = useRouter();
-  const vse = router.query.vse ? router.query.vse.toString() : '';
+  const parsedQueryString = qs.parse(router.asPath.substring(router.asPath.indexOf('?') + 1));
+  const { vse } = parsedQueryString;
   const routerQuery = vse ? `?vse=${vse}&content=${blogPost._meta.deliveryId}` : '';
-  const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
-  const blogLink = `${path}${routerQuery}`;
+
+  const path = vse
+    ? '/preview'
+    : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || blogPost._meta.deliveryId).toLowerCase())}`;
+  const blogHref = vse ? '/preview' : '/blog/[...slug]';
+
   return (
     <>
       <section>
-        <NextLink href="/blog/[...slug]" as={blogLink} ariaLabel={blogPost.title}>
+        <NextLink href={blogHref} as={`${path}${routerQuery}`} ariaLabel={blogPost.title}>
           <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
             <article>
               <div className="blog-card-image">
@@ -83,6 +90,7 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
                 <p>
                   <Highlight hit={blogPost} attribute="description" tagName="mark" />
                 </p>
+                <TagChips tags={blogPost.tags} />
               </div>
             </article>
           </LazyLoadComponent>

@@ -3,7 +3,7 @@
 exports[`Blog renders full blog 1`] = `
 <React.Fragment>
   <div
-    className="jsx-2678308288 content-header"
+    className="jsx-452798245 content-header"
   >
     <BlogPostAuthor
       authors={
@@ -38,13 +38,22 @@ exports[`Blog renders full blog 1`] = `
       date="August 07, 2019"
       readTime={12}
     />
+    <TagChips
+      tags={
+        Array [
+          "sir blog",
+          "you're it",
+          "No tiggy backs",
+        ]
+      }
+    />
     <BlogPostHeroBanner
       subTitle="Some text for the description that explains this blog post"
       title="My First Blog Post"
     />
   </div>
   <div
-    className="jsx-2678308288 blog-image"
+    className="jsx-452798245 blog-image"
   >
     <Picture
       image={
@@ -104,7 +113,7 @@ exports[`Blog renders full blog 1`] = `
     />
   </div>
   <div
-    className="jsx-2678308288 content-wrapper"
+    className="jsx-452798245 content-wrapper"
   >
     <Content
       content={
@@ -205,9 +214,9 @@ Get listed
     />
   </div>
   <JSXStyle
-    id="2678308288"
+    id="452798245"
   >
-    .content-header.jsx-2678308288{margin:auto;max-width:740px;}.content-wrapper.jsx-2678308288{margin:auto;max-width:675px;padding-bottom:100px;}.blog-image.jsx-2678308288 img{object-fit:cover;width:100%;}footer{margin-top:100px;}@media (max-width:675px){.content-header.jsx-2678308288,.content-footer.jsx-2678308288,.content-wrapper.jsx-2678308288{display:block;padding:0 20px;}}
+    .content-header.jsx-452798245{margin:auto;max-width:740px;}.content-header.jsx-452798245 div.tag-chips{padding-top:25px;}.content-wrapper.jsx-452798245{margin:auto;max-width:675px;padding-bottom:100px;}.blog-image.jsx-452798245 img{object-fit:cover;width:100%;}footer{margin-top:100px;}@media (max-width:675px){.content-header.jsx-452798245,.content-footer.jsx-452798245,.content-wrapper.jsx-452798245{display:block;padding:0 20px;}}
   </JSXStyle>
 </React.Fragment>
 `;
