@@ -235,6 +235,7 @@ During the Netlify setup process you will need to define the following build env
 | SEARCH_INDEX_NAME_STAGING         | The Algolia staging index name, used for previewing content                                          | my-hub.staging-blog-posts              |
 | AUTHORS_FACET_FIELD               | The name of the faceted field for authors                                                            | authors.name                           |
 | TAGS_FACET_FIELD                  | The name of the faceted field for tags                                                               | tags                                   |
+| HITS_PER_PAGE                     | The number of results to load from the search index (defaults to 10)                                 | 9                                      |
 
 \* Netlify defines the `BASE_URL` environment variable for each build, meaning you don't have to supply it.
 
