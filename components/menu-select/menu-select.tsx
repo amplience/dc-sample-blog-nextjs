@@ -42,6 +42,7 @@ const MenuSelect = ({
           font-family: 'Roboto', Arial, sans-serif;
           font-weight: ${theme.fonts.weight.regular};
           font-size: ${theme.fonts.size.small};
+          margin: 6px 0;
           margin-right: 20px;
           width: 320px;
           background-color: #2d3640;
@@ -52,12 +53,25 @@ const MenuSelect = ({
           background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='80' height='80' fill='%23999'><polygon points='0,0 80,0 40,40'/></svg>")
             no-repeat;
           background-size: 12px;
-          background-position: calc(100% - 5px) 10px;
+          background-position: calc(100% - 8px) 12px;
           background-repeat: no-repeat;
         }
 
         select.selected {
           background-color: #fff;
+        }
+
+        @media (max-width: ${theme.layout.widePageWidth}) {
+          select {
+            width: 180px;
+          }
+        }
+
+        @media (max-width: ${theme.layout.narrowPageWidth}) {
+          select {
+            width: 220px;
+            margin-right: 0;
+          }
         }
       `}</style>
     </>
