@@ -14,14 +14,13 @@ const SortByDropdown = (): ReactElement => {
           defaultRefinement={`${indexName}`}
           items={[
             {
-              label: 'date (ascending)',
+              label: 'date (descending)',
               value: `${indexName}`
             },
             {
-              label: 'date (descending)',
-              value: `${indexName}_sort-dateastimestamp-desc`
+              label: 'date (ascending)',
+              value: `${indexName}_sort-dateastimestamp-asc`
             },
-
             {
               label: 'readtime (ascending)',
               value: `${indexName}_sort-readtime-asc`
