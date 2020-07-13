@@ -20,18 +20,18 @@ describe('MenuSelect component', () => {
     const component = renderer.create(<MenuSelect attribute="testValue" />).toJSON();
     expect(component).toMatchInlineSnapshot(`
       <select
-        className="jsx-2370241207 "
+        className="jsx-840549149 "
         onChange={[Function]}
         value=""
       >
         <option
-          className="jsx-2370241207"
+          className="jsx-840549149"
           value=""
         >
           See all options
         </option>
         <option
-          className="jsx-2370241207"
+          className="jsx-840549149"
           value="value1"
         >
           label1
@@ -40,7 +40,7 @@ describe('MenuSelect component', () => {
           )
         </option>
         <option
-          className="jsx-2370241207"
+          className="jsx-840549149"
           value="value2"
         >
           label2
@@ -49,7 +49,7 @@ describe('MenuSelect component', () => {
           )
         </option>
         <option
-          className="jsx-2370241207"
+          className="jsx-840549149"
           value="value3"
         >
           label3

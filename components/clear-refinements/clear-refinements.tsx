@@ -29,6 +29,18 @@ const ClearRefinements = ({ items, refine }: CurrentRefinementsProvided): ReactE
         border-radius: 5px;
         border: none;
         padding: 10px 14px;
+        white-space: nowrap;
+      }
+
+      @media (max-width: ${theme.layout.narrowPageWidth}) {
+        select {
+          width: 220px;
+          margin-right: 0;
+        }
+
+        button {
+          margin-top: 6px;
+        }
       }
     `}</style>
   </>

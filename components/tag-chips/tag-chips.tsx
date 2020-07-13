@@ -5,7 +5,7 @@ import React, { ReactElement } from 'react';
 const buildUrl = (tag: string): string =>
   `/?${qs.stringify({ menu: { [process.env.TAGS_FACET_FIELD as string]: tag } })}`;
 
-const TagChips = ({ tags }: { tags: string[] }): ReactElement => {
+const TagChips = ({ tags = [] }: { tags: string[] }): ReactElement => {
   if (!process.env.TAGS_FACET_FIELD) {
     return <></>;
   }
