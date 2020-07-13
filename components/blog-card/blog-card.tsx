@@ -19,8 +19,12 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
   const parsedQueryString = qs.parse(router.asPath.substring(router.asPath.indexOf('?') + 1));
   const { vse } = parsedQueryString;
   const routerQuery = vse ? `?vse=${vse}&content=${blogPost._meta.deliveryId}` : '';
-  const path = vse ? '/preview' : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || '').toLowerCase())}`;
+
+  const path = vse
+    ? '/preview'
+    : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || blogPost._meta.deliveryId).toLowerCase())}`;
   const blogHref = vse ? '/preview' : '/blog/[...slug]';
+
   return (
     <>
       <section>

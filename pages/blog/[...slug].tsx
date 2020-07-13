@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage } from 'next';
 import BlogPost from '../../common/interfaces/blog-post.interface';
 import Layout from '../../layouts/default';
-import { getBlogPostByDeliveryKey } from '../../common/services/blog-post.service';
+import { getBlogPostByDeliveryKey, getBlogPostByDeliveryId } from '../../common/services/blog-post.service';
 import Microdata from '../../components/microdata/microdata';
 import { NextSeo } from 'next-seo';
 import Blog from '../../components/blog/blog';
@@ -10,6 +10,7 @@ import SharePost from '../../components/share-post/share-post';
 import { Image } from 'dc-delivery-sdk-js';
 import { defaultClientConfig } from '../../common/services/dynamic-content-client-config';
 import { NextPageContext } from 'next';
+import { isUuid } from 'uuidv4';
 import TagChips from '../../components/tag-chips/tag-chips';
 
 interface BlogPostProps {
@@ -75,11 +76,13 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
 BlogPostPage.getInitialProps = async ({ query }: NextPageContext) => {
   const { vse, slug } = query;
   const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
-  const deliveryKey = slug && slug[0];
-  if (typeof deliveryKey !== 'string') {
+  const deliverySlug = slug && slug[0];
+  if (typeof deliverySlug !== 'string') {
     throw new Error('Unable to generate BlogPostPage, missing deliveryKey');
   }
-  const blogPost = await getBlogPostByDeliveryKey(deliveryKey, stagingEnvironment);
+  const blogPost = isUuid(deliverySlug)
+    ? await getBlogPostByDeliveryId(deliverySlug, stagingEnvironment)
+    : await getBlogPostByDeliveryKey(deliverySlug, stagingEnvironment);
   return { blogPost };
 };
 
