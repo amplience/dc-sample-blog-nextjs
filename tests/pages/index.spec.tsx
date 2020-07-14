@@ -1,5 +1,6 @@
 /* eslint-env jest */
 import React from 'react';
+import { findResultsState } from 'react-instantsearch-dom/server';
 import Index from '../../pages/index';
 import blogListFixture from '../fixtures/blog-list-one-blog.json';
 import ShallowRenderer from 'react-test-renderer/shallow';
