@@ -41,7 +41,7 @@ const TagChips = ({ tags = [] }: { tags: string[] }): ReactElement => {
           font-weight: 400;
           color: #999;
           transition: all 0.3s;
-          cursor: hand;
+          cursor: pointer;
         }
 
         span:hover {
