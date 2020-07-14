@@ -16,12 +16,12 @@ exports[`SortByDropdown should render LoadingBlogPosts when searchResults is und
       items={
         Array [
           Object {
-            "label": "date (ascending)",
+            "label": "date (descending)",
             "value": "indexName",
           },
           Object {
-            "label": "date (descending)",
-            "value": "indexName_sort-dateastimestamp-desc",
+            "label": "date (ascending)",
+            "value": "indexName_sort-dateastimestamp-asc",
           },
           Object {
             "label": "readtime (ascending)",
