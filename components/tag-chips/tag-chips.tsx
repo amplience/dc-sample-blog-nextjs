@@ -15,7 +15,7 @@ const TagChips = ({ tags = [] }: { tags: string[] }): ReactElement => {
     <>
       <div className="tag-chips">
         {tagsToDisplay.map(tag => (
-          <span
+          <div
             key={tag}
             onClick={e => {
               e.preventDefault();
@@ -24,15 +24,16 @@ const TagChips = ({ tags = [] }: { tags: string[] }): ReactElement => {
             }}
           >
             {tag}
-          </span>
+          </div>
         ))}
       </div>
       <style jsx>{`
         div.tag-chips {
-          padding: 45px 0px 30px 15px;
+          padding: 45px 15px 30px 15px;
         }
 
-        span {
+        .tag-chips > div {
+          display: inline-block;
           border-radius: 20px;
           padding: 10px 14px;
           background-color: #f2f2f2;
@@ -42,14 +43,18 @@ const TagChips = ({ tags = [] }: { tags: string[] }): ReactElement => {
           color: #999;
           transition: all 0.3s;
           cursor: pointer;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: 100%;
         }
 
-        span:hover {
+        .tag-chips > div:hover {
           background-color: #e5e5e5;
           color: #333;
         }
 
-        span.active {
+        .tag-chips > div.active {
           border 2px solid hotpink;
         }
       `}</style>
