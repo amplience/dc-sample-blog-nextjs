@@ -46,7 +46,7 @@ const TagChips = ({ tags = [] }: { tags: string[] }): ReactElement => {
           overflow: hidden;
           white-space: nowrap;
           text-overflow: ellipsis;
-          max-width: 100%;
+          max-width: 220px;
         }
 
         .tag-chips > div:hover {

@@ -96,22 +96,22 @@ exports[`Blog page renders Blog page with content 1`] = `
           </div>
         </section>
         <div
-          className="jsx-3439215139 tag-chips"
+          className="jsx-1065517858 tag-chips"
         >
           <div
-            className="jsx-3439215139"
+            className="jsx-1065517858"
             onClick={[Function]}
           >
             sir blog
           </div>
           <div
-            className="jsx-3439215139"
+            className="jsx-1065517858"
             onClick={[Function]}
           >
             you're it
           </div>
           <div
-            className="jsx-3439215139"
+            className="jsx-1065517858"
             onClick={[Function]}
           >
             No tiggy backs
@@ -194,22 +194,22 @@ exports[`Blog page renders Blog page with content 1`] = `
         </section>
       </div>
       <div
-        className="jsx-3439215139 tag-chips"
+        className="jsx-1065517858 tag-chips"
       >
         <div
-          className="jsx-3439215139"
+          className="jsx-1065517858"
           onClick={[Function]}
         >
           sir blog
         </div>
         <div
-          className="jsx-3439215139"
+          className="jsx-1065517858"
           onClick={[Function]}
         >
           you're it
         </div>
         <div
-          className="jsx-3439215139"
+          className="jsx-1065517858"
           onClick={[Function]}
         >
           No tiggy backs
