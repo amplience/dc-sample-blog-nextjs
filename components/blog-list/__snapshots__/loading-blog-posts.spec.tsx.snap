@@ -2,10 +2,10 @@
 
 exports[`LoadingBlogPosts should render component 1`] = `
 <div
-  className="jsx-3443866396 loading-blog-posts"
+  className="jsx-2874207879 loading-blog-posts"
 >
   <p
-    className="jsx-3443866396"
+    className="jsx-2874207879"
   >
     Loading...
   </p>

@@ -5,15 +5,20 @@ const LoadingBlogPosts = (): ReactElement => {
     <>
       <div className="loading-blog-posts">
         <p>Loading...</p>
-        <style jsx>{`
-          .loading-blog-posts {
-            padding-top: 60px;
-            display: flex;
-            justify-content: center;
-            min-height: 500px;
-          }
-        `}</style>
       </div>
+      <style jsx>{`
+        .loading-blog-posts {
+          padding-top: 60px;
+          display: flex;
+          justify-content: center;
+        }
+        p {
+          text-align: center;
+          margin: auto;
+          width: 100%;
+          padding-top: 60px;
+        }
+      `}</style>
     </>
   );
 };

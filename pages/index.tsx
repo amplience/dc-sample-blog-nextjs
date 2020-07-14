@@ -44,6 +44,8 @@ const DEBOUNCE_TIME = 500;
 
 const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildTimeResultState }): JSX.Element => {
   const router = useRouter();
+  // only use builtTimeResultState server-side
+  const [resultState, setResultState] = useState(typeof window === 'object' ? null : buildTimeResultState);
   const [searchState, setSearchState] = useState(urlToSearchState(router.asPath));
   const [debouncedSetState, setDebouncedSetState] = useState(0);
   const seoParams: { [key: string]: string | boolean } = {
@@ -60,13 +62,15 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
     process.env.SEARCH_API_KEY as string
   );
 
-  const { data: runtimeResultState } = useSWR('index', () =>
-    findResultsState(InstantSearch, {
+  useSWR('index', async () => {
+    const { data: resultState } = await findResultsState(InstantSearch, {
       searchClient,
       indexName: process.env.SEARCH_INDEX_NAME_PRODUCTION as string,
       searchState
-    })
-  );
+    });
+    setResultState(resultState);
+  });
+
   const onSearchStateChange = (updatedSearchState: SearchState) => {
     const searchStateUrl = searchStateToUrl(updatedSearchState);
     clearTimeout(debouncedSetState);
@@ -88,7 +92,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
       <InstantSearch
         indexName={process.env.SEARCH_INDEX_NAME_PRODUCTION as string}
         searchClient={searchClient}
-        resultsState={runtimeResultState || buildTimeResultState}
+        resultsState={resultState}
         createURL={createURL}
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
