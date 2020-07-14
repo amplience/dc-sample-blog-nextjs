@@ -64,10 +64,9 @@ How to create a blog content item for your blog:
 3. Click "Create content"
 4. Select the "Blog" (or whatever label to assigned to the "blog.json" content type)
 5. Enter a title, heading and search placeholder (these will appear on your blog)
-6. Enter a delivery key, e.g. "blog", this value will be used later on to retrieve the blog during the build process
-7. Click "Save"
-8. Click on the "Save" drop down menu, select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve the blog during the build phase.
-9. Click "Publish". The blog must be published for it to be available to the Netlify build process later, otherwise the build will fail.
+6. Click "Save"
+7. Click on the "Save" drop down menu, select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve the blog during the build phase.
+8. Click "Publish". The blog must be published for it to be available to the Netlify build process later, otherwise the build will fail.
 
 ### Creating a production search index for your published blog-posts
 
