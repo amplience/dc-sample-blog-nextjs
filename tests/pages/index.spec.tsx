@@ -23,6 +23,7 @@ describe('Index', () => {
     process.env.SEARCH_INDEX_NAME_PRODUCTION = 'algolia-index-name';
     process.env.DYNAMIC_CONTENT_REFERENCE_ID = 'reference-id';
     process.env.GA_TRACKING_ID = 'ga-tracking-id';
+    process.env.HITS_PER_PAGE = '9';
   });
 
   afterEach(() => {

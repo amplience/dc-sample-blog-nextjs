@@ -40,14 +40,11 @@ const searchStateToUrl = (searchState: SearchState): string => {
   return searchState ? `${window.location.pathname}?${qs.stringify(sanitizeStateParams(searchState))}` : '';
 };
 
-const DEBOUNCE_TIME = 500;
-
 const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildTimeResultState }): JSX.Element => {
   const router = useRouter();
   // only use builtTimeResultState server-side
   const [resultState, setResultState] = useState(typeof window === 'object' ? null : buildTimeResultState);
   const [searchState, setSearchState] = useState(urlToSearchState(router.asPath));
-  const [debouncedSetState, setDebouncedSetState] = useState(0);
   const seoParams: { [key: string]: string | boolean } = {
     title,
     description: heading
@@ -73,13 +70,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
 
   const onSearchStateChange = (updatedSearchState: SearchState) => {
     const searchStateUrl = searchStateToUrl(updatedSearchState);
-    clearTimeout(debouncedSetState);
-    setDebouncedSetState(
-      window.setTimeout(() => {
-        Router.push(searchStateUrl, searchStateUrl, { shallow: true });
-      }, DEBOUNCE_TIME)
-    );
-    setSearchState(updatedSearchState);
+    Router.push(searchStateUrl, searchStateUrl, { shallow: true });
   };
 
   useEffect(() => {
@@ -97,7 +88,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
       >
-        <Configure hitsPerPage={10} />
+        <Configure hitsPerPage={process.env.HITS_PER_PAGE} />
         <ScrollTo scrollOn="page" />
         <HeroBanner heading={heading}>
           <HeaderSearchBox placeholderText={searchPlaceHolder} />

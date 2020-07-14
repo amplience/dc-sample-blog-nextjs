@@ -54,19 +54,15 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
-        <ConnectorWrapper
-          hitsPerPage={10}
-        />
         <SortByDropdown />
-        <HeroCard
-          blogPost={
-            Object {
-              "ObjectID": "1",
-            }
-          }
-        />
         <BlogList
-          blogPosts={Array []}
+          blogPosts={
+            Array [
+              Object {
+                "ObjectID": "1",
+              },
+            ]
+          }
         />
       </div>
     `);
@@ -86,20 +82,13 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
-        <ConnectorWrapper
-          hitsPerPage={10}
-        />
         <SortByDropdown />
-        <HeroCard
-          blogPost={
-            Object {
-              "ObjectID": "1",
-            }
-          }
-        />
         <BlogList
           blogPosts={
             Array [
+              Object {
+                "ObjectID": "1",
+              },
               Object {
                 "ObjectID": "2",
               },
@@ -130,11 +119,7 @@ describe('SearchResultList', () => {
       <div
         id="searchResults"
       >
-        <ConnectorWrapper
-          hitsPerPage={10}
-        />
         <SortByDropdown />
-        <HeroCard />
         <BlogList
           blogPosts={Array []}
         />
