@@ -16,7 +16,7 @@ const BlogList = ({ blogPosts = [] }: BlogListProps): ReactElement => {
       <style jsx>{`
         section {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(3, minmax(0, 1fr));
           grid-gap: 55px 30px;
           grid-auto-rows: minmax(100px, auto);
           margin: auto;
@@ -28,7 +28,7 @@ const BlogList = ({ blogPosts = [] }: BlogListProps): ReactElement => {
           section {
             grid-template-columns: repeat(2, 1fr);
             padding: 0 20px;
-            margin-top: 0;
+            margin-top: 20px;
           }
         }
 
