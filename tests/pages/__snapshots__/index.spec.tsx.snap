@@ -26,6 +26,9 @@ exports[`Index components should render index 1`] = `
     <ConnectorWrapper
       scrollOn="page"
     />
+    <ConnectorWrapper
+      scrollOn="menu"
+    />
     <HeroBanner
       heading="heading"
     >
