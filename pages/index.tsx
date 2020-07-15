@@ -90,6 +90,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
       >
         <Configure hitsPerPage={process.env.HITS_PER_PAGE} />
         <ScrollTo scrollOn="page" />
+        <ScrollTo scrollOn="menu" />
         <HeroBanner heading={heading}>
           <HeaderSearchBox placeholderText={searchPlaceHolder} />
           <HeaderFacetBar
