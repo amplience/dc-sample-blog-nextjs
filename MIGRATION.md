@@ -41,4 +41,4 @@ Old environment variables to remove:
 
 ## Update Dynamic Content webhook
 
-- Update the existing Dynamic Content (used to trigger Netlify builds) to trigger on blog post publish - see `Create a Dynamic Content Webhook` in the [README.md](README.md)
+- Update the existing Dynamic Content webhook (used to trigger Netlify builds) to trigger on blog post publish - see `Create a Dynamic Content Webhook` in the [README.md](README.md)
