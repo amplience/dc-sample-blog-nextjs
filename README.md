@@ -119,6 +119,7 @@ Next we have to customize the webhook payload, as we want change some of the dat
 4. Scroll down the bottom of the webhook configuration screen and in "Payload" section replace `{{{JSONstringify this}}}` with the following:
 
 ```handlebars
+{{#withDeliveryContentItem contentItemId=payload.rootContentItem.id account="account-id"}}
 {
   "_meta": {{{JSONstringify _meta}}},
   "title": "{{{title}}}",
@@ -148,6 +149,7 @@ Next we have to customize the webhook payload, as we want change some of the dat
   ],
   "image": {{{JSONstringify image}}}
 }
+{{/withDeliveryContentItem}}
 ```
 
 5. Click "Save" to save your changes
