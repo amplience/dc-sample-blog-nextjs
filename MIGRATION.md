@@ -11,12 +11,12 @@ The following features need to be enabled on your hub before this migration can 
 - Search Indexes
 - Content Delivery 2
 
-### Create and configuration index
+### Create and configure index
 
 Ensure that you have setup and configured a search index by following [README.md](README.md) sections `Creating a production search index for your published blog-posts`,
 `Configure your index`, `Add sort options` and `Configure webhook custom payload`.
 
-### Setup and updating existing content
+### Setup and update content
 
 - Create a new `blog` content type - see `Creating a Blog content item` in the [README.md](README.md)
 
@@ -24,7 +24,7 @@ Ensure that you have setup and configured a search index by following [README.md
 
 - Sync your content types to the 2.x.x versions - see `Import using our dc-cli tool` in the [README.md](README.md)
 
-### Updating Netlify Build Settings
+### Updating Netlify build settings
 
 New environment variables to add:
 
