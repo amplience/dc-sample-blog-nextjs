@@ -4,6 +4,13 @@ Below are instructions for migrating from one version of dc-static-blog-next-js 
 
 ## `1.x.x` to `2.x.x`
 
+### Prerequisites
+
+The following features need to be enabled on your hub before this migration can occur:
+
+- Search Indexes
+- Content Delivery 2
+
 ### Create and configuration index
 
 Ensure that you have setup and configured a search index by following [README.md](README.md) sections `Creating a production search index for your published blog-posts`,
