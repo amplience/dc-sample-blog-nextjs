@@ -194,13 +194,13 @@ During the Netlify setup process you will need to define the following build env
 
 #### Required settings
 
-| Environment Var                        | Description                                                             | Example                  |
-| -------------------------------------- | ----------------------------------------------------------------------- | ------------------------ |
-| ALGOLIA_APPLICATION_ID                 | The search application ID                                               | my-search-application-id |
-| ALGOLIA_API_KEY                        | The search API key                                                      | my-search-api-key        |
-| ALGOLIA_PRODUCTION_INDEX_NAME          | The production search index name                                        | my-hub.blog-posts        |
-| DYNAMIC_CONTENT_BLOG_LIST_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                     |
-| DYNAMIC_CONTENT_HUB_NAME               | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                   |
+| Environment Var              | Description                                                             | Example                  |
+| ---------------------------- | ----------------------------------------------------------------------- | ------------------------ |
+| ALGOLIA_APPLICATION_ID       | The search application ID                                               | my-search-application-id |
+| SEARCH_API_KEY               | The search API key                                                      | my-search-api-key        |
+| SEARCH_INDEX_NAME_PRODUCTION | The production search index name                                        | my-hub.blog-posts        |
+| DYNAMIC_CONTENT_DELIVERY_KEY | The Delivery Key of the Blog                                            | blog                     |
+| DYNAMIC_CONTENT_HUB_NAME     | Your Dynamic Content Hub name (find this under Settings --> Properties) | my-hub                   |
 
 #### Optional settings
 
