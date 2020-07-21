@@ -11,6 +11,10 @@ The following features need to be enabled on your hub before this migration can 
 - Search Indexes
 - Content Delivery 2
 
+### Prevent builds during migration
+
+- Disable the Netlify webhook to prevent the blog from being built during the migration process.
+
 ### Create and configure index
 
 Ensure that you have setup and configured a search index by following [README.md](README.md) sections `Creating a production search index for your published blog-posts`,
@@ -23,6 +27,8 @@ Ensure that you have setup and configured a search index by following [README.md
 - In 2.x.x, the content property `slug` is no longer used to build blog pages and had been replaced by the content items Delivery Key. To maintain existing blog pages you will need to copy the `slug` for each blog post and save it as the content items Delivery Key. This needs to be done for each content item before updating the content types.
 
 - Sync your content types to the 2.x.x versions - see `Import using our dc-cli tool` in the [README.md](README.md)
+
+- Re-publish all blog posts so that their respective Delivery Keys and Content Type changes are applied.
 
 ### Updating Netlify build settings
 
@@ -49,4 +55,6 @@ Old environment variables to remove:
 
 ## Update Dynamic Content webhook
 
-- Update the existing Dynamic Content webhook (used to trigger Netlify builds) to trigger on blog post publish - see `Create a Dynamic Content Webhook` in the [README.md](README.md)
+- Update the existing Dynamic Content webhook (used to trigger Netlify builds) to trigger on blog post publish - see `Create a Dynamic Content Webhook` in the [README.md](README.md).
+- Enable the Netlify webhook.
+- Manually trigger a Netlify build to build to generate a build of the blog with the new changes.
