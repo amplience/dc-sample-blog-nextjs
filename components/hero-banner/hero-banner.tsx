@@ -12,24 +12,23 @@ const HeroBanner = ({ children, heading }: HeroBannerProps): ReactElement => {
     <>
       <section>
         <HeroBannerHeading heading={heading} />
-      <>{ children }</>
+        <>{children}</>
       </section>
       <style jsx>{`
         section {
-          height: 200px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: column;
           text-align: center;
           background-color: ${theme.colors.mirage95};
-          padding: 40 20px;
+          padding: 40px 20px 20px 20px;
         }
 
         section :global(h1) {
           color: white;
           font-weight: ${theme.fonts.weight.light};
-          padding-bottom: 30px;
+          padding-bottom: 40px;
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {

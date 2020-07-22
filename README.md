@@ -87,7 +87,7 @@ On your index select the "Configure" tab and paste in the following configuratio
 
 ```json
 {
-  "searchableAttributes": ["title", "description", "content"],
+  "searchableAttributes": ["title", "description"],
   "customRanking": ["desc(dateAsTimeStamp)"],
   "attributesForFaceting": ["tags", "authors.name"]
 }
@@ -121,31 +121,21 @@ Next we have to customize the webhook payload, as we want change some of the dat
 ```handlebars
 {
   "_meta": {{{JSONstringify _meta}}},
-  "title": "{{{title}}}",
-  "description": "{{{description}}}",
+  "title": {{{JSONstringify title}}},
+  "description": {{{JSONstringify description}}},
   "deliveryKey": "{{{_meta.deliveryKey}}}",
   "schema": "{{{_meta.schema}}}",
   "authors": [
-    {{#each authors}}{{#if @index}},{{/if}}
-      {
-        "name":"{{{name}}}"
-      }
-    {{/each}}
+    {{~#each authors}}{{#if @index}},{{/if~}}
+      { "name":"{{{name}}}" }
+    {{~/each~}}
   ],
-  {{#if tags}}
+  {{#if tags~}}
     "tags": {{{JSONstringify tags}}},
-  {{/if}}
+  {{~/if~}}
   "date": "{{{this.date}}}",
   "dateAsTimeStamp": {{{moment date format="X"}}},
   "readTime": {{{readTime}}},
-  "content": [
-  {{#each content}}
-    {{#if text}}
-      {{#if @index}},{{/if}}
-      {{{JSONstringify text}}}
-    {{/if}}
-  {{/each}}
-  ],
   "image": {{{JSONstringify image}}}
 }
 ```
@@ -169,18 +159,6 @@ Notes:
 #### Configure your index, Add sort options and Configure webhook custom payload
 
 Repeat all of the steps used for your production index to configure your index, add sort options and configure webhook custom payload.
-
-### Add facets
-
-Faceting search results can be achieved via the "Configuration" tab when editing a search index. Within this section there is a "Add snippet" menu with a "Facets" option. Once the snippet has been generated, add the fields in which are to be added as facets. For example:
-
-```json
-{
-  "attributesForFaceting": ["authors.name", "tags"]
-}
-```
-
-Click "Save" and search results are now faceted.
 
 ## Deploy To Netlify
 
