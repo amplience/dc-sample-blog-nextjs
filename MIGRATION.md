@@ -22,11 +22,11 @@ Ensure that you have setup and configured a search index by following [README.md
 
 ### Setup and update content
 
-- Create a new `blog` content type - see `Creating a Blog content item` in the [README.md](README.md)
-
 - In 2.x.x, the content property `slug` is no longer used to build blog pages and had been replaced by the content items Delivery Key. To maintain existing blog pages you will need to copy the `slug` for each blog post and save it as the content items Delivery Key. This needs to be done for each content item before updating the content types.
 
 - Sync your content types to the 2.x.x versions - see `Import using our dc-cli tool` in the [README.md](README.md)
+
+- Create a new `blog` content item and add existing blog posts - see `Creating a Blog content item` in the [README.md](README.md)
 
 - Re-publish all blog posts so that their respective Delivery Keys and Content Type changes are applied.
 
