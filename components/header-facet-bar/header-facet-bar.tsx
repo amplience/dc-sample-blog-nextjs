@@ -40,6 +40,7 @@ const HeaderFacetBar = ({ authors, tags }: HeaderFacetAttributes): ReactElement 
             flex-direction: row;
             text-align: center;
             align-items: center;
+            padding-top: 20px;
           }
 
           h3 {

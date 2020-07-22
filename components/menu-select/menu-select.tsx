@@ -44,7 +44,7 @@ const MenuSelect = ({
           font-size: ${theme.fonts.size.small};
           margin: 6px 0;
           margin-right: 20px;
-          width: 320px;
+          width: 200px;
           background-color: #2d3640;
           border: 1px solid #4e555e;
           color: #999;
