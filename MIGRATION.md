@@ -32,6 +32,8 @@ Ensure that you have setup and configured a search index by following [README.md
 
 ### Updating Netlify build settings
 
+_Note: Please check `Netlify Build Settings` in [README.md](README.md) for examples of environment variables values_
+
 New environment variables to add:
 
 - ALGOLIA_APPLICATION_ID
@@ -46,7 +48,7 @@ New environment variables to add:
 
 Update environment variable:
 
-- DYNAMIC_CONTENT_BASE_URL (to point to CDV2 endpoint)
+- DYNAMIC_CONTENT_BASE_URL (optional - only needs updating if it already exists and you are not using the defaults)
 
 Old environment variables to remove:
 
@@ -56,5 +58,9 @@ Old environment variables to remove:
 ## Update Dynamic Content webhook
 
 - Update the existing Dynamic Content webhook (used to trigger Netlify builds) to trigger on blog post publish - see `Create a Dynamic Content Webhook` in the [README.md](README.md).
+- Disable 'auto-publish' in the Netlify deployment options
 - Enable the Netlify webhook.
-- Manually trigger a Netlify build to build to generate a build of the blog with the new changes.
+- Manually trigger a Netlify build for the site.
+- Verify that the site has built and functions correctly
+- Re-enable 'auto-publish' in the Netlify deployment options
+- Publish the site via Netlify
