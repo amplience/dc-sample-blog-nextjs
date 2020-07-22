@@ -121,30 +121,28 @@ Next we have to customize the webhook payload, as we want change some of the dat
 ```handlebars
 {
   "_meta": {{{JSONstringify _meta}}},
-  "title": "{{{title}}}",
-  "description": "{{{description}}}",
+  "title": {{{JSONstringify title}}},
+  "description": {{{JSONstringify description}}},
   "deliveryKey": "{{{_meta.deliveryKey}}}",
   "schema": "{{{_meta.schema}}}",
   "authors": [
-    {{#each authors}}{{#if @index}},{{/if}}
-      {
-        "name":"{{{name}}}"
-      }
-    {{/each}}
+    {{~#each authors}}{{#if @index}},{{/if~}}
+      { "name":"{{{name}}}" }
+    {{~/each~}}
   ],
-  {{#if tags}}
+  {{#if tags~}}
     "tags": {{{JSONstringify tags}}},
-  {{/if}}
+  {{~/if~}}
   "date": "{{{this.date}}}",
   "dateAsTimeStamp": {{{moment date format="X"}}},
   "readTime": {{{readTime}}},
   "content": [
-  {{#each content}}
-    {{#if text}}
-      {{#if @index}},{{/if}}
-      {{{JSONstringify text}}}
-    {{/if}}
-  {{/each}}
+  {{~#each (first content 2) ~}}
+    {{~#if text~}}
+      {{~#if @index~}},{{~/if~}}
+      {{{JSONstringify (sanitize (markdown text) ) }}}
+    {{~/if~}}
+  {{~/each~}}
   ],
   "image": {{{JSONstringify image}}}
 }
