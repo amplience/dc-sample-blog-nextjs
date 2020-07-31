@@ -64,8 +64,8 @@ How to create a blog content item for your blog:
 3. Click "Create content"
 4. Select the "Blog" (or whatever label to assigned to the "blog.json" content type)
 5. Enter a title, heading and search placeholder (these will appear on your blog)
-6. Click "Save"
-7. Click on the "Save" drop down menu, select "Delivery Key" and enter "blog" (you may enter another value if you wish), this value will be used later on to retrieve the blog during the build phase.
+6. Enter enter "blog" in the field _meta > Delivery key (you may enter another value if you wish). This value will be used later on to retrieve the blog during the build phase.
+7. Click "Save"
 8. Click "Publish". The blog must be published for it to be available to the Netlify build process later, otherwise the build will fail.
 
 ### Creating a production search index for your published blog-posts
@@ -87,7 +87,7 @@ On your index select the "Configure" tab and paste in the following configuratio
 
 ```json
 {
-  "searchableAttributes": ["title", "description"],
+  "searchableAttributes": ["title", "description", "content"],
   "customRanking": ["desc(dateAsTimeStamp)"],
   "attributesForFaceting": ["tags", "authors.name"]
 }
@@ -97,7 +97,7 @@ Note that the dateAsTimeStamp attribute used for ranking and sorting will not be
 
 #### Add sort options
 
-For the sort-by drop menu to work we need to create the following 4 sort options
+For the sort-by drop menu to work we need to create the following sort options
 
 | Property        | Ordering   |
 | --------------- | ---------- |
@@ -136,6 +136,14 @@ Next we have to customize the webhook payload, as we want change some of the dat
   "date": "{{{this.date}}}",
   "dateAsTimeStamp": {{{moment date format="X"}}},
   "readTime": {{{readTime}}},
+  "content": [
+  {{~#each content}}
+    {{~#if text~}}
+      {{~#if @index~}},{{~/if~}}
+      {{{JSONstringify (sanitize (markdown text) ) }}}
+    {{~/if~}}
+  {{~/each~}}
+  ],
   "image": {{{JSONstringify image}}}
 }
 ```
