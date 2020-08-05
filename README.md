@@ -51,7 +51,9 @@ Notes:
 
 - `npm run sync` imports the content-type-schemas and content-types as well as synchronizing any content type changes to your content items.
 
-- Alternatively you can create the schemas and register the content types listed above manually in Dynamic Content.
+- The [CLI definitions](/dc-cli-definitions) assume that your hub contains a repository called 'content'. If your repository name is different you will need to update the definitions.
+
+- If you do not want to use the CLI, you can create the schemas and register the content types listed above manually in Dynamic Content.
 
 ### Creating a Blog content item
 
