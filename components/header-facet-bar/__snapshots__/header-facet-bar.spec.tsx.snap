@@ -21,6 +21,7 @@ exports[`HeaderFaceBar component should render author and tags facet menus with 
       />
       <ConnectorWrapper
         attribute="authors"
+        limit={25}
       />
     </div>
     <div
@@ -33,6 +34,7 @@ exports[`HeaderFaceBar component should render author and tags facet menus with 
       />
       <ConnectorWrapper
         attribute="tags"
+        limit={25}
       />
     </div>
     <ConnectorWrapper
