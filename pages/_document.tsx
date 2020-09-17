@@ -1,13 +1,13 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Manifest from 'next-manifest/manifest';
 
 export default class CustomDocument extends Document {
   render(): JSX.Element {
     return (
       <Html lang="en">
         <Head>
-          <Manifest />
+          <meta name="theme-color" content="#fffff" />
+          <link rel="manifest" href="/static/manifest/manifest.json" />
           <link rel="icon" href="/static/favicon.ico"></link>
           <link rel="apple-touch-icon" href="/static/icons/icon-192x192.png"></link>
           <link rel="preconnect" href="https://www.google-analytics.com"></link>
