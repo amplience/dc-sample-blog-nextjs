@@ -3,12 +3,15 @@ import theme from '../../common/styles/default/theme';
 import Logo from '../logo/logo';
 import StaticLink from '../static-link/static-link';
 import { useRouter } from 'next/router';
+import qs from 'qs';
 
 const Header = ({ title }: { title: string }): ReactElement => {
   const router = useRouter();
-  const { vse } = router.query;
 
-  const headerLink = vse ? `/?vse=${vse}` : '/';
+  const parsedQueryString = qs.parse(router.asPath.substring(router.asPath.indexOf('?') + 1));
+  const stagingEnvironment: string = parsedQueryString.vse as string;
+
+  const headerLink = stagingEnvironment ? `/?vse=${stagingEnvironment}` : '/';
   return (
     <>
       <section>

@@ -1,27 +1,39 @@
 import React, { ReactElement } from 'react';
+import { Helmet } from 'react-helmet';
 import { useRouter } from 'next/router';
 import theme from '../../common/styles/default/theme';
 
 const SharePost = ({ twitterText }: { twitterText: string }): ReactElement => {
   const router = useRouter();
-  const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
+  const baseUrl = process.env.BASE_URL !== undefined ? process.env.BASE_URL : '';
   const currentPageUrl = baseUrl + router.asPath;
-
-  const linkedinHtmlMarkup = {
-    __html: `<script async src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script><script type="IN/Share" data-url=${currentPageUrl}></script>`
-  };
-
-  const twitterHtmlMarkup = {
-    __html: `<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-text=${twitterText} data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>`
-  };
 
   return (
     <>
       <section>
         <h3>Share the post</h3>
         <div>
-          <div dangerouslySetInnerHTML={linkedinHtmlMarkup} suppressHydrationWarning={true} />
-          <div dangerouslySetInnerHTML={twitterHtmlMarkup} suppressHydrationWarning={true} />
+          <div>
+            <Helmet>
+              <script async src="https://platform.linkedin.com/in.js" type="text/javascript">
+                lang: en_US
+              </script>
+              <script type="IN/Share" data-url={currentPageUrl}></script>
+            </Helmet>
+          </div>
+          <div>
+            <a
+              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              className="twitter-share-button"
+              data-text={twitterText}
+              data-show-count="false"
+            >
+              Tweet
+            </a>
+            <Helmet>
+              <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+            </Helmet>
+          </div>
         </div>
       </section>
       <style jsx>{`
