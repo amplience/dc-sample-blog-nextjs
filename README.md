@@ -236,9 +236,8 @@ Notes:
 
 Dynamic Content has two ways of allowing you to see you content changes before they go live:
 
-- [Visualisations](https://docs.amplience.net/production/visualizations.html) provide an effective way of previewing your content directly from within Dynamic Content app during the authoring stage.
-
-- [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look at a particular point in time, during the planning stage, before it is published.
+- [Visualizations](https://docs.amplience.net/production/visualizations.html) provide an effective way of viewing a single content item directly from within Dynamic Content app during the authoring stage.
+- [Previewing content](https://docs.amplience.net/planning/previewingcontent.html) is a great way of viewing how your entire blog site will look, showing the latest saved content before it is published.
 
 ### How to Configure Visualizations
 
@@ -246,12 +245,15 @@ For each of the Content Type Schemas that support visualization (see table in [C
 
 If you used the dc-cli tool to register your content types, they will already have visualizations added, so you just need to update each URI with the correct domain. You can do this by updating the CLI definitions in /dc-cli-definitions and running the `npm run sync` command again, or by manually updating your content types in Dynamic Content.
 
-### How to configure Preview (optional)
+### How to configure or open Preview
 
-Navigate to Hub settings > "Preview" in Dynamic Content. The Preview application URL should be the domain with the path of `/preview/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/preview/?vse={{vse.domain}}`.
+To enable opening the application via the 'Preview' button in the Dynamic Content app's Planning section:
 
-Notes:
-
+- Go to Hub settings > "Preview" in Dynamic Content. The Preview application URL should be the domain with the path of `/?vse={{vse.domain}}`, e.g.: `https://blog.example.com/?vse={{vse.domain}}`.
+  To open the preview application directly in your browser:
+- Go to Hub settings > "Preview" in Dynamic Content. Copy the Default preview staging environment domain. THis is your VSE domain.
+- In your browser, go to your blog domain with with the preview domain passed in to the URL parameter `/?vse=`, e.g. `https://blog.example.com/?vse=example.staging.bigcontent.io`
+  Notes:
 - Since blog posts are published on demand, not through an edition, the purpose of the preview application is to display the blog with the latest staged content (current saved versions), no time-based preview will be possible. Therefore it is not required to configure it in Dynamic Content.
 
 # Creating your first blog post
