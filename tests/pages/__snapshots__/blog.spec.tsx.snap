@@ -231,22 +231,19 @@ exports[`Blog page renders Blog page with content 1`] = `
           >
             <div
               className="jsx-2442235184"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<script async src=\\"https://platform.linkedin.com/in.js\\" type=\\"text/javascript\\">lang: en_US</script><script type=\\"IN/Share\\" data-url=mocked-path></script>",
-                }
-              }
-              suppressHydrationWarning={true}
             />
             <div
               className="jsx-2442235184"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<a href=\\"https://twitter.com/share?ref_src=twsrc%5Etfw\\" class=\\"twitter-share-button\\" data-text=My First Blog Post data-show-count=\\"false\\">Tweet</a><script async src=\\"https://platform.twitter.com/widgets.js\\" charSet=\\"utf-8\\"></script>",
-                }
-              }
-              suppressHydrationWarning={true}
-            />
+            >
+              <a
+                className="jsx-2442235184 twitter-share-button"
+                data-show-count="false"
+                data-text="My First Blog Post"
+                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              >
+                Tweet
+              </a>
+            </div>
           </div>
         </section>
       </div>

@@ -20,13 +20,13 @@ const HeaderFacetBar = ({ authors, tags }: HeaderFacetAttributes): ReactElement 
         {authors && (
           <div className="filter-container">
             <img src="/static/images/ic-person.svg" alt="Authors" />
-            <MenuSelect attribute={authors} />
+            <MenuSelect attribute={authors} limit={25} />
           </div>
         )}
         {tags && (
           <div className="filter-container">
             <img src="/static/images/ic-tag.svg" alt="Tags" />
-            <MenuSelect attribute={tags} />
+            <MenuSelect attribute={tags} limit={25} />
           </div>
         )}
         <ClearRefinements clearsQuery />
