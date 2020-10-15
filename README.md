@@ -128,9 +128,9 @@ Next we have to customize the webhook payload, as we want change some of the dat
   "deliveryKey": "{{{_meta.deliveryKey}}}",
   "schema": "{{{_meta.schema}}}",
   "authors": [
-    {{~#each authors}}{{#if @index}},{{/if~}}
-      { "name":"{{{name}}}" }
-    {{~/each~}}
+    {{~#forEach authors}}
+      { "name":"{{{name}}}" }{{#unless isLast}},{{/unless~}}
+    {{~/forEach~}}
   ],
   {{#if tags~}}
     "tags": {{{JSONstringify tags}}},
@@ -139,12 +139,11 @@ Next we have to customize the webhook payload, as we want change some of the dat
   "dateAsTimeStamp": {{{moment date format="X"}}},
   "readTime": {{{readTime}}},
   "content": [
-  {{~#each content}}
+  {{~#forEach content}}
     {{~#if text~}}
-      {{~#if @index~}},{{~/if~}}
-      {{{JSONstringify (sanitize (markdown text) ) }}}
+      {{{JSONstringify (sanitize (markdown text) ) }}}{{#unless isLast}},{{/unless~}}
     {{~/if~}}
-  {{~/each~}}
+  {{~/forEach~}}
   ],
   "image": {{{JSONstringify image}}}
 }
