@@ -22,7 +22,7 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
 
   const path = vse
     ? '/preview'
-    : `/blog/${encodeURIComponent((blogPost._meta.deliveryKey || blogPost._meta.deliveryId).toLowerCase())}`;
+    : `/blog/${encodeURIComponent(blogPost._meta.deliveryKey || blogPost._meta.deliveryId.toLowerCase())}`;
   const blogHref = vse ? '/preview' : '/blog/[...slug]';
 
   return (
