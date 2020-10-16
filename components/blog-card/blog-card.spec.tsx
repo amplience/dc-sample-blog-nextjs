@@ -6,6 +6,7 @@ import ShallowRenderer from 'react-test-renderer/shallow';
 import BlogCard from './blog-card';
 import blogPostFixture from '../../tests/fixtures/single-blog-post-data-object.json';
 import { mount } from 'enzyme';
+import { ContentMeta } from 'dc-delivery-sdk-js';
 
 const mockUseRouter = jest.fn();
 jest.mock('next/router', () => {
@@ -51,5 +52,32 @@ describe('BlogCard', () => {
     expect(component.find('a').props().href).toEqual(
       '/preview?vse=test-vse.domain&content=8d6943c7-6028-4fac-b45e-57fc63bd032a'
     );
+  });
+
+  test('renders full blog card with a lower-cased deliveryId in the link', () => {
+    mockUseRouter.mockImplementationOnce(() => {
+      return {
+        asPath: ''
+      };
+    });
+
+    const _meta = { deliveryId: 'UC-DELIVERY-ID' } as ContentMeta;
+    const component = mount(<BlogCard blogPost={{ ...blogPostFixture, _meta }} />);
+    expect(component.find('a').props().href).toMatchInlineSnapshot(`"/blog/uc-delivery-id"`);
+  });
+
+  test('renders full blog card with a deliveryKey in the link', () => {
+    mockUseRouter.mockImplementationOnce(() => {
+      return {
+        asPath: ''
+      };
+    });
+
+    const _meta = {
+      deliveryKey: 'BlogCardDeliveryKey',
+      deliveryId: '8d6943c7-6028-4fac-b45e-57fc63bd032a'
+    } as ContentMeta;
+    const component = mount(<BlogCard blogPost={{ ...blogPostFixture, _meta }} />);
+    expect(component.find('a').props().href).toMatchInlineSnapshot(`"/blog/BlogCardDeliveryKey"`);
   });
 });
