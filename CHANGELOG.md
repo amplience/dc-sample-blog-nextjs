@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/amplience/dc-static-blog-nextjs/compare/v2.0.0...v2.0.1) (2020-10-19)
+
+
+### Bug Fixes
+
+* **blog card links:** updated so that deliveryKey is not lowercase and added tests ([#81](https://github.com/amplience/dc-static-blog-nextjs/issues/81)) ([a8926db](https://github.com/amplience/dc-static-blog-nextjs/commit/a8926db59b09b7cac4f53795bfdb3072b83c1ed5))
+* author and tags to display 25 items ([#76](https://github.com/amplience/dc-static-blog-nextjs/issues/76)) ([78823c3](https://github.com/amplience/dc-static-blog-nextjs/commit/78823c37effa5ba60c03a0ef7753d735238eb0b9))
+* header link when previewing via a vse ([#77](https://github.com/amplience/dc-static-blog-nextjs/issues/77)) ([5550703](https://github.com/amplience/dc-static-blog-nextjs/commit/5550703284d7b74910e3ae54514be7d2e1cb1283))
+* removed the duplicate and corrected the remaining viewport meta header ([#78](https://github.com/amplience/dc-static-blog-nextjs/issues/78)) ([8d2c1df](https://github.com/amplience/dc-static-blog-nextjs/commit/8d2c1df4bee93423020a7483aa85398d499f41a7))
+* **share buttons:** wrapped in a helmet component to display the vanilla js ([#79](https://github.com/amplience/dc-static-blog-nextjs/issues/79)) ([c011cef](https://github.com/amplience/dc-static-blog-nextjs/commit/c011cef896ecf0fd2610871b1638a59b3f989286))
+
 ## [2.0.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.2.0...v2.0.0) (2020-07-22)
 
 
