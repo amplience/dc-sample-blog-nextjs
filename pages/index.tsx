@@ -46,7 +46,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
   const [resultState, setResultState] = useState(typeof window === 'object' ? null : buildTimeResultState);
   const [searchState, setSearchState] = useState(urlToSearchState(router.asPath));
   const seoParams: { [key: string]: string | boolean } = {
-    title,
+    title: heading,
     description: heading
   };
 
@@ -78,7 +78,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
   }, [router.asPath]);
 
   return (
-    <Layout>
+    <Layout siteTitle={title}>
       <NextSeo {...seoParams} />
       <InstantSearch
         indexName={process.env.SEARCH_INDEX_NAME_PRODUCTION as string}

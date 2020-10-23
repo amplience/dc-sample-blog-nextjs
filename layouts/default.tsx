@@ -5,16 +5,19 @@ import Footer from '../components/footer/footer';
 import CookieBanner from '../components/cookie-banner/cookie-banner';
 import GaPageView from '../components/google-analytics/ga-page-view.component';
 import ScrollTop from '../components/scroll-top/scroll-top';
+import { NextSeo } from 'next-seo';
 
 interface DefaultLayoutProps {
+  siteTitle: string;
   children: ReactElement[] | ReactElement;
   contentOnly?: boolean;
 }
 
 // eslint-disable-next-line react/display-name
-export default ({ children, contentOnly = false }: DefaultLayoutProps): ReactElement => {
+export default ({ siteTitle, children, contentOnly = false }: DefaultLayoutProps): ReactElement => {
   return (
     <>
+      <NextSeo titleTemplate={`%s | ${siteTitle}`} />
       <div className="site-container">
         {!contentOnly && (
           <>

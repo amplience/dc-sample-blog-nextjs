@@ -2,10 +2,10 @@
 
 exports[`Header renders blog header 1`] = `
 <section
-  className="jsx-3469519543"
+  className="jsx-2398603546"
 >
   <header
-    className="jsx-3469519543"
+    className="jsx-2398603546"
   >
     <a
       aria-label=""
@@ -19,21 +19,21 @@ exports[`Header renders blog header 1`] = `
         srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
       />
     </a>
-    <h1
-      className="jsx-3469519543"
+    <span
+      className="jsx-2398603546"
     >
       Blog Title
-    </h1>
+    </span>
   </header>
 </section>
 `;
 
 exports[`Header renders blog header with preview vse query string link 1`] = `
 <section
-  className="jsx-3469519543"
+  className="jsx-2398603546"
 >
   <header
-    className="jsx-3469519543"
+    className="jsx-2398603546"
   >
     <a
       aria-label=""
@@ -47,11 +47,11 @@ exports[`Header renders blog header with preview vse query string link 1`] = `
         srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
       />
     </a>
-    <h1
-      className="jsx-3469519543"
+    <span
+      className="jsx-2398603546"
     >
       Blog Title
-    </h1>
+    </span>
   </header>
 </section>
 `;

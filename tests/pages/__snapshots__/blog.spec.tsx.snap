@@ -5,10 +5,10 @@ exports[`Blog page renders Blog page with content 1`] = `
   className="jsx-3319508426 site-container"
 >
   <section
-    className="jsx-3469519543"
+    className="jsx-2398603546"
   >
     <header
-      className="jsx-3469519543"
+      className="jsx-2398603546"
     >
       <a
         aria-label=""
@@ -22,11 +22,11 @@ exports[`Blog page renders Blog page with content 1`] = `
           srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
         />
       </a>
-      <h1
-        className="jsx-3469519543"
+      <span
+        className="jsx-2398603546"
       >
         PRODUCT BLOG
-      </h1>
+      </span>
     </header>
   </section>
   <div

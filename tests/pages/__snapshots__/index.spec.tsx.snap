@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Index components should render index 1`] = `
-<_default>
+<_default
+  siteTitle="Blog"
+>
   <b
     description="heading"
-    title="Blog"
+    title="heading"
   />
   <InstantSearch
     createURL={[Function]}
