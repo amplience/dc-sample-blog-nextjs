@@ -94,6 +94,9 @@ out
 # PWA Manifest
 public/static/manifest.json
 
+# Sitemap.xml
+public/sitemap.xml
+
 # OS generated files
 .DS_Store
 .DS_Store?
