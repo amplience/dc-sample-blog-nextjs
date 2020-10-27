@@ -51,49 +51,37 @@ exports[`Content should render different types of content - text, image and vide
         />
       </div>
     </t>
-    <t
-      afterLoad={[Function]}
-      beforeLoad={[Function]}
-      placeholder={
-        <div
-          className="jsx-1163017566 content-placeholder"
-        />
-      }
-      useIntersectionObserver={true}
-      visibleByDefault={false}
+    <div
+      className="jsx-1163017566"
     >
-      <div
-        className="jsx-1163017566"
-      >
-        <ReactMarkdown
-          astPlugins={Array []}
-          escapeHtml={true}
-          parserOptions={Object {}}
-          plugins={Array []}
-          rawSourcePos={false}
-          renderers={
-            Object {
-              "blockquote": [Function],
-              "code": [Function],
-              "heading": [Function],
-              "inlineCode": [Function],
-              "link": [Function],
-              "paragraph": [Function],
-            }
+      <ReactMarkdown
+        astPlugins={Array []}
+        escapeHtml={true}
+        parserOptions={Object {}}
+        plugins={Array []}
+        rawSourcePos={false}
+        renderers={
+          Object {
+            "blockquote": [Function],
+            "code": [Function],
+            "heading": [Function],
+            "inlineCode": [Function],
+            "link": [Function],
+            "paragraph": [Function],
           }
-          skipHtml={false}
-          source="# This is my first Bloblog
+        }
+        skipHtml={false}
+        source="# This is my first Bloblog
 
 This is some sample text.
 
 ## Look-a-header
 
 This is some more sample text"
-          sourcePos={false}
-          transformLinkUri={[Function]}
-        />
-      </div>
-    </t>
+        sourcePos={false}
+        transformLinkUri={[Function]}
+      />
+    </div>
     <t
       afterLoad={[Function]}
       beforeLoad={[Function]}
@@ -152,8 +140,29 @@ exports[`Content should render different types of content intially with placehol
     className="jsx-1163017566 content-placeholder"
   />
   <div
-    className="jsx-1163017566 content-placeholder"
-  />
+    className="jsx-1163017566"
+  >
+    <h1
+      className="jsx-2595089998"
+    >
+      This is my first Bloblog
+    </h1>
+    <p
+      className="jsx-430790654"
+    >
+      This is some sample text.
+    </p>
+    <h2
+      className="jsx-2595089998"
+    >
+      Look-a-header
+    </h2>
+    <p
+      className="jsx-430790654"
+    >
+      This is some more sample text
+    </p>
+  </div>
   <div
     className="jsx-1163017566 content-placeholder"
   />
