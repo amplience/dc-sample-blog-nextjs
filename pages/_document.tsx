@@ -7,7 +7,7 @@ export default class CustomDocument extends Document {
       <Html lang="en">
         <Head>
           <meta name="theme-color" content="#fffff" />
-          <link rel="manifest" href="/static/manifest/manifest.json" />
+          <link rel="manifest" href="/static/manifest.json" />
           <link rel="icon" href="/static/favicon.ico"></link>
           <link rel="apple-touch-icon" href="/static/icons/icon-192x192.png"></link>
           <link rel="preconnect" href="https://www.google-analytics.com"></link>
