@@ -9,12 +9,15 @@ import NextLink from '../next-link/next-link';
 import { Highlight } from 'react-instantsearch-dom';
 import qs from 'qs';
 import TagChips from '../tag-chips/tag-chips';
+import TrackClick from '../analytics/track-click/track-click';
 
 interface BlogCardProps {
   blogPost: BlogPost;
+  position: number;
+  queryId: string;
 }
 
-const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
+const BlogCard = ({ blogPost, position, queryId }: BlogCardProps): ReactElement => {
   const router = useRouter();
   const parsedQueryString = qs.parse(router.asPath.substring(router.asPath.indexOf('?') + 1));
   const { vse } = parsedQueryString;
@@ -28,73 +31,80 @@ const BlogCard = ({ blogPost }: BlogCardProps): ReactElement => {
   return (
     <>
       <section>
-        <NextLink href={blogHref} as={`${path}${routerQuery}`} ariaLabel={blogPost.title}>
-          <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
-            <article>
-              <div className="blog-card-image">
-                <Picture
-                  image={blogPost.image}
-                  sources={[
-                    {
-                      di: {
-                        sm: 'c',
-                        h: 140,
-                        w: 345,
-                        scaleFit: 'poi'
+        <TrackClick
+          eventName="Blog list - article clicked"
+          queryId={queryId}
+          objectIds={[blogPost.objectID]}
+          positions={[position + 1]}
+        >
+          <NextLink href={blogHref} as={`${path}${routerQuery}`} ariaLabel={blogPost.title}>
+            <LazyLoadComponent placeholder={<div className="article-placeholder"></div>}>
+              <article>
+                <div className="blog-card-image">
+                  <Picture
+                    image={blogPost.image}
+                    sources={[
+                      {
+                        di: {
+                          sm: 'c',
+                          h: 140,
+                          w: 345,
+                          scaleFit: 'poi'
+                        },
+                        media: '(min-width: 1098px)'
                       },
-                      media: '(min-width: 1098px)'
-                    },
-                    {
-                      di: {
-                        sm: 'c',
-                        h: 140,
-                        w: 728,
-                        scaleFit: 'poi'
+                      {
+                        di: {
+                          sm: 'c',
+                          h: 140,
+                          w: 728,
+                          scaleFit: 'poi'
+                        },
+                        media: '(min-width: 728px)'
                       },
-                      media: '(min-width: 728px)'
-                    },
-                    {
-                      di: {
-                        sm: 'c',
-                        h: 140,
-                        w: 728,
-                        scaleFit: 'poi'
+                      {
+                        di: {
+                          sm: 'c',
+                          h: 140,
+                          w: 728,
+                          scaleFit: 'poi'
+                        },
+                        media: '(min-width: 528px)'
                       },
-                      media: '(min-width: 528px)'
-                    },
-                    {
-                      di: {
-                        sm: 'c',
-                        h: 140,
-                        w: 528,
-                        scaleFit: 'poi'
+                      {
+                        di: {
+                          sm: 'c',
+                          h: 140,
+                          w: 528,
+                          scaleFit: 'poi'
+                        },
+                        media: '(min-width: 415px)'
                       },
-                      media: '(min-width: 415px)'
-                    },
-                    {
-                      di: {
-                        sm: 'c',
-                        h: 140,
-                        w: 414,
-                        scaleFit: 'poi'
+                      {
+                        di: {
+                          sm: 'c',
+                          h: 140,
+                          w: 414,
+                          scaleFit: 'poi'
+                        }
                       }
-                    }
-                  ]}
-                />
-              </div>
-              <div className="blog-card-content">
-                <h1>
-                  <Highlight hit={blogPost} attribute="title" tagName="mark" />
-                </h1>
-                <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
-                <p>
-                  <Highlight hit={blogPost} attribute="description" tagName="mark" />
-                </p>
-                <TagChips tags={blogPost.tags} />
-              </div>
-            </article>
-          </LazyLoadComponent>
-        </NextLink>
+                    ]}
+                  />
+                </div>
+                <div className="blog-card-content">
+                  <h1>
+                    <Highlight hit={blogPost} attribute="title" tagName="mark" />
+                  </h1>
+                  <BlogCardMeta authors={blogPost.authors} publishedDate={blogPost.date} readTime={blogPost.readTime} />
+                  <p>
+                    <Highlight hit={blogPost} attribute="description" tagName="mark" />
+                  </p>
+                  <TagChips tags={blogPost.tags} />
+                </div>
+              </article>
+            </LazyLoadComponent>
+          </NextLink>
+        </TrackClick>
       </section>
 
       <style jsx>{`

@@ -5,10 +5,13 @@ import theme from '../../common/styles/default/theme';
 
 interface BlogListProps {
   blogPosts: BlogPost[];
+  queryId: string;
 }
 
-const BlogList = ({ blogPosts = [] }: BlogListProps): ReactElement => {
-  const blogCards = blogPosts.map((blogPost: BlogPost, index: number) => <BlogCard key={index} blogPost={blogPost} />);
+const BlogList = ({ blogPosts = [], queryId }: BlogListProps): ReactElement => {
+  const blogCards = blogPosts.map((blogPost: BlogPost, index: number) => (
+    <BlogCard key={index} position={index} blogPost={blogPost} queryId={queryId} />
+  ));
 
   return (
     <>
