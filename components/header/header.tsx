@@ -19,7 +19,7 @@ const Header = ({ title }: { title: string }): ReactElement => {
           <StaticLink href={headerLink}>
             <Logo darkMode={true} />
           </StaticLink>
-          <h1>{title}</h1>
+          <span>{title}</span>
         </header>
       </section>
 
@@ -37,7 +37,7 @@ const Header = ({ title }: { title: string }): ReactElement => {
           width: ${theme.layout.widePageWidth};
           margin: 0 12px;
         }
-        h1 {
+        span {
           font-size: ${theme.fonts.size.large};
           font-weight: ${theme.fonts.weight.medium};
           text-transform: uppercase;
@@ -47,7 +47,7 @@ const Header = ({ title }: { title: string }): ReactElement => {
           padding-left: 18px;
         }
         @media (max-width: ${theme.layout.narrowPageWidth}) {
-          h1 {
+          span {
             font-size: ${theme.fonts.size.small};
           }
         }
