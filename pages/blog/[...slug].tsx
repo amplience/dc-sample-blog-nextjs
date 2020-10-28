@@ -76,13 +76,16 @@ const BlogPostPage: NextPage<BlogPostProps> = ({ blogPost }: BlogPostProps) => {
 BlogPostPage.getInitialProps = async ({ query }: NextPageContext) => {
   const { vse, slug } = query;
   const stagingEnvironment = vse ? `//${vse.toString()}` : undefined;
-  const deliverySlug = slug && slug[0];
-  if (typeof deliverySlug !== 'string') {
+
+  if (!slug) {
     throw new Error('Unable to generate BlogPostPage, missing deliveryKey');
   }
+
+  const deliverySlug = Array.isArray(slug) ? slug[0] : slug;
   const blogPost = isUuid(deliverySlug)
     ? await getBlogPostByDeliveryId(deliverySlug, stagingEnvironment)
     : await getBlogPostByDeliveryKey(deliverySlug, stagingEnvironment);
+
   return { blogPost };
 };
 

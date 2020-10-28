@@ -18,26 +18,30 @@ const Content = ({ content }: { content: AmplienceContent[] }): ReactElement => 
 
           if ('image' in c) {
             contentComponent = (
-              <div key={c.image.id}>
-                <Picture
-                  image={c}
-                  sources={[
-                    {
-                      di: { w: 675, scaleFit: 'poi' },
-                      media: '(min-width: 415px)'
-                    },
-                    {
-                      di: { w: 414, scaleFit: 'poi' }
-                    }
-                  ]}
-                />
-              </div>
+              <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
+                <div key={c.image.id}>
+                  <Picture
+                    image={c}
+                    sources={[
+                      {
+                        di: { w: 675, scaleFit: 'poi' },
+                        media: '(min-width: 415px)'
+                      },
+                      {
+                        di: { w: 414, scaleFit: 'poi' }
+                      }
+                    ]}
+                  />
+                </div>
+              </LazyLoadComponent>
             );
           } else if ('video' in c) {
             contentComponent = (
-              <div key={c.video.id} className="blog-post-video">
-                <Video video={c.video} srcSet={c.srcSet} />
-              </div>
+              <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
+                <div key={c.video.id} className="blog-post-video">
+                  <Video video={c.video} srcSet={c.srcSet} />
+                </div>
+              </LazyLoadComponent>
             );
           } else if ('text' in c) {
             contentComponent = (
@@ -46,11 +50,7 @@ const Content = ({ content }: { content: AmplienceContent[] }): ReactElement => 
               </div>
             );
           }
-          return (
-            <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
-              {contentComponent}
-            </LazyLoadComponent>
-          );
+          return contentComponent;
         })}
       </section>
       <style jsx>{`
