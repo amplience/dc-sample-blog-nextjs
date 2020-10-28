@@ -40,14 +40,18 @@ const searchStateToUrl = (searchState: SearchState): string => {
   return searchState ? `${window.location.pathname}?${qs.stringify(sanitizeStateParams(searchState))}` : '';
 };
 
+const getPaginatedSuffix = (page = 0): string => page > 1 ? ` - Page ${page}` : '';
+
 const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildTimeResultState }): JSX.Element => {
   const router = useRouter();
   // only use builtTimeResultState server-side
   const [resultState, setResultState] = useState(typeof window === 'object' ? null : buildTimeResultState);
   const [searchState, setSearchState] = useState(urlToSearchState(router.asPath));
+
+  const suffix = getPaginatedSuffix(searchState.page);
   const seoParams: { [key: string]: string | boolean } = {
-    title,
-    description: heading
+    title: `${title}${suffix}`,
+    description: `${heading}${suffix}`
   };
 
   if (process.env.ROBOTS_META_TAG_NOINDEX === 'true') {
