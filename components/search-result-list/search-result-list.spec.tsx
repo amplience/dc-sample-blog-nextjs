@@ -4,7 +4,7 @@ import SearchResultList from './search-result-list';
 import { isBlogPost } from '../../common/services/blog-post.service';
 
 jest.mock('../../common/services/blog-post.service');
-
+jest.mock('search-insights');
 jest.mock('react-instantsearch-dom', () => ({
   ...jest.requireActual('react-instantsearch-dom'),
   connectStateResults: templateFn => params => templateFn(params)

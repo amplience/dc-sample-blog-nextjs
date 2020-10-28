@@ -9,6 +9,7 @@ import { mount } from 'enzyme';
 import { ContentMeta } from 'dc-delivery-sdk-js';
 
 const mockUseRouter = jest.fn();
+jest.mock('search-insights');
 jest.mock('next/router', () => {
   return {
     useRouter: () => mockUseRouter()

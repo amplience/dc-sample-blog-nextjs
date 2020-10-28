@@ -12,6 +12,7 @@ import * as blogPostFixture from './__fixtures__/blogpost.json';
 
 const mockFetch = jest.fn();
 const mockGetContentItemById = jest.fn();
+jest.mock('search-insights');
 jest.mock('../../common/services/vse.service', () => () => mockGetContentItemById());
 jest.mock('react-instantsearch-dom', () => ({
   ...jest.requireActual('react-instantsearch-dom'),
