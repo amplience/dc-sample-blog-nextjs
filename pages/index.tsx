@@ -92,7 +92,7 @@ const Index: NextPage<IndexProps> = ({ title, heading, searchPlaceHolder, buildT
         searchState={searchState}
         onSearchStateChange={onSearchStateChange}
       >
-        <Configure hitsPerPage={process.env.HITS_PER_PAGE} />
+        <Configure hitsPerPage={process.env.HITS_PER_PAGE} clickAnalytics />
         <ScrollTo scrollOn="page" />
         <ScrollTo scrollOn="menu" />
         <HeroBanner heading={heading}>

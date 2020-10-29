@@ -21,6 +21,7 @@ exports[`Index components should render index 1`] = `
     stalledSearchDelay={200}
   >
     <ConnectorWrapper
+      clickAnalytics={true}
       hitsPerPage="9"
     />
     <ConnectorWrapper

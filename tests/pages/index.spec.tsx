@@ -5,6 +5,7 @@ import Index from '../../pages/index';
 import blogListFixture from '../fixtures/blog-list-one-blog.json';
 import ShallowRenderer from 'react-test-renderer/shallow';
 
+jest.mock('search-insights');
 jest.mock('react-instantsearch-dom/server', () => ({
   findResultsState: jest.fn()
 }));

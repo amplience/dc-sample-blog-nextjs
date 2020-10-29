@@ -5,166 +5,179 @@ exports[`BlogCard renders full blog card 1`] = `
   <section
     className="jsx-3551177564"
   >
-    <NextLink
-      ariaLabel="My First Blog Post"
-      as="/blog/my-first-blog"
-      href="/blog/[...slug]"
+    <TrackClick
+      eventName="Blog list - article clicked"
+      objectIds={
+        Array [
+          undefined,
+        ]
+      }
+      positions={
+        Array [
+          NaN,
+        ]
+      }
     >
-      <t
-        afterLoad={[Function]}
-        beforeLoad={[Function]}
-        placeholder={
-          <div
-            className="jsx-3551177564 article-placeholder"
-          />
-        }
-        useIntersectionObserver={true}
-        visibleByDefault={false}
+      <NextLink
+        ariaLabel="My First Blog Post"
+        as="/blog/my-first-blog"
+        href="/blog/[...slug]"
       >
-        <article
-          className="jsx-3551177564"
+        <t
+          afterLoad={[Function]}
+          beforeLoad={[Function]}
+          placeholder={
+            <div
+              className="jsx-3551177564 article-placeholder"
+            />
+          }
+          useIntersectionObserver={true}
+          visibleByDefault={false}
         >
-          <div
-            className="jsx-3551177564 blog-card-image"
+          <article
+            className="jsx-3551177564"
           >
-            <Picture
-              image={
-                Object {
-                  "_meta": Object {
-                    "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                    "name": "bag-image",
-                    "schema": "https://schema.localhost.com/image.json",
-                  },
-                  "altText": "crotch bags",
-                  "image": Object {
-                    "_meta": Object {
-                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
-                    },
-                    "defaultHost": "i1.adis.ws",
-                    "endpoint": "blogltd",
-                    "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                    "name": "friends-shopping-bags",
-                  },
-                }
-              }
-              sources={
-                Array [
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 345,
-                    },
-                    "media": "(min-width: 1098px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 728,
-                    },
-                    "media": "(min-width: 728px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 728,
-                    },
-                    "media": "(min-width: 528px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 528,
-                    },
-                    "media": "(min-width: 415px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 414,
-                    },
-                  },
-                ]
-              }
-            />
-          </div>
-          <div
-            className="jsx-3551177564 blog-card-content"
-          >
-            <h1
-              className="jsx-3551177564"
+            <div
+              className="jsx-3551177564 blog-card-image"
             >
-              <Highlight
-                attribute="title"
-                hit={
+              <Picture
+                image={
                   Object {
                     "_meta": Object {
-                      "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
-                      "deliveryKey": "my-first-blog",
-                      "name": "blog-post",
-                      "schema": "https://schema.localhost.com/blog-post.json",
+                      "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+                      "name": "bag-image",
+                      "schema": "https://schema.localhost.com/image.json",
                     },
-                    "authors": Array [
-                      Object {
-                        "_meta": Object {
-                          "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
-                          "name": "blog-author",
-                          "schema": "https://schema.localhost.com/author.json",
-                        },
-                        "avatar": Object {
+                    "altText": "crotch bags",
+                    "image": Object {
+                      "_meta": Object {
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                      },
+                      "defaultHost": "i1.adis.ws",
+                      "endpoint": "blogltd",
+                      "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+                      "name": "friends-shopping-bags",
+                    },
+                  }
+                }
+                sources={
+                  Array [
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 345,
+                      },
+                      "media": "(min-width: 1098px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 728,
+                      },
+                      "media": "(min-width: 728px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 728,
+                      },
+                      "media": "(min-width: 528px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 528,
+                      },
+                      "media": "(min-width: 415px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 414,
+                      },
+                    },
+                  ]
+                }
+              />
+            </div>
+            <div
+              className="jsx-3551177564 blog-card-content"
+            >
+              <h1
+                className="jsx-3551177564"
+              >
+                <Highlight
+                  attribute="title"
+                  hit={
+                    Object {
+                      "_meta": Object {
+                        "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                        "deliveryKey": "my-first-blog",
+                        "name": "blog-post",
+                        "schema": "https://schema.localhost.com/blog-post.json",
+                      },
+                      "authors": Array [
+                        Object {
                           "_meta": Object {
-                            "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
-                            "name": "blog-avatar",
+                            "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                            "name": "blog-author",
+                            "schema": "https://schema.localhost.com/author.json",
+                          },
+                          "avatar": Object {
+                            "_meta": Object {
+                              "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                              "name": "blog-avatar",
+                              "schema": "https://schema.localhost.com/image.json",
+                            },
+                            "altText": "The dashing Sir Blog avatar",
+                            "image": Object {
+                              "_meta": Object {
+                                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                              },
+                              "defaultHost": "i1.adis.ws",
+                              "endpoint": "blogltd",
+                              "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                              "name": "man-business-suit",
+                            },
+                          },
+                          "name": "Sir Blog",
+                        },
+                      ],
+                      "content": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+                            "name": "casual-crotch-shot",
                             "schema": "https://schema.localhost.com/image.json",
                           },
-                          "altText": "The dashing Sir Blog avatar",
+                          "altText": "Alt text",
                           "image": Object {
                             "_meta": Object {
                               "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
                             },
                             "defaultHost": "i1.adis.ws",
                             "endpoint": "blogltd",
-                            "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
-                            "name": "man-business-suit",
+                            "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                            "name": "casual-wear",
                           },
                         },
-                        "name": "Sir Blog",
-                      },
-                    ],
-                    "content": Array [
-                      Object {
-                        "_meta": Object {
-                          "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
-                          "name": "casual-crotch-shot",
-                          "schema": "https://schema.localhost.com/image.json",
-                        },
-                        "altText": "Alt text",
-                        "image": Object {
+                        Object {
                           "_meta": Object {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                            "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+                            "name": "my-first-blog-text",
+                            "schema": "https://schema.localhost.com/text.json",
                           },
-                          "defaultHost": "i1.adis.ws",
-                          "endpoint": "blogltd",
-                          "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
-                          "name": "casual-wear",
-                        },
-                      },
-                      Object {
-                        "_meta": Object {
-                          "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
-                          "name": "my-first-blog-text",
-                          "schema": "https://schema.localhost.com/text.json",
-                        },
-                        "text": "# This is my first Blog
+                          "text": "# This is my first Blog
 
 ## Look-a-header 2
 
@@ -214,156 +227,156 @@ Get listed
 *   Item One
 *   Item Two
 *   Item Three",
-                      },
-                      Object {
-                        "_meta": Object {
-                          "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
-                          "name": "my-first-blog-video",
-                          "schema": "https://schema.localhost.com/video.json",
                         },
-                        "srcSet": Array [],
-                        "video": Object {
+                        Object {
                           "_meta": Object {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                            "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+                            "name": "my-first-blog-video",
+                            "schema": "https://schema.localhost.com/video.json",
                           },
-                          "defaultHost": "i1.adis.ws",
-                          "endpoint": "blogltd",
-                          "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
-                          "name": "SampleVideo_1280x720_5mb",
-                        },
-                      },
-                    ],
-                    "date": "August 07, 2019",
-                    "deliveryKey": "test-delivery-key",
-                    "description": "Some text for the description that explains this blog post",
-                    "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
-                    "image": Object {
-                      "_meta": Object {
-                        "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                        "name": "bag-image",
-                        "schema": "https://schema.localhost.com/image.json",
-                      },
-                      "altText": "crotch bags",
-                      "image": Object {
-                        "_meta": Object {
-                          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
-                        },
-                        "defaultHost": "i1.adis.ws",
-                        "endpoint": "blogltd",
-                        "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                        "name": "friends-shopping-bags",
-                      },
-                    },
-                    "readTime": 12,
-                    "tags": Array [
-                      "sir blog",
-                      "you're it",
-                      "No tiggy backs",
-                    ],
-                    "title": "My First Blog Post",
-                  }
-                }
-                tagName="mark"
-              />
-            </h1>
-            <BlogCardMeta
-              authors={
-                Array [
-                  Object {
-                    "_meta": Object {
-                      "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
-                      "name": "blog-author",
-                      "schema": "https://schema.localhost.com/author.json",
-                    },
-                    "avatar": Object {
-                      "_meta": Object {
-                        "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
-                        "name": "blog-avatar",
-                        "schema": "https://schema.localhost.com/image.json",
-                      },
-                      "altText": "The dashing Sir Blog avatar",
-                      "image": Object {
-                        "_meta": Object {
-                          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
-                        },
-                        "defaultHost": "i1.adis.ws",
-                        "endpoint": "blogltd",
-                        "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
-                        "name": "man-business-suit",
-                      },
-                    },
-                    "name": "Sir Blog",
-                  },
-                ]
-              }
-              publishedDate="August 07, 2019"
-              readTime={12}
-            />
-            <p
-              className="jsx-3551177564"
-            >
-              <Highlight
-                attribute="description"
-                hit={
-                  Object {
-                    "_meta": Object {
-                      "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
-                      "deliveryKey": "my-first-blog",
-                      "name": "blog-post",
-                      "schema": "https://schema.localhost.com/blog-post.json",
-                    },
-                    "authors": Array [
-                      Object {
-                        "_meta": Object {
-                          "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
-                          "name": "blog-author",
-                          "schema": "https://schema.localhost.com/author.json",
-                        },
-                        "avatar": Object {
-                          "_meta": Object {
-                            "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
-                            "name": "blog-avatar",
-                            "schema": "https://schema.localhost.com/image.json",
-                          },
-                          "altText": "The dashing Sir Blog avatar",
-                          "image": Object {
+                          "srcSet": Array [],
+                          "video": Object {
                             "_meta": Object {
-                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
                             },
                             "defaultHost": "i1.adis.ws",
                             "endpoint": "blogltd",
-                            "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
-                            "name": "man-business-suit",
+                            "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+                            "name": "SampleVideo_1280x720_5mb",
                           },
                         },
-                        "name": "Sir Blog",
-                      },
-                    ],
-                    "content": Array [
-                      Object {
+                      ],
+                      "date": "August 07, 2019",
+                      "deliveryKey": "test-delivery-key",
+                      "description": "Some text for the description that explains this blog post",
+                      "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                      "image": Object {
                         "_meta": Object {
-                          "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
-                          "name": "casual-crotch-shot",
+                          "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+                          "name": "bag-image",
                           "schema": "https://schema.localhost.com/image.json",
                         },
-                        "altText": "Alt text",
+                        "altText": "crotch bags",
                         "image": Object {
                           "_meta": Object {
                             "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
                           },
                           "defaultHost": "i1.adis.ws",
                           "endpoint": "blogltd",
-                          "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
-                          "name": "casual-wear",
+                          "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+                          "name": "friends-shopping-bags",
                         },
                       },
-                      Object {
+                      "readTime": 12,
+                      "tags": Array [
+                        "sir blog",
+                        "you're it",
+                        "No tiggy backs",
+                      ],
+                      "title": "My First Blog Post",
+                    }
+                  }
+                  tagName="mark"
+                />
+              </h1>
+              <BlogCardMeta
+                authors={
+                  Array [
+                    Object {
+                      "_meta": Object {
+                        "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                        "name": "blog-author",
+                        "schema": "https://schema.localhost.com/author.json",
+                      },
+                      "avatar": Object {
                         "_meta": Object {
-                          "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
-                          "name": "my-first-blog-text",
-                          "schema": "https://schema.localhost.com/text.json",
+                          "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                          "name": "blog-avatar",
+                          "schema": "https://schema.localhost.com/image.json",
                         },
-                        "text": "# This is my first Blog
+                        "altText": "The dashing Sir Blog avatar",
+                        "image": Object {
+                          "_meta": Object {
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                          },
+                          "defaultHost": "i1.adis.ws",
+                          "endpoint": "blogltd",
+                          "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                          "name": "man-business-suit",
+                        },
+                      },
+                      "name": "Sir Blog",
+                    },
+                  ]
+                }
+                publishedDate="August 07, 2019"
+                readTime={12}
+              />
+              <p
+                className="jsx-3551177564"
+              >
+                <Highlight
+                  attribute="description"
+                  hit={
+                    Object {
+                      "_meta": Object {
+                        "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                        "deliveryKey": "my-first-blog",
+                        "name": "blog-post",
+                        "schema": "https://schema.localhost.com/blog-post.json",
+                      },
+                      "authors": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                            "name": "blog-author",
+                            "schema": "https://schema.localhost.com/author.json",
+                          },
+                          "avatar": Object {
+                            "_meta": Object {
+                              "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                              "name": "blog-avatar",
+                              "schema": "https://schema.localhost.com/image.json",
+                            },
+                            "altText": "The dashing Sir Blog avatar",
+                            "image": Object {
+                              "_meta": Object {
+                                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                              },
+                              "defaultHost": "i1.adis.ws",
+                              "endpoint": "blogltd",
+                              "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                              "name": "man-business-suit",
+                            },
+                          },
+                          "name": "Sir Blog",
+                        },
+                      ],
+                      "content": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+                            "name": "casual-crotch-shot",
+                            "schema": "https://schema.localhost.com/image.json",
+                          },
+                          "altText": "Alt text",
+                          "image": Object {
+                            "_meta": Object {
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                            },
+                            "defaultHost": "i1.adis.ws",
+                            "endpoint": "blogltd",
+                            "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                            "name": "casual-wear",
+                          },
+                        },
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+                            "name": "my-first-blog-text",
+                            "schema": "https://schema.localhost.com/text.json",
+                          },
+                          "text": "# This is my first Blog
 
 ## Look-a-header 2
 
@@ -413,71 +426,72 @@ Get listed
 *   Item One
 *   Item Two
 *   Item Three",
-                      },
-                      Object {
-                        "_meta": Object {
-                          "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
-                          "name": "my-first-blog-video",
-                          "schema": "https://schema.localhost.com/video.json",
                         },
-                        "srcSet": Array [],
-                        "video": Object {
+                        Object {
                           "_meta": Object {
-                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                            "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+                            "name": "my-first-blog-video",
+                            "schema": "https://schema.localhost.com/video.json",
+                          },
+                          "srcSet": Array [],
+                          "video": Object {
+                            "_meta": Object {
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                            },
+                            "defaultHost": "i1.adis.ws",
+                            "endpoint": "blogltd",
+                            "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+                            "name": "SampleVideo_1280x720_5mb",
+                          },
+                        },
+                      ],
+                      "date": "August 07, 2019",
+                      "deliveryKey": "test-delivery-key",
+                      "description": "Some text for the description that explains this blog post",
+                      "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                      "image": Object {
+                        "_meta": Object {
+                          "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+                          "name": "bag-image",
+                          "schema": "https://schema.localhost.com/image.json",
+                        },
+                        "altText": "crotch bags",
+                        "image": Object {
+                          "_meta": Object {
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
                           },
                           "defaultHost": "i1.adis.ws",
                           "endpoint": "blogltd",
-                          "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
-                          "name": "SampleVideo_1280x720_5mb",
+                          "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+                          "name": "friends-shopping-bags",
                         },
                       },
-                    ],
-                    "date": "August 07, 2019",
-                    "deliveryKey": "test-delivery-key",
-                    "description": "Some text for the description that explains this blog post",
-                    "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
-                    "image": Object {
-                      "_meta": Object {
-                        "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                        "name": "bag-image",
-                        "schema": "https://schema.localhost.com/image.json",
-                      },
-                      "altText": "crotch bags",
-                      "image": Object {
-                        "_meta": Object {
-                          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
-                        },
-                        "defaultHost": "i1.adis.ws",
-                        "endpoint": "blogltd",
-                        "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                        "name": "friends-shopping-bags",
-                      },
-                    },
-                    "readTime": 12,
-                    "tags": Array [
-                      "sir blog",
-                      "you're it",
-                      "No tiggy backs",
-                    ],
-                    "title": "My First Blog Post",
+                      "readTime": 12,
+                      "tags": Array [
+                        "sir blog",
+                        "you're it",
+                        "No tiggy backs",
+                      ],
+                      "title": "My First Blog Post",
+                    }
                   }
+                  tagName="mark"
+                />
+              </p>
+              <TagChips
+                tags={
+                  Array [
+                    "sir blog",
+                    "you're it",
+                    "No tiggy backs",
+                  ]
                 }
-                tagName="mark"
               />
-            </p>
-            <TagChips
-              tags={
-                Array [
-                  "sir blog",
-                  "you're it",
-                  "No tiggy backs",
-                ]
-              }
-            />
-          </div>
-        </article>
-      </t>
-    </NextLink>
+            </div>
+          </article>
+        </t>
+      </NextLink>
+    </TrackClick>
   </section>
   <JSXStyle
     dynamic={
@@ -508,16 +522,20 @@ exports[`BlogCard renders full blog card with lazy loaded placeholders 1`] = `
 <section
   className="jsx-3551177564"
 >
-  <a
-    aria-label="My First Blog Post"
-    className="jsx-3574172415"
-    href="/blog/my-first-blog"
+  <div
     onClick={[Function]}
-    onMouseEnter={[Function]}
   >
-    <div
-      className="jsx-3551177564 article-placeholder"
-    />
-  </a>
+    <a
+      aria-label="My First Blog Post"
+      className="jsx-3574172415"
+      href="/blog/my-first-blog"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="jsx-3551177564 article-placeholder"
+      />
+    </a>
+  </div>
 </section>
 `;
