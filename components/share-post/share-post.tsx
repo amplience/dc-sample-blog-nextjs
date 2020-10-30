@@ -5,7 +5,7 @@ import theme from '../../common/styles/default/theme';
 
 const SharePost = ({ twitterText }: { twitterText: string }): ReactElement => {
   const router = useRouter();
-  const baseUrl = process.env.BASE_URL !== undefined ? process.env.BASE_URL : '';
+  const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;
 
   return (
@@ -16,10 +16,10 @@ const SharePost = ({ twitterText }: { twitterText: string }): ReactElement => {
           <div>
             <Helmet>
               <script async src="https://platform.linkedin.com/in.js" type="text/javascript">
-                lang: en_US
+                lang: en_GB
               </script>
-              <script type="IN/Share" data-url={currentPageUrl}></script>
             </Helmet>
+            <script type="IN/Share" data-url={currentPageUrl}></script>
           </div>
           <div>
             <a
