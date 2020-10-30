@@ -29,6 +29,11 @@ Array [
 exports[`TrackClick renders a trackable click element 1`] = `
 <div
   onClick={[Function]}
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
 >
   <button
     role="button"

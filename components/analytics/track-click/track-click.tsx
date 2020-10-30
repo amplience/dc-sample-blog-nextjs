@@ -13,20 +13,20 @@ interface TrackClickProps {
 
 const TrackClick = ({ children, eventName, queryId, objectIds, positions }: TrackClickProps): ReactElement => (
   <div
+    style={{ display: 'flex' }}
     onClick={() => {
-        aa('init', {
-          appId: process.env.ALGOLIA_APPLICATION_ID as string,
-          apiKey: process.env.SEARCH_API_KEY as string
-        });
-        aa('clickedObjectIDsAfterSearch', {
-          index: INDEX_NAME,
-          eventName,
-          queryID: queryId,
-          objectIDs: objectIds,
-          positions
-        });
-      }
-    }
+      aa('init', {
+        appId: process.env.ALGOLIA_APPLICATION_ID as string,
+        apiKey: process.env.SEARCH_API_KEY as string
+      });
+      aa('clickedObjectIDsAfterSearch', {
+        index: INDEX_NAME,
+        eventName,
+        queryID: queryId,
+        objectIDs: objectIds,
+        positions
+      });
+    }}
   >
     {children}
   </div>
