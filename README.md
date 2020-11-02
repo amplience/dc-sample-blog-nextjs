@@ -55,6 +55,11 @@ Notes:
 
 - If you do not want to use the CLI, you can create the schemas and register the content types listed above manually in Dynamic Content.
 
+- Some places in the application use hardcoded values. Please be aware that these values will need to be changed when coding the application:
+  - Header title (layouts/default.tsx)
+  - Publisher logo/name in JsonLD (components/microdata/microdata.tsx)
+  - Social links and Copyright information (components/footer/footer.tsx)
+
 ### Creating a Blog content item
 
 Once you have installed and registered (or imported) all of the Schemas and Content Types, the next step is to create a blog content item. This is used to store the title and description for you blog to create the entry point for NextJs to build the blog.
@@ -66,7 +71,7 @@ How to create a blog content item for your blog:
 3. Click "Create content"
 4. Select the "Blog" (or whatever label to assigned to the "blog.json" content type)
 5. Enter a title, heading and search placeholder (these will appear on your blog)
-6. Enter "blog" in the field _meta > Delivery key (you may enter another value if you wish). This value will be used later on to retrieve the blog during the build phase.
+6. Enter "blog" in the field \_meta > Delivery key (you may enter another value if you wish). This value will be used later on to retrieve the blog during the build phase.
 7. Click "Save"
 8. Click "Publish". The blog must be published for it to be available to the Netlify build process later, otherwise the build will fail.
 

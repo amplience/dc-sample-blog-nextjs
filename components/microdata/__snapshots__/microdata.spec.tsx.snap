@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Microdata should render Microdata component when author is not defined 1`] = `
-<BlogJsonLd
+<ArticleJsonLd
   authorName=""
   dateModified="2019-07-07"
   datePublished="2019-07-07"
@@ -13,13 +13,15 @@ exports[`Microdata should render Microdata component when author is not defined 
       "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1",
     ]
   }
+  publisherLogo="http://example.com//static/images/logo-100h.png"
+  publisherName="Amplience"
   title="test-headline"
   url="http://example.com/mocked-path"
 />
 `;
 
 exports[`Microdata should render a full Microdata component and BASE_URL is defined 1`] = `
-<BlogJsonLd
+<ArticleJsonLd
   authorName="test-author-1"
   dateModified="2019-07-07"
   datePublished="2019-07-07"
@@ -31,13 +33,15 @@ exports[`Microdata should render a full Microdata component and BASE_URL is defi
       "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1",
     ]
   }
+  publisherLogo="http://example.com//static/images/logo-100h.png"
+  publisherName="Amplience"
   title="test-headline"
   url="http://example.com/mocked-path"
 />
 `;
 
 exports[`Microdata should render a full Microdata component and BASE_URL is not defined 1`] = `
-<BlogJsonLd
+<ArticleJsonLd
   authorName="test-author-1"
   dateModified="2019-07-07"
   datePublished="2019-07-07"
@@ -49,6 +53,8 @@ exports[`Microdata should render a full Microdata component and BASE_URL is not 
       "//test-imageurl/image-test.jpg?w=1200&sm=aspect&aspect=1:1",
     ]
   }
+  publisherLogo="/static/images/logo-100h.png"
+  publisherName="Amplience"
   title="test-headline"
   url="mocked-path"
 />
