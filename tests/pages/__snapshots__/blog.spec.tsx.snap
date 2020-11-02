@@ -630,7 +630,13 @@ exports[`Blog page renders Blog page with content 1`] = `
           >
             <div
               className="jsx-2442235184"
-            />
+            >
+              <script
+                className="jsx-2442235184"
+                data-url="mocked-path"
+                type="IN/Share"
+              />
+            </div>
             <div
               className="jsx-2442235184"
             >
