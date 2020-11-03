@@ -1,6 +1,6 @@
 {
   "name": "dc-static-blog-nextjs",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Amplience Dynamic Content Static Site with NextJS",
   "scripts": {
     "dev": "next dev",
