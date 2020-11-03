@@ -524,6 +524,11 @@ exports[`BlogCard renders full blog card with lazy loaded placeholders 1`] = `
 >
   <div
     onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
   >
     <a
       aria-label="My First Blog Post"
