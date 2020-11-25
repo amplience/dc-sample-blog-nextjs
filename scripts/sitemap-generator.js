@@ -2,8 +2,11 @@
 const sitemap = require('nextjs-sitemap-generator');
 require('dotenv').config();
 
+process.env.SITEMAP_GENERATOR = true;
+
 sitemap({
   baseUrl: process.env.URL,
+  nextConfigPath: __dirname + '/../next.config.js',
   pagesDirectory: 'out/',
   targetDirectory: 'out/',
   ignoredExtensions: ['js', 'map'],
