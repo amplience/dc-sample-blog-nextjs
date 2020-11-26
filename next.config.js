@@ -135,9 +135,16 @@ const manifest = {
   splash_pages: null
 };
 
-const plugins = flow([withManifest, withOffline]);
+const plugins = [withManifest];
+// the withOffline plugin doesn't work with the nextjs-sitemap-generator,
+// so if SITEMAP_GENERATOR is present skip the withOffline plugin
+if (!process.env.SITEMAP_GENERATOR) {
+  plugins.push(withOffline);
+}
 
-module.exports = plugins({
+const invokePlugins = flow(plugins);
+
+module.exports = invokePlugins({
   env,
   exportPathMap,
   manifest,
