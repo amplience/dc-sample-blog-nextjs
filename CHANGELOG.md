@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/amplience/dc-static-blog-nextjs/compare/v2.1.0...v2.1.1) (2020-12-02)
+
+
+### Features
+
+* add sitemap url to robots.txt ([#93](https://github.com/amplience/dc-static-blog-nextjs/issues/93)) ([9f9f7ff](https://github.com/amplience/dc-static-blog-nextjs/commit/9f9f7ff89c18856b2e4a4e2726b4f61a337a942a))
+
+
+### Bug Fixes
+
+* add trailling slashes to sitemap.xml ([#92](https://github.com/amplience/dc-static-blog-nextjs/issues/92)) ([918998d](https://github.com/amplience/dc-static-blog-nextjs/commit/918998d73ae29c93241f4a3831d754d619a2bd72))
+* only append / to urls that dont end in / (external lib change) ([#95](https://github.com/amplience/dc-static-blog-nextjs/issues/95)) ([de49cd0](https://github.com/amplience/dc-static-blog-nextjs/commit/de49cd036dbca94768249b718b7a4ab116557f83))
+
 ## [2.1.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v2.0.1...v2.1.0) (2020-11-03)
 
 
