@@ -4,8 +4,10 @@
 
 [[redirects]]
 
-  from = "https://productblog-uat-prod.netlify.app"
+  from = ""
   to = "https://amplience.com/blog"
+
+[[redirects]]
 
   from = "/blog/*"
   to = "https://amplience.com/blog/:splat"
