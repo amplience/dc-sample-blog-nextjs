@@ -3,11 +3,19 @@
   command = "npm run export"
 
 [[redirects]]
-
   from = "/index.html"
   to = "https://amplience.com/blog"
+  status = 301
+  force = false  
 
 [[redirects]]
-
+  from = "/"
+  to = "https://amplience.com/blog"
+  status = 301
+  force = false
+  
+[[redirects]]
   from = "/blog/*"
   to = "https://amplience.com/blog/:splat"
+  status = 301
+  force = false
