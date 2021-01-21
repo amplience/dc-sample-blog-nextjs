@@ -9,7 +9,7 @@ import { defaultClientConfig } from './dynamic-content-client-config';
 export async function parseContent(content: AmplienceContent[]): Promise<AmplienceContent[]> {
   const updatedContent: AmplienceContent[] = [];
 
-  for (let c of content) {
+  for (const c of content) {
     if ('video' in c) {
       c.srcSet = await getVideoSources(c);
     }
@@ -19,7 +19,7 @@ export async function parseContent(content: AmplienceContent[]): Promise<Amplien
   return updatedContent;
 }
 
-export function isBlogPost(contentItem: BlogPost | AmplienceContent): contentItem is BlogPost & DefaultContentBody {
+export function isBlogPost(contentItem: DefaultContentBody): contentItem is BlogPost & DefaultContentBody {
   const blogPost = contentItem as BlogPost;
   return (
     blogPost.title !== undefined &&
@@ -27,35 +27,44 @@ export function isBlogPost(contentItem: BlogPost | AmplienceContent): contentIte
     blogPost.date !== undefined &&
     blogPost.description !== undefined &&
     blogPost.image !== undefined &&
-    blogPost.urlSlug !== undefined &&
     blogPost.readTime !== undefined &&
     blogPost.content !== undefined
   );
 }
 
 export async function parseBlogPost(contentItem: BlogPost & DefaultContentBody): Promise<BlogPost> {
-  const { title, date, description, authors, readTime, image, urlSlug, content, tags } = contentItem;
-  const blogId = contentItem._meta.deliveryId;
+  const { _meta, title, date, description, authors, readTime, image, content, tags } = contentItem;
 
   return {
-    id: blogId,
+    _meta,
+    id: contentItem._meta.deliveryId,
     title,
     date: convertToBlogDate(date),
     description,
     authors,
     readTime,
     image,
-    urlSlug,
     content: await parseContent(content),
     tags
   };
 }
 
-export default async function getBlogPost(blogPostId: string, stagingEnvironment?: string): Promise<BlogPost> {
+export async function getBlogPostByDeliveryKey(key: string, stagingEnvironment?: string): Promise<BlogPost> {
   const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
 
   const deliveryClient = new DynamicContentDeliveryService(clientConfig);
-  const contentItem = (await deliveryClient.getContentItemById(blogPostId)).toJSON();
+  const contentItem = (await deliveryClient.getContentItemByKey(key)).toJSON();
+  if (!isBlogPost(contentItem)) {
+    throw new Error('Content Item is not a Blog Post');
+  }
+  return await parseBlogPost(contentItem);
+}
+
+export async function getBlogPostByDeliveryId(id: string, stagingEnvironment?: string): Promise<BlogPost> {
+  const clientConfig = { ...defaultClientConfig, baseUrl: process.env.DYNAMIC_CONTENT_BASE_URL, stagingEnvironment };
+
+  const deliveryClient = new DynamicContentDeliveryService(clientConfig);
+  const contentItem = (await deliveryClient.getContentItemById(id)).toJSON();
   if (!isBlogPost(contentItem)) {
     throw new Error('Content Item is not a Blog Post');
   }

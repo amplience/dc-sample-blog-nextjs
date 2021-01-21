@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 import BlogList from './blog-list';
@@ -23,7 +24,6 @@ describe('BlogList', () => {
         },
         altText: ''
       },
-      urlSlug: 'url-slug',
       tags: ['test-tag'],
       readTime: 15,
       content: []

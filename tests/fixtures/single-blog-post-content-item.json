@@ -1,7 +1,9 @@
 {
   "_meta": {
     "schema": "https://schema.localhost.com/blog-post.json",
+    "deliveryKey": "my-first-blog",
     "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+    "deliveryKey": "test-delivery-key",
     "name": "blog-post"
   },
   "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
@@ -53,7 +55,6 @@
     },
     "altText": "crotch bags"
   },
-  "urlSlug": "my-first-blog",
   "content": [
     {
       "_meta": {

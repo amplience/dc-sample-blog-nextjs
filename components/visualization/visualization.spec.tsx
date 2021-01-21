@@ -1,25 +1,57 @@
-import Visualization from './visualization';
-import { shallow } from 'enzyme';
 import waitUntil from 'async-wait-until';
+import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
+import React from 'react';
+import { findResultsState } from 'react-instantsearch-dom/server';
+import { Blog } from '../../common/interfaces/blog.interface';
+import { VideoProfile } from '../../common/services/video.service';
+import PageLoader from '../page-loader/page-loader';
+import Visualization from './visualization';
+import * as blogFixture from './__fixtures__/blog.json';
 import * as blogPostFixture from './__fixtures__/blogpost.json';
-import PageLoader from "../page-loader/page-loader";
 
-const mockGetStagingContentItemById = jest.fn();
-jest.mock('../../common/services/vse.service', () => () => mockGetStagingContentItemById());
-const mockGetReferencedBlogPosts = jest.fn();
-const blogReferenceList = require('../../common/services/blog-reference-list.service');
-blogReferenceList.getReferencedBlogPosts = mockGetReferencedBlogPosts;
+const mockFetch = jest.fn();
+const mockGetContentItemById = jest.fn();
+jest.mock('search-insights');
+jest.mock('../../common/services/vse.service', () => () => mockGetContentItemById());
+jest.mock('react-instantsearch-dom', () => ({
+  ...jest.requireActual('react-instantsearch-dom'),
+  connectStateResults: templateFn => params => templateFn(params)
+}));
+jest.mock('algoliasearch', () => () => 'mockSearchClient');
+jest.mock('react-instantsearch-dom/server', () => ({
+  findResultsState: jest.fn()
+}));
+jest.mock('isomorphic-unfetch', () => {
+  return (): jest.Mock => mockFetch();
+});
 
 describe('Visualization', (): void => {
   beforeEach(() => {
+    process.env.ALGOLIA_APPLICATION_ID = 'algolia-app-id';
+    process.env.SEARCH_API_KEY = 'algolia-search-key';
+    process.env.SEARCH_INDEX_NAME_STAGING = 'algolia-index-name';
+
+    mockFetch.mockImplementationOnce((): { json: () => VideoProfile; status: number } => {
+      return {
+        json(): VideoProfile {
+          return {
+            media: [{ src: 'https://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p' }]
+          };
+        },
+        status: 200
+      };
+    });
+  });
+
+  afterEach(() => {
     jest.resetAllMocks();
   });
 
-  async function renderVisualization(contentItem: any) {
-    mockGetStagingContentItemById.mockResolvedValue(contentItem);
+  async function renderVisualization<T>(contentItem: T) {
+    mockGetContentItemById.mockResolvedValue(contentItem);
 
-    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentId="content" />, {
+    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentItemId="content" />, {
       lifecycleExperimental: true
     });
 
@@ -27,7 +59,7 @@ describe('Visualization', (): void => {
 
     await waitUntil(() => !wrapper.contains(<PageLoader />));
 
-    expect(mockGetStagingContentItemById).toHaveBeenCalled();
+    expect(mockGetContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
   }
 
@@ -59,33 +91,32 @@ describe('Visualization', (): void => {
         endpoint: 'bloblogltd',
         name: 'SampleVideo_1280x720_5mb',
         id: '721044de-d125-4a1a-8ddc-2201b9463f2d'
-      },
-      srcSet: ['https://i1-qa.adis.ws/v/bloblogltd/SampleVideo_1280x720_5mb/mp4_240p?protocol=https']
+      }
     };
 
     await renderVisualization(contentItem);
   });
 
   it('should handle vse errors', async (): Promise<void> => {
-    mockGetStagingContentItemById.mockRejectedValue({ message: 'Mock Error' });
+    mockGetContentItemById.mockRejectedValue({ message: 'Mock Error' });
 
-    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentId="content" />, {
+    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="vse" contentItemId="content" />, {
       lifecycleExperimental: true
     });
 
     expect(toJson(wrapper)).toMatchSnapshot();
 
     await waitUntil(() => wrapper.state('error') !== undefined);
-    expect(mockGetStagingContentItemById).toHaveBeenCalled();
+    expect(mockGetContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
   it('should only load content when props are provided', async (): Promise<void> => {
-    mockGetStagingContentItemById.mockResolvedValue({
+    mockGetContentItemById.mockResolvedValue({
       text: '# Markdown Text'
     });
 
-    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="" contentId="" />, {
+    const wrapper = shallow<Visualization>(<Visualization stagingEnvironment="" contentItemId="" />, {
       lifecycleExperimental: true
     });
 
@@ -93,12 +124,12 @@ describe('Visualization', (): void => {
 
     wrapper.setProps({
       stagingEnvironment: 'vse',
-      contentId: 'content'
+      contentItemId: 'content'
     });
 
     await waitUntil(() => !wrapper.contains(<PageLoader />));
 
-    expect(mockGetStagingContentItemById).toHaveBeenCalled();
+    expect(mockGetContentItemById).toHaveBeenCalled();
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 
@@ -106,35 +137,8 @@ describe('Visualization', (): void => {
     await renderVisualization(blogPostFixture);
   });
 
-  it('should render a blog list', async () => {
-    const blogList = {
-      title: 'A blog title',
-      subTitle: 'A strap line',
-      blogPosts: [ blogPostFixture ]
-    };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
-    expect(mockGetReferencedBlogPosts).toHaveBeenCalledWith(expect.anything(), 'vse');
-  });
-
-  it('should render a blog list without a subtitle', async () => {
-    const blogList = {
-      title: 'A blog title',
-      blogPosts: [ blogPostFixture ]
-    };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
-  });
-
-  it('should render a blog list without any blog posts', async () => {
-    const blogList = {
-      title: 'A blog title',
-      blogPosts: []
-    };
-    mockGetReferencedBlogPosts.mockResolvedValue(blogList.blogPosts);
-
-    await renderVisualization(blogList);
+  it('should render a blog page', async () => {
+    await renderVisualization(blogFixture as Blog);
+    expect(findResultsState as jest.Mock).toBeCalled();
   });
 });

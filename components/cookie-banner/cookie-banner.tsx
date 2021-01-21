@@ -1,6 +1,7 @@
+import React, { ReactElement } from 'react';
 import CookieConsent from 'react-cookie-consent';
 
-const CookieBanner = () => {
+const CookieBanner = (): ReactElement => {
   return (
     <>
       <CookieConsent

@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import Video from '../videos/video.component';
 import { AmplienceContent } from '../../common/interfaces/content.type';
 import ReactMarkdown from 'react-markdown';
@@ -8,7 +9,7 @@ import { LazyLoadComponent } from 'react-lazy-load-image-component';
 
 const MARKDOWN_RENDERERS = { ...markdown };
 
-const Content = ({ content }: { content: AmplienceContent[] }) => {
+const Content = ({ content }: { content: AmplienceContent[] }): ReactElement => {
   return (
     <>
       <section>
@@ -17,26 +18,30 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
 
           if ('image' in c) {
             contentComponent = (
-              <div key={c.image.id}>
-                <Picture
-                  image={c}
-                  sources={[
-                    {
-                      di: { w: 675, scaleFit: 'poi' },
-                      media: '(min-width: 415px)'
-                    },
-                    {
-                      di: { w: 414, scaleFit: 'poi' }
-                    }
-                  ]}
-                />
-              </div>
+              <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
+                <div key={c.image.id}>
+                  <Picture
+                    image={c}
+                    sources={[
+                      {
+                        di: { w: 675, scaleFit: 'poi' },
+                        media: '(min-width: 415px)'
+                      },
+                      {
+                        di: { w: 414, scaleFit: 'poi' }
+                      }
+                    ]}
+                  />
+                </div>
+              </LazyLoadComponent>
             );
           } else if ('video' in c) {
             contentComponent = (
-              <div key={c.video.id} className="blog-post-video">
-                <Video video={c.video} srcSet={c.srcSet} />
-              </div>
+              <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
+                <div key={c.video.id} className="blog-post-video">
+                  <Video video={c.video} srcSet={c.srcSet} />
+                </div>
+              </LazyLoadComponent>
             );
           } else if ('text' in c) {
             contentComponent = (
@@ -45,11 +50,7 @@ const Content = ({ content }: { content: AmplienceContent[] }) => {
               </div>
             );
           }
-          return (
-            <LazyLoadComponent key={index} placeholder={<div className="content-placeholder"></div>}>
-              {contentComponent}
-            </LazyLoadComponent>
-          );
+          return contentComponent;
         })}
       </section>
       <style jsx>{`

@@ -1,68 +1,41 @@
 /* eslint-env jest */
-import renderer from 'react-test-renderer';
+import React from 'react';
+import { findResultsState } from 'react-instantsearch-dom/server';
 import Index from '../../pages/index';
 import blogListFixture from '../fixtures/blog-list-one-blog.json';
+import ShallowRenderer from 'react-test-renderer/shallow';
 
-const mockGetHydratedBlogList = jest.fn();
+jest.mock('search-insights');
+jest.mock('react-instantsearch-dom/server', () => ({
+  findResultsState: jest.fn()
+}));
 
-jest.mock('../../common/services/blog-reference-list.service', () => (a, b) => mockGetHydratedBlogList(a, b));
+jest.mock('react-instantsearch-dom', () => ({
+  ...jest.requireActual('react-instantsearch-dom'),
+  connectStateResults: templateFn => params => templateFn(params)
+}));
+
+jest.mock('algoliasearch', () => jest.fn().mockImplementation(() => ({ search: jest.fn() })));
 
 describe('Index', () => {
   beforeEach(() => {
+    process.env.ALGOLIA_APPLICATION_ID = 'algolia-app-id';
+    process.env.SEARCH_API_KEY = 'algolia-search-key';
+    process.env.SEARCH_INDEX_NAME_PRODUCTION = 'algolia-index-name';
     process.env.DYNAMIC_CONTENT_REFERENCE_ID = 'reference-id';
     process.env.GA_TRACKING_ID = 'ga-tracking-id';
-    mockGetHydratedBlogList.mockClear();
+    process.env.HITS_PER_PAGE = '9';
   });
 
-  test('renders index with content', async () => {
-    const component = await renderer.create(<Index {...blogListFixture} />);
-    expect(component.toJSON()).toMatchSnapshot();
+  afterEach(() => {
+    jest.restoreAllMocks();
   });
 
-  test('renders index with content but no blog posts', async () => {
-    const emptyBlogPostFixture = JSON.parse(JSON.stringify(blogListFixture));
-    emptyBlogPostFixture.blogPosts = [];
-    const component = await renderer.create(<Index {...emptyBlogPostFixture} />);
-    expect(component.toJSON()).toMatchSnapshot();
-  });
-
-  test('getInitialProps returns content via api', async () => {
-    mockGetHydratedBlogList.mockImplementation(() => {
-      return blogListFixture;
+  describe('components', () => {
+    it('should render index', async () => {
+      const component = ShallowRenderer.createRenderer();
+      component.render(<Index {...blogListFixture} />);
+      expect(component.getRenderOutput()).toMatchSnapshot();
     });
-    const query = {};
-    const result = await Index.getInitialProps({ query, pathname: '/' });
-
-    expect(result).toEqual({ ...blogListFixture });
-  });
-
-  test('getInitialProps should call getHydratedBlogList with base url', async () => {
-    mockGetHydratedBlogList.mockImplementation((a, b) => {
-      return blogListFixture;
-    });
-    const query = { vse: 'vse-base-url' };
-    await Index.getInitialProps({ query, pathname: '/' });
-
-    expect(mockGetHydratedBlogList).toHaveBeenCalledWith('reference-id', `//${query.vse}`);
-  });
-
-  test('getInitialProps should call getHydratedBlogList without base url', async () => {
-    mockGetHydratedBlogList.mockImplementation((a, b) => {
-      return blogListFixture;
-    });
-    const query = {};
-    await Index.getInitialProps({ query, pathname: '/' });
-
-    expect(mockGetHydratedBlogList).toHaveBeenCalledWith('reference-id', undefined);
-  });
-
-  test('getInitialProps throws error when DYNAMIC_CONTENT_REFERENCE_ID is undefined', async () => {
-    delete process.env.DYNAMIC_CONTENT_REFERENCE_ID;
-    mockGetHydratedBlogList.mockImplementation(() => {
-      throw new Error();
-    });
-    const query = {};
-
-    await expect(Index.getInitialProps({ query, pathname: '/' })).rejects.toThrowError(Error);
   });
 });

@@ -2,13 +2,13 @@
 
 exports[`Blog page renders Blog page with content 1`] = `
 <div
-  className="jsx-873644259 site-container"
+  className="jsx-3319508426 site-container"
 >
   <section
-    className="jsx-3469519543"
+    className="jsx-2398603546"
   >
     <header
-      className="jsx-3469519543"
+      className="jsx-2398603546"
     >
       <a
         aria-label=""
@@ -22,21 +22,21 @@ exports[`Blog page renders Blog page with content 1`] = `
           srcSet="/static/images/logo-white-50h.png 1x, /static/images/logo-white-100h.png 2x"
         />
       </a>
-      <h1
-        className="jsx-3469519543"
+      <span
+        className="jsx-2398603546"
       >
         PRODUCT BLOG
-      </h1>
+      </span>
     </header>
   </section>
   <div
-    className="jsx-873644259 site-content"
+    className="jsx-3319508426 site-content"
   >
     <main
-      className="jsx-873644259"
+      className="jsx-3319508426"
     >
       <div
-        className="jsx-2678308288 content-header"
+        className="jsx-452798245 content-header"
       >
         <section
           className="jsx-3378232041"
@@ -95,11 +95,33 @@ exports[`Blog page renders Blog page with content 1`] = `
             </div>
           </div>
         </section>
+        <div
+          className="jsx-1065517858 tag-chips"
+        >
+          <div
+            className="jsx-1065517858"
+            onClick={[Function]}
+          >
+            sir blog
+          </div>
+          <div
+            className="jsx-1065517858"
+            onClick={[Function]}
+          >
+            you're it
+          </div>
+          <div
+            className="jsx-1065517858"
+            onClick={[Function]}
+          >
+            No tiggy backs
+          </div>
+        </div>
         <section
           className="jsx-3528769338"
         >
           <h1
-            className="jsx-2799736912"
+            className="jsx-641291359"
           >
             My First Blog Post
           </h1>
@@ -111,7 +133,7 @@ exports[`Blog page renders Blog page with content 1`] = `
         </section>
       </div>
       <div
-        className="jsx-2678308288 blog-image"
+        className="jsx-452798245 blog-image"
       >
         <picture>
           <source
@@ -155,7 +177,7 @@ exports[`Blog page renders Blog page with content 1`] = `
         </picture>
       </div>
       <div
-        className="jsx-2678308288 content-wrapper"
+        className="jsx-452798245 content-wrapper"
       >
         <section
           className="jsx-1163017566"
@@ -164,15 +186,436 @@ exports[`Blog page renders Blog page with content 1`] = `
             className="jsx-1163017566 content-placeholder"
           />
           <div
-            className="jsx-1163017566 content-placeholder"
-          />
+            className="jsx-1163017566"
+          >
+            <h1
+              className="jsx-2595089998"
+            >
+              This is my first Blog
+            </h1>
+            <h2
+              className="jsx-2595089998"
+            >
+              Look-a-header 2
+            </h2>
+            <h3
+              className="jsx-2595089998"
+            >
+              Look-a-header 3
+            </h3>
+            <h4
+              className="jsx-2595089998"
+            >
+              Look-a-header 4
+            </h4>
+            <h5
+              className="jsx-2595089998"
+            >
+              Look-a-header 5
+            </h5>
+            <h6
+              className="jsx-2595089998"
+            >
+              Look-a-header 6
+            </h6>
+            <p
+              className="jsx-430790654"
+            >
+              <em>
+                <strong>
+                  This
+                </strong>
+              </em>
+               
+              <em>
+                is
+              </em>
+               
+              <em>
+                some
+              </em>
+               
+              <del>
+                sample
+              </del>
+               
+              <strong>
+                text
+              </strong>
+              .
+            </p>
+            <p
+              className="jsx-430790654"
+            >
+              <img
+                alt="alt text"
+                src="https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png"
+                title="Logo Title Text 1"
+              />
+            </p>
+            <p
+              className="jsx-430790654"
+            >
+              This is some more sample text with a 
+              <span
+                className="jsx-3731109703"
+              >
+                <a
+                  className="jsx-3655793200"
+                  href="http://bbc.co.uk"
+                  rel="noreferrer"
+                  target="_new"
+                >
+                  LINK
+                </a>
+              </span>
+            </p>
+            <blockquote
+              className="jsx-2064009043"
+            >
+              <p
+                className="jsx-430790654"
+              >
+                Comments are cool!
+              </p>
+              <p
+                className="jsx-430790654"
+              >
+                See what I mean
+              </p>
+            </blockquote>
+            <p
+              className="jsx-430790654"
+            >
+              Look some code:
+            </p>
+            <pre
+              style={
+                Object {
+                  "MozHyphens": "none",
+                  "MozTabSize": "4",
+                  "OTabSize": "4",
+                  "WebkitHyphens": "none",
+                  "background": "#1d1f21",
+                  "borderRadius": "0.3em",
+                  "color": "#c5c8c6",
+                  "direction": "ltr",
+                  "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
+                  "hyphens": "none",
+                  "lineHeight": "1.5",
+                  "margin": ".5em 0",
+                  "msHyphens": "none",
+                  "overflow": "auto",
+                  "padding": "1em",
+                  "tabSize": "4",
+                  "textAlign": "left",
+                  "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
+                  "whiteSpace": "pre",
+                  "wordBreak": "normal",
+                  "wordSpacing": "normal",
+                }
+              }
+            >
+              <code
+                style={
+                  Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "color": "#c5c8c6",
+                    "direction": "ltr",
+                    "float": "left",
+                    "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "msHyphens": "none",
+                    "paddingRight": "10px",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                  }
+                }
+              >
+                <span
+                  className="react-syntax-highlighter-line-number"
+                >
+                  1
+
+                </span>
+                <span
+                  className="react-syntax-highlighter-line-number"
+                >
+                  2
+
+                </span>
+              </code>
+              <code
+                style={
+                  Object {
+                    "MozHyphens": "none",
+                    "MozTabSize": "4",
+                    "OTabSize": "4",
+                    "WebkitHyphens": "none",
+                    "color": "#c5c8c6",
+                    "direction": "ltr",
+                    "fontFamily": "Inconsolata, Monaco, Consolas, 'Courier New', Courier, monospace",
+                    "hyphens": "none",
+                    "lineHeight": "1.5",
+                    "msHyphens": "none",
+                    "tabSize": "4",
+                    "textAlign": "left",
+                    "textShadow": "0 1px rgba(0, 0, 0, 0.3)",
+                    "whiteSpace": "pre",
+                    "wordBreak": "normal",
+                    "wordSpacing": "normal",
+                  }
+                }
+              >
+                <span
+                  style={Object {}}
+                >
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#96CBFE",
+                      }
+                    }
+                  >
+                    const
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                     something 
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#EDEDED",
+                      }
+                    }
+                  >
+                    =
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                     
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#A8FF60",
+                      }
+                    }
+                  >
+                    'anything'
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#c5c8c6",
+                      }
+                    }
+                  >
+                    ;
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    
+
+                  </span>
+                </span>
+                <span
+                  style={Object {}}
+                >
+                  <span
+                    style={Object {}}
+                  >
+                    
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#DAD085",
+                      }
+                    }
+                  >
+                    calls
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#c5c8c6",
+                      }
+                    }
+                  >
+                    (
+                  </span>
+                  <span
+                    style={Object {}}
+                  >
+                    something
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#c5c8c6",
+                      }
+                    }
+                  >
+                    )
+                  </span>
+                  <span
+                    className="token"
+                    style={
+                      Object {
+                        "color": "#c5c8c6",
+                      }
+                    }
+                  >
+                    ;
+                  </span>
+                </span>
+              </code>
+            </pre>
+            <p
+              className="jsx-430790654"
+            >
+              inline 
+              <code
+                className="jsx-3800523359"
+              >
+                code
+              </code>
+               is awesome underlined
+            </p>
+            <hr />
+            &lt;h4&gt;A title&lt;/h4&gt;
+            <p
+              className="jsx-430790654"
+            >
+              A table too:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>
+                    Hello
+                  </th>
+                  <th>
+                    world
+                  </th>
+                  <th>
+                    table
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    some
+                  </td>
+                  <td>
+                    values
+                  </td>
+                  <td>
+                    here
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    some
+                  </td>
+                  <td>
+                    values
+                  </td>
+                  <td>
+                    here
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    some
+                  </td>
+                  <td>
+                    values
+                  </td>
+                  <td>
+                    here
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    some
+                  </td>
+                  <td>
+                    values
+                  </td>
+                  <td>
+                    here
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p
+              className="jsx-430790654"
+            >
+              Get listed
+            </p>
+            <ul>
+              <li>
+                Item One
+              </li>
+              <li>
+                Item Two
+              </li>
+              <li>
+                Item Three
+              </li>
+            </ul>
+          </div>
           <div
             className="jsx-1163017566 content-placeholder"
           />
         </section>
       </div>
       <div
-        className="jsx-3936729912 content-footer"
+        className="jsx-1065517858 tag-chips"
+      >
+        <div
+          className="jsx-1065517858"
+          onClick={[Function]}
+        >
+          sir blog
+        </div>
+        <div
+          className="jsx-1065517858"
+          onClick={[Function]}
+        >
+          you're it
+        </div>
+        <div
+          className="jsx-1065517858"
+          onClick={[Function]}
+        >
+          No tiggy backs
+        </div>
+      </div>
+      <div
+        className="jsx-113928496 content-footer"
       >
         <section
           className="jsx-2442235184"
@@ -187,22 +630,25 @@ exports[`Blog page renders Blog page with content 1`] = `
           >
             <div
               className="jsx-2442235184"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<script async src=\\"https://platform.linkedin.com/in.js\\" type=\\"text/javascript\\">lang: en_US</script><script type=\\"IN/Share\\" data-url=mocked-path></script>",
-                }
-              }
-              suppressHydrationWarning={true}
-            />
+            >
+              <script
+                className="jsx-2442235184"
+                data-url="mocked-path"
+                type="IN/Share"
+              />
+            </div>
             <div
               className="jsx-2442235184"
-              dangerouslySetInnerHTML={
-                Object {
-                  "__html": "<a href=\\"https://twitter.com/share?ref_src=twsrc%5Etfw\\" class=\\"twitter-share-button\\" data-text=My First Blog Post data-show-count=\\"false\\">Tweet</a><script async src=\\"https://platform.twitter.com/widgets.js\\" charSet=\\"utf-8\\"></script>",
-                }
-              }
-              suppressHydrationWarning={true}
-            />
+            >
+              <a
+                className="jsx-2442235184 twitter-share-button"
+                data-show-count="false"
+                data-text="My First Blog Post"
+                href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              >
+                Tweet
+              </a>
+            </div>
           </div>
         </section>
       </div>
@@ -384,7 +830,7 @@ exports[`Blog page renders Blog page with content 1`] = `
       </section>
     </footer>
     <div
-      className="cookieConsent "
+      className="CookieConsent"
       style={
         Object {
           "alignItems": "center",
@@ -419,22 +865,26 @@ exports[`Blog page renders Blog page with content 1`] = `
         </a>
         .
       </div>
-      <button
-        className="cookie-banner-btn"
-        id=""
-        onClick={[Function]}
-        style={
-          Object {
-            "background": "#fff",
-            "border": "3px solid #CCC",
-            "borderRadius": "5px",
-            "color": "#333",
-            "marginBottom": "10px",
-          }
-        }
+      <div
+        className=""
       >
-        Accept Cookies
-      </button>
+        <button
+          className="cookie-banner-btn"
+          id="rcc-confirm-button"
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#fff",
+              "border": "3px solid #CCC",
+              "borderRadius": "5px",
+              "color": "#333",
+              "marginBottom": "10px",
+            }
+          }
+        >
+          Accept Cookies
+        </button>
+      </div>
     </div>
     <script
       async={true}

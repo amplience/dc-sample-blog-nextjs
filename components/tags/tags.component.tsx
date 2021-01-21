@@ -1,4 +1,6 @@
-const Tags = ({ tags }: { [key: string]: string[] }) => {
+import React, { ReactElement } from 'react';
+
+const Tags = ({ tags }: { [key: string]: string[] }): ReactElement => {
   return (
     <>
       {tags.map((tag: string) => (

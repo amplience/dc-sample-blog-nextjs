@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoBlogPosts should render component 1`] = `
+<div
+  className="jsx-1210611463 no-published-blogs"
+>
+  <p
+    className="jsx-1210611463"
+  >
+    No blogs published yet!
+  </p>
+</div>
+`;

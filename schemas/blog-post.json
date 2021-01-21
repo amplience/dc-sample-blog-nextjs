@@ -17,6 +17,17 @@
       "minLength": 1,
       "maxLength": 150
     },
+    "_meta":{
+      "type":"object",
+      "properties":{
+        "deliveryKey":{
+          "type":"string",
+          "title":"Delivery key",
+          "description": "The delivery key is used as the URL slug"
+        }
+      },
+      "required": ["deliveryKey"]
+    }, 
     "date": {
       "title": "Creation date",
       "description": "Creation date (YYYY-MM-DD)",
@@ -47,14 +58,6 @@
           }
         }
       ]
-    },
-    "urlSlug": {
-      "title": "Url slug",
-      "description": "Url friendly slug",
-      "type": "string",
-      "minLength": 1,
-      "maxLength": 100,
-      "pattern": "^[a-z0-9-]+$"
     },
     "tags": {
       "title": "Tags",
@@ -123,6 +126,6 @@
       }
     }
   },
-  "propertyOrder": ["title", "authors", "date", "description", "image", "urlSlug", "tags", "readTime", "content"],
-  "required": ["title", "authors", "date", "description", "image", "urlSlug", "readTime", "content"]
+  "propertyOrder": ["title", "_meta", "authors", "date", "description", "image", "tags", "readTime", "content"],
+  "required": ["title", "authors", "date", "description", "image", "readTime", "content"]
 }

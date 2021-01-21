@@ -1,10 +1,11 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 
 interface MarkdownBlockquoteProps {
   children: JSX.Element;
 }
 
-export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps) => {
+export const MarkdownBlockquote = ({ children }: MarkdownBlockquoteProps): ReactElement => {
   return (
     <>
       <blockquote>{children}</blockquote>

@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SortByDropdown should render LoadingBlogPosts when searchResults is undefined 1`] = `
+<React.Fragment>
+  <div
+    className="jsx-1249869467 sort-by-container"
+  >
+    <span
+      className="jsx-1249869467"
+    >
+      Sort by
+    </span>
+    <ConnectorWrapper
+      className="container-option"
+      defaultRefinement="indexName"
+      items={
+        Array [
+          Object {
+            "label": "date (descending)",
+            "value": "indexName",
+          },
+          Object {
+            "label": "date (ascending)",
+            "value": "indexName_sort-dateastimestamp-asc",
+          },
+          Object {
+            "label": "readtime (ascending)",
+            "value": "indexName_sort-readtime-asc",
+          },
+          Object {
+            "label": "readtime (descending)",
+            "value": "indexName_sort-readtime-desc",
+          },
+        ]
+      }
+    />
+  </div>
+  <JSXStyle
+    dynamic={
+      Array [
+        "1097px",
+        "1.125rem",
+        "400",
+        "1.125rem",
+        "500",
+        "736px",
+      ]
+    }
+    id="3270136364"
+  >
+    div.sort-by-container.__jsx-style-dynamic-selector{margin:auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;margin-top:20px;-webkit-box-pack:end;-webkit-justify-content:flex-end;-ms-flex-pack:end;justify-content:flex-end;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;max-width:1097px;padding-right:40px;}div.sort-by-container.__jsx-style-dynamic-selector&gt;span.__jsx-style-dynamic-selector{padding-right:15px;font-size:1.125rem;font-weight:400;}select.ais-SortBy-select{color:#333;font-size:1.125rem;font-weight:500;background-color:#f2f2f2;padding:5px 30px 5px 5px;-webkit-appearance:none;-moz-appearance:none;appearance:none;border:none;}div.ais-SortBy{position:relative;}div.ais-SortBy:after{color:#333;content:'▾';right:15px;top:6px;position:absolute;pointer-events:none;}@media (max-width:736px){div.sort-by-container.__jsx-style-dynamic-selector{padding:0 26px;}div.sort-by-container.__jsx-style-dynamic-selector&gt;span.__jsx-style-dynamic-selector{padding:0;margin:auto;margin-right:20px;white-space:nowrap;}div.ais-SortBy{margin:auto;margin-left:0;overflow:hidden;}div.ais-SortBy select{width:100%;text-overflow:ellipsis;}}
+  </JSXStyle>
+</React.Fragment>
+`;

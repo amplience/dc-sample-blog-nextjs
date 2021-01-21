@@ -1,5 +1,6 @@
-import { BlogJsonLd } from 'next-seo';
+import { ArticleJsonLd } from 'next-seo';
 import { useRouter } from 'next/router';
+import React, { ReactElement } from 'react';
 import Author from '../../common/interfaces/author.interface';
 
 interface MicrodataProps {
@@ -10,14 +11,14 @@ interface MicrodataProps {
   datePublished: string;
 }
 
-const Microdata = ({ headline, description, imageUrl, authors = [], datePublished }: MicrodataProps) => {
+const Microdata = ({ headline, description, imageUrl, authors = [], datePublished }: MicrodataProps): ReactElement => {
   const router = useRouter();
   const baseUrl = process.env.URL !== undefined ? process.env.URL : '';
   const currentPageUrl = baseUrl + router.asPath;
   const aspectRatios = ['16:9', '4:3', '1:1'];
 
   return (
-    <BlogJsonLd
+    <ArticleJsonLd
       url={currentPageUrl}
       description={description}
       title={headline}
@@ -25,6 +26,8 @@ const Microdata = ({ headline, description, imageUrl, authors = [], datePublishe
       authorName={authors.map(author => author.name).join(',')}
       datePublished={datePublished}
       dateModified={datePublished}
+      publisherName="Amplience"
+      publisherLogo={`${baseUrl}/static/images/logo-100h.png`}
     />
   );
 };

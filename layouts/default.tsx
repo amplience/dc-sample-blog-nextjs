@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import theme from '../common/styles/default/theme';
 import Header from '../components/header/header';
 import Footer from '../components/footer/footer';
@@ -6,11 +7,12 @@ import GaPageView from '../components/google-analytics/ga-page-view.component';
 import ScrollTop from '../components/scroll-top/scroll-top';
 
 interface DefaultLayoutProps {
-  children: JSX.Element[] | JSX.Element;
+  children: ReactElement[] | ReactElement;
   contentOnly?: boolean;
 }
 
-export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
+// eslint-disable-next-line react/display-name
+export default ({ children, contentOnly = false }: DefaultLayoutProps): ReactElement => {
   return (
     <>
       <div className="site-container">
@@ -47,8 +49,7 @@ export default ({ children, contentOnly = false }: DefaultLayoutProps) => {
         }
 
         body {
-          @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
-          font-family: Roboto, Arial, sans-serif;
+          font-family: 'Roboto', Arial, sans-serif;
           font-weight: ${theme.fonts.weight.regular};
           max-width: 100%;
         }

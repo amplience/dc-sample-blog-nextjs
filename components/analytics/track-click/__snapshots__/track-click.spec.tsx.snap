@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TrackClick clicking the button records an event 1`] = `
+Array [
+  Array [
+    "init",
+    Object {
+      "apiKey": undefined,
+      "appId": undefined,
+    },
+  ],
+  Array [
+    "clickedObjectIDsAfterSearch",
+    Object {
+      "eventName": "Test Button Click",
+      "index": undefined,
+      "objectIDs": Array [
+        "testObjectId",
+      ],
+      "positions": Array [
+        0,
+      ],
+      "queryID": "testId",
+    },
+  ],
+]
+`;
+
+exports[`TrackClick renders a trackable click element 1`] = `
+<div
+  onClick={[Function]}
+  style={
+    Object {
+      "display": "flex",
+    }
+  }
+>
+  <button
+    role="button"
+  >
+    Click Me
+  </button>
+</div>
+`;

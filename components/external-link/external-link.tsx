@@ -1,3 +1,4 @@
+import React, { ReactElement } from 'react';
 import theme from '../../common/styles/default/theme';
 
 export interface ExternalLinkProps {
@@ -5,7 +6,7 @@ export interface ExternalLinkProps {
   href: string;
 }
 
-const ExternalLink = ({ children, href }: ExternalLinkProps) => (
+const ExternalLink = ({ children, href }: ExternalLinkProps): ReactElement => (
   <>
     <a href={href} target="_new" rel="noreferrer">
       {children}

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoResults should render component with query 1`] = `
+<div
+  className="jsx-2093425618 no-results"
+>
+  <p
+    className="jsx-2093425618"
+  >
+    No results matching "
+    search query
+    "
+  </p>
+</div>
+`;

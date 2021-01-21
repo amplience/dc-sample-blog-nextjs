@@ -1,4 +1,4 @@
-import renderer from 'react-test-renderer';
+import React from 'react';
 import Microdata from './microdata';
 import ShallowRender from 'react-test-renderer/shallow';
 

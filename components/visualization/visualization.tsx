@@ -1,21 +1,29 @@
-import { Component, ReactElement } from 'react';
-import { AmplienceContent, isAmplienceContent } from '../../common/interfaces/content.type';
-import getStagingContentItemById from '../../common/services/vse.service';
-import Content from '../content/content';
-import { isBlogPost } from '../../common/services/blog-post.service';
+import algoliasearch, { SearchClient } from 'algoliasearch';
+import React, { Component } from 'react';
+import { findResultsState } from 'react-instantsearch-dom/server';
 import BlogPost from '../../common/interfaces/blog-post.interface';
+import { isBlog } from '../../common/interfaces/blog.interface';
+import { AmplienceContent, isAmplienceContent } from '../../common/interfaces/content.type';
+import { isBlogPost, parseBlogPost, parseContent } from '../../common/services/blog-post.service';
 import Blog from '../blog/blog';
-import PageLoader from '../page-loader/page-loader';
-import { getReferencedBlogPosts } from '../../common/services/blog-reference-list.service';
-import HeroCard from '../hero-card/hero-card';
-import BlogList from '../blog-list/blog-list';
-import { BlogReferenceList } from '../../common/interfaces/blog-reference-list.interface';
+import Content from '../content/content';
 import HeroBanner from '../hero-banner/hero-banner';
-import NoBlogPosts from '../blog-list/no-blog-posts';
+import PageLoader from '../page-loader/page-loader';
+import getContentItemById from '../../common/services/vse.service';
+import { InstantSearch, Configure } from 'react-instantsearch-dom';
+import HeaderSearchBox from '../header-search-box/header-search-box';
+import SearchResultList from '../search-result-list/search-result-list';
+import SearchResultPagination from '../search-result-pagination/search-result-pagination';
 
 interface VisualizationProps {
   stagingEnvironment: string;
-  contentId: string;
+  contentItemId: string;
+}
+
+interface SearchParams {
+  indexName: string;
+  searchClient: SearchClient;
+  resultsState: unknown;
 }
 
 interface VisualizationState {
@@ -24,15 +32,16 @@ interface VisualizationState {
   blogPost: BlogPost;
   blogList: {
     title: string;
-    subTitle?: string;
-    blogPosts: BlogPost[];
+    heading: string;
+    searchPlaceHolder: string;
+    searchParams: SearchParams;
   };
 }
 
 export default class Visualization extends Component<VisualizationProps, VisualizationState> {
   componentDidMount(): void {
     // Do we need to load any content?
-    if (this.props.stagingEnvironment.length == 0 || this.props.contentId.length == 0) {
+    if (this.props.stagingEnvironment.length == 0 || this.props.contentItemId.length == 0) {
       return;
     }
     this.loadContent();
@@ -40,33 +49,56 @@ export default class Visualization extends Component<VisualizationProps, Visuali
 
   componentDidUpdate(prevProps: Readonly<VisualizationProps>): void {
     // Has the props changed?
-    if (prevProps.stagingEnvironment == this.props.stagingEnvironment && prevProps.contentId == this.props.contentId) {
+    if (
+      prevProps.stagingEnvironment == this.props.stagingEnvironment &&
+      prevProps.contentItemId == this.props.contentItemId
+    ) {
       return;
     }
     this.setState({ content: undefined });
     this.loadContent();
   }
 
+  private async getSearchParams(): Promise<SearchParams> {
+    const searchClient = algoliasearch(
+      process.env.ALGOLIA_APPLICATION_ID as string,
+      process.env.SEARCH_API_KEY as string
+    );
+
+    const indexName = process.env.SEARCH_INDEX_NAME_STAGING as string;
+
+    const resultsState = await findResultsState(InstantSearch, {
+      searchClient,
+      indexName
+    });
+
+    return {
+      indexName,
+      searchClient,
+      resultsState
+    };
+  }
+
   private async loadContent() {
     try {
-      const contentItem = await getStagingContentItemById(this.props.stagingEnvironment, this.props.contentId);
+      const contentItem = await getContentItemById(this.props.contentItemId, this.props.stagingEnvironment);
+
       if (isBlogPost(contentItem)) {
-        this.setState({ blogPost: contentItem });
+        const blogPost = await parseBlogPost(contentItem);
+        this.setState({ blogPost });
       } else if (isAmplienceContent(contentItem)) {
-        this.setState({ content: [contentItem as AmplienceContent] });
-      } else {
-        let blogPosts: BlogPost[] = [];
-        if ('blogPosts' in contentItem) {
-          blogPosts = await getReferencedBlogPosts((contentItem as BlogReferenceList).blogPosts, this.props.stagingEnvironment);
-        }
-        this.setState({ blogList: { ...contentItem, ...{ blogPosts: blogPosts } } as VisualizationState['blogList'] });
+        const content = await parseContent([contentItem]);
+        this.setState({ content });
+      } else if (isBlog(contentItem)) {
+        const searchParams = await this.getSearchParams();
+        this.setState({ blogList: { ...contentItem, searchParams } });
       }
     } catch (error) {
       this.setState({ error: error.message });
     }
   }
 
-  render(): ReactElement {
+  render(): JSX.Element {
     if (this.state) {
       if (this.state.error) {
         return (
@@ -87,15 +119,18 @@ export default class Visualization extends Component<VisualizationProps, Visuali
       if (this.state.blogList !== undefined) {
         return (
           <>
-            <HeroBanner title={this.state.blogList.title} subTitle={this.state.blogList.subTitle} />
-            {this.state.blogList.blogPosts.length ? (
-              <>
-                <HeroCard blogPost={this.state.blogList.blogPosts[0]} />
-                <BlogList blogPosts={this.state.blogList.blogPosts.slice(1)} />
-              </>
-            ) : (
-              <NoBlogPosts />
-            )}
+            <InstantSearch
+              indexName={this.state.blogList.searchParams.indexName}
+              searchClient={this.state.blogList.searchParams.searchClient}
+              resultsState={this.state.blogList.searchParams.resultsState}
+            >
+              <Configure hitsPerPage={10} />
+              <HeroBanner heading={this.state.blogList.heading}>
+                <HeaderSearchBox placeholderText={this.state.blogList.searchPlaceHolder} />
+              </HeroBanner>
+              <SearchResultList></SearchResultList>
+              <SearchResultPagination />
+            </InstantSearch>
           </>
         );
       }

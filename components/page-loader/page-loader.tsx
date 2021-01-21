@@ -1,14 +1,15 @@
+import React, { ReactElement } from 'react';
 import { Component, SyntheticEvent } from 'react';
 
 import theme from '../../common/styles/default/theme';
 
 export default class PageLoader extends Component {
-  onClickHandler(e: SyntheticEvent) {
+  onClickHandler(e: SyntheticEvent): void {
     e.preventDefault();
     e.stopPropagation();
   }
 
-  render() {
+  render(): ReactElement {
     return (
       <>
         <div className="page-loading" onClick={this.onClickHandler}>
@@ -25,6 +26,7 @@ export default class PageLoader extends Component {
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 999;
           }
 
           .spinner {

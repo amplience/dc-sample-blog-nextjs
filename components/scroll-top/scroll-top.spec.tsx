@@ -1,4 +1,5 @@
-import { shallow, ReactWrapper } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 import ScrollTop from './scroll-top';
 
 describe('ScrollTop', () => {
@@ -12,7 +13,6 @@ describe('ScrollTop', () => {
     window.scrollTo = scrollToMock;
     const wrapper = shallow(<ScrollTop />);
 
-    //@ts-ignore
     wrapper.instance().handleResize();
     expect(scrollToMock).toHaveBeenCalled();
   });

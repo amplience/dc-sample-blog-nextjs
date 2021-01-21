@@ -14,7 +14,7 @@ export default class ScrollTop extends Component {
     window.removeEventListener('resize', debounce(this.handleResize, 200));
   }
 
-  handleResize() {
+  handleResize(): void {
     window.scrollTo(0, 0);
   }
 

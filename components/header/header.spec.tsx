@@ -1,4 +1,5 @@
 /* eslint-env jest */
+import React from 'react';
 import renderer from 'react-test-renderer';
 import Header from './header';
 
@@ -12,7 +13,7 @@ jest.mock('next/router', () => {
 describe('Header', () => {
   test('renders blog header', async () => {
     mockUseRouter.mockImplementationOnce(() => {
-      return { query: {} };
+      return { asPath: '' };
     });
     const props = {
       title: 'Blog Title'
@@ -23,7 +24,7 @@ describe('Header', () => {
 
   test('renders blog header with preview vse query string link', async () => {
     mockUseRouter.mockImplementationOnce(() => {
-      return { query: { vse: 'test-vse.domain' } };
+      return { asPath: '?vse=test-vse.domain' };
     });
     const props = {
       title: 'Blog Title'

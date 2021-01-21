@@ -1,35 +1,34 @@
-import HeroBannerTitle from './title/title.component';
-import HeroBannerSubtitle from './subtitle/subtitle.component';
+import React, { ReactElement } from 'react';
+import HeroBannerHeading from './title/hero-banner-heading';
 import theme from '../../common/styles/default/theme';
-const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) => {
+
+interface HeroBannerProps {
+  children?: ReactElement[] | ReactElement;
+  heading: string;
+}
+
+const HeroBanner = ({ children, heading }: HeroBannerProps): ReactElement => {
   return (
     <>
       <section>
-        <HeroBannerTitle title={title} />
-        <HeroBannerSubtitle subTitle={subTitle} />
+        <HeroBannerHeading heading={heading} />
+        <>{children}</>
       </section>
       <style jsx>{`
         section {
-          height: 200px;
           display: flex;
           align-items: center;
           justify-content: center;
           flex-direction: column;
           text-align: center;
           background-color: ${theme.colors.mirage95};
-          padding: 40 20px;
+          padding: 40px 20px 20px 20px;
         }
 
         section :global(h1) {
           color: white;
           font-weight: ${theme.fonts.weight.light};
-          padding-bottom: 10px;
-          border-bottom: 1px solid ${theme.colors.dustyGray};
-        }
-
-        section :global(h2) {
-          color: ${theme.colors.silver};
-          font-weight: ${theme.fonts.weight.light};
+          padding-bottom: 40px;
         }
 
         @media (max-width: ${theme.layout.widePageWidth}) {
@@ -47,10 +46,6 @@ const HeroBanner = ({ title, subTitle }: { title: string; subTitle?: string }) =
           section :global(h1) {
             font-size: ${theme.fonts.size.xxxLarge};
             line-height: 2.25rem;
-          }
-          section :global(h2) {
-            font-size: ${theme.fonts.size.large};
-            margin-top: 10px;
           }
         }
       `}</style>

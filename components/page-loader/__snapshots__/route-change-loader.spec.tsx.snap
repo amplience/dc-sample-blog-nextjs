@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RouteChangeLoader renders route change loader when loading 1`] = `"<div class=\\"jsx-538995977 page-loading\\"><div class=\\"jsx-538995977 spinner\\"></div></div>"`;
+exports[`RouteChangeLoader renders route change loader when loading 1`] = `"<div class=\\"jsx-1481206946 page-loading\\"><div class=\\"jsx-1481206946 spinner\\"></div></div>"`;
 
 exports[`RouteChangeLoader renders route change loader when not loading 1`] = `""`;

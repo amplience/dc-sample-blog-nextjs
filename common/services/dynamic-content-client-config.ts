@@ -1,6 +1,6 @@
-import { ContentClientConfig } from 'dc-delivery-sdk-js';
+import { ContentClientConfigV2 } from 'dc-delivery-sdk-js';
 
-export const defaultClientConfig: ContentClientConfig = {
-  account: process.env.DYNAMIC_CONTENT_ACCOUNT_NAME || '',
+export const defaultClientConfig: ContentClientConfigV2 = {
+  hubName: process.env.DYNAMIC_CONTENT_HUB_NAME || '',
   secureMediaHost: process.env.DYNAMIC_CONTENT_SECURE_MEDIA_HOST || ''
 };

@@ -2,6 +2,107 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/amplience/dc-static-blog-nextjs/compare/v2.1.0...v2.1.1) (2020-12-02)
+
+
+### Features
+
+* add sitemap url to robots.txt ([#93](https://github.com/amplience/dc-static-blog-nextjs/issues/93)) ([9f9f7ff](https://github.com/amplience/dc-static-blog-nextjs/commit/9f9f7ff89c18856b2e4a4e2726b4f61a337a942a))
+
+
+### Bug Fixes
+
+* add trailling slashes to sitemap.xml ([#92](https://github.com/amplience/dc-static-blog-nextjs/issues/92)) ([918998d](https://github.com/amplience/dc-static-blog-nextjs/commit/918998d73ae29c93241f4a3831d754d619a2bd72))
+* only append / to urls that dont end in / (external lib change) ([#95](https://github.com/amplience/dc-static-blog-nextjs/issues/95)) ([de49cd0](https://github.com/amplience/dc-static-blog-nextjs/commit/de49cd036dbca94768249b718b7a4ab116557f83))
+
+## [2.1.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v2.0.1...v2.1.0) (2020-11-03)
+
+
+### Features
+
+* **click analytics:** adding algolia click tracking to blog list links ([#88](https://github.com/amplience/dc-static-blog-nextjs/issues/88)) ([4f4044c](https://github.com/amplience/dc-static-blog-nextjs/commit/4f4044cc2f0d1475b13880a0c31c90afe89d9fe8))
+* **content:** removing lazy loading for blog post text content ([#84](https://github.com/amplience/dc-static-blog-nextjs/issues/84)) ([8d6236d](https://github.com/amplience/dc-static-blog-nextjs/commit/8d6236de17feb60b8a85d96c356346162ede28cf))
+* **header:** switch to single h1 per page ([#83](https://github.com/amplience/dc-static-blog-nextjs/issues/83)) ([2718934](https://github.com/amplience/dc-static-blog-nextjs/commit/2718934b5a8992ced8c4c0497e4dbf6b91f946be))
+* **index page:** updated pagingated pages to include a page number for titles and descriptions ([#86](https://github.com/amplience/dc-static-blog-nextjs/issues/86)) ([a5f1758](https://github.com/amplience/dc-static-blog-nextjs/commit/a5f1758f658318d1f90ae8fa40892248c2b7f716))
+* **sitemap:** generating sitemap.xml on export ([#85](https://github.com/amplience/dc-static-blog-nextjs/issues/85)) ([58f41df](https://github.com/amplience/dc-static-blog-nextjs/commit/58f41dfa19378982b707d12dadd1189fe9bbfb24))
+
+
+### Bug Fixes
+
+* **manifest json:** changed the link location for the manifest file ([#87](https://github.com/amplience/dc-static-blog-nextjs/issues/87)) ([fd6d90c](https://github.com/amplience/dc-static-blog-nextjs/commit/fd6d90cea6910cb55151ec832f049ace2027b11a))
+* **microdata:** updated to use article type and added extra required information ([#91](https://github.com/amplience/dc-static-blog-nextjs/issues/91)) ([b99f500](https://github.com/amplience/dc-static-blog-nextjs/commit/b99f500e8f3be1cdefa110afaebdbe9dacb8042c))
+* **share post:** removing linkedin placeholder script from helmet ([#89](https://github.com/amplience/dc-static-blog-nextjs/issues/89)) ([ff165bd](https://github.com/amplience/dc-static-blog-nextjs/commit/ff165bd6e7ef80eafe11e6f423ec7809f3bafb41))
+* **track click:** setting track click component to display flex ([#90](https://github.com/amplience/dc-static-blog-nextjs/issues/90)) ([d056e72](https://github.com/amplience/dc-static-blog-nextjs/commit/d056e725bcd9e8e31db2c7885a61a429e1962d11))
+
+### [2.0.1](https://github.com/amplience/dc-static-blog-nextjs/compare/v2.0.0...v2.0.1) (2020-10-19)
+
+
+### Bug Fixes
+
+* **blog card links:** updated so that deliveryKey is not lowercase and added tests ([#81](https://github.com/amplience/dc-static-blog-nextjs/issues/81)) ([a8926db](https://github.com/amplience/dc-static-blog-nextjs/commit/a8926db59b09b7cac4f53795bfdb3072b83c1ed5))
+* author and tags to display 25 items ([#76](https://github.com/amplience/dc-static-blog-nextjs/issues/76)) ([78823c3](https://github.com/amplience/dc-static-blog-nextjs/commit/78823c37effa5ba60c03a0ef7753d735238eb0b9))
+* header link when previewing via a vse ([#77](https://github.com/amplience/dc-static-blog-nextjs/issues/77)) ([5550703](https://github.com/amplience/dc-static-blog-nextjs/commit/5550703284d7b74910e3ae54514be7d2e1cb1283))
+* removed the duplicate and corrected the remaining viewport meta header ([#78](https://github.com/amplience/dc-static-blog-nextjs/issues/78)) ([8d2c1df](https://github.com/amplience/dc-static-blog-nextjs/commit/8d2c1df4bee93423020a7483aa85398d499f41a7))
+* **share buttons:** wrapped in a helmet component to display the vanilla js ([#79](https://github.com/amplience/dc-static-blog-nextjs/issues/79)) ([c011cef](https://github.com/amplience/dc-static-blog-nextjs/commit/c011cef896ecf0fd2610871b1638a59b3f989286))
+
+## [2.0.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.2.0...v2.0.0) (2020-07-22)
+
+
+### ⚠ BREAKING CHANGES
+
+* **search results:** moved the declaration of the number of search results into a environment variable
+
+Co-authored-by: paulgturner <61312164+paulgturner@users.noreply.github.com>
+* **keyword search:** added search box into the header (#31)
+* content delivery 2 support (#25)
+
+### Features
+
+* **blog page:** loading linked blog pages dynamically ([#30](https://github.com/amplience/dc-static-blog-nextjs/issues/30)) ([59430d0](https://github.com/amplience/dc-static-blog-nextjs/commit/59430d0df384d01f6b8f6ff9d364f571012d3cf1))
+* **index page:** using instant search to populate the index blog list ([#26](https://github.com/amplience/dc-static-blog-nextjs/issues/26)) ([d84ac4e](https://github.com/amplience/dc-static-blog-nextjs/commit/d84ac4ee23ea31b2c85e962c007b6e71ee87015d))
+* **index search:** algolia sort by dropdown ([#33](https://github.com/amplience/dc-static-blog-nextjs/issues/33)) ([3d23ec1](https://github.com/amplience/dc-static-blog-nextjs/commit/3d23ec196950f65796bc4ac1caf1b0e28d737398))
+* **keyword search:** added search box into the header ([#31](https://github.com/amplience/dc-static-blog-nextjs/issues/31)) ([8a7d060](https://github.com/amplience/dc-static-blog-nextjs/commit/8a7d060dedc4e19e98aecc111b019b84f88efafb))
+* **pages/index.tsx:** load the algolia index client side on load ([#29](https://github.com/amplience/dc-static-blog-nextjs/issues/29)) ([27fc551](https://github.com/amplience/dc-static-blog-nextjs/commit/27fc55107016cf69ca7f7e0aba8a25f3d1300ef6))
+* **preview/visualization:** updated to use a staging index data and restructured components ([#32](https://github.com/amplience/dc-static-blog-nextjs/issues/32)) ([e7cc19e](https://github.com/amplience/dc-static-blog-nextjs/commit/e7cc19e7dea30b00f450cd411cc4ec7e1aafc985))
+* **schemas:** add delivery key to the content form to enable validation ([#54](https://github.com/amplience/dc-static-blog-nextjs/issues/54)) ([bec6552](https://github.com/amplience/dc-static-blog-nextjs/commit/bec65527956df424bd8a641ceb95d170637551aa))
+* **search faceting:** added facet selection to the header bar ([#46](https://github.com/amplience/dc-static-blog-nextjs/issues/46)) ([f113642](https://github.com/amplience/dc-static-blog-nextjs/commit/f11364245decf4ba9351d328bac6cf1d536c7f66))
+* **search list:** hero card no longer shown on search results ([#49](https://github.com/amplience/dc-static-blog-nextjs/issues/49)) ([d843650](https://github.com/amplience/dc-static-blog-nextjs/commit/d843650ad1de23efd5ff58814147a4eae9a1535e))
+* **search list pagination:** adding index page pagination to the search list ([#34](https://github.com/amplience/dc-static-blog-nextjs/issues/34)) ([47f44c0](https://github.com/amplience/dc-static-blog-nextjs/commit/47f44c01240b15d1835142c1b40785a79fe5f5c4))
+* **search urls:** adding search state to url query string ([#44](https://github.com/amplience/dc-static-blog-nextjs/issues/44)) ([96f3ddf](https://github.com/amplience/dc-static-blog-nextjs/commit/96f3ddf3da85cf0388a7dffbe582e590c4cc321f))
+* **tag facets:** added chip style facetable tags to blog posts and cards ([#59](https://github.com/amplience/dc-static-blog-nextjs/issues/59)) ([067924d](https://github.com/amplience/dc-static-blog-nextjs/commit/067924da471f881c1db36b54f9f6c329fdd3a8e8))
+* content delivery 2 support ([#25](https://github.com/amplience/dc-static-blog-nextjs/issues/25)) ([15ad88f](https://github.com/amplience/dc-static-blog-nextjs/commit/15ad88f23323890861dc92da0761f32f0b62785b))
+* content-delivery-2 - part 2, clean up ([#28](https://github.com/amplience/dc-static-blog-nextjs/issues/28)) ([c0c3a73](https://github.com/amplience/dc-static-blog-nextjs/commit/c0c3a73a6d1d0c148a79608d8df97c1ea558ea06))
+
+
+### Bug Fixes
+
+* **hero banner:** adding additional spacing to elements in the hero banner ([#71](https://github.com/amplience/dc-static-blog-nextjs/issues/71)) ([2112e50](https://github.com/amplience/dc-static-blog-nextjs/commit/2112e502bc3ee2d7428f05aae596b105ef061dca))
+* custom payload limit has been reduced to support large blog posts ([#70](https://github.com/amplience/dc-static-blog-nextjs/issues/70)) ([fef2061](https://github.com/amplience/dc-static-blog-nextjs/commit/fef206120c9729d31358e82921fa878388351435))
+* **blog card:** fixing the width of blog card tags ([#67](https://github.com/amplience/dc-static-blog-nextjs/issues/67)) ([353c922](https://github.com/amplience/dc-static-blog-nextjs/commit/353c922fd2089547e102a8fc8f5c5cc80d5930ba))
+* **blog post:** updating build process and blog links to fallback to object id on missing key ([#52](https://github.com/amplience/dc-static-blog-nextjs/issues/52)) ([492575d](https://github.com/amplience/dc-static-blog-nextjs/commit/492575d538701431ca6ca5fa3d69b8be009ae44f))
+* **default layout:** moving font import into the document header to avoid 404 ([#50](https://github.com/amplience/dc-static-blog-nextjs/issues/50)) ([bc3f4f1](https://github.com/amplience/dc-static-blog-nextjs/commit/bc3f4f174b9bab4029989461dd63ab7656a2b22e))
+* **header facet bar:** adding media query styles to facet bar for smaller devices ([#60](https://github.com/amplience/dc-static-blog-nextjs/issues/60)) ([b59cd66](https://github.com/amplience/dc-static-blog-nextjs/commit/b59cd66b535f7eb3e4f7672f9c50877c3e895023))
+* **header search:** adding media query smaller device styles for search box and sort by ([#42](https://github.com/amplience/dc-static-blog-nextjs/issues/42)) ([fe62206](https://github.com/amplience/dc-static-blog-nextjs/commit/fe6220652fe10bcf6625a45a8efe274e5f06b1e5))
+* **header search box:** removing search input box shadow to resolve chrome bug ([#45](https://github.com/amplience/dc-static-blog-nextjs/issues/45)) ([51cfde3](https://github.com/amplience/dc-static-blog-nextjs/commit/51cfde349b8f3386338cbce28e1b76adf31f0ab2))
+* **index:** preventing flicker by only using build time data server-side ([#66](https://github.com/amplience/dc-static-blog-nextjs/issues/66)) ([40ae891](https://github.com/amplience/dc-static-blog-nextjs/commit/40ae8914e2b0a0549702fde495731a0a1d490a13))
+* **index:** scrolling to page top when tag chips are clicked ([#68](https://github.com/amplience/dc-static-blog-nextjs/issues/68)) ([5769308](https://github.com/amplience/dc-static-blog-nextjs/commit/57693086ffaa2f05859429a0762f1c1359714434))
+* **keyword search:** added the default refinement to the sortby ([#38](https://github.com/amplience/dc-static-blog-nextjs/issues/38)) ([a9d70cc](https://github.com/amplience/dc-static-blog-nextjs/commit/a9d70ccf61552aa3581b9d9ae2b7119ddb4a1e7c))
+* **menu select component:** updated the styling to match across browsers ([#53](https://github.com/amplience/dc-static-blog-nextjs/issues/53)) ([acf7ae3](https://github.com/amplience/dc-static-blog-nextjs/commit/acf7ae3963491511ab166b08015544c2df40e5a3))
+* **pagination:** scroll to top of page when pagination link clicked ([#43](https://github.com/amplience/dc-static-blog-nextjs/issues/43)) ([adf1615](https://github.com/amplience/dc-static-blog-nextjs/commit/adf1615d80eb91a1dd46bd66ad7d01e8a888af51))
+* **pagination:** set correct number of blog articles to show on listing page and when searching ([#58](https://github.com/amplience/dc-static-blog-nextjs/issues/58)) ([70bd898](https://github.com/amplience/dc-static-blog-nextjs/commit/70bd898e3dae61a9cf102369a1efdef93d55e3f6))
+* **preview:** checking for vse via router aspath to construct next links for preview ([#48](https://github.com/amplience/dc-static-blog-nextjs/issues/48)) ([6ee2521](https://github.com/amplience/dc-static-blog-nextjs/commit/6ee2521f5f1ff0c862b1a599c3c290133935f14f))
+* **search box:** fixed input/button styles in chrome, safari & ie ([#37](https://github.com/amplience/dc-static-blog-nextjs/issues/37)) ([c8fced1](https://github.com/amplience/dc-static-blog-nextjs/commit/c8fced1b1c7134392d3da0817147f5cd033e8b5e))
+* **search-list:** filters out any non blog-post items ([#35](https://github.com/amplience/dc-static-blog-nextjs/issues/35)) ([63f3aaa](https://github.com/amplience/dc-static-blog-nextjs/commit/63f3aaa03113651b3231e67f2fc4c48ff644f2fd))
+* **sort by:** fixed alignment in chrome & safari ([#39](https://github.com/amplience/dc-static-blog-nextjs/issues/39)) ([478047d](https://github.com/amplience/dc-static-blog-nextjs/commit/478047db965804e5aad360c8246c28e7c529af6b))
+* **sort by:** set date desc as default sort by ([#41](https://github.com/amplience/dc-static-blog-nextjs/issues/41)) ([3c04c25](https://github.com/amplience/dc-static-blog-nextjs/commit/3c04c25fe44746bc5e81e155abe13011dbedbc1c))
+* **sort by:** updated the sort by to show the main index by default ([#63](https://github.com/amplience/dc-static-blog-nextjs/issues/63)) ([b6bfe8a](https://github.com/amplience/dc-static-blog-nextjs/commit/b6bfe8af274ea6d648b740ede4aab9cd38122eda))
+* **sortby menu:** updates default sort options and labels ([#57](https://github.com/amplience/dc-static-blog-nextjs/issues/57)) ([a716b6c](https://github.com/amplience/dc-static-blog-nextjs/commit/a716b6c2c2149918674af2e0060aa249ded3148a))
+* **tag chips:** adding overflow ellipsis and setting a max width for tag chips ([#61](https://github.com/amplience/dc-static-blog-nextjs/issues/61)) ([937c2e2](https://github.com/amplience/dc-static-blog-nextjs/commit/937c2e25f88e5eb75bc412a24345e276ced1f86a))
+* **tag chips:** corrected the cursor property value to be a pointer ([#64](https://github.com/amplience/dc-static-blog-nextjs/issues/64)) ([cef8837](https://github.com/amplience/dc-static-blog-nextjs/commit/cef88379c2672a29e8c9156d12cf4afde363b51e))
+
+
+* **search results:** removed hero card component and added hits per page as configurable ([#62](https://github.com/amplience/dc-static-blog-nextjs/issues/62)) ([a80d53b](https://github.com/amplience/dc-static-blog-nextjs/commit/a80d53b963b655e6d45455113da5f062a97136cd))
+
 ## [1.2.0](https://github.com/amplience/dc-static-blog-nextjs/compare/v1.1.1...v1.2.0) (2020-02-12)
 
 

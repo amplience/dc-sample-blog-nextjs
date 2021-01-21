@@ -3,148 +3,495 @@
 exports[`BlogCard renders full blog card 1`] = `
 <React.Fragment>
   <section
-    className="jsx-887154041"
+    className="jsx-3551177564"
   >
-    <StaticLink
-      ariaLabel="My First Blog Post"
-      href="/blog/my-first-blog"
+    <TrackClick
+      eventName="Blog list - article clicked"
+      objectIds={
+        Array [
+          undefined,
+        ]
+      }
+      positions={
+        Array [
+          NaN,
+        ]
+      }
     >
-      <t
-        afterLoad={[Function]}
-        beforeLoad={[Function]}
-        placeholder={
-          <div
-            className="jsx-887154041 article-placeholder"
-          />
-        }
-        visibleByDefault={false}
+      <NextLink
+        ariaLabel="My First Blog Post"
+        as="/blog/my-first-blog"
+        href="/blog/[...slug]"
       >
-        <article
-          className="jsx-887154041"
-        >
-          <div
-            className="jsx-887154041 blog-card-image"
-          >
-            <Picture
-              image={
-                Object {
-                  "_meta": Object {
-                    "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
-                    "name": "bag-image",
-                    "schema": "https://schema.localhost.com/image.json",
-                  },
-                  "altText": "crotch bags",
-                  "image": Object {
-                    "_meta": Object {
-                      "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
-                    },
-                    "defaultHost": "i1.adis.ws",
-                    "endpoint": "blogltd",
-                    "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
-                    "name": "friends-shopping-bags",
-                  },
-                }
-              }
-              sources={
-                Array [
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 345,
-                    },
-                    "media": "(min-width: 1098px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 728,
-                    },
-                    "media": "(min-width: 728px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 728,
-                    },
-                    "media": "(min-width: 528px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 528,
-                    },
-                    "media": "(min-width: 415px)",
-                  },
-                  Object {
-                    "di": Object {
-                      "h": 140,
-                      "scaleFit": "poi",
-                      "sm": "c",
-                      "w": 414,
-                    },
-                  },
-                ]
-              }
+        <t
+          afterLoad={[Function]}
+          beforeLoad={[Function]}
+          placeholder={
+            <div
+              className="jsx-3551177564 article-placeholder"
             />
-          </div>
-          <div
-            className="jsx-887154041 blog-card-content"
+          }
+          useIntersectionObserver={true}
+          visibleByDefault={false}
+        >
+          <article
+            className="jsx-3551177564"
           >
-            <h1
-              className="jsx-887154041"
+            <div
+              className="jsx-3551177564 blog-card-image"
             >
-              My First Blog Post
-            </h1>
-            <BlogCardMeta
-              authors={
-                Array [
+              <Picture
+                image={
                   Object {
                     "_meta": Object {
-                      "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
-                      "name": "blog-author",
-                      "schema": "https://schema.localhost.com/author.json",
+                      "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+                      "name": "bag-image",
+                      "schema": "https://schema.localhost.com/image.json",
                     },
-                    "avatar": Object {
+                    "altText": "crotch bags",
+                    "image": Object {
                       "_meta": Object {
-                        "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
-                        "name": "blog-avatar",
-                        "schema": "https://schema.localhost.com/image.json",
+                        "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
                       },
-                      "altText": "The dashing Sir Blog avatar",
+                      "defaultHost": "i1.adis.ws",
+                      "endpoint": "blogltd",
+                      "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+                      "name": "friends-shopping-bags",
+                    },
+                  }
+                }
+                sources={
+                  Array [
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 345,
+                      },
+                      "media": "(min-width: 1098px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 728,
+                      },
+                      "media": "(min-width: 728px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 728,
+                      },
+                      "media": "(min-width: 528px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 528,
+                      },
+                      "media": "(min-width: 415px)",
+                    },
+                    Object {
+                      "di": Object {
+                        "h": 140,
+                        "scaleFit": "poi",
+                        "sm": "c",
+                        "w": 414,
+                      },
+                    },
+                  ]
+                }
+              />
+            </div>
+            <div
+              className="jsx-3551177564 blog-card-content"
+            >
+              <h1
+                className="jsx-3551177564"
+              >
+                <Highlight
+                  attribute="title"
+                  hit={
+                    Object {
+                      "_meta": Object {
+                        "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                        "deliveryKey": "my-first-blog",
+                        "name": "blog-post",
+                        "schema": "https://schema.localhost.com/blog-post.json",
+                      },
+                      "authors": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                            "name": "blog-author",
+                            "schema": "https://schema.localhost.com/author.json",
+                          },
+                          "avatar": Object {
+                            "_meta": Object {
+                              "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                              "name": "blog-avatar",
+                              "schema": "https://schema.localhost.com/image.json",
+                            },
+                            "altText": "The dashing Sir Blog avatar",
+                            "image": Object {
+                              "_meta": Object {
+                                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                              },
+                              "defaultHost": "i1.adis.ws",
+                              "endpoint": "blogltd",
+                              "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                              "name": "man-business-suit",
+                            },
+                          },
+                          "name": "Sir Blog",
+                        },
+                      ],
+                      "content": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+                            "name": "casual-crotch-shot",
+                            "schema": "https://schema.localhost.com/image.json",
+                          },
+                          "altText": "Alt text",
+                          "image": Object {
+                            "_meta": Object {
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                            },
+                            "defaultHost": "i1.adis.ws",
+                            "endpoint": "blogltd",
+                            "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                            "name": "casual-wear",
+                          },
+                        },
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+                            "name": "my-first-blog-text",
+                            "schema": "https://schema.localhost.com/text.json",
+                          },
+                          "text": "# This is my first Blog
+
+## Look-a-header 2
+
+### Look-a-header 3
+
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+                        },
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+                            "name": "my-first-blog-video",
+                            "schema": "https://schema.localhost.com/video.json",
+                          },
+                          "srcSet": Array [],
+                          "video": Object {
+                            "_meta": Object {
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                            },
+                            "defaultHost": "i1.adis.ws",
+                            "endpoint": "blogltd",
+                            "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+                            "name": "SampleVideo_1280x720_5mb",
+                          },
+                        },
+                      ],
+                      "date": "August 07, 2019",
+                      "deliveryKey": "test-delivery-key",
+                      "description": "Some text for the description that explains this blog post",
+                      "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
                       "image": Object {
                         "_meta": Object {
-                          "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                          "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+                          "name": "bag-image",
+                          "schema": "https://schema.localhost.com/image.json",
                         },
-                        "defaultHost": "i1.adis.ws",
-                        "endpoint": "blogltd",
-                        "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
-                        "name": "man-business-suit",
+                        "altText": "crotch bags",
+                        "image": Object {
+                          "_meta": Object {
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                          },
+                          "defaultHost": "i1.adis.ws",
+                          "endpoint": "blogltd",
+                          "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+                          "name": "friends-shopping-bags",
+                        },
                       },
+                      "readTime": 12,
+                      "tags": Array [
+                        "sir blog",
+                        "you're it",
+                        "No tiggy backs",
+                      ],
+                      "title": "My First Blog Post",
+                    }
+                  }
+                  tagName="mark"
+                />
+              </h1>
+              <BlogCardMeta
+                authors={
+                  Array [
+                    Object {
+                      "_meta": Object {
+                        "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                        "name": "blog-author",
+                        "schema": "https://schema.localhost.com/author.json",
+                      },
+                      "avatar": Object {
+                        "_meta": Object {
+                          "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                          "name": "blog-avatar",
+                          "schema": "https://schema.localhost.com/image.json",
+                        },
+                        "altText": "The dashing Sir Blog avatar",
+                        "image": Object {
+                          "_meta": Object {
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                          },
+                          "defaultHost": "i1.adis.ws",
+                          "endpoint": "blogltd",
+                          "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                          "name": "man-business-suit",
+                        },
+                      },
+                      "name": "Sir Blog",
                     },
-                    "name": "Sir Blog",
-                  },
-                ]
-              }
-              publishedDate="August 07, 2019"
-              readTime={12}
-            />
-            <p
-              className="jsx-887154041"
-            >
-              Some text for the description that explains this blog post
-            </p>
-          </div>
-        </article>
-      </t>
-    </StaticLink>
+                  ]
+                }
+                publishedDate="August 07, 2019"
+                readTime={12}
+              />
+              <p
+                className="jsx-3551177564"
+              >
+                <Highlight
+                  attribute="description"
+                  hit={
+                    Object {
+                      "_meta": Object {
+                        "deliveryId": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                        "deliveryKey": "my-first-blog",
+                        "name": "blog-post",
+                        "schema": "https://schema.localhost.com/blog-post.json",
+                      },
+                      "authors": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "b1379f67-8934-49cb-94b3-58b679096c2c",
+                            "name": "blog-author",
+                            "schema": "https://schema.localhost.com/author.json",
+                          },
+                          "avatar": Object {
+                            "_meta": Object {
+                              "deliveryId": "9ef5a6d0-5a34-414f-9fd3-1098698c6629",
+                              "name": "blog-avatar",
+                              "schema": "https://schema.localhost.com/image.json",
+                            },
+                            "altText": "The dashing Sir Blog avatar",
+                            "image": Object {
+                              "_meta": Object {
+                                "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                              },
+                              "defaultHost": "i1.adis.ws",
+                              "endpoint": "blogltd",
+                              "id": "f9549d3d-f616-487c-b1ad-fad5152f2c7d",
+                              "name": "man-business-suit",
+                            },
+                          },
+                          "name": "Sir Blog",
+                        },
+                      ],
+                      "content": Array [
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "a61f458e-7c22-4b5b-9b3d-962df3cbcdcd",
+                            "name": "casual-crotch-shot",
+                            "schema": "https://schema.localhost.com/image.json",
+                          },
+                          "altText": "Alt text",
+                          "image": Object {
+                            "_meta": Object {
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                            },
+                            "defaultHost": "i1.adis.ws",
+                            "endpoint": "blogltd",
+                            "id": "e1b511d2-1a33-47e7-8dc7-f460534cb0c7",
+                            "name": "casual-wear",
+                          },
+                        },
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "f08432cd-525f-4e50-ab34-3316081f48bd",
+                            "name": "my-first-blog-text",
+                            "schema": "https://schema.localhost.com/text.json",
+                          },
+                          "text": "# This is my first Blog
+
+## Look-a-header 2
+
+### Look-a-header 3
+
+#### Look-a-header 4
+
+##### Look-a-header 5
+
+###### Look-a-header 6
+
+_**This**_ _is_ _some_ ~~sample~~ **text**.
+
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png \\"Logo Title Text 1\\")
+
+This is some more sample text with a [LINK](http://bbc.co.uk)
+
+> Comments are cool!
+> 
+> See what I mean
+
+Look some code:
+
+\`\`\`javascript
+const something = 'anything';
+calls(something);
+
+\`\`\`
+
+inline \`code\` is awesome underlined
+
+* * *
+
+<h4>A title</h4>
+
+A table too:
+
+| Hello | world | table |
+| --- | --- | --- |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+| some | values | here |
+
+Get listed
+
+*   Item One
+*   Item Two
+*   Item Three",
+                        },
+                        Object {
+                          "_meta": Object {
+                            "deliveryId": "ad568b60-fd02-4302-9ccc-9e35dac24255",
+                            "name": "my-first-blog-video",
+                            "schema": "https://schema.localhost.com/video.json",
+                          },
+                          "srcSet": Array [],
+                          "video": Object {
+                            "_meta": Object {
+                              "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/video-link",
+                            },
+                            "defaultHost": "i1.adis.ws",
+                            "endpoint": "blogltd",
+                            "id": "721044de-d125-4a1a-8ddc-2201b9463f2d",
+                            "name": "SampleVideo_1280x720_5mb",
+                          },
+                        },
+                      ],
+                      "date": "August 07, 2019",
+                      "deliveryKey": "test-delivery-key",
+                      "description": "Some text for the description that explains this blog post",
+                      "id": "8d6943c7-6028-4fac-b45e-57fc63bd032a",
+                      "image": Object {
+                        "_meta": Object {
+                          "deliveryId": "4b44e870-bf71-43f3-81b3-c46c32f4cde5",
+                          "name": "bag-image",
+                          "schema": "https://schema.localhost.com/image.json",
+                        },
+                        "altText": "crotch bags",
+                        "image": Object {
+                          "_meta": Object {
+                            "schema": "http://bigcontent.io/cms/schema/v1/core#/definitions/image-link",
+                          },
+                          "defaultHost": "i1.adis.ws",
+                          "endpoint": "blogltd",
+                          "id": "edc77f02-0e92-4b1a-88f9-711cacb5d650",
+                          "name": "friends-shopping-bags",
+                        },
+                      },
+                      "readTime": 12,
+                      "tags": Array [
+                        "sir blog",
+                        "you're it",
+                        "No tiggy backs",
+                      ],
+                      "title": "My First Blog Post",
+                    }
+                  }
+                  tagName="mark"
+                />
+              </p>
+              <TagChips
+                tags={
+                  Array [
+                    "sir blog",
+                    "you're it",
+                    "No tiggy backs",
+                  ]
+                }
+              />
+            </div>
+          </article>
+        </t>
+      </NextLink>
+    </TrackClick>
   </section>
   <JSXStyle
     dynamic={
@@ -164,7 +511,7 @@ exports[`BlogCard renders full blog card 1`] = `
         "300",
       ]
     }
-    id="3348607778"
+    id="4284982988"
   >
     section.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}section.__jsx-style-dynamic-selector a{-webkit-flex:1;-ms-flex:1;flex:1;}article.__jsx-style-dynamic-selector{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;box-shadow:0 20px 25px 0 rgba(0,0,0,0.08);background:white;cursor:pointer;min-height:400px;min-width:324px;}article.__jsx-style-dynamic-selector:hover,article.__jsx-style-dynamic-selector:hover h1.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector:hover .card-meta{color:#999999;}article.__jsx-style-dynamic-selector:hover{box-shadow:0 20px 14px 2px rgba(0,0,0,0.25);}.blog-card-image.__jsx-style-dynamic-selector img{object-fit:cover;width:100%;height:135px;}.blog-card-content.__jsx-style-dynamic-selector{padding:15px;}article.__jsx-style-dynamic-selector,h1.__jsx-style-dynamic-selector,p.__jsx-style-dynamic-selector,article.__jsx-style-dynamic-selector .card-meta{-webkit-transition-property:color,box-shadow;transition-property:color,box-shadow;-webkit-transition-duration:0.3s;transition-duration:0.3s;}h1.__jsx-style-dynamic-selector{color:#333333;font-size:1.5rem;font-weight:500;line-height:1.875rem;margin-top:0;margin-bottom:12px;}p.__jsx-style-dynamic-selector{color:#666666;font-weight:400;line-height:1.5rem;margin-bottom:0;}.article-placeholder.__jsx-style-dynamic-selector{height:400px;}@media (max-width:1097px){section.__jsx-style-dynamic-selector{margin-bottom:60px;}article.__jsx-style-dynamic-selector{min-width:100%;}}@media (max-width:736px){article.__jsx-style-dynamic-selector{min-height:unset;box-shadow:unset;}article.__jsx-style-dynamic-selector:hover{box-shadow:unset;}h1.__jsx-style-dynamic-selector{font-weight:700;line-height:unset;margin:20px 0;}p.__jsx-style-dynamic-selector{font-weight:300;}.blog-card-content.__jsx-style-dynamic-selector{padding:0 10px 0 10px;}}
   </JSXStyle>
@@ -173,16 +520,27 @@ exports[`BlogCard renders full blog card 1`] = `
 
 exports[`BlogCard renders full blog card with lazy loaded placeholders 1`] = `
 <section
-  className="jsx-887154041"
+  className="jsx-3551177564"
 >
-  <a
-    aria-label="My First Blog Post"
-    className="jsx-3354872520"
-    href="/blog/my-first-blog"
+  <div
+    onClick={[Function]}
+    style={
+      Object {
+        "display": "flex",
+      }
+    }
   >
-    <div
-      className="jsx-887154041 article-placeholder"
-    />
-  </a>
+    <a
+      aria-label="My First Blog Post"
+      className="jsx-3574172415"
+      href="/blog/my-first-blog"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <div
+        className="jsx-3551177564 article-placeholder"
+      />
+    </a>
+  </div>
 </section>
 `;
