@@ -4,15 +4,8 @@
 
 [[redirects]]
 
-  from = ""
+  from = "https://productblog-uat-prod.netlify.app"
   to = "https://amplience.com/blog"
-  status = 301
-  force = false
-  query = {path = ":path"}
 
   from = "/blog/*"
   to = "https://amplience.com/blog/:splat"
-  status = 301
-  force = false
-  query = {path = ":path"}
-  
