@@ -283,7 +283,7 @@ After a few moments your new blog post should be visible on your Netlify site.
 Clone this repo and install the dependencies via npm:
 
 ```
-npm install
+npm ci
 ```
 
 ## Running Tests
