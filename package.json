@@ -85,6 +85,7 @@
     "@amplience/dc-cli": "^0.4.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@netlify/plugin-nextjs": "1.1.2",
     "@types/algoliasearch": "^3.34.10",
     "@types/debounce": "^1.2.0",
     "@types/enzyme": "^3.10.5",
