@@ -1,5 +1,5 @@
 {
   "body": "../../schemas/author.json",
-  "schemaId": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json",
+  "schemaId": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/author.json",
   "validationLevel": "CONTENT_TYPE"
 }

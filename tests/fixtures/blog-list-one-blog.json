@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json",
+    "schema": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog.json",
     "deliveryId": "9cb44d61-d00b-49b7-b23b-72bb9a0a1de6",
     "deliveryKey": "blog",
     "name": "blog"
@@ -14,7 +14,7 @@
         "hits": [
           {
             "_meta": {
-              "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+              "schema": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog-post.json",
               "deliveryId": "19cef5f9-e094-4176-a516-c1b213f584b3",
               "deliveryKey": "hello-and-welcome",
               "name": "hello-and-welcome"
@@ -22,7 +22,7 @@
             "title": "Hello and welcome",
             "description": "Hello and welcome",
             "deliveryKey": "hello-and-welcome",
-            "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+            "schema": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog-post.json",
             "authors": [{ "name": "A User" }],
             "tags": ["blog", "testing", "search"],
             "date": "2020-06-17",
@@ -39,7 +39,7 @@
               },
               "altText": "Glasses",
               "_meta": {
-                "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
+                "schema": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/image.json",
                 "deliveryId": "ad1ff37d-6a65-43a9-b807-4d7b16365a0c",
                 "name": "glasses"
               }

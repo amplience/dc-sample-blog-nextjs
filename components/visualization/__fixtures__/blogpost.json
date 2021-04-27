@@ -4,7 +4,7 @@
   "date": "August 07, 2019",
   "description": "Some text for the description that explains this bloblog post",
   "_meta": {
-    "schema": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json",
+    "schema": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog.json",
     "deliveryId": "9cb44d61-d00b-49b7-b23b-72bb9a0a1de6",
     "deliveryKey": "blog",
     "name": "blog"

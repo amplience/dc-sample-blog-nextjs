@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json",
+  "id": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog-post.json",
   "title": "Blog post",
   "description": "A blog post",
   "allOf": [
@@ -53,7 +53,7 @@
         {
           "properties": {
             "contentType": {
-              "enum": ["https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"]
+              "enum": ["https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/image.json"]
             }
           }
         }
@@ -92,7 +92,7 @@
           {
             "properties": {
               "contentType": {
-                "enum": ["https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json"]
+                "enum": ["https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/author.json"]
               }
             }
           }
@@ -115,9 +115,9 @@
               "contentType": {
                 "title": "Content",
                 "enum": [
-                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
-                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json",
-                  "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json"
+                  "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/image.json",
+                  "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/video.json",
+                  "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/text.json"
                 ]
               }
             }

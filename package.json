@@ -1,5 +1,5 @@
 {
-  "name": "dc-static-blog-nextjs",
+  "name": "dc-sample-blog-nextjs",
   "version": "2.1.2",
   "description": "Amplience Dynamic Content Static Site with NextJS",
   "scripts": {
@@ -24,14 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amplience/dc-static-blog-nextjs.git"
+    "url": "https://github.com/amplience/dc-sample-blog-nextjs.git"
   },
   "author": "Amplience",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/amplience/dc-static-blog-nextjs/issues"
+    "url": "https://github.com/amplience/dc-sample-blog-nextjs/issues"
   },
-  "homepage": "https://github.com/amplience/dc-static-blog-nextjs#readme",
+  "homepage": "https://github.com/amplience/dc-sample-blog-nextjs#readme",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

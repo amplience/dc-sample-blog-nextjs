@@ -36,7 +36,7 @@ Example:
 <!-- Include absolute versions where possible -->
 
 ### Versions
-- dc-static-blog-nextjs: vX.X.X
+- dc-sample-blog-nextjs: vX.X.X
 
 ### Other information
 

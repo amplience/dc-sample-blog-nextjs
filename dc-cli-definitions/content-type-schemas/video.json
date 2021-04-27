@@ -1,5 +1,5 @@
 {
   "body": "../../schemas/video.json",
-  "schemaId": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json",
+  "schemaId": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/video.json",
   "validationLevel": "CONTENT_TYPE"
 }

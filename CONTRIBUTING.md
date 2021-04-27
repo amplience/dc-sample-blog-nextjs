@@ -1,8 +1,8 @@
 # Contributing
 
-## Developing dc-static-blog-nextjs
+## Developing dc-sample-blog-nextjs
 
-You consider contributing changes to dc-static-blog-nextjs – thank you!
+You consider contributing changes to dc-sample-blog-nextjs – thank you!
 Please consider these guidelines when filing a pull request:
 
 - Commits follow the [Angular commit convention](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines)
@@ -16,7 +16,7 @@ You'll be prompted to fill in any required fields and your commit messages will 
 
 ## Creating releases
 
-dc-static-blog-nextjs uses [semantic-release](https://github.com/semantic-release/semantic-release)
+dc-sample-blog-nextjs uses [semantic-release](https://github.com/semantic-release/semantic-release)
 to release new versions automatically.
 
 - Commits of type `fix` will trigger bugfix releases, think `0.0.1`
