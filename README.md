@@ -10,6 +10,8 @@
 
 This is an application built using the Amplience Dynamic Content Service and the NextJS framework that generates a static blog website.
 
+To see this in action go to [amplience-sample-blog-nextjs.netlify.app](https://amplience-sample-blog-nextjs.netlify.app).
+
 # How To Use
 
 To use this application you will need to install the content schemas (see ./schema/\*.json) and setup the search indexes in Dynamic Content and have some way of running the application, either on your local machine or hosted via a static site platform (for this guide we have used [Netlify](https://www.netlify.com) but you can use [Zeit](https://zeit.co/) if you wish).
