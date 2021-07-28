@@ -1,5 +1,5 @@
 {
-  "contentTypeUri": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json",
+  "contentTypeUri": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/image.json",
   "status": "ACTIVE",
   "settings": {
     "label": "Image",

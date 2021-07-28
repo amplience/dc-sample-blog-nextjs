@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json",
+  "id": "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/author.json",
   "title": "Author",
   "description": "Author schema",
   "allOf": [
@@ -29,7 +29,7 @@
           "properties": {
             "contentType": {
               "title": "image",
-              "enum": ["https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json"]
+              "enum": ["https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/image.json"]
             }
           }
         }

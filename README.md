@@ -1,6 +1,6 @@
 [![Amplience Dynamic Content](media/header.png)](https://amplience.com/dynamic-content)
 
-# dc-static-blog-nextjs
+# dc-sample-blog-nextjs
 
 ![License - Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
 ![](https://img.shields.io/badge/node-v10%2B-blue.svg)
@@ -24,12 +24,12 @@ Once you have everything installed you can then create new blog posts and publis
 
 | Filename       | Schema ID                                                                                       | Schema Type  | Visualization Supported |
 | -------------- | ----------------------------------------------------------------------------------------------- | ------------ | ----------------------- |
-| author.json    | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/author.json    | Content Type | No                      |
-| blog.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog.json      | Content Type | Yes                     |
-| blog-post.json | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json | Content Type | Yes                     |
-| image.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/image.json     | Content Type | Yes                     |
-| text.json      | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/text.json      | Content Type | Yes                     |
-| video.json     | https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/video.json     | Content Type | Yes                     |
+| author.json    | https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/author.json    | Content Type | No                      |
+| blog.json      | https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog.json      | Content Type | Yes                     |
+| blog-post.json | https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog-post.json | Content Type | Yes                     |
+| image.json     | https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/image.json     | Content Type | Yes                     |
+| text.json      | https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/text.json      | Content Type | Yes                     |
+| video.json     | https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/video.json     | Content Type | Yes                     |
 
 ### Creating Schemas & Registering Content Types
 
@@ -40,8 +40,8 @@ You can import the schemas and content types to your hub using the [Dynamic Cont
 Install and configure the CLI tool, clone this repository and then use the the CLI import definitions included by running the following commands:
 
 ```
-git clone https://github.com/amplience/dc-static-blog-nextjs
-cd dc-static-blog-nextjs
+git clone https://github.com/amplience/dc-sample-blog-nextjs
+cd dc-sample-blog-nextjs
 npm install
 npx dc-cli --clientId <YOUR_CLIENT_ID> --clientSecret <YOUR_CLIENT_SECRET> --hubId <YOUR_HUB_ID> configure
 npm run sync
@@ -176,7 +176,7 @@ Repeat all of the steps used for your production index to configure your index, 
 
 Click on the button below to deploy this repository via Netlify.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/amplience/dc-static-blog-nextjs)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/amplience/dc-sample-blog-nextjs)
 
 ### Netlify Build Settings
 
@@ -227,7 +227,7 @@ It is possible to get Netlify to re-build and publish your blog whenever you pub
 3. Enter a sensible label (e.g. "Netlify Deployment")
 4. Enter the Netlify "build hook" that you created in the previous section as your URL
 5. Enable the Webhook trigger "Snapshot - Published"
-6. Under "Filters", click new and add the JSON path "\$.payload.rootContentItem.contentTypeUri", ensure "Equals" operator is selected and enter "https://raw.githubusercontent.com/amplience/dc-static-blog-nextjs/master/schemas/blog-post.json" as the value
+6. Under "Filters", click new and add the JSON path "\$.payload.rootContentItem.contentTypeUri", ensure "Equals" operator is selected and enter "https://raw.githubusercontent.com/amplience/dc-sample-blog-nextjs/master/schemas/blog-post.json" as the value
 7. Click "Save"
 
 Notes:
@@ -283,7 +283,7 @@ After a few moments your new blog post should be visible on your Netlify site.
 Clone this repo and install the dependencies via npm:
 
 ```
-npm install
+npm ci
 ```
 
 ## Running Tests

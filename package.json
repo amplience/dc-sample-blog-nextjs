@@ -1,5 +1,5 @@
 {
-  "name": "dc-static-blog-nextjs",
+  "name": "dc-sample-blog-nextjs",
   "version": "2.1.2",
   "description": "Amplience Dynamic Content Static Site with NextJS",
   "scripts": {
@@ -24,14 +24,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/amplience/dc-static-blog-nextjs.git"
+    "url": "https://github.com/amplience/dc-sample-blog-nextjs.git"
   },
   "author": "Amplience",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/amplience/dc-static-blog-nextjs/issues"
+    "url": "https://github.com/amplience/dc-sample-blog-nextjs/issues"
   },
-  "homepage": "https://github.com/amplience/dc-static-blog-nextjs#readme",
+  "homepage": "https://github.com/amplience/dc-sample-blog-nextjs#readme",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
@@ -78,13 +78,14 @@
     ]
   },
   "engines": {
-    "node": ">=12.0.0",
+    "node": ">=12.0.0 <13",
     "npm": ">=6.0.0"
   },
   "devDependencies": {
     "@amplience/dc-cli": "^0.4.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@netlify/plugin-nextjs": "1.1.2",
     "@types/algoliasearch": "^3.34.10",
     "@types/debounce": "^1.2.0",
     "@types/enzyme": "^3.10.5",
@@ -134,7 +135,7 @@
     "dc-delivery-sdk-js": "^0.6.0",
     "debounce": "^1.2.0",
     "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.4.4",
+    "next": "^9.5.5",
     "nextjs-sitemap-generator": "easen-amp/nextjs-sitemap-generator#master",
     "promise.allsettled": "^1.0.2",
     "qs": "^6.9.4",

@@ -2,6 +2,9 @@
   publish = "out"
   command = "npm run export"
 
+[[plugins]]
+package = "@netlify/plugin-nextjs"
+
 [[redirects]]
   from = "https://productblog.amplience.com/index.html"
   to = "https://amplience.com/blog"

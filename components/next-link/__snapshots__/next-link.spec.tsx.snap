@@ -4,7 +4,7 @@ exports[`NextLink renders next link as an anchor tag 1`] = `
 <a
   aria-label=""
   className="jsx-3574172415"
-  href="//href-link/a-test"
+  href="/href-link/a-test"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
@@ -18,7 +18,7 @@ exports[`NextLink renders next link as an anchor tag with aria-label 1`] = `
 <a
   aria-label="link title"
   className="jsx-3574172415"
-  href="//href-link/a-test"
+  href="/href-link/a-test"
   onClick={[Function]}
   onMouseEnter={[Function]}
 >
