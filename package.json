@@ -138,7 +138,7 @@
     "next": "^9.5.5",
     "nextjs-sitemap-generator": "easen-amp/nextjs-sitemap-generator#master",
     "promise.allsettled": "^1.0.2",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "react": "^16.13.1",
     "react-cookie-consent": "^5.0.1",
     "react-dom": "^16.13.1",
