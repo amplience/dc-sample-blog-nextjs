@@ -1,5 +1,3 @@
-[![Amplience Dynamic Content](media/header.png)](https://amplience.com/dynamic-content)
-
 # dc-sample-blog-nextjs
 
 ![License - Apache 2](https://img.shields.io/badge/license-Apache%202-blue.svg)
